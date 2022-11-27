@@ -50,19 +50,19 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         combo_config_layer {
             timeout-ms = <50>;
             key-positions = <14 15>; // F11 F12
-            layers = <NUM> // Only available in the NUM layer
+            layers = <NUM>; // Only available in the NUM layer
             bindings = <&tog CON>;
         };
         combo_travel_layer {
             timeout-ms = <50>;
             key-positions = <10 19>; // Both control keys
-            layers = <NUM TRV> // Only available in the NUM and TRV layer
+            layers = <NUM TRV>; // Only available in the NUM and TRV layer
             bindings = <&tog TRV>;
         };
         combo_alfred_spotlight {
             timeout-ms = <50>;
             key-positions = <13 16>; // F J
-            layers = <DEF> // Only available in the DEF layer
+            layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LG(SPACE)>;
         };
         
