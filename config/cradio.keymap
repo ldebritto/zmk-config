@@ -9,6 +9,12 @@
 #define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht LSHFT k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
 
+// Auto Shift
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+
+// Hyper Space
+#define HYPSPCE &mt LG(LC(LS(LALT))) SPC
+
 / {
     behaviors {
         ht: hold_tap {
@@ -19,6 +25,22 @@
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            label = "GRAVE_ESCAPE";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
@@ -37,15 +59,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+            &kp Q      &kp W      AS(E)      AS(R)      AS(T)          AS(Y)      AS(U)      AS(I)      AS(O)      AS(P)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+            AS(A)      AS(S)      AS(D)      AS(F)      AS(G)          AS(H)      AS(J)      AS(K)      AS(L)      AS(SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+            AS(Z)      AS(X)      AS(C)      AS(V)      AS(B)          AS(N)      AS(M)      &kp COMMA  &kp DOT    AS(SEMI)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &mo 2      &kp LSHFT       HYPSPCE   &mo 1
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -71,7 +93,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ GESC     │  TAB     │          │          │          │   │ CAPS LOCK│ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp ESC     &kp TAB   &none      &none      &none          &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+            &gresc     &kp TAB   &none      &none      &none          &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │          │   │ CAPSWORD │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none         &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
