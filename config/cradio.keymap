@@ -14,8 +14,60 @@
 
 // Hyper Space
 #define HYPSPCE &mt LG(LC(LS(LALT))) SPC
+#define BT0 BT_SEL 0
+#define BT1 BT_SEL 1
+#define BT2 BT_SEL 2
+#define BT3 BT_SEL 3
+#define BT4 BT_SEL 4
+
+// Layers
+#define DEF 0
+#define SYM 1
+#define NAV 2
+#define NUM 3
+#define CON 4
+#define TRV 5
+
+/* 
+Combo key numbers (https://zmk.dev/docs/features/combos)
+╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
+│   0  |   1  |   2  |   3  |   4  |   │   5  |   6  |   7  |   8  |   9  |
+├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
+│  10  | 11   |  12  |  13  |  14  |   │  15  |  16  |  17  |  18  |  19  |
+├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
+│  20  |  21  |  22  |  23  |  24  |   │  25  |  26  |  27  |  28  |  29  |
+╰──────┴──────┴──────┼──────┼──────┤   ├──────┼──────┼──────┴──────┴──────╯
+                     |  30  |  31  |   |  32  |  33  |
+                     ╰──────┴──────╯   ╰──────┴──────╯
+ 
+ 
+ */
+
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_config_layer {
+            timeout-ms = <50>;
+            key-positions = <14 15>; // F11 F12
+            layers = <NUM> // Only available in the NUM layer
+            bindings = <&tog CON>;
+        };
+        combo_travel_layer {
+            timeout-ms = <50>;
+            key-positions = <10 19>; // Both control keys
+            layers = <NUM TRV> // Only available in the NUM and TRV layer
+            bindings = <&tog TRV>;
+        };
+        combo_alfred_spotlight {
+            timeout-ms = <50>;
+            key-positions = <14 15>; // Both control keys
+            layers = <DEF> // Only available in the NUM and TRV layer
+            bindings = <&kp LG(SPACE)>;
+        };
+        
+    };
+  
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -93,7 +145,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ GESC     │  TAB     │          │          │          │   │ CAPS LOCK│ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &gresc     &kp TAB   &none      &none      &none          &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+            &gresc     &kp TAB   &none      &none       &none          &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │          │   │ CAPSWORD │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none         &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
@@ -127,15 +179,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-            &reset     &none      &none      &none     &bt BT_SEL 0    &none      &none      &none      &none       &reset
+            &reset     &none      &none      &none      &bt BT0        &none      &none      &none      &none       &reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &none      &none      &none     &bt BT_SEL 1    &none      &none      &none      &none     &bootloader
+          &bootloader  &none      &none      &none      &bt BT1        &none      &none      &none      &none     &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &none      &none      &none     &bt BT_CLR &bt BT_SEL 2    &none      &none      &none      &none      &none 
+            &none      &none      &none     &bt BT_CLR  &bt BT2        &none      &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &none      &none          &none      &none 
+                                             &none      &to DEF        &to DEF    &none 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
