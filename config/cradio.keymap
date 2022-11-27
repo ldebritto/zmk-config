@@ -61,8 +61,8 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         };
         combo_alfred_spotlight {
             timeout-ms = <50>;
-            key-positions = <14 15>; // Both control keys
-            layers = <DEF> // Only available in the NUM and TRV layer
+            key-positions = <13 16>; // F J
+            layers = <DEF> // Only available in the DEF layer
             bindings = <&kp LG(SPACE)>;
         };
         
