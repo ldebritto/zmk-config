@@ -37,7 +37,7 @@
 #define TRV 5
 
 /* 
-Combo key numbers (https://zmk.dev/docs/features/combos)
+Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/combos)
 ╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
 │   0  |   1  |   2  |   3  |   4  |   │   5  |   6  |   7  |   8  |   9  |
 ├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
@@ -47,8 +47,6 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
 ╰──────┴──────┴──────┼──────┼──────┤   ├──────┼──────┼──────┴──────┴──────╯
                      |  30  |  31  |   |  32  |  33  |
                      ╰──────┴──────╯   ╰──────┴──────╯
- 
- 
  */
 
 
