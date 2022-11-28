@@ -82,12 +82,12 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         
     };
     
-    &sk {
+    sk {
         release-after-ms = <2000>;
         quick-release;
     };
     
-    &mt {
+    mt {
         tapping-term-ms = <250>;
         flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
     };
