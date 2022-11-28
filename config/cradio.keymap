@@ -9,17 +9,23 @@
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 // Hyper Space
-#define HYPSPCE &mt LG(LC(LS(LALT))) SPC    // 
+// Having trouble with accidental presses. Considering changes or even moving to the left thumb key as a mt with other much used key such as BSPC, tab or enter
+#define HYPER LG(LC(LS(LALT)))    
+#define HYPSPCE &mt HYPER SPC    
+
+// Bluetooth Profile Toggles (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
 #define BT0 BT_SEL 0
 #define BT1 BT_SEL 1
 #define BT2 BT_SEL 2
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
 
-#define GOFWRD LG(RBRC)
-#define GOBACK LG(LBRC)
+// Nav layer buttons
+#define GOBACK LG(LBKT)
+#define GOFWRD LG(RBKT)
 
-#define ALFRED LG(SPC)
+// macOS specific combinations
+#define ALFRED LG(SPC) // Doubles as Spotlight for iOS/iPadOS
 #define SHTCAT LC(LS(SPC))
 
 // Layers
@@ -75,9 +81,13 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         };
         
     };
-  
     
-    mt {
+    &sk {
+        release-after-ms = <2000>;
+        quick-release;
+    };
+    
+    &mt {
         tapping-term-ms = <250>;
         flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
     };
@@ -150,13 +160,13 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ GESC     │  TAB     │          │          │          │   │ CAPS LOCK│ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &gresc     &kp TAB   &none      &none       &none          &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+            &gresc     &kp TAB    &none      &none       &none         &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │          │   │ CAPSWORD │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none         &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ CAPSWORD │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk HYPER          &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    │          │   │ BACK     │ FORWARD  │          │          │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans        &kp GOBACK &kp GOFWRD  &none      &none      &kp DEL
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &none      &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
