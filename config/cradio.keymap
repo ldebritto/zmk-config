@@ -76,6 +76,10 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         
     };
   
+    &mt {
+        tapping-term-ms = <300>;
+    };
+
     behaviors {
 
         gresc: grave_escape {
@@ -89,7 +93,7 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping_term_ms = <190>;
+            tapping_term_ms = <220>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -110,7 +114,7 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      AS(E)      AS(R)      AS(T)          AS(Y)      AS(U)      AS(I)      AS(O)      AS(P)
+            AS(Q)       AS(W)      AS(E)      AS(R)      AS(T)          AS(Y)      AS(U)      AS(I)      AS(O)      AS(P)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
             AS(A)      AS(S)      AS(D)      AS(F)      AS(G)          AS(H)      AS(J)      AS(K)      AS(L)      AS(SQT)
@@ -164,7 +168,7 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F10        &kp F10    &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
