@@ -88,7 +88,7 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
     };
     
     mt {
-        tapping-term-ms = <250>;
+        tapping-term-ms = <300>;
         flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
     };
 
@@ -134,7 +134,7 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             AS(Z)      AS(X)      AS(C)      AS(V)      AS(B)          AS(N)      AS(M)      &kp COMMA  &kp DOT    AS(SEMI)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mo 2      &kp LSHFT       HYPSPCE   &mo 1
+                                            &mo 2      &kp LSHFT       HYPSPCE    &mo 1
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
