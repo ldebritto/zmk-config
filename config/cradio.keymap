@@ -49,6 +49,15 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
                      ╰──────┴──────╯   ╰──────┴──────╯
  */
 
+&sk {
+        release-after-ms = <2000>;
+        quick-release;
+    };
+    
+&mt {
+        tapping-term-ms = <300>;
+        flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
+    };
 
 / {
     combos {
@@ -80,15 +89,7 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
         
     };
     
-    sk {
-        release-after-ms = <2000>;
-        quick-release;
-    };
     
-    mt {
-        tapping-term-ms = <300>;
-        flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
-    };
 
     behaviors {
 
