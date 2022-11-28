@@ -9,7 +9,7 @@
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 // Hyper Space
-#define HYPSPCE &mt LG(LC(LS(LALT))) SPC
+#define HYPSPCE &mt LG(LC(LS(LALT))) SPC    // 
 #define BT0 BT_SEL 0
 #define BT1 BT_SEL 1
 #define BT2 BT_SEL 2
@@ -57,7 +57,7 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         };
         combo_travel_layer {
             timeout-ms = <50>;
-            key-positions = <10 19>; // Both control keys
+            key-positions = <10 13 16 19>; // Command and control keys from both sides of NUM layer
             layers = <NUM TRV>; // Only available in the NUM and TRV layer
             bindings = <&tog TRV>;
         };
@@ -77,7 +77,9 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
     };
   
     &mt {
-        tapping-term-ms = <300>;
+        tapping-term-ms = <250>;
+        flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
+        retro-tap;
     };
 
     behaviors {
