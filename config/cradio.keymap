@@ -76,7 +76,8 @@ Combo key numbers (https://zmk.dev/docs/features/combos)
         
     };
   
-    &mt {
+    
+    mt {
         tapping-term-ms = <250>;
         flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
         retro-tap;
