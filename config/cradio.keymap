@@ -6,29 +6,29 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Auto Shift
-#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+#define AS(keycode) &as LS(keycode) keycode // Autoshift Macro (https://zmk.dev/docs/behaviors/hold-tap#example-use-cases)
 
 // Hyper Space
 // Having trouble with accidental presses. Considering changes or even moving to the left thumb key as a mt with other much used key such as BSPC, tab or enter
-#define HYPER LG(LC(LS(LALT)))    
-#define HYPSPCE &mt HYPER SPC    
+#define HYPER LG(LC(LS(LALT))) // Couldn't fing a propper hyper key code so I created mine
+#define HYPSPCE &mt HYPER SPC // Hyper on hold, space on tap
 
 // Bluetooth Profile Toggles (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
-#define BT0 BT_SEL 0
+#define BT0 BT_SEL 0 // MacBook
 #define BT1 BT_SEL 1
 #define BT2 BT_SEL 2
-#define BT3 BT_SEL 3
-#define BT4 BT_SEL 4
+#define BT3 BT_SEL 3 // Not even in the keymap
+#define BT4 BT_SEL 4 // Not even in the keymap
 
 // Nav layer buttons
 #define GOBACK LG(LBKT)
 #define GOFWRD LG(RBKT)
 
 // macOS specific combinations
-#define ALFRED LG(SPC) // Doubles as Spotlight for iOS/iPadOS
-#define SHTCAT LC(LS(SPC))
+#define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
+#define SHTCAT LC(LS(SPC)) // Great for mouseless operation (https://shortcat.app/)
 
-// Layers
+// Layer names
 #define DEF 0
 #define SYM 1
 #define NAV 2
@@ -36,40 +36,43 @@
 #define CON 4
 #define TRV 5
 
+// Custom &sk settings to allow for better handling of Callum Style mods
 &sk {
         release-after-ms = <1000>; // Default is 1000 ms
         quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
-    
+
+// Customized tap flavor to demote accidental activations o hyper + letter when typing fast    
 &mt {
         tapping-term-ms = <250>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
-        flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
+        flavor = "tap-preferred"; // this falvor does seem to be the most important setting in trying to avoid accidental activations of hyper
     };
 
+
 / {
-    /* 
-Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/combos)
-╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
-│   0  |   1  |   2  |   3  |   4  |   │   5  |   6  |   7  |   8  |   9  |
-├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
-│  10  |  11  |  12  |  13  |  14  |   │  15  |  16  |  17  |  18  |  19  |
-├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
-│  20  |  21  |  22  |  23  |  24  |   │  25  |  26  |  27  |  28  |  29  |
-╰──────┴──────┴──────┼──────┼──────┤   ├──────┼──────┼──────┴──────┴──────╯
-                     |  30  |  31  |   |  32  |  33  |
-                     ╰──────┴──────╯   ╰──────┴──────╯
- */
+    /* Cheatsheet of numbered key in the Ferris to assit in setting up combos (https://zmk.dev/docs/features/combos)
+        ╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
+        │   0  |   1  |   2  |   3  |   4  |   │   5  |   6  |   7  |   8  |   9  |
+        ├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
+        │  10  |  11  |  12  |  13  |  14  |   │  15  |  16  |  17  |  18  |  19  |
+        ├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
+        │  20  |  21  |  22  |  23  |  24  |   │  25  |  26  |  27  |  28  |  29  |
+        ╰──────┴──────┴──────┼──────┼──────┤   ├──────┼──────┼──────┴──────┴──────╯
+                             |  30  |  31  |   |  32  |  33  |
+                             ╰──────┴──────╯   ╰──────┴──────╯ */
     combos {
         compatible = "zmk,combos";
-        combo_config_layer {
+        combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <50>;
             key-positions = <14 15>; // F11 F12, volume up and down keys when using MacBook
             layers = <NUM>; // Only available in the NUM layer to avoid accidental activation
             bindings = <&tog CON>;
         };
-        combo_travel_layer {
+        combo_travel_layer { 
+            // Got the idea from this PR (https://github.com/zmkfirmware/zmk/issues/405#issuecomment-748955060)
+            // Seems like a good workaround the lack of a reliable sleep button or a simple power switch
             timeout-ms = <50>;
-            key-positions = <11 24 25 18>; // S V M L keys, will work in any layer
+            key-positions = <11 24 25 18>; // S V M L keys, will work in any layer (limitting to NUM layer caused it work)
             bindings = <&tog TRV>;
         };
         combo_alfred_spotlight {
@@ -86,19 +89,17 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
         };
         
     };
-    
-    
 
     behaviors {
 
-        gresc: grave_escape {
+        gresc: grave_escape { // Created for allowing cmd + `, but it does not work as expected, since the cmd key is released upon GRESC keyup
             compatible = "zmk,behavior-mod-morph";
             label = "GRAVE_ESCAPE";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp GRAVE>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
-        as: auto_shift {
+        as: auto_shift { // Still love it, even with its defects
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
@@ -109,7 +110,7 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
         };
     };
 
-    conditional_layers {
+    conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
@@ -118,6 +119,9 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
     };
 
     keymap {
+        
+        // First 4 layers are pretty much a port of my QMK config heavily inspired in Callum's layout with one shot mods
+        
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
@@ -187,6 +191,8 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
             >;
         };
         
+        // Layer with ZMK interface for pairing, reseting and entering bootloader mode, will trigger through combo avaliable only in NUM layer
+
         keyboard_config_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -203,6 +209,9 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+        
+        // An empty layer activated/deactivated via a &tog combo for tossing the keyboard in a bag with less risk of accidental key activation
+        
         travel_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
