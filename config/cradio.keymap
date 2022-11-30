@@ -37,12 +37,12 @@
 #define TRV 5
 
 &sk {
-        release-after-ms = <2000>;
-        quick-release;
+        release-after-ms = <1000>; // Default is 1000 ms
+        quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
     
 &mt {
-        tapping-term-ms = <300>;
+        tapping-term-ms = <250>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
         flavor = "tap-preferred"; // try tap-unless-interrupted flavor if this does not fix
     };
 
@@ -63,14 +63,13 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
         compatible = "zmk,combos";
         combo_config_layer {
             timeout-ms = <50>;
-            key-positions = <14 15>; // F11 F12
-            layers = <NUM>; // Only available in the NUM layer
+            key-positions = <14 15>; // F11 F12, volume up and down keys when using MacBook
+            layers = <NUM>; // Only available in the NUM layer to avoid accidental activation
             bindings = <&tog CON>;
         };
         combo_travel_layer {
             timeout-ms = <50>;
-            key-positions = <11 12 17 18>; // // Middle keys on both hands default positionf
-            // layers = <NUM TRV>; // Only available in the NUM and TRV layer
+            key-positions = <11 24 25 18>; // S V M L keys, will work in any layer
             bindings = <&tog TRV>;
         };
         combo_alfred_spotlight {
