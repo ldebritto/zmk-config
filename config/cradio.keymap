@@ -70,8 +70,8 @@ Combo key numbers to assit in setting up combos (https://zmk.dev/docs/features/c
         };
         combo_travel_layer {
             timeout-ms = <50>;
-            key-positions = <11 12 13 16 17 18>; // Command and control keys from both sides of NUM layer
-            layers = <NUM TRV>; // Only available in the NUM and TRV layer
+            key-positions = <11 12 13 16 17 18>; // // Middle keys on both sides
+            // layers = <NUM TRV>; // Only available in the NUM and TRV layer
             bindings = <&tog TRV>;
         };
         combo_alfred_spotlight {
