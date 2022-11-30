@@ -80,7 +80,7 @@
         combo_travel_layer { 
             // Got the idea from this PR (https://github.com/zmkfirmware/zmk/issues/405#issuecomment-748955060)
             // Seems like a good workaround the lack of a reliable sleep button or a simple power switch
-            timeout-ms = <50>;
+            timeout-ms = <100>; // Increased timeout to make it easier to toggle on and off
             key-positions = <11 24 25 18>; // S V M L keys, will work in any layer (limitting to NUM layer caused it work)
             bindings = <&tog TRV>;
         };
@@ -109,6 +109,15 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        
+        // Swapper for smart cmd+tab (from https://github.com/zmkfirmware/zmk/issues/997#issuecomment-1314549032)
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>; // Changed original LALT for macOS' LGUI
+            ignored-key-positions = <7 16 17 18 27>; // Set to Positions of arrow keys and Q in my nav layer
         };
     };
 
@@ -168,8 +177,8 @@
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ CAPSWORD │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk HYPER     &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    │          │   │ BACK     │ FORWARD  │          │          │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &none      &none      &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    │          │   │ BACK     │ FORWARD  │ Q (quit) │          │ DELETE   │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &kp Q     &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
