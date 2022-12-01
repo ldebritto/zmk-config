@@ -38,7 +38,7 @@
 
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk {
-        release-after-ms = <1000>; // Default is 1000 ms
+        release-after-ms = <2000>; // Default is 1000 ms
         quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
 
@@ -47,9 +47,6 @@
         tapping-term-ms = <250>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
         flavor = "tap-preferred"; // this falvor does seem to be the most important setting in trying to avoid accidental activations of hyper
     };
-&sl {
-    release-after-ms = <2000>;
-};
 
 / {
     /* Cheatsheet of numbered key in the Ferris to assit in setting up combos (https://zmk.dev/docs/features/combos)
@@ -65,12 +62,6 @@
     combos {
         compatible = "zmk,combos";
         
-        combo_home_layer { // Always good to have a way to get back home
-            timeout-ms = <50>;
-            key-positions = <14 15>; // G H
-            layers = <DEF SYM NAV NUM CON>; // Available elsewhere but on TRV
-            bindings = <&to DEF>;
-        };
         combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <50>;
             key-positions = <24 25>; // F5 F6
