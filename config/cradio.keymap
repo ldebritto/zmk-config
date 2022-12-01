@@ -146,7 +146,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             AS(Z)      AS(X)      AS(C)      AS(V)      AS(B)          AS(N)      AS(M)      &kp COMMA  &kp DOT    AS(SEMI)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mo 2       &kp LSHT       HYPSPCE    &mo 1
+                                            &mo 2       &kp LSHFT       HYPSPCE    &mo 1
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -171,7 +171,7 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ GESC     │  TAB     │          │          │          │   │ CAPS LOCK│ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+        //│ GESC     │  TAB     │ Swapper  │          │          │   │ CAPS LOCK│ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
             &kp ESC     &kp TAB   &swapper   &none       &none         &kp CAPS   &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ CAPSWORD │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
