@@ -64,7 +64,7 @@
 
         combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <50>;
-            key-positions = <0 4>; // F5 F6
+            key-positions = <1 11 21>; // Second Column on Left side
             layers = <NUM>; // Only available in the NUM layer to avoid accidental activation
             bindings = <&tog CON>;
         };
@@ -190,8 +190,8 @@
         keyboard_config_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-            &reset     &none      &none      &none      &bt BT0        &none      &none      &none      &none       &reset
+        //│          │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
+            &none      &none      &none      &none      &bt BT0        &none      &none      &none      &none       &reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
           &bootloader  &none      &none      &none      &bt BT1        &none      &none      &none      &none     &bootloader
