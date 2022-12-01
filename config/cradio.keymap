@@ -61,10 +61,10 @@
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     combos {
         compatible = "zmk,combos";
-        
+
         combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <50>;
-            key-positions = <24 25>; // F5 F6
+            key-positions = <0 4>; // F5 F6
             layers = <NUM>; // Only available in the NUM layer to avoid accidental activation
             bindings = <&tog CON>;
         };
