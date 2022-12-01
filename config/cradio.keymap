@@ -64,7 +64,7 @@
 
         combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <50>;
-            key-positions = <1 11 21>; // Second Column on Left side
+            key-positions = <1 11>; // Second Column on Left side
             layers = <NUM>; // Only available in the NUM layer to avoid accidental activation
             bindings = <&tog CON>;
         };
