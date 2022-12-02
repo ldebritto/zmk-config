@@ -17,8 +17,9 @@
 #define BT0 BT_SEL 0 // MacBook
 #define BT1 BT_SEL 1
 #define BT2 BT_SEL 2
-#define BT3 BT_SEL 3 // Not even in the keymap
-#define BT4 BT_SEL 4 // Not even in the keymap
+#define BT3 BT_SEL 3
+#define BT4 BT_SEL 4
+#define BT5 BT_SEL 5
 
 // Nav layer buttons
 #define GOBACK LG(LBKT)
@@ -65,9 +66,9 @@
         compatible = "zmk,combos";
 
         combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <21 12 23>; // ^ shape in left hand
-            layers = <DEF NAV>; // Only available in DEF and NAV layers to allow for left-handed activation
+            layers = <NAV>; // Only available in DEF and NAV layers to allow for left-handed activation
             bindings = <&tog CON>;
         };
         combo_travel_layer { 
@@ -196,7 +197,7 @@
         //│          │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │
             &none      &none      &none      &none      &bt BT0        &bt BT3    &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │BOOTLOADER│
+        //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER
           &bootloader  &none      &none      &none      &bt BT1        &bt BT4    &none      &none      &none     &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
