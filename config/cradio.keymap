@@ -66,8 +66,8 @@
 
         combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <50>;
-            key-positions = <13 22 24>; // ^ shape in left hand
-            layers = <NAV>; // Only available in the NAV layer to allow for left-handed activation
+            key-positions = <2 11 13>; // ^ shape in left hand
+            layers = <DEF NAV>; // Only available in the NAV layer to allow for left-handed activation
             bindings = <&tog CON>;
         };
         combo_travel_layer { 
