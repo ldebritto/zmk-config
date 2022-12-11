@@ -4,18 +4,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
  
-// Home Row mods in CASG layout
-#define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht LSHFT k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
-
-/* // Auto Shift Function
-#define AS(keycode) &as LS(keycode) keycode // Autoshift Macro (https://zmk.dev/docs/behaviors/hold-tap#example-use-cases)
- */
-// Hyper Space 
-// Having trouble with accidental presses. Considering changes or even moving to the left thumb key as a mt with other much used key such as BSPC, tab or enter
 #define HYPER LG(LC(LS(LALT))) // Couldn't fing a propper hyper key code so I created mine
+
+// Home Row mods in CASG layout and HYPER
+#define HRML(k1,k2,k3,k4,k5) &ht LCTRL k1  &ht LALT k2  &ht LSHFT k3  &ht LGUI k4  &ht HYPER k5
+#define HRMR(k1,k2,k3,k4,k5) &ht HYPER k1  &ht RGUI k2  &ht RSHFT k3  &ht RALT k4  &ht RCTRL k5
+
+// Hyper Space
 #define HYPSPCE &mt HYPER SPC // Hyper on hold, space on tap
 #define ENTSHFT &mt LSHFT ENTER // Shift on hold, enter on tap
 
@@ -114,18 +110,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        /* 
-        //Auto Shift
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
-            #binding-cells = <2>;
-            tapping_term_ms = <250>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-         */
     };
  
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
@@ -148,7 +132,7 @@
              &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+            HRML(A,        S,         D,         F,      G)             HRMR(H,    J,         K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
