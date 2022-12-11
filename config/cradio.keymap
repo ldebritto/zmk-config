@@ -149,7 +149,7 @@
             &kp INS    &kp N1     &kp N2     &kp N3     &trans         &trans     &trans     &kp UARW   &trans     &kp COLON
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │          │ LEFT     │ DOWN     │ RIGHT    │  ;       │
-            HRML(DEL,   N4,        N5,        N6,       G)             &trans     &kp LARW   &kp DARW   &kp LARW   &kp SEMI 
+            HRML(DEL,   N4,        N5,        N6,       G)             &trans     &kp LARW   &kp DARW   &kp RARW   &kp SEMI 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
            &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
