@@ -99,10 +99,9 @@
         
     };
 
-/*
+
      behaviors {
 
-        /* 
         // Custom ht settings to allow for better home row mods activation
         ht: hold_tap {
             label = "hold_tap";
@@ -113,7 +112,7 @@
             quick-tap-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
-        }; */
+        };
 
         /* 
         //Auto Shift
@@ -128,8 +127,7 @@
         };
          */
     };
- */
-
+ 
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -150,7 +148,7 @@
              &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp SEMI
@@ -172,7 +170,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &kp ESC         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
