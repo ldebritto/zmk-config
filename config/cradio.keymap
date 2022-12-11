@@ -13,7 +13,6 @@
 
 // Hyper Space
 #define HYPSPCE &mt HYPER SPC // Hyper on hold, space on tap
-#define ENTSHFT &mt LSHFT ENTER // Shift on hold, enter on tap
 
 // Bluetooth Profile Buttons (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
 #define BT0 BT_SEL 0 // MacBook
@@ -23,35 +22,13 @@
 #define BT4 BT_SEL 4 // Available
 #define BT5 BT_SEL 5 // Available
 
-// Nav layer special buttons
-#define GOFWRD LG(RBKT)
-#define GOBACK LG(LBKT)
-#define RC_MAC LG(LC(LA(LS(N1))))   // Keyboard Maestro's Record Quick Macro 1
-#define PL_MAC LC(LS(N1))           // Keyboard Maestro's Play Quick Macro 1
-
-// macOS specific combinations
-#define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
-#define SHTCAT LC(LS(SPC)) // Great for mouseless operation (https://shortcat.app/)
-
 // Layer names
 #define DEF 0
 #define SYM 1
 #define NAV 2
 #define NUM 3 
-#define CON 4
+#define CFG 4
 #define TRV 5
-
-// Custom &sk settings to allow for better handling of Callum Style mods
-&sk { // Sticky keys are the closest to Callum's One Shot mods
-        release-after-ms = <2000>; // Default is 1000 ms
-        quick-release; // Activate on first key down to avoid double shot on the mod as SUch
-    };
-
-// Chose tap-preferred flavor to demote accidental activations o hyper + letter when typing fast    
-&mt {
-        tapping-term-ms = <250>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
-        flavor = "tap-preferred";
-    };
 
 / {
     /* Cheatsheet of numbered key in the Ferris to assit in creating/reading combos
@@ -71,33 +48,18 @@
             timeout-ms = <100>;
             key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
             layers = <2>; // Only available in left layer to allow for left-handed activation and avoid trigger while typing in DEF
-            bindings = <&tog CON>;
+            bindings = <&tog CFG>;
         };
         combo_travel_layer { 
             // Got the idea from this PR (https://github.com/zmkfirmware/zmk/issues/405#issuecomment-748955060)
-            // Seems like a good workaround for the lack of a reliable sleep button or a simple power switch
             timeout-ms = <100>; // Increased timeout to make it easier to toggle on and off
             key-positions = <11 24 25 18>; // S V M L keys, will work in any layer
             bindings = <&tog TRV>;
         };
-        combo_alfred_spotlight {
-            timeout-ms = <50>;
-            key-positions = <13 16>; // F J
-            layers = <0>; // Only available in the DEF layer
-            bindings = <&kp ALFRED>;
-        };
-        combo_shortcat {
-            timeout-ms = <50>;
-            key-positions = <12 17>; // D K
-            layers = <0>; // Only available in the DEF layer
-            bindings = <&kp SHTCAT>;
-        };
-        
     };
 
 
      behaviors {
-
         // Custom ht settings to allow for better home row mods activation
         ht: hold_tap {
             label = "hold_tap";
@@ -109,7 +71,6 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-
     };
  
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
@@ -122,8 +83,6 @@
 
     keymap {
         
-        // First 4 layers are pretty much a port of my QMK config, which is heavily inspired in Callum's layout
-        
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
@@ -135,9 +94,9 @@
             HRML(A,        S,         D,         F,      G)             HRMR(H,    J,         K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B           &kp N      &kp M     &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   ENTSHFT         HYPSPCE  &lt 1 BSPC
+                                            &lt 2 TAB   ENTSHFT        HYPSPCE   &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -175,7 +134,8 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-        fun_layer {
+
+        fn_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
@@ -192,7 +152,7 @@
             >;
         };
         
-        // CON Layer with ZMK interface for pairing, reseting and entering bootloader mode, will trigger through combo avaliable only in NUM layer
+        // CFG Layer with ZMK interface for pairing, reseting and entering bootloader mode, will trigger through combo avaliable only in NAV layer
         keyboard_config_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
