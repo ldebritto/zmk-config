@@ -70,7 +70,7 @@
         combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
             timeout-ms = <100>;
             key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
-            layers = <NAV>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
+            layers = <2>; // Only available in left layer to allow for left-handed activation and avoid trigger while typing in DEF
             bindings = <&tog CON>;
         };
         combo_travel_layer { 
@@ -83,13 +83,13 @@
         combo_alfred_spotlight {
             timeout-ms = <50>;
             key-positions = <13 16>; // F J
-            layers = <DEF>; // Only available in the DEF layer
+            layers = <0>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
         combo_shortcat {
             timeout-ms = <50>;
             key-positions = <12 17>; // D K
-            layers = <DEF>; // Only available in the DEF layer
+            layers = <0>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
         };
         
@@ -149,7 +149,7 @@
             &kp INS    &kp N1     &kp N2     &kp N3     &trans         &trans     &trans     &kp UARW   &trans     &kp COLON
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │          │ LEFT     │ DOWN     │ RIGHT    │  ;       │
-            HRML(DEL,   N4,        N5,        N6,       G)             &trans     &kp LARW   &kp DARW   &kp RARW   &kp SEMI 
+            HRML(DEL,   N4,        N5,        N6,       N0)             &trans     &kp LARW   &kp DARW   &kp RARW   &kp SEMI 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
            &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
