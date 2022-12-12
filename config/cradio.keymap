@@ -4,7 +4,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
- 
+
+// Auto Shift
+#define AS(keycode) &as LS(keycode) keycode // Autoshift Macro (https://zmk.dev/docs/behaviors/hold-tap#example-use-cases)
+
+// Hyper Space
+// Having trouble with accidental presses. Considering changes or even moving to the left thumb key as a mt with other much used key such as BSPC, tab or enter
 #define HYPER LG(LC(LS(LALT))) // Couldn't fing a propper hyper key code so I created mine
 
 // Home Row mods in CASG layout and HYPER
@@ -14,24 +19,46 @@
 // Hyper Space
 #define HYPSPCE &mt HYPER SPC // Hyper on hold, space on tap
 
-// Bluetooth Profile Buttons (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
+// Bluetooth Profile Toggles (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
 #define BT0 BT_SEL 0 // MacBook
-#define BT1 BT_SEL 1 // iPad
-#define BT2 BT_SEL 2 // iPhone (always need to dettach from iPhone though)
-#define BT3 BT_SEL 3 // Available
-#define BT4 BT_SEL 4 // Available
-#define BT5 BT_SEL 5 // Available
+#define BT1 BT_SEL 1
+#define BT2 BT_SEL 2
+#define BT3 BT_SEL 3
+#define BT4 BT_SEL 4
+#define BT5 BT_SEL 5
+
+// Nav layer buttons
+#define GOBACK LG(LBKT)
+#define GOFWRD LG(RBKT)
+
+// macOS specific combinations
+#define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
+#define SHTCAT LC(LS(SPC)) // Great for mouseless operation (https://shortcat.app/)
+#define RC_MAC LG(LC(LA(LS(N1)))) // Keyboard Maestro's Record Quick Macro 1
+#define PL_MAC LC(LS(N1)) // Keyboard Maestro's Play Quick Macro 1
 
 // Layer names
 #define DEF 0
 #define SYM 1
 #define NAV 2
-#define NUM 3 
-#define CFG 4
+#define NUM 3
+#define CON 4
 #define TRV 5
 
+// Custom &sk settings to allow for better handling of Callum Style mods
+&sk {
+        release-after-ms = <2000>; // Default is 1000 ms
+        quick-release; // Activate on first key down to avoid double shot on the mod as SUch
+    };
+
+// Customized tap flavor to demote accidental activations o hyper + letter when typing fast    
+&mt {
+        tapping-term-ms = <250>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
+        flavor = "tap-preferred"; // this falvor does seem to be the most important setting in trying to avoid accidental activations of hyper
+    };
+
 / {
-    /* Cheatsheet of numbered key in the Ferris to assit in creating/reading combos
+    /* Cheatsheet of numbered key in the Ferris to assit in setting up combos (https://zmk.dev/docs/features/combos)
         ╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
         │   0  |   1  |   2  |   3  |   4  |   │   5  |   6  |   7  |   8  |   9  |
         ├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
@@ -44,27 +71,29 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
+        combo_config_layer { // Hosts Bootoader, reset and bluetooth profiles in ZMK
             timeout-ms = <100>;
-            key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
-            layers = <2>; // Only available in left layer to allow for left-handed activation and avoid trigger while typing in DEF
-            bindings = <&tog CFG>;
+            key-positions = <21 12 23>; // ^ shape in left hand
+            layers = <NAV>; // Only available in DEF and NAV layers to allow for left-handed activation
+            bindings = <&tog CON>;
         };
         combo_travel_layer { 
             // Got the idea from this PR (https://github.com/zmkfirmware/zmk/issues/405#issuecomment-748955060)
+            // Seems like a good workaround the lack of a reliable sleep button or a simple power switch
             timeout-ms = <100>; // Increased timeout to make it easier to toggle on and off
-            key-positions = <11 24 25 18>; // S V M L keys, will work in any layer
+            key-positions = <11 24 25 18>; // S V M L keys, will work in any layer (limitting to NUM layer caused it work)
             bindings = <&tog TRV>;
         };
     };
 
 
-     behaviors {
-        // Custom ht settings to allow for better home row mods activation
-        ht: hold_tap {
-            label = "hold_tap";
+    behaviors {
+
+        as: auto_shift { // Still love it, even with its defects
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            tapping_term_ms = <220>;
+            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
@@ -83,6 +112,8 @@
 
     keymap {
         
+        // First 4 layers are pretty much a port of my QMK config heavily inspired in Callum's layout with one shot mods
+        
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
@@ -91,12 +122,12 @@
              &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F,      G)             HRMR(H,    J,         K,         L,        SQT)
+            AS(A)      AS(S)      AS(D)      AS(F)      AS(G)          AS(H)      AS(J)      AS(K)      AS(L)      AS(SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B           &kp N      &kp M     &kp COMMA  &kp DOT    &kp FSLH
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+            AS(Z)      AS(X)      AS(C)      AS(V)      AS(B)          AS(N)      AS(M)      &kp COMMA  &kp DOT    AS(SEMI)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER      HYPSPCE   &lt 1 BSPC
+                                            &mo 2       &kp LSHFT       HYPSPCE    &mo 1
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -120,6 +151,7 @@
 
         left_layer {
             bindings = <
+        // The Quick Macro on 3 and 4 keys comes from Keyboard Maestro feature and is tied to its Quick Macro actions 
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  TAB     │          │ REC_MACRO│PLAY_MACRO│   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
             &kp ESC     &kp TAB   &none     &kp RC_MAC &kp PL_MAC      &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
@@ -127,8 +159,8 @@
         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    │          │   │ BACK     │ FORWARD  │ Q (quit) │          │ DELETE   │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &kp Q     &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -152,7 +184,8 @@
             >;
         };
         
-        // CFG Layer with ZMK interface for pairing, reseting and entering bootloader mode, will trigger through combo avaliable only in NAV layer
+        // Layer with ZMK interface for pairing, reseting and entering bootloader mode, will trigger through combo avaliable only in NUM layer
+
         keyboard_config_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -170,7 +203,8 @@
             >;
         };
         
-        // TRV is an empty layer with a weird &tog combo activation for tossing the keyboard in a bag
+        // An empty layer activated/deactivated via a &tog combo for tossing the keyboard in a bag with less risk of accidental key activation
+        
         travel_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
