@@ -5,11 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/* // Auto Shift Function
-#define AS(keycode) &as LS(keycode) keycode // Autoshift Macro (https://zmk.dev/docs/behaviors/hold-tap#example-use-cases)
- */
 // Hyper Space 
-// Having trouble with accidental presses. Considering changes or even moving to the left thumb key as a mt with other much used key such as BSPC, tab or enter
 #define HYPER LG(LC(LS(LALT))) // Couldn't fing a propper hyper key code so I created mine
 #define HYPSPCE &mt HYPER SPC // Hyper on hold, space on tap
 
@@ -93,20 +89,6 @@
         
     };
 
-/*     behaviors {
-
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
-            #binding-cells = <2>;
-            tapping_term_ms = <250>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        
-    };
- */
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
         compatible = "zmk,conditional-layers";
         tri_layer {
