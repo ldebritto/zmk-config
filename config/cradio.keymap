@@ -43,7 +43,7 @@
 
 // Chose tap-preferred flavor to demote accidental activations o hyper + letter when typing fast    
 &mt {
-        tapping-term-ms = <250>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
+        tapping-term-ms = <300>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
         flavor = "tap-preferred";
     };
 
@@ -77,7 +77,6 @@
         combo_nav_layer { 
             timeout-ms = <100>;
             key-positions = <16 17 18>; // JKL
-            
             layers = <DEF>; // only from DEF
             bindings = <&tog NAV>;
         };
