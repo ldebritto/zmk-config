@@ -76,13 +76,13 @@
         };
         combo_nav_layer { 
             timeout-ms = <100>;
-            key-positions = <13 16>;
+            key-positions = <13 16>; // F J
             layers = <DEF NAV>; // only from DEF
             bindings = <&tog NAV>;
         };
         combo_num_layer { 
             timeout-ms = <100>;
-            key-positions = <4 5 30 33>;
+            key-positions = <0 4 5 9>; // Q T Y P
             layers = <DEF NUM>; // only from DEF
             bindings = <&tog NUM>;
         };
