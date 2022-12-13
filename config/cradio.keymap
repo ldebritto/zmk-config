@@ -80,18 +80,6 @@
             layers = <DEF NAV>; // only from DEF
             bindings = <&tog NAV>;
         };
-        combo_num_layer { 
-            timeout-ms = <100>;
-            key-positions = <0 4 5 9>; // Q T Y P
-            layers = <DEF NUM>; // only from DEF
-            bindings = <&tog NUM>;
-        };
-        /* combo_alfred_spotlight {
-            timeout-ms = <50>;
-            key-positions = <13 16>; // F J
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp ALFRED>;
-        }; */
         combo_shortcat {
             timeout-ms = <50>;
             key-positions = <12 17>; // D K
