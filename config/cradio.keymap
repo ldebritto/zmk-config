@@ -76,9 +76,15 @@
         };
         combo_nav_layer { 
             timeout-ms = <100>;
-            key-positions = <13 16>; // F J
-            layers = <DEF NAV>; // only from DEF
+            key-positions = <16 17>; // JK
+            layers = <DEF>; // only from DEF
             bindings = <&tog NAV>;
+        };
+        combo_alfred {
+            timeout-ms = <50>;
+            key-positions = <13 16>; // F J
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp ALFRED>;
         };
         combo_shortcat {
             timeout-ms = <50>;
