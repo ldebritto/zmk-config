@@ -76,7 +76,8 @@
         };
         combo_nav_layer { 
             timeout-ms = <100>;
-            key-positions = <16 17>; // JK
+            key-positions = <16 17 18>; // JKL
+            
             layers = <DEF>; // only from DEF
             bindings = <&tog NAV>;
         };
