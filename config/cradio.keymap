@@ -47,6 +47,7 @@
         flavor = "tap-preferred";
     };
 
+
 / {
     /* Cheatsheet of numbered key in the Ferris to assit in creating/reading combos
         ╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
@@ -95,6 +96,16 @@
         
     };
 
+    behaviors {
+        tdcw: tap_dance_cw {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CW";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+        };
+    };
+
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -120,7 +131,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mo 2       &kp LSHFT      HYPSPCE    &mo 1
+                                            &mo 2        &tdcw          HYPSPCE    &mo 1
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
