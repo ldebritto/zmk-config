@@ -43,7 +43,7 @@
 
 // Chose tap-preferred flavor to demote accidental activations o hyper + letter when typing fast    
 &mt {
-        tapping-term-ms = <300>; // 300 seems to work fine, wil try to reduce to 250 in next iteration
+        tapping-term-ms = <300>;
         flavor = "tap-preferred";
     };
 
@@ -71,7 +71,7 @@
         combo_travel_layer { 
             // Got the idea from this PR (https://github.com/zmkfirmware/zmk/issues/405#issuecomment-748955060)
             // Seems like a good workaround for the lack of a reliable sleep button or a simple power switch
-            timeout-ms = <100>; // Increased timeout to make it easier to toggle on and off
+            timeout-ms = <150>; // Increased timeout to make it easier to toggle on and off
             key-positions = <11 24 25 18>; // S V M L keys, will work in any layer
             bindings = <&tog TRV>;
         };
@@ -104,6 +104,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
+
+        // Swapper for smart cmd+tab (https://github.com/caksoylar/zmk-config/commit/36d04be8a416ffa88e6c7e59e0ddee403906987b)
+         swapper: swapper {
+             compatible = "zmk,behavior-tri-state";
+             label = "SWAPPER";
+             #binding-cells = <0>;
+             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+             ignored-key-positions = <7 16 17 18 27>;
+         };
     };
 
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
@@ -157,8 +166,8 @@
             bindings = <
         // The Quick Macro on 3 and 4 keys wil work with Keyboard Maestro's Quick Macro function, since there's no analog to QMKs Dynamic Macros to date
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  TAB     │ Expose   │REC_MACRO │PLAY_MACRO│   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp ESC     &kp TAB   &kp F3    &kp RC_MAC &kp PL_MAC      &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+        //│ TAB      │ Swapper  │ Exposè   │REC_MACRO │PLAY_MACRO│   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+            &kp TAB    &swapper   &kp F3    &kp RC_MAC &kp PL_MAC      &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ CAPS LOCK│   │ CAPS WORD│ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS      &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
