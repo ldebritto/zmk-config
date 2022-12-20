@@ -77,9 +77,15 @@
         };
         combo_nav_layer { 
             timeout-ms = <100>;
-            key-positions = <16 17 18>; // JKL
+            key-positions = <30 31>; // NAV Thumbs
             layers = <DEF>; // only from DEF
             bindings = <&tog NAV>;
+        };
+        combo_num_layer { 
+            timeout-ms = <100>;
+            key-positions = <30 31 33>; // NAV Thumbs + SYM thumb
+            layers = <DEF NAV SYM NUM>; // only from DEF
+            bindings = <&tog NUM>;
         };
         combo_alfred {
             timeout-ms = <50>;
