@@ -77,7 +77,7 @@
         };
         combo_nav_layer { 
             timeout-ms = <100>;
-            key-positions = <30 31>; // NAV Thumbs
+            key-positions = <30 31>; // NAV Thumbs (31 emulates my Layer Lock in QMK)
             layers = <DEF>; // only from DEF
             bindings = <&tog NAV>;
         };
@@ -109,6 +109,15 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&caps_word>;
+        };
+        td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -170,7 +179,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS      &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    │ MOUSE    │   │ BACK     │ FORWARD  │ Q (quit) │          │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &kp Q     &none      &kp DEL
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &td Q H    &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
