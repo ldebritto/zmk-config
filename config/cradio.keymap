@@ -111,6 +111,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
+
     };
 
     conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
