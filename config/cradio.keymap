@@ -172,13 +172,13 @@
             bindings = <
         // The Quick Macro on 3 and 4 keys wil work with Keyboard Maestro's Quick Macro function, since there's no analog to QMKs Dynamic Macros to date
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ TAB      │ Exposè   │REC_MACRO │PLAY_MACRO│   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &kp TAB   &kp F3    &kp RC_MAC &kp PL_MAC      &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+        //│ TAB      │ Close Win│ Exposè   │REC_MACRO │PLAY_MACRO│   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+            &kp TAB    &kp LG(W)  &kp F3    &kp RC_MAC &kp PL_MAC      &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ CAPS LOCK│   │ CAPS WORD│ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+        //│ CTRL     │ OPT      │ SHIFT    │ CMD      │ CAPS LOCK│   │ CAPS WORD│ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS      &caps_word  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    │ MOUSE    │   │ BACK     │ FORWARD  │ Q (quit) │          │ DELETE   │
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    │ MOUSE    │   │ BACK     │ FORWARD  │ Q/H (td) │          │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK &kp GOFWRD  &td Q H    &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
