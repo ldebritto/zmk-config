@@ -108,7 +108,7 @@
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LSHFT>, <&kp N0>;
+            bindings = <&kp LSHFT>, <&caps_word>;
         };
         tdqh: tap_dance_qh {
             compatible = "zmk,behavior-tap-dance";
