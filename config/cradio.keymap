@@ -117,14 +117,14 @@
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp H>;
         };
-        tdmc1: tap_dance_macro1 {
+        tdmc1: tap_dance_macro1 { // For triggering Keyboard Maestro's Quick Macro feature
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MACRO1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp PL_MAC>, <&kp RC_MAC>;
         };
-        swapper: swapper {
+        swapper: swapper { // Needed to change west.yml to fetch tri-state from urob's fork of ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
@@ -133,7 +133,7 @@
         };  
     };
 
-    conditional_layers { // Works better than &mo and &tog for it allow to faster relase of one of the &mo keys to quick grab a key on the held layer
+    conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
@@ -141,11 +141,9 @@
         };
     };
 
-    keymap {
-        
-        // First 4 layers are pretty much a port of my QMK config, which is heavily inspired in Callum's layout
-        
+    keymap {    
         compatible = "zmk,keymap";
+        
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -182,6 +180,10 @@
 
         nav_layer {
             bindings = <
+        
+        // CAPS LOCK is there just to be remaped to Apple's fn/globe key, needed for iPadOS. CAPS WORD is preferred elsewhere.
+        // Swapper uses urob's fork to get tri-state macro to work
+
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ Swapper  │          │          │          │   │ MACRO 1  │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
             &kp TAB    &swapper   &none      &none      &none          &tdmc1     &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
