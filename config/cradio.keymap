@@ -99,6 +99,12 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
         };
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <31 32>; // D K
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&caps_word>;
+        };
         
     };
 
@@ -156,7 +162,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &td_rcapsw   &mo SYM             HYPSPCE    &mo NAV
+                                            &td_cw      &mo SYM             HYPSPCE    &mo NAV
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
