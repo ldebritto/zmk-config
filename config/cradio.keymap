@@ -110,13 +110,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
-        td_rcapsw: tap_dance_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_RSHIFT_CAPS_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RSHFT>, <&caps_word>;
-        };
         tdqh: tap_dance_qh {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_QUIT_HIDE";
@@ -163,7 +156,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mo 2       &td_rcapsw      HYPSPCE    &mo 1
+                                            &td_rcapsw   &mo SYM             HYPSPCE    &mo NAV
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
