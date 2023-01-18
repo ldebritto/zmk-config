@@ -9,6 +9,10 @@
 #define HYPER LG(LC(LS(LALT))) // Couldn't fing a propper hyper key code so I created mine
 #define HYPSPCE &mt HYPER SPC // Hyper on hold, space on tap
 
+// Home Row mods in CASG layout and HYPER
+#define HRML(k1,k2,k3,k4,k5) &ht LCTRL k1  &ht LALT k2  &ht LSHFT k3  &ht LGUI k4  &ht HYPER k5
+#define HRMR(k1,k2,k3,k4,k5) &ht HYPER k1  &ht RGUI k2  &ht RSHFT k3  &ht RALT k4  &ht RCTRL k5
+
 // Bluetooth Profile Buttons (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
 #define BT0 BT_SEL 0 // MacBook
 #define BT1 BT_SEL 1 // iPad
@@ -159,7 +163,8 @@
              &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+            HRML(A,        S,         D,         F,      G)             HRMR(H,    J,         K,         L,        SQT)
+        //     &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp SEMI
@@ -194,12 +199,12 @@
 
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │ MACRO 1  │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &swapper  &kp CO_PTAB &kp CO_NTAB &none          &tdmc1     &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+            &kp TAB    &swapper  &kp CO_PTAB &kp CO_NTAB &none         &tdmc1     &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ CAPS LOCK│   │ CAPS WORD│ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS       &caps_word &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    │          │   │ BACK     │ FORWARD  │ Q / H    │          │ DELETE   │
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    │ PLAY     │   │ BACK     │ FORWARD  │ Q / H    │          │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none         &kp GOBACK  &kp GOFWRD &tdqh      &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
