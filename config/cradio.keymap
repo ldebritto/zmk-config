@@ -22,6 +22,8 @@
 #define GOBACK LG(LBKT)
 #define RC_MAC LG(LC(LA(LS(N1))))   // Keyboard Maestro's Record Quick Macro 1
 #define PL_MAC LC(LS(N1))           // Keyboard Maestro's Play Quick Macro 1
+#define CO_PTAB LS(LC(TAB)) // Previous Tab
+#define CO_NTAB LC(TAB) // Next Tab
 
 // macOS specific combinations
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
@@ -191,8 +193,8 @@
         // Swapper uses urob's fork to get tri-state macro to work
 
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ Swapper  │          │          │          │   │ MACRO 1  │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &swapper   &none      &none      &none          &tdmc1     &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │ MACRO 1  │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+            &kp TAB    &swapper  &kp CO_PTAB &kp CO_NTAB &none          &tdmc1     &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ CAPS LOCK│   │ CAPS WORD│ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS       &caps_word &kp LARW   &kp DARW   &kp RARW   &kp ENTER
