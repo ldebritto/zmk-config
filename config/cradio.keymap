@@ -103,7 +103,7 @@
     };
 
     behaviors {
-        td_capsword: tap_dance_cw {
+        td_cw: tap_dance_cw {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
@@ -156,7 +156,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mo 2       &td_capsword    HYPSPCE    &mo 1
+                                            &mo 2       &td_cw          HYPSPCE    &mo 1
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
