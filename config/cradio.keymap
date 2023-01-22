@@ -195,7 +195,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &td_comma  &td_dots   &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV   &td_shift_enter  HYPSPCE   &mo SYM
+                                             &mo NAV   &td_shift_enter &kp SPACE   &mo SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
