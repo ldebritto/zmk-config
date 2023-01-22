@@ -150,7 +150,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
         };
-        td_cw: tap_dance_caps_word {
+        td_shift_enter: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
@@ -195,7 +195,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &td_comma  &td_dots   &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &lt NAV TAB  &td_cw         HYPSPCE    &lt SYM BSPC
+                                          &lt NAV TAB  &td_shift_enter         HYPSPCE    &lt SYM BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
