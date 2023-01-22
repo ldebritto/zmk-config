@@ -48,7 +48,7 @@
 
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk { // Sticky keys are the closest to Callum's One Shot mods
-        release-after-ms = <2000>; // Default is 1000 ms
+        release-after-ms = <1000>; // Default is 1000 ms
         quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
 
