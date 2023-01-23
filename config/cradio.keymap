@@ -117,7 +117,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <300>; // 25g switches are firing up all the way with 300. 45g browns appear to work fine with it.
             // quick-tap-ms = <220>;
             // global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -196,7 +196,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &td_comma  &td_dots   &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV   &td_shift_enter HYPSPCE   &mo SYM
+                                             &mo NAV   &td_shift_enter &kp SPACE   &mo SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
