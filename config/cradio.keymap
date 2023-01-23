@@ -214,8 +214,8 @@
         //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ !        │ ?        │
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH &kp AMPS    &kp EXCL   &kp QMARK
+        //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH &kp AMPS    &kp QMARK   &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
