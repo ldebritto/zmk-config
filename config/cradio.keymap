@@ -68,7 +68,7 @@
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
         combo_caps_word {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <31 32>; // ZX
             layers = <0>; // Only available in the DEF layer
             bindings = <&caps_word>;
@@ -190,12 +190,13 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT)
+            // HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT)
+s            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &td_comma  &td_dots   &kp SLASH
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &td_comma  &td_dots   &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV   &td_shift_enter &kp SPACE   &mo SYM
+                                             &mo NAV   &td_shift_enter HYPSPCE   &mo SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
