@@ -109,34 +109,6 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-        td_ord: tap_dance_ord {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_ORDINALS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ORD_O>, <&kp ORD_A>;
-        };
-        td_par: tap_dance_and_par {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_AND_PARAGRAPH";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp AMPERSAND>, <&kp PARAG>;
-        };
-        // td_dots: tap_dance_dots {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_DOT_COLON_ELIPSIS";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp DOT>, <&kp COLON>, <&kp ELIP>;
-        // };
-        // td_comma: tap_dance_comma {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_COMMA_SEMICOLON";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp COMMA>, <&kp SEMICOLON>;
-        // };
         td_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
