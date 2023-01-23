@@ -22,8 +22,8 @@
 #define BT5 BT_SEL 5 // Available
 
 // Nav layer special command buttons
-#define GOFWRD &kp LG(RBKT)
-#define GOBACK &kp LG(LBKT)
+#define GO_FWRD &kp LG(RBKT)
+#define GO_BACK &kp LG(LBKT)
 #define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
 #define CO_NTAB &kp LC(TAB) // Next Tab
 
@@ -177,7 +177,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            // HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT)
+        //  HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT) // Home row mods with Hyper
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
@@ -195,7 +195,7 @@
             &kp TAB    &swapper   CO_PTAB     CO_NTAB   &none          &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │          │   │ CAPS LOCK│ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none               &sk CAPS   &kp LARW   &kp DARW   &kp RARW   &kp ENTER
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none          &sk CAPS   &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │          │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh      &none      &kp DEL
