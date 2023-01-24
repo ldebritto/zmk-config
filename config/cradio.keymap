@@ -149,13 +149,13 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-        //  HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT) // Home row mods with Hyper on the inner column
+        //  &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT // Same with no home row mods
+          HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT) // Home row mods with Hyper on the inner column
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N       &kp M     &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV     &td_cw        HYPSPCE     &mo SYM
+                                             &mt NAV F22 &td_cw        HYPSPCE     &mt SYM F22 // Added a tap to F22 to emulate cancel OS mods without firing up anyting
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
