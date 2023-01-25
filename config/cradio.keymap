@@ -161,13 +161,13 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT // Same with no home row mods
+             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H     &kp J      &kp K      &kp L      &kp SQT // Same with no home row mods
         //   HRML(A,        S,         D,         F,     G)             HRMR(H,      J,        K,         L,        SQT) // Home row mods with Hyper on the inner column
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-             &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N       &kp M     &kp COMMA  &kp DOT    &kp SEMI
+             &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lt NAV F22 &td_cw        HYPSPCE     &lt SYM F22 // Added a tap to F22 to emulate cancel OS mods without firing up anyting
+                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM // Added a tap to F22 to emulate cancel OS mods without firing up anyting
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -179,12 +179,12 @@
             &kp TAB    &kp PLUS   &kp MINUS  &kp ASTRK  &kp EQUAL      &kp SLASH  &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ ,        │ 4        │ 5        │ 6        │ $        │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk HYPER      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOLLAR
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp DOLLAR      &kp COMMA  &kp N4     &kp N5     &kp N6    &kp ENTER 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    │ %        │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt NAV F22 &kp ENTER      &to DEF    &lt SYM N0
+                                             &mo NAV    &to DEF        &trans    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
