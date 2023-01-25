@@ -92,6 +92,7 @@
         combo_backspace {
             timeout-ms = <50>;
             key-positions = <31 32>; // Shift Space
+            layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp BSPC>;
         };
 
@@ -197,7 +198,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N       &kp M     &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mt NAV F22 &td_cw        HYPSPCE     &mt SYM F22 // Added a tap to F22 to emulate cancel OS mods without firing up anyting
+                                             &lt NAV F22 &td_cw        HYPSPCE     &lt SYM F22 // Added a tap to F22 to emulate cancel OS mods without firing up anyting
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
