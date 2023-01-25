@@ -248,10 +248,10 @@
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ ,        │ 4        │ 5        │ 6        │ $        │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk HYPER      &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOLLAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
-            &none      &none      &none       &none     &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    │          │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lt NAV N0 &kp ENTER      &to DEF    &lt SYM F22
+                                            &lt NAV F22 &kp ENTER      &to DEF    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
