@@ -72,13 +72,13 @@
             timeout-ms = <100>;
             key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
             layers = <NAV>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
-            bindings = <&tog CON>;
+            bindings = <&to CON>;
         };
         combo_numword_layer { 
             timeout-ms = <100>;
             key-positions = <1 2 3>; // W E R 
             layers = <DEF NUM>;
-            bindings = <&tog NUM>;
+            bindings = <&to NUM>;
         };
         combo_nav_layer_toggle { 
             timeout-ms = <100>;
