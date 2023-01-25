@@ -92,22 +92,23 @@
         combo_backspace {
             timeout-ms = <50>;
             key-positions = <31 32>; // Shift Space
-            layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp BSPC>;
         };
 
         // My own combos
-        combo_zmk_repeat_key {
-            timeout-ms = <50>;
-            key-positions = <16 17>; // J K
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&key_repeat>;
-        };
+
+        // Layer combos
         combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
             timeout-ms = <100>;
             key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
             layers = <NAV>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
             bindings = <&tog CON>;
+        };
+        combo_numpad_layer { 
+            timeout-ms = <100>;
+            key-positions = <1 2 3>; // W E R 
+            layers = <DEF NUM>;
+            bindings = <&tog NUM>;
         };
         // combo_nav_layer_toggle { 
         //     timeout-ms = <100>;
@@ -115,7 +116,17 @@
         //     layers = <DEF>; // only from DEF
         //     bindings = <&tog NAV>;
         // };
-        combo_alfred {
+        
+        // Keyboard features
+        combo_zmk_repeat_key {
+            timeout-ms = <50>;
+            key-positions = <16 17>; // J K
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&key_repeat>;
+        };
+        
+        // macOS Hotkey combos
+        combo_spotlight_alfred {
             timeout-ms = <50>;
             key-positions = <13 16>; // F J
             layers = <DEF>; // Only available in the DEF layer
@@ -261,16 +272,16 @@
         numword_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      &none      &none       &none
+        //│ TAB      │ 7        │ 8        │ 9        │ /        │   │          │          │          │          │          |
+            &kp TAB    &kp N7     &kp N8     &kp N9     &kp SLASH      &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      &none      &none       &none
+        //│ ,        │ 1        │ 2        │ 3        │ $        │   │          │          │          │          │          |
+            &kp COMMA  &kp N1     &kp N2     &kp N3     &kp DOLLAR     &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      &none      &none       &none
+        //│ .        │ 4        │ 5        │ 6        │ %        │   │          │          │          │          │          |
+            &kp DOT    &kp N4     &kp N5     &kp N6     &kp PRCNT      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &none      &none          &none      &none 
+                                             &kp N0      &none         &to DEF      &none 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
