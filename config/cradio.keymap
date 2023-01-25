@@ -66,6 +66,37 @@
                              |  30  |  31  |   |  32  |  33  |
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
+        // Mod combos as per Pnothy Layout (https://github.com/rayduck/pnohty)
+        combo_command {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&sk LCMD>;
+        };
+        combo_option {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&sk LALT>;
+        };
+        combo_shift {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&sk LSHFT>;
+        };
+        combo_ctrl {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&sk LCTRL>;
+        };
+
+        // Also from Pnothy
+        combo_backspace {
+            timeout-ms = <50>;
+            key-positions = <31 32>; // Shift Space
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp BSPC>;
+        };
+
+        // My own combos
         combo_zmk_repeat_key {
             timeout-ms = <50>;
             key-positions = <16 17>; // J K
@@ -78,12 +109,12 @@
             layers = <NAV>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
             bindings = <&tog CON>;
         };
-        combo_nav_layer { 
-            timeout-ms = <100>;
-            key-positions = <30 31>; // NAV Thumbs (31 emulates my Layer Lock in QMK)
-            layers = <DEF>; // only from DEF
-            bindings = <&tog NAV>;
-        };
+        // combo_nav_layer_toggle { 
+        //     timeout-ms = <100>;
+        //     key-positions = <30 31>; // NAV Thumbs (31 emulates my Layer Lock in QMK)
+        //     layers = <DEF>; // only from DEF
+        //     bindings = <&tog NAV>;
+        // };
         combo_alfred {
             timeout-ms = <50>;
             key-positions = <13 16>; // F J
