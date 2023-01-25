@@ -258,7 +258,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    │ %        │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF        &to DEF    &lt SYM N0
+                                             &trans     &mo DEF        &to DEF    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
