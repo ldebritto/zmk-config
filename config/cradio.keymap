@@ -105,25 +105,25 @@
             layers = <NAV>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
             bindings = <&tog CON>;
         };
-        combo_numpad_layer { 
+        combo_numword { 
             timeout-ms = <100>;
             key-positions = <1 2 3>; // W E R 
             layers = <DEF NUM>;
             bindings = <&tog NUM>;
         };
-        // combo_nav_layer_toggle { 
-        //     timeout-ms = <100>;
-        //     key-positions = <30 31>; // NAV Thumbs (31 emulates my Layer Lock in QMK)
-        //     layers = <DEF>; // only from DEF
-        //     bindings = <&tog NAV>;
-        // };
+        combo_nav_layer_toggle { 
+            timeout-ms = <100>;
+            key-positions = <6 7 8>; // U I O
+            layers = <DEF>; // only from DEF
+            bindings = <&tog NAV>;
+        };
         
         // Keyboard features
         combo_zmk_repeat_key {
             timeout-ms = <50>;
             key-positions = <16 17>; // J K
             layers = <DEF>; // Only available in the DEF layer
-            bindings = <&key_repeat>;
+            bindings = <&kp ENTER>;
         };
         
         // macOS Hotkey combos
@@ -230,7 +230,7 @@
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH &kp AMPS    &kp QMARK   &kp EXCL
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -264,7 +264,7 @@
           &bootloader  &none      &none      &none      &bt BT1        &bt BT4    &none      &none      &none     &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
-           &bt BT_CLR  &none      &none      &none     &bt BT2        &bt BT5     &none      &none      &none      &none 
+           &bt BT_CLR  &none      &none      &none      &bt BT2        &bt BT5     &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &none      &to DEF        &to DEF    &none 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -273,8 +273,8 @@
         numword_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ 7        │ 8        │ 9        │ /        │   │          │          │          │          │ BACKSPACE|
-            &kp TAB    &kp N7     &kp N8     &kp N9     &kp SLASH      &none      &none      &none      &none      &kp BSPC
+        //│ TAB      │ 7        │ 8        │ 9        │ /        │   │ +        │ -        │ *        │ =        │ BACKSPACE|
+            &kp TAB    &kp N7     &kp N8     &kp N9     &kp SLASH      &kp PLUS   &kp MINUS  &kp ASTRK  &kp EQUAL  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ ,        │ 4        │ 5        │ 6        │ $        │   │          │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOLLAR     &none      &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
@@ -282,7 +282,7 @@
         //│ .        │ 1        │ 2        │ 3        │ %        │   │          │          │          │          │ DELETE   |
             &kp DOT    &kp N1     &kp N2     &kp N3     &kp PRCNT      &none      &none      &none       &none     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp N0      &kp TAB       &to DEF    &none 
+                                             &lt NAV N0 &kp ENTER       &to DEF    &lt SYM F22s
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
