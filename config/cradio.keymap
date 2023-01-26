@@ -190,7 +190,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │ REPEAT   │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh     &key_repeat &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF        &trans     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
