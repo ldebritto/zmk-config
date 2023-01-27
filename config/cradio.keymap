@@ -159,8 +159,9 @@
         };
     };
 
+    /*
     // Macro to allow for modifier cancelation faking Callum cancel behavior on QMK
-    / {
+     / {
         macros {
             la_nav: cancel_queued_os_mods_and_toggle_nav {
                 label = "LA_NAV";
@@ -185,7 +186,7 @@
                     ;
             };
         };
-    };
+    }; */
 
 
     keymap {
@@ -202,7 +203,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        HYPSPCE    &mo SYM 
+                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
