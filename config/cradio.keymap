@@ -75,15 +75,15 @@
             layers = <NAV CON>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
             bindings = <&to CON>;
         };
-        combo_numword_layer { 
+        combo_num_layer_toggle { 
             timeout-ms = <100>;
-            key-positions = <1 2 3>; // W E R 
+            key-positions = <32 33>; // Right thumb keys 
             layers = <DEF NAV NUM>;
             bindings = <&tog NUM>;
         };
         combo_nav_layer_toggle { 
             timeout-ms = <100>;
-            key-positions = <6 7 8>; // U I O
+            key-positions = <30 31>; // Left thumb keys
             layers = <DEF NAV NUM>; 
             bindings = <&tog NAV>;
         };
@@ -160,7 +160,7 @@
     };
 
     
-    // Macro to allow for modifier cancelation faking Callum cancel behavior on QMK
+    // Macros to allow for modifier cancelation on taping or holding thumb layer keys faking Callum cancel behavior on QMK
     
     macros {
         la_nav: cancel_queued_os_mods_and_toggle_nav {
