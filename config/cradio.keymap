@@ -188,7 +188,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        HYPSPCE    &la_sym 
+                                             &la_nav     &td_cw        &kp SPC    &la_sym 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -222,7 +222,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │ REPEAT   │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh     &key_repeat &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         HYPSPCE     &la_sym
+                                             &trans     &trans         &kp SPC     &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -239,7 +239,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         HYPSPCE     &trans
+                                             &trans     &trans         &kp SPC     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -256,7 +256,7 @@
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         HYPSPCE    &trans
+                                             &trans     &trans         &kp SPC    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
