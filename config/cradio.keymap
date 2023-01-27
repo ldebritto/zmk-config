@@ -240,7 +240,7 @@
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
            &bt BT_CLR  &none      &none      &none      &bt BT2        &bt BT5     &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &none      &to DEF        &to DEF    &none 
+                                             &trans     &to DEF        &to DEF    &trans 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
