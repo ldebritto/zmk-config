@@ -181,14 +181,14 @@
         numword_layer { // combo from W E R keys in DEF
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ +        │ -        │ *        │ =        │   │ /        │ 7        │ 8        │ 9        │ BACKSPACE|
-            &kp TAB    &kp PLUS   &kp MINUS  &kp ASTRK  &kp EQUAL      &kp SLASH  &kp N7     &kp N8     &kp N9     &kp BSPC
+        //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │          |
+            &none      &none      &none      &none      &none          &none       &kp N7     &kp N8     &kp N9    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ ,        │ 4        │ 5        │ 6        │ $        │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp DOLLAR      &kp COMMA  &kp N4     &kp N5     &kp N6    &kp ENTER 
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │          │   │          │ 4        │ 5        │ 6        │          │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none          &none      &kp N4     &kp N5     &kp N6     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    │ %        │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
+        //│          │          │          │          │          │   │          │ 1        │ 2        │ 3        │          |
+            &none      &none      &none      &none      &none          &none      &kp N1     &kp N2     &kp N3     &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &mo DEF2        &to DEF    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
