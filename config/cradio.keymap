@@ -159,6 +159,25 @@
         };
     };
 
+    // Macro to allow for modifier cancelation faking Callum cancel behavior on QMK
+
+    / {
+        macros {
+            la_nav: cancel_queued_os_mods_and_toggle_nav {
+                label = "LA_NAV";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp F22>
+                    , <&macro_press &mo NAV>
+                    , <&macro_pause_for_release>
+                    , <&macro_release &mo NAV>
+                    ;
+            };
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -173,7 +192,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM 
+                                             &la_nav     &td_cw        HYPSPCE    &mo SYM 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
