@@ -76,13 +76,13 @@
             bindings = <&to CON>;
         };
         combo_num_layer_toggle { 
-            timeout-ms = <100>;
+            timeout-ms = <50>;
             key-positions = <32 33>; // Right thumb keys 
             layers = <DEF NAV NUM>;
             bindings = <&tog NUM>;
         };
         combo_nav_layer_toggle { 
-            timeout-ms = <100>;
+            timeout-ms = <50>;
             key-positions = <30 31>; // Left thumb keys
             layers = <DEF NAV NUM>; 
             bindings = <&tog NAV>;
