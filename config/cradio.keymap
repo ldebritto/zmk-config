@@ -33,11 +33,12 @@
 
 // Layer names
 #define DEF 0
-#define NAV 1
-#define SYM 2
-#define FUN 3 
-#define CON 4
-#define NUM 5
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4 
+#define CON 5
+#define DEF2 6
 
 // Symbols
 #define ELIP LA(SEMI)
@@ -177,6 +178,23 @@
             >;
         };
         
+        numword_layer { // combo from W E R keys in DEF
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ TAB      │ +        │ -        │ *        │ =        │   │ /        │ 7        │ 8        │ 9        │ BACKSPACE|
+            &kp TAB    &kp PLUS   &kp MINUS  &kp ASTRK  &kp EQUAL      &kp SLASH  &kp N7     &kp N8     &kp N9     &kp BSPC
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ ,        │ 4        │ 5        │ 6        │ $        │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp DOLLAR      &kp COMMA  &kp N4     &kp N5     &kp N6    &kp ENTER 
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    │ %        │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &mo DEF2        &to DEF    &lt SYM N0
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
         left_nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -244,23 +262,24 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-
-        numword_layer { // combo from W E R keys in DEF
+        
+        default_layer_again { // to allow for &mo DEF2 activation from lower layers such as numpad
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ +        │ -        │ *        │ =        │   │ /        │ 7        │ 8        │ 9        │ BACKSPACE|
-            &kp TAB    &kp PLUS   &kp MINUS  &kp ASTRK  &kp EQUAL      &kp SLASH  &kp N7     &kp N8     &kp N9     &kp BSPC
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ ,        │ 4        │ 5        │ 6        │ $        │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp DOLLAR      &kp COMMA  &kp N4     &kp N5     &kp N6    &kp ENTER 
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H     &kp J      &kp K      &kp L      &kp SQT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    │ %        │   │ .        │ 1        │ 2        │ 3        │ DELETE   |
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3 &kp DEL
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+             &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &mo DEF        &to DEF    &lt SYM N0
+                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+
        
     };
 };
