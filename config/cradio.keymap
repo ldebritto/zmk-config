@@ -160,7 +160,6 @@
     };
 
     // Macro to allow for modifier cancelation faking Callum cancel behavior on QMK
-
     / {
         macros {
             la_nav: cancel_queued_os_mods_and_toggle_nav {
@@ -172,6 +171,17 @@
                     , <&macro_press &mo NAV>
                     , <&macro_pause_for_release>
                     , <&macro_release &mo NAV>
+                    ;
+            };
+            la_sym: cancel_queued_os_mods_and_toggle_sym {
+                label = "LA_SYM";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_tap &kp F22>
+                    , <&macro_press &mo SYM>
+                    , <&macro_pause_for_release>
+                    , <&macro_release &mo SYM>
                     ;
             };
         };
@@ -294,7 +304,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM 
+                                             &trans     &td_cw        HYPSPCE    &mo SYM 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
