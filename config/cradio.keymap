@@ -159,34 +159,33 @@
         };
     };
 
-    /*
+    
     // Macro to allow for modifier cancelation faking Callum cancel behavior on QMK
-     / {
-        macros {
-            la_nav: cancel_queued_os_mods_and_toggle_nav {
-                label = "LA_NAV";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp F22>
-                    , <&macro_press &mo NAV>
-                    , <&macro_pause_for_release>
-                    , <&macro_release &mo NAV>
-                    ;
-            };
-            la_sym: cancel_queued_os_mods_and_toggle_sym {
-                label = "LA_SYM";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp F22>
-                    , <&macro_press &mo SYM>
-                    , <&macro_pause_for_release>
-                    , <&macro_release &mo SYM>
-                    ;
-            };
+    
+    macros {
+        la_nav: cancel_queued_os_mods_and_toggle_nav {
+            label = "LA_NAV";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp F22>
+                , <&macro_press &mo NAV>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo NAV>
+                ;
         };
-    }; */
+        la_sym: cancel_queued_os_mods_and_toggle_sym {
+            label = "LA_SYM";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp F22>
+                , <&macro_press &mo SYM>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo SYM>
+                ;
+        };
+    };
 
 
     keymap {
