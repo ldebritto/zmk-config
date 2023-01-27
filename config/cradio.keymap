@@ -78,31 +78,17 @@
         combo_num_layer_toggle { 
             timeout-ms = <50>;
             key-positions = <32 33>; // Right thumb keys 
-            layers = <DEF NAV NUM>;
+            layers = <DEF NUM>;
             bindings = <&tog NUM>;
         };
         combo_nav_layer_toggle { 
             timeout-ms = <50>;
             key-positions = <30 31>; // Left thumb keys
-            layers = <DEF NAV NUM>; 
+            layers = <DEF NAV>; 
             bindings = <&tog NAV>;
         };
         
-        // Keyboard features
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <16 17>; // J K
-            layers = <DEF NAV NUM>;
-            bindings = <&kp ENTER>;
-        };
-        combo_repeat {
-            timeout-ms = <50>;
-            key-positions = <6 7>; // J K
-            layers = <DEF NAV NUM>;
-            bindings = <&key_repeat>;
-        };
-        
-        // macOS Hotkey combos
+        // macOS combos
         combo_spotlight_alfred {
             timeout-ms = <50>;
             key-positions = <13 16>; // F J
@@ -123,8 +109,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
@@ -207,7 +193,7 @@
             >;
         };
         
-        numword_layer { // combo from W E R keys in DEF
+        numword_layer { // combo from thumb keys in DEF
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │          |
@@ -236,7 +222,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │ REPEAT   │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh     &key_repeat &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &la_sym
+                                             &trans     &trans         HYPSPCE     &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -253,7 +239,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         HYPSPCE     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -270,7 +256,7 @@
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         HYPSPCE    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
