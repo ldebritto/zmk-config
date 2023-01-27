@@ -153,8 +153,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <NAV SYM>;
+            then-layer = <FUN>;
         };
     };
 
@@ -172,7 +172,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM // Added a tap to F22 to emulate cancel OS mods without firing up anyting
+                                             &mo NAV     &td_cw        HYPSPCE    &mo SYM 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
