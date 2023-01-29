@@ -22,14 +22,14 @@
 #define BT5 BT_SEL 5 // Available
 
 // Nav layer special command buttons
-#define GO_FWRD &kp LG(RBKT)
-#define GO_BACK &kp LG(LBKT)
+#define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
+#define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
 #define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
 #define CO_NTAB &kp LC(TAB) // Next Tab
 
 // macOS specific combinations
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
-#define SHTCAT LC(LS(SPC)) // Great for mouseless operation (https://shortcat.app/)
+#define SHTCAT LC(LS(SPC)) // App for mouseless operation (https://shortcat.app/)
 
 // Layer names
 #define DEF 0
@@ -40,15 +40,16 @@
 #define CON 5
 #define DEF2 6
 
-// Symbols
-#define ELIP LA(SEMI)
-#define ORD_A LA(N9)
-#define ORD_O LA(N0)
-#define PARAG LA(N6)
+// Writing Symbols
+// Useful for writing legal and PT-BR prose
+#define ELIP LA(SEMI) // …
+#define ORD_A LA(N9) // ª
+#define ORD_O LA(N0) // º
+#define PARAG LA(N6) // §
 
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk { // Sticky keys are the closest to Callum's One Shot mods
-        release-after-ms = <5000>; // Default is 1000 ms
+        release-after-ms = <5000>; // Default is 1000 ms, bumped up heavily after implementing the fake cancel keys
         quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
 
@@ -56,7 +57,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        /* Cheatsheet of numbered key in the Ferris to assit in creating/reading combos
+        /* Cheatsheet of numbered keys
         ╭──────┬──────┬──────┬──────┬──────╮   ╭──────┬──────┬──────┬──────┬──────╮
         │   0  |   1  |   2  |   3  |   4  |   │   5  |   6  |   7  |   8  |   9  |
         ├──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┤
@@ -101,6 +102,15 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
         };
+        
+        // ZMK features
+        combo_key_repeat {
+            timeout-ms = <50>;
+            key-positions = <12 17>; // U I
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&key_repeat>;
+        };
+
     };
     
     behaviors {
