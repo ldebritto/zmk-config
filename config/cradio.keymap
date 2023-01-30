@@ -138,7 +138,7 @@
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD";
 			#binding-cells = <0>;
-                        layers = <NUM>;                                                             // insert location of numbers layer here
+                        layers = <FUN>;                                                             // insert location of numbers layer here
 			continue-list = <BACKSPACE DELETE DOT COMMA SQT SEMI SLASH MINUS K_CANCEL UARW DARW LARW RARW>;       // adjust as desired, K_CANCEL is my cancel key for &sk
                         ignore-numbers;                                                             // numbers don't deactivate the layer
                         ignore-modifiers;                                                           // modifiers don't deactivate the layer
@@ -202,14 +202,14 @@
         numword_layer { // combo from thumb keys in DEF
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │ ª        │ 7        │ 8        │ 9        │          |
+        //│          │          │          │          │          │   │ ª        │ 7        │ 8        │ 9        │ º        |
             &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N7     &kp N8     &kp N9     &kp ORD_O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ .        │ 4        │ 5        │ 6        │ ' "      │
-            &trans     &trans     &trans     &trans     &trans         &kp DOT     &kp N4     &kp N5     &kp N6    &trans
+            &trans     &trans     &trans     &trans     &trans         &kp DOT    &kp N4     &kp N5     &kp N6     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ /        │          │   │ ,        │ 1        │ 2        │ 3        │ ; :      |
-            &trans     &trans     &trans     &kp SLASH  &trans         &kp COMMA  &kp N1     &kp N2     &kp N3     &trans
+        //│          │          │          │          │          │   │ ,        │ 1        │ 2        │ 3        │ ; :      |
+            &trans     &trans     &trans     &trans      &trans        &kp COMMA  &kp N1     &kp N2     &kp N3     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -228,7 +228,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │ NUM_WORD │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh     &num_word  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &la_sym
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -279,7 +279,7 @@
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
            &bt BT_CLR  &none      &none      &none      &bt BT2        &bt BT5     &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &trans         &trans    &la_sym
+                                             &trans     &trans         &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
