@@ -60,33 +60,33 @@
 
         // Layer combos
         combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
-            timeout-ms = <100>;
+            timeout-ms = <80>;
             key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
             layers = <NAV CON>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
             bindings = <&to CON>;
         };
         combo_numword_layer_toggle { 
-            timeout-ms = <100>;
-            key-positions = <32 33>; // Right thumb keys 
+            timeout-ms = <80>;
+            key-positions = <27 28>; // , . 
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
         combo_nav_layer_toggle { 
-            timeout-ms = <50>;
-            key-positions = <30 31>; // Left thumb keys
+            timeout-ms = <80>;
+            key-positions = <21 22>; // X C
             layers = <DEF NAV>; 
             bindings = <&tog NAV>;
         };
         
         // macOS features combos
         combo_spotlight_alfred {
-            timeout-ms = <50>;
+            timeout-ms = <80>;
             key-positions = <13 16>; // F J
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
         combo_shortcat {
-            timeout-ms = <50>;
+            timeout-ms = <80>;
             key-positions = <12 17>; // D K
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
@@ -94,8 +94,8 @@
         
         // ZMK features
         combo_key_repeat {
-            timeout-ms = <50>;
-            key-positions = <6 7>; // U I
+            timeout-ms = <80>;
+            key-positions = <16 17>; // U I
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
@@ -138,10 +138,16 @@
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD";
 			#binding-cells = <0>;
-                        layers = <FUN>;                                                             // insert location of numbers layer here
-			continue-list = <BACKSPACE DELETE DOT COMMA SQT SEMI SLASH MINUS K_CANCEL UARW DARW LARW RARW>;       // adjust as desired, K_CANCEL is my cancel key for &sk
-                        ignore-numbers;                                                             // numbers don't deactivate the layer
-                        ignore-modifiers;                                                           // modifiers don't deactivate the layer
+                        layers = <NUM>;                     // insert location of numbers layer here
+			            continue-list =                     // adjust as desired
+                            <                               
+                                BACKSPACE DELETE 
+                                DOT COMMA SQT SEMI SLASH MINUS 
+                                K_CANCEL 
+                                UARW DARW LARW RARW
+                            >;       
+                        ignore-numbers;                     // numbers won't deactivate the layer
+                        ignore-modifiers;                   // modifiers won't deactivate the layer
 		};                    
     };
 
