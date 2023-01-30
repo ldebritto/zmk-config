@@ -38,7 +38,6 @@
 #define SYM 3
 #define FUN 4 
 #define CON 5
-#define DEF2 6
 
 // Writing Symbols
 // Useful for writing legal and PT-BR prose
@@ -88,7 +87,7 @@
             bindings = <&tog NAV>;
         };
         
-        // macOS combos
+        // macOS features combos
         combo_spotlight_alfred {
             timeout-ms = <50>;
             key-positions = <13 16>; // F J
@@ -120,7 +119,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <300>;
             quick-tap-ms = <250>;
-            global-quick-tap;
+            lobal-quick-tap;
             bindings = <&kp>, <&kp>;
         };
         td_cw: tap_dance_caps_word {
@@ -136,7 +135,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp H>;
-        };
+        };      
         swapper: swapper { // Needed to change west.yml to fetch tri-state behavior from urob's fork of ZMK as it's currently a PR on main ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
@@ -144,13 +143,13 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 16 17 18 27>; // Arrow keys and Q/H tap dance to quit/hide apps
         };
-        num_word: behavior_num_word {
+        num_word: behavior_num_word { // full documentation in PR 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD";
 			#binding-cells = <0>;
-                        layers = <NUM>;                                // insert location of numbers layer here
-			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS>;        // adjust as desired
-                        ignore-numbers;                                // numbers don't deactivate the layer
+                        layers = <NUM>;                                         // insert location of numbers layer here
+			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS F22>;       // adjust as desired, F22 is my cancel key for &sk
+                        ignore-numbers;                                         // numbers don't deactivate the layer
 		};          
     };
 
@@ -161,10 +160,8 @@
             then-layer = <FUN>;
         };
     };
-
     
-    // Macros to allow for modifier cancelation on taping or holding thumb layer keys faking Callum cancel behavior on QMK
-    
+    // Macros to allow for modifier cancelation on taping or holding thumb layer keys faking Callum cancel behavior on QMK    
     macros {
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
@@ -172,7 +169,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo NAV>
-                , <&macro_tap &kp F22>
+                , <&macro_tap &kp F22>          // Chose F22 key as it does not get elsewhere
                 , <&macro_pause_for_release>
                 , <&macro_release &mo NAV>
                 ;
@@ -222,7 +219,7 @@
         //│          │          │          │          │          │   │          │ 1        │ 2        │ 3        │          |
             &trans     &trans     &trans     &trans     &trans         &trans     &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &mo DEF2       &trans    &lt SYM N0
+                                             &trans     &trans         &trans    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -294,24 +291,6 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-        
-        default_layer_again { // to allow for &mo DEF2 activation from lower layers such as numpad
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H     &kp J      &kp K      &kp L      &kp SQT 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-             &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        HYPSPCE    &la_sym 
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
        
     };
 };
