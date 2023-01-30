@@ -237,7 +237,7 @@
         left_nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │          │ PG DOWN  │ UP       │ PG UP    │          │
             &kp TAB    &swapper   CO_PTAB     CO_NTAB   &none          &none      &kp PG_DN  &kp UARW   &kp PG_UP  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ CAPS LOCK│   │          │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
