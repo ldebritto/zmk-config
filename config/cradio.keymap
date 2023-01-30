@@ -53,6 +53,9 @@
         quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
 
+&num_word {
+    layers = <NUM>;  // replace NUM by the location of numbers layer
+};
 
 / {
     combos {
@@ -230,7 +233,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS       &none      &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │ REPEAT   │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh     &key_repeat &kp DEL
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          GO_BACK    GO_FWRD    &tdqh      &num_word  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &kp SPC     &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
