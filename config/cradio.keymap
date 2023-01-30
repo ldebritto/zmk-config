@@ -78,13 +78,19 @@
             timeout-ms = <50>;
             key-positions = <32 33>; // Right thumb keys 
             layers = <DEF NUM>;
-            bindings = <&tog NUM>;
+            bindings = <&num_word>;
         };
         combo_nav_layer_toggle { 
             timeout-ms = <50>;
             key-positions = <30 31>; // Left thumb keys
             layers = <DEF NAV>; 
             bindings = <&tog NAV>;
+        };
+        combo_number_row_layer_toggle { 
+            timeout-ms = <100>;
+            key-positions = <30 33>; // Outer thumb press
+            layers = <DEF>; 
+            bindings = <&number_row_word>;
         };
         
         // macOS features combos
@@ -148,6 +154,15 @@
 			label = "NUM_WORD";
 			#binding-cells = <0>;
                         layers = <NUM>;                                                             // insert location of numbers layer here
+			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS F22 UARW DARW LARW RARW>;       // adjust as desired, F22 is my cancel key for &sk
+                        ignore-numbers;                                                             // numbers don't deactivate the layer
+                        ignore-modifiers;                                                           // modifiers don't deactivate the layer
+		};          
+        number_row_word: behavior_number_row_word { // full documentation in PR 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
+			compatible = "zmk,behavior-caps-word";
+			label = "NUMBER_ROW_WORD";
+			#binding-cells = <0>;
+                        layers = <FUN>;                                                             // insert location of numbers layer here
 			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS F22 UARW DARW LARW RARW>;       // adjust as desired, F22 is my cancel key for &sk
                         ignore-numbers;                                                             // numbers don't deactivate the layer
                         ignore-modifiers;                                                           // modifiers don't deactivate the layer
