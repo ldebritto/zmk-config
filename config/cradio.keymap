@@ -137,6 +137,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp H>;
         };
+        td_sym_num: tap_dance_la_sym_num { // Quitting apps on Swapper
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_QUIT_HIDE";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&la_sym>, <&num_word>;
+        };
         swapper: swapper { // Needed to change west.yml to fetch tri-state behavior from urob's fork of ZMK as it's currently a PR on main ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
@@ -205,7 +212,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        &kp SPC    &la_sym 
+                                             &la_nav     &td_cw        &kp SPC    &td_sym_num 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
