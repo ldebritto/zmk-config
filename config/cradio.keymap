@@ -141,7 +141,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_QUIT_HIDE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&la_sym>, <&num_word>;
         };
         swapper: swapper { // Needed to change west.yml to fetch tri-state behavior from urob's fork of ZMK as it's currently a PR on main ZMK
@@ -237,14 +237,14 @@
         left_nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │          │ PG DOWN  │ UP       │ PG UP    │          │
+        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
             &kp TAB    &swapper   CO_PTAB     CO_NTAB   &none          &none      &kp PG_DN  &kp UARW   &kp PG_UP  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ CAPS LOCK│   │          │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &sk CAPS       &none      &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | BACK     │   │ FORWARD  │ BACKSPACE│ Q / H    │ Num_word │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  GO_BACK        GO_FWRD    &kp BSPC   &tdqh      &num_word  &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │ NUM_WORD │ DELETE   │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  GO_BACK        GO_FWRD &kp BSPC       &tdqh     &num_word  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
