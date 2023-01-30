@@ -150,6 +150,7 @@
                         layers = <NUM>;                                                             // insert location of numbers layer here
 			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS F22 UARW DARW LARW RARW>;       // adjust as desired, F22 is my cancel key for &sk
                         ignore-numbers;                                                             // numbers don't deactivate the layer
+                        ignore-modifiers;                                                           // modifiers don't deactivate the layer
 		};          
     };
 
