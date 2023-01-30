@@ -16,7 +16,7 @@
 // Bluetooth Profile Buttons (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
 #define BT0 BT_SEL 0 // MacBook
 #define BT1 BT_SEL 1 // iPad
-#define BT2 BT_SEL 2 // iPhone (always need to dettach from iPhone though)
+#define BT2 BT_SEL 2 // iPhone
 #define BT3 BT_SEL 3 // Available
 #define BT4 BT_SEL 4 // Available
 #define BT5 BT_SEL 5 // Available
@@ -253,7 +253,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &kp SPC     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -270,7 +270,7 @@
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &kp SPC    &trans
+                                             &trans     &trans         &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -287,7 +287,7 @@
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
            &bt BT_CLR  &none      &none      &none      &bt BT2        &bt BT5     &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &to DEF        &to DEF    &la_sym
+                                             &la_nav    &trans         &trans    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
