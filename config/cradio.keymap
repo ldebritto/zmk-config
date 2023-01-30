@@ -86,12 +86,6 @@
             layers = <DEF NAV>; 
             bindings = <&tog NAV>;
         };
-        combo_number_row_layer_toggle { 
-            timeout-ms = <100>;
-            key-positions = <30 33>; // Outer thumb press
-            layers = <DEF>; 
-            bindings = <&number_row_word>;
-        };
         
         // macOS features combos
         combo_spotlight_alfred {
@@ -154,19 +148,10 @@
 			label = "NUM_WORD";
 			#binding-cells = <0>;
                         layers = <NUM>;                                                             // insert location of numbers layer here
-			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS F22 UARW DARW LARW RARW>;       // adjust as desired, F22 is my cancel key for &sk
+			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS K_CANCEL UARW DARW LARW RARW>;       // adjust as desired, K_CANCEL is my cancel key for &sk
                         ignore-numbers;                                                             // numbers don't deactivate the layer
                         ignore-modifiers;                                                           // modifiers don't deactivate the layer
-		};          
-        number_row_word: behavior_number_row_word { // full documentation in PR 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
-			compatible = "zmk,behavior-caps-word";
-			label = "NUMBER_ROW_WORD";
-			#binding-cells = <0>;
-                        layers = <FUN>;                                                             // insert location of numbers layer here
-			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS F22 UARW DARW LARW RARW>;       // adjust as desired, F22 is my cancel key for &sk
-                        ignore-numbers;                                                             // numbers don't deactivate the layer
-                        ignore-modifiers;                                                           // modifiers don't deactivate the layer
-		};          
+		};                    
     };
 
     conditional_layers {
@@ -185,7 +170,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo NAV>
-                , <&macro_tap &kp F22>          // Chose F22 key as it does not get elsewhere
+                , <&macro_tap &kp K_CANCEL>          // Chose K_CANCEL key as it does not get elsewhere
                 , <&macro_pause_for_release>
                 , <&macro_release &mo NAV>
                 ;
@@ -196,7 +181,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo SYM>
-                , <&macro_tap &kp F22>
+                , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
                 ;
