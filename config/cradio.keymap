@@ -105,7 +105,7 @@
         // ZMK features
         combo_key_repeat {
             timeout-ms = <50>;
-            key-positions = <12 17>; // U I
+            key-positions = <6 7>; // U I
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
