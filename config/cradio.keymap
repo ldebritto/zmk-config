@@ -67,13 +67,13 @@
         };
         combo_numword_layer_toggle { 
             timeout-ms = <80>;
-            key-positions = <16 17 18>; // , . 
+            key-positions = <16 17 18>; // J K L
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
         combo_nav_layer_toggle { 
             timeout-ms = <80>;
-            key-positions = <21 22>; // X C
+            key-positions = <11 12 13>; // S D F
             layers = <DEF NAV>; 
             bindings = <&tog NAV>;
         };
