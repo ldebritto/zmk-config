@@ -149,7 +149,7 @@
 			label = "NUM_WORD";
 			#binding-cells = <0>;
                         layers = <NUM>;                                // insert location of numbers layer here
-			continue-list = <BACKSPACE DELETE DOT COMMA SLASH>;        // adjust as desired
+			continue-list = <BACKSPACE DELETE DOT COMMA SLASH MINUS>;        // adjust as desired
                         ignore-numbers;                                // numbers don't deactivate the layer
 		};          
     };
