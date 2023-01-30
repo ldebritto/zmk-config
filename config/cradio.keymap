@@ -209,9 +209,9 @@
             &trans     &trans     &trans     &trans     &trans         &kp DOT     &kp N4     &kp N5     &kp N6    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ /        │          │   │ ,        │ 1        │ 2        │ 3        │ ; :      |
-            &trans     &trans     &trans     &kp SLASH &trans          &kp COMMA  &kp N1     &kp N2     &kp N3     &trans
+            &trans     &trans     &trans     &kp SLASH  &trans         &kp COMMA  &kp N1     &kp N2     &kp N3     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &kp N0
+                                             &trans     &trans         &trans     &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
