@@ -119,7 +119,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <300>;
             quick-tap-ms = <250>;
-            lobal-quick-tap;
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
         td_cw: tap_dance_caps_word {
