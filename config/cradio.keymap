@@ -95,15 +95,14 @@
         // ZMK features
         combo_key_repeat {
             timeout-ms = <80>;
-            key-positions = <16 17>; // U I
+            key-positions = <16 17>; // J K
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
-
     };
     
     behaviors {
-        ht: hold_tap {
+        ht: hold_tap { // Currently, just the NUM row uses a hold tap with &lt SYM N0
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
