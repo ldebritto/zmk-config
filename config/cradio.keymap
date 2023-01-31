@@ -43,6 +43,14 @@
         quick-release; // Activate on first key down to avoid double shot on the mod as SUch
     };
 
+&caps_word {
+    continue-list = <
+                    UNDERSCORE MINUS
+                    K_CANCEL
+                    SQT CARET TILDE GRAVE
+                >;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -158,7 +166,7 @@
         };
     };
     
-    // Macros to allow for modifier cancelation on taping or holding thumb layer keys faking Callum cancel behavior on QMK    
+    // Macros to allow for modifier cancelation with K_CANCEL on taping or holding thumb layer keys faking Callum cancel behavior on QMK    
     macros {
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
@@ -166,7 +174,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo NAV>
-                , <&macro_tap &kp K_CANCEL>          // Chose K_CANCEL key as it does not get used elsewhere
+                , <&macro_tap &kp K_CANCEL>   // Chose K_CANCEL key as it does not get used elsewhere
                 , <&macro_pause_for_release>
                 , <&macro_release &mo NAV>
                 ;
