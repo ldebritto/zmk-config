@@ -152,7 +152,7 @@
                                 DOT COMMA SQT SEMI SLASH MINUS 
                                 K_CANCEL 
                                 UARW DARW LARW RARW
-                                LCMD LOPT LCTRL             // I've let LSHFT out to use it as a cancel via my thumb
+                                LCMD LOPT LCTRL
                             >;       
                         ignore-numbers;                     // numbers won't deactivate the layer
 		};                    
