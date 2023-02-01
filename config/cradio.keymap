@@ -177,8 +177,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp K_CANCEL>
-                , <&macro_press &mo SYM>
+                = <&macro_press &mo SYM>
+                , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
                 ;
