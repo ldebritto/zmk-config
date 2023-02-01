@@ -49,6 +49,7 @@
                     F22
                     SQT CARET TILDE GRAVE
                 >;
+    /delete-property/ ignore-modifiers;
 };
 
 / {
