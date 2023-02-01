@@ -50,6 +50,7 @@
                     F22
                     SQT CARET TILDE GRAVE
                 >;
+    /delete-property/ ignore-modifiers; // Checking to see if ^ will deactivate &caps_word
 };
 
 / {
@@ -215,14 +216,14 @@
         numword_layer { // combo from thumb keys in DEF
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │ ª        │ 7        │ 8        │ 9        │ º        |
-            &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N7     &kp N8     &kp N9     &kp ORD_O
+        //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │ BACKSPACE|
+            &trans     &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ 4        │ 5        │ 6        │          │
-            &trans     &trans     &trans     &trans     &trans         &trans     &kp N4     &kp N5     &kp N6     &trans
+        //│          │          │          │          │          │   │ ª        │ 4        │ 5        │ 6        │  º       │
+            &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N4     &kp N5     &kp N6     &kp ORD_O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ 1        │ 2        │ 3        │          |
-            &trans     &trans     &trans     &trans      &trans        &trans     &kp N1     &kp N2     &kp N3     &trans
+            &trans     &trans     &trans     &trans      &trans        &kp DOT    &kp N1     &kp N2     &kp N3    &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &lt DEF2 F22   &trans     &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
