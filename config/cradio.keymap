@@ -180,9 +180,9 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp C_KBIA_CANCEL>
-                , <&macro_press &sl SYM>
+                , <&macro_press &mo SYM>
                 , <&macro_pause_for_release>
-                , <&macro_release &sl SYM>
+                , <&macro_release &mo SYM>
                 ;
         };
     };
