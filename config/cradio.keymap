@@ -81,12 +81,6 @@
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
-        combo_nav_layer_toggle { 
-            timeout-ms = <80>;
-            key-positions = <11 12 13>; // S D F
-            layers = <DEF NAV>; 
-            bindings = <&tog NAV>;
-        };
         
         // macOS features combos
         combo_spotlight_alfred {
