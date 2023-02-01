@@ -48,9 +48,7 @@
                     UNDERSCORE MINUS
                     C_KBIA_CANCEL
                     SQT CARET TILDE GRAVE
-                    LSHFT
                 >;
-    /delete-property/ ignore-modifiers; // Checking to see if ^ will deactivate &caps_word
 };
 
 / {
