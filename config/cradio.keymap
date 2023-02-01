@@ -246,13 +246,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  {       │  [       │  (       │ |        │   │ _        │ )        │ ]        │ }        │ §        │
-            &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
+            &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE      &kp UNDER   &kp RPAR   &kp RBKT   &kp RBRC   &kp PARAG
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ $        │ @        │ ^        │ ~        │ `        │   │ #        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
+            &kp DLLR   &kp AT     &kp CARET  &kp TILDE  &kp GRAVE      &kp HASH   &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ =        │ +        │ -        │  /       │  *       │   │ %        │ \        │ &        │ ?        │ !        │
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+        //│ =        │ +        │ -        │ /        │ *        │   │ %        │ \        │ &        │ ?        │ !        │
+            &kp EQUAL  &kp PLUS   &kp MINUS  &kp FSLH   &kp ASTRK      &kp PRCNT  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
