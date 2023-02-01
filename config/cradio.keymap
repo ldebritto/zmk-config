@@ -46,7 +46,7 @@
 &caps_word {
     continue-list = <
                     UNDERSCORE MINUS
-                    C_KBIA_CANCEL
+                    K_CANCEL
                     SQT CARET TILDE GRAVE
                 >;
 };
@@ -144,7 +144,7 @@
 			            continue-list =                     // keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS 
-                                C_KBIA_CANCEL
+                                K_CANCEL
                             >;       
 		};                    
     };
@@ -177,7 +177,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp C_KBIA_CANCEL>
+                = <&macro_tap &kp K_CANCEL>
                 , <&macro_press &mo SYM>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
