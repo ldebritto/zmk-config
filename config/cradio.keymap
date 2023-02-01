@@ -160,8 +160,8 @@
     };
     
     // Macros to allow for cancelling sticky behaviors with K_CANCEL and F22 taps, faking Callum cancel behavior found on QMK
-    // C_KBIA_CANCEL will not cancel &num_word                                      - it's used on the &la_sym key
-    // K_CANCEL will cancel anything                                                - it's used on the &la_nav key
+    // C_KBIA_CANCEL will not cancel &num_word  - used on the &la_sym macro
+    // K_CANCEL will cancel anything            - used on the &la_nav macro
     macros {
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
@@ -210,16 +210,16 @@
         numword_layer { // combo from thumb keys in DEF
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │ BACKSPACE|
-            &trans     &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &kp BSPC
+        //│          │          │          │          │          │   │ DELETE   │ 7        │ 8        │ 9        │ BACKSPACE|
+            &trans     &trans     &trans     &trans     &trans         &kp DEL    &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ ª        │ 4        │ 5        │ 6        │  º       │
             &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N4     &kp N5     &kp N6     &kp ORD_O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ 1        │ 2        │ 3        │          |
+        //│          │          │          │          │          │   │ .        │ 1        │ 2        │ 3        │ ,        |
             &trans     &trans     &trans     &trans      &trans        &kp DOT    &kp N1     &kp N2     &kp N3    &kp COMMA
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &lt DEF2 F22   &trans     &lt SYM N0
+                                             &trans     &sl DEF2       &trans     &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
