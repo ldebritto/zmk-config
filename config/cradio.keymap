@@ -30,10 +30,9 @@
 #define SYM 3
 #define FUN 4 
 #define CON 5
-#define DEF2 6
+#define DEF2 6 // just to make DEF , and . keys avaliable on &num_word via &mo DEF2
 
 // Writing Symbols. Useful for writing PT-BR prose and legal stuff
-#define ELIP LA(SEMI) // …
 #define ORD_A LA(N9) // ª
 #define ORD_O LA(N0) // º
 #define PARAG LA(N6) // §
