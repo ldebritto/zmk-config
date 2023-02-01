@@ -47,7 +47,7 @@
 &caps_word {
     continue-list = <
                     UNDERSCORE MINUS
-                    K_CANCEL
+                    C_KBIA_CANCEL
                     SQT CARET TILDE GRAVE
                 >;
     /delete-property/ ignore-modifiers; // Checking to see if ^ will deactivate &caps_word
