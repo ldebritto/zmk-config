@@ -75,8 +75,8 @@
             bindings = <&to CON>;
         };
         combo_numword_layer_toggle { 
-            timeout-ms = <80>;
-            key-positions = <16 17 18>; // J K L
+            timeout-ms = <100>;
+            key-positions = <30 32>; // J K L
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
