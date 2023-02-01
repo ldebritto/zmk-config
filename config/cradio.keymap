@@ -106,7 +106,7 @@
     };
     
     behaviors {
-        ht: hold_tap { // Currently, just the NUM row uses a hold tap with &lt SYM N0
+        ht: hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -123,32 +123,31 @@
             tapping-term-ms = <300>;
             bindings = <&sk LSHFT>, <&caps_word>;
         };
-        tdqh: tap_dance_qh { // Quitting apps on Swapper
+        tdqh: tap_dance_qh { // Quitting apps on Swapper in NAV
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_QUIT_HIDE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp H>;
         };      
-        swapper: swapper { // Needed to change west.yml to fetch tri-state behavior from urob's fork of ZMK as it's currently a PR on main ZMK
+        swapper: swapper {// Needed urob's fork of ZMK as it's tri-state behavior is currently a PR on main ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 16 17 18 27>; // Arrow keys and Q/H tap dance to quit/hide apps
         };
-        num_word: behavior_num_word { // full documentation in PR 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
+        num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD";
 			#binding-cells = <0>;
-                        layers = <NUM>;                     // insert location of numbers layer here
-			            continue-list =                     // adjust as desired
-                            <                               
-                                BACKSPACE DELETE 
-                                C_KBIA_CANCEL
+                        layers = <NUM>;                     // layer to be toggled
+                        ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word
+			            continue-list =                     // keycodes that will not cancel &numword
+                            <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS 
+                                C_KBIA_CANCEL
                             >;       
-                        ignore-numbers;                     // numbers won't deactivate the layer
 		};                    
     };
 
