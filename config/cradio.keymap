@@ -145,6 +145,7 @@
 			            continue-list =                     // adjust as desired
                             <                               
                                 BACKSPACE DELETE 
+                                F22
                                 DOT COMMA SQT SEMI SLASH MINUS 
                             >;       
                         ignore-numbers;                     // numbers won't deactivate the layer
@@ -179,10 +180,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo SYM>
+                = <&macro_press &sl SYM>
                 , <&macro_tap &kp F22>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo SYM>
+                , <&macro_release &sl SYM>
                 ;
         };
     };
