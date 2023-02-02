@@ -138,10 +138,9 @@
         };
         sm_win: swapper_window { // Adapted from swapper to allow for CMD+` to change focus between windows inside a group in Stage Manager
             compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
+            label = "SWAPPER Stage Manager";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp GRAVE>, <&kt LCMD>;
-            ignored-key-positions = <>; // Couldn't find none to bother
         };
         num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
 			compatible = "zmk,behavior-caps-word";
