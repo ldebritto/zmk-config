@@ -50,7 +50,7 @@
 &caps_word {
     continue-list = <
                     UNDERSCORE MINUS
-                    F22
+                    K_CANCEL
                     SQT CARET TILDE GRAVE
                 >;
     /delete-property/ ignore-modifiers;
@@ -149,7 +149,7 @@
 			            continue-list =                     // keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS 
-                                F22
+                                K_CANCEL
                             >;       
 		};                    
     };
@@ -183,7 +183,7 @@
             wait-ms = <10>;
             bindings
                 = <&macro_press &mo SYM>
-                , <&macro_tap &kp F22>
+                , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
                 ;
