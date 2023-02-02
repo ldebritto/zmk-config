@@ -168,6 +168,7 @@
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <10>;
             bindings
                 = <&macro_press &mo NAV>
                 , <&macro_tap &kp K_CANCEL>
@@ -179,6 +180,7 @@
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <10>;
             bindings
                 = <&macro_press &mo SYM>
                 , <&macro_tap &kp F22>
