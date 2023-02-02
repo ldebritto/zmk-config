@@ -140,12 +140,6 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 16 17 18 27>; // Arrow keys and Q/H tap dance to quit/hide apps
         };
-        sm_win: swapper_window { // Adapted from swapper to allow for CMD+` to change focus between windows inside a group in Stage Manager
-            compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER Stage Manager";
-            #binding-cells = <0>;
-            bindings = <&kt LCMD>, <&kp GRAVE>, <&kt LCMD>;
-        };
         num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD";
