@@ -154,13 +154,13 @@
 		};
     };
 
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     tri_layer {
-    //         if-layers = <NAV SYM>;
-    //         then-layer = <FUN>;
-    //     };
-    // };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <NAV SYM>;
+            then-layer = <FUN>;
+        };
+    };
     
     // Macros to allow for cancelling sticky behaviors with K_CANCEL and F22 taps, faking Callum cancel behavior found on QMK    // K_CANCEL will cancel anything            - used on the &la_nav macro
     macros {
@@ -251,7 +251,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │ BACK     │ FORWARD  │ Q / H    │          │ DELETE   │
             CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   &none          GO_BACK    GO_FWRD    &tdqh      &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &la_fun
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -268,7 +268,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_fun     &trans         &trans     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
