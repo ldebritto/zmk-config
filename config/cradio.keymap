@@ -80,7 +80,7 @@
         };
         combo_numword_layer_toggle { 
             timeout-ms = <80>;
-            key-positions = <16 17 18>; // J K L
+            key-positions = <16 17 18>; // J K L / 4 5 6
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
@@ -102,7 +102,7 @@
         // ZMK features
         combo_key_repeat {
             timeout-ms = <80>;
-            key-positions = <16 17>; // J K
+            key-positions = <26 27>; // M ,
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
@@ -126,7 +126,7 @@
             tapping-term-ms = <300>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
-        tdqh: tap_dance_qh { // Quitting apps on Swapper in NAV
+        tdqh: tap_dance_qh { // Quitting and hiding apps from Swapper in NAV
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_QUIT_HIDE";
             #binding-cells = <0>;
