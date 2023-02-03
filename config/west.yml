@@ -4,10 +4,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: nguyendown
+      url-base: https://github.com/nguyendown
   projects:
     - name: zmk
       remote: urob
       revision: main
+      import: app/west.yml
+    - name: zmk
+      remote: nguyendown
+      revision: behaviors/sticky-key-quick-release-fix
       import: app/west.yml
   self:
     path: config
