@@ -44,7 +44,7 @@
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk {
         release-after-ms = <5000>; // Default is 1000 ms
-        quick-release;
+        quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
 
 &caps_word {

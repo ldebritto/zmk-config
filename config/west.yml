@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: ldebrittok
       url-base: https://github.com/ldebritto
-    - name: nguyendown
-      url-base: https://github.com/nguyendown
   projects:
     - name: zmk
       remote: ldebritto
