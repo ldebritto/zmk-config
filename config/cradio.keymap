@@ -362,10 +362,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      SCROLL_UP    &none       &none
+            &none      &none      &none      &none      &none          &none      &none      &mwh SCROLL_UP    &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none    SCROLL_LEFT SCROLL_DOWN SCROLL_RIGHT  &none
+            &none      &none      &none      &none      &none          &none    &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_RIGHT  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          |
             &none      &none      &none      &none      &none          &none      &none      &mkp MB3        &none       &none 
