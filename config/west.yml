@@ -1,6 +1,6 @@
 manifest:
   remotes:
-    - name: ldebrittok
+    - name: ldebritto
       url-base: https://github.com/ldebritto
   projects:
     - name: zmk
