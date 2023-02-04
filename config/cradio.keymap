@@ -89,8 +89,8 @@
         combo_navigation_layer_toggle { 
             timeout-ms = <80>;
             key-positions = <11 12 13>; // S D F / Alt + Shift + Command
-            layers = <DEF NAV>;
             bindings = <&toggle_navigation>;
+            layers = <DEF NAV>;
         };
         
         // macOS features combos
@@ -109,7 +109,7 @@
         combo_scrolla {
             timeout-ms = <80>;
             key-positions = <16 17>; // scolling K
-            layers = <DEF>
+            layers = <DEF>;
             bindings = <&kp SCROLLA>;
         };
         combo_alt_win {
