@@ -51,6 +51,7 @@
     continue-list = <
                     UNDERSCORE MINUS
                     SQT CARET TILDE GRAVE
+                    K_CANCEL
                 >;
     /delete-property/ ignore-modifiers;
 };
@@ -132,14 +133,14 @@
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp H>;
         };      
-        swapper: swapper {// Needed urob's fork of ZMK as it's tri-state behavior is currently a PR on main ZMK
+        swapper: swapper {// Got it from urob's repo as it's tri-state behavior is currently a PR on main ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 16 17 18 27>; // Arrow keys and Q/H tap dance to quit/hide apps
         };
-        num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), needs urob's repo
+        num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD";
 			#binding-cells = <0>;
@@ -147,10 +148,40 @@
                         ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word
 			            continue-list =                     // keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
-                                DOT COMMA SQT SEMI SLASH MINUS 
+                                DOT COMMA SQT SEMI SLASH MINUS
+                                K_CANCEL
                             >;       
 		};
     };
+
+    // Macros to allow for cancelling sticky behaviors with F22 and F22 taps, faking Callum cancel behavior found on QMK    // F22 will cancel anything            - used on the &la_nav macro
+    macros {
+        la_nav: cancel_queued_os_mods_and_toggle_nav {
+            label = "LA_NAV";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo NAV>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo NAV>
+                ;
+        };
+        la_sym: cancel_queued_os_mods_and_toggle_sym {
+            label = "LA_SYM";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo SYM>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo SYM>
+                ;
+        };
+    };
+
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
