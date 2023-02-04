@@ -154,7 +154,7 @@
 		};
     };
 
-    // Macros to allow for cancelling sticky behaviors with F22 and F22 taps, faking Callum cancel behavior found on QMK    // F22 will cancel anything            - used on the &la_nav macro
+    // Macros to allow for cancelling sticky behaviors with K_CANCEL taps, faking Callum's cancel behavior found on QMK macros
     macros {
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
@@ -182,8 +182,7 @@
         };
     };
 
-
-    conditional_layers {
+    conditional_layers { // They allow for more flexibility when changing layers from FUN to both NAV or SYM by just releasing the other layer key
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <NAV SYM>;
@@ -191,7 +190,7 @@
         };
     };
 
-    keymap {
+    keymap { // Heavily inspired in Callum's Layout
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
@@ -210,7 +209,7 @@
             >;
         };
         
-        numword_layer { // combo from thumb keys in DEF
+        numword_layer { // Accessed through combo in DEF, positioned here to allow for access on every other layer bellow
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ DELETE   │ 7        │ 8        │ 9        │ BACKSPACE|
@@ -295,7 +294,7 @@
             >;
         };
        
-        default_layer_again {
+        default_layer_again { // To work around the lack of access to DEF from NUM
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
