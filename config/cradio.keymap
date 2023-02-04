@@ -97,7 +97,7 @@
         };
         combo_mouse { 
             timeout-ms = <80>;
-            key-positions = <26 27 28>; // M , .
+            key-positions = <20 29>; // Z ;
             layers = <DEF MOUSE SCROLL>;
             bindings = <&tog MOUSE>;
         };
