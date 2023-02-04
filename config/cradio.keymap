@@ -172,12 +172,12 @@
                                 K_CANCEL
                             >;       
 		};
-        toggle_navigation: nav_for_a_while { // Adapted from num_word PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+        toggle_navigation: nav_for_a_while { // Adapted from num_word with PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "Navigate for a while";
 			#binding-cells = <0>;
                         layers = <NAV>;                     // layer to be toggled
-                        ignore-modifiers;                     // numbers won't deactivate the layer, hence &num_word
+                        ignore-modifiers;                   // numbers won't deactivate the layer, hence &num_word
 			            continue-list =                     // keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 UARW DARW LARW RARW
