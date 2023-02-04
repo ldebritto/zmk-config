@@ -25,7 +25,9 @@
 
 // macOS specific combinations
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
-#define SHTCAT LC(LS(SPC)) // App for mouseless operation (https://shortcat.app/)
+#define WOOSHY LC(LS(SPC)) // App for mouseless operation (https://wooshy.app/)
+#define SCROLLA LG(LC(LS(SPC))) // App for mouseless scrolling (https://scrolla.app/)
+#define SW_WIN LG(LC(LS(SPC))) // Alfred Workflow switching to other open windows (https://scrolla.app/)
 
 // Layer names
 #define DEF 0
@@ -92,11 +94,23 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
-        combo_shortcat {
+        combo_wooshy {
             timeout-ms = <80>;
-            key-positions = <12 17>; // D K
+            key-positions = <6 7 8>; // U I O
             layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp SHTCAT>;
+            bindings = <&kp WOOSHY>;
+        };
+        combo_scrolla {
+            timeout-ms = <80>;
+            key-positions = <16 17>; // J K
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp SCROLLA>;
+        };
+        combo_sw_win {
+            timeout-ms = <80>;
+            key-positions = <1 2 3>; // W E R
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp SW_WIN>;
         };
         
         // ZMK features
