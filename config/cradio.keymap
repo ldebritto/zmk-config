@@ -25,9 +25,7 @@
 
 // macOS specific combinations
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
-#define WOOSHY LC(LS(SPC)) // App for mouseless clicking (https://wooshy.app/)
-#define SCROLLA LG(LC(LS(SPC))) // App for mouseless scolling (https://scrolla.app/)
-#define ALT_WIN LA(LG(LC(LS(SPC)))) // Wooshy workflow for Alfred (https://github.com/godbout/WooshyWindowToTheForeground)
+#define SHTCAT LC(LS(SPC)) // App for mouseless operation (https://shortcat.app/)
 
 // Layer names
 #define DEF 0
@@ -86,12 +84,6 @@
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
-        combo_navigation_layer_toggle { 
-            timeout-ms = <80>;
-            key-positions = <11 12 13>; // S D F / Alt + Shift + Command
-            bindings = <&toggle_navigation>;
-            layers = <DEF NAV>;
-        };
         
         // macOS features combos
         combo_spotlight_alfred {
@@ -100,23 +92,11 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
-        combo_wooshy {
+        combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
             layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp WOOSHY>;
-        };
-        combo_scrolla {
-            timeout-ms = <80>;
-            key-positions = <16 17>; // scolling K
-            layers = <DEF>;
-            bindings = <&kp SCROLLA>;
-        };
-        combo_alt_win {
-            timeout-ms = <80>;
-            key-positions = <1 2 3>; // W E R
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp ALT_WIN>;
+            bindings = <&kp SHTCAT>;
         };
         
         // ZMK features
@@ -170,20 +150,6 @@
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS
                                 K_CANCEL
-                            >;       
-		};
-        toggle_navigation: nav_for_a_while { // Adapted from num_word with PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
-			compatible = "zmk,behavior-caps-word";
-			label = "Navigate for a while";
-			#binding-cells = <0>;
-                        layers = <NAV>;                     // layer to be toggled
-                        ignore-modifiers;                   // numbers won't deactivate the layer, hence &num_word
-			            continue-list =                     // keycodes that will not cancel &numword
-                            <   BACKSPACE DELETE 
-                                UARW DARW LARW RARW
-                                PG_UP PG_DN
-                                CO_UNDO
-                                CO_CUT CO_COPY CO_PASTE                                 
                             >;       
 		};
     };
