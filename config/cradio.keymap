@@ -98,7 +98,7 @@
         combo_mouse { 
             timeout-ms = <80>;
             key-positions = <26 27 28>; // M , .
-            layers = <DEF NAV>;
+            layers = <DEF MOUSE SCROLL>;
             bindings = <&tog MOUSE>;
         };
         
@@ -345,15 +345,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      MOVE_UP    &none       &none
+            &none      &none      &none      &none      &none          &none      &none      &mmv MOVE_UP    &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      MOVE_LEFT  MOVE_DOWN MOVE_RIGHT  &mo SCROLL
+            &none      &none      &none      &none      &none          &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mo SCROLL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      MB3        &none       &none 
+            &none      &none      &none      &none      &none          &none      &none      &mkp MB3        &none       &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF        LCLK       RCLK
+                                             &trans     &to DEF        &mkp LCLK       &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -368,9 +368,9 @@
             &none      &none      &none      &none      &none          &none    SCROLL_LEFT SCROLL_DOWN SCROLL_RIGHT  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          |
-            &none      &none      &none      &none      &none          &none      &none      MB3        &none       &none 
+            &none      &none      &none      &none      &none          &none      &none      &mkp MB3        &none       &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF        LCLK       RCLK
+                                             &trans     &to DEF        &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
