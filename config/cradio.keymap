@@ -86,6 +86,12 @@
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
+        combo_navigation_layer_toggle { 
+            timeout-ms = <80>;
+            key-positions = <11 12 13>; // S D F / Alt + Shift + Command
+            layers = <DEF NAV>;
+            bindings = <&toggle_navigation>;
+        };
         
         // macOS features combos
         combo_spotlight_alfred {
@@ -164,6 +170,20 @@
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS
                                 K_CANCEL
+                            >;       
+		};
+        toggle_navigation: nav_for_a_while { // Adapted from num_word PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+			compatible = "zmk,behavior-caps-word";
+			label = "Navigate for a while";
+			#binding-cells = <0>;
+                        layers = <NAV>;                     // layer to be toggled
+                        ignore-modifiers;                     // numbers won't deactivate the layer, hence &num_word
+			            continue-list =                     // keycodes that will not cancel &numword
+                            <   BACKSPACE DELETE 
+                                UARW DARW LARW RARW
+                                PG_UP PG_DN
+                                CO_UNDO
+                                CO_CUT CO_COPY CO_PASTE                                 
                             >;       
 		};
     };
