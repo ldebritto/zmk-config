@@ -6,6 +6,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
+// Hyper Space
+#define HYPRSPC &mt LG(LC(LS(LALT))) SPC 
+
 // Bluetooth Profile Buttons (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
 #define BT0 BT_SEL 0 // MacBook
 #define BT1 BT_SEL 1 // iPad
@@ -143,7 +146,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <400>;
             quick-tap-ms = <250>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -233,7 +236,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        &kp SPC    &la_sym
+                                             &la_nav     &td_cw        HYPRSPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
