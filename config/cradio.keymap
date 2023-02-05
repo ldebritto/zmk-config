@@ -142,13 +142,13 @@
         // Acentos
         combo_tilde {
             timeout-ms = <80>;
-            key-positions = <5 15>; // T G
+            key-positions = <4 14>; // T G
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp TILDE>;
         };
         combo_circ {
             timeout-ms = <80>;
-            key-positions = <6 16>; // Y H
+            key-positions = <5 15>; // Y H
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp CARET>;
         };
