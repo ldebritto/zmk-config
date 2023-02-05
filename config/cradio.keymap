@@ -156,7 +156,7 @@
             timeout-ms = <80>;
             key-positions = <9 19>; // P '
             layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp CARET>;
+            bindings = <&kp GRAVE>;
         };
     };
     
