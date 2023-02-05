@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// Hyper Space
+// Hyper Space - not in use
 #define HYPRSPC &mt LG(LC(LS(LALT))) SPC 
 
 // Bluetooth Profile Buttons (https://zmk.dev/docs/behaviors/bluetooth#bluetooth-pairing-and-profiles)
@@ -107,6 +107,12 @@
         };
         
         // macOS features combos
+        hyper_combo {
+            timeout-ms = <100>;
+            key-positions = <31 32>; // F J
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&sk LG(LC(LA(LSHIFT)))>;
+        };
         combo_spotlight_alfred {
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
