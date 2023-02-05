@@ -31,7 +31,7 @@
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
 #define WOOSHY LC(LS(SPC)) // App for mouseless operation (https://wooshy.app/)
 #define SCROLLA LG(LC(LS(SPC))) // App for mouseless scrolling (https://scrolla.app/)
-#define SW_WIN LG(LC(LS(SPC))) // Alfred Workflow switching to other open windows (https://scrolla.app/)
+#define SW_WIN LG(LC(LS(LA(SPC)))) // Alfred Workflow switching to other open windows (https://scrolla.app/)
 
 // Layer names
 #define DEF 0
@@ -137,6 +137,26 @@
             key-positions = <26 27>; // M ,
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&key_repeat>;
+        };
+        
+        // Acentos
+        combo_tilde {
+            timeout-ms = <80>;
+            key-positions = <5 15>; // T G
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp TILDE>;
+        };
+        combo_circ {
+            timeout-ms = <80>;
+            key-positions = <6 16>; // Y H
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp CARET>;
+        };
+        combo_grave {
+            timeout-ms = <80>;
+            key-positions = <9 19>; // P '
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp CARET>;
         };
     };
     
