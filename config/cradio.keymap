@@ -60,6 +60,7 @@
                     UNDERSCORE MINUS
                     SQT CARET TILDE GRAVE
                     K_CANCEL
+                    BACKSPACE DELETE
                 >;
     /delete-property/ ignore-modifiers;
 };
@@ -256,7 +257,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        HYPRSPC    &la_sym
+                                             &la_nav     &td_cw        &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
