@@ -193,6 +193,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp H>;
         };      
+
         // Bluetooth quick switches
         tdbt0: tap_dance_bt0 {
             compatible = "zmk,behavior-tap-dance";
@@ -201,21 +202,23 @@
             tapping-term-ms = <200>;
             bindings = <&act_bt0>, <&bt BT0>;
         };      
-        tdbt1: tap_dance_bt1 { // Quitting and hiding apps from Swapper in NAV
+        tdbt1: tap_dance_bt1 {
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH QUICKSWITCH BT1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&act_bt1>, <&bt BT1>;
         };      
-        tdbt2: tap_dance_bt2 { // Quitting and hiding apps from Swapper in NAV
+        tdbt2: tap_dance_bt2 {
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH QUICKSWITCH BT2";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&act_bt2>, <&bt BT2>;
         };      
-        swapper: swapper {// Got it from urob's repo as it's tri-state behavior is currently a PR on main ZMK
+
+        // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR on main ZMK
+        swapper: swapper {
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
@@ -264,30 +267,30 @@
         };
         // Bluetooth switch macros
         act_bt0: change_to_bt0_and_back_to_def {
-            label = "Activate BT0";
+            label = "Activate BT0 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT0>
                 , <&macro_tap &to DEF>
                 ;
         };
         act_bt1: change_to_bt1_and_back_to_def {
-            label = "Activate BT1";
+            label = "Activate BT1 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT1>
                 , <&macro_tap &to DEF>
                 ;
         };
         act_bt2: change_to_bt2_and_back_to_def {
-            label = "Activate BT2";
+            label = "Activate BT2 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT2>
                 , <&macro_tap &to DEF>
@@ -395,13 +398,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │          |
-            &none      &none      &none      &none      &tdbt0         &bt BT3    &none      &none      &none       &none
+            &none      &none      &none      &none      &act_bt0       &bt BT3    &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER
-          &bootloader  &none      &none      &none      &tdbt1         &bt BT4    &none      &none      &none     &bootloader
+          &bootloader  &none      &none      &none      &act_bt1       &bt BT4    &none      &none      &none     &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
-           &bt BT_CLR  &none      &none      &none      &tdbt2         &bt BT5     &none      &none      &none      &none 
+           &bt BT_CLR  &none      &none      &none      &act_bt2       &bt BT5     &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &to DEF         &to DEF    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
