@@ -201,14 +201,14 @@
             tapping-term-ms = <200>;
             bindings = <&act_bt0>, <&bt BT0>;
         };      
-        tdbt1: tap_dance_bt0 { // Quitting and hiding apps from Swapper in NAV
+        tdbt1: tap_dance_bt1 { // Quitting and hiding apps from Swapper in NAV
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH QUICKSWITCH BT1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&act_bt1>, <&bt BT1>;
         };      
-        tdbt2: tap_dance_bt0 { // Quitting and hiding apps from Swapper in NAV
+        tdbt2: tap_dance_bt2 { // Quitting and hiding apps from Swapper in NAV
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH QUICKSWITCH BT2";
             #binding-cells = <0>;
