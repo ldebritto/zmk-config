@@ -395,13 +395,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │          |
-            &none      &none      &none      &none      &bt BT0        &bt BT3    &none      &none      &none       &none
+            &none      &none      &none      &none      &tdbt0         &bt BT3    &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER
-          &bootloader  &none      &none      &none      &bt BT1        &bt BT4    &none      &none      &none     &bootloader
+          &bootloader  &none      &none      &none      &tdbt1         &bt BT4    &none      &none      &none     &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
-           &bt BT_CLR  &none      &none      &none      &bt BT2        &bt BT5     &none      &none      &none      &none 
+           &bt BT_CLR  &none      &none      &none      &tdbt2         &bt BT5     &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &to DEF         &to DEF    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
