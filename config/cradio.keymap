@@ -194,29 +194,6 @@
             bindings = <&kp Q>, <&kp H>;
         };      
 
-        // Bluetooth quick switches
-        tdbt0: tap_dance_bt0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH QUICKSWITCH BT0";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&act_bt0>, <&bt BT0>;
-        };      
-        tdbt1: tap_dance_bt1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH QUICKSWITCH BT1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&act_bt1>, <&bt BT1>;
-        };      
-        tdbt2: tap_dance_bt2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH QUICKSWITCH BT2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&act_bt2>, <&bt BT2>;
-        };      
-
         // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR on main ZMK
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";
