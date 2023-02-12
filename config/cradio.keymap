@@ -40,10 +40,11 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4 
-#define CON 5
-#define DEF2 6 // just to make DEF , and . keys avaliable on &num_word via &mo DEF2
-#define MOUSE 7
-#define SCROLL 8 
+#define FKE 5 
+#define CON 6
+#define DEF2 7 // just to make DEF , and . keys avaliable on &num_word via &mo DEF2
+#define MOUSE 8
+#define SCROLL 9 
 
 // Writing Symbols. Useful for writing PT-BR prose and legal stuff
 #define ORD_A LA(N9) // ª
@@ -353,8 +354,8 @@
         left_navigation_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │ CAPS     │   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    &sk CAPSLOCK   &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+        //│ TAB      │ Swapper  │ Prev. tab│ Next tab │          │   │          │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    &none          &none      &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │          │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   SK_HYPER       &none      &kp LARW   &kp DARW   &kp RARW   &kp ENTER
@@ -390,11 +391,28 @@
         //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ Vol down │   │ Vol up   │ CMD      │ SHIFT    │ ALT      │ CTRL     │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI  &kp C_VOL_DN  &kp C_VOL_UP &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ Bright Up│ B. Down  │ Expose   │ Spotlight│ Function │   │ Funcion  │ Prev     │ Play     │ Next     │ Mute     │
+        &kp C_BRI_UP &kp C_BRI_DN &kp F3     &kp F4     &sl FKE        &sl FKE   &kp C_PREV &kp C_PLAY &kp C_NEXT &kp C_MUTE
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans    &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        function_keys_row_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
-            &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
