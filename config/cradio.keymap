@@ -248,7 +248,7 @@
             label = "Activate BT0 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <200>;
             bindings
                 = <&macro_press &bt BT0>
                 , <&macro_release &bt BT0>
@@ -259,7 +259,7 @@
             label = "Activate BT1 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <200>;
             bindings
                 = <&macro_tap &bt BT1>
                 , <&macro_release &bt BT1> 
@@ -270,7 +270,7 @@
             label = "Activate BT2 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <200>;
             bindings
                 = <&macro_tap &bt BT2>
                 , <&macro_release &bt BT2>
