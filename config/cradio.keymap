@@ -14,7 +14,7 @@
 #define BT0 BT_SEL 0 // MacBook
 #define BT1 BT_SEL 1 // iPad
 #define BT2 BT_SEL 2 // iPhone
-#define BT3 BT_SEL 3 // Available
+#define BT3 BT_SEL 3 // piPoca
 #define BT4 BT_SEL 4 // Available
 #define BT5 BT_SEL 5 // Available
 
@@ -244,36 +244,63 @@
         };
         
         // Bluetooth switch macros
-        act_bt0: change_to_bt0_and_back_to_def {
+        act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
             label = "Activate BT0 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <200>;
             bindings
-                = <&macro_press &bt BT0>
-                , <&macro_release &bt BT0>
+                = <&macro_tap &bt BT0>
                 , <&macro_tap &to DEF>
                 ;
         };
-        act_bt1: change_to_bt1_and_back_to_def {
+        act_bt1: change_to_bt1_and_back_to_def { // iPad
             label = "Activate BT1 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <200>;
             bindings
                 = <&macro_tap &bt BT1>
-                , <&macro_release &bt BT1> 
                 , <&macro_tap &to DEF>
                 ;
         };
-        act_bt2: change_to_bt2_and_back_to_def {
+        act_bt2: change_to_bt2_and_back_to_def { // iPhone
             label = "Activate BT2 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <200>;
             bindings
                 = <&macro_tap &bt BT2>
-                , <&macro_release &bt BT2>
+                , <&macro_tap &to DEF>
+                ;
+        };
+        act_bt3: change_to_bt3_and_back_to_def { // iPhone
+            label = "Activate BT3 device";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <200>;
+            bindings
+                = <&macro_tap &bt BT3>
+                , <&macro_tap &to DEF>
+                ;
+        };
+        act_bt4: change_to_bt4_and_back_to_def { // iPhone
+            label = "Activate BT4 device";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <200>;
+            bindings
+                = <&macro_tap &bt BT4>
+                , <&macro_tap &to DEF>
+                ;
+        };
+        act_bt5: change_to_bt5_and_back_to_def { // iPhone
+            label = "Activate BT5 device";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <200>;
+            bindings
+                = <&macro_tap &bt BT5>
                 , <&macro_tap &to DEF>
                 ;
         };
