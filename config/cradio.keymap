@@ -395,7 +395,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI  &kp C_VOL_DN  &kp C_VOL_UP &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ Bright Up│ B. Down  │ Expose   │ Spotlight│ Function │   │ Funcion  │ Prev     │ Play     │ Next     │ Mute     │
-        &kp C_BRI_UP &kp C_BRI_DN &kp F3     &kp F4     &sl FKE        &sl FKE   &kp C_PREV &kp C_PLAY &kp C_NEXT &kp C_MUTE
+        &kp C_BRI_UP &kp C_BRI_DN &kp F3     &kp F4     &sl FKE        &sl FKE   &kp C_PREV &kp C_PP    &kp C_NEXT &kp C_MUTE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -454,7 +454,7 @@
             >;
         };
 
-        mouse_emulation_layer { // Access from NAV with ^ claw combo
+        mouse_emulation_layer { // from DEF, with Z;
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          |
@@ -471,7 +471,7 @@
             >;
         };
         
-        mouse_scroll_layer { // Access from NAV with ^ claw combo
+        mouse_scroll_layer { // from MOUSE holding '
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          |
