@@ -242,6 +242,7 @@
                 , <&macro_release &mo SYM>
                 ;
         };
+        
         // Bluetooth switch macros
         act_bt0: change_to_bt0_and_back_to_def {
             label = "Activate BT0 device";
@@ -249,7 +250,8 @@
             #binding-cells = <0>;
             wait-ms = <100>;
             bindings
-                = <&macro_tap &bt BT0>
+                = <&macro_press &bt BT0>
+                , <&macro_release &bt BT0>
                 , <&macro_tap &to DEF>
                 ;
         };
@@ -260,6 +262,7 @@
             wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT1>
+                , <&macro_release &bt BT1> 
                 , <&macro_tap &to DEF>
                 ;
         };
@@ -270,6 +273,7 @@
             wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT2>
+                , <&macro_release &bt BT2>
                 , <&macro_tap &to DEF>
                 ;
         };
