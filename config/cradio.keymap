@@ -394,8 +394,8 @@
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ Vol down │   │ Vol up   │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI  &kp C_VOL_DN  &kp C_VOL_UP &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ Bright Up│ B. Down  │ Expose   │ Spotlight│ Function │   │ Funcion  │ Prev     │ Play     │ Next     │ Mute     │
-        &kp C_BRI_UP &kp C_BRI_DN &kp F3     &kp F4     &sl FKE        &sl FKE   &kp C_PREV &kp C_PP    &kp C_NEXT &kp C_MUTE
+        //│ Brig Down│ Bright Up│ Expose   │ Spotlight│ Function │   │ Funcion  │ Prev     │ Play     │ Next     │ Mute     │
+        &kp C_BRI_DN &kp C_BRI_UP &kp F3     &kp F4     &sl FKE        &sl FKE   &kp C_PREV &kp C_PP    &kp C_NEXT &kp C_MUTE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
