@@ -42,9 +42,8 @@
 #define FUN 4 
 #define FKE 5 
 #define CON 6
-#define DEF2 7 // just to make DEF , and . keys avaliable on &num_word via &mo DEF2
-#define MOUSE 8
-#define SCROLL 9 
+#define MOUSE 7
+#define SCROLL 8 
 
 // Writing Symbols. Useful for writing PT-BR prose and legal stuff
 #define ORD_A LA(N9) // ª
@@ -147,26 +146,7 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
-        
-        // Acentos
-        combo_tilde {
-            timeout-ms = <80>;
-            key-positions = <4 14>; // T G
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp TILDE>;
-        };
-        combo_circ {
-            timeout-ms = <80>;
-            key-positions = <5 15>; // Y H
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp CARET>;
-        };
-        combo_grave {
-            timeout-ms = <80>;
-            key-positions = <9 19>; // P '
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp GRAVE>;
-        };
+
     };
     
     behaviors {
@@ -275,7 +255,7 @@
                 , <&macro_tap &to DEF>
                 ;
         };
-        act_bt3: change_to_bt3_and_back_to_def { // iPhone
+        act_bt3: change_to_bt3_and_back_to_def { // Raspberry Pi
             label = "Activate BT3 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -285,7 +265,7 @@
                 , <&macro_tap &to DEF>
                 ;
         };
-        act_bt4: change_to_bt4_and_back_to_def { // iPhone
+        act_bt4: change_to_bt4_and_back_to_def { // Empty
             label = "Activate BT4 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -295,7 +275,7 @@
                 , <&macro_tap &to DEF>
                 ;
         };
-        act_bt5: change_to_bt5_and_back_to_def { // iPhone
+        act_bt5: change_to_bt5_and_back_to_def { // Empty
             label = "Activate BT5 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -344,9 +324,9 @@
             &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N4     &kp N5     &kp N6     &kp ORD_O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ ,        │ 1        │ 2        │ 3        │ .        |
-            &trans     &trans     &trans     &trans      &trans        &kp COMMA  &kp N1     &kp N2     &kp N3     &kp DOT
+            &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &mo DEF2       &trans     &lt SYM N0
+                                             &trans     &trans         &trans     &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -437,23 +417,6 @@
             >;
         };
        
-        default_layer_again { // To work around the lack of access to DEF from NUM
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H     &kp J      &kp K      &kp L      &kp SQT 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-             &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        &kp SPC    &la_sym
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
         mouse_emulation_layer { // from DEF, with Z;
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
