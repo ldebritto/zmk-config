@@ -85,7 +85,7 @@
         };
         combo_navigate { 
             timeout-ms = <80>;
-            key-positions = <26 27 28>; // M , .
+            key-positions = <11 12 13>; // S D F
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
@@ -125,44 +125,44 @@
             layers = <FUN>; 
             bindings = <&act_bt0>;
         };
-        combo_bt1 {
+        combo_toggle_bt1_connection {
             timeout-ms = <80>;
             key-positions = <12 13>;
             layers = <FUN>; 
             bindings = <&act_bt1>;
         };
-        combo_bt2 {
+        combo_toggle_bt2_connection {
             timeout-ms = <80>;
             key-positions = <22 23>;
             layers = <FUN>; 
             bindings = <&act_bt2>;
         };
-        combo_bt3 {
+        combo_toggle_bt3_connection {
             timeout-ms = <80>;
             key-positions = <6 7>;
             layers = <FUN>; 
             bindings = <&act_bt3>;
         };
-        combo_bt4 {
+        combo_toggle_bt4_connection {
             timeout-ms = <80>;
             key-positions = <16 17>;
             layers = <FUN>; 
             bindings = <&act_bt4>;
         };
-        combo_bt5 {
+        combo_toggle_bt5_connection {
             timeout-ms = <80>;
             key-positions = <26 27>;
             layers = <FUN>; 
             bindings = <&act_bt5>;
         };
         // Bluetooth Profile Config
-        combo_bootloader_left {
+        combo_bootloader_on_the_left_side {
             timeout-ms = <80>;
             key-positions = <10 11>;
             layers = <FUN>; 
             bindings = <&bootloader>;
         };
-        combo_bootloader_right {
+        combo_bootloader_on_the_right_side {
             timeout-ms = <80>;
             key-positions = <18 19>;
             layers = <FUN>; 
