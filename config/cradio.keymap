@@ -116,37 +116,37 @@
         // Bluetooth toggles
         combo_bt0 {
             timeout-ms = <80>;
-            key-positions = <2 3>;
+            key-positions = <3 4>;
             layers = <FUN>; 
             bindings = <&act_bt0>;
         };
         combo_toggle_bt1_connection {
             timeout-ms = <80>;
-            key-positions = <12 13>;
+            key-positions = <13 14>;
             layers = <FUN>; 
             bindings = <&act_bt1>;
         };
         combo_toggle_bt2_connection {
             timeout-ms = <80>;
-            key-positions = <22 23>;
+            key-positions = <23 24>;
             layers = <FUN>; 
             bindings = <&act_bt2>;
         };
         combo_toggle_bt3_connection {
             timeout-ms = <80>;
-            key-positions = <6 7>;
+            key-positions = <5 6>;
             layers = <FUN>; 
             bindings = <&act_bt3>;
         };
         combo_toggle_bt4_connection {
             timeout-ms = <80>;
-            key-positions = <16 17>;
+            key-positions = <15 16>;
             layers = <FUN>; 
             bindings = <&act_bt4>;
         };
         combo_toggle_bt5_connection {
             timeout-ms = <80>;
-            key-positions = <26 27>;
+            key-positions = <25 26>;
             layers = <FUN>; 
             bindings = <&act_bt5>;
         };
@@ -154,23 +154,22 @@
         // Bluetooth Profile Config buttons
         combo_bootloader_on_the_left_side {
             timeout-ms = <80>;
-            key-positions = <10 11>;
+            key-positions = <0 1>;
             layers = <FUN>; 
             bindings = <&bootloader>;
         };
-        combo_bootloader_on_the_right_side { // Will not work to put the right side on bootloader mode. Not a big problem, since I can use the reset toggle, but something to check the Discord for help
-            timeout-ms = <80>;
-            key-positions = <18 19>;
-            layers = <FUN>; 
-            bindings = <&bootloader>;
-        };
+        // combo_bootloader_on_the_right_side { // Will not work to put the right side on bootloader mode. Not a big problem, since I can use the reset toggle, but something to check the Discord for help
+        //     timeout-ms = <80>;
+        //     key-positions = <8 9>;
+        //     layers = <FUN>; 
+        //     bindings = <&bootloader>;
+        // };
         combo_clear_current_bluetooth_profile {
             timeout-ms = <80>;
             key-positions = <20 21>;
             layers = <FUN>; 
             bindings = <&bootloader>;
-        };
-        
+        };        
     };
     
     behaviors {
