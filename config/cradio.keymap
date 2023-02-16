@@ -15,7 +15,7 @@
 // Media keys used on NAV
 #define ME_VOLD &kp C_VOL_DN
 #define ME_VOLU &kp C_VOL_UP
-#define ME_MUTE &kp C_MUTE
+// #define ME_MUTE &kp C_MUTE
 #define ME_PREV &kp C_PREV
 #define ME_PLAY &kp C_PP
 #define ME_NEXT &kp C_NEXT 
@@ -193,7 +193,7 @@
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPS>;
+            bindings = <&kp LSHFT>, <&caps_word>;
         };
         
         swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
@@ -353,14 +353,14 @@
         left_navigation_layer { // Experimenting with the removal
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ VOL. UP  │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ CAPS LOCK│   │ PG UP    │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    &kp CAPS        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   SK_HYPER       &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ BRIGHT UP│BRIGHT DWN│ BACK     │ FORWARD  | VOL. DOWN│   │ MUTE     │ PREVIOUS │PLAY/PAUSE│ NEXT     │ DELETE   │
-            ME_BRID    ME_BRIU    GO_BACK    GO_FWRD    ME_VOLD        ME_MUTE    ME_PREV    ME_PLAY    ME_NEXT    &kp DEL
+            ME_BRID    ME_BRIU    GO_BACK    GO_FWRD    ME_VOLD        ME_VOLU    ME_PREV    ME_PLAY    ME_NEXT    &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
