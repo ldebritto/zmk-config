@@ -15,8 +15,8 @@
 // Media keys used on NAV
 #define ME_VOLD &kp C_VOL_DN
 #define ME_VOLU &kp C_VOL_UP
-// #define ME_MUTE &kp C_MUTE
 #define ME_PREV &kp C_PREV
+#define ME_MUTE &kp C_MUTE
 #define ME_PLAY &kp C_PP
 #define ME_NEXT &kp C_NEXT 
 #define ME_BRID &kp C_BRI_DN
@@ -37,8 +37,7 @@
 #define NUM 1
 #define NAV 2
 #define SYM 3
-#define FUN 4 
-// #define CON 5
+#define FUN 4
 
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk {
@@ -70,13 +69,7 @@
                              |  30  |  31  |   |  32  |  33  |
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
-        // Layer combos
-        // combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
-        //     timeout-ms = <80>;
-        //     key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
-        //     layers = <NAV CON>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
-        //     bindings = <&to CON>;
-        // };
+        // Layer combos        
         combo_numword_layer_toggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
@@ -155,14 +148,15 @@
             layers = <FUN>; 
             bindings = <&act_bt5>;
         };
-        // Bluetooth Profile Config
+        
+        // Bluetooth Profile Config buttons
         combo_bootloader_on_the_left_side {
             timeout-ms = <80>;
             key-positions = <10 11>;
             layers = <FUN>; 
             bindings = <&bootloader>;
         };
-        combo_bootloader_on_the_right_side {
+        combo_bootloader_on_the_right_side { // Will not work to put the right side on bootloader mode. Not a big problem, since I can use the reset toggle, but something to check the Discord for help
             timeout-ms = <80>;
             key-positions = <18 19>;
             layers = <FUN>; 
@@ -354,15 +348,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ CAPS LOCK│   │ PG UP    │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    &kp CAPS        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    &kp CAPS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ HYPER    │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   SK_HYPER       &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ MUTE     │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_MUTE        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ BRIGHT UP│BRIGHT DWN│ BACK     │ FORWARD  | VOL. DOWN│   │ MUTE     │ PREVIOUS │PLAY/PAUSE│ NEXT     │ DELETE   │
             ME_BRID    ME_BRIU    GO_BACK    GO_FWRD    ME_VOLD        ME_VOLU    ME_PREV    ME_PLAY    ME_NEXT    &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         SK_HYPER   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -401,22 +395,5 @@
             >;
         };
         
-        // keyboard_config_layer { // Access from NAV with ^ claw combo
-        //     bindings = <
-        // //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        // //│          │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │          |
-        //     &none      &none      &none      &none      &act_bt0       &act_bt3   &none      &none      &none       &none
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER
-        //   &bootloader  &none      &none      &none      &act_bt1       &act_bt4   &none      &none      &none     &bootloader
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
-        //    &bt BT_CLR  &none      &none      &none      &act_bt2       &act_bt5   &none      &none      &none      &none 
-        // //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                      &trans     &to DEF         &to DEF    &trans
-        // //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-        //     >;
-        // };
-
     };
 };
