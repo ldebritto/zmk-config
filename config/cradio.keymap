@@ -139,14 +139,14 @@
             bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPS>;
         };
         
-        swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR on main ZMK
+        swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTabfs
         };
-        num_word: num_word_key { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+        num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD_KEY";
 			#binding-cells = <0>;
