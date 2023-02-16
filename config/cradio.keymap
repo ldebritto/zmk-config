@@ -337,7 +337,7 @@
         //│          │          │          │          │          │   │ ª        │ 4        │ 5        │ 6        │  º       │
             &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N4     &kp N5     &kp N6     &kp ORD_O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ ,        │ 1        │ 2        │ 3        │ .        |
+        //│          │          │          │ /        │ %        │   │ ,        │ 1        │ 2        │ 3        │ .        |
             &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &lt SYM N0
@@ -345,7 +345,7 @@
             >;
         };
         
-        left_navigation_layer { // Experimenting with the removal
+        left_navigation_layer { // Experimenting with the removal of CUT COPY and PASTE dedicated buttons in favor of media ones
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ CAPS LOCK│   │ PG UP    │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
