@@ -38,7 +38,7 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4 
-#define CON 5
+// #define CON 5
 
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk {
@@ -71,12 +71,12 @@
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
         // Layer combos
-        combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
-            timeout-ms = <80>;
-            key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
-            layers = <NAV CON>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
-            bindings = <&to CON>;
-        };
+        // combo_config_layer { // Hosts Bootoader and bluetooth profiles keyts in ZMK firmware
+        //     timeout-ms = <80>;
+        //     key-positions = <21 12 23>; // ^ shape in the botton midle of left hand
+        //     layers = <NAV CON>; // Only available in NAV layer to allow for left-handed activation and avoid trigger while typing in DEF
+        //     bindings = <&to CON>;
+        // };
         combo_numword_layer_toggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
@@ -118,6 +118,63 @@
             bindings = <&key_repeat>;
         };
 
+        // Bluetooth toggles
+        combo_bt0 {
+            timeout-ms = <80>;
+            key-positions = <2 3>;
+            layers = <FUN>; 
+            bindings = <&act_bt0>;
+        };
+        combo_bt1 {
+            timeout-ms = <80>;
+            key-positions = <12 13>;
+            layers = <FUN>; 
+            bindings = <&act_bt1>;
+        };
+        combo_bt2 {
+            timeout-ms = <80>;
+            key-positions = <22 23>;
+            layers = <FUN>; 
+            bindings = <&act_bt2>;
+        };
+        combo_bt3 {
+            timeout-ms = <80>;
+            key-positions = <6 7>;
+            layers = <FUN>; 
+            bindings = <&act_bt3>;
+        };
+        combo_bt4 {
+            timeout-ms = <80>;
+            key-positions = <16 17>;
+            layers = <FUN>; 
+            bindings = <&act_bt4>;
+        };
+        combo_bt5 {
+            timeout-ms = <80>;
+            key-positions = <26 27>;
+            layers = <FUN>; 
+            bindings = <&act_bt5>;
+        };
+        // Bluetooth Profile Config
+        combo_bootloader_left {
+            timeout-ms = <80>;
+            key-positions = <10 11>;
+            layers = <FUN>; 
+            bindings = <&bootloader>;
+        };
+        combo_bootloader_right {
+            timeout-ms = <80>;
+            key-positions = <18 19>;
+            layers = <FUN>; 
+            bindings = <&bootloader>;
+        };
+        combo_clear_current_bluetooth_profile {
+            timeout-ms = <80>;
+            key-positions = <20 21>;
+            layers = <FUN>; 
+            bindings = <&bootloader>;
+        };
+        
     };
     
     behaviors {
@@ -152,10 +209,9 @@
 			#binding-cells = <0>;
                         layers = <NUM>;                     // layer to be toggled
                         ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word
-			            continue-list =                     // keycodes that will not cancel &numword
+			            continue-list =                     // other keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS
-                                K_CANCEL
                             >;       
 		};
     };
@@ -294,7 +350,7 @@
             >;
         };
         
-        left_navigation_layer {
+        left_navigation_layer { // Experimenting with the removal
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ VOL. UP  │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
@@ -345,22 +401,22 @@
             >;
         };
         
-        keyboard_config_layer { // Access from NAV with ^ claw combo
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │          |
-            &none      &none      &none      &none      &act_bt0       &act_bt3   &none      &none      &none       &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER
-          &bootloader  &none      &none      &none      &act_bt1       &act_bt4   &none      &none      &none     &bootloader
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
-           &bt BT_CLR  &none      &none      &none      &act_bt2       &act_bt5   &none      &none      &none      &none 
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF         &to DEF    &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
+        // keyboard_config_layer { // Access from NAV with ^ claw combo
+        //     bindings = <
+        // //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        // //│          │          │          │          │PROFILE 0 │   │PROFILE 3 │          │          │          │          |
+        //     &none      &none      &none      &none      &act_bt0       &act_bt3   &none      &none      &none       &none
+        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        // //│BOOTLOADER│          │          │          │PROFILE 1 │   │PROFILE 4 │          │          │          │BOOTLOADER
+        //   &bootloader  &none      &none      &none      &act_bt1       &act_bt4   &none      &none      &none     &bootloader
+        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        // //│ CLEAR BT │          │          │          │PROFILE 2 │   │PROFILE 5 │          │          │          │
+        //    &bt BT_CLR  &none      &none      &none      &act_bt2       &act_bt5   &none      &none      &none      &none 
+        // //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                      &trans     &to DEF         &to DEF    &trans
+        // //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //     >;
+        // };
 
     };
 };
