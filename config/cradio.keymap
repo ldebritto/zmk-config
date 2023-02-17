@@ -171,6 +171,14 @@
             layers = <FUN>; 
             bindings = <&bootloader>;
         };        
+        
+        // Media Combos
+        combo_mute {
+            timeout-ms = <80>;
+            key-positions = <4 14>; // T G on NAV
+            layers = <NAV>; 
+            bindings = <&kp C_MUTE>;
+        };        
     };
     
     behaviors {
