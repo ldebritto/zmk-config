@@ -10,7 +10,7 @@
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
 #define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
 #define CO_NTAB &kp LC(TAB) // Next Tab
-#define SK_HYPER &sk LG(LC(LS(LALT))) // Sticky Hyper
+// #define SK_HYPER &sk LG(LC(LS(LALT))) // Sticky Hyper
 
 // Media keys used on NAV
 #define ME_VOLD &kp C_VOL_DN
@@ -334,13 +334,13 @@
         //│          │          │          │          │          │   │ DELETE   │ 7        │ 8        │ 9        │ BACKSPACE|
             &trans     &trans     &trans     &trans     &trans         &kp DEL    &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ ª        │ 4        │ 5        │ 6        │  º       │
-            &trans     &trans     &trans     &trans     &trans         &kp ORD_A  &kp N4     &kp N5     &kp N6     &kp ORD_O
+        //│          │          │          │          │          │   │ ,        │ 4        │ 5        │ 6        │ .        │
+            &kp ORD_A  &kp ORD_O  &trans     &trans     &trans         &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ /        │ %        │   │ ,        │ 1        │ 2        │ 3        │ .        |
-            &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp DOT
+        //│          │          │          │ /        │ %        │   │ 0        │ 1        │ 2        │ 3        │ .        |
+            &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp N0     &kp N1     &kp N2     &kp N3     &kp DOT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &lt SYM N0
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -348,7 +348,7 @@
         left_navigation_layer { // Experimenting with the removal of CUT COPY and PASTE dedicated buttons in favor of media ones
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ CAPS LOCK│   │ PG UP    │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ CAPS LOCK│   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
             &kp TAB    &swapper   CO_PTAB    CO_NTAB    &kp CAPS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ MUTE     │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
@@ -357,7 +357,7 @@
         //│ BRIGHT UP│BRIGHT DWN│ BACK     │ FORWARD  | VOL. DOWN│   │ VOL. UP  │ PREVIOUS │PLAY/PAUSE│ NEXT     │ DELETE   │
             ME_BRID    ME_BRIU    GO_BACK    GO_FWRD    ME_VOLD        ME_VOLU    ME_PREV    ME_PLAY    ME_NEXT    &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         SK_HYPER   &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -385,8 +385,8 @@
         //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ Vol down │   │ Vol up   │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI  &kp C_VOL_DN  &kp C_VOL_UP &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTRL     │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
