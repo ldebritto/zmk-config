@@ -359,14 +359,14 @@
         left_navigation_edit_and_media_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PREV     │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        ME_PREV    &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ PREV     │ UP       │ NEXT    │ BACKSPACE│
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_DN  ME_PREV    &kp UARW   ME_NEXT    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ MUTE     │   │ PLAY     │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_MUTE        ME_PLAY    &kp LARW   &kp DARW   &kp RARW   &kp ENTER
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ MUTE     │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_MUTE        &kp PG_UP  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | VOL. DOWN│   │ NEXT     │ NAV BACK │ FORWARD  │ CAPS     │ DELETE   │
-            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_VOLD        ME_NEXT    GO_BACK    GO_FWRD    &tdcaps    &kp DEL
+            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_VOLD        ME_PLAY    GO_BACK    GO_FWRD    &tdcaps    &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
