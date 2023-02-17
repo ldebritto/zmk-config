@@ -359,8 +359,8 @@
         left_navigation_edit_and_media_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PREV     │ HOME     │ UP       │ END      │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        ME_PREV    &kp HOME   &kp UARW   &kp END    &kp BSPC
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PREV     │ PG DOWN  │ UP       │ PG UP    │ BACKSPACE│
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        ME_PREV    &kp PG_DN  &kp UARW   &kp PG_UP  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ MUTE     │   │ PLAY     │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_MUTE        ME_PLAY    &kp LARW   &kp DARW   &kp RARW   &kp ENTER
