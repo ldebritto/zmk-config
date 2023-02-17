@@ -231,6 +231,7 @@
 			            continue-list =                     // other keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS
+                                K_CANCEL
                             >;       
 		};
     };
@@ -356,7 +357,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Exit     │          │ ª        │ º        │          │   │ DELETE   │ 7        │ 8        │ 9        │ BACKSPACE|
-            CANCEL     &trans     &kp ORD_A  &kp ORD_O     &trans         &kp DEL    &kp N7     &kp N8     &kp N9     &kp BSPC
+            &to DEF    &trans     &kp ORD_A  &kp ORD_O  &trans         &kp DEL    &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ ,        │ 4        │ 5        │ 6        │ .        │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &trans         &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOT
@@ -364,7 +365,7 @@
         //│          │          │          │ /        │ %        │   │ 0        │ 1        │ 2        │ 3        │ .        |
             &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp N0     &kp N1     &kp N2     &kp N3     &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     CANCEL         &trans     &lt SYM N0
+                                             &trans     &to DEF        &trans     &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
