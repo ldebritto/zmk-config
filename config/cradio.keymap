@@ -14,6 +14,7 @@
 #define CO_CUT &kp LG(X) 
 #define CO_COPY &kp LG(C) 
 #define CO_PASTE &kp LG(V) 
+#define CANCEL &kp K_CANCEL 
 // #define SK_HYPER &sk LG(LC(LS(LALT))) // Sticky Hyper
 
 // Media keys used on NAV
@@ -218,6 +219,7 @@
 			#binding-cells = <0>;
                         layers = <NUM>;                     // layer to be toggled
                         ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word
+                        ignore-modifiers;                   // modifiers won't deactivate the layer, hence &num_word
 			            continue-list =                     // other keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT SEMI SLASH MINUS
@@ -226,12 +228,12 @@
     };
     
     macros {
-        // Macros to allow for cancelling sticky behaviors with K_CANCEL taps, emulating Callum's cancel behavior found on QMK macros
+        // Macros to cancel sticky behaviors with a muted key tap, emulating from Callum's oneshot QMK macro
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <1>;
             bindings
                 = <&macro_press &mo NAV>
                 , <&macro_tap &kp K_CANCEL>
@@ -243,7 +245,7 @@
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <1>;
             bindings
                 = <&macro_press &mo SYM>
                 , <&macro_tap &kp K_CANCEL>
@@ -257,7 +259,7 @@
             label = "Activate BT0 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <200>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT_SEL 0>
                 , <&macro_tap &to DEF>
@@ -267,7 +269,7 @@
             label = "Activate BT1 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <200>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT_SEL 1>
                 , <&macro_tap &to DEF>
@@ -277,7 +279,7 @@
             label = "Activate BT2 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <200>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT_SEL 2>
                 , <&macro_tap &to DEF>
@@ -287,7 +289,7 @@
             label = "Activate BT3 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <200>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT_SEL 3>
                 , <&macro_tap &to DEF>
@@ -297,7 +299,7 @@
             label = "Activate BT4 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <200>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT_SEL 4>
                 , <&macro_tap &to DEF>
@@ -307,7 +309,7 @@
             label = "Activate BT5 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <200>;
+            wait-ms = <100>;
             bindings
                 = <&macro_tap &bt BT_SEL 5>
                 , <&macro_tap &to DEF>
@@ -346,7 +348,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ DELETE   │ 7        │ 8        │ 9        │ BACKSPACE|
-            &to DEF    &trans     &trans     &trans     &trans         &kp DEL    &kp N7     &kp N8     &kp N9     &kp BSPC
+            CANCEL     &trans   &trans     &trans     &trans         &kp DEL    &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ ,        │ 4        │ 5        │ 6        │ .        │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &trans         &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOT
@@ -354,7 +356,7 @@
         //│          │          │          │ /        │ %        │   │ 0        │ 1        │ 2        │ 3        │ .        |
             &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp N0     &kp N1     &kp N2     &kp N3     &kp ENTER
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF        &trans     &trans
+                                             &trans     CANCEL         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
