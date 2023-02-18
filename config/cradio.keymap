@@ -49,6 +49,7 @@
     };
 &sl {
         ignore-modifiers;
+        quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
 &caps_word {
     continue-list = <
