@@ -75,7 +75,7 @@
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
         // Layer combos        
-        combo_numword_toggle { 
+        combo_numword_atoggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
             layers = <DEF NUM>;
@@ -172,15 +172,7 @@
             key-positions = <28 29>;
             layers = <FUN>; 
             bindings = <&bootloader>;
-        };        
-        
-        // Media Combos
-        combo_mute {
-            timeout-ms = <80>;
-            key-positions = <4 14>; // T G on NAV
-            layers = <NAV>; 
-            bindings = <&kp C_MUTE>;
-        };        
+        };
     };
     
     behaviors {
@@ -194,6 +186,7 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        
         td_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
@@ -201,7 +194,8 @@
             tapping-term-ms = <300>;
             bindings = <&sk LSHFT>, <&caps_word>;
         };
-        next_prev: tap_dance_media_next_prev {
+        
+        nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
             #binding-cells = <0>;
@@ -216,6 +210,7 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTabfs
         };
+        
         num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD_KEY";
@@ -352,7 +347,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │          |
-            &trans     &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &trans
+            &to DEF    &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ -        │          │          │          │          │   │ ,        │ 4        │ 5        │ 6        │ .        │
             &kp MINUS  &trans     &trans     &trans     &trans         &kp COMMA  &kp N4     &kp N5     &kp N6     &kp DOT
@@ -371,13 +366,13 @@
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ BACKSPACE│ UP       │ DELETE   │ BACKSPACE│
             &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp BSPC   &kp UARW   &kp DEL    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ MUTE     │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL DOWN │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | VOL. DOWN│   │ NEXT/PREV│ NAV BACK │ FORWARD  │ CAPS     │ DELETE   │
-            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &next_prev GO_BACK    GO_FWRD    &kp CAPS   &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    |PLAY/PAUSE│   │ NEXT/PREV│ NAV BACK │ FORWARD  │ CAPS     │ DELETE   │
+            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &kp CAPS   &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     ME_MUTE        &trans     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
