@@ -47,9 +47,9 @@
         release-after-ms = <5000>; // Default is 1000 ms
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
-&sl {  // sticky-layer config
-    ignore-modifiers;
-};
+&sl {
+        ignore-modifiers;
+    };
 &caps_word {
     continue-list = <
                     UNDERSCORE MINUS
@@ -75,7 +75,7 @@
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
         // Layer combos        
-        combo_numword_layer_toggle { 
+        combo_numword_toggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
             layers = <DEF NUM>;
@@ -343,7 +343,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        &kp SPC    &la_sym
+                                             &la_nav     &td_cw        &kp SPC    &sl SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
