@@ -29,8 +29,6 @@
 // Aditional Writing Symbols
 #define PARAG LA(N6) // §
 
-// Layers
-
 // Layer names
 #define DEF 0
 #define NUM 1
@@ -41,10 +39,6 @@
 // Custom &sk settings to allow for better handling of Callum Style mods
 &sk {
         release-after-ms = <5000>; // Default is 1000 ms
-        quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
-    };
-&sl {
-        ignore-modifiers;
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
 &caps_word {
@@ -72,7 +66,7 @@
                              ╰──────┴──────╯   ╰──────┴──────╯ */
     
         // Layer combos        
-        combo_numword_atoggle { 
+        combo_numword_toggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
             layers = <DEF NUM>;
@@ -105,6 +99,7 @@
             bindings = <&kp SCROLLA>;
         };
         
+        // Media
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>; // T G
@@ -165,12 +160,6 @@
             layers = <FUN>; 
             bindings = <&bootloader>;
         };
-        // combo_bootloader_on_the_right_side { // Doesn't work to put the right side on bootloader mode. Not a big problem, since I can use the reset toggle, but something to check the Discord for help
-        //     timeout-ms = <80>;
-        //     key-positions = <8 9>;
-        //     layers = <FUN>; 
-        //     bindings = <&bootloader>;
-        // };
         combo_clear_current_bluetooth_profile {
             timeout-ms = <80>;
             key-positions = <28 29>;
@@ -180,18 +169,18 @@
     };
     
     behaviors {
-        ht: hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb. Reconsidering it, though
+        ht: hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <400>; // Terms hugely favor 
-            quick-tap-ms = <300>;
+            tapping-term-ms = <280>; // Terms hugely favors taps
+            quick-tap-ms = <280>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
         
-        td_cw: tap_dance_caps_word {
+        shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
@@ -337,12 +326,12 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H     &kp J      &kp K      &kp L      &kp SQT 
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-             &kp Z      &kp X      &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav     &td_cw        &kp SPC    &la_sym
+                                             &la_nav     &shift_cw     &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
