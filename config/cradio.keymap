@@ -109,6 +109,13 @@
             bindings = <&kp SCROLLA>;
         };
         
+        combo_mute {
+            timeout-ms = <80>;
+            key-positions = <4 14>; // T G
+            layers = <NAV>; // Only available in the NAV layer
+            bindings = <&kp C_MUTE>;
+        };
+        
         // ZMK features
         combo_key_repeat {
             timeout-ms = <80>;
