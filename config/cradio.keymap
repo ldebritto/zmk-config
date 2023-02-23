@@ -62,13 +62,15 @@
         // Layer combos        
         combo_numword_toggle { 
             timeout-ms = <80>;
-            key-positions = <16 17 18>; // J K L / 4 5 6
+            key-positions = <6 7 8>; // U I O
+            // key-positions = <16 17 18>; // J K L / 4 5 6
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
         combo_navigate { 
             timeout-ms = <80>;
-            key-positions = <11 12 13>; // S D F
+            key-positions = <1 2 3>; // W E R
+            // key-positions = <11 12 13>; // S D F
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
@@ -83,15 +85,16 @@
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <1 2 3>; // W E R
+            key-positions = <21 22 23>; // X C V
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
         };
-        combo_scrolla {
+        /* combo_scrolla {
             timeout-ms = <80>;
             key-positions = <6 7 8>; // U I O
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp SCROLLA>;
-        };
+        }; */
         
         // Media
         combo_mute {
