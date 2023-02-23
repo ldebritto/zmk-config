@@ -6,7 +6,6 @@
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LCTRL k1 &ht LALT k2  &ht LSHFT k3 &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
-#define TMT(k1,k2,k3,k4) &lt NAV k1  &ht LSHFT k2 &ht S(C(G(RALT))) k3  &lt SYM k4
 
 // Nav layer special command buttons
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
@@ -329,7 +328,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &mt A(C(G(LSHFT))) SPC    &la_sym
+                                             &la_nav    &shift_cw      &ht A(C(G(LSHFT))) SPC    &la_sym
                                              // &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
