@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &lh_pht LCTRL k1 &lh_pht LALT k2  &lh_pht LSHFT k3 &lh_pht LGUI k4
-#define HRMR(k1,k2,k3,k4) &rh_pht RGUI k1  &rh_pht RSHFT k2 &rh_pht RALT k3  &rh_pht RCTRL k4
+#define HRML(k1,k2,k3,k4) &ht LCTRL k1 &ht LALT k2  &ht LSHFT k3 &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
 
 // Hyper
 #define HYPER LG(LC(LS(LALT)))
@@ -362,7 +362,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                    &lt NAV TAB   &ht LSHFT ENTER      &ht HYPER SPC    &lt NAV BSPC
+                                    &lt NAV TAB   &ht LSHFT ENTER      &ht HYPER SPC    &lt SYM BSPC
                                         // &la_nav    &shift_cw      &ht HYPER SPC    &la_sym
                                              // &la_nav    &shift_cw     &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
