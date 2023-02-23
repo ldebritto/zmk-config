@@ -5,7 +5,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &lh_pht LCTRL k1 &&lh_pht LALT k2  &lh_pht LSHFT k3 &lh_pht LGUI k4
-#define HRMR(k1,k2,k3,k4) &lh_pht RGUI k1  &&lh_pht RSHFT k2 &lh_pht RALT k3  &lh_pht RCTRL k4
+#define HRMR(k1,k2,k3,k4) &rh_pht RGUI k1  &&rh_pht RSHFT k2 &rh_pht RALT k3  &rh_pht RCTRL k4
 
 // Hyper
 #define HYPER LG(LC(LS(LALT)))
