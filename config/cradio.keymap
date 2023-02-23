@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LCTRL k1 &ht LALT k2  &ht LSHFT k3 &ht LGUI k4
+#define HRML(k1,k2,k3,k4) &lh_pht LCTRL k1 &lh_pht LALT k2  &lh_pht LSHFT k3 &lh_pht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
 
 // Hyper
@@ -180,6 +180,21 @@
             bindings = <&kp>, <&kp>;
         };
         
+        lh_pht: left_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <
+             5  6  7  8  9 
+            15 16 17 18 19 
+            25 26 27 28 29 
+            31 32>;    // <---[[right-hand keys]]
+        };
+
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
