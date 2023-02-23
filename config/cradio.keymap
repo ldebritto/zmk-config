@@ -168,6 +168,7 @@
     };
     
     behaviors {
+        
         ht: hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
@@ -178,7 +179,8 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-        lh_pht: left_hand_positional_hold_tap {
+        
+        lh_pht: left_hand_positional_hold_tap { // Trying to make home row mods work better
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
@@ -192,6 +194,7 @@
             25 26 27 28 29 
             31 32>;    // <---[[right-hand keys]]
         };
+        
         rh_pht: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "RIGHT_POSITIONAL_HOLD_TAP";
@@ -206,6 +209,7 @@
             20 21 22 23 24
             31 32>;    // <---[[left-hand keys]]
         };
+        
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
