@@ -222,7 +222,7 @@
 			#binding-cells = <0>;
                         layers = <NUM>;                     // layer to be toggled
                         ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word
-                        ignore-modifiers;                   // modifiers won't deactivate the layer, hence &num_word
+                        // ignore-modifiers;                   // modifiers won't deactivate the layer, hence &num_word
 			            continue-list =                     // other keycodes that will not cancel &numword
                             <   BACKSPACE DELETE 
                                 DOT COMMA SQT DQT COLON SEMICOLON SLASH MINUS
@@ -350,7 +350,7 @@
             >;
         };
         
-        numword_layer { // Accessed through combo in DEF, positioned here to allow for access on every other layer bellow
+        numword_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │          |
