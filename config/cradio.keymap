@@ -68,10 +68,23 @@
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
+        combo_thumb_navigate { 
+            timeout-ms = <80>;
+            key-positions = <11 12 13>; // S D F
+            layers = <DEF NAV>;
+            bindings = <&tog NAV>;
+        };
         
         combo_numword_toggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
+            layers = <DEF NUM>;
+            bindings = <&num_word>;
+        };
+        
+        combo_thumb_numword_toggle { 
+            timeout-ms = <80>;
+            key-positions = <32 33>; // J K L / 4 5 6
             layers = <DEF NUM>;
             bindings = <&num_word>;
         };
@@ -378,7 +391,7 @@
             &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
+            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH    &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
