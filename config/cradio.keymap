@@ -70,7 +70,7 @@
         };
         combo_thumb_navigate { 
             timeout-ms = <80>;
-            key-positions = <11 12 13>; // S D F
+            key-positions = <30 31>; // S D F
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
