@@ -20,7 +20,6 @@
 #define CO_COPY &kp LG(C) 
 #define CO_PASTE &kp LG(V) 
 #define CANCEL &kp K_CANCEL 
-// #define SK_HYPER &sk HYPER // Sticky Hyper
 
 // Media keys used on NAV
 #define ME_VOLD &kp C_VOL_DN
@@ -221,10 +220,11 @@
 			label = "NUM_WORD_KEY";
 			#binding-cells = <0>;
                         layers = <NUM>;                     // layer to be toggled
-                        ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word
+                        // ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word       // opted to add them to continue list in order to not have % continue this function
                         // ignore-modifiers;                   // modifiers won't deactivate the layer, hence &num_word
 			            continue-list =                     // other keycodes that will not cancel &numword
-                            <   BACKSPACE DELETE 
+                            <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
+                                BACKSPACE DELETE 
                                 DOT COMMA SQT DQT COLON SEMICOLON SLASH MINUS
                                 K_CANCEL
                             >;       
