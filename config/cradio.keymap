@@ -228,7 +228,15 @@
                                 DOT COMMA SQT DQT COLON SEMICOLON SLASH MINUS
                                 K_CANCEL
                             >;       
-		};
+		 
+        };
+        numword_sym: behavior_hold_tap_sym_num {
+            compatible = "zmk,behavior-hold_tap";
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            bindings = <&la_sym>, <&num_word>;
+        };
+        
     };
     
     macros {
@@ -330,15 +338,6 @@
     };
 
 
-    ZMK_BEHAVIOR(num_layer_word, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&la_sym>, <&num_word>;
-    )
-    
-    # define NUM_SYM &num_layer_word SYM 0
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -354,7 +353,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw    &ht HYPER SPC  NUM_SYM
+                                             &la_nav    &shift_cw    &ht HYPER SPC  &numword_sym
                                              // &la_nav    &shift_cw    &ht HYPER SPC  &la_sym
                                              // &la_nav    &shift_cw     &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
