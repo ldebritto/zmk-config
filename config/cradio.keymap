@@ -232,6 +232,8 @@
         };
         numword_sym: behavior_hold_tap_sym_num {
             compatible = "zmk,behavior-hold_tap";
+            label = "NUMWORD_SYM";
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
             bindings = <&la_sym>, <&num_word>;
