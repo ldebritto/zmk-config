@@ -190,6 +190,15 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        
+        hpht: hold_preferred_hold_tap { // Trying this instead of my macro combos
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <350>; // Terms hugely favors taps
+            bindings = <&kp>, <&kp>;
+        };
 
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
@@ -225,18 +234,10 @@
 			            continue-list =                     // other keycodes that will not cancel &numword
                             <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
                                 BACKSPACE DELETE 
-                                DOT COMMA SQT DQT COLON SEMICOLON SLASH MINUS
-                                K_CANCEL
+                                DOT COMMA SQT DQT COLON SEMICOLON 
+                                SLASH MINUS PLUS ASTRK EQUAL
                             >;       
 		 
-        };
-        numword_sym: behavior_hold_tap_sym_num {
-            compatible = "zmk,behavior-hold_tap";
-            label = "NUMWORD_SYM";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-            bindings = <&la_sym>, <&num_word>;
         };
         
     };
@@ -355,7 +356,8 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw    &ht HYPER SPC  &numword_sym
+                                         &hpht NAV K_CANCEL &shift_cw    &ht HYPER SPC  &hpht SYM K_CANCEL
+                                             // &la_nav    &shift_cw    &ht HYPER SPC  &numword_sym
                                              // &la_nav    &shift_cw    &ht HYPER SPC  &la_sym
                                              // &la_nav    &shift_cw     &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -368,7 +370,7 @@
         //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │          |
             &to DEF    &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │          │          │          │          │   │ ,        │ 4        │ 5        │ 6        │ .        │
+        //│ -        │          │          │          │          │   │ ,        │ 4        │ 5        │ 6        │ 0        │
             &kp MINUS  &trans     &trans     &trans     &trans         &kp COMMA  &kp N4     &kp N5     &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ /        │ %        │   │ .        │ 1        │ 2        │ 3        │ :        |
