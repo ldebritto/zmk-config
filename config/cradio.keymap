@@ -181,7 +181,7 @@
             timeout-ms = <80>;
             key-positions = <28 29>;
             layers = <FUN>; 
-            bindings = <&bootloader>;
+            bindings = <&bt BT_CLR>;
         };
     };
     
