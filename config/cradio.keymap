@@ -273,7 +273,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&la_sym>, <&num_word>;
-        };        
+        };
     };
     
     macros {
