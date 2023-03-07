@@ -206,6 +206,22 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         
+        td_num_sym: tap_dance_num_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CAPS_WORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&la_sym>, <&num_word>;
+        };
+        
+        td_nav: tap_dance_num_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CAPS_WORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&la_nav>, <&num_word>;
+        };
+        
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
@@ -249,7 +265,14 @@
                             >;       
 		 
         };
-        
+        num_sym: behavior_num_sym {
+            compatible = "zmk,behavior-hold-tap";
+            label = "num_sym";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&num_word>;
+        };        
     };
     
     macros {
@@ -364,7 +387,8 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+                                             &la_nav    &shift_cw      &kp SPC    &num_sym SYM
+                                            //  &la_nav    &shift_cw      &kp SPC    &la_sym
 //                                             &la_nav    &shift_cw    &ht HYPER SPC  &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
