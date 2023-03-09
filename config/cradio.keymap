@@ -266,6 +266,15 @@
 		 
         };
         
+        nav_tap: behavior_nav_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "nav_tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&la_nav>, <&kp>;
+        };
+
         numword_sym: behavior_num_sym {
             compatible = "zmk,behavior-hold-tap";
             label = "num_sym";
@@ -388,7 +397,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw     &mt HYPER SPC  &numword_sym SYM 0
+                                        &nav_tap NAV BSPC &shift_cw   &mt HYPER SPC &numword_sym SYM 0
                                             //  &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
