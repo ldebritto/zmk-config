@@ -106,7 +106,7 @@
         combo_spotlight_alfred {
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
-            layers = <DEF>; // Only available in the DEF layer
+            layers = <DEF DHRM>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
         
@@ -213,7 +213,7 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         
-        /* td_num_sym: tap_dance_num_word {
+        /* td_numword_sym: tap_dance_num_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NUM_SYM";
             #binding-cells = <0>;
