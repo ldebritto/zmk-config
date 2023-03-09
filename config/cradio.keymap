@@ -43,10 +43,11 @@
 
 // Layer names
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
+#define DHRM 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
 
 &sk { // Custom &sk settings to allow for better handling of Callum Style mods
         release-after-ms = <5000>; // Default is 1000 ms
@@ -92,6 +93,13 @@
             timeout-ms = <80>;
             key-positions = <32 33>; // J K L / 4 5 6
             layers = <DEF NUM>;
+            bindings = <&num_word>;
+        };
+
+        combo_enable_disable_homerow_mods { 
+            timeout-ms = <80>;
+            key-positions = <10 19>; // A "
+            layers = <FU>;
             bindings = <&num_word>;
         };
 
@@ -393,6 +401,23 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        default_layer_with_homerow_mods_and_mod_taps {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+            HRML (A,    S,         D,         F)         &kp G          &kp H      HRMR (J,   K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
