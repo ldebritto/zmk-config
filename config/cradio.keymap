@@ -70,7 +70,7 @@
         combo_navigate { 
             timeout-ms = <80>;
             key-positions = <11 12 13>; // S D F
-            layers = <DEF DHRM NAV>;
+            layers = <DEF NAV>;
             bindings = <&nav_word>;
         };
         
@@ -84,7 +84,7 @@
         combo_numword_toggle { 
             timeout-ms = <80>;
             key-positions = <16 17 18>; // J K L / 4 5 6
-            layers = <DEF DHRM NUM>;
+            layers = <DEF NUM>;
             bindings = <&num_word>;
         };
         
