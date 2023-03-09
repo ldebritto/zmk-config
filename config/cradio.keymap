@@ -100,7 +100,7 @@
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FU>;
-            bindings = <&num_word>;
+            bindings = <&tog DHRM>;
         };
 
         // macOS features combos
