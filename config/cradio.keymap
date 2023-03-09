@@ -98,7 +98,7 @@
         combo_enable_disable_homerow_mods { 
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
-            layers = <FU>;
+            layers = <FUN>;
             bindings = <&tog DHRM>;
         };
 
@@ -422,7 +422,6 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                         &nav_tap NAV BSPC &shift_cw   &mt HYPER SPC &numword_sym SYM 0
-                                            //  &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
