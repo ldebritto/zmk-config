@@ -33,7 +33,6 @@
 // macOS specific combinations
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
 #define SHTCAT LC(LS(SPC)) // App for mouseless operation
-#define SCROLLA LG(LC(LS(SPC))) // App for mouseless scrolling (https://scrolla.app/)
 
 // Aditional Writing Symbols
 #define PARAG LA(N6) // §
@@ -82,17 +81,11 @@
         
         combo_shortcat {
             timeout-ms = <80>;
-            key-positions = <1 2 3>; // W E R
+            key-positions = <12 17>; // D K
             layers = <DEF DHRM>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
         };
-        combo_scrolla {
-            timeout-ms = <80>;
-            key-positions = <6 7 8>; // U I O
-            layers = <DEF DHRM>; // Only available in the DEF layer
-            bindings = <&kp SCROLLA>;
-        };
-        
+
         // Media
         combo_mute {
             timeout-ms = <80>;
@@ -101,14 +94,6 @@
             bindings = <&kp C_MUTE>;
         };
         
-        // ZMK features
-        combo_key_repeat {
-            timeout-ms = <80>;
-            key-positions = <26 27 28>; // M , .
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&key_repeat>;
-        };
-
         // Bluetooth toggles
         combo_bt0 {
             timeout-ms = <80>;
@@ -148,7 +133,7 @@
         };
         
         // Bluetooth Profile Config buttons
-        combo_bootloader_on_the_left_side {
+        combo_bootloader_on_the_left_side { // Couldn't find a way to trigger for the same behavior for right side as a combo
             timeout-ms = <80>;
             key-positions = <20 21>;
             layers = <FUN>; 
@@ -401,8 +386,8 @@
         left_navigation_edit_and_media_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ BACKSPACE│ UP       │ DELETE   │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp BSPC   &kp UARW   &kp DEL    &kp BSPC
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ ALFRED   │ UP       │ SHORTCAT │ BACKSPACE│
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp ALFRED &kp UARW   &kp SHTCAT &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL DOWN │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
