@@ -201,7 +201,16 @@
             flavor = "tap-preferred";
             tapping-term-ms = <350>; // Terms hugely favors taps
             quick-tap-ms = <280>;
-            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        
+        tht: thumb_space_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <450>; // Terms hugely favors taps
+            quick-tap-ms = <400>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -421,7 +430,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &nav_tap NAV BSPC &shift_cw   &mt HYPER SPC &numword_sym SYM 0
+                                        &nav_tap NAV BSPC &shift_cw   &tht HYPER SPC &numword_sym SYM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
