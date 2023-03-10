@@ -8,11 +8,7 @@
 // Home row mods definitions
 #define HRML(k1,k2,k3,k4) &ht LCTRL k1 &ht LALT k2  &ht LSHFT k3 &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
-
-// Also needs to add this to the home row in keymap bellos
         //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
-
-# define THUMB_MOD_TAP_CLUSTER 
 
 // Hyper
 #define HYPER LG(LC(LS(LALT)))
@@ -233,30 +229,14 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         
-        enter_cw: tap_dance_enter_caps_word {
+        shift_enter_cw: tap_dance_enter_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_ENTER_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp ENTER>, <&caps_word>;
+            bindings = <&mt SHIFT ENTER>, <&caps_word>;
         };
-        
-        /* td_numword_sym: tap_dance_num_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_NUM_SYM";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&la_sym>, <&num_word>;
-        };
-        
-        td_nav: tap_dance_nav_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_NAV_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&la_nav>, <&num_word>;
-        }; */
-        
+    
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
@@ -273,6 +253,28 @@
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTabfs
         };
         
+        nav_word: behavior_nav_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+			compatible = "zmk,behavior-caps-word";
+			label = "NAV_WORD_KEY";
+			#binding-cells = <0>;
+                        layers = <NAV>;                     // layer to be toggled
+                        ignore-modifiers;                   // modifiers won't deactivate the layer
+			            continue-list =                     // other keycodes that will not cancel &numword
+                            <   UARW DARW LARW RARW
+                                PG_DN PG_UP
+                            >;       
+		 
+        };
+
+        nav_tap: behavior_nav_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "nav_tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&la_nav>, <&kp>;
+        };
+
         num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD_KEY";
@@ -288,28 +290,6 @@
                             >;       
 		 
         };
-        nav_word: behavior_nav_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
-			compatible = "zmk,behavior-caps-word";
-			label = "NAV_WORD_KEY";
-			#binding-cells = <0>;
-                        layers = <NAV>;                     // layer to be toggled
-                        ignore-modifiers;                   // modifiers won't deactivate the layer
-			            continue-list =                     // other keycodes that will not cancel &numword
-                            <   UARW DARW LARW RARW
-                                PG_DN PG_UP
-                            >;       
-		 
-        };
-        
-        nav_tap: behavior_nav_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "nav_tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&la_nav>, <&kp>;
-        };
-
         numword_sym: behavior_num_sym {
             compatible = "zmk,behavior-hold-tap";
             label = "num_sym";
@@ -449,7 +429,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                    &nav_tap NAV BSPC &thp SHIFT 0     &tht HYPER SPC &numword_sym SYM 0
+                                    &nav_tap NAV BSPC &shift_enter_cw  &tht HYPER SPC &numword_sym SYM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
