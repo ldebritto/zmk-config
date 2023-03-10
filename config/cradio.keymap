@@ -219,14 +219,6 @@
             tapping-term-ms = <300>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
-        
-        shift_enter_cw: tap_dance_enter_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_ENTER_CAPS_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&mt LSHIFT ENTER>, <&caps_word>;
-        };
     
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
@@ -420,7 +412,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                    &nav_tap NAV BSPC &shift_enter_cw  &tht HYPER SPC &numword_sym SYM 0
+                                             &la_nav    &shift_cw     &tht HYPER SPC &numword_sym SYM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
