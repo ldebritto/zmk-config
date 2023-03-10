@@ -12,6 +12,8 @@
 // Also needs to add this to the home row in keymap bellos
         //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
 
+# define THUMB_MOD_TAP_CLUSTER 
+
 // Hyper
 #define HYPER LG(LC(LS(LALT)))
 
@@ -205,7 +207,7 @@
         };
         
         tht: thumb_space_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
-            label = "hold_tap";
+            label = "space_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -215,12 +217,12 @@
         };
         
         thp: thumb_shift_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
-            label = "hold_tap";
+            label = "shift_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <250>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>, <&enter_cw>;
         };
 
         shift_cw: tap_dance_caps_word {
@@ -229,6 +231,14 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp LSHFT>, <&caps_word>;
+        };
+        
+        enter_cw: tap_dance_enter_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ENTER_CAPS_WORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp ENTER>, <&caps_word>;
         };
         
         /* td_numword_sym: tap_dance_num_word {
@@ -439,7 +449,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                &nav_tap NAV BSPC &thp SHIFT ENTER   &tht HYPER SPC &numword_sym SYM 0
+                                    &nav_tap NAV BSPC &thp SHIFT 0     &tht HYPER SPC &numword_sym SYM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
