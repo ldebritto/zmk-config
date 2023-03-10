@@ -10,7 +10,7 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
         //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
 
-// Hyper
+// Hyper mod
 #define HYPER LG(LC(LS(LALT)))
 
 // Nav layer special command buttons
@@ -190,7 +190,7 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
-            ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTabfs
+            ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTab
         };
         
         nav_word: behavior_nav_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
@@ -246,6 +246,7 @@
                 , <&macro_release &mo NAV>
                 ;
         };
+    
         la_sym: cancel_queued_os_mods_and_toggle_sym {
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
