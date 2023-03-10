@@ -202,7 +202,7 @@
             bindings = <&kp>, <&kp>;
         };
         
-        tht: thumb_space_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
+        tht: thumb_space_hold_tap { // For better hyperspace activation
             label = "space_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -249,15 +249,6 @@
 		 
         };
 
-        nav_tap: behavior_nav_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "nav_tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&la_nav>, <&kp>;
-        };
-
         num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD_KEY";
@@ -273,6 +264,7 @@
                             >;       
 		 
         };
+
         numword_sym: behavior_num_sym {
             compatible = "zmk,behavior-hold-tap";
             label = "num_sym";
