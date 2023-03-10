@@ -225,7 +225,7 @@
             label = "TAP_DANCE_ENTER_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&mt SHIFT ENTER>, <&caps_word>;
+            bindings = <&mt LSHIFT ENTER>, <&caps_word>;
         };
     
         nextprev: tap_dance_media_next_prev {
