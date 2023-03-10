@@ -213,6 +213,15 @@
             quick-tap-ms = <400>;
             bindings = <&kp>, <&kp>;
         };
+        
+        thp: thumb_shift_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&kp>;
+        };
 
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
@@ -425,12 +434,12 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
+            HRML(A,     S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,        SQT) 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &nav_tap NAV BSPC &shift_cw   &tht HYPER SPC &numword_sym SYM 0
+                                &nav_tap NAV BSPC &thp SHIFT ENTER   &tht HYPER SPC &numword_sym SYM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
