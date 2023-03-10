@@ -212,15 +212,6 @@
             bindings = <&kp>, <&kp>;
         };
         
-        thp: thumb_shift_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
-            label = "shift_hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&kp>, <&enter_cw>;
-        };
-
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
