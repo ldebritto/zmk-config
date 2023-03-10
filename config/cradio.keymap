@@ -65,35 +65,7 @@
         compatible = "zmk,combos";
         
         // Layer combos        
-        combo_navigate { 
-            timeout-ms = <80>;
-            key-positions = <11 12 13>; // S D F
-            layers = <DEF NAV>;
-            bindings = <&nav_word>;
-        };
-        
-        combo_thumb_navigate { 
-            timeout-ms = <80>;
-            key-positions = <30 31>; // S D F
-            layers = <DEF DHRM NAV>;
-            bindings = <&nav_word>;
-        };
-        
-        combo_numword_toggle { 
-            timeout-ms = <80>;
-            key-positions = <16 17 18>; // J K L / 4 5 6
-            layers = <DEF NUM>;
-            bindings = <&num_word>;
-        };
-        
-        combo_thumb_numword_toggle { 
-            timeout-ms = <80>;
-            key-positions = <32 33>; // J K L / 4 5 6
-            layers = <DEF DHRM NUM>;
-            bindings = <&num_word>;
-        };
-
-        combo_enable_disable_homerow_mods { 
+        combo_enable_disable_homerow_mods_layer { 
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN>;
@@ -124,7 +96,7 @@
         // Media
         combo_mute {
             timeout-ms = <80>;
-            key-positions = <4 14>; // Vol up + down
+            key-positions = <4 14>; // Vol up + down keys
             layers = <NAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
         };
