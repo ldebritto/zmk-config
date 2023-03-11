@@ -156,6 +156,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <350>; // Terms hugely favors taps
             quick-tap-ms = <280>;
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
         
@@ -166,6 +167,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <450>; // Terms hugely favors taps
             quick-tap-ms = <400>;
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
         
