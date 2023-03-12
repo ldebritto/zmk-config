@@ -171,6 +171,16 @@
             bindings = <&kp>, <&kp>;
         };
         
+        shift_repeat: thumb_shift_repeat { // 
+            label = "space_hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>; // Terms hugely favors taps
+            quick-tap-ms = <400>;
+            bindings = <&kp>, <&key_repeat>;
+        };
+        
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
@@ -347,7 +357,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &numword_sym SYM 0
+                                             &la_nav    &shift_repeat      &kp SPC    &numword_sym SYM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
