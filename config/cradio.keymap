@@ -64,17 +64,17 @@
         compatible = "zmk,combos";
         
         // Layer combos        
+        combo_num_word {
+            timeout-ms = <130>;
+            key-positions = <32 33>; // F J
+            layers = <DEF DHRM NUM>;
+            bindings = <&num_word>;
+        };
         combo_enable_disable_homerow_mods_layer { 
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN>;
             bindings = <&tog DHRM>;
-        };
-        combo_spotlight_alfred {
-            timeout-ms = <80>;
-            key-positions = <32 33>; // F J
-            layers = <DEF DHRM>; // Only available in the DEF layer
-            bindings = <&num_word>;
         };
 
         // macOS features combos
