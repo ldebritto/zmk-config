@@ -94,26 +94,34 @@
             bindings = <&kp C_MUTE>;
         };
         
+        // ZMK features
+        combo_repeat_key {
+            timeout-ms = <80>;
+            key-positions = <25 26>; // M ,
+            layers = <DEF DHRM>; // Only available in the DEF layer
+            bindings = <&key_repeat>;
+        };
+        
         // Bluetooth toggles
-        combo_bt0 {
+        combo_bt0 { // MacBook
             timeout-ms = <80>;
             key-positions = <3 4>;
             layers = <FUN>; 
             bindings = <&act_bt0>;
         };
-        combo_toggle_bt1_connection {
+        combo_toggle_bt1_connection { // iPad
             timeout-ms = <80>;
             key-positions = <13 14>;
             layers = <FUN>; 
             bindings = <&act_bt1>;
         };
-        combo_toggle_bt2_connection {
+        combo_toggle_bt2_connection { // iPhone
             timeout-ms = <80>;
             key-positions = <23 24>;
             layers = <FUN>; 
             bindings = <&act_bt2>;
         };
-        combo_toggle_bt3_connection {
+        combo_toggle_bt3_connection { // 
             timeout-ms = <80>;
             key-positions = <5 6>;
             layers = <FUN>; 
