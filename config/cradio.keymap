@@ -154,7 +154,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>; // Terms hugely favors taps
+            tapping-term-ms = <350>; // Terms favours taps
             quick-tap-ms = <280>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -165,7 +165,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <450>; // Terms hugely favors taps
+            tapping-term-ms = <450>; // Terms hugely favours taps
             quick-tap-ms = <400>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -176,7 +176,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <250>; // Terms hugely favors taps
+            tapping-term-ms = <250>;
             bindings = <&kp>, <&key_repeat>;
         };
         
