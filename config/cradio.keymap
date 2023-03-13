@@ -184,7 +184,7 @@
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&caps_word>;
+            bindings = <&kp LSHFT>, <&caps_word>;
         };
     
         nextprev: tap_dance_media_next_prev {
