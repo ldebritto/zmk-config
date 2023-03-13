@@ -177,7 +177,6 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <250>; // Terms hugely favors taps
-            quick-tap-ms = <400>;
             bindings = <&kp>, <&key_repeat>;
         };
         
