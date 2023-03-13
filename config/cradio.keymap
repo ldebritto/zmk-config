@@ -171,21 +171,12 @@
             bindings = <&kp>, <&kp>;
         };
         
-        shift_repeat: thumb_shift_repeat { // 
-            label = "space_hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&kp>, <&key_repeat>;
-        };
-        
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&shift_repeat LSHIFT 0>, <&caps_word>;
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&caps_word>;
         };
     
         nextprev: tap_dance_media_next_prev {
