@@ -70,6 +70,12 @@
             layers = <FUN>;
             bindings = <&tog DHRM>;
         };
+        combo_spotlight_alfred {
+            timeout-ms = <80>;
+            key-positions = <32 33>; // F J
+            layers = <DEF DHRM>; // Only available in the DEF layer
+            bindings = <&num_word>;
+        };
 
         // macOS features combos
         combo_spotlight_alfred {
@@ -355,7 +361,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &numword_sym SYM 0
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -372,7 +378,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw     &tht HYPER SPC &numword_sym SYM 0
+                                             &la_nav    &shift_cw     &tht HYPER SPC &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
