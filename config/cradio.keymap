@@ -180,7 +180,7 @@
         };
         
         hpht: hold_preffered_hold_tap { // For Shift Tab in left thumb
-            label = "tap_prefferred_hold_tap";
+            label = "hold_prefferred_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred"; // Hold-preferred works better for Shift
