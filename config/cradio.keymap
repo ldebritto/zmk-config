@@ -86,6 +86,12 @@
             layers = <DEF DHRM>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
+        combo_escape {
+            timeout-ms = <80>;
+            key-positions = <0 1>; // Q W
+            layers = <DEF DHRM>; // Only available in the DEF layer
+            bindings = <&kp ESCAPE>;
+        };
 
         // macOS features combos
         combo_spotlight_alfred {
