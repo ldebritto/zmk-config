@@ -66,7 +66,7 @@
         // Layer combos        
         combo_num_word {
             timeout-ms = <130>;
-            key-positions = <32 33>; // F J
+            key-positions = <32 33>; // SPC SYM
             layers = <DEF DHRM NUM>;
             bindings = <&num_word>;
         };
@@ -212,6 +212,7 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
         
+        /* // Tryed using tap-dance instead of layer macros, but lag was to high
         la_nav: tap_dance_layer_navigation {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LAYER_NAV";
@@ -226,7 +227,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&lt SYM K_CANCEL>, <&num_word>;
-        };
+        }; */
         
         swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
             compatible = "zmk,behavior-tri-state";
@@ -278,7 +279,7 @@
     
     macros {
         
-        /*   // Macros to cancel sticky behaviors with a muted key tap, emulating from Callum's oneshot QMK macro
+          // Macros to cancel sticky behaviors with a muted key tap, emulating from Callum's oneshot QMK macro
         // Works, but couldn't find a good way to toggle &num_word via thumb pressing. Trying tap dance on t
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
@@ -304,7 +305,7 @@
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
                 ;
-        }; */ 
+        }; 
         
         // Macros for quick bluetooth switching
         act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
