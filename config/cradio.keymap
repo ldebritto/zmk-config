@@ -57,7 +57,7 @@
     /delete-property/ ignore-modifiers; // Using modifiers as interrupters, avoiding CMD+Shift+S activations when I hit CMD+S.
 };
 &lt {
-    tapping-term-ms = <180>;
+    tapping-term-ms = <120>; // Keeping it low to reduce misfires on tap
     flavor = "hold-preferred";
 };
 
