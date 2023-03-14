@@ -103,7 +103,7 @@
         // ZMK features
         combo_repeat_key {
             timeout-ms = <80>;
-            key-positions = <26 27>; // M ,
+            key-positions = <30 31>; // NAV Shift
             layers = <DEF DHRM>; // Only available in the DEF layer
             bindings = <&key_repeat>;
         };
