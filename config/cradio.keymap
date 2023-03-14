@@ -6,8 +6,8 @@
 
  
 // Home row mods definitions
-#define HRML(k1,k2,k3,k4) &ht LCTRL k1 &ht LALT k2  &ht LSHFT k3 &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RSHFT k2 &ht RALT k3  &ht RCTRL k4
+#define HRML(k1,k2,k3,k4) &tpht LCTRL k1 &tpht LALT k2  &tpht LSHFT k3 &tpht LGUI k4
+#define HRMR(k1,k2,k3,k4) &tpht RGUI k1  &tpht RSHFT k2 &tpht RALT k3  &tpht RCTRL k4
         //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
 
 // Hyper mod
@@ -163,11 +163,22 @@
     
     behaviors {
         
-        ht: hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
-            label = "hold_tap";
+        tpht: tap_preffered_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
+            label = "tap_prefferred_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
+            tapping-term-ms = <350>; // Terms favours taps
+            quick-tap-ms = <280>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        
+        hpht: tap_preffered_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
+            label = "tap_prefferred_hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <350>; // Terms favours taps
             quick-tap-ms = <280>;
             global-quick-tap;
@@ -206,7 +217,7 @@
             label = "TAP_DANCE_LAYER_NAV";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt NAV K_CANCEL>, <&nav_word>;
+            bindings = <&hpht NAV K_CANCEL>, <&nav_word>;
         };
         
         la_sym: tap_dance_layer_symbols_num_word {
@@ -214,7 +225,7 @@
             label = "TAP_DANCE_LAYER_SYM";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt SYM K_CANCEL>, <&num_word>;
+            bindings = <&hpht SYM K_CANCEL>, <&num_word>;
         };
         
         swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
@@ -414,7 +425,7 @@
         //│          │          │          │ /        │ %        │   │ .        │ 1        │ 2        │ 3        │ :        |
             &trans     &trans     &trans     &kp FSLH   &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &to DEF        &trans     &lt SYM N0
+                                             &trans     &to DEF        &trans     &tpht SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
