@@ -77,6 +77,14 @@
             bindings = <&tog DHRM>;
         };
 
+        // ZMK features
+        combo_repeat_key {
+            timeout-ms = <80>;
+            key-positions = <30 31>; // NAV Shift
+            layers = <DEF DHRM>; // Only available in the DEF layer
+            bindings = <&key_repeat>;
+        };
+
         // macOS features combos
         combo_spotlight_alfred {
             timeout-ms = <80>;
@@ -98,14 +106,6 @@
             key-positions = <4 14>; // Vol up + down keys
             layers = <NAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
-        };
-        
-        // ZMK features
-        combo_repeat_key {
-            timeout-ms = <80>;
-            key-positions = <30 31>; // NAV Shift
-            layers = <DEF DHRM>; // Only available in the DEF layer
-            bindings = <&key_repeat>;
         };
         
         // Bluetooth toggles
