@@ -184,7 +184,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred"; // Hold-preferred works better for Shift
-            tapping-term-ms = <350>
+            tapping-term-ms = <350>;
             bindings = <&kp>, <&kp>;
         };
         
