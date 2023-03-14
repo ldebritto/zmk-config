@@ -289,7 +289,7 @@
         
           // Macros to cancel sticky behaviors with a muted key tap, emulating from Callum's oneshot QMK macro
         // Works, but couldn't find a good way to toggle &num_word via thumb pressing. Trying tap dance on t
-        la_nav: cancel_queued_os_mods_and_toggle_nav {
+        la_nav: cancel_queued_one_shot_mods_and_toggle_nav {
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -302,7 +302,7 @@
                 ;
         };
     
-        la_sym: cancel_queued_os_mods_and_toggle_sym {
+        la_sym: cancel_queued_one_shot_mods_and_toggle_sym {
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
