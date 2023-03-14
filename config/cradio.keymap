@@ -65,7 +65,7 @@
         
         // Layer combos        
         combo_num_word {
-            timeout-ms = <130>;
+            timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
             layers = <DEF DHRM NUM>;
             bindings = <&num_word>;
@@ -79,7 +79,7 @@
 
         // ZMK features
         combo_repeat_key {
-            timeout-ms = <80>;
+            timeout-ms = <120>;
             key-positions = <30 31>; // NAV Shift
             layers = <DEF DHRM>; // Only available in the DEF layer
             bindings = <&key_repeat>;
@@ -163,6 +163,7 @@
     
     behaviors {
         
+        // Mod tapping
         tpht: tap_preffered_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
             label = "tap_prefferred_hold_tap";
             compatible = "zmk,behavior-hold-tap";
@@ -174,7 +175,7 @@
             bindings = <&kp>, <&kp>;
         };
         
-        hpht: tap_preffered_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
+        hpht: hold_preffered_hold_tap { // Currently, just the NUM row uses a hold tap key with &lt SYM N0 on right inner thumb.
             label = "tap_prefferred_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -185,7 +186,7 @@
             bindings = <&kp>, <&kp>;
         };
         
-        tht: thumb_space_hold_tap { // For better hyperspace activation
+        tht: thumb_space_hold_tap { // Bigger tapping term for better hyperspace activation
             label = "space_hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -196,6 +197,7 @@
             bindings = <&kp>, <&kp>;
         };
         
+        // Tap-dances
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
