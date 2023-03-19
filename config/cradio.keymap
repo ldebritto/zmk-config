@@ -11,7 +11,11 @@
 // Hyper mod (using in hyperspace)
 #define HYPER LG(LC(LS(LALT)))
 
-// Nav layer special command buttons
+// Layer toggles
+#define LA_NAV &lt NAV K_CANCEL
+#define LA_SYM &lt SYM K_CANCEL
+
+// NAV layer special command buttons
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
 #define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
@@ -230,7 +234,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         
@@ -279,7 +283,7 @@
     
     macros {        
         // Layer macros emulating from Callum's oneshot on QMK
-        la_nav: cancel_queued_one_shot_mods_and_toggle_nav_on_hold {
+        /* la_nav: cancel_queued_one_shot_mods_and_toggle_nav_on_hold {
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -303,7 +307,7 @@
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
                 ;
-        }; 
+        };  */
         
         // Macros for quick bluetooth switching and moving back to DEF layer
         act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
@@ -390,7 +394,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &lt NAV K_CANCEL &shift_cw     &kp SPC    &lt SYM K_CANCEL
+                                             LA_NAV     &shift_cw      &kp SPC     LA_SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
