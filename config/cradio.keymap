@@ -449,7 +449,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY/MUTE│   │ NEXT/PREV│ BACK     │ FORWARD  │ PASTE/CUT│ DELETE   │
             CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &pastecut  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &tran      &trans
+                                             &trans     &trans         &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
