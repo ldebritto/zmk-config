@@ -66,11 +66,11 @@
         compatible = "zmk,combos";
         
         // Layer combos        
-        combo_nav_word {
+        combo_caps_lock {
             timeout-ms = <120>;
             key-positions = <30 31>; // NAV Shift
-            layers = <DEF DHRM>; // Only available in the DEF layer
-            bindings = <&nav_word>;
+            layers = <DEF DHRM>;
+            bindings = <&kp CAPSLOCK>;
         };
 
         combo_num_word {
@@ -230,8 +230,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
-            tapping-term-ms = <450>;
-            bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPSLOCK>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT>, <&caps_word>;
         };
         
         pastecut: tap_dance_paste_cut {
@@ -267,19 +267,7 @@
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
         
-        // num_word e nav_word// Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
-        nav_word: behavior_nav_word { 
-			compatible = "zmk,behavior-caps-word";
-			label = "NAV_WORD_KEY";
-			#binding-cells = <0>;
-                        layers = <NAV>;                     // layer to be toggled
-                        ignore-modifiers;                   // modifiers won't deactivate the layer
-			            continue-list =                     // other keycodes that will not cancel &numword
-                            <   UARW DARW LARW RARW
-                                PG_DN PG_UP
-                            >;
-        };
-
+        // num_word - Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
         num_word: behavior_num_word {
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD_KEY";
@@ -461,7 +449,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY/MUTE│   │ NEXT/PREV│ BACK     │ FORWARD  │ PASTE/CUT│ DELETE   │
             CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &pastecut  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &ts_ht LSHIFT SPC &trans
+                                             &trans     &trans         &tran      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
