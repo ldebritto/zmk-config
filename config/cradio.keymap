@@ -233,6 +233,14 @@
             tapping-term-ms = <300>;
             bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPS>;
         };
+        
+        pastecut: tap_dance_paste_cut {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CAPS_WORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <CO_PASTE>, <CO_CUT>;
+        };
     
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
@@ -450,10 +458,10 @@
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY/MUTE│   │ NEXT/PREV│ BACK     │ FORWARD  │          │ DELETE   │
-            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &none      &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY/MUTE│   │ NEXT/PREV│ BACK     │ FORWARD  │ PASTE/CUT│ DELETE   │
+            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &pastecut  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         &tp_ht LSHIFT SPC &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
