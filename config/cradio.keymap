@@ -116,6 +116,26 @@
             bindings = <&kp C_MUTE>;
         };
         
+        // Acentos
+        combo_tilde {
+            timeout-ms = <80>;
+            key-positions = <4 14>; // GT
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp TILDE>;
+        };
+        combo_circ {
+            timeout-ms = <80>;
+            key-positions = <5 15>; // YH
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp CARET>;
+        };
+        combo_grave { 
+            timeout-ms = <80>;
+            key-positions = <9 19>; // P'
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp GRAVE>;
+        };
+        
         // Bluetooth toggles
         combo_bt0 { // MacBook
             timeout-ms = <80>;
