@@ -230,7 +230,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <450>;
             bindings = <&kp LSHFT>, <&caps_word>, <&kp CAPSLOCK>;
         };
         
