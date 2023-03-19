@@ -238,11 +238,11 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         
-        dotcomma: tap_dance_dot_comma {
+        dotcomma: tap_dance_dot_comma { // for use in NUM
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_DOT_COMMA";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp DOT>, <&kp COMMA>;
         };
 
