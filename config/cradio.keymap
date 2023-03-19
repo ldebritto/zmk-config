@@ -229,7 +229,7 @@
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LSHFT>, <&caps_word>;
+            bindings = <&kp LSHFT>, <&caps_word>; <&kp CAPS>
         };
     
         nextprev: tap_dance_media_next_prev {
@@ -276,21 +276,11 @@
                             >;       
 		 
         };
-
-        /* // &la_sym macro on hold and num_word on tap - gave up due to the lag on toggling SYM OSM
-        numword_sym: behavior_num_sym {
-            compatible = "zmk,behavior-hold-tap";
-            label = "num_sym";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&la_sym>, <&num_word>;
-        }; */
     };
     
     macros {        
-        // Macros to cancel sticky behaviors with a muted key tap, emulating from Callum's oneshot QMK macro
-        la_nav: cancel_queued_one_shot_mods_and_toggle_nav {
+        // Layer macros emulating from Callum's oneshot on QMK
+        la_nav: cancel_queued_one_shot_mods_and_toggle_nav_on_hold {
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -303,7 +293,7 @@
                 ;
         };
     
-        la_sym: cancel_queued_one_shot_mods_and_toggle_sym {
+        la_sym: cancel_queued_one_shot_mods_and_toggle_sym_on_hold {
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -450,7 +440,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &mt LA(LSHFT) ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    |PLAY/PAUSE│   │ NEXT/PREV│ NAV BACK │ FORWARD  │ CAPS     │ DELETE   │
-            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &sk CAPS   &mt LSHFT DEL
+            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &none      &mt LSHFT DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
