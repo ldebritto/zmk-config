@@ -65,13 +65,6 @@
         compatible = "zmk,combos";
         
         // Layer combos        
-        combo_num_word {
-            timeout-ms = <120>;
-            key-positions = <32 33>; // SPC SYM
-            layers = <DEF DHRM NUM>;
-            bindings = <&num_word>;
-        };
-        
         combo_nav_word {
             timeout-ms = <120>;
             key-positions = <30 31>; // NAV Shift
@@ -79,14 +72,21 @@
             bindings = <&nav_word>;
         };
 
-        combo_enable_disable_homerow_mods_layer { 
+        combo_num_word {
+            timeout-ms = <120>;
+            key-positions = <32 33>; // SPC SYM
+            layers = <DEF DHRM NUM>;
+            bindings = <&num_word>;
+        };
+
+        combo_toggles_homerow_mods_layer_as_default {
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN>;
             bindings = <&tog DHRM>;
         };
 
-        // Keys on 
+        // Easier access to special keys on HRMods
         combo_escape {
             timeout-ms = <80>;
             key-positions = <0 1>; // Q W
