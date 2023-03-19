@@ -236,7 +236,7 @@
         
         pastecut: tap_dance_paste_cut {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CAPS_WORD";
+            label = "TAP_DANCE_PASTE_CUT";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <CO_PASTE>, <CO_CUT>;
