@@ -71,6 +71,13 @@
             layers = <DEF DHRM NUM>;
             bindings = <&num_word>;
         };
+        
+        combo_nav_word {
+            timeout-ms = <120>;
+            key-positions = <30 31>; // NAV Shift
+            layers = <DEF DHRM>; // Only available in the DEF layer
+            bindings = <&nav_word>;
+        };
 
         combo_enable_disable_homerow_mods_layer { 
             timeout-ms = <80>;
@@ -79,14 +86,7 @@
             bindings = <&tog DHRM>;
         };
 
-        // ZMK features
-        combo_nav_word {
-            timeout-ms = <120>;
-            key-positions = <30 31>; // NAV Shift
-            layers = <DEF DHRM>; // Only available in the DEF layer
-            bindings = <&nav_word>;
-        };
-
+        // Keys on 
         combo_escape {
             timeout-ms = <80>;
             key-positions = <0 1>; // Q W
@@ -255,11 +255,11 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
-            ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTab
+            ignored-key-positions = <7 9 16 17 18 29>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
         
-        // Num
-        nav_word: behavior_nav_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+        // num_word e nav_word// Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+        nav_word: behavior_nav_word { 
 			compatible = "zmk,behavior-caps-word";
 			label = "NAV_WORD_KEY";
 			#binding-cells = <0>;
@@ -268,18 +268,17 @@
 			            continue-list =                     // other keycodes that will not cancel &numword
                             <   UARW DARW LARW RARW
                                 PG_DN PG_UP
-                            >;       
-		 
+                            >;
         };
 
-        num_word: behavior_num_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+        num_word: behavior_num_word {
 			compatible = "zmk,behavior-caps-word";
 			label = "NUM_WORD_KEY";
 			#binding-cells = <0>;
-                        layers = <NUM>;                     // layer to be toggled
-                        // ignore-numbers;                     // numbers won't deactivate the layer, hence &num_word       // opted to add them to continue list in order to not have % continue this function
-                        // ignore-modifiers;                   // modifiers won't deactivate the layer, hence &num_word
-			            continue-list =                     // other keycodes that will not cancel &numword
+                        layers = <NUM>;         // layer to be toggled
+                        // ignore-numbers;      // numbers won't deactivate the layer, hence &num_word   // opted to add them to continue list in order to not have % continue this function
+                        // ignore-modifiers;    // modifiers won't deactivate the layer, hence &num_word
+			            continue-list =         // list keycodes that will not cancel &numword
                             <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
                                 BACKSPACE DELETE 
                                 DOT COMMA SQT DQT COLON SEMICOLON 
@@ -317,7 +316,7 @@
                 ;
         }; 
         
-        // Macros for quick bluetooth switching
+        // Macros for quick bluetooth switching and moving back to DEF layer
         act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
             label = "Activate BT0 device";
             compatible = "zmk,behavior-macro";
