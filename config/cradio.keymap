@@ -44,6 +44,7 @@
         release-after-ms = <2000>; // Default is 1000 ms
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
+
 &caps_word { // Changed settings to allow for accented characters
     continue-list = <
                     UNDERSCORE MINUS
@@ -53,8 +54,9 @@
                 >;
     /delete-property/ ignore-modifiers; // Using modifiers as interrupters, avoiding CMD+Shift+S activations when I hit CMD+S.
 };
-&lt {
-    tapping-term-ms = <120>; // Keeping it low to reduce misfires on tap
+
+&lt { // Keeping it low to reduce misfires on tap, so every
+    tapping-term-ms = <120>;
     flavor = "hold-preferred";
 };
 
@@ -69,6 +71,7 @@
             layers = <DEF DHRM NUM>;
             bindings = <&num_word>;
         };
+
         combo_enable_disable_homerow_mods_layer { 
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
@@ -77,12 +80,13 @@
         };
 
         // ZMK features
-        combo_repeat_key {
+        combo_nav_word {
             timeout-ms = <120>;
             key-positions = <30 31>; // NAV Shift
             layers = <DEF DHRM>; // Only available in the DEF layer
-            bindings = <&key_repeat>;
+            bindings = <&nav_word>;
         };
+
         combo_escape {
             timeout-ms = <80>;
             key-positions = <0 1>; // Q W
