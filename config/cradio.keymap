@@ -20,13 +20,10 @@
 #define CO_CUT &kp LG(X) 
 #define CO_COPY &kp LG(C) 
 #define CO_PASTE &kp LG(V) 
-#define CANCEL &kp K_CANCEL 
 
 // Media keys used on NAV
 #define ME_VOLD &kp C_VOL_DN
 #define ME_VOLU &kp C_VOL_UP
-#define ME_MUTE &kp C_MUTE
-#define ME_PLAY &kp C_PP
 
 // macOS specific combinations
 #define ALFRED LG(SPC) // Doubles as Spotlight for usage on iOS/iPadOS
@@ -44,7 +41,7 @@
 #define FUN 5
 
 &sk { // Custom &sk settings to allow for better handling of Callum Style mods
-        release-after-ms = <5000>; // Default is 1000 ms
+        release-after-ms = <2000>; // Default is 1000 ms
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
 &caps_word { // Changed settings to allow for accented characters
@@ -240,15 +237,16 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
         
-        backfwd: tap_dance_navigate_back_forward {
+        play_mute: tap_dance_play_mute {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <GO_BACK>, <GO_FWRD>;
+            tapping-term-ms = <200>;
+            bindings = <&kp C_PLAY_PAUSE>, <&kp C_MUTE>;
         };
         
-        swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
+        // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
+        swapper: swapper { 
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
@@ -256,6 +254,7 @@
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow keys and DEL/BSPC to quit/hide apps from altTab
         };
         
+        // Num
         nav_word: behavior_nav_word { // Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
 			compatible = "zmk,behavior-caps-word";
 			label = "NAV_WORD_KEY";
@@ -442,13 +441,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
-            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &tp_ht LALT BSPC
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL DOWN │   │ PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &tp_ht LA(LSHFT) ENTER
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ PLAY/MUTE│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &play_mute     &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    |PLAY/PAUSE│   │ NEXT/PREV│ N BCK/FWD│          │          │ DELETE   │
-            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  &backfwd   &none      &none      &tp_ht LSHFT DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    | VOL. UP  │   │ NEXT/PREV│ BACK     │ FORWARD  │          │ DELETE   │
+            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_VOLD        &nextprev  GO_BACK    GO_FWRD    &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -472,7 +471,7 @@
             >;
         };
 
-        function_number_row_layer {
+        tri_layer_function_number_row {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
