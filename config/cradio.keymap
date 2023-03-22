@@ -282,33 +282,6 @@
     };
     
     macros {        
-        // Layer macros emulating from Callum's oneshot on QMK
-        /* la_nav: cancel_queued_one_shot_mods_and_toggle_nav_on_hold {
-            label = "LA_NAV";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_press &mo NAV>
-                , <&macro_tap &kp K_CANCEL>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo NAV>
-                ;
-        };
-    
-        la_sym: cancel_queued_one_shot_mods_and_toggle_sym_on_hold {
-            label = "LA_SYM";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            bindings
-                = <&macro_press &mo SYM>
-                , <&macro_tap &kp K_CANCEL>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo SYM>
-                ;
-        };  */
-        
         // Macros for quick bluetooth switching and moving back to DEF layer
         act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
             label = "Activate BT0 device";
@@ -340,7 +313,7 @@
                 , <&macro_tap &to DEF>
                 ;
         };
-        act_bt3: change_to_bt3_and_back_to_def { // PiPoca
+        act_bt3: change_to_bt3_and_back_to_def { // Empty
             label = "Activate BT3 device";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
