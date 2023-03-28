@@ -440,7 +440,9 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-        windows_default_layer { // Swapping GUI for CONTROL in mods
+        
+        // Swapping GUI for CONTROL in mods for easier Windows usage
+        windows_default_layer { 
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
