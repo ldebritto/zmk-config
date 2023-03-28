@@ -14,6 +14,8 @@
 // Layer toggles
 #define LA_NAV &lt NAV K_CANCEL
 #define LA_SYM &lt SYM K_CANCEL
+#define LA_WNAV &lt WNAV K_CANCEL
+#define LA_WSYM &lt WSYM K_CANCEL
 
 // NAV layer special command buttons
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
@@ -39,14 +41,19 @@
 
 // Layer names
 #define DEF 0
-#define DHRM 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+// Windows layers
+#define WDEF 5
+#define WNAV 6
+#define WSYM 7
+#define WFUN 8
+
 
 &sk { // Custom &sk settings to allow for better handling of Callum Style mods
-        release-after-ms = <2000>; // Default is 1000 ms
+        release-after-ms = <10000>; // Default is 1000 ms. Added an extra long timeout to make clicking with modifiers easier. Cancel keys on layer toggles make it easy to dismiss mods.
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
 
@@ -73,73 +80,53 @@
         combo_caps_lock {
             timeout-ms = <120>;
             key-positions = <30 31>; // NAV Shift
-            layers = <DEF DHRM>;
+            layers = <DEF WDEF>;
             bindings = <&kp CAPSLOCK>;
         };
 
         combo_num_word {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
-            layers = <DEF DHRM NUM>;
+            layers = <DEF WDEF NUM>;
             bindings = <&num_word>;
         };
 
-        combo_toggles_homerow_mods_layer_as_default {
+        combo_toggles_windows_layer_as_default {
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
-            layers = <FUN>;
-            bindings = <&tog DHRM>;
-        };
-
-        // Easier access to special keys on HRMods Default layer
-        combo_escape {
-            timeout-ms = <80>;
-            key-positions = <0 1>; // Q W
-            layers = <DHRM>; // Only available in the DEF layer
-            bindings = <&kp ESCAPE>;
+            layers = <FUN WFUN>;
+            bindings = <&tog WDEF>;
         };
 
         // macOS features combos
         combo_spotlight_alfred {
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
-            layers = <DEF DHRM>; // Only available in the DEF layer
+            layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
         
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
-            layers = <DEF DHRM>; // Only available in the DEF layer
+            layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp SHTCAT>;
+        };
+
+        // Windows features
+        combo_windows_start_menu {
+            timeout-ms = <80>;
+            key-positions = <13 16>; // F J
+            layers = <WDEF>; // Only available in the Windows DEF layer
+            bindings = <&kp LGUI>;
         };
 
         // Media
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>; // Vol up + down keys
-            layers = <NAV>; // Only available in the NAV layer
+            layers = <NAV WNAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
-        };
-        
-        // Acentos
-        combo_tilde {
-            timeout-ms = <80>;
-            key-positions = <4 14>; // GT
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp TILDE>;
-        };
-        combo_circ {
-            timeout-ms = <80>;
-            key-positions = <5 15>; // YH
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp CARET>;
-        };
-        combo_grave { 
-            timeout-ms = <80>;
-            key-positions = <9 19>; // P'
-            layers = <DEF>; // Only available in the DEF layer
-            bindings = <&kp GRAVE>;
         };
         
         // Bluetooth toggles
@@ -262,6 +249,14 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+        // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
+        wswapper: windows_swapper { 
+            compatible = "zmk,behavior-tri-state";
+            label = "WINDOWS_SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <7 9 16 17 18 29>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
+        };
         
         // num_word - Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
         num_word: behavior_num_word {
@@ -372,23 +367,6 @@
             >;
         };
         
-        default_layer_with_homerow_mods_and_mod_taps {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,     S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,        SQT) 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                    &lt NAV BSPC &hp_ht LSHIFT TAB    &lt NAV SPC &lt SYM ENTER
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        
         numword_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -448,6 +426,73 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk LGUI   &sk LSHFT  &sk LALT   &sk LCTRL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans    &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        windows_default_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             LA_WNAV     &shift_cw      &kp SPC   LA_WSYM
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        windows_left_navigation_edit_and_media_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
+            &kp TAB    &wswapper  CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ CMD      │ ALT      │ SHIFT    │ CTRL     │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+            &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │          │ DELETE   │
+            CO_UNDO    CO_CUT     CO_COPY    CO_PASTE   ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &none      &kp DEL
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        windows_right_symbols_layer { // With RALT on right mods
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
+            &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CTRL     │ SHIFT    │ ALT      │ CMD      │
+            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk LCTRL  &sk LSHFT  &sk RALT   &sk LGUI
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        windows_tri_layer_function_number_row { // With RALT on right mods
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
+            &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ CMD      │ ALT      │ SHIFT    │ CTRL     │ F11      │   │ F12      │ CTRL     │ SHIFT    │ ALT      │ CMD      │
+            &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   &kp F11        &kp F12    &sk LCTRL  &sk LSHFT  &sk RALT   &sk LGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
