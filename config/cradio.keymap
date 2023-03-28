@@ -348,6 +348,8 @@
             // macOS tri-layer
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
+        };
+        windows_tri_layer {
             // Windows tri-layer
             if-layers = <WNAV WSYM>;
             then-layer = <WFUN>;
