@@ -85,15 +85,13 @@
             layers = <DEF WDEF>;
             bindings = <&kp CAPSLOCK>;
         };
-
         combo_num_word {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
             layers = <DEF WDEF NUM>;
             bindings = <&num_word>;
         };
-
-        combo_toggles_windows_layer_as_default {
+        combo_toggle_windows_layer_as_default {
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN WFUN>;
@@ -107,7 +105,6 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp ALFRED>;
         };
-        
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
@@ -115,8 +112,8 @@
             bindings = <&kp SHTCAT>;
         };
 
-        // Windows features
-        combo_windows_start_menu {
+        // Windows features combo
+        combo_windows_start_menu { // Mapped to the same spot I use with spotlight
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
             layers = <WDEF>; // Only available in the Windows DEF layer
@@ -345,12 +342,10 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            // macOS tri-layer
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
         windows_tri_layer {
-            // Windows tri-layer
             if-layers = <WNAV WSYM>;
             then-layer = <WFUN>;
         };
@@ -375,7 +370,7 @@
             >;
         };
         
-        windows_default_layer { // Swapping GUI for CONTROL in mods for easier Windows usage
+        windows_default_layer { // Layer keys map to swapped GUI and CONTROL mods in subsequent layers for easier Windows usage
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
