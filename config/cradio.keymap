@@ -29,6 +29,16 @@
 #define CO_COPY &kp LG(C) 
 #define CO_PASTE &kp LG(V) 
 
+// WNAV layer special command buttons
+#define GO_FWRD &kp LA(RARW) // Forward button on browser and other apps
+#define GO_BACK &kp LA(LARW) // Back button on browser and other apps
+#define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
+#define CO_NTAB &kp LC(TAB) // Next Tab
+#define CO_UNDO &kp LC(Z) 
+#define CO_CUT &kp LC(X) 
+#define CO_COPY &kp LC(C) 
+#define CO_PASTE &kp LC(V) 
+
 // Media keys used on NAV
 #define ME_VOLD &kp C_VOL_DN
 #define ME_VOLU &kp C_VOL_UP
