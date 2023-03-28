@@ -63,7 +63,6 @@
 #define WSYM 7
 #define WFUN 8
 
-
 &sk { // Custom &sk settings to allow for better handling of Callum Style mods
         release-after-ms = <10000>; // Default is 1000 ms. Added an extra long timeout to make clicking with modifiers easier. Cancel keys on layer toggles make it easy to dismiss mods.
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
