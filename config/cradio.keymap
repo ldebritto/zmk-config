@@ -13,12 +13,6 @@
 // Hyper mod (using in hyperspace)
 #define HYPER LG(LC(LS(LALT)))
 
-// Layer toggles
-#define LA_NAV &lt NAV K_CANCEL
-#define LA_SYM &lt SYM K_CANCEL
-#define LA_WNAV &lt WNAV K_CANCEL
-#define LA_WSYM &lt WSYM K_CANCEL
-
 // NAV layer special command buttons
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
@@ -245,7 +239,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+                tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
         
@@ -285,6 +279,58 @@
     };
     
     macros {        
+        
+        // Cancel OS mods on layer switching
+        // Preffered this method as the &lt NAV K_CANCEL was causing random glitches with CMD hold in &swapper
+        la_nav: cancel_queued_os_mods_and_toggle_nav {
+            label = "LA_NAV";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo NAV>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo NAV>
+                ;
+        };
+        la_sym: cancel_queued_os_mods_and_toggle_sym {
+            label = "LA_SYM";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo SYM>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo SYM>
+                ;
+        };
+        la_wnav: cancel_queued_os_mods_and_toggle_nav {
+            label = "LA_WNAV";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            indings
+                = <&macro_press &mo WNAV>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo WNAV>
+                ;
+        };
+        la_wsym: cancel_queued_os_mods_and_toggle_sym {
+            label = "LA_WSYM";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo WSYM>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo WSYM>
+                ;
+        };
+        
         // Macros for quick bluetooth switching and moving back to DEF layer
         act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
             label = "Activate BT0 device";
@@ -374,7 +420,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             LA_NAV     &shift_cw      &kp SPC     LA_SYM
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -391,7 +437,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             LA_WNAV    &shift_cw      &kp SPC    LA_WSYM
+                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
