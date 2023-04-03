@@ -264,7 +264,7 @@
                 , <&macro_release &mo SYM>
                 ;
         };
-        la_wnav: cancel_queued_os_mods_and_toggle_nav {
+        la_wnav: cancel_queued_os_mods_and_toggle_windows_nav {
             label = "LA_WNAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -276,7 +276,7 @@
                 , <&macro_release &mo WNAV>
                 ;
         };
-        la_wsym: cancel_queued_os_mods_and_toggle_sym {
+        la_wsym: cancel_queued_os_mods_and_toggle_windows_sym {
             label = "LA_WSYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
