@@ -50,7 +50,7 @@
 #define WFUN 8
 
 // Customized ZMK existing behaviors
-&sk { // Custom &sk settings to allow for better handling of Callum Style mods
+&sk { // Custom &sk settings to allow for better handling of Callum Style OS mods
         release-after-ms = <10000>; // Default is 1000 ms. Added an extra long timeout to make clicking with modifiers easier. Cancel keys on layer toggles make it easy to dismiss mods.
         quick-release; // Implemented fix from PR #1586 (https://github.com/zmkfirmware/zmk/pull/1586)
     };
@@ -74,7 +74,7 @@
     combos {
         compatible = "zmk,combos";
         
-        // Layer combos        
+        // Layer toggle combos
         combo_caps_lock {
             timeout-ms = <120>;
             key-positions = <30 31>; // NAV Shift
@@ -205,20 +205,19 @@
         };
         
         // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
-        swapper: swapper { 
+        swapper: swapper { // macOS implementation for CMD+TAB
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <7 9 16 17 18 29>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
-        // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
-        wswapper: windows_swapper { 
+        wswapper: windows_swapper { // Windows implementation with ALT+TAB
             compatible = "zmk,behavior-tri-state";
             label = "WINDOWS_SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <7 9 16 17 18 29>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
+            ignored-key-positions = <3>; // HR Shift on NAV to allow for backwards movement in the list
         };
         
         // num_word - Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
@@ -228,14 +227,12 @@
 			#binding-cells = <0>;
                         layers = <NUM>;         // layer to be toggled
                         // ignore-numbers;      // numbers won't deactivate the layer, hence &num_word   // opted to add them to continue list in order to not have % continue this function
-                        // ignore-modifiers;    // modifiers won't deactivate the layer, hence &num_word
 			            continue-list =         // list keycodes that will not cancel &numword
                             <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
                                 BACKSPACE DELETE 
                                 DOT COMMA SQT DQT COLON SEMICOLON 
                                 SLASH MINUS PLUS ASTRK EQUAL
-                            >;       
-		 
+                            >;
         };
     };
     
