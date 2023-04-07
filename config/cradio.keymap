@@ -3,6 +3,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// Home row mods definitions
+#define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
+
 // NAV layer special command buttons
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
@@ -38,16 +42,17 @@
 
 // Layer names
 #define DEF 0
-#define WDEF 1 // Windows DEF layer is here to allow &numword activation
-#define NUM 2 // NUM must be under SYM NAV and FUN, but over DEF to work
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define HRDEF 1 // Home row mods
+#define WDEF 2 // Windows DEF layer is here to allow &numword activation
+#define NUM 3 // NUM must be under SYM NAV and FUN, but over DEF to work
+#define NAV 4
+#define SYM 5
+#define FUN 6
 
 // Windows layers
-#define WNAV 6
-#define WSYM 7
-#define WFUN 8
+#define WNAV 7
+#define WSYM 8
+#define WFUN 9
 
 // Customized ZMK existing behaviors
 &sk { // Custom &sk settings to allow for better handling of Callum Style OS mods
@@ -92,6 +97,12 @@
             key-positions = <10 19>; // A "
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
+        };
+        combo_toggle_windows_layer_as_default {
+            timeout-ms = <80>;
+            key-positions = <0 9>; // Q P
+            layers = <FUN>;
+            bindings = <&tog HRDEF>;
         };
 
         // macOS features combos
@@ -179,6 +190,18 @@
     
     behaviors {
         
+        // Home row mods
+        tp_ht: tap_preffered_hold_tap { // For HR Mods
+            label = "tap_prefferred_hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <350>; // Terms favours taps
+            quick-tap-ms = <400>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+
         // Tap-dances
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
@@ -374,6 +397,23 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        default_layer_with_homerow_mods_and_mod_taps {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+            HRML(A,     S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,        SQT) 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
