@@ -3,12 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// Layer toggles with a cancel queued mods on tap
-#define LA_NAV &lt NAV K_CANCEL
-#define LA_SYM &lt SYM K_CANCEL
-#define LA_WNAV &lt WNAV K_CANCEL
-#define LA_WSYM &lt WSYM K_CANCEL
-
 // Home row mods definitions
 #define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
@@ -407,7 +401,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             LA_NAV     &shift_cw      &kp SPC    LA_SYM
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -441,7 +435,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             LA_NAV     &shift_cw      &kp SPC    LA_WSYM
+                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
