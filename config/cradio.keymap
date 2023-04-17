@@ -7,7 +7,7 @@
 #define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
 
-// NAV layer special command buttons
+// NAV layer special command buttons for macOS usage
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
 #define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
@@ -17,7 +17,7 @@
 #define CO_COPY &kp LG(C) 
 #define CO_PASTE &kp LG(V) 
 
-// WNAV layer special command buttons
+// WNAV layer special command buttons for Windos functions
 #define WGO_FWRD &kp LA(RARW) // Forward button on browser and other apps
 #define WGO_BACK &kp LA(LARW) // Back button on browser and other apps
 #define WCO_PTAB &kp LS(LC(TAB)) // Previous Tab
@@ -80,12 +80,6 @@
         compatible = "zmk,combos";
         
         // Layer toggle combos
-        combo_caps_lock {
-            timeout-ms = <120>;
-            key-positions = <30 31>; // NAV Shift
-            layers = <DEF WDEF>;
-            bindings = <&kp CAPSLOCK>;
-        };
         combo_num_word {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
@@ -98,12 +92,28 @@
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
         };
-        combo_toggle_windows_layer_as_default {
+        combo_toggle_home_row_mods_layer_as_default {
             timeout-ms = <80>;
             key-positions = <0 9>; // Q P
             layers = <FUN>;
             bindings = <&tog HRDEF>;
         };
+
+        // Special keys combos
+        combo_caps_lock {
+            timeout-ms = <120>;
+            key-positions = <30 31>; // NAV Shift
+            layers = <DEF WDEF>;
+            bindings = <&kp CAPSLOCK>;
+        };
+        
+        ipad_combo_caps_lock { // To emulate fn key in iPadOS
+            timeout-ms = <120>;
+            key-positions = <13 14>; // F G
+            layers = <DEF NAV>;
+            bindings = <&kp CAPSLOCK>;
+        };
+
 
         // macOS features combos
         combo_spotlight_alfred {
