@@ -70,8 +70,12 @@
     /delete-property/ ignore-modifiers; // Using modifiers as interrupters, avoiding CMD+Shift+S activations when I hit CMD+S.
 };
 
+#define LA_NAV &lt NAV K_CANCEL
+#define LA_SYM &lt SYM K_CANCEL
+
 &lt { 
     tapping-term-ms = <180>; // Keeping it low to reduce misfires on tap
+    quick-tap-ms = <-1>; // Removed quick tap to check for improved LA_NAV
     flavor = "hold-preferred";
 };
 
@@ -270,9 +274,8 @@
     };
     
     macros {        
-        
         // Cancel OS mods on layer switching
-        // Preffered this method as the &lt NAV K_CANCEL was causing random glitches with CMD hold in &swapper
+        // This is faster than relying on &lt intervals
         la_nav: cancel_queued_os_mods_and_toggle_nav {
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
@@ -411,7 +414,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+                                             LA_NAV    &shift_cw      &kp SPC     LA_SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
