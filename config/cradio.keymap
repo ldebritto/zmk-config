@@ -276,7 +276,7 @@
             flavor = "hold-preferred";
             tapping-term = <200>;
             bindings = <&la_sym>, <&num_word>;
-        }
+        };
         la_wsym_numpad: wsym_on_hold_numpad_on_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "WSYM on hold, numapd on tap";
@@ -284,7 +284,7 @@
             flavor = "hold-preferred";
             tapping-term = <200>;
             bindings = <&la_wsym>, <&num_word>;
-        }
+        };
     };
     
     macros {        
