@@ -257,6 +257,24 @@
                                 SLASH MINUS PLUS ASTRK EQUAL
                             >;
         };
+
+        // layer mod-taps
+        la_sym_numpad: sym_on_hold_numpad_on_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYM on hold, numapd on tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term = <200>;
+            bindings = <&la_sym>, <&num_word>;
+        }
+        la_wsym_numpad: wsym_on_hold_numpad_on_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WSYM on hold, numapd on tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term = <200>;
+            bindings = <&la_wsym>, <&num_word>;
+        }
     };
     
     macros {        
@@ -401,7 +419,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym_numpad
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -418,7 +436,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym_numpad
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -435,7 +453,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
+                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym_numpad
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
