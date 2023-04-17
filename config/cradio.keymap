@@ -3,10 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// Home row mods definitions
-#define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
-
 // NAV layer special command buttons for macOS usage
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
@@ -42,17 +38,15 @@
 
 // Layer names
 #define DEF 0
-#define HRDEF 1 // Home row mods
-#define WDEF 2 // Windows DEF layer is here to allow &numword activation
-#define NUM 3 // NUM must be under SYM NAV and FUN, but over DEF to work
-#define NAV 4
-#define SYM 5
-#define FUN 6
+#define NAV 1
+#define SYM 2
+#define FUN 3
 
-// Windows layers
-#define WNAV 7
-#define WSYM 8
-#define WFUN 9
+// Windows layers have control and command swapped in mods, otherwise, they're the same as my defaults
+#define WDEF 4
+#define WNAV 5
+#define WSYM 6
+#define WFUN 7
 
 // Customized ZMK existing behaviors
 &sk { // Custom &sk settings to allow for better handling of Callum Style OS mods
@@ -70,43 +64,22 @@
     /delete-property/ ignore-modifiers; // Using modifiers as interrupters, avoiding CMD+Shift+S activations when I hit CMD+S.
 };
 
-#define LA_NAV &lt NAV K_CANCEL
-#define LA_SYM &lt SYM K_CANCEL
-
-&lt { 
-    tapping-term-ms = <180>; // Keeping it low to reduce misfires on tap
-    quick-tap-ms = <-1>; // Removed quick tap to check for improved LA_NAV
-    flavor = "hold-preferred";
-};
-
 / {
     combos {
         compatible = "zmk,combos";
         
         // Layer toggle combos
-        combo_num_word {
-            timeout-ms = <120>;
-            key-positions = <32 33>; // SPC SYM
-            layers = <DEF WDEF NUM>;
-            bindings = <&num_word>;
-        };
-        combo_toggle_windows_layer_as_default {
+        combo_switch_to_windows_layers_and_back {
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
         };
-        combo_toggle_home_row_mods_layer_as_default {
-            timeout-ms = <80>;
-            key-positions = <0 9>; // Q P
-            layers = <FUN>;
-            bindings = <&tog HRDEF>;
-        };
 
         // Special keys combos
         combo_caps_lock {
             timeout-ms = <120>;
-            key-positions = <30 31>; // NAV Shift
+            key-positions = <30 31>; // NAV + Shift
             layers = <DEF WDEF>;
             bindings = <&kp CAPSLOCK>;
         };
@@ -117,7 +90,6 @@
             layers = <DEF NAV>;
             bindings = <&kp CAPSLOCK>;
         };
-
 
         // macOS features combos
         combo_spotlight_alfred {
@@ -204,18 +176,6 @@
     
     behaviors {
         
-        // Home row mods
-        tp_ht: tap_preffered_hold_tap { // For HR Mods
-            label = "tap_prefferred_hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <350>; // Terms favours taps
-            quick-tap-ms = <400>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-
         // Tap-dances
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
@@ -225,14 +185,6 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         
-        dotcomma: tap_dance_dot_comma { // for use in NUM
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_DOT_COMMA";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp DOT>, <&kp COMMA>;
-        };
-
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
@@ -241,8 +193,7 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
         
-        // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
-        swapper: swapper { // macOS implementation for CMD+TAB
+        swapper: swapper { // Swapper // Got it from urob's repo as it's tri-state behavior is currently a PR for main ZMK
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
             #binding-cells = <0>;
@@ -256,27 +207,10 @@
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <3>; // HR Shift on NAV to allow for backwards movement in the list
         };
-        
-        // num_word - Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
-        num_word: behavior_num_word {
-			compatible = "zmk,behavior-caps-word";
-			label = "NUM_WORD_KEY";
-			#binding-cells = <0>;
-                        layers = <NUM>;         // layer to be toggled
-                        // ignore-numbers;      // numbers won't deactivate the layer, hence &num_word   // opted to add them to continue list in order to not have % continue this function
-			            continue-list =         // list keycodes that will not cancel &numword
-                            <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
-                                BACKSPACE DELETE 
-                                DOT COMMA SQT DQT COLON SEMICOLON 
-                                SLASH MINUS PLUS ASTRK EQUAL
-                            >;
-        };
     };
     
     macros {        
-        // Cancel OS mods on layer switching
-        // This is faster than relying on &lt intervals
-        la_nav: cancel_queued_os_mods_and_toggle_nav {
+        la_nav: cancel_queued_os_mods_and_toggle_nav { // Cancel OS mods on layer switching. This is faster than relying on &lt intervals
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -288,7 +222,7 @@
                 , <&macro_release &mo NAV>
                 ;
         };
-        la_sym: cancel_queued_os_mods_and_toggle_sym {
+        la_sym: cancel_queued_os_mods_and_toggle_sym { // Cancel OS mods on layer switching. This is faster than relying on &lt intervals
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -300,7 +234,7 @@
                 , <&macro_release &mo SYM>
                 ;
         };
-        la_wnav: cancel_queued_os_mods_and_toggle_windows_nav {
+        la_wnav: cancel_queued_os_mods_and_toggle_windows_nav { // Cancel OS mods on layer switching. This is faster than relying on &lt intervals
             label = "LA_WNAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -312,7 +246,7 @@
                 , <&macro_release &mo WNAV>
                 ;
         };
-        la_wsym: cancel_queued_os_mods_and_toggle_windows_sym {
+        la_wsym: cancel_queued_os_mods_and_toggle_windows_sym { // Cancel OS mods on layer switching. This is faster than relying on &lt intervals
             label = "LA_WSYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -414,62 +348,11 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             LA_NAV    &shift_cw      &kp SPC     LA_SYM
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        
-        default_layer_with_homerow_mods_and_mod_taps {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,     S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,        SQT) 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-        
-        windows_default_layer { // Layer keys map to swapped GUI and CONTROL mods in subsequent layers for easier Windows usage
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        
-        numword_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │ 7        │ 8        │ 9        │          |
-            &trans     &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &kp BSPC
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ 4        │ 5        │ 6        │ 0        │
-            &trans     &trans     &trans     &trans     &trans         &dotcomma  &kp N4     &kp N5     &kp N6     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ 0        │ 1        │ 2        │ 3        │ :        |
-            &trans     &trans     &trans     &trans     &trans         &kp N0     &kp N1     &kp N2     &kp N3     &kp COLON
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &lt SYM N0
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        
+                
         left_navigation_edit_and_media_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -521,6 +404,23 @@
             >;
         };
         
+
+        windows_default_layer { // Layer keys map to swapped GUI and CONTROL mods in subsequent layers for easier Windows usage
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
  
         windows_left_navigation_edit_and_media_layer { // Swapping GUI for CONTROL in mods for easier Windows usage
             bindings = <
