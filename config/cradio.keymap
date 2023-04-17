@@ -274,7 +274,7 @@
             label = "SYM on hold, numapd on tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term = <200>;
+            tapping-term-ms = <200>;
             bindings = <&la_sym>, <&num_word>;
         };
         la_wsym_numpad: wsym_on_hold_numpad_on_tap {
@@ -282,7 +282,7 @@
             label = "WSYM on hold, numapd on tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term = <200>;
+            tapping-term-ms = <200>;
             bindings = <&la_wsym>, <&num_word>;
         };
     };
