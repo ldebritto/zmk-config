@@ -147,7 +147,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <250>;
             bindings = <&mo>, <&kp>;
-        }
+        };
     };
     
     macros {        
