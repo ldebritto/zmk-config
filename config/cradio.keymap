@@ -23,7 +23,7 @@
 #define WCO_COPY &kp LC(C) 
 #define WCO_PASTE &kp LC(V) 
 
-// Media keys used on NAV
+// Media keys
 #define ME_VOLD &kp C_VOL_DN
 #define ME_VOLU &kp C_VOL_UP
 #define ME_PLAY &kp C_PLAY_PAUSE
@@ -126,37 +126,25 @@
             timeout-ms = <80>;
             key-positions = <3 4>;
             layers = <FUN>; 
-            bindings = <&act_bt0>;
+            bindings = <&bt BT_SEL 0>;
         };
         combo_toggle_bt1_connection { // iPad
             timeout-ms = <80>;
             key-positions = <13 14>;
             layers = <FUN>; 
-            bindings = <&act_bt1>;
+            bindings = <&bt BT_SEL 1>;
         };
         combo_toggle_bt2_connection { // iPhone
             timeout-ms = <80>;
             key-positions = <23 24>;
             layers = <FUN>; 
-            bindings = <&act_bt2>;
+            bindings = <&bt BT_SEL 2>;
         };
         combo_toggle_bt3_connection { // 
             timeout-ms = <80>;
             key-positions = <5 6>;
             layers = <FUN>; 
-            bindings = <&act_bt3>;
-        };
-        combo_toggle_bt4_connection {
-            timeout-ms = <80>;
-            key-positions = <15 16>;
-            layers = <FUN>; 
-            bindings = <&act_bt4>;
-        };
-        combo_toggle_bt5_connection {
-            timeout-ms = <80>;
-            key-positions = <25 26>;
-            layers = <FUN>; 
-            bindings = <&act_bt5>;
+            bindings = <&bt BT_SEL 3>;
         };
         
         // Bluetooth Profile Config buttons
@@ -259,67 +247,6 @@
                 ;
         };
         
-        // Macros for quick bluetooth switching and moving back to DEF layer
-        act_bt0: change_to_bt0_and_back_to_def { // MacBook Air
-            label = "Activate BT0 device";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            bindings
-                = <&macro_tap &bt BT_SEL 0>
-                , <&macro_tap &to DEF>
-                ;
-        };
-        act_bt1: change_to_bt1_and_back_to_def { // iPad
-            label = "Activate BT1 device";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            bindings
-                = <&macro_tap &bt BT_SEL 1>
-                , <&macro_tap &to DEF>
-                ;
-        };
-        act_bt2: change_to_bt2_and_back_to_def { // iPhone
-            label = "Activate BT2 device";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            bindings
-                = <&macro_tap &bt BT_SEL 2>
-                , <&macro_tap &to DEF>
-                ;
-        };
-        act_bt3: change_to_bt3_and_back_to_def { // Empty
-            label = "Activate BT3 device";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            bindings
-                = <&macro_tap &bt BT_SEL 3>
-                , <&macro_tap &to DEF>
-                ;
-        };
-        act_bt4: change_to_bt4_and_back_to_def { // Empty
-            label = "Activate BT4 device";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            bindings
-                = <&macro_tap &bt BT_SEL 4>
-                , <&macro_tap &to DEF>
-                ;
-        };
-        act_bt5: change_to_bt5_and_back_to_def { // Empty
-            label = "Activate BT5 device";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            bindings
-                = <&macro_tap &bt BT_SEL 5>
-                , <&macro_tap &to DEF>
-                ;
-        };
     };
 
     conditional_layers {
