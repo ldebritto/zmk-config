@@ -79,7 +79,7 @@
             layers = <NAV WNAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
         };
-        combo_bt0 { // MacBook
+        combo_toggle_bt0_connection { // MacBook
             timeout-ms = <80>;
             key-positions = <3 4>;
             layers = <FUN>; 
@@ -91,13 +91,13 @@
             layers = <FUN>; 
             bindings = <&bt BT_SEL 1>;
         };
-        combo_toggle_bt2_connection { // 
+        combo_toggle_bt2_connection { // open
             timeout-ms = <80>;
             key-positions = <23 24>;
             layers = <FUN>; 
             bindings = <&bt BT_SEL 2>;
         };
-        combo_bootloader_on_the_left_side { // Couldn't find a way to trigger bootloader for right side as a combo
+        combo_trigger_bootloader {
             timeout-ms = <80>;
             key-positions = <20 21>;
             layers = <FUN>; 
@@ -140,6 +140,14 @@
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <3>; // Shift key on NAV to allow for backwards movement
         };
+        blt: hold_prefered_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERED_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&mo>, <&kp>;
+        }
     };
     
     macros {        
@@ -219,7 +227,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+                                    &blt NAV K_CANCEL &shift_cw      &kp SPC    &blt SYM K_CANCEL
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
