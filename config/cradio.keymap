@@ -1,7 +1,6 @@
 // Appart from main ZMK, requires these PRs
 // # https://github.com/zmkfirmware/zmk/pull/1451 - Smart-layers (e.g., num-word) and caps-word enhancements
 // # https://github.com/zmkfirmware/zmk/pull/1366 - Swapper (tri-layer-state)
-// MERGED # https://github.com/zmkfirmware/zmk/pull/1586 - Fixing sticky key quick-release on multiple modifiers
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
