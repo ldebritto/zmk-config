@@ -341,7 +341,7 @@
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp PARAG  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
