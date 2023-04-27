@@ -1,6 +1,4 @@
-// Appart from main ZMK, requires these PRs
-// # https://github.com/zmkfirmware/zmk/pull/1451 - Smart-layers (e.g., num-word) and caps-word enhancements
-// # https://github.com/zmkfirmware/zmk/pull/1366 - Swapper (tri-layer-state)
+// Appart from main ZMK, requires this PR https://github.com/zmkfirmware/zmk/pull/1366 - Swapper (tri-layer-state)
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -65,6 +63,12 @@
             key-positions = <13 16>; // F J
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LG(SPC)>;
+        };
+        combo_shortcat {
+            timeout-ms = <80>;
+            key-positions = <12 17>; // D K
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp LC(LS(SPC))>;
         };
         combo_windows_start_menu { // Mapped to the same spot I use with spotlight
             timeout-ms = <80>;
@@ -147,6 +151,57 @@
             tapping-term-ms = <250>;
             bindings = <&mo>, <&kp>;
         };
+     };
+    
+    macros {        
+        la_nav: cancel_queued_os_mods_and_toggle_nav { 
+            label = "LA_NAV";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo NAV>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo NAV>
+                ;
+        };
+        la_sym: cancel_queued_os_mods_and_toggle_sym { 
+            label = "LA_SYM";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo SYM>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo SYM>
+                ;
+        };
+        la_wnav: cancel_queued_os_mods_and_toggle_windows_nav { 
+            label = "LA_WNAV";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo WNAV>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo WNAV>
+                ;
+        };
+        la_wsym: cancel_queued_os_mods_and_toggle_windows_sym { 
+            label = "LA_WSYM";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_press &mo WSYM>
+                , <&macro_tap &kp K_CANCEL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo WSYM>
+                ;
+        };
     };
 
     conditional_layers {
@@ -175,7 +230,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                      &blt NAV K_CANCEL &shift_cw      &kp SPC    &blt SYM K_CANCEL
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -244,7 +299,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &blt WNAV K_CANCEL   &shift_cw      &kp SPC    &blt WSYM K_CANCEL
+                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
