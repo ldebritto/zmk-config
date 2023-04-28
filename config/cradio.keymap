@@ -310,7 +310,7 @@
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
             &kp TAB    &wswapper  WCO_PTAB   WCO_NTAB   ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CMD      │ ALT      │ SHIFT    │ CTRL     │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
+        //│ WIN      │ ALT      │ SHIFT    │ CTRL     │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ CAPSLOCK │ DELETE   │
@@ -327,7 +327,7 @@
         //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
             &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CTRL     │ SHIFT    │ ALT      │ CMD      │
+        //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CTRL     │ SHIFT    │ ALT      │ WIN      │
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
@@ -344,7 +344,7 @@
         //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CMD      │ ALT      │ SHIFT    │ CTRL     │ F11      │   │ F12      │ CTRL     │ SHIFT    │ ALT      │ CMD      │
+        //│ WIN      │ ALT      │ SHIFT    │ CTRL     │ F11      │   │ F12      │ CTRL     │ SHIFT    │ ALT      │ WIN      │
             &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   &kp F11        &kp F12    &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
