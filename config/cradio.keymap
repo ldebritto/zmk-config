@@ -158,6 +158,22 @@
             tapping-term-ms = <250>;
             bindings = <&mo>, <&kp>;
         };
+        // num_word - Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
+        num_word: behavior_num_word {
+			compatible = "zmk,behavior-caps-word";
+			label = "NUM_WORD_KEY";
+			#binding-cells = <0>;
+                        layers = <NUM>;         // layer to be toggled
+                        // ignore-numbers;      // numbers won't deactivate the layer, hence &num_word   // opted to add them to continue list in order to not have % continue this function
+                        // ignore-modifiers;    // modifiers won't deactivate the layer, hence &num_word
+			            continue-list =         // list keycodes that will not cancel &numword
+                            <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
+                                BACKSPACE DELETE 
+                                DOT COMMA SQT DQT COLON SEMICOLON 
+                                SLASH MINUS PLUS ASTRK EQUAL
+                            >;       
+		 
+        };
      };
     
     macros {        
