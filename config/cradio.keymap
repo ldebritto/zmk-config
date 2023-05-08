@@ -271,7 +271,7 @@
         //│ _        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ :        |
             &kp UNDER  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &dotcomma      &kp COMMA  &lt SYM N0
+                                             &trans     &mo DEF        &kp COMMA  &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
