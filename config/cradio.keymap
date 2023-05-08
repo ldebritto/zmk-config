@@ -172,8 +172,8 @@
                                 DOT COMMA SQT DQT COLON SEMICOLON 
                                 SLASH MINUS PLUS ASTRK EQUAL
                                 TAB
+                                LPAR LBKT LBRC PIPE
                             >;       
-		 
         };
      };
     
@@ -279,16 +279,16 @@
         numword_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │  {       │  [       │  (       │ ~        │   │          │ 7        │ 8        │ 9        │ BACKSPACE         |
-            &kp TAB    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &trans     &kp N7     &kp N8     &kp N9     &kp BSPC
+        //│ ESC      │  {       │  [       │  (       │ ~        │   │ TAB      │ 7        │ 8        │ 9        │ BACKSPACE|
+            &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp TAB     &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │ *        │ =        │ +        │ $        │   │          │ 4        │ 5        │ 6        │ 0        │
-            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS   &kp DLLR       &trans     &kp N4     &kp N5     &kp N6     &kp N0
+        //│ -        │ *        │ =        │ _        │ $        │   │ .        │ 4        │ 5        │ 6        │ 0        │
+            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp DOT     &kp N4     &kp N5     &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ _        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ :        |
-            &kp UNDER  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3     &kp COLON
+        //│ +        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ :        |
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV    &mo DEF        &kp COMMA  &lt SYM N0
+                                             &mo NAV    &mo DEF        &kp SPACE  &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
