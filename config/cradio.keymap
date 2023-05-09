@@ -4,14 +4,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
-// Home row mods definitions
-#define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
-        //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
-
-
-
 // NAV layer special command keys for macOS usage
 #define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
 #define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
@@ -31,17 +23,16 @@
 
 // macOS layers (CASG mods)
 #define DEF 0
-#define HRDEF 1
-#define WDEF 2
-#define NUM 3
-#define NAV 4
-#define SYM 5
-#define FUN 6
+#define WDEF 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
 
 // Windows layers (GASC mods)
-#define WNAV 7
-#define WSYM 8
-#define WFUN 9
+#define WNAV 6
+#define WSYM 7
+#define WFUN 8
 
 // Customized ZMK existing behaviors
 &sk {
@@ -62,13 +53,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_toggle_home_row_mods {
-            timeout-ms = <80>;
-            key-positions = <0 9>; // Q P
-            layers = <FUN WFUN>;
-            bindings = <&tog HRDEF>;
-        };
-        combo_switch_to_windows_layers_and_back {
+        combo_toggel_windows_layers {
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN WFUN>;
@@ -97,12 +82,6 @@
             key-positions = <4 14>; // Vol up + down keys
             layers = <NAV WNAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
-        };
-        combo_caps_word {
-            timeout-ms = <120>;
-            key-positions = <31 32>; // Shift Space
-            layers = <DEF WDEF>;
-            bindings = <&caps_word>;
         };
         combo_num_word {
             timeout-ms = <120>;
@@ -143,45 +122,6 @@
     };
     
     behaviors {
-
-        // Mod tapping
-        tp_ht: tap_preffered_hold_tap { // For HR Mods
-            label = "tap_prefferred_hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <350>; // Terms favours taps
-            quick-tap-ms = <0>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-        hp_ht: hold_preffered_hold_tap { // For Shift Tab in left thumb
-            label = "hold_prefferred_hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred"; // Hold-preferred works better for Shift
-            tapping-term-ms = <350>;
-            bindings = <&kp>, <&kp>;
-        };
-        ts_ht: thumb_space_hold_tap { // For Hyperspace
-            label = "space_hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <450>; // Terms hugely favours taps
-            quick-tap-ms = <0>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-        hp_lt: hold_prefered_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_PREFERED_LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&mo>, <&kp>;
-        };
-
         // Tap dances
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
@@ -299,7 +239,7 @@
     keymap {
         compatible = "zmk,keymap";
   
-        default_layer_with_no_home_row_mods {
+        default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
@@ -312,23 +252,6 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &la_nav    &shift_cw      &kp SPC    &la_sym
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        
-        default_layer_with_home_row_mods {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &la_nav &hp_ht LSHFT ENTER &kp SPC &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
