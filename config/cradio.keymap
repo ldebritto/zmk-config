@@ -142,13 +142,40 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        hp_ht: hold_preffered_hold_tap { // For Shift Tab in left thumb
+            label = "hold_prefferred_hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred"; // Hold-preferred works better for Shift
+            tapping-term-ms = <0>;
+            bindings = <&kp>, <&kp>;
+        };
+        ts_ht: thumb_space_hold_tap { // For Hyperspace
+            label = "space_hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <450>; // Terms hugely favours taps
+            quick-tap-ms = <0>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        hp_lt: hold_prefered_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERED_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&mo>, <&kp>;
+        };
 
+        // Tap dances
         shift_cw: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LSHFT>, <&caps_word>;
+            bindings = <&hp_ht LSHFT ENTER>, <&caps_word>;
         };        
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
@@ -156,7 +183,9 @@
             #binding-cells = <0>;
                 tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
-        };        
+        };
+
+        // Swapper        
         swapper: swapper { // Swapper for apps in macOS 
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
             label = "SWAPPER";
@@ -171,14 +200,7 @@
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <3>; // Shift key on NAV to allow for backwards movement
         };
-        blt: hold_prefered_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_PREFERED_LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <250>;
-            bindings = <&mo>, <&kp>;
-        };
+        
         // num_word - Documentation in PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451), got it from urob's repo
         num_word: behavior_num_word {
 			compatible = "zmk,behavior-caps-word";
