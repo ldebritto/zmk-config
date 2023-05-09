@@ -316,7 +316,8 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
+                                             &la_wnav   &&hp_ht LSHFT ENTER      &kp SPC    &la_wsym
+                                             // &la_wnav   &shift_cw      &kp SPC    &la_wsym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
