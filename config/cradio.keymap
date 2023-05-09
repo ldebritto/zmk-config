@@ -31,16 +31,17 @@
 
 // macOS layers (CASG mods)
 #define DEF 0
-#define WDEF 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define HRDEF 1
+#define WDEF 2
+#define NUM 3
+#define NAV 4
+#define SYM 5
+#define FUN 6
 
 // Windows layers (GASC mods)
-#define WNAV 6
-#define WSYM 7
-#define WFUN 8
+#define WNAV 7
+#define WSYM 8
+#define WFUN 9
 
 // Customized ZMK existing behaviors
 &sk {
@@ -61,6 +62,12 @@
 / {
     combos {
         compatible = "zmk,combos";
+        combo_toggle_home_row_mods {
+            timeout-ms = <80>;
+            key-positions = <0 9>; // Q P
+            layers = <FUN WFUN>;
+            bindings = <&tog HRDEF>;
+        };
         combo_switch_to_windows_layers_and_back {
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
@@ -291,7 +298,25 @@
 
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
+  
+        default_layer_with_no_home_row_mods {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        default_layer_with_home_row_mods {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
@@ -299,13 +324,11 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
             HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
-        //    &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &hp_ht LSHFT ENTER      &kp SPC    &la_sym
-                                             //&la_nav    &shift_cw      &kp SPC    &la_sym
+                                            &la_nav &hp_ht LSHFT ENTER &kp SPC &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -322,8 +345,8 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_wnav   &hp_ht LSHFT ENTER      &kp SPC    &la_wsym
-                                             // &la_wnav   &shift_cw      &kp SPC    &la_wsym
+                                             //&la_wnav   &hp_ht LSHFT ENTER      &kp SPC    &la_wsym
+                                             &la_wnav   &shift_cw      &kp SPC    &la_wsym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
