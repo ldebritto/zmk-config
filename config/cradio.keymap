@@ -91,6 +91,12 @@
             layers = <NAV WNAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
         };
+        combo_caps_word {
+            timeout-ms = <120>;
+            key-positions = <31 32>; // Shift Space
+            layers = <DEF WDEF>;
+            bindings = <&caps_word>;
+        };
         combo_num_word {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
