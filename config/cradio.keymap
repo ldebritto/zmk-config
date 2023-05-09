@@ -170,13 +170,13 @@
         };
 
         // Tap dances
-        shift_cw: tap_dance_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CAPS_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&hp_ht LSHFT ENTER>, <&caps_word>;
-        };        
+        // shift_cw: tap_dance_caps_word {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "TAP_DANCE_CAPS_WORD";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <300>;
+        //     bindings = <&hp_ht LSHFT ENTER>, <&caps_word>;
+        // };        
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
@@ -298,7 +298,8 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym
+                                             &la_nav    &hp_ht LSHFT ENTER      &kp SPC    &la_sym
+                                             //&la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
