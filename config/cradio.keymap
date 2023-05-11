@@ -137,6 +137,16 @@
                 tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
+        
+        z_swish: z_swish_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
+            compatible = "zmk,behavior-hold-tap";
+            label = "Z_SWISH";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 
         // Swapper        
         swapper: swapper { // Swapper for apps in macOS 
@@ -249,7 +259,7 @@
              &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        &z_swish Z CAPS &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -268,7 +278,6 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             //&la_wnav   &hp_ht LSHFT ENTER      &kp SPC    &la_wsym
                                              &la_wnav   &shift_cw      &kp SPC    &la_wsym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
@@ -301,7 +310,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ CAPSLOCK │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &sk CAPS   &kp DEL
+    &z_swish LG(Z) CAPS &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &sk CAPS   &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
