@@ -139,9 +139,9 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
         
-        q_swish: q_swish_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
+        z_swish: z_swish_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
             compatible = "zmk,behavior-hold-tap";
-            label = "q_swish";
+            label = "z_swish";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
@@ -254,13 +254,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-        &q_swish CAPS Q &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
              &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
-            &kp Z       &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+    &z_swish CAPS  Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -305,13 +305,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
-        &q_swish CAPS TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
+            &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ CAPSLOCK │ DELETE   │
-            &kp LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &sk CAPS   &kp DEL
+   &z_swish CAPS LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &sk CAPS   &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
