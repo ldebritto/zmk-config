@@ -138,7 +138,6 @@
                 tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
-        
         a_swish: a_swish_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
             compatible = "zmk,behavior-hold-tap";
             label = "a_swish";
@@ -147,6 +146,14 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        hlt: hold_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "hold_layer_tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
         };
 
         // Swapper        
@@ -262,7 +269,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &la_nav    &mt LSHIFT BSPC      &lt NAV SPC    &la_sym
+                                    &hlt NAV ESC  &mt LSHIFT BSPC       &lt NAV SPC    &hlt SYM ENTER
                                              // &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
