@@ -189,6 +189,15 @@
                                 LPAR LBKT LBRC PIPE
                             >;       
         };
+        
+        lt_num_word: lt_num_word {
+            compatible = "zmk,behavior-hold-tap";
+            label = "lt_num_word";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&num_word>;
+        };
      };
     
     macros {        
@@ -269,7 +278,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
     &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &la_nav    &shift_cw      &kp SPC    &la_sym
+                                              &la_nav    &shift_cw      &kp SPC    &lt_num_word NUM 0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -301,7 +310,7 @@
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp DOT     &kp N4     &kp N5     &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ +        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ :        |
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp DOT    &kp N1     &kp N2     &kp N3     &kp COLON
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &mo NAV    &mo DEF        &kp SPACE  &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
