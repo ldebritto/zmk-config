@@ -64,7 +64,7 @@
             bindings = <&tog WDEF>;
         };
         combo_toggle_aoe_layer {
-            timeout-ms = <80>;
+            timeout-ms = <180>;
             key-positions = <2 10 18>; // A O E
             layers = <DEF AOE>;
             bindings = <&tog AOE>;
