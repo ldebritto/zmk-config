@@ -65,7 +65,7 @@
         };
         combo_toggle_aoe_layer {
             timeout-ms = <250>;
-            key-positions = <2 10 18>; // A O E
+            key-positions = <2 8 10>; // A O E
             layers = <DEF AOE>;
             bindings = <&tog AOE>;
         };
