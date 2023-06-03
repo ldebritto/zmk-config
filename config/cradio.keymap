@@ -222,6 +222,14 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
+        hyperspace: hold_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "hyperspace";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
 
         // Swapper        
         swapper: swapper { // Swapper for apps in macOS 
@@ -350,7 +358,7 @@
             >;
         };
         
-        home_row_default_layer {
+        mod_tap_default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
@@ -362,7 +370,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
     &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &semi_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &la_nav    &shift_cw   &lt NAV SPC   &la_sym
+                                              &la_nav    &shift_cw   &hyperspace LA(LS(LC(LGUI))) SPC   &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
