@@ -118,12 +118,6 @@
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
         };
-        combo_toggle_aoe_layer {
-            timeout-ms = <250>;
-            key-positions = <2 8 10>; // A O E
-            layers = <DEF AOE>;
-            bindings = <&tog AOE>;
-        };
         combo_spotlight_alfred {
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
