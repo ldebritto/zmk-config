@@ -116,7 +116,7 @@
             timeout-ms = <80>;
             key-positions = <0 9>; // Q P
             layers = <FUN WFUN>;
-            bindings = <&tog WDEF>;
+            bindings = <&tog HRDEF>;
         };
         combo_spotlight_alfred {
             timeout-ms = <80>;
