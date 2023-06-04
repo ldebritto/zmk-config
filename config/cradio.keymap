@@ -145,7 +145,7 @@
         combo_num_word {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
-            layers = <DEF WDEF NUM>;
+            layers = <DEF HRDEF WDEF NUM>;
             bindings = <&num_word>;
         };
         combo_toggle_bt0_connection { // MacBook
