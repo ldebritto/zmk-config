@@ -1,8 +1,8 @@
-// mouse-keys support (Copied fom urob's repo https://github.com/urob/zmk-config)
 #include <dt-bindings/zmk/mouse.h>
+
 &mmv {
   acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <1000>;    // 40
+  time-to-max-speed-ms = <1500>;    // 40
   delay-ms = <0>;                   // 0
 };
 
@@ -44,4 +44,3 @@
 #define U_WH_D &mwh SCROLL_DOWN
 #define U_WH_L &mwh SCROLL_LEFT
 #define U_WH_R &mwh SCROLL_RIGHT
-

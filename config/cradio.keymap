@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Personal includes
-#include <mouse.dtsi> // urob's mouuse keys (from https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi)
+#include <urobs_mouse_keys.dtsi>
 #include <custom_keycode_definitions.dtsi>
 
 // Default layers with macOS and Windows layer toggles
