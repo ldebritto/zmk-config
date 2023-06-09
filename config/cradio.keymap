@@ -21,6 +21,8 @@
 #define WSYM 7
 #define WFUN 8
 
+#define MOUSE 9
+
 // Personal includes
 #include <urobs_mouse_keys.dtsi>
 #include <custom_keycode_definitions.dtsi>
