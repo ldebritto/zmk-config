@@ -1,0 +1,16 @@
+// NAV layer special command keys for macOS usage
+#define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
+#define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
+#define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
+#define CO_NTAB &kp LC(TAB) // Next Tab
+
+// WNAV layer special command keys for Windows functions
+#define WGO_FWRD &kp LA(RARW) // Forward button on browser and other apps
+#define WGO_BACK &kp LA(LARW) // Back button on browser and other apps
+#define WCO_PTAB &kp LS(LC(TAB)) // Previous Tab
+#define WCO_NTAB &kp LC(TAB) // Next Tab
+
+// Media keys
+#define ME_VOLD &kp C_VOL_DN
+#define ME_VOLU &kp C_VOL_UP
+#define ME_PLAY &kp C_PLAY_PAUSE
