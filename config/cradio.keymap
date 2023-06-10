@@ -5,6 +5,71 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// mouse keys copied from urob's keymap
+#include <dt-bindings/zmk/mouse.h>
+
+&mmv {
+  acceleration-exponent = <1>;      // 1
+  time-to-max-speed-ms = <1500>;    // 40
+  delay-ms = <0>;                   // 0
+};
+
+&mwh {
+  acceleration-exponent = <1>;      // 0
+  time-to-max-speed-ms = <5000>;    // 40
+  delay-ms = <0>;                   // 10
+};
+
+#define U_MOUSE_MOVE_MAX 1250       // 600
+#define U_MOUSE_SCROLL_MAX 100      // 10
+
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+#define U_BTN1 &mkp MB1
+#define U_BTN2 &mkp MB2
+#define U_BTN3 &mkp MB3
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_WH_U &mwh SCROLL_UP
+#define U_WH_D &mwh SCROLL_DOWN
+#define U_WH_L &mwh SCROLL_LEFT
+#define U_WH_R &mwh SCROLL_RIGHT
+
+// NAV layer special command keys for macOS usage
+#define GO_FWRD &kp LG(RBKT) // Forward button on browser and other apps
+#define GO_BACK &kp LG(LBKT) // Back button on browser and other apps
+#define CO_PTAB &kp LS(LC(TAB)) // Previous Tab
+#define CO_NTAB &kp LC(TAB) // Next Tab
+
+// WNAV layer special command keys for Windows functions
+#define WGO_FWRD &kp LA(RARW) // Forward button on browser and other apps
+#define WGO_BACK &kp LA(LARW) // Back button on browser and other apps
+#define WCO_PTAB &kp LS(LC(TAB)) // Previous Tab
+#define WCO_NTAB &kp LC(TAB) // Next Tab
+
+// Media keys
+#define ME_VOLD &kp C_VOL_DN
+#define ME_VOLU &kp C_VOL_UP
+#define ME_PLAY &kp C_PLAY_PAUSE
+
 // Default layers with macOS and Windows layer toggles
 #define DEF 0
 #define WDEF 1
@@ -21,11 +86,8 @@
 #define WSYM 7
 #define WFUN 8
 
+// mouse keys
 #define MOUSE 9
-
-// Personal includes
-#include <urobs_mouse_keys.dtsi>
-#include <custom_keycode_definitions.dtsi>
 
 // Customized ZMK existing behaviors
 &sk {
@@ -369,8 +431,8 @@
         //│ WIN      │ ALT      │ SHIFT    │ CTRL     │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ CAPSLOCK │ DELETE   │
-            &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  ME_PLAY        &nextprev  WGO_BACK   WGO_FWRD   &kp CAPS   &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │          │ DELETE   │
+            &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  ME_PLAY        &nextprev  WGO_BACK   WGO_FWRD   &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
