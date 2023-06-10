@@ -113,7 +113,7 @@
         combo_spotlight_alfred {
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
-            layers = <DEF HRDEF>; // Only available in the DEF layer
+            layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LG(SPC)>;
         };
         combo_shortcat {
@@ -147,7 +147,7 @@
         combo_num_word {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
-            layers = <DEF HRDEF WDEF NUM>;
+            layers = <DEF WDEF NUM>;
             bindings = <&num_word>;
         };
         
