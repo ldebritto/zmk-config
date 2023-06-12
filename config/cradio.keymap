@@ -225,7 +225,7 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
-            ignored-key-positions = <3 7 9 16 17 18 29>; // Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
+            ignored-key-positions = <3 7 9 16 17 18 28 29>; // Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
         wswapper: windows_swapper { // Swapper for windows in Windows
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
