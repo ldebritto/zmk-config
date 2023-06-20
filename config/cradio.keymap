@@ -131,6 +131,12 @@
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
         };
+        combo_colemak {
+            timeout-ms = <80>;
+            key-positions = <0 9>; // Q P
+            layers = <FUN>;
+            bindings = <&tog COLEMAK>;
+        };
         combo_windows_start_menu { // Mapped to the same spot I use with spotlight on macOS
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
