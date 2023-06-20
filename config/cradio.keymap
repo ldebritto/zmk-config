@@ -72,19 +72,20 @@
 
 // Default layers with macOS and Windows layer toggles
 #define DEF 0
-#define WDEF 1
+#define COLEMAK 1
+#define WDEF 2
 
-#define NUM 2 // numpad for &num_word
+#define NUM 3 // numpad for &num_word
 
 // macOS layers (CASG mods)
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define NAV 4
+#define SYM 5
+#define FUN 6
 
 // Windows layers (GASC mods)
-#define WNAV 6
-#define WSYM 7
-#define WFUN 8
+#define WNAV 7
+#define WSYM 8
+#define WFUN 9
 
 // mouse keys
 #define MOUSE 9
@@ -331,6 +332,23 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
     &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                              &la_nav    &shift_cw      &kp SPC    &la_sym
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        colemak_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ' "     │
+    &lt_mouse MOUSE Q   &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │  O       │
+             &kp A      &kp R      &kp S      &kp T      &kp D          &kp H      &kp N      &kp E      &kp I      &kp O
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │  , <     │  . >     │  ; :     │
+    &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &la_nav    &shift_cw      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
