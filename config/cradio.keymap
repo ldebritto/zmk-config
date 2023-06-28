@@ -101,6 +101,10 @@
         quick-release;
     };
 
+&lt {
+        flavor = "balanced";
+    };
+
 &caps_word { // Uses PR #1451 continue list fucntionality to allow for accents and not canceling caps_word on layer changes
     continue-list = <
                     UNDERSCORE MINUS
