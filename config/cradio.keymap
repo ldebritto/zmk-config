@@ -144,8 +144,8 @@
 
         // Special layer toggles
         combo_colemak {
-            timeout-ms = <80>;
-            key-positions = <0 9>; // Q P (outmost keys on QWERTY layout)
+            timeout-ms = <180>;
+            key-positions = <0 1 2 3 6 7 8 9>; // All 8 home row positions on FUN
             layers = <FUN>;
             bindings = <&tog COLEMAK>;
         };
