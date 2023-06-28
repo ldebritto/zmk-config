@@ -127,6 +127,12 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LC(LS(SPC))>;
         };
+        combo_toggle_nav_on_left_thumb {
+            timeout-ms = <120>;
+            key-positions = <30 31>; // SPC SYM
+            layers = <DEF NAV>;
+            bindings = <&tog NAV>;
+        };
 
         // Windows combos
         combo_toggle_windows_specific_layers { // those swap GUI and CONTROL keys from dominant fingers
@@ -140,6 +146,12 @@
             key-positions = <13 16>; // F J
             layers = <WDEF>; // Only available in the Windows DEF layer
             bindings = <&kp LGUI>;
+        };
+        combo_toggle_wnav_on_left_thumb {
+            timeout-ms = <120>;
+            key-positions = <30 31>; // SPC SYM
+            layers = <WDEF WNAV>;
+            bindings = <&tog WNAV>;
         };
 
         // Special layer toggles
@@ -163,7 +175,7 @@
             layers = <NAV WNAV>; // Only available in the NAV layer
             bindings = <&kp C_MUTE>;
         };
-        combo_num_word {
+        combo_num_word_on_right_thumb {
             timeout-ms = <120>;
             key-positions = <32 33>; // SPC SYM
             layers = <DEF WDEF NUM>;
@@ -419,7 +431,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │          │ DELETE   │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &none      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         &mt LSHFT SPC &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -470,7 +482,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ `        │ DELETE   │
             &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  ME_PLAY        &nextprev  WGO_BACK   WGO_FWRD   &kp GRAVE  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         &mt LSHFT SPC &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
