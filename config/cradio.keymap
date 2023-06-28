@@ -1,4 +1,6 @@
-// Appart from main ZMK, requires this PR https://github.com/zmkfirmware/zmk/pull/1366 - Swapper (tri-layer-state)
+// Appart from main ZMK, requires these 
+// PR# 1366 (https://github.com/zmkfirmware/zmk/pull/1366) - Swapper (tri-layer-state)
+// PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451) - Smart Caps (for &num_word)
 
 // ZMK includes
 #include <behaviors.dtsi>
@@ -413,8 +415,8 @@
         //│ TAB      │  {       │  [       │  (       │ )        │   │ TAB      │ 7        │ 8        │ 9        │ BACKSPACE|
             &kp TAB    &kp LBRC   &kp LBKT   &kp LPAR   &kp RPAR      &kp TAB     &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │ *        │ =        │ _        │ $        │   │ .        │ 4        │ 5        │ 6        │ 0        │
-            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp DOT     &kp N4     &kp N5     &kp N6     &kp N0
+        //│ -        │ *        │ =        │ _        │ $        │   │ .        │ 4        │ 5        │ 6        │ ENTER    │
+            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp DOT     &kp N4     &kp N5     &kp N6    &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ +        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ :        |
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp COLON
