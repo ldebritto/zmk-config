@@ -91,8 +91,9 @@
 #define MOUSE 10
 
 // AOE layers
-#define AOE 11
+#define AOED 11
 #define AOE2 12
+#define AOE3 13
 
 // Customized ZMK existing behaviors
 &sk {
@@ -163,9 +164,9 @@
         };
         combo_aoe {
             timeout-ms = <80>;
-            key-positions = <9 19 29>; // P ' : (right column keys on FUN layer)
-            layers = <FUN AOE>;
-            bindings = <&tog AOE>;
+            key-positions = <9 19 29>; // P ' : (right column keys on FUN or AOED layers)
+            layers = <FUN AOED>;
+            bindings = <&tog AOED>;
         };
 
         // Multimedia and keyboard features
@@ -551,7 +552,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │          │          │          │          │          │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                       &lt AOE2 ESC &mt LC(LSHFT) DOT  &none      &none
+                                           &lt AOE2 ESC &lt AOE3 DOT  &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -565,10 +566,27 @@
         //│  2       │  3       │  4       │  5       │  6       │   │          │          │          │          │          │
              &kp N2     &kp N3     &kp N4     &kp N5     &kp N6        &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SHIFT+,  │          │          │ SHIFT+H  │  H       │   │          │          │          │          │          │
-            &kp LS(COMMA) &none  &none      &kp LS(H)  &kp H         &none      &none      &none      &none       &none
+        //│ SHIFT+,  │  SHIFT+. │          │ C+S+H    │  H       │   │          │          │          │          │          │
+        &kp LS(COMMA) &kp LS(DOT) &none      &kp LC(LS(H))  &kp H         &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &trans     &kp ESC    &none      &none
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        
+        aoe2_select_all_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ Mercado  │Blacksmith│          │  Templo  │  Univers.│   │          │          │          │          │          │
+        &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(M)) &kp LS(LC(Y)) &kp LS(LC(U))    &none &none &none &none &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ Arquearia│ Estábulos│ Quartéis │ Castelo  │ Oficinas │   │          │          │          │          │          │
+        &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ Lenha    │ Moinhos  │ Minas    │ Todos TCs│ TC       │   │          │          │          │          │          │
+            &kp LC(Z) &kp LC(I)  &kp LS(G) &kp LC(LS(H))  &kp H                  &none &none &none &none &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                              &trans     &kp ESC                 &none &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
