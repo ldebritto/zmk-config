@@ -88,11 +88,11 @@
 #define WFUN 9
 
 // mouse keys
-#define MOUSE 9
+#define MOUSE 10
 
 // AOE layers
-#define AOE 10
-#define AOE2 11
+#define AOE 11
+#define AOE2 12
 
 // Customized ZMK existing behaviors
 &sk {
