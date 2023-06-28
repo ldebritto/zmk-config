@@ -169,7 +169,7 @@
         combo_aoe {
             timeout-ms = <80>;
             key-positions = <9 19 29>; // P ' : (right column keys on FUN or AOED layers)
-            layers = <FUN AOED>;
+            layers = <DEF FUN AOED>;
             bindings = <&tog AOED>;
         };
 
