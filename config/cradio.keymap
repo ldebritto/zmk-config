@@ -135,17 +135,25 @@
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
         };
-        combo_colemak {
-            timeout-ms = <80>;
-            key-positions = <0 9>; // Q P
-            layers = <FUN>;
-            bindings = <&tog COLEMAK>;
-        };
         combo_windows_start_menu { // Mapped to the same spot I use with spotlight on macOS
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
             layers = <WDEF>; // Only available in the Windows DEF layer
             bindings = <&kp LGUI>;
+        };
+
+        // Special layer toggles
+        combo_colemak {
+            timeout-ms = <80>;
+            key-positions = <0 9>; // Q P (outmost keys on QWERTY layout)
+            layers = <FUN>;
+            bindings = <&tog COLEMAK>;
+        };
+        combo_aoe {
+            timeout-ms = <80>;
+            key-positions = <9 19 29>; // P ' : (right column keys on FUN layer)
+            layers = <FUN AOE>;
+            bindings = <&tog COLEMAK>;
         };
 
         // Multimedia and keyboard features
@@ -531,7 +539,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │          │          │          │          │          │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                       &lt AOE2 ESC &mt LC(SHIFT) DOT  &none      &none
+                                       &lt AOE2 ESC &mt LC(LSHFT) DOT  &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -546,7 +554,7 @@
              &kp N2     &kp N3     &kp N4     &kp N5     &kp N6        &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ SHIFT+,  │          │          │ SHIFT+H  │  H       │   │          │          │          │          │          │
-        &kp LS(COMMA)   &none      &none      &kp LS(H)  &kp H         &none      &none      &none      &none       &none
+            &kp LS(COMMA) &none  &none      &kp LS(H)  &kp H         &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &trans     &kp ESC    &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
