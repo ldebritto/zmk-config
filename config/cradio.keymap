@@ -412,14 +412,14 @@
         numword_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │  {       │  [       │  (       │ )        │   │ TAB      │ 7        │ 8        │ 9        │ BACKSPACE|
-            &kp TAB    &kp LBRC   &kp LBKT   &kp LPAR   &kp RPAR      &kp TAB     &kp N7     &kp N8     &kp N9     &kp BSPC
+        //│ TAB      │  {       │  [       │  (       │ )        │   │ :        │ 7        │ 8        │ 9        │ BACKSPACE|
+            &kp TAB    &kp LBRC   &kp LBKT   &kp LPAR   &kp RPAR      &kp COLON     &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ -        │ *        │ =        │ _        │ $        │   │ .        │ 4        │ 5        │ 6        │ ENTER    │
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp DOT     &kp N4     &kp N5     &kp N6    &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ +        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ :        |
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp COLON
+        //│ +        │ |        │  @       │  /       │  %       │   │ ,        │ 1        │ 2        │ 3        │ DELETE   |
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp COMMA  &kp N1     &kp N2     &kp N3     &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &mo NAV    &mo DEF        &kp SPACE  &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -566,21 +566,21 @@
         aoe2_groups_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  C2      │  C3      │  C4      │  C5      │  C6      │   │          │          │          │          │          │
-             &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5) &kp LC(N6)    &none      &none      &none      &none       &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  2       │  3       │  4       │  5       │  6       │   │          │          │          │          │          │
              &kp N2     &kp N3     &kp N4     &kp N5     &kp N6        &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SHIFT+,  │  SHIFT+. │          │ C+S+H    │  H       │   │          │          │          │          │          │
-        &kp LS(COMMA) &kp LS(DOT) &none      &kp LC(LS(H))  &kp H         &none      &none      &none      &none       &none
+        //│  7       │  8       │  9       │  0       │  Control │   │          │          │          │          │          │
+             &kp N7      &kp N8     &kp N9    &kp N0     &sk LCTRL     &none      &none      &none      &none       &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ SHIFT+,  │  SHIFT+. │ 1        │  H       │  Control │   │          │          │          │          │          │
+        &kp LS(COMMA) &kp LS(DOT) &kp N1      &kp H      &sk LCTRL     &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &trans     &kp ESC    &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
         
-        aoe2_select_all_layer {
+        aoe2_select_all_buildings_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Mercado  │Blacksmith│          │  Templo  │  Univers.│   │          │          │          │          │          │
@@ -592,7 +592,7 @@
         //│ Lenha    │ Moinhos  │ Minas    │ Todos TCs│ TC       │   │          │          │          │          │          │
             &kp LC(Z) &kp LC(I)  &kp LS(G) &kp LC(LS(H))  &kp H                  &none &none &none &none &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans     &kp ESC                 &none &none
+                                              &trans     &trans                 &none &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
