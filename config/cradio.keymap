@@ -111,6 +111,7 @@
     continue-list = <
                     UNDERSCORE MINUS
                     SQT CARET TILDE GRAVE
+                    UARW DARW RARW LARW
                     K_CANCEL
                     BACKSPACE DELETE
                 >;
