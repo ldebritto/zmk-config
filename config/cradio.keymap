@@ -576,7 +576,7 @@
         //│ SHIFT+,  │  SHIFT+. │ 1        │  H       │  Control │   │          │          │          │          │          │
         &kp LS(COMMA) &kp LS(DOT) &kp N1      &kp H      &sk LCTRL     &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans     &kp ESC    &none      &none
+                                              &trans     &kp DEL    &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -584,8 +584,8 @@
         aoe2_select_all_buildings_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ Mercado  │Blacksmith│          │  Templo  │  Univers.│   │          │          │          │          │          │
-        &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(M)) &kp LS(LC(Y)) &kp LS(LC(U))    &none &none &none &none &none
+        //│ Mercado  │Blacksmith│ Univers. │  Templo  │  Univers.│   │          │          │          │          │          │
+        &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(U)) &kp LS(LC(Y)) &kp LS(LC(U))    &none &none &none &none &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ Arquearia│ Estábulos│ Quartéis │ Castelo  │ Oficinas │   │          │          │          │          │          │
         &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
