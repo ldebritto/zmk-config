@@ -99,7 +99,6 @@
 
 // Customized ZMK existing behaviors
 &sk {
-        release-after-ms = <10000>; // Default is 1000 ms. Added an extra long timeout to make clicking with modifiers easier. Cancel keys on layer toggles make it easy to dismiss mods.
         quick-release;
     };
 
@@ -286,6 +285,7 @@
                             <   N0 N1 N2 N3 N4 N5 N6 N7 N8 N9
                                 BACKSPACE DELETE 
                                 DOT COMMA SQT DQT COLON SEMICOLON 
+                                UARW DARW RARW LARW
                                 SLASH MINUS PLUS ASTRK EQUAL
                                 TAB
                                 LPAR LBKT LBRC PIPE
