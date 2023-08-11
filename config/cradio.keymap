@@ -10,11 +10,6 @@
 // mouse keys copied from urob's keymap
 #include <dt-bindings/zmk/mouse.h>
 
-// Home row mods definitions
-#define HRML(k1,k2,k3,k4) &mt LCTRL k1 &mt LALT k2  &mt LSHFT k3 &mt LGUI k4
-#define HRMR(k1,k2,k3,k4) &mt RGUI k1  &mt RSHFT k2 &mt RALT k3  &mt RCTRL k4
-        //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
-
 &mmv {
   acceleration-exponent = <1>;      // 1
   time-to-max-speed-ms = <1500>;    // 40
@@ -79,28 +74,27 @@
 
 // Default layers with macOS and Windows layer toggles
 #define DEF 0
-#define HRMODS 1
-#define WDEF 2
+#define WDEF 1
 
-#define NUM 3 // numpad for &num_word
+#define NUM 2 // numpad for &num_word
 
 // macOS layers (CASG mods)
-#define NAV 4
-#define SYM 5
-#define FUN 6
+#define NAV 3
+#define SYM 4
+#define FUN 5
 
 // Windows layers (GASC mods)
-#define WNAV 7
-#define WSYM 8
-#define WFUN 9
+#define WNAV 6
+#define WSYM 7
+#define WFUN 8
 
 // mouse keys
-#define MOUSE 10
+#define MOUSE 9
 
 // AOE layers
-#define AOED 11
-#define AOE2 12
-#define AOE3 13
+#define AOED 10
+#define AOE2 11
+#define AOE3 12
 
 // Customized ZMK existing behaviors
 &sk {
@@ -160,19 +154,13 @@
             layers = <WDEF>; // Only available in the Windows DEF layer
             bindings = <&kp LGUI>;
         };
+
+        // Special layer toggles
         combo_toggle_wnav_on_left_thumb {
             timeout-ms = <120>;
             key-positions = <30 31>; // SPC SYM
             layers = <WDEF WNAV>;
             bindings = <&tog WNAV>;
-        };
-
-        // Special layer toggles
-        combo_HRMODS {
-            timeout-ms = <180>;
-            key-positions = <0 1 2 3 6 7 8 9>; // All 8 home row positions on FUN
-            layers = <FUN>;
-            bindings = <&tog HRMODS>;
         };
         combo_aoe {
             timeout-ms = <80>;
@@ -263,24 +251,6 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
-        };
-        nav_left_click: nav_left_click {
-            compatible = "zmk,behavior-hold-tap";
-            label = "nav_left_click";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&la_nav>, <&mkp>;
-        };
-        shift_right_click: shift_right_click {
-            compatible = "zmk,behavior-hold-tap";
-            label = "shift_right_click";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&mkp>;
         };
 
         // Swapper        
@@ -398,23 +368,6 @@
     &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &la_nav    &shift_cw      &kp SPC    &la_sym
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        
-        HRMODS_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-    &lt_mouse MOUSE Q   &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
-             HRML(A,    S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,         SQT)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-    &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-             &nav_left_click NAV MB1 &shift_right_click LSHIFT MB2      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
