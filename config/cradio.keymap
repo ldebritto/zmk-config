@@ -10,6 +10,11 @@
 // mouse keys copied from urob's keymap
 #include <dt-bindings/zmk/mouse.h>
 
+// Home row mods definitions
+#define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
+        //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
+
 &mmv {
   acceleration-exponent = <1>;      // 1
   time-to-max-speed-ms = <1500>;    // 40
@@ -74,7 +79,7 @@
 
 // Default layers with macOS and Windows layer toggles
 #define DEF 0
-#define COLEMAK 1
+#define HRMODS 1
 #define WDEF 2
 
 #define NUM 3 // numpad for &num_word
@@ -163,11 +168,11 @@
         };
 
         // Special layer toggles
-        combo_colemak {
+        combo_HRMODS {
             timeout-ms = <180>;
             key-positions = <0 1 2 3 6 7 8 9>; // All 8 home row positions on FUN
             layers = <FUN>;
-            bindings = <&tog COLEMAK>;
+            bindings = <&tog HRMODS>;
         };
         combo_aoe {
             timeout-ms = <80>;
@@ -239,6 +244,8 @@
                 tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
+
+        // Special hold-taps
         z_swish: z_swish_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
             compatible = "zmk,behavior-hold-tap";
             label = "z_swish";
@@ -256,6 +263,24 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
+        };
+        nav_left_click: nav_left_click {
+            compatible = "zmk,behavior-hold-tap";
+            label = "nav_left_click";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&la_nav>, <&mkp>;
+        };
+        shift_right_click: shift_right_click {
+            compatible = "zmk,behavior-hold-tap";
+            label = "shift_right_click";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&mkp>;
         };
 
         // Swapper        
@@ -377,19 +402,19 @@
             >;
         };
         
-        colemak_layer {
+        HRMODS_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ' "     │
-    &lt_mouse MOUSE Q   &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SQT
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+    &lt_mouse MOUSE Q   &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │  O       │
-             &kp A      &kp R      &kp S      &kp T      &kp D          &kp H      &kp N      &kp E      &kp I      &kp O
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
+             HRML(A,    S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,         SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │  , <     │  . >     │  ; :     │
-    &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
+    &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &la_nav    &shift_cw      &kp SPC    &la_sym
+             &nav_left_click NAV MB1 &shift_right_click LSHIFT MB2      &kp SPC    &la_sym
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
