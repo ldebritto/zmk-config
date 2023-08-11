@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/mouse.h>
 
 // Home row mods definitions
-#define HRML(k1,k2,k3,k4) &tp_ht LCTRL k1 &tp_ht LALT k2  &tp_ht LSHFT k3 &tp_ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &tp_ht RGUI k1  &tp_ht RSHFT k2 &tp_ht RALT k3  &tp_ht RCTRL k4
+#define HRML(k1,k2,k3,k4) &mt LCTRL k1 &mt LALT k2  &mt LSHFT k3 &mt LGUI k4
+#define HRMR(k1,k2,k3,k4) &mt RGUI k1  &mt RSHFT k2 &mt RALT k3  &mt RCTRL k4
         //    HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT) 
 
 &mmv {
