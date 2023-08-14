@@ -134,11 +134,11 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LC(LS(SPC))>;
         };
-        combo_toggle_nav_on_left_thumb {
+        combo_num_on_left_thumb {
             timeout-ms = <120>;
-            key-positions = <30 31>; // SPC SYM
+            key-positions = <30 31>; // NAV SHIFT
             layers = <DEF NAV>;
-            bindings = <&tog NAV>;
+            bindings = <&mo NUM>;
         };
 
         // Windows combos
