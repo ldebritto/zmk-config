@@ -574,7 +574,7 @@
         //│ Lenha    │ Moinhos  │ Minas    │ Todos TCs│ TC       │   │          │          │          │          │          │
             &kp LC(Z)  &kp LC(I)  &kp LC(G)  &kp LC(LS(H)) &kp H                  &none &none &none &none &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &KP ESC    &trans                 &none &none
+                                              &kp ESC    &trans                 &none &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
