@@ -410,20 +410,6 @@
 
         navigation_and_media_layer {
             bindings = <
-        // // Trying new layout from https://configure.zsa.io/planck-ez/layouts/XY4OM/latest/2 as it has numbers in NAV that can make me have a one hand way to make something like CMD+1
-        // //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        // //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
-        //     &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│ CTRL     │ ALT      │ SHIFT    │ CMD      │          │   | LEFT     │ DOWN     │ UP       │ RIGHT    │          │
-        //     &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &none          &kp LARW   &kp DARW   &kp UARW   &kp RARW   &none
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│ PREVIOUS │ NEXT     │ VOL. DWN │ VOL. UP  | PLAY     │   │ DEL      │ BACKSPACE│ TAB      │ ENTER    │ ESC      │
-        //     &kp C_PREV &kp C_NEXT ME_VOLD    ME_VOLU    ME_PLAY        &kp DEL    &kp BSPC   &kp TAB    &kp ENTER  &kp ESC
-        // //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                      &trans     &trans         &trans     &trans
-        // //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-       
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
             &kp TAB    &swapper   CO_PTAB    CO_NTAB    ME_VOLU        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
@@ -441,18 +427,6 @@
 
         symbols_layer {
             bindings = <
-        // //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        // //│ !        │  @       │  #       │  $       │ ~        │   │ ^        │ &        │ *        │ /        │  ?       │
-        //     &kp EXCL    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE     &kp CARET  &kp AMPS   &kp ASTRK  &kp EQUAL   &kp QMARK
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│ -        │ {        │ [        │ (        │ %        │   │ |        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-        //     &kp MINUS  &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT      &kp PIPE   &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│ _        │ }        │  ]       │  )       │ `        │   │          │ /        │ \        │          │ +        │
-        //     &kp PLUS   &kp RBRC   &kp RBKT   &kp RPAR   &kp GRAVE      &none      &kp SLASH  &kp BSLH   &none      &kp EXCL
-        // //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                      &trans     &trans         &trans     &trans
-        // //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
             &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
@@ -470,18 +444,6 @@
 
         tri_layer_function_number_row {
             bindings = <
-        // //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        // //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
-        //     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-        //     &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
-        // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        // //│          │          │          │          │          │   │          │ BSPC     │          │          │          │
-        //     &none      &none      &none      &none      &none          &none      &kp BSPC   &none      &none      &none
-        // //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                      &trans     &trans         &trans    &trans
-        // //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
@@ -578,7 +540,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │          │          │          │          │          │
              &kp Z      &kp X      &kp C      &kp V      &kp B         &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt AOE2 ESC &lt AOE3 DOT  &none      &none
+                                           &lt AOE2 H  &lt AOE3 DOT  &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -592,10 +554,10 @@
         //│  7       │  8       │  9       │  0       │  Control │   │          │          │          │          │          │
              &kp N7      &kp N8     &kp N9    &kp N0     &sk LCTRL     &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SHIFT+,  │  SHIFT+. │ 1        │  H       │  Control │   │          │          │          │          │          │
-        &kp LS(COMMA) &kp LS(DOT) &kp N1      &kp H      &sk LCTRL     &none      &none      &none      &none       &none
+        //│ SHIFT+,  │  SHIFT+. │          │  H       │  Control │   │          │          │          │          │          │
+        &kp LS(COMMA) &kp LS(DOT) &none      &kp H      &sk LCTRL     &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                &trans   &mt LSHFT DEL    &none      &none
+                                             &trans   &kp DEL    &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -610,9 +572,9 @@
         &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ Lenha    │ Moinhos  │ Minas    │ Todos TCs│ TC       │   │          │          │          │          │          │
-            &kp LC(Z) &kp LC(I)  &kp LS(G) &kp LC(LS(H))  &kp H                  &none &none &none &none &none
+            &kp LC(Z)  &kp LC(I)  &kp LC(G)  &kp LC(LS(H)) &kp H                  &none &none &none &none &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans     &trans                 &none &none
+                                              &KP ESC    &trans                 &none &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
