@@ -444,7 +444,7 @@
             &kp EXCL    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE     &kp CARET  &kp AMPS   &kp ASTRK  &kp EQUAL   &kp QMARK
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ -        │ {        │ [        │ (        │ %        │   │ |        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-            &kp MINUS  &kp LBRC   &kp LBKT   &kp LPAR   &kp PRC        &kp PIPE   &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
+            &kp MINUS  &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT      &kp PIPE   &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ _        │ }        │  ]       │  )       │ `        │   │          │ /        │ \        │          │ +        │
             &kp PLUS   &kp RBRC   &kp RBKT   &kp RPAR   &kp GRAVE      &none      &kp SLASH  &kp BSLH   &none      &kp EXCL
@@ -456,7 +456,7 @@
         //     &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
         // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         // //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
-        //     &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH    &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
+        //     &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
         // //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         // //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
         //     &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
