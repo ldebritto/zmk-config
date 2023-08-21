@@ -367,7 +367,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
     &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &la_nav    &shift_cw      &kp SPC    &la_sym
+                                              &shift_cw  &la_nav       &la_sym    &kp SPC    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -401,7 +401,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ /        │ 1        │ 2        │ 3        │ :        |
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp FSLH   &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV   &kp K_CANCEL    &kp SPACE  &lt SYM N0
+                                             &kp K_CANCEL &mo NAV      &mo SYM    &kp N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -430,7 +430,7 @@
     //         &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
     //     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
     //     //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ Q (Quit) │ DELETE   │
-    // &z_swish CAPS LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &kp Q      &kp DEL
+    // &z_swish CAPS LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY      &nextprev  GO_BACK    GO_FWRD    &kp Q      &kp DEL
     //     //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
     //                                          &trans     &trans         &trans     &trans
     //     //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
