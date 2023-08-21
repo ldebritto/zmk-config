@@ -98,7 +98,7 @@
 
 // Customized ZMK existing behaviors
 &sk {
-        release-after-ms = <500>; // default is 1000 ms
+        // release-after-ms = <500>; // default is 1000 ms
         quick-release;
     };
 
