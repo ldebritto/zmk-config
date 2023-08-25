@@ -252,6 +252,15 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
+        hyperspace: hyperspace { // space + hyper
+            compatible = "zmk,behavior-hold-tap";
+            label = "hyper_space";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 
         // Swapper        
         swapper: swapper { // Swapper for apps in macOS 
@@ -368,7 +377,7 @@
     &z_swish CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            // &shift_cw  &la_nav        &la_sym    &kp SPC // Inverted Thumbs
-                                              &la_nav    &shift_cw      &kp SPC    &la_sym    
+                                              &la_nav    &shift_cw    &hyperspace LC(LS(LA(LGUI))) SPC    &la_sym    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
