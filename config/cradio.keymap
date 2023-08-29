@@ -376,7 +376,7 @@
     keymap {
         compatible = "zmk,keymap";
   
-        default_layer {
+        apple_default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
@@ -422,12 +422,12 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ /        │ 1        │ 2        │ 3        │ :        |
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp FSLH   &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &trans         &kp SPC    &lt SYM N0
+                                             &trans     &trans         &kp SPC    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        navigation_and_media_layer {
+        apple_navigation_and_media_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
@@ -444,7 +444,7 @@
             >;
         };
 
-        symbols_layer {
+        apple_symbols_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
