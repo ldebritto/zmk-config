@@ -173,9 +173,14 @@
             layers = <DEF WDEF NUM>;
             bindings = <&num_word>;
         };
+        combo_toggle_mouse_layer {
+            timeout-ms = <120>;
+            key-positions = <0 1>; // Q W
+            layers = <DEF WDEF NAV WNAV>;
+            bindings = <&smart_mouse>;
+        };
 
         // Multimedia and keyboard features
-        
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>; // Vol up + down keys
@@ -234,24 +239,24 @@
         };
 
         // Special hold-taps
-        xhtp: xhtp_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
-            compatible = "zmk,behavior-hold-tap";
-            label = "xhtp";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        lt_mouse: lt_mouse_hold_tap { // Mouse-layer &lt on DEF semicolon
-            compatible = "zmk,behavior-hold-tap";
-            label = "lt_mouse";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
+        // xhtp: xhtp_hold_tap { // Remaping CAPS to fn let me use fn shortcuts on macOS and iPadOS at the expense of the CAPS LOCK
+        //     compatible = "zmk,behavior-hold-tap";
+        //     label = "xhtp";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     quick-tap-ms = <0>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&kp>, <&kp>;
+        // };
+        // lt_mouse: lt_mouse_hold_tap { // Mouse-layer &lt on DEF semicolon
+        //     compatible = "zmk,behavior-hold-tap";
+        //     label = "lt_mouse";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     quick-tap-ms = <0>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&mo>, <&kp>;
+        // };
         hyperspace: hyperspace { // space + hyper
             compatible = "zmk,behavior-hold-tap";
             label = "hyper_space";
@@ -295,6 +300,13 @@
                                 TAB
                                 LPAR LBKT LBRC PIPE
                             >;       
+        };
+        smart_mouse: smart_mouse { // A smart mouse toggle that will deactivate on another keypress
+            compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
+            label = "SMART_MOUSE";
+            #binding-cells = <0>;
+            bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+            ignored-key-positions = <5 7 10 11 12 13 15 16 17 18 19 32 33>; // Mouse buttons and mods
         };
      };
     
@@ -368,13 +380,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-    &lt_mouse MOUSE Q   &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+             &kp Q   &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
              &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-    &xhtp CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
+             &kp Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &la_nav    &shift_cw    &kp SPC    &la_sym    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -425,7 +437,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   ME_VOLD        &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ Q (Quit) │ DELETE   │
-    &xhtp CAPS LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY      &nextprev  GO_BACK    GO_FWRD    &kp Q      &kp DEL
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  ME_PLAY        &nextprev  GO_BACK    GO_FWRD    &kp Q      &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
