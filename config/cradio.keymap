@@ -23,8 +23,10 @@
 };
 
 // Home row mods definitions
-#define HRML(k1,k2,k3,k4) &xhtp LCTRL k1 &xhtp LALT k2  &xhtp LSHFT k3 &xhtp LGUI k4
-#define HRMR(k1,k2,k3,k4) &xhtp RGUI k1  &xhtp RSHFT k2 &xhtp RALT k3  &xhtp RCTRL k4
+// #define HRML(k1,k2,k3,k4) &xhtp LCTRL k1 &xhtp LALT k2  &xhtp LSHFT k3 &xhtp LGUI k4
+// #define HRMR(k1,k2,k3,k4) &xhtp RGUI k1  &xhtp RSHFT k2 &xhtp RALT k3  &xhtp RCTRL k4
+        //   HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT)
+
 
 // Mouse movements definitions from urob's repo
 #define U_MOUSE_MOVE_MAX 1250       // 600
@@ -131,7 +133,12 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LC(LS(SPC))>;
         };
-        
+        combo_caps { // to emulate fn key in macOS and iPadOS
+            timeout-ms = <80>;
+            key-positions = <20 21>; // ZX
+            layers = <DEF>; // Only available in the DEF layer
+            bindings = <&kp CAPS>;
+        };
 
         // Windows combos
         combo_toggle_windows_specific_layers { // those swap GUI and CONTROL keys from dominant fingers
@@ -168,12 +175,7 @@
         };
 
         // Multimedia and keyboard features
-        combo_duo_shift {
-            timeout-ms = <80>;
-            key-positions = <12 17>; // D K - shift keys on home row mods
-            layers = <DEF WDEF>; // Only available in the DEF layer
-            bindings = <&caps_word>;
-        };
+        
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>; // Vol up + down keys
@@ -216,13 +218,13 @@
     
     behaviors {
         // Tap dances
-        // shift_cw: tap_dance_caps_word {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_CAPS_WORD";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <300>;
-        //     bindings = <&kp LSHFT>, <&caps_word>;
-        // };        
+        shift_cw: tap_dance_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CAPS_WORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+        };        
         nextprev: tap_dance_media_next_prev {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREV_MEDIA";
@@ -369,14 +371,12 @@
     &lt_mouse MOUSE Q   &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
-        //   &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-             HRML(A,     S,         D,         F)         &kp G          &kp H     HRMR(J,    K,         L,        SQT)
+             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
     &xhtp CAPS Z     &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &lt_mouse MOUSE SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           // &shift_cw  &la_nav        &la_sym    &kp SPC // Inverted Thumbs
-                                    &la_nav    &mt LSHFT DEL    &hyperspace LC(LS(LA(LGUI))) SPC    &la_sym    
+                                              &la_nav    &shift_cw    &kp SPC    &la_sym    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -410,7 +410,6 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ /        │ 1        │ 2        │ 3        │ :        |
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp FSLH   &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          // &kp K_CANCEL &mo NAV      &mo SYM    &kp N0 // Inverted thumbs
                                              &la_nav    &trans         &kp SPC    &lt SYM N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
