@@ -176,7 +176,7 @@
         combo_toggle_mouse_layer {
             timeout-ms = <120>;
             key-positions = <0 1>; // Q W
-            layers = <DEF WDEF NAV WNAV>;
+            layers = <DEF WDEF NAV WNAV MOUSE>;
             bindings = <&tog MOUSE>;
         };
 
@@ -534,15 +534,15 @@
     
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          U_WH_D     U_WH_D     U_MS_U     U_WH_U     &none
+            &tog MOUSE &tog MOUSE &tog MOUSE &tog MOUSE &tog MOUSE     U_WH_D     U_WH_D     U_MS_U     U_WH_U     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp LCTRL  &kp LALT   &kp LSHFT  &kp LGUI   &kp LCTRL      U_WH_U     U_MS_L     U_MS_D     U_MS_R     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none
+            &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &none          &none      &none      &none      &none      &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &none      &none          U_BTN1      U_BTN2
+                                             &tog MOUSE &tog MOUSE     U_BTN1      U_BTN2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
