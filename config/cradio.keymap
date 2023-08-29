@@ -422,7 +422,7 @@
         //│ +        │ |        │  @       │  /       │  %       │   │ /        │ 1        │ 2        │ 3        │ :        |
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp FSLH   &kp N1     &kp N2     &kp N3     &kp COLON
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &kp SPC    &lt SYM N0
+                                             &trans     &trans         &trans     &kp N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -453,8 +453,8 @@
         //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ +        │ |        │  @       │  /       │  %       │   │ :        │ \        │ &        │ ?        │ !        │
-            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp COLON  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+        //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
+            &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp RA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
