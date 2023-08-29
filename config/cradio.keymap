@@ -177,7 +177,7 @@
             timeout-ms = <120>;
             key-positions = <0 1>; // Q W
             layers = <DEF WDEF NAV WNAV>;
-            bindings = <&smart_mouse>;
+            bindings = <&tog MOUSE>;
         };
 
         // Multimedia and keyboard features
