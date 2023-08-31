@@ -133,19 +133,13 @@
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LC(LS(SPC))>;
         };
-        combo_az_caps { // to emulate fn key in macOS and iPadOS for better
+        combo_left_thumb_caps { // to emulate fn key in macOS and iPadOS for better
             timeout-ms = <80>;
-            key-positions = <10 20>; // AZ
+            key-positions = <30 31>; // AZ
             layers = <DEF NAV>; // Only available in the DEF layer
             bindings = <&kp CAPS>;
         };
-        combo_az_caps { // to emulate fn key in macOS and iPadOS for better
-            timeout-ms = <80>;
-            key-positions = <10 20>; // AZ
-            layers = <DEF NAV>; // Only available in the DEF layer
-            bindings = <&kp CAPS>;
-        };
-
+        
         // Windows combos
         combo_toggle_windows_specific_layers { // those swap GUI and CONTROL keys from dominant fingers
             timeout-ms = <80>;
@@ -163,13 +157,13 @@
         // Special layer toggles
         combo_toggle_nav_on_left_thumb {
             timeout-ms = <120>;
-            key-positions = <30 31>; // SPC SYM
+            key-positions = <26 27 28>; // J K L
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
         combo_toggle_wnav_on_left_thumb {
             timeout-ms = <120>;
-            key-positions = <30 31>; // SPC SYM
+            key-positions = <26 27 28>; // J K L
             layers = <WDEF WNAV>;
             bindings = <&tog WNAV>;
         };
