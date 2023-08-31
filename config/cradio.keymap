@@ -1,6 +1,6 @@
 // Appart from main ZMK, requires these 
 // PR# 1366 (https://github.com/zmkfirmware/zmk/pull/1366) - Swapper (tri-layer-state)
-// PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451) - Smart Caps (for &num_word)
+// PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451) - Smart Caps (for custom continue-list on &caps_word)
 
 // ZMK includes
 #include <behaviors.dtsi>
@@ -23,11 +23,10 @@
 
 // Customized ZMK existing behaviors
 &sk {
-        // release-after-ms = <500>; // default is 1000 ms
-        quick-release;
+        quick-release; // (https://zmk.dev/docs/behaviors/sticky-key#quick-release)
     };
 
-&caps_word { // Uses PR #1451 continue list fucntionality to allow for accents and not canceling caps_word on layer changes
+&caps_word {
     continue-list = <
                     UNDERSCORE MINUS
                     SQT CARET TILDE GRAVE
@@ -35,8 +34,7 @@
                     K_CANCEL
                     BACKSPACE DELETE
                 >;
-    /delete-property/ ignore-modifiers; // Using modifiers as interrupters, avoiding CMD+Shift+S activations when I hit CMD+S.
-};
+    };
 
 / {
     combos {
