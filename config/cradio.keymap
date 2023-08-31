@@ -46,42 +46,40 @@
         combo_spotlight_alfred {
             timeout-ms = <80>;
             key-positions = <13 16>; // F J
-            layers = <DEF>; // Only available in the DEF layer
+            layers = <DEF>; // Only available in the Apple's DEF layer
             bindings = <&kp LG(SPC)>;
         };
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
-            layers = <DEF>; // Only available in the DEF layer
+            layers = <DEF>; // Only available in the Apple's DEF layer
             bindings = <&kp LG(LS(SPC))>;
         };
         combo_qw_caps { // I use CAPS to emulate fn key in macOS and iPadOS
             timeout-ms = <80>;
             key-positions = <0 1>; // Q W
-            layers = <DEF NAV>; // Only available in the DEF layer
+            layers = <DEF NAV>; // Only available in the Apple's DEF layer
             bindings = <&kp CAPS>;
         };
-        
-        // Windows combos
-        combo_toggle_between_windows_and_apple_keys { // those swap GUI and CONTROL keys from dominant fingers
-            timeout-ms = <80>;
-            key-positions = <10 19>; // A "
-            layers = <FUN WFUN>;
-            bindings = <&tog WDEF>;
-        };
-        combo_windows_start_menu { // Mapped to the same spot I use with spotlight on macOS
-            timeout-ms = <80>;
-            key-positions = <13 16>; // F J
-            layers = <WDEF>; // Only available in the Windows DEF layer
-            bindings = <&kp LGUI>;
-        };
-
-        // Special layer toggles
         combo_toggle_nav_on_left_thumb {
             timeout-ms = <120>;
             key-positions = <30 31>; // J K L
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
+        };
+        
+        // Windows combos
+        combo_toggle_between_windows_and_apple_keys { // swap GUI and CONTROL keys placement for better OS-specific usage
+            timeout-ms = <80>;
+            key-positions = <10 19>; // A "
+            layers = <FUN WFUN>;
+            bindings = <&tog WDEF>;
+        };
+        combo_windows_start_menu { // mapped to the same spot I use to trigger spotlight/alfred on macOS and iPadOS
+            timeout-ms = <80>;
+            key-positions = <13 16>; // F J
+            layers = <WDEF>; // Only available in the Windows' DEF layer
+            bindings = <&kp LGUI>;
         };
         combo_toggle_wnav_on_left_thumb {
             timeout-ms = <120>;
@@ -94,7 +92,7 @@
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>; // Vol up + down keys
-            layers = <NAV WNAV>; // Only available in the NAV layer
+            layers = <NAV WNAV>; // Only available in the NAV layer, system agnostic
             bindings = <&kp C_MUTE>;
         };
         combo_trigger_bootloader {
@@ -104,7 +102,7 @@
             bindings = <&bootloader>;
         };
 
-        // bluetooth combos
+        // Bluetooth combos
         combo_toggle_bt0_connection { // MacBook
             timeout-ms = <80>;
             key-positions = <3 4>;
@@ -132,24 +130,25 @@
     };
     
     behaviors {
+
         // Tap dances
-        shift_cw: tap_dance_caps_word {
+        shift_cw: tap_dance_shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CAPS_WORD";
+            label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };        
-        nextprev: tap_dance_media_next_prev {
+        nextprev: tap_dance_media_for_next_and_prev {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_NEXT_PREV_MEDIA";
+            label = "TAP_DANCE_NEXT_PREV";
             #binding-cells = <0>;
                 tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
 
         // Swapper        
-        swapper: swapper { // Swapper for macOS 
+        swapper: swapper { // Swapper for macOS and iPadOS
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
             label = "SWAPPER";
             #binding-cells = <0>;
@@ -166,7 +165,8 @@
      };
     
     macros {        
-        // Apple OS variants for layer + cancel key
+
+        // Apple OS variants for layer + cancel key macros
         la_nav: cancel_queued_os_mods_and_toggle_nav { 
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
@@ -174,7 +174,7 @@
             wait-ms = <10>;
             bindings
                 = <&macro_press &mo NAV>
-                , <&macro_tap &kp K_CANCEL>
+                , <&macro_tap &kp K_CANCEL> // Cancel keys allow for deactivation of any previously queued mod on hitting a layer key
                 , <&macro_pause_for_release>
                 , <&macro_release &mo NAV>
                 ;
@@ -186,13 +186,13 @@
             wait-ms = <10>;
             bindings
                 = <&macro_press &mo SYM>
-                , <&macro_tap &kp K_CANCEL>
+                , <&macro_tap &kp K_CANCEL> // Cancel keys allow for deactivation of any previously queued mod on hitting a layer key
                 , <&macro_pause_for_release>
                 , <&macro_release &mo SYM>
                 ;
         };
         
-        // Windows variants for layer + cancel key
+        // Windows variants for layer + cancel key macros
         la_wnav: cancel_queued_os_mods_and_toggle_windows_nav { 
             label = "LA_WNAV";
             compatible = "zmk,behavior-macro";
@@ -200,7 +200,7 @@
             wait-ms = <10>;
             bindings
                 = <&macro_press &mo WNAV>
-                , <&macro_tap &kp K_CANCEL>
+                , <&macro_tap &kp K_CANCEL> // Cancel keys allow for deactivation of any previously queued mod on hitting a layer key
                 , <&macro_pause_for_release>
                 , <&macro_release &mo WNAV>
                 ;
@@ -212,7 +212,7 @@
             wait-ms = <10>;
             bindings
                 = <&macro_press &mo WSYM>
-                , <&macro_tap &kp K_CANCEL>
+                , <&macro_tap &kp K_CANCEL> // Cancel keys allow for deactivation of any previously queued mod on hitting a layer key
                 , <&macro_pause_for_release>
                 , <&macro_release &mo WSYM>
                 ;
@@ -253,7 +253,7 @@
             >;
         };
 
-        windows_default_layer { // Layer keys map to swapped GUI and CONTROL mods in subsequent layers for easier Windows usage
+        windows_default_layer { // Layer keys map to swapped GUI and CONTROL in subsequent layers for easier use on Windows
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
@@ -325,7 +325,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
-            &kp TAB    &wswapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP   &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
+            &kp TAB   &wswapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP &kp PG_UP &kp HOME &kp UARW   &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ WIN      │ ALT      │ SHIFT    │ CTRL     │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   &kp C_VOL_DN   &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
@@ -333,7 +333,7 @@
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ `        │ DELETE   │
             &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V) &kp C_PLAY_PAUSE &nextprev &kp LA(LARW) &kp LA(RARW) &kp GRAVE  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &mt LSHFT SPC &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
