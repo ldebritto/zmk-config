@@ -129,13 +129,13 @@
         };
         combo_shortcat {
             timeout-ms = <80>;
-            key-positions = <23 26>; // V M
+            key-positions = <12 17>; // D K
             layers = <DEF>; // Only available in the DEF layer
             bindings = <&kp LC(LS(SPC))>;
         };
-        combo_zx_caps { // to emulate fn key in macOS and iPadOS for better
+        combo_az_caps { // to emulate fn key in macOS and iPadOS for better
             timeout-ms = <80>;
-            key-positions = <20 21>; // ZX
+            key-positions = <10 20>; // AZ
             layers = <DEF NAV>; // Only available in the DEF layer
             bindings = <&kp CAPS>;
         };
