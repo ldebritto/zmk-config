@@ -148,6 +148,7 @@
     
     macros {        
         lc_nav: lc_nav {
+            label = "LC_NAV";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -160,6 +161,7 @@
                 ;
         };
         lc_wnav: lc_wnav {
+            label = "LC_WNAV";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -172,6 +174,7 @@
                 ;
         };
         lc_sym: lc_sym {
+            label = "LC_SYM";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -184,6 +187,7 @@
                 ;
         };
         lc_wsym: lc_wsym {
+            label = "LC_WSYM";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
