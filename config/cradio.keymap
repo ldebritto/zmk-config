@@ -158,11 +158,11 @@
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to1>
-                , <&macro_press &mo MACRO_PLACEHOLDER>
-                , <&macro_tap &kp K_CANCEL> // These cancel keys deactivate any previously queued mod on hitting a layer key
+                , <&macro_press &mo DESIRED_LAYER>
+                , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
                 , <&macro_param_1to1>
-                , <&macro_release &mo MACRO_PLACEHOLDER>
+                , <&macro_release &mo DESIRED_LAYER>
                 ;
         };
     };
