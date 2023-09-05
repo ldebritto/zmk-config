@@ -21,6 +21,11 @@
         quick-release;
     };
 
+&mt {
+    tapping-term-ms = <300>;
+    flavor = "tap-preferred";
+ };
+
 &caps_word {
     continue-list = <
                     UNDERSCORE MINUS
@@ -165,6 +170,15 @@
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <3>; // Shift key on WNAV to allow for backwards movement
         };
+
+        hm_l: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
      };
     
     macros {        
@@ -255,7 +269,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lc_nav    &shift_cw      &kp SPC    &lc_sym    
+                                             &lc_nav    &shift_cw      &mt LC(LA(LS(LCMD))) SPC    &lc_sym    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
