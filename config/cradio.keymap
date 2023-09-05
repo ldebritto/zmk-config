@@ -157,7 +157,7 @@
             #binding-cells = <0>;
             bindings 
                 = <&macro_press &mo NAV> 
-                , <&macro_tap &kp K_CANCEL> 
+                , <&macro_tap &kp K_CANCEL> // K_CANCEL is there to absorb all queued mods before the layer changes
                 , <&macro_pause_for_release> 
                 , <&macro_release &mo NAV>
                 ;
