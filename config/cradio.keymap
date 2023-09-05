@@ -157,11 +157,11 @@
         //     tap-ms = <0>;
         //     #binding-cells = <1>;
         //     bindings
-        //         = <&macro_param_1to1>
+        //         = 
         //         , <&macro_press &mo DESIRED_LAYER>
         //         , <&macro_tap &kp K_CANCEL>
         //         , <&macro_pause_for_release>
-        //         , <&macro_param_1to1>
+        //         , 
         //         , <&macro_release &mo DESIRED_LAYER>
         //         ;
         // };
@@ -172,11 +172,9 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>
-                , <&macro_press &mo NAV>
+                = <&macro_press &mo NAV>
                 , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
-                , <&macro_param_1to1>
                 , <&macro_release &mo NAV>
                 ;
         };
@@ -187,11 +185,9 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>
-                , <&macro_press &mo WNAV>
+                = <&macro_press &mo WNAV>
                 , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
-                , <&macro_param_1to1>
                 , <&macro_release &mo WNAV>
                 ;
         };
@@ -202,11 +198,9 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>
-                , <&macro_press &mo SYM>
+                = <&macro_press &mo SYM>
                 , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
-                , <&macro_param_1to1>
                 , <&macro_release &mo SYM>
                 ;
         };
@@ -217,11 +211,9 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings
-                = <&macro_param_1to1>
-                , <&macro_press &mo WSYM>
+                = <&macro_press &mo WSYM>
                 , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release>
-                , <&macro_param_1to1>
                 , <&macro_release &mo WSYM>
                 ;
         };
