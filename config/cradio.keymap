@@ -1,4 +1,4 @@
-// Appart from main ZMK, this keymap requires these PRs:
+// This keymap requires these PRs:
 // PR# 1366 (https://github.com/zmkfirmware/zmk/pull/1366) - Swapper (tri-layer-state)
 
 #include <behaviors.dtsi>
@@ -18,7 +18,7 @@
 #define WFUN 7
 
 &sk {
-        quick-release; // (https://zmk.dev/docs/behaviors/sticky-key#quick-release)
+        quick-release;
     };
 
 &caps_word {
@@ -154,7 +154,7 @@
      };
     
     macros {        
-        
+        // Adds a &kp K_CANCEL to cancel every queued mod
         lc_nav: lc_nav {
             label = "LC_NAV";
             compatible = "zmk,behavior-macro";
@@ -163,7 +163,7 @@
             #binding-cells = <0>;
             bindings 
                 = <&macro_press &mo NAV> 
-                , <&macro_tap &kp K_CANCEL> // K_CANCEL is there to absorb all queued mods before the layer changes
+                , <&macro_tap &kp K_CANCEL>
                 , <&macro_pause_for_release> 
                 , <&macro_release &mo NAV>
                 ;
