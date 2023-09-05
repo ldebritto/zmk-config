@@ -1,4 +1,4 @@
-// Appart from main ZMK, requires these 
+// Appart from main ZMK, this keymap requires these PRs:
 // PR# 1366 (https://github.com/zmkfirmware/zmk/pull/1366) - Swapper (tri-layer-state)
 // PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451) - Smart Caps (for custom continue-list on &caps_word)
 
@@ -21,7 +21,7 @@
 #define WSYM 6
 #define WFUN 7
 
-// Customized ZMK existing behaviors
+// Customized ZMK behaviors
 &sk {
         quick-release; // (https://zmk.dev/docs/behaviors/sticky-key#quick-release)
     };
@@ -152,10 +152,9 @@
     
     macros {        
         lcanc: mo_layer_and_cancel_queued_mods {
-            label = "MO_LAYER_CANCEL";
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            wait-ms = <1>;
+            wait-ms = <10>;
             bindings
                 = <&macro_param_1to1>
                 , <&macro_press &mo MACRO_PLACEHOLDER>
