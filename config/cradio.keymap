@@ -59,15 +59,9 @@
             layers = <DEF NAV>; // Only available in the Apple's DEF layer
             bindings = <&kp CAPS>;
         };
-        combo_toggle_nav_on_left_thumb {
-            timeout-ms = <120>;
-            key-positions = <30 31>; // J K L
-            layers = <DEF NAV>;
-            bindings = <&tog NAV>;
-        };
         
         // Windows combos
-        combo_toggle_between_windows_and_apple_keys { // swap GUI and CONTROL keys placement for better OS-specific usage
+        combo_toggle_between_windows_and_apple_mods { // swap GUI and CONTROL keys placement for better OS-specific usage
             timeout-ms = <80>;
             key-positions = <10 19>; // A "
             layers = <FUN WFUN>;
@@ -78,12 +72,6 @@
             key-positions = <13 16>; // F J
             layers = <WDEF>; // Only available in the Windows' DEF layer
             bindings = <&kp LGUI>;
-        };
-        combo_toggle_wnav_on_left_thumb {
-            timeout-ms = <120>;
-            key-positions = <30 31>; // J K L
-            layers = <WDEF WNAV>;
-            bindings = <&tog WNAV>;
         };
         
         // Multimedia and keyboard features
@@ -99,7 +87,7 @@
             layers = <FUN>; 
             bindings = <&bootloader>;
         };
-
+        
         // Bluetooth combos
         combo_toggle_bt0_connection { // MacBook
             timeout-ms = <80>;
@@ -163,9 +151,22 @@
      };
     
     macros {        
+        lcanc: mo_layer_and_cancel_queued_mods {
+            label = "MO(LAYER)+CANCEL";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            wait-ms = <1>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_press &mo MACRO_PLACEHOLDER>
+                , <&macro_tap &kp K_CANCEL> // Cancel keys allow for deactivation of any previously queued mod on hitting a layer key
+                , <&macro_pause_for_release>
+                , <&macro_release &mo MACRO_PLACEHOLDER>
+                ;
+        };
 
-        // Apple OS variants for layer + cancel key macros
-        la_nav: cancel_queued_os_mods_and_toggle_nav { 
+
+        la_nav: cancel_queued_os_mods_and_toggle_apple_nav {
             label = "LA_NAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -177,7 +178,7 @@
                 , <&macro_release &mo NAV>
                 ;
         };
-        la_sym: cancel_queued_os_mods_and_toggle_sym { 
+        la_sym: cancel_queued_os_mods_and_toggle_apple_sym {
             label = "LA_SYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -190,8 +191,7 @@
                 ;
         };
         
-        // Windows variants for layer + cancel key macros
-        la_wnav: cancel_queued_os_mods_and_toggle_windows_nav { 
+        la_wnav: cancel_queued_os_mods_and_toggle_windows_nav {
             label = "LA_WNAV";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -203,7 +203,7 @@
                 , <&macro_release &mo WNAV>
                 ;
         };
-        la_wsym: cancel_queued_os_mods_and_toggle_windows_sym { 
+        la_wsym: cancel_queued_os_mods_and_toggle_windows_sym {
             label = "LA_WSYM";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -218,13 +218,11 @@
     };
 
     conditional_layers {
-        
         compatible = "zmk,conditional-layers";
         macos_tri_layer {
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
-        
         windows_tri_layer {
             if-layers = <WNAV WSYM>;
             then-layer = <WFUN>;
@@ -246,7 +244,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &la_nav    &shift_cw      &kp SPC    &la_sym    
+                                             &lcanc NAV &shift_cw      &kp SPC    &lcanc SYM    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
