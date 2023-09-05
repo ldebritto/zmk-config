@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: nickconway
+      url-base: https://github.com/nickconway
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: nickconway
+      revision: smart-interrupt
       import: app/west.yml
   self:
     path: config

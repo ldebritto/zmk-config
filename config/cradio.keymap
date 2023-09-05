@@ -1,6 +1,5 @@
 // Appart from main ZMK, this keymap requires these PRs:
 // PR# 1366 (https://github.com/zmkfirmware/zmk/pull/1366) - Swapper (tri-layer-state)
-// PR# 1451 (https://github.com/zmkfirmware/zmk/pull/1451) - Smart Caps (for custom continue-list on &caps_word)
 
 // ZMK includes
 #include <behaviors.dtsi>
