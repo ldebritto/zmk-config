@@ -159,13 +159,12 @@
             bindings
                 = <&macro_param_1to1>
                 , <&macro_press &mo MACRO_PLACEHOLDER>
-                , <&macro_tap &kp K_CANCEL> // Cancel keys allow for deactivation of any previously queued mod on hitting a layer key
+                , <&macro_tap &kp K_CANCEL> // These cancel keys deactivate any previously queued mod on hitting a layer key
                 , <&macro_pause_for_release>
                 , <&macro_param_1to1>
                 , <&macro_release &mo MACRO_PLACEHOLDER>
                 ;
         };
-
 
         la_nav: cancel_queued_os_mods_and_toggle_apple_nav {
             label = "LA_NAV";
