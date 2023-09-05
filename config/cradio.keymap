@@ -59,6 +59,13 @@
             bindings = <&kp CAPS>;
         };
         
+        combo_toggle_nav {
+            timeout-ms = <80>;
+            key-positions = <30 31>;
+            layers = <DEF NAV>;
+            bindings = <&tog NAV>;
+        };
+
         // Windows combos
         combo_toggle_between_windows_and_apple_mods { // swap GUI and CONTROL keys placement for better OS-specific usage
             timeout-ms = <80>;
@@ -74,6 +81,13 @@
             bindings = <&kp LGUI>;
         };
         
+        combo_toggle_wnav {
+            timeout-ms = <80>;
+            key-positions = <30 31>;
+            layers = <WDEF WNAV>;
+            bindings = <&tog WNAV>;
+        };
+
         // Multimedia and keyboard features (OS agnostic)
         combo_mute {
             timeout-ms = <80>;
