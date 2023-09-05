@@ -154,7 +154,7 @@
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings 
                 = <&macro_press &mo NAV> 
                 , <&macro_tap &kp K_CANCEL> 
@@ -166,7 +166,7 @@
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &mo WNAV>
                 , <&macro_tap &kp K_CANCEL>
@@ -178,7 +178,7 @@
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &mo SYM>
                 , <&macro_tap &kp K_CANCEL>
@@ -190,7 +190,7 @@
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &mo WSYM>
                 , <&macro_tap &kp K_CANCEL>
