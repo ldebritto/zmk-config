@@ -53,7 +53,7 @@
             layers = <DEF>; // Only available in the Apple's DEF layer
             bindings = <&kp LG(LS(SPC))>;
         };
-        combo_qw_caps { // I use CAPS to emulate fn key in macOS and iPadOS
+        combo_qw_caps_as_fake_fn { // I use CAPS to emulate fn key in macOS and iPadOS - requires OS level setting
             timeout-ms = <80>;
             key-positions = <0 1>; // Q W
             layers = <DEF NAV>; // Only available in the Apple's DEF layer
