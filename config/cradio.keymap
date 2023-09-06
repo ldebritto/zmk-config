@@ -423,7 +423,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
          &mt LCTRL Z &mt LALT X &mt LSHFT C &mt LCMD V   &kp B          &kp N   &mt RGUI M &mt LSHFT COMMA &mt RALT DOT &mt RCTRL SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &mt LGUI ENTER &lt VNAV ESC    &lt VSYM SPC &mt LSHFT BSPC 
+                                        &mt LGUI ENTER &lt VNAV TAB    &lt VSYM SPC &mt LSHFT BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
