@@ -18,8 +18,8 @@
 #define WFUN 7
 
 // Voyager style &mt and &lt
-#define VOYAGER 8
-#define VMAV 9
+#define VDEF 8
+#define VNAV 9
 #define VSYM 10
 #define VFUN 11
 
@@ -59,7 +59,7 @@
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
-            layers = <DEF VOYAGER>;
+            layers = <DEF VDEF>;
             bindings = <&kp LG(LS(SPC))>;
         };
 
@@ -104,7 +104,7 @@
             timeout-ms = <80>;
             key-positions = <4 5>; // T Y
             layers = <FUN>;
-            bindings = <&tog VOYAGER>;
+            bindings = <&tog VDEF>;
         };
         
         combo_mute {
