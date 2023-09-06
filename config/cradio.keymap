@@ -103,7 +103,7 @@
         combo_toggle_voyager_as_default { //uses &mt and &lt
             timeout-ms = <80>;
             key-positions = <4 5>; // T Y
-            layers = <FUN>;
+            layers = <FUN VFUN>;
             bindings = <&tog VDEF>;
         };
         
