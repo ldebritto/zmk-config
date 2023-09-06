@@ -7,17 +7,21 @@
 
 // Apple layers (CASG mods)
 #define DEF 0
-#define NAV 2
-#define SYM 3
-#define FUN 4
-
-# define VOYAGER 1
+#define NAV 1
+#define SYM 2
+#define FUN 3
 
 // Windows layers (GASC mods)
-#define WDEF 5
-#define WNAV 6
-#define WSYM 7
-#define WFUN 8
+#define WDEF 4
+#define WNAV 5
+#define WSYM 6
+#define WFUN 7
+
+// Voyager style &mt and &lt
+#define VOYAGER 8
+#define VMAV 9
+#define VSYM 10
+#define VFUN 11
 
 &sk {
         quick-release;
@@ -261,6 +265,11 @@
             if-layers = <WNAV WSYM>;
             then-layer = <WFUN>;
         };
+        
+        voyager_tri_layer {
+            if-layers = <VNAV VSYM>;
+            then-layer = <VFUN>;
+        };
     };
 
     keymap {
@@ -279,23 +288,6 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &lc_nav    &shift_cw      &kp SPC    &lc_sym    
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        voyager_like_default_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-            &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V  &kp B       &kp N    &mt RGUI M &mt RALT COMMA &mt RCTRL DOT &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &mt LGUI ENTER &lt NAV ESC    &lt SYM SPC  &mt LSHFT BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -419,5 +411,72 @@
             >;
         };
 
+        voyager_like_default_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
+         &mt LCTRL Z &mt LALT X &mt LSHFT C &mt LCMD V   &kp B          &kp N   &mt RGUI M &mt LSHFT COMMA &mt RALT DOT &mt RCTRL SEMI
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                        &mt LGUI ENTER &lt VNAV ESC    &lt VSYM SPC &mt LSHFT BSPC 
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        voyager_navigation_and_numbers_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
+            &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │          │   │          │ LEFT     │ DOWN     │ UP       │ RIGHT    │
+            &kp TAB  &swapper   &kp LS(LC(TAB)) &kp LC(TAB) &trans     &trans     &kp LARW   &kp DARW   &kp UARW   &kp RARW
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │          │ BACK     │ FORWARD  │ Q (Quit) │ DELETE   │
+        &mt LCTRL LG(Z) &mt LALT LG(X) &mt LSHFT LG(C) &mt LGUI LG(V) &trans &trans &mt RGUI LG(LBKT) &mt RSHFT LG(RBKT) &mt RALT Q  &mt RCTRL DEL
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        voyager_symbols_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
+            &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ -        │ *        │ =        │ +        │ $        │   │ #        │ CTRL     │ SHIFT    │ ALT      │ CMD      │
+            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS   &kp DLLR       &kp HASH   &kp RGUI  &kp RSHFT  &kp RALT    &kp RCTRL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ _        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
+            &kp UNDER  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        voyager_tri_layer_function_and_number_row {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
+            &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTL      │
+            &sk LCTRL  &kp LALT   &sk LSHFT  &kp LGUI   &kp F11        &kp F12    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans    &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
     };
 };
