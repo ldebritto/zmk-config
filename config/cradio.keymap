@@ -36,7 +36,6 @@
     continue-list = <
                     UNDERSCORE MINUS
                     SQT CARET TILDE GRAVE
-                    UARW DARW RARW LARW
                     K_CANCEL
                     BACKSPACE DELETE
                     LCMD RCMD
@@ -63,13 +62,6 @@
             bindings = <&kp LG(LS(SPC))>;
         };
 
-        combo_qw_caps_as_fake_fn { // I use CAPS to emulate fn key in macOS and iPadOS - requires OS level setting
-            timeout-ms = <80>;
-            key-positions = <0 1>; // Q W
-            layers = <DEF NAV>;
-            bindings = <&kp CAPS>;
-        };
-        
         combo_toggle_nav {
             timeout-ms = <80>;
             key-positions = <30 31>;
@@ -184,9 +176,9 @@
             ignored-key-positions = <3>; // Shift key on WNAV to allow for backwards movement
         };
 
-        hm_l: homerow_mods {
+        tpht: tap_preferred_hold_taps {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "TAP_PREFERRED_HOLD_TAPS";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             flavor = "tap-preferred";
@@ -285,7 +277,7 @@
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+        &tpht CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &lc_nav    &shift_cw      &kp SPC    &lc_sym    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -302,7 +294,7 @@
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp C_VOL_DN   &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ Q (Quit) │ DELETE   │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V) &kp C_PLAY_PAUSE &nextprev &kp LG(LBKT) &kp LG(RBKT) &kp Q  &kp DEL
+        &tpht CAPS LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V) &kp C_PLAY_PAUSE &nextprev &kp LG(LBKT) &kp LG(RBKT) &kp Q  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
