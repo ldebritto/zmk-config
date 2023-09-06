@@ -55,7 +55,7 @@
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
-            layers = <DEF>;
+            layers = <DEF VOYAGER>;
             bindings = <&kp LG(LS(SPC))>;
         };
 
