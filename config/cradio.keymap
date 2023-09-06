@@ -293,9 +293,9 @@
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-            &kp Z     &mt LCTRL X &mt LALT C &mt LCMD V  &kp B          &kp N    &mt RGUI M &mt RALT COMMA &mt RCTRL DOT &kp SEMI
+            &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V  &kp B       &kp N    &mt RGUI M &mt RALT COMMA &mt RCTRL DOT &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &lt NAV ENTER &mt LGUI TAB  &mt LSHFT BSPC &lt SYM SPC   
+                                        &mt LGUI ENTER &lt NAV ESC    &lt SYM SPC  &mt LSHFT BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
