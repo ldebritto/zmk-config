@@ -295,7 +295,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
           &mt LCTRL Z &mt LALT X &mt LCMD C  &kp V      &kp B          &kp N      &kp M     &mt RGUI COMMA &mt RALT DOT &mt RCTRL SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lt NAV    &shift_cw_bsp  &kp SPC    &lt SYM    
+                                        &lt NAV ENTER &mt LGUI TAB  &mt LSHFT BSPC &lt SYM SPC   
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
