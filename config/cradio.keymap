@@ -324,10 +324,6 @@
             then-layer = <WFUN>;
         };
         
-        voyager_tri_layer {
-            if-layers = <VNAV VSYM>;
-            then-layer = <VFUN>;
-        };
     };
 
     keymap {
