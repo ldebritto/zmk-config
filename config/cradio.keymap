@@ -169,7 +169,7 @@
         };
         swisher: swisher { // Swisher for macOS (holds fn for better swish activation)
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
-            label = "SWAPPER";
+            label = "SWISHER";
             #binding-cells = <0>;
             bindings = <&kt LA(LCTRL)>, <&none>, <&kt LA(LCTRL)>;
             ignored-key-positions = <7 12 13 16 17 18 19 31>; // Arrows, CMD and SHIFT on home row ENTER, SHIFT on left thumb
