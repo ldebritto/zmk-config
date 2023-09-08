@@ -17,11 +17,10 @@
 #define WSYM 6
 #define WFUN 7
 
-// Voyager style &mt and &lt
-#define VDEF 8
-#define VNAV 9
-#define VSYM 10
-#define VFUN 11
+// AOE 2 Layers
+#define AOE 8
+#define AOE_SEL 9
+
 
 &sk {
         quick-release;
@@ -140,6 +139,75 @@
             layers = <FUN>; 
             bindings = <&bt BT_CLR>;
         };
+
+        // AOE2 Combos
+        combo_toggle_aoe_layer {
+            timeout-ms = <80>;
+            key-positions = <0 10 20>;
+            layers = <DEF AOE AOE_SEL>;
+            bindings = <&tog AOE>;
+        };
+        combo_call_group_2 {
+            timeout-ms = <80>;
+            key-positions = <0 10>;
+            layers = <DEF NAV>;
+            bindings = <&kp N2>;
+        };
+        combo_call_group_3 {
+            timeout-ms = <80>;
+            key-positions = <1 11>;
+            layers = <DEF NAV>;
+            bindings = <&kp N3>;
+        };
+        combo_call_group_4 {
+            timeout-ms = <80>;
+            key-positions = <2 12>;
+            layers = <DEF NAV>;
+            bindings = <&kp N4>;
+        };
+        combo_call_group_5 {
+            timeout-ms = <80>;
+            key-positions = <3 13>;
+            layers = <DEF NAV>;
+            bindings = <&kp N5>;
+        };
+        combo_call_group_6 {
+            timeout-ms = <80>;
+            key-positions = <4 14>;
+            layers = <DEF NAV>;
+            bindings = <&kp N6>;
+        };
+        combo_set_group_2 {
+            timeout-ms = <80>;
+            key-positions = <10 20>;
+            layers = <DEF NAV>;
+            bindings = <&kp LC(N2)>;
+        };
+        combo_set_group_3 {
+            timeout-ms = <80>;
+            key-positions = <11 21>;
+            layers = <DEF NAV>;
+            bindings = <&kp LC(N3)>;
+        };
+        combo_set_group_4 {
+            timeout-ms = <80>;
+            key-positions = <12 22>;
+            layers = <DEF NAV>;
+            bindings = <&kp LC(N4)>;
+        };
+        combo_set_group_5 {
+            timeout-ms = <80>;
+            key-positions = <13 23>;
+            layers = <DEF NAV>;
+            bindings = <&kp LC(N5)>;
+        };
+        combo_set_group_6 {
+            timeout-ms = <80>;
+            key-positions = <14 24>;
+            layers = <DEF NAV>;
+            bindings = <&kp LC(N6)>;
+        };
+
     };
     
     behaviors {
@@ -401,70 +469,36 @@
             >;
         };
 
-        voyager_like_default_layer {
+        aoe2_base_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //│  Q       │  W       │  E       │  R       │  T       │   │          │          │          │          │          │
+             &kp Q      &kp W      &kp E      &kp R      &kp T         &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
+        //│  A       │  S       │  D       │  F       │  G       │   │          │          │          │          │          │
+          &mt LCTRL A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G         &none      &none      &none      &none       &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-         &mt LCTRL Z &mt LALT X &mt LSHFT C &mt LCMD V   &kp B          &kp N   &mt RGUI M &mt LSHFT COMMA &mt RALT DOT &mt RCTRL SEMI
+        //│  Z       │  X       │  C       │  V       │  B       │   │          │          │          │          │          │
+             &kp Z      &kp X      &kp C      &kp V      &kp B         &none      &none      &none      &none       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &lt VNAV ENTER &mt LSHFT TAB &mt LSHFT SPC &lt VSYM BSPC 
+                                         &lt AOE_SEL DOT &mt SHIFT H   &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-
-        voyager_navigation_and_numbers_layer {
+        
+        aoe2_select_all_buildings_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
-            &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+        //│ Mercado  │Blacksmith│ Univers. │  Templo  │  Univers.│   │          │          │          │          │          │
+        &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(U)) &kp LS(LC(Y)) &kp LS(LC(U))    &none &none &none &none &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │          │   │          │ LEFT     │ DOWN     │ UP       │ RIGHT    │
-            &kp TAB  &swapper   &kp LS(LC(TAB)) &kp LC(TAB) &trans     &trans     &kp LARW   &kp DARW   &kp UARW   &kp RARW
+        //│ Arquearia│ Estábulos│ Quartéis │ Castelo  │ Oficinas │   │          │          │          │          │          │
+        &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    |          │   │          │ BACK     │ FORWARD  │ Q (Quit) │ DELETE   │
-        &mt LCTRL LG(Z) &mt LALT LG(X) &mt LSHFT LG(C) &mt LGUI LG(V) &trans &trans &mt RGUI LG(LBKT) &mt RSHFT LG(RBKT) &mt RALT Q  &mt RCTRL DEL
+        //│ Lenha    │ Moinhos  │ Minas    │ Todos TCs│ ESC       │   │          │          │          │          │          │
+            &kp LC(Z)  &kp LC(I)  &kp LC(G)  &kp LC(LS(H)) &kp ESC                  &none &none &none &none &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        voyager_symbols_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
-            &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │ *        │ =        │ +        │ $        │   │ #        │ CTRL     │ SHIFT    │ ALT      │ CMD      │
-            &kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS   &kp DLLR       &kp HASH   &kp RGUI  &kp RSHFT  &kp RALT    &kp RCTRL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ _        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
-            &kp UNDER  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        voyager_tri_layer_function_and_number_row {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
-            &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTL      │
-            &sk LCTRL  &kp LALT   &sk LSHFT  &kp LGUI   &kp F11        &kp F12    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
-            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans    &trans
+                                              &trans    &trans                 &none &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
