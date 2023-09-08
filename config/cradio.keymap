@@ -167,6 +167,13 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <3 7 9 16 17 18 28 29>; // Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+        swisher: swisher { // Swisher for macOS (holds fn for better swish activation)
+            compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LA(LCTRL)>, <&none>, <&kt LA(LCTRL)>;
+            ignored-key-positions = <7 16 17 18 22 23 31>; // Arrows, CMD and SHIFT on home row, SHIFT on left thumb
+        };
         
         wswapper: windows_swapper { // Swapper for Windows
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
@@ -268,7 +275,7 @@
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
-        &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+         &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &lc_nav    &shift_cw      &kp SPC    &lc_sym    
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -284,8 +291,8 @@
         //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp C_VOL_DN   &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ Q (Quit) │ DELETE   │
-        &mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V) &kp C_PLAY_PAUSE &nextprev &kp LG(LBKT) &kp LG(RBKT) &kp Q  &kp DEL
+        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ SWISHER │ DELETE   │
+        &mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V) &kp C_PLAY_PAUSE &nextprev &kp LG(LBKT) &kp LG(RBKT) &swisher  &kp DEL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
