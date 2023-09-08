@@ -172,7 +172,7 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LA(LCTRL)>, <&none>, <&kt LA(LCTRL)>;
-            ignored-key-positions = <7 16 17 18 22 23 31>; // Arrows, CMD and SHIFT on home row, SHIFT on left thumb
+            ignored-key-positions = <7 12 13 16 17 18 19 31>; // Arrows, CMD and SHIFT on home row ENTER, SHIFT on left thumb
         };
         
         wswapper: windows_swapper { // Swapper for Windows
