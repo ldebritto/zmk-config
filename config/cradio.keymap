@@ -57,7 +57,7 @@
         combo_shortcat {
             timeout-ms = <80>;
             key-positions = <12 17>; // D K
-            layers = <DEF VDEF>;
+            layers = <DEF>;
             bindings = <&kp LG(LS(SPC))>;
         };
 
@@ -91,13 +91,6 @@
         };
 
         // Multimedia and keyboard features (OS agnostic)
-        combo_toggle_voyager_as_default { //uses &mt and &lt
-            timeout-ms = <80>;
-            key-positions = <4 5>; // T Y
-            layers = <FUN VFUN>;
-            bindings = <&tog VDEF>;
-        };
-        
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>; // Vol up + down keys
