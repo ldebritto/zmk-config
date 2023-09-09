@@ -195,7 +195,7 @@
             bindings = <&kp LC(N4)>;
         };
         combo_set_group_5 {
-            timeout-ms = <80>;
+            timeout-ms = <120>;
             key-positions = <13 23>;
             layers = <AOE ASL>;
             bindings = <&kp LC(N5)>;
