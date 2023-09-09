@@ -141,7 +141,7 @@
             bindings = <&tog AOE>;
         };
         combo_toggle_aoe_layer_to_prompt {
-            timeout-ms = <80>;
+            timeout-ms = <120>;
             key-positions = <3 13 23>;
             layers = <AOE ASL>;
             bindings = <&leave_and_prompt>;
