@@ -149,61 +149,61 @@
         combo_call_group_2 {
             timeout-ms = <80>;
             key-positions = <0 10>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp N2>;
         };
         combo_call_group_3 {
             timeout-ms = <80>;
             key-positions = <1 11>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp N3>;
         };
         combo_call_group_4 {
             timeout-ms = <80>;
             key-positions = <2 12>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp N4>;
         };
         combo_call_group_5 {
             timeout-ms = <80>;
             key-positions = <3 13>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp N5>;
         };
         combo_call_group_6 {
             timeout-ms = <80>;
             key-positions = <4 14>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp N6>;
         };
         combo_set_group_2 {
             timeout-ms = <80>;
             key-positions = <10 20>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp LC(N2)>;
         };
         combo_set_group_3 {
             timeout-ms = <80>;
             key-positions = <11 21>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp LC(N3)>;
         };
         combo_set_group_4 {
             timeout-ms = <80>;
             key-positions = <12 22>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp LC(N4)>;
         };
         combo_set_group_5 {
             timeout-ms = <80>;
             key-positions = <13 23>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp LC(N5)>;
         };
         combo_set_group_6 {
             timeout-ms = <80>;
             key-positions = <14 24>;
-            layers = <DEF NAV>;
+            layers = <AOE ASL>;
             bindings = <&kp LC(N6)>;
         };
 
