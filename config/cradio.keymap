@@ -1,5 +1,4 @@
-// This keymap requires these PRs:
-// PR# 1366 (https://github.com/zmkfirmware/zmk/pull/1366) - Swapper (tri-layer-state)
+// This keymap requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366) for swapper
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -22,7 +21,7 @@
     };
 
 &mt {
-    tapping-term-ms = <250>;
+    // tapping-term-ms = <250>;
     flavor = "tap-preferred";
  };
 
@@ -166,8 +165,8 @@
      };
     
     macros {        
-        // Adds a &kp K_CANCEL to cancel every queued mod
-        lc_nav: lc_nav {
+        
+        lc_nav: lc_nav { // Adds a &kp K_CANCEL to cancel every queued mod on pressing a layer key
             label = "LC_NAV";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -223,17 +222,6 @@
                 ;
         };
 
-        leave_and_prompt: leave_and_prompt {
-            label = "LEAVE_AGE_LAYERS_AND_PROMPT";
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to DEF>
-                , <&macro_tap &kp ENTER>
-                ;
-        };
     };
 
     conditional_layers {
@@ -254,11 +242,11 @@
     keymap {
         compatible = "zmk,keymap";
   
-        apple_default_layer {
+        apple_default_layer { // mod tap on Z allows for using CAPS LOCK key as a substitute for fn/globe key in macOS and iPadOS
             bindings = <
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-         &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI // mt on z makes for CAPS as fn in macOS and iPadOS
+         &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
                                              &lc_nav    &shift_cw      &kp SPC    &lc_sym    
             >;
         };
