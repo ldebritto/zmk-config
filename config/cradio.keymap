@@ -234,13 +234,6 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             ignored-key-positions = <3 7 9 16 17 18 28 29>; // Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
-        swisher: swisher { // Swisher for macOS (holds fn for better swish activation)
-            compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
-            label = "SWISHER";
-            #binding-cells = <0>;
-            bindings = <&kt LA(LCTRL)>, <&none>, <&kt LA(LCTRL)>;
-            ignored-key-positions = <7 12 13 16 17 18 19 31>; // Arrows, CMD and SHIFT on home row ENTER, SHIFT on left thumb
-        };
         
         wswapper: windows_swapper { // Swapper for Windows
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
@@ -342,171 +335,91 @@
   
         apple_default_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  ; :     │
          &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &lc_nav    &shift_cw      &kp SPC    &lc_sym    
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         apple_navigation_and_media_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ SWISHER  │ NEXT/PREV│ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
-            &kp TAB    &swapper   &swisher   &nextprev  &kp C_VOL_UP   &kp PG_UP  &kp HOME   &kp UARW   &kp END    &kp BSPC
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
-            &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp C_VOL_DN   &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ PREV. TAB│ NEXT TAB │ BACK     │ FORWARD  │  DELETE  │
-        &mt CAPS LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V) &kp C_PLAY_PAUSE &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &kp DEL
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP           &kp PG_UP &kp HOME   &kp UARW   &kp END      &kp BSPC
+            &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI    &kp C_VOL_DN           &kp PG_DN &kp LARW   &kp DARW   &kp RARW     &kp ENTER
+       &mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)   &kp C_PLAY_PAUSE       &nextprev &kp BSPC &kp LG(LBKT) &kp LG(RBKT) &kp DEL
+                                                      &trans     &trans              &trans     &trans
             >;
         };
 
         apple_symbols_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
             &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │ *        │ =        │ _        │ $        │   │ #        │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR       &kp HASH   &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ +        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         apple_tri_layer_function_and_number_row {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CTRL     │ ALT      │ SHIFT    │ CMD      │ F11      │   │ F12      │ CMD      │ SHIFT    │ ALT      │ CTRL     │
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans    &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
         
         windows_default_layer { // Layer keys map to swapped GUI and CONTROL in subsequent layers for easier use on Windows
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ; :      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &lc_wnav   &shift_cw      &kp SPC    &lc_wsym
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         windows_navigation_and_media_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ TAB      │ SWAPPER  │ PREV. TAB│ NEXT TAB │ VOL. UP  │   │ PG UP    │ HOME     │ UP       │ END      │ BACKSPACE│
             &kp TAB   &wswapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP &kp PG_UP &kp HOME &kp UARW   &kp END    &kp BSPC
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ WIN      │ ALT      │ SHIFT    │ CTRL     │ VOL. DOWN│   | PG DOWN  │ LEFT     │ DOWN     │ RIGHT    │ ENTER    │
             &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   &kp C_VOL_DN   &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp ENTER
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ UNDO     │ CUT      │ COPY     │ PASTE    | PLAY     │   │ NEXT/PREV│ BACK     │ FORWARD  │ `        │ DELETE   │
             &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V) &kp C_PLAY_PAUSE &nextprev &kp LA(LARW) &kp LA(RARW) &kp GRAVE  &kp DEL
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         windows_symbols_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  {       │  [       │  (       │ ~        │   │ ^        │ )        │ ]        │ }        │  `       │
             &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE      &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ -        │ *        │ =        │ +        │ $        │   │ #        │ CTRL     │ SHIFT    │ ALT      │ WIN      │
             &kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS   &kp DLLR       &kp HASH   &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ _        │ |        │  @       │  /       │  %       │   │ §        │ \        │ &        │ ?        │ !        │
             &kp UNDER  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT      &kp LA(N6) &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         windows_tri_layer_function_and_number_row {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ 1        │ 2        │ 3        │ 4        │ 5        │   │ 6        │ 7        │ 8        │ 9        │ 0        │
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ WIN      │ ALT      │ SHIFT    │ CTRL     │ F11      │   │ F12      │ CTRL     │ SHIFT    │ ALT      │ WIN      │
             &sk LGUI  &sk LALT   &sk LSHFT  &sk LCTRL   &kp F11        &kp F12    &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ F1       │ F2       │ F3       │ F4       │ F5       │   │ F6       │ F7       │ F8       │ F9       │ F10      │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans    &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
         aoe2_base_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │          │          │          │          │          │
-             &kp Q      &kp W      &kp E      &kp R      &kp T         &none      &none      &none      &none       &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │          │          │          │          │          │
-          &mt LCTRL A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G         &none      &none      &none      &none       &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │          │          │          │          │          │
-             &kp Z      &kp X      &kp C      &kp V      &kp B         &none      &none      &none      &none       &none
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt ASL DOT &mt LSHFT H    &none      &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+             &kp Q      &kp W      &kp E      &kp R      &kp T         &none &none &none &none &none
+          &mt LCTRL A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G         &none &none &none &none &none
+             &kp Z      &kp X      &kp C      &kp V      &kp B         &none &none &none &none &none
+                                            &lt ASL DOT &mt LSHFT H    &none &none
             >;
         };
         
         aoe2_select_all_buildings_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ Mercado  │Blacksmith│ Univers. │  Templo  │          │   │          │          │          │          │          │
-        &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(U)) &kp LS(LC(Y)) &none    &none &none &none &none &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ Arquearia│ Estábulos│ Quartéis │ Castelo  │ Oficinas │   │          │          │          │          │          │
-        &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ Lenha    │ Moinhos  │ Minas    │ Todos TCs│ ESC       │   │          │          │          │          │          │
-            &kp LC(Z)  &kp LC(I)  &kp LC(G)  &kp LC(LS(H)) &kp ESC                  &none &none &none &none &none
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans    &trans                 &none &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(U)) &kp LS(LC(Y)) &none            &none &none &none &none &none
+            &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
+            &kp LC(Z)     &kp LC(I)     &kp LC(G)     &kp LC(LS(H)) &kp ESC          &none &none &none &none &none
+                                                      &trans        &trans           &none &none
             >;
         };
     };
