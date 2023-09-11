@@ -17,11 +17,6 @@
 #define WSYM 6
 #define WFUN 7
 
-// AOE 2 Layers
-#define AOE 8
-#define ASL 9
-
-
 &sk {
         quick-release;
     };
@@ -131,80 +126,6 @@
             key-positions = <28 29>;
             layers = <FUN>; 
             bindings = <&bt BT_CLR>;
-        };
-
-        // AOE2 Combos
-        combo_toggle_aoe_layer {
-            timeout-ms = <80>;
-            key-positions = <0 10 20>;
-            layers = <DEF AOE ASL>;
-            bindings = <&tog AOE>;
-        };
-        combo_toggle_aoe_layer_to_prompt {
-            timeout-ms = <120>;
-            key-positions = <3 13 23>;
-            layers = <AOE ASL>;
-            bindings = <&leave_and_prompt>;
-        };
-        combo_call_group_2 {
-            timeout-ms = <80>;
-            key-positions = <0 10>;
-            layers = <AOE ASL>;
-            bindings = <&kp N2>;
-        };
-        combo_call_group_3 {
-            timeout-ms = <80>;
-            key-positions = <1 11>;
-            layers = <AOE ASL>;
-            bindings = <&kp N3>;
-        };
-        combo_call_group_4 {
-            timeout-ms = <80>;
-            key-positions = <2 12>;
-            layers = <AOE ASL>;
-            bindings = <&kp N4>;
-        };
-        combo_call_group_5 {
-            timeout-ms = <80>;
-            key-positions = <3 13>;
-            layers = <AOE ASL>;
-            bindings = <&kp N5>;
-        };
-        combo_call_group_6 {
-            timeout-ms = <80>;
-            key-positions = <4 14>;
-            layers = <AOE ASL>;
-            bindings = <&kp N6>;
-        };
-        combo_set_group_2 {
-            timeout-ms = <80>;
-            key-positions = <10 20>;
-            layers = <AOE ASL>;
-            bindings = <&kp LC(N2)>;
-        };
-        combo_set_group_3 {
-            timeout-ms = <80>;
-            key-positions = <11 21>;
-            layers = <AOE ASL>;
-            bindings = <&kp LC(N3)>;
-        };
-        combo_set_group_4 {
-            timeout-ms = <80>;
-            key-positions = <12 22>;
-            layers = <AOE ASL>;
-            bindings = <&kp LC(N4)>;
-        };
-        combo_set_group_5 {
-            timeout-ms = <120>;
-            key-positions = <13 23>;
-            layers = <AOE ASL>;
-            bindings = <&kp LC(N5)>;
-        };
-        combo_set_group_6 {
-            timeout-ms = <80>;
-            key-positions = <14 24>;
-            layers = <AOE ASL>;
-            bindings = <&kp LC(N6)>;
         };
 
     };
@@ -337,17 +258,17 @@
             bindings = <
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
-         &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI
+         &mt CAPS Z    &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SEMI // mt on z makes for CAPS as fn in macOS and iPadOS
                                              &lc_nav    &shift_cw      &kp SPC    &lc_sym    
             >;
         };
 
         apple_navigation_and_media_layer {
             bindings = <
-            &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP           &kp PG_UP &kp HOME   &kp UARW   &kp END      &kp BSPC
-            &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI    &kp C_VOL_DN           &kp PG_DN &kp LARW   &kp DARW   &kp RARW     &kp ENTER
-       &mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)   &kp C_PLAY_PAUSE       &nextprev &kp BSPC &kp LG(LBKT) &kp LG(RBKT) &kp DEL
-                                                      &trans     &trans              &trans     &trans
+            &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP       &kp PG_UP &kp HOME   &kp UARW   &kp END      &kp BSPC
+            &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI    &kp C_VOL_DN       &kp PG_DN &kp LARW   &kp DARW   &kp RARW     &kp ENTER
+       &mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)   &kp C_PLAY_PAUSE   &nextprev &kp BSPC &kp LG(LBKT) &kp LG(RBKT) &kp DEL
+                                                  &trans      &trans             &trans    &trans
             >;
         };
 
@@ -365,11 +286,11 @@
             &kp N1     &kp N2     &kp N3     &kp N4    &kp N5          &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
             &sk LCTRL  &sk LALT   &sk LSHFT  &sk LGUI   &kp F11        &kp F12    &sk RGUI   &sk RSHFT  &sk RALT   &sk RCTRL
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-                                             &trans     &trans         &trans    &trans
+                                             &trans     &trans         &trans     &trans
             >;
         };
         
-        windows_default_layer { // Layer keys map to swapped GUI and CONTROL in subsequent layers for easier use on Windows
+        windows_default_layer { // Layer keys mapped to swapped GUI and CONTROL in subsequent layers for easier use on Windows
             bindings = <
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SQT
@@ -405,22 +326,5 @@
             >;
         };
 
-        aoe2_base_layer {
-            bindings = <
-             &kp Q      &kp W      &kp E      &kp R      &kp T         &none &none &none &none &none
-          &mt LCTRL A &mt LALT S &mt LCTRL D &mt LSHFT F &kp G         &none &none &none &none &none
-             &kp Z      &kp X      &kp C      &kp V      &kp B         &none &none &none &none &none
-                                            &lt ASL DOT &mt LSHFT H    &none &none
-            >;
-        };
-        
-        aoe2_select_all_buildings_layer {
-            bindings = <
-            &kp LS(LC(M)) &kp LS(LC(S)) &kp LS(LC(U)) &kp LS(LC(Y)) &none            &none &none &none &none &none
-            &kp LS(LC(A)) &kp LS(LC(L)) &kp LS(LC(B)) &kp LS(LC(V)) &kp LS(LC(K))    &none &none &none &none &none
-            &kp LC(Z)     &kp LC(I)     &kp LC(G)     &kp LC(LS(H)) &kp ESC          &none &none &none &none &none
-                                                      &trans        &trans           &none &none
-            >;
-        };
     };
 };
