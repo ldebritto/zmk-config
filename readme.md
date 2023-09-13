@@ -4,8 +4,8 @@ This keymap heavily inspired by [Callum's layout for QMK](https://github.com/qmk
 02. No hold-taps, as they are finnicky to tweak and could make misfires or require long pauses, excecption was made to accomodate `CAPS` in `DEF` and `NAV` layers, since I map on the OS level to perform as Apple's fn key and trigger my window manager (Swish);
     - ZMK will not support firmware level Apple's fn keycode (see [Issue #947](https://github.com/zmkfirmware/zmk/issues/947) on ZMK's GitHub), but the `CAPS` keycode workaround described there works just fine.
 03. No key combination should require more than three fingers pressed at the same time (two thumbs and one finger should be the most taxing), different mods can be combined through sticky keys (&sk behaviours);
-04. Keyboard functionality (such as &bootloader and bluetooth toggles) are hidden behind combos available only in the `FUN` layer in order to make them purposelly difficult to trigger by accident.
-05. Other combos should be convenience only, such as triggering Spotlight/Winddows Start menu (`f j`), Shortcat (`d k`), NAV layer toggle (`left thumb keys`) and to mute the keyboard (`vol up and down` on `NAV`).
+04. Keyboard functionality (such as &bootloader and bluetooth toggles) are hidden behind combos available only in the `FUN` layer in order to make them purposelly difficult to trigger by accident;
+05. Other combos should be convenience only, such as triggering Spotlight/Winddows Start menu (`f j`), [Shortcat](https://shortcat.app) (`d k`), NAV layer toggle (`left thumb keys`) and to mute the keyboard (`vol up and down` on `NAV`);
 06. Tap dance is used to make double press on shift trigger &caps_word behaviour and to combine `next song` and `previous song` into the same key on `NAV`.
 
 Its main uses are prose in both English and Portuguese as well as some light coding.
