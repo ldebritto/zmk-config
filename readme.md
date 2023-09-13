@@ -1,4 +1,4 @@
-This keymap requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366) for swapper It's heavily inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
+It's heavily inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
 
 01. Every key should have one way to type, the only exception is the shift key that is both available as a HR mod behind a layer and a thumb key;
 02. No hold-taps, as they are finnicky to tweak and could make misfires or require long pauses, excecption was made to accomodate CAPS in DEF and NAV layers, since I map on the OS level to perform as Apple's fn key and trigger my window manager (Swish);
@@ -9,3 +9,5 @@ This keymap requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366) fo
 06. Tap dance is used to make double press on shift trigger &caps_word behaviour and to combine `next song` and `previous song` into the same key on `NAV`.
 
 There are Apple OS's set of 4 layers and Windows set for the same keys. They only differ by the position of mods on home row. MacOS layers have CMD on index fingers and CONTROL on pinkies. Windows layers will have the other way around: WIN on pinkies and CONTROL on index fingers.
+
+This keymap requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366) for swapper functionality on `NAV` and `WNAV`. See ZMK.dev [documentation](https://zmk.dev/docs/features/beta-testing) to instructions on how to use PRs not yet merged into ZMK's main repo.
