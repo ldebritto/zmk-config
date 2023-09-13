@@ -11,6 +11,8 @@ This keymap heavily inspired by [Callum's layout for QMK](https://github.com/qmk
 
 Its main uses are prose in both English and Portuguese as well as some light coding.
 
+On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents and quotes in these use cases. `/` only exists in the `SYM` layer.
+
 There are Apple OS's set of 4 layers and Windows set for the same keys. They only differ by the position of mods on home row. MacOS layers have CMD on index fingers and CONTROL on pinkies. Windows layers will have the other way around: WIN on pinkies and CONTROL on index fingers.
 
 This keymap requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366) for swapper functionality on `NAV` and `WNAV`. See ZMK.dev [documentation](https://zmk.dev/docs/features/beta-testing) to instructions on how to use PRs not yet merged into ZMK's main repo.
