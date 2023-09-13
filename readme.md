@@ -1,4 +1,4 @@
-It's heavily inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
+This keymap heavily inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
 
 01. Every key should have one way to type, the only exception is the shift key that is both available as a HR mod behind a layer and a thumb key;
 02. No hold-taps, as they are finnicky to tweak and could make misfires or require long pauses, excecption was made to accomodate CAPS in DEF and NAV layers, since I map on the OS level to perform as Apple's fn key and trigger my window manager (Swish);
