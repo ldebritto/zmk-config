@@ -255,7 +255,7 @@
                 <&macro_press>,
                 <&kp RALT>,
                 <&macro_tap>,
-                <&kp N0 &kp N1 &kp N6 &kp N7>,
+                <&kp KP_NUMBER_0 &kp KP_N1 &kp KP_N6 &kp KP_N7>,
                 <&macro_release>,
                 <&kp RALT>;
         };
