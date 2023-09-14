@@ -176,7 +176,7 @@
             label = "SWISH_WORD";
             #binding-cells = <0>;
             continue-list = <I J K L O LSHIFT>;
-            mods = <(MOD_LCTL)>;
+            mods = <(CAPS)>;
         };
     };
 
