@@ -176,7 +176,7 @@
             label = "SWISH_WORD";
             #binding-cells = <0>;
             continue-list = <I J K L O LSHIFT>;
-            mods = <(CAPS)>;
+            mods = <(MOD_LCTL)>;
         };
     };
 
@@ -240,6 +240,18 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo WSYM>;
+        };
+        win_par: win_par {
+            compatible = "zmk,behavior-macro";
+            label = "WIN_PAR";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N1 &kp N6 &kp N7>,
+                <&macro_release>,
+                <&kp RALT>;
         };
     };
 
@@ -316,10 +328,10 @@
 
         windows_symbols_layer {
             bindings = <
-&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR  &kp TILDE    &kp CARET   &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS  &kp DLLR     &kp HASH    &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
-&kp UNDER  &kp PIPE   &kp AT     &kp FSLH  &kp PRCNT    &kp LA(N6)  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
-                                 &trans    &trans       &trans      &trans
+&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR  &kp TILDE    &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS  &kp DLLR     &kp HASH   &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
+&kp UNDER  &kp PIPE   &kp AT     &kp FSLH  &kp PRCNT    &win_par   &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+                                 &trans    &trans       &trans     &trans
             >;
         };
 
