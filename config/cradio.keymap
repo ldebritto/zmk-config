@@ -317,7 +317,7 @@
             bindings = <
 &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR  &kp TILDE    &kp CARET  &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
 &kp MINUS  &kp ASTRK  &kp EQUAL  &kp PLUS  &kp DLLR     &kp HASH   &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
-&kp UNDER  &kp PIPE   &kp AT     &kp FSLH  &kp PRCNT    &win_par   &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+&kp UNDER  &kp PIPE   &kp AT     &kp FSLH  &kp PRCNT    &none      &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
                                  &trans    &trans       &trans     &trans
             >;
         };
