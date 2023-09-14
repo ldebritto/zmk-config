@@ -26,13 +26,7 @@
 };
 
 &caps_word {
-    continue-list = <
-                    UNDERSCORE MINUS
-                    SQT CARET TILDE GRAVE
-                    K_CANCEL
-                    LCMD RCMD LCTRL RCTRL LALT RALT
-                    BACKSPACE DELETE
-    >;
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE>;
 };
 
 / {
@@ -128,12 +122,6 @@
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
         };
-
-        swish_word {
-            bindings = <&swish_word>;
-            key-positions = <12 13>;
-            layers = <0>;
-        };
     };
 
     behaviors {
@@ -176,13 +164,6 @@
                 <&kt LALT>;
 
             ignored-key-positions = <3>;// Shift key on WNAV to allow for backwards movement
-        };
-        swish_word: swish_word {
-            compatible = "zmk,behavior-caps-word";
-            label = "SWISH_WORD";
-            #binding-cells = <0>;
-            continue-list = <I J K L O LSHIFT>;
-            mods = <(MOD_LCTL)>;
         };
     };
 
