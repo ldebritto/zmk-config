@@ -228,18 +228,6 @@
                 <&macro_release>,
                 <&mo WSYM>;
         };
-        win_par: win_par {
-            compatible = "zmk,behavior-macro";
-            label = "WIN_PAR";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_0 &kp KP_N1 &kp KP_N6 &kp KP_N7>,
-                <&macro_release>,
-                <&kp RALT>;
-        };
     };
 
     conditional_layers {
