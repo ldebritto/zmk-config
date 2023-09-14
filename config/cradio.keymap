@@ -171,6 +171,13 @@
 
             ignored-key-positions = <3>;// Shift key on WNAV to allow for backwards movement
         };
+        swish_word: swish_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "SWISH_WORD";
+            #binding-cells = <0>;
+            continue-list = <I J K L O LSHIFT>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
