@@ -16,10 +16,10 @@
 #define WSYM 6
 #define WFUN 7
 
-&sk {
-    release-after-ms = <10000>;
-    quick-release;// needed to avoid triggering more than modded one key when typing fast
-};
+// &sk {
+//     release-after-ms = <10000>;
+//     quick-release;// needed to avoid triggering more than modded one key when typing fast
+// };
 
 &mt {
     flavor = "tap-preferred";// default is "hold-preferred"
