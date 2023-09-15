@@ -117,6 +117,12 @@
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
         };
+
+        toggle_aoe {
+            bindings = <&tog 8>;
+            key-positions = <1 2 3>;
+            layers = <0 8>;
+        };
     };
 
     behaviors {
