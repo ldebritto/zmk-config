@@ -313,5 +313,38 @@
                                &trans     &trans     &trans   &trans
             >;
         };
+
+        aoe_def {
+            bindings = <
+&kp Q        &kp W       &kp E        &kp R        &kp T       &trans  &trans  &trans  &trans  &trans
+&mt LCTRL A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G       &trans  &trans  &trans  &trans  &trans
+&kp Z        &kp X       &kp C        &kp V        &kp B       &trans  &trans  &trans  &trans  &trans
+                                      &lt 9 DOT    &lt 10 H    &trans  &trans
+            >;
+
+            label = "AOE";
+        };
+
+        aoe_group {
+            bindings = <
+&kp N1     &kp N2    &kp N3     &kp N4     &kp N5     &trans  &trans  &trans  &trans  &trans
+&sk LCTRL  &sk LALT  &sk LCTRL  &sk LSHFT  &trans     &trans  &trans  &trans  &trans  &trans
+&kp N6     &kp N7    &kp N8     &kp N9     &kp N0     &trans  &trans  &trans  &trans  &trans
+                                &trans     &kp DEL    &trans  &trans
+            >;
+
+            label = "AGR";
+        };
+
+        aoe_buildings {
+            bindings = <
+&kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &trans           &trans  &trans  &trans  &trans  &trans
+&kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(D))  &kp LC(LS(V))  &kp LC(LS(K))    &trans  &trans  &trans  &trans  &trans
+&kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(L))  &kp LC(LS(H))  &trans           &trans  &trans  &trans  &trans  &trans
+                                             &kp F3         &trans           &trans  &trans
+            >;
+
+            label = "ABU";
+        };
     };
 };
