@@ -40,7 +40,7 @@
         combo_apple_numpad {
             bindings = <&tog 1>;
             key-positions = <32 33>;
-            layers = <0>
+            layers = <0>;
         };
 
         // Windows combos
@@ -69,7 +69,7 @@
         combo_windows_numpad {
             bindings = <&tog 6>;
             key-positions = <32 33>;
-            layers = <5>
+            layers = <5>;
         };
 
         // Multimedia and keyboard features (OS agnostic)
