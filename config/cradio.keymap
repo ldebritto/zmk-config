@@ -2,20 +2,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-// Apple layers (CASG mods)
-
-#define DEF 0
-#define NAV 1
-#define SYM 2
-#define FUN 3
-
-// Windows layers (GASC mods)
-
-#define WDEF 4
-#define WNAV 5
-#define WSYM 6
-#define WFUN 7
-
 &caps_word {
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE>;
 };
@@ -50,6 +36,12 @@
             layers = <0 2>;
             bindings = <&tog 2>;
         };
+        
+        combo_apple_numpad {
+            bindings = <&tog 1>;
+            key-positions = <32 33>;
+            layers = <0>
+        };
 
         // Windows combos
 
@@ -74,8 +66,14 @@
             bindings = <&tog 6>;
         };
 
-        // Multimedia and keyboard features (OS agnostic)
+        combo_windows_numpad {
+            bindings = <&tog 6>;
+            key-positions = <32 33>;
+            layers = <5>
+        };
 
+        // Multimedia and keyboard features (OS agnostic)
+        
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>;// Vol up + down keys
@@ -130,10 +128,6 @@
             layers = <9 10 11>;
         };
 
-        numpad {
-            bindings = <&tog 1>;
-            key-positions = <32 33>;
-        };
     };
 
     behaviors {
@@ -316,6 +310,15 @@
             >;
         };
 
+        windows_numpad {
+            bindings = <
+&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
+&kp RGUI   &kp RALT  &kp RSHFT  &kp RCTRL &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
+&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
+                                &trans    &trans    &tog 1           &lt 2 KP_N0
+            >;
+        };
+
         windows_navigation_and_media_layer {
             bindings = <
 &kp TAB    &wswapper  &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP               &kp HOME      &kp UP         &kp END            &kp BSPC
@@ -350,8 +353,6 @@
 &kp Z        &kp X        &kp C       &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
                                       &lt 10 DOT   &lt 11 H       &trans  &trans
             >;
-
-            label = "AOE";
         };
 
         aoe_group {
@@ -361,8 +362,6 @@
 &kp N6      &kp N7    &kp N8     &kp N9     &kp N0             &trans  &trans  &trans  &trans  &trans
                                  &trans     &kp DEL            &trans  &trans
             >;
-
-            label = "AGR";
         };
 
         aoe_buildings {
@@ -372,8 +371,6 @@
 &kp LC(Z)      &kp LC(I)      &kp LC(G)      &kp LC(LS(H))  &trans           &trans  &trans  &trans  &trans  &trans
                                              &kp F3         &trans           &trans  &trans
             >;
-
-            label = "ABU";
         };
     };
 };
