@@ -25,7 +25,7 @@
 
         combo_shortcat {
             timeout-ms = <80>;
-            key-positions = <12 17>;// D K
+            key-positions = <17 16>;// D K
             layers = <0>;
             bindings = <&kp LG(LS(SPC))>;
         };
@@ -36,7 +36,7 @@
             layers = <0 2>;
             bindings = <&tog 2>;
         };
-        
+
         combo_apple_numpad {
             bindings = <&tog 1>;
             key-positions = <32 33>;
@@ -73,7 +73,7 @@
         };
 
         // Multimedia and keyboard features (OS agnostic)
-        
+
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>;// Vol up + down keys
@@ -128,20 +128,10 @@
             layers = <9 10 11>;
         };
 
-        combo_apple_numpad {
-            bindings = <&tog 11>;
-            key-positions = <32 33>;
-            layers = <0>;
-        };
-        combo_windows_numpad {
-            bindings = <&tog 12>;
-            key-positions = <32 33>;
-            layers = <04>;
-        };
         combo_comma_on_numpad {
             bindings = <&kp KP_COMMA>;
             key-positions = <29 39>;
-            layers = <11 12>;
+            layers = <6 1>;
         };
     };
 
@@ -285,8 +275,6 @@
 &trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
                                 &trans    &trans    &tog 1           &lt 2 KP_N0
             >;
-
-            label = "numpad";
         };
 
         apple_navigation_and_media_layer {
@@ -327,10 +315,10 @@
 
         windows_numpad {
             bindings = <
-&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
-&kp RGUI   &kp RALT  &kp RSHFT  &kp RCTRL &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
-&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
-                                &trans    &trans    &tog 1           &lt 2 KP_N0
+&kp TAB   &trans    &trans     &trans     &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
+&kp RGUI  &kp RALT  &kp RSHFT  &kp RCTRL  &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
+&trans    &trans    &trans     &trans     &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
+                               &trans     &trans    &tog 1           &lt 7 KP_N0
             >;
         };
 
@@ -389,24 +377,5 @@
 
             label = "ABU";
         };
-
-        apple_numpad {
-            bindings = <
-&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
-&kp RCTRL  &kp RALT  &kp RSHFT  &kp RGUI  &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
-&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
-                                &trans    &trans    &tog 11          &lt 1 KP_N0
-            >;
-        };
-        
-        windows_numpad {
-            bindings = <
-&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
-&kp RGUI   &kp RALT  &kp RSHFT  &kp RCTRL &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
-&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
-                                &trans    &trans    &tog 11          &lt 1 KP_N0
-            >;
-        };
-
     };
 };
