@@ -25,7 +25,7 @@
 
         combo_shortcat {
             timeout-ms = <80>;
-            key-positions = <17 16>;// D K
+            key-positions = <17 16>;// J K
             layers = <0>;
             bindings = <&kp LG(LS(SPC))>;
         };
@@ -74,6 +74,12 @@
 
         // Multimedia and keyboard features (OS agnostic)
 
+        combo_comma_on_numpad {
+            bindings = <&kp KP_COMMA>;
+            key-positions = <29 39>;
+            layers = <6 1>;
+        };
+
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>;// Vol up + down keys
@@ -116,6 +122,8 @@
             bindings = <&bt BT_CLR>;
         };
 
+        // AOE layers
+
         toggle_aoe {
             bindings = <&tog 9>;
             key-positions = <1 2 3>;
@@ -128,11 +136,6 @@
             layers = <9 10 11>;
         };
 
-        combo_comma_on_numpad {
-            bindings = <&kp KP_COMMA>;
-            key-positions = <29 39>;
-            layers = <6 1>;
-        };
     };
 
     behaviors {
