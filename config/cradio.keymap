@@ -47,8 +47,8 @@
         combo_toggle_nav {
             timeout-ms = <80>;
             key-positions = <30 31>;
-            layers = <0 1>;
-            bindings = <&tog 1>;
+            layers = <0 2>;
+            bindings = <&tog 2>;
         };
 
         // Windows combos
@@ -56,22 +56,22 @@
         combo_toggle_between_windows_and_apple_mods {
             timeout-ms = <80>;
             key-positions = <10 19>;// A "
-            layers = <3 7>;
-            bindings = <&tog 4>;
+            layers = <4 8>;
+            bindings = <&tog 5>;
         };
 
         combo_windows_start_menu {
             timeout-ms = <80>;
             key-positions = <13 16>;// F J
-            layers = <4>;// Only available in the Windows' DEF layer
+            layers = <5>;// Only available in the Windows' DEF layer
             bindings = <&kp LGUI>;
         };
 
         combo_toggle_wnav {
             timeout-ms = <80>;
             key-positions = <30 31>;
-            layers = <4 5>;
-            bindings = <&tog 5>;
+            layers = <5 6>;
+            bindings = <&tog 6>;
         };
 
         // Multimedia and keyboard features (OS agnostic)
@@ -79,59 +79,59 @@
         combo_mute {
             timeout-ms = <80>;
             key-positions = <4 14>;// Vol up + down keys
-            layers = <1 5>;// Only available in the NAV layer, system agnostic
+            layers = <2 6>;// Only available in the NAV layer, system agnostic
             bindings = <&kp C_MUTE>;
         };
 
         combo_trigger_bootloader {
             timeout-ms = <80>;
             key-positions = <20 21>;
-            layers = <3>;
+            layers = <4>;
             bindings = <&bootloader>;
         };
 
         combo_toggle_bt0_connection {
             timeout-ms = <80>;
             key-positions = <3 4>;
-            layers = <3>;
+            layers = <4>;
             bindings = <&bt BT_SEL 0>;
         };
 
         combo_toggle_bt1_connection {
             timeout-ms = <80>;
             key-positions = <13 14>;
-            layers = <3>;
+            layers = <4>;
             bindings = <&bt BT_SEL 1>;
         };
 
         combo_toggle_bt2_connection {
             timeout-ms = <80>;
             key-positions = <23 24>;
-            layers = <3>;
+            layers = <4>;
             bindings = <&bt BT_SEL 2>;
         };
 
         combo_clear_current_bluetooth_profile {
             timeout-ms = <80>;
             key-positions = <28 29>;
-            layers = <3>;
+            layers = <4>;
             bindings = <&bt BT_CLR>;
         };
 
         toggle_aoe {
-            bindings = <&tog 8>;
+            bindings = <&tog 9>;
             key-positions = <1 2 3>;
-            layers = <0 8>;
+            layers = <0 9>;
         };
 
         aoe_esc {
             bindings = <&kp ESC>;
             key-positions = <12 13>;
-            layers = <8 9 10>;
+            layers = <9 10 11>;
         };
 
         numpad {
-            bindings = <&tog 11>;
+            bindings = <&tog 1>;
             key-positions = <32 33>;
         };
     };
@@ -189,12 +189,12 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 1>,
+                <&mo 2>,
                 <&macro_tap>,
                 <&kp K_CANCEL>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 1>;
+                <&mo 2>;
         };
         lc_sym: lc_sym {
             label = "LC_SYM";
@@ -204,30 +204,15 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 2>,
+                <&mo 3>,
                 <&macro_tap>,
                 <&kp K_CANCEL>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 2>;
+                <&mo 3>;
         };
         lc_wnav: lc_wnav {
             label = "LC_WNAV";
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 5>,
-                <&macro_tap>,
-                <&kp K_CANCEL>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 5>;
-        };
-        lc_wsym: lc_wsym {
-            label = "LC_WSYM";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -241,19 +226,34 @@
                 <&macro_release>,
                 <&mo 6>;
         };
+        lc_wsym: lc_wsym {
+            label = "LC_WSYM";
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 7>,
+                <&macro_tap>,
+                <&kp K_CANCEL>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 7>;
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         macos_tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
 
         windows_tri_layer {
-            if-layers = <5 6>;
-            then-layer = <7>;
+            if-layers = <6 7>;
+            then-layer = <8>;
         };
     };
 
@@ -267,6 +267,17 @@
 &mt CAPS Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
                           &lc_nav  &shift_cw    &kp SPACE  &lc_sym
             >;
+        };
+
+        apple_numpad {
+            bindings = <
+&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
+&kp RCTRL  &kp RALT  &kp RSHFT  &kp RGUI  &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
+&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
+                                &trans    &trans    &tog 1           &lt 2 KP_N0
+            >;
+
+            label = "numpad";
         };
 
         apple_navigation_and_media_layer {
@@ -337,7 +348,7 @@
 &kp Q        &kp W        &kp E       &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
 &mt LCTRL A  &mt LSHFT S  &mt LALT D  &mt LSHFT F  &mt LCTRL G    &trans  &trans  &trans  &trans  &trans
 &kp Z        &kp X        &kp C       &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
-                                      &lt 9 DOT    &lt 10 H       &trans  &trans
+                                      &lt 10 DOT   &lt 11 H       &trans  &trans
             >;
 
             label = "AOE";
@@ -363,17 +374,6 @@
             >;
 
             label = "ABU";
-        };
-
-        numpad {
-            bindings = <
-&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
-&kp RCTRL  &kp RALT  &kp RSHFT  &kp RGUI  &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
-&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
-                                &trans    &trans    &tog 11          &lt 1 KP_N0
-            >;
-
-            label = "numpad";
         };
     };
 };
