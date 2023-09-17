@@ -76,7 +76,7 @@
 
         combo_comma_on_numpad {
             bindings = <&kp KP_COMMA>;
-            key-positions = <29 39>;
+            key-positions = <29 39 19>;
             layers = <6 1>;
         };
 
@@ -135,7 +135,6 @@
             key-positions = <12 13>;
             layers = <9 10 11>;
         };
-
     };
 
     behaviors {
