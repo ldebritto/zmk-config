@@ -128,6 +128,21 @@
             layers = <9 10 11>;
         };
 
+        combo_apple_numpad {
+            bindings = <&tog 11>;
+            key-positions = <32 33>;
+            layers = <0>;
+        };
+        combo_windows_numpad {
+            bindings = <&tog 12>;
+            key-positions = <32 33>;
+            layers = <04>;
+        };
+        combo_comma_on_numpad {
+            bindings = <&kp KP_COMMA>;
+            key-positions = <29 39>;
+            layers = <11 12>;
+        };
     };
 
     behaviors {
@@ -371,6 +386,27 @@
 &kp LC(Z)      &kp LC(I)      &kp LC(G)      &kp LC(LS(H))  &trans           &trans  &trans  &trans  &trans  &trans
                                              &kp F3         &trans           &trans  &trans
             >;
+
+            label = "ABU";
         };
+
+        apple_numpad {
+            bindings = <
+&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
+&kp RCTRL  &kp RALT  &kp RSHFT  &kp RGUI  &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
+&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
+                                &trans    &trans    &tog 11          &lt 1 KP_N0
+            >;
+        };
+        
+        windows_numpad {
+            bindings = <
+&kp TAB    &trans    &trans     &trans    &trans    &kp KP_SLASH     &kp KP_N7        &kp KP_N8        &kp KP_NUMBER_9  &kp KP_PLUS
+&kp RGUI   &kp RALT  &kp RSHFT  &kp RCTRL &trans    &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_ENTER
+&trans     &trans    &trans     &trans    &trans    &kp KP_MINUS     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_DOT
+                                &trans    &trans    &tog 11          &lt 1 KP_N0
+            >;
+        };
+
     };
 };
