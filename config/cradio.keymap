@@ -263,10 +263,10 @@
 
         apple_default_layer {
             bindings = <
-&kp Q       &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
-&kp A       &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
-&mt CAPS Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
-                          &lc_nav  &shift_cw    &kp SPACE  &lc_sym
+&kp Q  &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
+&kp Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+                     &lc_nav  &shift_cw    &kp SPACE  &lc_sym
             >;
         };
 
