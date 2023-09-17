@@ -141,14 +141,15 @@
                 <&kp LSHFT>,
                 <&caps_word>;
         };
-        nextprev: tap_dance_media_for_next_and_prev {
+        playnextprev: playnextprev {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_NEXT_PREV";
+            label = "PLAYNEXTPREV";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings =
+                <&kp C_PLAY_PAUSE>,
                 <&kp C_NEXT>,
-                <&kp C_PREV>;
+                <&kp C_PREVIOUS>;
         };
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";// requires tri-state PR #1366 (not yet merged into main)
@@ -265,10 +266,10 @@
 
         apple_navigation_and_media_layer {
             bindings = <
-&kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-&sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN        &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-&mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_PLAY_PAUSE    &nextprev  &kp LG(LBKT)  &kp LG(RBKT)  &none      &kp DEL
-                                            &trans       &trans              &trans     &trans
+&kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
+&sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER
+&mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &kp DEL
+                                            &trans       &trans           &trans        &trans
             >;
         };
 
@@ -301,10 +302,10 @@
 
         windows_navigation_and_media_layer {
             bindings = <
-&kp TAB    &wswapper  &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP  &kp HOME      &kp UP         &kp END    &kp BSPC
-&sk LGUI   &sk LALT   &sk LSHFT        &sk LCTRL    &kp C_VOL_DN        &kp PG_DN  &kp LEFT      &kp DOWN       &kp RIGHT  &kp ENTER
-&kp LC(Z)  &kp LC(X)  &kp LC(C)        &kp LC(V)    &kp C_PLAY_PAUSE    &nextprev  &kp LA(LEFT)  &kp LA(RIGHT)  &kp GRAVE  &kp DEL
-                                       &trans       &trans              &trans     &trans
+&kp TAB    &wswapper  &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP      &kp HOME      &kp UP         &kp END    &kp BSPC
+&sk LGUI   &sk LALT   &sk LSHFT        &sk LCTRL    &kp C_VOL_DN        &kp PG_DN      &kp LEFT      &kp DOWN       &kp RIGHT  &kp ENTER
+&kp LC(Z)  &kp LC(X)  &kp LC(C)        &kp LC(V)    &kp C_PLAY_PAUSE    &playnextprev  &kp LA(LEFT)  &kp LA(RIGHT)  &kp GRAVE  &kp DEL
+                                       &trans       &trans              &trans         &trans
             >;
         };
 
