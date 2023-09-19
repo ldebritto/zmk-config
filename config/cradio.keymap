@@ -363,7 +363,7 @@
         aoe_group {
             bindings = <
 &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
-&kp LCTRL   &kp LALT    &kp LCTRL   &kp LSHFT   &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
+&kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
 &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
                                     &trans      &kp DEL            &trans  &trans
             >;
