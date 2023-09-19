@@ -353,28 +353,28 @@
 
         aoe_def {
             bindings = <
-&kp Q        &kp W        &kp E       &kp R            &kp T          &trans  &trans  &trans  &trans  &trans
-&mt LCTRL A  &mt LSHFT S  &mt LALT D  &mt LSHFT F      &mt LCTRL G    &trans  &trans  &trans  &trans  &trans
-&kp Z        &kp X        &kp C       &kp V            &kp B          &trans  &trans  &trans  &trans  &trans
-                                      &mt LC(LS(H)) H  &mt DOT ESC    &trans  &trans
+&kp Q  &kp W       &kp E        &kp R        &kp T                  &trans  &trans  &trans  &trans  &trans
+&kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G                  &trans  &trans  &trans  &trans  &trans
+&kp Z  &kp X       &kp C        &kp V        &kp B                  &trans  &trans  &trans  &trans  &trans
+                                &mt LCTRL H  &mt LC(LS(DOT)) ESC    &trans  &trans
             >;
         };
 
         aoe_group {
             bindings = <
-&kp ESCAPE  &kp N2    &kp N3     &kp N4     &kp N5             &trans  &trans  &trans  &trans  &trans
-&kp LCTRL   &kp LALT  &kp LCTRL  &kp LSHFT  &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
-&kp N6      &kp N7    &kp N8     &kp N9     &kp N0             &trans  &trans  &trans  &trans  &trans
-                                 &trans     &kp DEL            &trans  &trans
+&kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
+&kp LCTRL   &kp LALT    &kp LCTRL   &kp LSHFT   &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
+&kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
+                                    &trans      &kp DEL            &trans  &trans
             >;
         };
 
         aoe_buildings {
             bindings = <
 &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-&kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(V))  &kp LC(LS(K))    &trans  &trans  &trans  &trans  &trans
-&kp LC(Z)      &kp LC(I)      &kp LC(G)      &kp LC(LS(H))  &trans           &trans  &trans  &trans  &trans  &trans
-                                             &kp F3         &trans           &trans  &trans
+&kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
+&kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+                                             &kp LC(LS(H))  &trans           &trans  &trans
             >;
 
             label = "ABU";
