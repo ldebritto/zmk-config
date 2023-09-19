@@ -130,10 +130,10 @@
             layers = <0 9>;
         };
 
-        aoe_esc {
-            bindings = <&kp ESC>;
-            key-positions = <12 13>;
-            layers = <9 10 11>;
+        aoe_pause {
+            bindings = <&kp F3>;
+            key-positions = <21 22 23>;
+            layers = <10>;
         };
     };
 
