@@ -353,10 +353,10 @@
 
         aoe_def {
             bindings = <
-&kp Q  &kp W       &kp E        &kp R        &kp T                  &trans  &trans  &trans  &trans  &trans
-&kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G                  &trans  &trans  &trans  &trans  &trans
-&kp Z  &kp X       &kp C        &kp V        &kp B                  &trans  &trans  &trans  &trans  &trans
-                                &mt LCTRL H  &mt LC(LS(DOT)) ESC    &trans  &trans
+&kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
+&kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
+&kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
+                                &lt 11 H     &lt 12 ESC    &trans  &trans
             >;
         };
 
