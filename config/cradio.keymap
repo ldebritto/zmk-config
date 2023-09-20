@@ -17,21 +17,24 @@
         // macOS combos
 
         combo_spotlight_alfred {
-            timeout-ms = <80>;
             key-positions = <13 16>;// F J
+            layers = <0>;
+            bindings = <&kp LG(SPC)>;
+        };
+        
+        combo_spotlight_alfred_on_jk {
+            key-positions = <16 17>;// J K
             layers = <0>;
             bindings = <&kp LG(SPC)>;
         };
 
         combo_shortcat {
-            timeout-ms = <80>;
-            key-positions = <17 16>;// J K
+            key-positions = <27 26>;// M ,
             layers = <0>;
             bindings = <&kp LG(LS(SPC))>;
         };
 
         combo_toggle_nav {
-            timeout-ms = <80>;
             key-positions = <30 31>;
             layers = <0 2>;
             bindings = <&tog 2>;
@@ -46,21 +49,18 @@
         // Windows combos
 
         combo_toggle_between_windows_and_apple_mods {
-            timeout-ms = <80>;
             key-positions = <10 19>;// A "
             layers = <4 8>;
             bindings = <&tog 5>;
         };
 
         combo_windows_start_menu {
-            timeout-ms = <80>;
             key-positions = <13 16>;// F J
             layers = <5>;// Only available in the Windows' DEF layer
             bindings = <&kp LGUI>;
         };
 
         combo_toggle_wnav {
-            timeout-ms = <80>;
             key-positions = <30 31>;
             layers = <5 6>;
             bindings = <&tog 6>;
@@ -81,42 +81,36 @@
         };
 
         combo_mute {
-            timeout-ms = <80>;
             key-positions = <4 14>;// Vol up + down keys
             layers = <2 6>;// Only available in the NAV layer, system agnostic
             bindings = <&kp C_MUTE>;
         };
 
         combo_trigger_bootloader {
-            timeout-ms = <80>;
             key-positions = <20 21>;
             layers = <4>;
             bindings = <&bootloader>;
         };
 
         combo_toggle_bt0_connection {
-            timeout-ms = <80>;
             key-positions = <3 4>;
             layers = <4>;
             bindings = <&bt BT_SEL 0>;
         };
 
         combo_toggle_bt1_connection {
-            timeout-ms = <80>;
             key-positions = <13 14>;
             layers = <4>;
             bindings = <&bt BT_SEL 1>;
         };
 
         combo_toggle_bt2_connection {
-            timeout-ms = <80>;
             key-positions = <23 24>;
             layers = <4>;
             bindings = <&bt BT_SEL 2>;
         };
 
         combo_clear_current_bluetooth_profile {
-            timeout-ms = <80>;
             key-positions = <28 29>;
             layers = <4>;
             bindings = <&bt BT_CLR>;
