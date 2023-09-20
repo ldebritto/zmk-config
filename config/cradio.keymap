@@ -21,11 +21,11 @@
             layers = <0>;
             bindings = <&kp LG(SPC)>;
         };
-        
-        combo_spotlight_alfred_on_jk {
+
+        combo_enter_on_jk {
             key-positions = <16 17>;// J K
-            layers = <0>;
-            bindings = <&kp LG(SPC)>;
+            layers = <0 5>;
+            bindings = <&kp ENTER>;
         };
 
         combo_shortcat {
