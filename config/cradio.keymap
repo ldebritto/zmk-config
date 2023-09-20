@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include "apple_globe.h" // Apple fn/globe key definition based on the 0x29D keycode (see PR #1938)
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE>;
@@ -259,7 +260,7 @@
             bindings = <
 &kp Q       &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
 &kp A       &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
-&mt CAPS Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
                           &lc_nav  &shift_cw    &kp SPACE  &lc_sym
             >;
         };
