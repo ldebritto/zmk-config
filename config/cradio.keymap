@@ -260,7 +260,8 @@
             bindings = <
 &kp Q       &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
 &kp A       &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+// &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+&mt CAPS Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
                           &lc_nav  &shift_cw    &kp SPACE  &lc_sym
             >;
         };
@@ -278,7 +279,8 @@
             bindings = <
 &kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
 &sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &kp DEL
+&mt CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &kp DEL
+// &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &kp DEL
                                             &trans       &trans           &trans        &trans
             >;
         };
