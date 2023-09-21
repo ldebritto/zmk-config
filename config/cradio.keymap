@@ -184,7 +184,13 @@
 			label = "NUM_WORD";
 			#binding-cells = <0>;
             layers = <1>;                                       // insert location of numbers layer here
-			continue-list = <BACKSPACE DELETE DOT COMMA SLASH>; // adjust as desired
+			continue-list = <
+            BACKSPACE DELETE DOT COMMA SLASH
+            KP_SLASH    KP_N7  KP_N8  KP_N9 KP_PLUS 
+            KP_ASTERISK KP_N4  KP_N5  KP_N6 KP_ENTER
+            KP_MINUS    KP_N1  KP_N2  KP_N3 KP_DOT  
+            
+            >; // adjust as desired
             ignore-numbers;                                     // numbers don't deactivate the layer
 		};
     };
