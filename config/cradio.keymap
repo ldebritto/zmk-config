@@ -3,13 +3,14 @@
 #include <dt-bindings/zmk/keys.h>
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; 
-    /delete-property/ ignore-modifiers; // Custom caps-word behavior form PR #1451
+    // Custom caps-word behavior form PR #1451
     // Disabled modifiers so I can avoid pressing CMD+SHIF+S while I wanted to hit CMD+S and was typing in &caps_word
     // I've kept in continue list LSHIFT as its used to toggle symbols like accents
     // this is needed because some accents use LSHIFT, such as ^ send LSHIFT + 6
     // To make my thumb shift also capable of toggling caps word off, I've set it to send RSHIFT
     
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; 
+    /delete-property/ ignore-modifiers;     
 };
 
 &mt {
