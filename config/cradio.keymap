@@ -229,12 +229,12 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 6>,
+                <&mo 7>,
                 <&macro_tap>,
                 <&kp K_CANCEL>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 6>;
+                <&mo 7>;
         };
         lc_wsym: lc_wsym {
             label = "LC_WSYM";
@@ -244,7 +244,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 7>,
+                <&mo 8>,
                 <&macro_tap>,
                 <&kp K_CANCEL>,
                 <&macro_pause_for_release>,
@@ -326,10 +326,10 @@
 
         windows_numpad {
             bindings = <
-&kp TAB   &trans    &trans     &trans     &trans    &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-&kp RGUI  &kp RALT  &kp RSHFT  &kp RCTRL  &trans    &kp KP_ASTERISK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_ENTER
-&trans    &trans    &trans     &trans     &trans    &kp KP_MINUS     &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT
-                               &trans     &trans    &tog 1           &lt 7 KP_N0
+&kp SLASH     &kp N7  &kp N8  &kp N9   &kp PLUS   &trans    &trans    &trans     &trans    &trans    
+&kp ASTERISK  &kp N4  &kp N5  &kp N6   &kp ENTER  &trans    &trans    &trans     &trans    &trans
+&kp MINUS     &kp N1  &kp N2  &kp N3   &kp DOT    &trans    &trans    &trans     &trans    &trans    
+                                       &lt 7 N0   &trans    &trans    &mo 8
             >;
         };
 
@@ -385,8 +385,6 @@
 &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
                                              &kp LC(LS(H))  &trans           &trans  &trans
             >;
-
-            label = "ABU";
         };
     };
 };
