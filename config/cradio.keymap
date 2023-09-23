@@ -151,9 +151,7 @@
             continue-list = <
 BACKSPACE DELETE DOT COMMA COLON
                              SLASH PLUS MINUS ASTRK EQUAL
-                             LSHF
-            >;
-// adjust as desired
+                             LSHFT>;// adjust as desired
             ignore-numbers;// numbers don't deactivate the layer
             ignore-modifiers;// mods don't deactivate the layer
         };
