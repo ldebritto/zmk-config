@@ -24,8 +24,8 @@
             bindings = <&tog 2>;
         };
 
-        combo_apple_numpad {
-            bindings = <&num_word>;
+        combo_toggle_apple_numpad {
+            bindings = <&tog 1>;
             key-positions = <32 33>;
             layers = <0 1>;
         };
@@ -44,7 +44,7 @@
             bindings = <&tog 6>;
         };
 
-        combo_windows_numpad {
+        combo_toggle_windows_numpad {
             bindings = <&tog 6>;
             key-positions = <32 33>;
             layers = <5 6>;
@@ -149,10 +149,19 @@
             #binding-cells = <0>;
             layers = <1>;// insert location of numbers layer here
             continue-list = <BACKSPACE DELETE DOT COMMA COLON
-                             SLASH PLUS MINUS ASTRK EQUAL
-                             LSHFT>;// adjust as desired
+                             SLASH PLUS MINUS ASTRK EQUAL>;// adjust as desired
             ignore-numbers;// numbers don't deactivate the layer
-            ignore-modifiers;// mods don't deactivate the layer
+            /delete-property/ ignore-modifiers;// mods don't deactivate the layer
+        };
+        wnum_word: win_behavior_num_word {
+            compatible = "zmk,behavior-caps-word";// Custom caps-word behavior form PR #1451
+            label = "WINDOWS_NUM_WORD";
+            #binding-cells = <0>;
+            layers = <6>;// insert location of numbers layer here
+            continue-list = <BACKSPACE DELETE DOT COMMA COLON
+                             SLASH PLUS MINUS ASTRK EQUAL>;// adjust as desired
+            ignore-numbers;// numbers don't deactivate the layer
+            /delete-property/ ignore-modifiers;// mods don't deactivate the layer
         };
         numword_sym: numword_sym {
             compatible = "zmk,behavior-hold-tap";
@@ -160,6 +169,16 @@
             bindings =
                 <&lc_sym>,
                 <&num_word>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+        wnumword_sym: win_numword_sym {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WINDOWS_NUMWORD_SYM";
+            bindings =
+                <&lc_wsym>,
+                <&wnumword_sym>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -257,10 +276,10 @@
 
         apple_numpad {
             bindings = <
-&kp SLASH     &kp N7  &kp N8  &kp N9    &kp PLUS     &trans  &trans  &trans  &trans  &trans
-&kp ASTERISK  &kp N4  &kp N5  &kp N6    &kp ENTER    &trans  &trans  &trans  &trans  &trans
-&kp MINUS     &kp N1  &kp N2  &kp N3    &kp DOT      &trans  &trans  &trans  &trans  &trans
-                              &lt 2 N0  &trans       &trans  &mo 3
+&kp SLASH     &kp N7  &kp N8  &kp N9    &kp PLUS       &trans  &trans  &trans  &trans  &trans
+&kp ASTERISK  &kp N4  &kp N5  &kp N6    &kp ENTER      &trans  &trans  &trans  &trans  &trans
+&kp MINUS     &kp N1  &kp N2  &kp N3    &kp DOT        &trans  &trans  &trans  &trans  &trans
+                              &lt 2 N0  &kp K_CANCEL   &trans  &mo 3
             >;
         };
 
@@ -296,16 +315,16 @@
 &kp Q  &kp W  &kp E  &kp R     &kp T        &kp Y    &kp U     &kp I      &kp O    &kp P
 &kp A  &kp S  &kp D  &kp F     &kp G        &kp H    &kp J     &kp K      &kp L    &kp SQT
 &kp Z  &kp X  &kp C  &kp V     &kp B        &kp N    &kp M     &kp COMMA  &kp DOT  &kp SEMI
-                     &lc_wnav  &shift_cw    &kp SPC  &lc_wsym
+                     &lc_wnav  &shift_cw    &kp SPC  &wnumword_sym
             >;
         };
 
         windows_numpad {
             bindings = <
-&kp SLASH     &kp N7  &kp N8  &kp N9    &kp PLUS     &trans  &trans  &trans  &trans  &trans
-&kp ASTERISK  &kp N4  &kp N5  &kp N6    &kp ENTER    &trans  &trans  &trans  &trans  &trans
-&kp MINUS     &kp N1  &kp N2  &kp N3    &kp DOT      &trans  &trans  &trans  &trans  &trans
-                              &lt 7 N0  &trans       &trans  &mo 8
+&kp SLASH     &kp N7  &kp N8  &kp N9    &kp PLUS        &trans  &trans  &trans  &trans  &trans
+&kp ASTERISK  &kp N4  &kp N5  &kp N6    &kp ENTER       &trans  &trans  &trans  &trans  &trans
+&kp MINUS     &kp N1  &kp N2  &kp N3    &kp DOT         &trans  &trans  &trans  &trans  &trans
+                              &lt 7 N0  &kp K_CANCEL    &trans  &mo 8
             >;
         };
 
