@@ -183,15 +183,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-        toggle_nav: toggle_nav { // tap: &num_word, hold: SYM (with cancel)
-            compatible = "zmk,behavior-hold-tap";
-            label = "TOGGLE_NAV";
-            bindings =
-                <&lc_nav0>,
-                <&tog 3>;
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
     };
 
     macros {
@@ -276,10 +267,10 @@
 
         apple_default_layer {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R            &kp T          &kp Y      &kp U             &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F            &kp G          &kp H      &kp J             &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V            &kp B          &kp N      &kp M             &kp COMMA  &kp DOT  &kp SEMI
-                           &toggle_nav 0 0  &shift_cw      &kp SPACE  &numword_sym 0 0
+&kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U             &kp I      &kp O    &kp P
+&kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J             &kp K      &kp L    &kp SQT
+&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M             &kp COMMA  &kp DOT  &kp SEMI
+                           &lc_nav  &shift_cw      &kp SPACE  &numword_sym 0 0
             >;
         };
 
