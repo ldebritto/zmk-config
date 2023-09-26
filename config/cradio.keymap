@@ -151,7 +151,7 @@
             continue-list = <BACKSPACE DELETE DOT COMMA COLON
                              SLASH PLUS MINUS ASTRK EQUAL>;// adjust as desired
             ignore-numbers;// numbers don't deactivate the layer
-            /delete-property/ ignore-modifiers;// mods don't deactivate the layer
+            ignore-modifiers; // mods don't deactivate the layer
         };
         wnum_word: win_behavior_num_word {
             compatible = "zmk,behavior-caps-word";// Custom caps-word behavior form PR #1451
