@@ -26,6 +26,11 @@
             layers = <0 2>;
             bindings = <&tog 2>;
         };
+        combo_num_word {
+            key-positions = <32 33>;
+            layers = <0 2>;
+            bindings = <&num_word>;
+        };
 
         // Windows combos
 
@@ -37,15 +42,21 @@
 
         combo_toggle_wnav {
             key-positions = <30 31>;
+            layers = <5 7>;
+            bindings = <&tog 7>;
+        };
+
+        combo_wnum_word {
+            key-positions = <32 33>;
             layers = <5 6>;
-            bindings = <&tog 6>;
+            bindings = <&wnum_word>;
         };
 
         // Multimedia and keyboard features (OS agnostic)
 
         combo_mute {
             key-positions = <4 14>;// Vol up + down keys
-            layers = <2 6>;// Only available in the NAV layer, system agnostic
+            layers = <2 7>;// Only available in the NAV layer, system agnostic
             bindings = <&kp C_MUTE>;
         };
 
@@ -171,7 +182,7 @@
             /delete-property/ ignore-modifiers;// mods don't deactivate the layer
         };
         
-        numword_sym: numword_sym { // combines. tap: &num_word, hold: SYM (with cancel)
+        numword_sym: numword_sym { // combines. tap: &num_word, hold: SYM macro (with cancel)
             compatible = "zmk,behavior-hold-tap";
             label = "NUMWORD_SYM";
             bindings =
@@ -182,7 +193,7 @@
             tapping-term-ms = <200>;
         };
         
-        wnumword_sym: win_numword_sym { // for the keymap on windows layers. tap: &wnum_word, hold: WSYM (with cancel)
+        wnumword_sym: win_numword_sym { // for the keymap on windows layers. tap: &wnum_word, hold: WSYM macro (with cancel)
             compatible = "zmk,behavior-hold-tap";
             label = "WINDOWS_NUMWORD_SYM";
             bindings =
@@ -287,9 +298,9 @@
 
         apple_numpad {
             bindings = <
-&kp SLASH  &kp N7  &kp N8  &kp N9    &kp PLUS       &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N4  &kp N5  &kp N6    &trans         &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N1  &kp N2  &kp N3    &kp DOT        &trans  &trans  &trans  &trans  &trans
+&kp PLUS   &kp N7  &kp N8  &kp N9    &kp SLASH       &trans  &trans  &trans  &trans  &trans
+&kp MINUS  &kp N4  &kp N5  &kp N6    &kp ASTRK      &trans  &trans  &trans  &trans  &trans
+&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT        &trans  &trans  &trans  &trans  &trans
                            &lt 2 N0  &trans         &trans  &lt 3 K_CANCEL
             >;
         };
@@ -332,9 +343,9 @@
 
         windows_numpad {
             bindings = <
-&kp SLASH  &kp N7  &kp N8  &kp N9       &kp PLUS    &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N4  &kp N5  &kp N6       &trans      &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N1  &kp N2  &kp N3       &kp DOT     &trans  &trans  &trans  &trans  &trans
+&kp PLUS   &kp N7  &kp N8  &kp N9    &kp SLASH      &trans  &trans  &trans  &trans  &trans
+&kp MINUS  &kp N4  &kp N5  &kp N6    &kp ASTRK     &trans  &trans  &trans  &trans  &trans
+&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT       &trans  &trans  &trans  &trans  &trans
                               &lt 7 N0  &trans      &trans  &lt 8 K_CANCEL
             >;
         };
