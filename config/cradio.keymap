@@ -5,7 +5,6 @@
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>;
-
     /delete-property/ ignore-modifiers;
 };
 
@@ -24,12 +23,6 @@
             bindings = <&tog 2>;
         };
 
-        combo_toggle_apple_numpad {
-            bindings = <&tog 1>;
-            key-positions = <32 33>;
-            layers = <0 1>;
-        };
-
         // Windows combos
 
         combo_toggle_between_windows_and_apple_mods {
@@ -42,12 +35,6 @@
             key-positions = <30 31>;
             layers = <5 6>;
             bindings = <&tog 6>;
-        };
-
-        combo_toggle_windows_numpad {
-            bindings = <&tog 6>;
-            key-positions = <32 33>;
-            layers = <5 6>;
         };
 
         // Multimedia and keyboard features (OS agnostic)
@@ -63,6 +50,8 @@
             layers = <4>;
             bindings = <&bootloader>;
         };
+
+        // Bluetooth toggles
 
         combo_toggle_bt0_connection {
             key-positions = <3 4>;
@@ -88,6 +77,8 @@
             bindings = <&bt BT_CLR>;
         };
 
+        // AOE layers
+
         combo_toggle_aoe {
             bindings = <&tog 10>;
             key-positions = <1 2 3>;
@@ -102,6 +93,9 @@
     };
 
     behaviors {
+        
+        // Tap dances
+        
         shift_cw: tap_dance_shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
@@ -111,6 +105,7 @@
                 <&kp RSHFT>,
                 <&caps_word>;
         };
+
         playnextprev: playnextprev {
             compatible = "zmk,behavior-tap-dance";
             label = "PLAYNEXTPREV";
@@ -121,6 +116,9 @@
                 <&kp C_NEXT>,
                 <&kp C_PREVIOUS>;
         };
+
+        // Swappers
+
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";// requires tri-state PR #1366 (not yet merged into main)
             label = "SWAPPER";
@@ -132,6 +130,7 @@
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>;// Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+
         wswapper: windows_swapper {
             compatible = "zmk,behavior-tri-state";// requires tri-state PR #1366 (not yet merged into main)
             label = "WINDOWS_SWAPPER";
@@ -143,6 +142,9 @@
 
             ignored-key-positions = <3>;// Shift key on WNAV to allow for backwards movement
         };
+
+        // num_word for macOS and Windows
+
         num_word: behavior_num_word {
             compatible = "zmk,behavior-caps-word";// Custom caps-word behavior form PR #1451
             label = "NUM_WORD";
@@ -153,6 +155,7 @@
             ignore-numbers;// numbers don't deactivate the layer
             ignore-modifiers; // mods don't deactivate the layer
         };
+
         wnum_word: win_behavior_num_word {
             compatible = "zmk,behavior-caps-word";// Custom caps-word behavior form PR #1451
             label = "WINDOWS_NUM_WORD";
@@ -163,7 +166,8 @@
             ignore-numbers;// numbers don't deactivate the layer
             /delete-property/ ignore-modifiers;// mods don't deactivate the layer
         };
-        numword_sym: numword_sym { // tap: &num_word, hold: SYM (with cancel)
+        
+        numword_sym: numword_sym { // combines num_word and layer macros. tap: &num_word, hold: SYM (with cancel)
             compatible = "zmk,behavior-hold-tap";
             label = "NUMWORD_SYM";
             bindings =
@@ -173,7 +177,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-        wnumword_sym: win_numword_sym { // tap: &wnum_word, hold: WSYM (with cancel)
+        
+        wnumword_sym: win_numword_sym { // combines num_word and layer macros. tap: &wnum_word, hold: WSYM (with cancel)
             compatible = "zmk,behavior-hold-tap";
             label = "WINDOWS_NUMWORD_SYM";
             bindings =
@@ -186,6 +191,8 @@
     };
 
     macros {
+
+        // using macros to embed a cancel key on layer activation. This allows for cancelling previously queued &sk mods
         lc_nav: lc_nav {
             label = "LC_NAV";
             compatible = "zmk,behavior-macro";
