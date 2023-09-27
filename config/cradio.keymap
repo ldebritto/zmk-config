@@ -34,13 +34,7 @@
             layers = <0 2>;
             bindings = <&num_word>;
         };
-
-        combo_toggle_between_callum_and_home_row_mods {
-            key-positions = <0 9>;// Q P
-            layers = <4 17>;
-            bindings = <&tog 13>;
-        };
-
+        
         // Windows combos
 
         combo_toggle_between_windows_and_apple_mods {
@@ -417,50 +411,4 @@ BACKSPACE DELETE DOT COMMA COLON
                                              &kp LC(LS(H))  &trans           &trans  &trans
             >;
         };
-
-        homerow_mod_taps_apple_default_layer {
-            bindings = <
-&kp Q        &kp W       &kp E        &kp R       &kp T           &kp Y      &kp U        &kp I        &kp O       &kp P
-&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LGUI F  &kp G           &kp H      &mt RGUI J   &mt RSHFT K  &mt RALT L  &mt RCTRL SQT
-&mt GLOBE Z  &kp X       &kp C        &kp V       &kp B           &kp N      &kp M        &kp COMMA    &kp DOT     &mt GLOBE SEMI
-                                      &lt 15 TAB  &lt 17 ENTER    &kp SPACE  &lt 16 BSPC
-            >;
-        };
-
-        homerow_mod_taps_apple_numpad {
-            bindings = <
-&kp PLUS   &kp N7  &kp N8  &kp N9     &kp SLASH    &trans  &trans           &trans  &trans  &trans
-&kp MINUS  &kp N4  &kp N5  &kp N6     &kp ASTRK    &trans  &trans           &trans  &trans  &trans
-&kp N0     &kp N1  &kp N2  &kp N3     &kp DOT      &trans  &trans           &trans  &trans  &trans
-                           &lt 15 N0  &trans       &trans  &lt 16 K_CANCEL
-            >;
-        };
-
-        homerow_mod_taps_apple_navigation_and_media_layer {
-            bindings = <
-&kp N1           &kp N2     &kp N3     &kp N4     &kp N5    &kp N6     &kp N7    &kp N8    &kp N9     &kp N0
-&kp LCTRL        &kp LALT   &kp LSHFT  &kp LGUI   &trans    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL    &kp RET
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ESC
-                                       &trans     &trans    &trans     &trans
-            >;
-        };
-
-        homerow_mod_taps_apple_symbols_layer {
-            bindings = <
-&kp COLON       &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &kp RGUI  &kp RSHFT  &kp RALT   &kp RCTRL
-&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                      &trans     &trans       &trans      &trans
-            >;
-        };
-
-        homerow_mod_taps_apple_tri_layer_function_and_number_row {
-            bindings = <
-&kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-&kp LCTRL  &kp LALT  &kp LSHFT  &kp LGUI  &kp F11    &kp F12  &kp RGUI  &kp RSHFT  &kp RALT  &kp RCTRL
-&kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
-                                &trans    &trans     &trans   &lc_sym
-            >;
-        };
-    };
 };
