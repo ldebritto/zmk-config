@@ -1,10 +1,11 @@
 #include <behaviors.dtsi>
+#include "apple_globe.h" // workaround for [ZMK's Issue #947](https://github.com/zmkfirmware/zmk/issues/947)
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "apple_globe.h" // workaround for [ZMK's Issue #947](https://github.com/zmkfirmware/zmk/issues/947) 
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>;
+
     /delete-property/ ignore-modifiers;
 };
 
@@ -13,7 +14,7 @@
 };
 
 &sk {
-     release-after-ms = <600000>; // set to a bonkers 10mins default is 1s 1000ms
+    release-after-ms = <600000>;// set to a bonkers 10mins default is 1s 1000ms
 };
 
 / {
@@ -21,20 +22,23 @@
         compatible = "zmk,combos";
 
         // macOS combos
+
         combo_toggle_nav {
             key-positions = <30 31>;
             layers = <0 2>;
             bindings = <&tog 2>;
         };
+
         combo_num_word {
             key-positions = <32 33>;
             layers = <0 2>;
             bindings = <&num_word>;
         };
+
         combo_toggle_between_callum_and_home_row_mods {
             key-positions = <0 9>;// Q P
             layers = <4 17>;
-            bindings = <&tog 5>;
+            bindings = <&tog 13>;
         };
 
         // Windows combos
@@ -113,9 +117,8 @@
     };
 
     behaviors {
-        
         // Tap dances
-        
+
         shift_cw: tap_dance_shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
@@ -125,7 +128,6 @@
                 <&kp RSHFT>,
                 <&caps_word>;
         };
-
         playnextprev: playnextprev {
             compatible = "zmk,behavior-tap-dance";
             label = "PLAYNEXTPREV";
@@ -150,7 +152,6 @@
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>;// Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
-
         wswapper: windows_swapper {
             compatible = "zmk,behavior-tri-state";// requires tri-state PR #1366 (not yet merged into main)
             label = "WINDOWS_SWAPPER";
@@ -170,24 +171,28 @@
             label = "NUM_WORD";
             #binding-cells = <0>;
             layers = <1>;// insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA COLON
-                             SLASH PLUS MINUS ASTRK EQUAL>;// adjust as desired
+            continue-list = <
+BACKSPACE DELETE DOT COMMA COLON
+                             SLASH PLUS MINUS ASTRK EQUA
+            >;
+// adjust as desired
             ignore-numbers;// numbers don't deactivate the layer
-            ignore-modifiers; // mods don't deactivate the layer
+            ignore-modifiers;// mods don't deactivate the layer
         };
-
         wnum_word: win_behavior_num_word {
             compatible = "zmk,behavior-caps-word";// Custom caps-word behavior form PR #1451
             label = "WINDOWS_NUM_WORD";
             #binding-cells = <0>;
             layers = <6>;// insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA COLON
-                             SLASH PLUS MINUS ASTRK EQUAL>;// adjust as desired
+            continue-list = <
+BACKSPACE DELETE DOT COMMA COLON
+                             SLASH PLUS MINUS ASTRK EQUA
+            >;
+// adjust as desired
             ignore-numbers;// numbers don't deactivate the layer
             /delete-property/ ignore-modifiers;// mods don't deactivate the layer
         };
-        
-        numword_sym: numword_sym { // combines. tap: &num_word, hold: SYM macro (with cancel)
+        numword_sym: numword_sym {
             compatible = "zmk,behavior-hold-tap";
             label = "NUMWORD_SYM";
             bindings =
@@ -197,8 +202,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-        
-        wnumword_sym: win_numword_sym { // for the keymap on windows layers. tap: &wnum_word, hold: WSYM macro (with cancel)
+        wnumword_sym: win_numword_sym {
             compatible = "zmk,behavior-hold-tap";
             label = "WINDOWS_NUMWORD_SYM";
             bindings =
@@ -211,8 +215,8 @@
     };
 
     macros {
-
         // 
+
         lc_nav: lc_nav {
             label = "LC_NAV";
             compatible = "zmk,behavior-macro";
@@ -287,7 +291,7 @@
             if-layers = <6 7>;
             then-layer = <8>;
         };
-        
+
         homerow_mod_taps_apple_default_layer {
             if-layers = <15 16>;
             then-layer = <17>;
@@ -299,19 +303,19 @@
 
         apple_default_layer {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U             &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J             &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M             &kp COMMA  &kp DOT  &kp SEMI
-                           &lc_nav  &shift_cw      &kp SPACE  &numword_sym 0 0
+&kp Q        &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U             &kp I      &kp O    &kp P
+&kp A        &kp S  &kp D  &kp F    &kp G        &kp H      &kp J             &kp K      &kp L    &kp SQT
+&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M             &kp COMMA  &kp DOT  &kp SEMI
+                           &lc_nav  &shift_cw    &kp SPACE  &numword_sym 0 0
             >;
         };
 
         apple_numpad {
             bindings = <
-&kp PLUS   &kp N7  &kp N8  &kp N9    &kp SLASH       &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N4  &kp N5  &kp N6    &kp ASTRK      &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT        &trans  &trans  &trans  &trans  &trans
-                           &lt 2 N0  &trans         &trans  &lt 3 K_CANCEL
+&kp PLUS   &kp N7  &kp N8  &kp N9    &kp SLASH    &trans  &trans          &trans  &trans  &trans
+&kp MINUS  &kp N4  &kp N5  &kp N6    &kp ASTRK    &trans  &trans          &trans  &trans  &trans
+&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT      &trans  &trans          &trans  &trans  &trans
+                           &lt 2 N0  &trans       &trans  &lt 3 K_CANCEL
             >;
         };
 
@@ -326,10 +330,10 @@
 
         apple_symbols_layer {
             bindings = <
-&kp ESC          &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS        &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-&mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                       &trans     &trans       &trans      &lc_sym
+&kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
+&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                      &trans     &trans       &trans      &lc_sym
             >;
         };
 
@@ -344,19 +348,19 @@
 
         windows_default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R     &kp T        &kp Y    &kp U     &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F     &kp G        &kp H    &kp J     &kp K      &kp L    &kp SQT
-&kp Z  &kp X  &kp C  &kp V     &kp B        &kp N    &kp M     &kp COMMA  &kp DOT  &kp SEMI
+&kp Q  &kp W  &kp E  &kp R     &kp T        &kp Y    &kp U              &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F     &kp G        &kp H    &kp J              &kp K      &kp L    &kp SQT
+&kp Z  &kp X  &kp C  &kp V     &kp B        &kp N    &kp M              &kp COMMA  &kp DOT  &kp SEMI
                      &lc_wnav  &shift_cw    &kp SPC  &wnumword_sym 0 0
             >;
         };
 
         windows_numpad {
             bindings = <
-&kp PLUS   &kp N7  &kp N8  &kp N9    &kp SLASH      &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N4  &kp N5  &kp N6    &kp ASTRK     &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT       &trans  &trans  &trans  &trans  &trans
-                              &lt 7 N0  &trans      &trans  &lt 8 K_CANCEL
+&kp PLUS   &kp N7  &kp N8  &kp N9    &kp SLASH    &trans  &trans          &trans  &trans  &trans
+&kp MINUS  &kp N4  &kp N5  &kp N6    &kp ASTRK    &trans  &trans          &trans  &trans  &trans
+&kp N0     &kp N1  &kp N2  &kp N3    &kp DOT      &trans  &trans          &trans  &trans  &trans
+                           &lt 7 N0  &trans       &trans  &lt 8 K_CANCEL
             >;
         };
 
@@ -414,40 +418,39 @@
             >;
         };
 
-               
         homerow_mod_taps_apple_default_layer {
             bindings = <
-&kp Q        &kp W       &kp E        &kp R      &kp T                &kp Y      &kp U       &kp I       &kp O       &kp P
-&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LGUI F &kp G                &kp H      &mt RGUI J  &mt RSHFT K &mt RALT L  &mt RCTRL SQT
-&mt GLOBE Z  &kp X       &kp C        &kp V      &kp B                &kp N      &kp M       &kp COMMA   &kp DOT     &mt GLOBE SEMI
-                                      &lt 15 TAB &mt LSHFT ENTER      &kp SPACE  &lt 16 BSPC
+&kp Q        &kp W       &kp E        &kp R       &kp T           &kp Y      &kp U        &kp I        &kp O       &kp P
+&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LGUI F  &kp G           &kp H      &mt RGUI J   &mt RSHFT K  &mt RALT L  &mt RCTRL SQT
+&mt GLOBE Z  &kp X       &kp C        &kp V       &kp B           &kp N      &kp M        &kp COMMA    &kp DOT     &mt GLOBE SEMI
+                                      &lt 15 TAB  &lt 17 ENTER    &kp SPACE  &lt 16 BSPC
             >;
         };
 
         homerow_mod_taps_apple_numpad {
             bindings = <
-&kp PLUS   &kp N7  &kp N8  &kp N9     &kp SLASH       &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N4  &kp N5  &kp N6     &kp ASTRK       &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N1  &kp N2  &kp N3     &kp DOT         &trans  &trans  &trans  &trans  &trans
-                           &lt 15 N0  &trans          &trans  &lt 16 K_CANCEL
+&kp PLUS   &kp N7  &kp N8  &kp N9     &kp SLASH    &trans  &trans           &trans  &trans  &trans
+&kp MINUS  &kp N4  &kp N5  &kp N6     &kp ASTRK    &trans  &trans           &trans  &trans  &trans
+&kp N0     &kp N1  &kp N2  &kp N3     &kp DOT      &trans  &trans           &trans  &trans  &trans
+                           &lt 15 N0  &trans       &trans  &lt 16 K_CANCEL
             >;
         };
 
         homerow_mod_taps_apple_navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
-&kp LCTRL        &kp LALT   &kp LSHFT        &kp LGUI     &kp C_VOL_DN     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &kp DEL
-                                             &trans       &trans           &trans        &trans
+&kp N1           &kp N2     &kp N3     &kp N4     &kp N5    &kp N6     &kp N7    &kp N8    &kp N9     &kp N0
+&kp LCTRL        &kp LALT   &kp LSHFT  &kp LGUI   &trans    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL    &kp RET
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ESC
+                                       &trans     &trans    &trans     &trans
             >;
         };
 
         homerow_mod_taps_apple_symbols_layer {
             bindings = <
-&kp ESC          &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS        &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &kp RGUI  &kp RSHFT  &kp RALT   &kp RCTRL
-&mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                       &trans     &trans       &trans      &trans
+&kp COLON       &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &kp RGUI  &kp RSHFT  &kp RALT   &kp RCTRL
+&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                      &trans     &trans       &trans      &trans
             >;
         };
 
