@@ -46,6 +46,11 @@
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
+        combo_num_word {
+            key-positions = <32 33>;
+            layers = <DEF NAV>;
+            bindings = <&num_word>;
+        };
 
         // Windows combos
 
@@ -59,6 +64,12 @@
             key-positions = <30 31>;
             layers = <WDEF WNAV>;
             bindings = <&tog WNAV>;
+        };
+
+        combo_wnum_word {
+            key-positions = <32 33>;
+            layers = <WDEF WNAV>;
+            bindings = <&wnum_word>;
         };
 
         // Multimedia and keyboard features (OS agnostic)
@@ -294,8 +305,8 @@
             bindings = <
                 &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
-                &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &kp SEMI
-                                           &lc_nav  &shift_cw      &kp SPACE  &numword_sym 0 0
+                &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
+                                           &lc_nav  &shift_cw      &kp SPACE  &lc_sym
             >;
         };
 
@@ -312,8 +323,8 @@
             bindings = <
                 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
                 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER
-                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &kp DEL
-                                                             &trans       &trans           &trans        &lc_sym
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &mt GLOBE DEL
+                                                             &trans       &trans           &trans        &trans
             >;
         };
 
@@ -321,8 +332,8 @@
             bindings = <
                 &kp ESC          &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
                 &kp MINUS        &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-                &mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                                       &trans     &trans       &trans      &lc_sym
+                &mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
+                                                       &trans     &trans       &trans      &trans
             >;
         };
 
@@ -331,7 +342,7 @@
                 &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
                 &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
                 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
-                                                &trans    &trans     &trans   &lc_sym
+                                                &trans    &trans     &trans   &trans
             >;
         };
 
