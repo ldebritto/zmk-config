@@ -186,7 +186,7 @@ BACKSPACE DELETE DOT COMMA COLON
             layers = <6>;// insert location of numbers layer here
             continue-list = <
 BACKSPACE DELETE DOT COMMA COLON
-                             SLASH PLUS MINUS ASTRK EQUA
+                             SLASH PLUS MINUS ASTRK EQUAL
             >;
 // adjust as desired
             ignore-numbers;// numbers don't deactivate the layer
