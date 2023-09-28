@@ -137,7 +137,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings =
-                <&hp_mt RSHFT ENTER>,
+                <&kp RSHFT>,
                 <&caps_word>;
         };
 
