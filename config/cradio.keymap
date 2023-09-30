@@ -437,10 +437,10 @@
         };
         hrmt_default_layer {
             bindings = <
-                &kp Q        &kp W       &kp E        &kp R            &kp T             &kp Y      &kp U           &kp I        &kp O       &kp P
-                &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LGUI F       &kp G             &kp H      &mt RGUI J      &mt RSHFT K  &mt RALT L  &mt RCTRL SQT
-                &mt GLOBE Z  &kp X       &kp C        &kp V            &kp B             &kp N      &kp M           &kp COMMA    &kp DOT     &mt GLOBE SEMI
-                                                      &lt HRNAV ENTER  &hp_mt LSHFT TAB  &kp SPACE  &lt HRSYM BSPC
+                &kp Q        &kp W       &kp E        &kp R          &kp T               &kp Y      &kp U           &kp I        &kp O       &kp P
+                &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LGUI F     &kp G               &kp H      &mt RGUI J      &mt RSHFT K  &mt RALT L  &mt RCTRL SQT
+                &mt GLOBE Z  &kp X       &kp C        &kp V          &kp B               &kp N      &kp M           &kp COMMA    &kp DOT     &mt GLOBE SEMI
+                                                      &lt HRNAV TAB  &hp_mt LSHFT ENTER  &kp SPACE  &lt HRSYM BSPC
             >;
         };
 
@@ -455,9 +455,9 @@
 
         hrmt_navigation_and_media_layer {
             bindings = <
-                &kp N1           &kp N2        &kp N3           &kp N4       &kp N5           &kp N6        &kp N7        &kp N8        &kp N9         &kp N0
-                &kp LCTRL        &kp LALT      &kp LSHFT        &kp LGUI     &swapper         &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
-                &kp LG(LBKT)     &kp LG(RBKT)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp CAPS         &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &mt GLOBE DEL
+                &kp N1           &kp N2        &kp N3           &kp N4       &kp N5           &kp N6        &kp N7        &kp N8        &kp N9      &kp N0
+                &kp LCTRL        &kp LALT      &kp LSHFT        &kp LGUI     &swapper         &kp PG_UP     &kp LEFT      &kp UP        &kp RIGHT   &kp BSPC
+                &kp LG(LBKT)     &kp LG(RBKT)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp CAPS         &kp PG_DN     &kp HOME      &kp DOWN      &kp END     &mt GLOBE DEL
                                                                 &trans       &trans           &trans        &trans
             >;
         };
