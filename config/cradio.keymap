@@ -22,6 +22,13 @@
 #define AOEG 11
 #define AOEB 12
 
+// Windows layers (GASC mods)
+#define HRDEF 13
+#define HRNUM 14
+#define HRNAV 15
+#define HRSYM 16
+#define HRFUN 17
+
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>;
@@ -46,11 +53,6 @@
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
-        combo_num_word {
-            key-positions = <32 33>;
-            layers = <DEF NAV>;
-            bindings = <&num_word>;
-        };
 
         // Windows combos
 
@@ -66,11 +68,6 @@
             bindings = <&tog WNAV>;
         };
 
-        combo_wnum_word {
-            key-positions = <32 33>;
-            layers = <WDEF WNAV>;
-            bindings = <&wnum_word>;
-        };
 
         // Multimedia and keyboard features (OS agnostic)
 
@@ -84,6 +81,12 @@
             key-positions = <20 21>;
             layers = <FUN WFUN>;
             bindings = <&bootloader>;
+        };
+
+        combo_toggle_between_hrmt_and_callum_mods {
+            key-positions = <20 29>; // Z ;
+            layers = <FUN HRFUN>;
+            bindings = <&tog HRDEF>;
         };
 
         // Bluetooth toggles
@@ -307,6 +310,10 @@
             if-layers = <WNAV WSYM>;
             then-layer = <WFUN>;
         };
+        hrmt_tri_layer {
+            if-layers = <HRNAV HRSYM>;
+            then-layer = <HRFUN>;
+        };
     };
 
     keymap {
@@ -317,7 +324,7 @@
                 &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
                 &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                                           &lc_nav  &shift_cw      &kp SPACE  &lc_sym
+                                           &lc_nav  &shift_cw      &kp SPACE  &numword_sym 0 0
             >;
         };
 
@@ -426,6 +433,50 @@
                 &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
                 &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
                                                              &kp LC(LS(H))  &trans           &trans  &trans
+            >;
+        };
+        hrmt_default_layer {
+            bindings = <
+                &kp Q        &kp W       &kp E        &kp R            &kp T             &kp Y      &kp U           &kp I        &kp O       &kp P
+                &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LGUI F       &kp G             &kp H      &mt RGUI J      &mt RSHFT K  &mt RALT L  &mt RCTRL SQT
+                &mt GLOBE Z  &kp X       &kp C        &kp V            &kp B             &kp N      &kp M           &kp COMMA    &kp DOT     &mt GLOBE SEMI
+                                                      &lt HRNAV ENTER  &hp_mt LSHFT TAB  &kp SPACE  &lt HRSYM BSPC
+            >;
+        };
+
+        hrmt_numpad {
+            bindings = <
+                &kp SLASH  &kp N7  &kp N8  &kp N9        &kp PLUS       &trans  &trans  &trans  &trans  &trans
+                &kp N0     &kp N4  &kp N5  &kp N6        &trans         &trans  &trans  &trans  &trans  &trans
+                &kp MINUS  &kp N1  &kp N2  &kp N3        &kp DOT        &trans  &trans  &trans  &trans  &trans
+                                           &lt HRNAV N0  &trans         &trans  &lt HRSYM K_CANCEL
+            >;
+        };
+
+        hrmt_navigation_and_media_layer {
+            bindings = <
+                &kp N1           &kp N2        &kp N3           &kp N4       &kp N5           &kp N6        &kp N7        &kp N8        &kp N9         &kp N0
+                &kp LCTRL        &kp LALT      &kp LSHFT        &kp LGUI     &swapper         &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
+                &kp LG(LBKT)     &kp LG(RBKT)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp CAPS         &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &mt GLOBE DEL
+                                                                &trans       &trans           &trans        &trans
+            >;
+        };
+
+        hrmt_symbols_layer {
+            bindings = <
+                &kp ESC          &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+                &kp MINUS        &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &kp RGUI  &kp RSHFT  &kp RALT   &kp RCTRL
+                &mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
+                                                       &trans     &trans       &trans      &trans
+            >;
+        };
+
+        hrmt_tri_layer_function_and_number_row {
+            bindings = <
+                &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
+                &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
+                &kp C_BRI_DEC &kp C_BRI_INC &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS &kp LG(SPC) &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_MUTE
+                                                &trans    &trans     &trans   &trans
             >;
         };
     };
