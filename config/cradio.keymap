@@ -475,7 +475,7 @@
             bindings = <
                 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                 &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
-                &kp C_BRI_DEC &kp C_BRI_INC &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS &kp LG(SPC) &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_MUTE
+                &kp C_BRI_DEC &kp C_BRI_INC &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS &kp LG(SPC) &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp C_MUTE
                                                 &trans    &trans     &trans   &trans
             >;
         };
