@@ -17,17 +17,18 @@
 #define WSYM 8
 #define WFUN 9
 
-// AOE Layers
-#define AOED 10
-#define AOEG 11
-#define AOEB 12
+// Mod-taps layers (CASG mods)
+#define HRDEF 10
+#define HRNUM 11
+#define HRNAV 12
+#define HRSYM 13
+#define HRFUN 14
 
-// Windows layers (GASC mods)
-#define HRDEF 13
-#define HRNUM 14
-#define HRNAV 15
-#define HRSYM 16
-#define HRFUN 17
+// AOE Layers
+#define AOED 15
+#define AOEG 16
+#define AOEB 17
+
 
 
 &caps_word {
@@ -339,10 +340,10 @@
 
         apple_navigation_and_media_layer {
             bindings = <
-                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME      &kp UP        &kp END        &kp BSPC
-                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER
-                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LC(LEFT)  &kp LG(LBKT)  &kp LG(RBKT)  &kp LC(RIGHT)  &mt GLOBE DEL
-                                                             &trans       &trans           &trans        &trans
+                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP   &kp HOME      &kp UP        &kp END     &kp BSPC
+                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN   &kp LEFT      &kp DOWN      &kp RIGHT   &kp ENTER
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &caps_word  &kp LG(LBKT)  &kp LG(RBKT)  &trans  &mt GLOBE DEL
+                                                             &trans       &trans           &trans      &trans
             >;
         };
 
@@ -409,32 +410,6 @@
             >;
         };
 
-        aoe_def {
-            bindings = <
-                &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
-                &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
-                &kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
-                                                &lt 11 H     &lt 12 ESC    &trans  &trans
-            >;
-        };
-
-        aoe_group {
-            bindings = <
-                &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
-                &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
-                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
-                                                    &trans      &kp DEL            &trans  &trans
-            >;
-        };
-
-        aoe_buildings {
-            bindings = <
-                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-                                                             &kp LC(LS(H))  &trans           &trans  &trans
-            >;
-        };
         hrmt_default_layer {
             bindings = <
                 &kp Q        &kp W       &kp E        &kp R          &kp T               &kp Y      &kp U           &kp I        &kp O       &kp P
@@ -479,5 +454,33 @@
                                                 &trans    &trans     &trans   &trans
             >;
         };
+
+        aoe_def {
+            bindings = <
+                &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
+                &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
+                &kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
+                                                &lt 11 H     &lt 12 ESC    &trans  &trans
+            >;
+        };
+
+        aoe_group {
+            bindings = <
+                &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
+                &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
+                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
+                                                    &trans      &kp DEL            &trans  &trans
+            >;
+        };
+
+        aoe_buildings {
+            bindings = <
+                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+                                                             &kp LC(LS(H))  &trans           &trans  &trans
+            >;
+        };
+
     };
 };
