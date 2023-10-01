@@ -89,6 +89,11 @@
             layers = <FUN HRFUN>;
             bindings = <&tog HRDEF>;
         };
+        combo_hr_numw_ord {
+            key-positions = <20 29>; // Z ;
+            layers = <HRDEF>;
+            bindings = <&hrmt_num_word>;
+        };
 
         // Bluetooth toggles
 
@@ -199,11 +204,21 @@
             label = "WINDOWS_NUM_WORD";
             #binding-cells = <0>;
             layers = <WNUM>; // insert location of numbers layer here
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI        COLON SLASH PLUS MINUS ASTRK EQUAL>; // adjust as desired
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>; // adjust as desired
             ignore-numbers; // numbers don't deactivate the layer
-            /delete-property/ ignore-modifiers; // mods don't deactivate the layer
+            ignore-modifiers; // mods don't deactivate the layer
         };
         
+        hrmt_num_word: win_behavior_num_word {
+            compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
+            label = "WINDOWS_NUM_WORD";
+            #binding-cells = <0>;
+            layers = <HRNUM>; // insert location of numbers layer here
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>; // adjust as desired
+            ignore-numbers; // numbers don't deactivate the layer
+            ignore-modifiers; // mods don't deactivate the layer
+        };
+
         numword_sym: numword_sym { // combines. tap: &num_word, hold: SYM (with cancel)
             compatible = "zmk,behavior-hold-tap";
             label = "NUMWORD_SYM";
@@ -422,7 +437,7 @@
         hrmt_numpad {
             bindings = <
                 &kp SLASH  &kp N7  &kp N8  &kp N9        &kp PLUS       &trans  &trans  &trans  &trans  &trans
-                &kp N0     &kp N4  &kp N5  &kp N6        &trans         &trans  &trans  &trans  &trans  &trans
+                &kp ASTRK  &kp N4  &kp N5  &kp N6        &kp ENTER      &trans  &trans  &trans  &trans  &trans
                 &kp MINUS  &kp N1  &kp N2  &kp N3        &kp DOT        &trans  &trans  &trans  &trans  &trans
                                            &lt HRNAV N0  &trans         &trans  &lt HRSYM K_CANCEL
             >;
@@ -432,7 +447,7 @@
             bindings = <
                 &kp N1           &kp N2        &kp N3           &kp N4       &kp N5           &kp N6        &kp N7        &kp N8        &kp N9      &kp N0
                 &kp LCTRL        &kp LALT      &kp LSHFT        &kp LGUI     &swapper         &kp PG_UP     &kp LEFT      &kp UP        &kp RIGHT   &kp BSPC
-                &mt GLOBE LG(LBKT)     &kp LG(RBKT)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp CAPS         &kp PG_DN     &kp HOME      &kp DOWN      &kp END     &mt GLOBE DEL
+                &mt GLOBE LG(LBKT) &kp LG(RBKT) &kp LS(LC(TAB)) &kp LC(TAB)  &kp CAPS         &kp PG_DN     &kp HOME      &kp DOWN      &kp END     &mt GLOBE DEL
                                                                 &trans       &trans           &trans        &trans
             >;
         };
@@ -460,7 +475,7 @@
                 &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
                 &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
                 &kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
-                                                &lt 11 H     &lt 12 ESC    &trans  &trans
+                                                &lt AOEG H   &lt AOEB ESC  &trans  &trans
             >;
         };
 
