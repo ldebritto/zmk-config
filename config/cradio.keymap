@@ -209,9 +209,9 @@
             ignore-modifiers; // mods don't deactivate the layer
         };
         
-        hrmt_num_word: win_behavior_num_word {
+        hrmt_num_word: hrmt_behavior_num_word {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
-            label = "WINDOWS_NUM_WORD";
+            label = "HR_NUM_WORD";
             #binding-cells = <0>;
             layers = <HRNUM>; // insert location of numbers layer here
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>; // adjust as desired
