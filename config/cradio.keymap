@@ -331,10 +331,10 @@
 
         apple_numpad {
             bindings = <
-                &kp SLASH  &kp N7  &kp N8  &kp N9      &kp PLUS       &trans  &trans  &trans  &trans  &trans
-                &kp N0     &kp N4  &kp N5  &kp N6      &trans         &trans  &trans  &trans  &trans  &trans
-                &kp MINUS  &kp N1  &kp N2  &kp N3      &kp DOT        &trans  &trans  &trans  &trans  &trans
-                                           &lt NAV N0  &trans         &trans  &lt SYM K_CANCEL
+                &kp SLASH  &kp N7  &kp N8  &kp N9      &kp PLUS             &kp SLASH      &kp N7  &kp N8  &kp N9  &trans
+                &kp N0     &kp N4  &kp N5  &kp N6      &trans               &kp N0         &kp N4  &kp N5  &kp N6  &trans
+                &kp MINUS  &kp N1  &kp N2  &kp N3      &kp DOT              &kp MINUS      &kp N1  &kp N2  &kp N3  &trans
+                                           &lt NAV N0  &mt LSHFT K_CANCEL   &lt DEF SPACE  &lt SYM N0
             >;
         };
 
