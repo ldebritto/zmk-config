@@ -73,8 +73,8 @@
         // Multimedia and keyboard features (OS agnostic)
 
         combo_mute {
-            key-positions = <4 14>; // Vol up + down keys
-            layers = <NAV WNAV>;
+            key-positions = <14 24>; // Vol up + down keys
+            layers = <NAV WNAV HRNAV>;
             bindings = <&kp C_MUTE>;
         };
 
