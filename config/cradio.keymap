@@ -29,7 +29,7 @@
 #define AOEG 16
 #define AOEB 17
 
-
+#define EXPOSE C_AC_DESKTOP_SHOW_ALL_WINDOWS
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>;
@@ -159,6 +159,16 @@
                 <&kp C_PLAY_PAUSE>,
                 <&kp C_NEXT>,
                 <&kp C_PREVIOUS>;
+        };
+        expose: expose {
+            compatible = "zmk,behavior-tap-dance";
+            label = "EXPOSE";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings =
+                <&kp EXPOSE>,
+                <&kp LG(EXPOSE)>;
+                
         };
 
         // Swappers
@@ -355,7 +365,7 @@
 
         apple_navigation_and_media_layer {
             bindings = <
-                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP   &kp HOME      &kp UP        &kp END     &kp BSPC
+                &kp TAB          &swapper   &expose          &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP   &kp HOME      &kp UP        &kp END     &kp BSPC
                 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN   &kp LEFT      &kp DOWN      &kp RIGHT   &kp ENTER
                 &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &caps_word  &kp LG(LBKT)  &kp LG(RBKT)  &kp CAPS    &mt GLOBE DEL
                                                              &trans       &trans           &trans      &trans
