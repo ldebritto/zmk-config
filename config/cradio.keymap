@@ -54,6 +54,11 @@
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
+        combo_expose {
+            key-positions = <2 3>;
+            layers = <NAV>;
+            bindings = <&expose>;
+        };
 
         // Windows combos
 
