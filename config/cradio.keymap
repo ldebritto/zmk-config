@@ -367,7 +367,7 @@
             bindings = <
                 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &expose       &kp PG_UP     &kp HOME      &kp UP        &kp END     &kp BSPC
                 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_UP  &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT   &kp ENTER
-                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_VOL_DN  &playnextprev &kp LG(LBKT)  &kp LG(RBKT)  &kp CAPS    &mt GLOBE DEL
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_VOL_DN  &playnextprev &kp LG(LBKT)  &kp LG(RBKT)  &kp GLOBE   &kp DEL
                                                              &trans       &trans        &trans        &trans
             >;
         };
