@@ -59,6 +59,11 @@
             layers = <NAV>;
             bindings = <&expose>;
         };
+        combo_hyper {
+            key-positions = <32 33>;
+            layers = <DEF>;
+            bindings = <&kp LS(LC(LA(LCMD)))>;
+        };
 
         // Windows combos
 
