@@ -42,6 +42,11 @@
 
 &sk {
      release-after-ms = <600000>; // set to a bonkers 10mins default is 1s 1000ms
+     quick-release;
+};
+
+&sl {
+     quick-release;
 };
 
 / {
