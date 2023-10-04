@@ -94,7 +94,8 @@
             layers = <FUN HRFUN>;
             bindings = <&tog HRDEF>;
         };
-        combo_hr_numw_ord {
+        
+        combo_hr_num_word {
             key-positions = <20 29>; // Z ;
             layers = <HRDEF>;
             bindings = <&hrmt_num_word>;
