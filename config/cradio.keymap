@@ -45,10 +45,6 @@
      quick-release;
 };
 
-&sl {
-     quick-release;
-};
-
 / {
     combos {
         compatible = "zmk,combos";
