@@ -152,16 +152,13 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>; // Must be 1
             bindings =  
-                <&macro_press>,
                 <&macro_param_1to1>,
-                <&mo THE_LAYER>,
+                <&macro_press &mo THE_LAYER>,
                 <&macro_tap>,
                 <&kp K_CANCEL>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
                 <&macro_param_1to1>,
-                <&mo THE_LAYER>;
-                ;
+                <&macro_release &mo THE_LAYER>;
         }
 
 
