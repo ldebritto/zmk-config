@@ -1,12 +1,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include "mouse.dtsi"
 
 #define DEF 0
 #define NUM 1
 #define NAV 2
 #define SYM 3
 #define FUN 4
+#define MOUSE 5
 
 &caps_word { // Uses custom &caps_word implemetation to allow for cancelling &caps_word on mods, requires PR #1451
     /delete-property/ ignore-modifiers;
@@ -30,6 +32,12 @@
             key-positions = <30 31>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
+        };
+        
+        combo_toggle_mouse {
+            key-positions = <16 17 18>;
+            layers = <NAV MOUSE>;
+            bindings = <&tog MOUSE>;
         };
 
         combo_expose {
@@ -55,8 +63,6 @@
             layers = <FUN>;
             bindings = <&bootloader>;
         };
-
-        // Bluetooth toggles
 
         combo_toggle_bt0_connection {
             key-positions = <3 4>;
@@ -87,7 +93,6 @@
         
         shift_cw: tap_dance_shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings =
@@ -97,7 +102,6 @@
 
         nextprev: nextprev {
             compatible = "zmk,behavior-tap-dance";
-            label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings =
@@ -107,7 +111,6 @@
 
         expose: expose_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "EXPOSE_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings =
@@ -118,7 +121,6 @@
 
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
-            label = "SWAPPER";
             #binding-cells = <0>;
             bindings =
                 <&kt LCMD>,
@@ -130,7 +132,6 @@
 
         num_word: behavior_num_word {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
-            label = "NUM_WORD";
             #binding-cells = <0>;
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
@@ -140,7 +141,6 @@
 
         numword_sym: numword_sym {
             compatible = "zmk,behavior-hold-tap";
-            label = "NUMWORD_SYM";
             bindings =
                 <&lc_sym>,
                 <&num_word>;
@@ -153,7 +153,6 @@
     macros {
         
         lc_nav: lc_nav {
-            label = "LC_NAV";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -169,7 +168,6 @@
         };
 
         lc_sym: lc_sym {
-            label = "LC_SYM";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -242,6 +240,15 @@
                                                 &trans    &trans     &trans   &trans
             >;
         };
+        mouse_emulation {
+            bindings = <
+                &to DEF          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &expose            M_WH_D     &trans        &kp UP        &trans     &kp BSPC
+                &kp LCTRL        &kp LALT   &kp LSHFT        &kp LGUI     &trans             M_WH_U     &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    M_BTN3             &trans     &kp LG(LBKT)  &kp LG(RBKT)  &trans     &mt GLOBE DEL
+                                                             M_BTN1       M_BTN2             M_BTN1     M_BTN2
+            >;
+        };
+
 
     };
 };
