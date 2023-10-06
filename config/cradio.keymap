@@ -116,7 +116,6 @@
 
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
-            label = "SWAPPER";
             #binding-cells = <0>;
             bindings =
                 <&kt LCMD>,
