@@ -124,7 +124,7 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
-        num_word: num_word {
+        numword: numword {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
@@ -141,7 +141,7 @@
             tapping-term-ms = <200>;
             bindings =
                 <&lc SYM>,
-                <&num_word>;
+                <&numword>;
         };
         
     };
