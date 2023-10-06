@@ -32,13 +32,13 @@
             bindings = <&tog NAV>;
         };
 
-        combo_expose {
+        combo_expose_desktop {
             key-positions = <2 3>;
             layers = <NAV>;
             bindings = <&expose>;
         };
  
-        combo_hyper {
+        combo_sticky_hyper {
             key-positions = <32 33>;
             layers = <DEF>;
             bindings = <&sk LS(LC(LA(LCMD)))>;
@@ -83,7 +83,7 @@
 
     behaviors {
         
-        shift_cw: tap_dance_shift_and_caps_word {
+        shift_cw: shift_and_caps_word_on_double_tap {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
@@ -93,7 +93,7 @@
                 <&caps_word>;
         };
 
-        nextprev: nextprev {
+        nextprev: next_previous_song {
             compatible = "zmk,behavior-tap-dance";
             label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
@@ -103,7 +103,7 @@
                 <&kp C_PREVIOUS>;
         };
 
-        expose: expose_tap_dance {
+        expose: expose_and_show_desktop {
             compatible = "zmk,behavior-tap-dance";
             label = "EXPOSE_TAP_DANCE";
             #binding-cells = <0>;
@@ -121,11 +121,10 @@
                 <&kt LCMD>,
                 <&kp TAB>,
                 <&kt LCMD>;
-
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
-        num_word: behavior_num_word {
+        num_word: num_word_smart_layer {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
             #binding-cells = <0>;
             layers = <NUM>;
@@ -134,8 +133,9 @@
             ignore-modifiers;
         };
 
-        numword_sym: numword_sym {
+        numword_sym: numword_on_press_lc_sym_on_hold {
             compatible = "zmk,behavior-hold-tap";
+            label = "NUM_WORD-LC_SYM";
             bindings =
                 <&lc_sym>,
                 <&num_word>;
