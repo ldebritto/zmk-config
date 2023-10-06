@@ -93,6 +93,7 @@
         
         shift_cw: tap_dance_shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings =
@@ -102,6 +103,7 @@
 
         nextprev: nextprev {
             compatible = "zmk,behavior-tap-dance";
+            label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings =
@@ -111,6 +113,7 @@
 
         expose: expose_tap_dance {
             compatible = "zmk,behavior-tap-dance";
+            label = "EXPOSE_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings =
@@ -121,6 +124,7 @@
 
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
+            label = "SWAPPER";
             #binding-cells = <0>;
             bindings =
                 <&kt LCMD>,
@@ -132,6 +136,7 @@
 
         num_word: behavior_num_word {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
+            label = "NUM_WORD";
             #binding-cells = <0>;
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
@@ -141,6 +146,7 @@
 
         numword_sym: numword_sym {
             compatible = "zmk,behavior-hold-tap";
+            label = "NUMWORD_SYM";
             bindings =
                 <&lc_sym>,
                 <&num_word>;
@@ -153,6 +159,7 @@
     macros {
         
         lc_nav: lc_nav {
+            label = "LC_NAV";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -168,6 +175,7 @@
         };
 
         lc_sym: lc_sym {
+            label = "LC_SYM";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
