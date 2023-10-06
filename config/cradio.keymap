@@ -35,7 +35,7 @@
         };
         
         combo_toggle_mouse_layer {
-            key-positions = <6 8>;
+            key-positions = <0 1>;
             layers = <NAV MOU>;
             bindings = <&tog MOU>;
         };
