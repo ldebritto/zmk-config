@@ -111,11 +111,11 @@
             bindings =
                 <&kp C_AC_DESKTOP_SHOW_ALL_WINDOWS>,
                 <&kp LG(C_AC_DESKTOP_SHOW_ALL_WINDOWS)>;
-                
         };
 
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
+            label = "SWAPPER";
             #binding-cells = <0>;
             bindings =
                 <&kt LCMD>,
@@ -136,7 +136,6 @@
 
         numword_sym: numword_sym {
             compatible = "zmk,behavior-hold-tap";
-            label = "NUMWORD_SYM";
             bindings =
                 <&lc_sym>,
                 <&num_word>;
