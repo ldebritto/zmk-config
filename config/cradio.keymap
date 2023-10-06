@@ -126,6 +126,7 @@
 
         num_word: num_word_smart_layer {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
+            label = "NUM_WORD_SMART_LAYER"
             #binding-cells = <0>;
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
