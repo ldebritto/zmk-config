@@ -136,7 +136,7 @@
 
         numword_sym: numword_on_press_lc_sym_on_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "NUM_WORD-LC_SYM";
+            label = "NUM_WORD_LC_SYM";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             bindings =
@@ -148,11 +148,10 @@
 
     macros {
         
-        mo_cancel: mo_layer_with_embeded_cancel_for_clearing_queued_mods {
+        lc: mo_layer_with_embeded_cancel_for_clearing_queued_mods {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>; // Must be 1
-            bindings = 
-                
+            bindings =  
                 <&macro_press>,
                 <&macro_param_1to1>,
                 <&mo THE_LAYER>,
@@ -163,9 +162,7 @@
                 <&macro_param_1to1>,
                 <&mo THE_LAYER>;
                 ;
-
         }
-
 
 
         lc_nav: lc_nav {
