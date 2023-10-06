@@ -128,7 +128,6 @@
 
         num_word: behavior_num_word {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
-            label = "NUM_WORD";
             #binding-cells = <0>;
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
