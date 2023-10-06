@@ -34,7 +34,7 @@
 
         combo_expose {
             key-positions = <2 3>;
-            layers = <NAV MOU>;
+            layers = <NAV>;
             bindings = <&expose>;
         };
  
