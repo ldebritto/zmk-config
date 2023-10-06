@@ -126,7 +126,7 @@
 
         num_word: num_word_smart_layer {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
-            label = "NUM_WORD_SMART_LAYER"
+            label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
@@ -216,7 +216,7 @@
                 &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
                 &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                                     &mo_cancel NAV &shift_cw      &kp SPACE  &numword_sym 0 0
+                                           &lc NAV  &shift_cw      &kp SPACE  &numword_sym 0 0
             >;
         };
 
