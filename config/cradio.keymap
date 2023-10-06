@@ -8,7 +8,7 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4
-#define MOUSE 5
+#define MOU 5
 
 &caps_word { // Uses custom &caps_word implemetation to allow for cancelling &caps_word on mods, requires PR #1451
     /delete-property/ ignore-modifiers;
@@ -34,15 +34,15 @@
             bindings = <&tog NAV>;
         };
         
-        combo_toggle_mouse {
+        combo_toggle_mouse_layer {
             key-positions = <16 17 18>;
-            layers = <NAV MOUSE>;
-            bindings = <&tog MOUSE>;
+            layers = <NAV MOU>;
+            bindings = <&tog MOU>;
         };
 
         combo_expose {
             key-positions = <2 3>;
-            layers = <NAV>;
+            layers = <NAV MOU>;
             bindings = <&expose>;
         };
  
@@ -248,15 +248,15 @@
                                                 &trans    &trans     &trans   &trans
             >;
         };
+
         mouse_emulation {
             bindings = <
                 &to DEF          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &expose            M_WH_D     &trans        &kp UP        &trans     &kp BSPC
                 &kp LCTRL        &kp LALT   &kp LSHFT        &kp LGUI     &trans             M_WH_U     &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    M_BTN3             &trans     &kp LG(LBKT)  &kp LG(RBKT)  &trans     &mt GLOBE DEL
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    M_BTN3             M_BTN3     &kp LG(LBKT)  &kp LG(RBKT)  &trans     &mt GLOBE DEL
                                                              M_BTN1       M_BTN2             M_BTN1     M_BTN2
             >;
         };
-
 
     };
 };
