@@ -8,6 +8,11 @@
 #define SYM 3
 #define FUN 4
 
+// AOE Layers
+#define AOED 5
+#define AOEG 6
+#define AOEB 7
+
 &caps_word { // Uses custom &caps_word implemetation to allow for cancelling &caps_word on mods, requires PR #1451
     /delete-property/ ignore-modifiers;
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // key codes required to allow using diacriticals in PT-BR
@@ -79,6 +84,18 @@
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
         };
+
+        combo_toggle_aoe {
+            bindings = <&tog AOED>;
+            key-positions = <1 2 3>;
+            layers = <DEF WDEF AOED>;
+        };
+
+        aoe_pause {
+            bindings = <&kp F3>;
+            key-positions = <21 22 23>;
+            layers = <AOED>;
+        };
     };
 
     behaviors {
@@ -134,7 +151,7 @@
             ignore-modifiers;
         };
 
-        numword_sym: numword_on_press_lc_sym_on_hold {
+        lc_nw: numword_on_press_lc_sym_on_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "NUM_WORD_LC_SYM";
             #binding-cells = <2>;
@@ -183,7 +200,7 @@
                 &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
                 &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                                           &lc NAV  &shift_cw      &kp SPACE  &numword_sym SYM 0
+                                           &lc NAV  &shift_cw      &kp SPACE  &lc_nw SYM 0
             >;
         };
 
@@ -220,6 +237,33 @@
                 &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
                 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                                 &trans    &trans     &trans   &trans
+            >;
+        };
+
+        aoe_def {
+            bindings = <
+                &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
+                &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
+                &kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
+                                                &lt AOEG H   &lt AOEB ESC  &trans  &trans
+            >;
+        };
+
+        aoe_group {
+            bindings = <
+                &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
+                &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
+                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
+                                                    &trans      &kp DEL            &trans  &trans
+            >;
+        };
+
+        aoe_buildings {
+            bindings = <
+                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+                                                             &kp LC(LS(H))  &trans           &trans  &trans
             >;
         };
 
