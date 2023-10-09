@@ -8,21 +8,21 @@
 #define SYM 3
 #define FUN 4
 
-// AOE Layers
+// AOE Layers for AOE 2 gaming
 #define AOED 5
 #define AOEG 6
 #define AOEB 7
 
-&caps_word { // Uses custom &caps_word implemetation to allow for cancelling &caps_word on mods, requires PR #1451
-    /delete-property/ ignore-modifiers;
-    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // key codes required to allow using diacriticals in PT-BR
+&caps_word { // Custom &caps_word to allow for cancelling &caps_word on mods and RSHF. Requires (PR #1451)
+    /delete-property/ ignore-modifiers; // Avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use diacriticals in PT-BR, even with ~, ` and ^ dedicated keys
 };
 
 &mt {
-    flavor = "tap-preferred";
+    flavor = "tap-preferred"; // Used for `GLOBE` in DEF and NAV
 };
 
-&sk {
+&sk { // Callum-Style mods all the way
      release-after-ms = <600000>; // set to a bonkers 10mins default is 1s 1000ms
      quick-release;
 };
