@@ -85,7 +85,7 @@
             bindings = <&bt BT_CLR>;
         };
 
-        combo_toggle_aoe {
+        combo_toggle_aoe_layer {
             bindings = <&tog AOED>;
             key-positions = <1 2 3>;
             layers = <DEF AOED>;
@@ -240,7 +240,7 @@
             >;
         };
 
-        aoe_def {
+        aoe_default_layer {
             bindings = <
                 &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
                 &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
@@ -249,7 +249,7 @@
             >;
         };
 
-        aoe_group {
+        aoe_group_control {
             bindings = <
                 &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
                 &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
