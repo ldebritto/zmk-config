@@ -56,6 +56,7 @@
         };
 
         combo_toggle_windows_layers {
+            timeout-ms = <80>; // default is 50ms. I've increased in order to make it work for me
             key-positions = <20 29>;
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
@@ -225,6 +226,11 @@
         tri_layer {
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
+        };
+        
+        windows_tri_layer {
+            if-layers = <WNAV WSYM>;
+            then-layer = <WFUN>;
         };
 
     };
