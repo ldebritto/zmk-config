@@ -14,9 +14,9 @@
 #define WSYM 8
 #define WFUN 9
 
-#define AOED 9 // AOE Layers for AOE 2 gaming
-#define AOEG 10
-#define AOEB 11
+#define AOED 10 // AOE Layers for AOE 2 gaming
+#define AOEG 12
+#define AOEB 12
 
 &caps_word { // Custom &caps_word to allow for cancelling &caps_word on mods and RSHF. Requires (PR #1451)
     /delete-property/ ignore-modifiers; // Avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`
