@@ -15,7 +15,7 @@
 #define WFUN 9
 
 #define AOED 10 // AOE Layers for AOE 2 gaming
-#define AOEG 12
+#define AOEG 11
 #define AOEB 12
 
 &caps_word { // Custom caps-word (PR #1451)
