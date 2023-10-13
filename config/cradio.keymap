@@ -23,7 +23,7 @@
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use diacriticals in PT-BR, even with ~, ` and ^ dedicated keys
 };
 
-&mt { // Tap-preffered mod-taps used for `GLOBE`
+&mt { // Tap-preffered mod-taps used for `GLOBE` in DEF and NAV
     flavor = "tap-preferred"; 
 };
 
@@ -33,6 +33,145 @@
 };
 
 / {
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
+                &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
+                &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
+                                           &lc NAV  &shft_cw       &kp SPACE  &lc_nw SYM 0
+            >;
+        };
+
+        numpad {
+            bindings = <
+                &kp SLASH  &kp N7  &kp N8  &kp N9      &kp PLUS   &trans  &trans  &trans  &trans  &trans
+                &kp ASTRK  &kp N4  &kp N5  &kp N6      &trans     &trans  &trans  &trans  &trans  &trans
+                &kp MINUS  &kp N1  &kp N2  &kp N3      &kp DOT    &trans  &trans  &trans  &trans  &trans
+                                           &lt NAV N0  &trans     &trans  &lt SYM K_CANCEL
+            >;
+        };
+
+        navigation_and_media_layer {
+            bindings = <
+                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP       &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
+                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN       &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_PLAY_PAUSE   &nextprev  &kp LG(LBKT)  &kp LG(RBKT)  &kp CAPS   &mt GLOBE DEL
+                                                             &trans       &trans             &trans     &trans
+            >;
+        };
+
+        symbols_layer {
+            bindings = <
+                &kp ESC          &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+                &kp MINUS        &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
+                &mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
+                                                       &trans     &trans       &trans      &trans
+            >;
+        };
+
+        function_and_number_row {
+            bindings = <
+                &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
+                &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
+                &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
+                                                &trans    &trans     &trans   &trans
+            >;
+        };
+
+        win_default_layer {
+            bindings = <
+                &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
+                &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
+                &mt LGUI Z   &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt RGUI SEMI
+                                           &lc WNAV &shft_cw       &kp SPACE  &wlc_wnw WSYM 0
+            >;
+        };
+
+        win_numpad {
+            bindings = <
+                &kp SLASH  &kp N7  &kp N8  &kp N9      &kp PLUS   &trans  &trans  &trans  &trans  &trans
+                &kp ASTRK  &kp N4  &kp N5  &kp N6      &kp DLLR   &trans  &trans  &trans  &trans  &trans
+                &kp MINUS  &kp N1  &kp N2  &kp N3      &kp PRCNT  &trans  &trans  &trans  &trans  &trans
+                                           &lt WNAV N0 &trans     &trans  &lt WSYM K_CANCEL
+            >;
+        };
+
+
+        win_navigation_and_media_layer {
+            bindings = <
+                &kp TAB    &wswapper  &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP       &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
+                &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN       &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+                &kp LC(Z)  &kp LC(X)  &kp LC(C)        &kp LC(V)    &kp C_PLAY_PAUSE   &nextprev  &kp LA(LEFT)  &kp LA(RIGHT)  &kp CAPS    &kp DEL
+                                                       &trans       &trans             &trans     &trans
+            >;
+        };
+
+        win_symbols_layer {
+            bindings = <
+                &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
+                &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
+                &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+                                                 &trans     &trans       &trans      &trans
+            >;
+        };
+
+        win_function_and_number_row {
+            bindings = <
+                &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
+                &sk LGUI   &sk LALT  &sk LSHFT  &sk LCTRL &kp F11    &kp F12  &sk RCTRL &sk RSHFT  &sk RALT  &sk RGUI
+                &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
+                                                &trans    &trans     &trans   &trans
+            >;
+        };
+
+        aoe_default_layer {
+            bindings = <
+                &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
+                &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
+                &kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
+                                                &lt AOEG H   &lt AOEB ESC  &trans  &trans
+            >;
+        };
+
+        aoe_group_control {
+            bindings = <
+                &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
+                &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
+                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
+                                                    &trans      &kp DEL            &trans  &trans
+            >;
+        };
+
+        aoe_buildings {
+            bindings = <
+                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+                                                             &kp LC(LS(H))  &trans           &trans  &trans
+            >;
+        };
+
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <NAV SYM>;
+            then-layer = <FUN>;
+        };
+        
+        windows_tri_layer {
+            if-layers = <WNAV WSYM>;
+            then-layer = <WFUN>;
+        };
+
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -220,142 +359,5 @@
         };
 
     };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <NAV SYM>;
-            then-layer = <FUN>;
-        };
-        
-        windows_tri_layer {
-            if-layers = <WNAV WSYM>;
-            then-layer = <WFUN>;
-        };
-
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
-                &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
-                &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
-                &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                                           &lc NAV  &shft_cw       &kp SPACE  &lc_nw SYM 0
-            >;
-        };
-
-        numpad {
-            bindings = <
-                &kp SLASH  &kp N7  &kp N8  &kp N9      &kp PLUS   &trans  &trans  &trans  &trans  &trans
-                &kp ASTRK  &kp N4  &kp N5  &kp N6      &trans     &trans  &trans  &trans  &trans  &trans
-                &kp MINUS  &kp N1  &kp N2  &kp N3      &kp DOT    &trans  &trans  &trans  &trans  &trans
-                                           &lt NAV N0  &trans     &trans  &lt SYM K_CANCEL
-            >;
-        };
-
-        navigation_and_media_layer {
-            bindings = <
-                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP       &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN       &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_PLAY_PAUSE   &nextprev  &kp LG(LBKT)  &kp LG(RBKT)  &kp CAPS   &mt GLOBE DEL
-                                                             &trans       &trans             &trans     &trans
-            >;
-        };
-
-        symbols_layer {
-            bindings = <
-                &kp ESC          &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-                &kp MINUS        &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-                &mt GLOBE PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
-                                                       &trans     &trans       &trans      &trans
-            >;
-        };
-
-        function_and_number_row {
-            bindings = <
-                &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-                &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
-                &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
-                                                &trans    &trans     &trans   &trans
-            >;
-        };
-
-        win_default_layer {
-            bindings = <
-                &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
-                &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
-                &mt LGUI Z   &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt RGUI SEMI
-                                           &lc WNAV &shft_cw       &kp SPACE  &wlc_wnw WSYM 0
-            >;
-        };
-
-        win_numpad {
-            bindings = <
-                &kp SLASH  &kp N7  &kp N8  &kp N9      &kp PLUS   &trans  &trans  &trans  &trans  &trans
-                &kp ASTRK  &kp N4  &kp N5  &kp N6      &kp DLLR   &trans  &trans  &trans  &trans  &trans
-                &kp MINUS  &kp N1  &kp N2  &kp N3      &kp PRCNT  &trans  &trans  &trans  &trans  &trans
-                                           &lt WNAV N0 &trans     &trans  &lt WSYM K_CANCEL
-            >;
-        };
-
-
-        win_navigation_and_media_layer {
-            bindings = <
-                &kp TAB    &wswapper  &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP       &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-                &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN       &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-                &kp LC(Z)  &kp LC(X)  &kp LC(C)        &kp LC(V)    &kp C_PLAY_PAUSE   &nextprev  &kp LA(LEFT)  &kp LA(RIGHT)  &kp CAPS    &kp DEL
-                                                       &trans       &trans             &trans     &trans
-            >;
-        };
-
-        win_symbols_layer {
-            bindings = <
-                &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR   &kp RBKT   &kp RBRC   &kp GRAVE
-                &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RCTRL  &sk RSHFT  &sk RALT   &sk RGUI
-                &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
-                                                 &trans     &trans       &trans      &trans
-            >;
-        };
-
-        win_function_and_number_row {
-            bindings = <
-                &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-                &sk LGUI   &sk LALT  &sk LSHFT  &sk LCTRL &kp F11    &kp F12  &sk RCTRL &sk RSHFT  &sk RALT  &sk RGUI
-                &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
-                                                &trans    &trans     &trans   &trans
-            >;
-        };
-
-        aoe_default_layer {
-            bindings = <
-                &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
-                &kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G         &trans  &trans  &trans  &trans  &trans
-                &kp Z  &kp X       &kp C        &kp V        &kp B         &trans  &trans  &trans  &trans  &trans
-                                                &lt AOEG H   &lt AOEB ESC  &trans  &trans
-            >;
-        };
-
-        aoe_group_control {
-            bindings = <
-                &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
-                &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
-                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
-                                                    &trans      &kp DEL            &trans  &trans
-            >;
-        };
-
-        aoe_buildings {
-            bindings = <
-                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-                                                             &kp LC(LS(H))  &trans           &trans  &trans
-            >;
-        };
-
-    };
+    
 };
