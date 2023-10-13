@@ -18,7 +18,7 @@
 #define AOEG 12
 #define AOEB 12
 
-&caps_word { // Custom &caps_word to allow for cancelling &caps_word on mods and RSHF. Requires (PR #1451)
+&caps_word { // Custom caps-word (PR #1451)
     /delete-property/ ignore-modifiers; // Avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use diacriticals in PT-BR, even with ~, ` and ^ dedicated keys
 };
@@ -106,14 +106,16 @@
 
     behaviors {
         
-        shift_cw: shift_and_caps_word {
+        shft_cw: shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings =
                 <&kp RSHFT>,
-                <&caps_word>;
+                <&caps_word>; 
+                // RSHFT will cancel &caps_word with this same key that it was activated and avoids unwanted "CMD+SHIFT+S" activations 
+                // LSHFT is required for some diacriticals, thus it is one of the escaped could not be used here
         };
 
         nextprev: next_previous_song {
@@ -137,7 +139,7 @@
         };
 
         swapper: swapper {
-            compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
+            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings =
@@ -148,18 +150,18 @@
         };
         
         wswapper: windows_swapper {
-            compatible = "zmk,behavior-tri-state"; // requires tri-state PR #1366 (not yet merged into main)
+            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "WINDOWS_SWAPPER";
             #binding-cells = <0>;
             bindings =
                 <&kt LALT>,
                 <&kp TAB>,
                 <&kt LALT>;
-            ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
+            ignored-key-positions = <12 31>; // LSHFT
         };
 
         numword: numword {
-            compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
+            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
@@ -179,7 +181,7 @@
         };
         
         wnumword: win_numword {
-            compatible = "zmk,behavior-caps-word"; // Custom caps-word behavior form PR #1451
+            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
             label = "WIN_NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
@@ -188,7 +190,7 @@
             ignore-modifiers;
         };
 
-        wlc_nw: win_numword_on_press_lc_sym_on_hold {
+        wlc_wnw: win_numword_on_press_lc_sym_on_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "WIN_NUM_WORD_LC_SYM";
             #binding-cells = <2>;
@@ -242,7 +244,7 @@
                 &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
                 &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                                           &lc NAV  &shift_cw      &kp SPACE  &lc_nw SYM 0
+                                           &lc NAV  &shft_cw       &kp SPACE  &lc_nw SYM 0
             >;
         };
 
@@ -287,7 +289,7 @@
                 &kp Q        &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U   &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F    &kp G          &kp H      &kp J   &kp K      &kp L    &kp SQT
                 &mt LGUI Z   &kp X  &kp C  &kp V    &kp B          &kp N      &kp M   &kp COMMA  &kp DOT  &mt RGUI SEMI
-                                           &lc WNAV &shift_cw      &kp SPACE  &wlc_nw WSYM 0
+                                           &lc WNAV &shft_cw       &kp SPACE  &wlc_wnw WSYM 0
             >;
         };
 
