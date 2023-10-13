@@ -137,21 +137,21 @@
             >;
         };
 
-        aoe_group_control {
+        aoe_unit_group_selection {
             bindings = <
-                &kp N2      &kp N3      &kp N4      &kp N5      &kp N6             &trans  &trans  &trans  &trans  &trans
-                &kp N2      &kp N3      &kp N4      &kp N5      &mt LCTRL COMMA    &trans  &trans  &trans  &trans  &trans
-                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)  &kp LC(N6)         &trans  &trans  &trans  &trans  &trans
-                                                    &trans      &kp DEL            &trans  &trans
+                &kp DOT     &kp LS(DOT) &kp COMMA   &kp LS(COMMA) &kp DEL        &trans  &trans  &trans  &trans  &trans
+                &kp N2      &kp N3      &kp N4      &kp N5        &kp N6         &trans  &trans  &trans  &trans  &trans
+                &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)     &trans  &trans  &trans  &trans  &trans
+                                                    &trans        &trans         &trans  &trans
             >;
         };
 
         aoe_buildings {
             bindings = <
                 &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(DOT)      &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
                 &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-                                                             &kp LC(LS(H))  &trans           &trans  &trans
+                                                             &tran.         &trans           &trans  &trans
             >;
         };
 
