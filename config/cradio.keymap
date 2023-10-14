@@ -15,46 +15,9 @@
 #define WSYM 8
 #define WFUN 9
 
-#define MOUSE 10 // Mouse support copied from urob's repo
-
-#define AOED 11 // AOE Layers for AOE 2 gaming
-#define AOEG 12
-#define AOEB 13
-
-#include <dt-bindings/zmk/mouse.h> // Copied from urob's repo (https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi)
-
-&mmv {
-  acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <1500>;    // 40
-  delay-ms = <0>;                   // 0
-};
-
-&mwh {
-  acceleration-exponent = <1>;      // 0
-  time-to-max-speed-ms = <5000>;    // 40
-  delay-ms = <0>;                   // 10
-};
-
-#define U_MOUSE_MOVE_MAX 1250       // 600
-#define U_MOUSE_SCROLL_MAX 100      // 10
-
-#undef MOVE_UP
-#undef MOVE_DOWN
-#undef MOVE_LEFT
-#undef MOVE_RIGHT
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-
-#undef SCROLL_UP
-#undef SCROLL_DOWN
-#undef SCROLL_LEFT
-#undef SCROLL_RIGHT
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+#define AOED 10 // AOE Layers for AOE 2 gaming
+#define AOEG 11
+#define AOEB 12
 
 &caps_word { // Custom caps-word (PR #1451)
     /delete-property/ ignore-modifiers; // Avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`
@@ -166,15 +129,6 @@
             >;
         };
 
-        mouse_layer {
-            bindings = <
-                &trans     &expose    &kp LS(LC(TAB))  &kp LC(TAB)  &trans    &mwh SCROLL_DOWN  &mwh SCROLL_LEFT  &mmv MOVE_UP     &mwh SCROLL_RIGHT  &kp BSPC
-                &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB1
-                &kp LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &trans    &trans            &kp LG(LBKT)      &kp LG(RBKT)     &mkp MB3           &mkp MB2
-                                                       &trans       &trans    &mkp MB1          &mkp MB2
-            >;
-        };
-
         aoe_default_layer {
             bindings = <
                 &kp Q  &kp W       &kp E        &kp R        &kp T         &trans  &trans  &trans  &trans  &trans
@@ -247,12 +201,6 @@
             bindings = <&tog WDEF>;
         };
         
-        combo_toggle_mouse_layer_from_nav {
-            key-positions = <5 6>; // Y U
-            layers = <NAV WNAV>;
-            bindings = <&tog MOUSE>;
-        };
-
         combo_trigger_bootloader {
             key-positions = <20 21>;
             layers = <FUN>;
