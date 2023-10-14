@@ -246,6 +246,12 @@
             layers = <FUN WFUN>;
             bindings = <&tog WDEF>;
         };
+        
+        combo_toggle_mouse_layer_from_nav {
+            key-positions = <5 6>; // Y U
+            layers = <NAV WNAV>;
+            bindings = <&tog MOUSE>;
+        };
 
         combo_trigger_bootloader {
             key-positions = <20 21>;
