@@ -1,6 +1,5 @@
-// Copied from urob's repo (https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi)
-
 #include <dt-bindings/zmk/mouse.h>
+// Copied from urob's repo (https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi)
 
 &mmv {
   acceleration-exponent = <1>;      // 1
