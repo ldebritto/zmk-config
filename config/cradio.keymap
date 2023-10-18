@@ -6,7 +6,6 @@
 #define NAV 1
 #define SYM 2
 #define FUN 3
-
 #define AOED 4 // AOE Layers for AOE 2 gaming
 #define AOEG 5
 #define AOEB 6
@@ -31,9 +30,9 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U         &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J         &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M         &kp COMMA  &kp DOT  &mt LS(LA(LC(LCMD))) SEMI
+&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
+&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mt LS(LA(LC(LCMD))) SEMI
                            &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
@@ -67,19 +66,19 @@
 
         aoe_default_layer {
             bindings = <
-&kp Q  &kp W       &kp E        &kp R        &kp T           &trans  &trans  &trans  &trans  &trans
-&kp A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G           &trans  &trans  &trans  &trans  &trans
-&kp Z  &kp X       &kp C        &kp V        &kp B           &trans  &trans  &trans  &trans  &trans
-                                &lt AOEG H   &lt AOEB ESC    &trans  &trans
+&kp Q        &kp W       &kp E        &kp R        &kp T             &trans  &trans  &trans  &trans  &trans
+&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G             &trans  &trans  &trans  &trans  &trans
+&kp Z        &kp X       &kp C        &kp V        &kp B             &trans  &trans  &trans  &trans  &trans
+                                      &lt AOEG H   &lt AOEB SPACE    &trans  &trans
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
-&kp DOT     &kp LS(DOT)  &kp COMMA   &kp LS(COMMA)  &kp DEL       &trans  &trans  &trans  &trans  &trans
-&kp N2      &kp N3       &kp N4      &kp N5         &kp N6        &trans  &trans  &trans  &trans  &trans
-&kp LC(N2)  &kp LC(N3)   &kp LC(N4)  &kp LC(N5)     &kp LC(N6)    &trans  &trans  &trans  &trans  &trans
-                                     &trans         &trans        &trans  &trans
+&kp ESC    &trans     &trans         &trans   &kp DEL        &trans  &trans  &trans  &trans  &trans
+&kp N2     &kp N3     &kp N4         &kp N5   &kp N6         &trans  &trans  &trans  &trans  &trans
+&sk LCTRL  &kp COMMA  &kp LS(COMMA)  &kp DOT  &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
+                                     &trans   &trans         &trans  &trans
             >;
         };
 
@@ -173,6 +172,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&caps_word>;
+
             // RSHFT will cancel &caps_word with this same key that it was activated and avoids unwanted "CMD+SHIFT+S" activations 
             // LSHFT is required for some diacriticals, thus it is one of the escaped could not be used here
         };
@@ -197,6 +197,7 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
+
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
     };
