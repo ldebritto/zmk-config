@@ -37,6 +37,16 @@
             >;
         };
 
+
+        numpad {
+            bindings = <
+&kp K_CANCEL  &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans            &trans  &trans  &trans
+&kp MINUS     &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &trans            &trans  &trans  &trans
+&kp PLUS      &kp N1  &kp N2  &kp N3      &kp DOT      &trans  &trans            &trans  &trans  &trans
+                              &lt NAV N0  &kp COMMA    &trans  &lt SYM K_CANCEL
+            >;
+        };
+
         navigation_and_media_layer {
             bindings = <
 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
@@ -108,6 +118,12 @@
             key-positions = <30 31>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
+        };
+
+        combo_num_word {
+            key-positions = <32 33>;
+            layers = <DEF NUM>;
+            bindings = <&numword>;
         };
 
         combo_expose_desktop {
@@ -199,6 +215,22 @@
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
+        };
+        numword: numword {
+            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
+            label = "NUM_WORD_SMART_LAYER";
+            #binding-cells = <0>;
+            layers = <NUM>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
+            ignore-numbers;
+            ignore-modifiers;
+        };
+        lc_nw: numword_on_press_lc_sym_on_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NUM_WORD_LC_SYM";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&lc>, <&numword>;
         };
     };
 
