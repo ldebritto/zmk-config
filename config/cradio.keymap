@@ -7,7 +7,6 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4
-
 #define AOED 5 // AOE2 Layers for in game shortcuts
 #define AOEG 6
 #define AOEB 7
@@ -219,7 +218,7 @@
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LGUI LCTRL RCTRL LALT RALT LSHIFT>;
             ignore-numbers;
             ignore-modifiers;
         };
