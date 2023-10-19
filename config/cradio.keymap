@@ -220,7 +220,7 @@
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LGUI LCTRL RCTRL LALT RALT LSHIFT>;
             ignore-numbers;
-            ignore-modifiers;
+            // ignore-modifiers;
         };
         lc_nw: numword_on_press_lc_sym_on_hold {
             compatible = "zmk,behavior-hold-tap";
