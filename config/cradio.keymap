@@ -126,6 +126,12 @@
             layers = <NAV>;
             bindings = <&expose>;
         };
+        
+        combo_hyper {
+            key-positions = <2 3>;
+            layers = <DEF>;
+            bindings = <&kp LG(LS(LA(LCTRL)))>;
+        };
 
         combo_mute {
             key-positions = <4 14>; // Vol up + down keys
