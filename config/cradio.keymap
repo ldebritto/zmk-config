@@ -7,7 +7,6 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4
-
 #define AOED 5 // AOE2 Layers for in game shortcuts
 #define AOEG 6
 #define AOEB 7
@@ -32,9 +31,9 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
+&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U         &kp I      &kp O    &kp P
+&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J         &kp K      &kp L    &kp SQT
+&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M         &kp COMMA  &kp DOT  &mt GLOBE SEMI
                            &lc NAV  &shft_cw    &kp SPACE  &lc_nw SYM 0
             >;
         };
@@ -126,9 +125,9 @@
             layers = <NAV>;
             bindings = <&expose>;
         };
-        
+
         combo_hyper {
-            key-positions = <2 3>;
+            key-positions = <27 28>;
             layers = <DEF>;
             bindings = <&kp LG(LS(LA(LCTRL)))>;
         };
@@ -221,6 +220,7 @@
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LGUI LCTRL RCTRL LALT RALT LSHIFT>;
             ignore-numbers;
+
             // ignore-modifiers;
         };
         lc_nw: numword_on_press_lc_sym_on_hold {
