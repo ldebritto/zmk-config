@@ -123,7 +123,7 @@
             bindings = <&tog NAV>;
         };
         
-        combo_num_word {
+        combo_numword {
             key-positions = <32 33>;
             layers = <DEF NUM>;
             bindings = <&numword>;
@@ -191,6 +191,7 @@
     };
 
     behaviors {
+
         shft_cw: shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
@@ -198,6 +199,7 @@
             tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&caps_word>;
         };
+
         nextprev: next_previous_song {
             compatible = "zmk,behavior-tap-dance";
             label = "NEXT-PREVIOUS";
@@ -205,6 +207,7 @@
             tapping-term-ms = <250>;
             bindings = <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
+
         expose: expose_and_show_desktop {
             compatible = "zmk,behavior-tap-dance";
             label = "EXPOSE_TAP_DANCE";
@@ -214,14 +217,15 @@
                 <&kp C_AC_DESKTOP_SHOW_ALL_WINDOWS>,
                 <&kp LG(C_AC_DESKTOP_SHOW_ALL_WINDOWS)>;
         };
+        
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
-
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+
         numword: numword {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
             label = "NUM_WORD_SMART_LAYER";
