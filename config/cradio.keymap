@@ -227,8 +227,9 @@
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LGUI LCTRL RCTRL LALT RALT LSHIFT>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
             ignore-numbers;
+            ignore-modifiers;
         };
     };
 
