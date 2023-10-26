@@ -122,6 +122,12 @@
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
+        
+        combo_num_word {
+            key-positions = <32 33>;
+            layers = <DEF NUM>;
+            bindings = <&numword>;
+        };
 
         combo_expose_desktop {
             key-positions = <2 3>;
@@ -223,15 +229,6 @@
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LGUI LCTRL RCTRL LALT RALT LSHIFT>;
             ignore-numbers;
-
-            // ignore-modifiers;
-        };
-        lc_nw: numword_on_press_lc_sym_on_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NUM_WORD_LC_SYM";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&lc>, <&numword>;
         };
     };
 
