@@ -90,10 +90,10 @@
 
         aoe_unit_and_group_selection {
             bindings = <
-&kp ESC    &trans     &trans         &trans   &kp DEL        &trans  &trans  &trans  &trans  &trans
-&kp N2     &kp N3     &kp N4         &kp N5   &kp N6         &trans  &trans  &trans  &trans  &trans
-&sk LCTRL  &kp COMMA  &kp LS(COMMA)  &kp DOT  &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
-                                     &trans   &trans         &trans  &trans
+&kp ESC       &kp N7       &kp N8              &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
+&mt LCTRL N2  &mt LALT N3  &mt LSHFT NUMBER_4  &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
+&kp SPACE     &kp COMMA    &kp LS(COMMA)       &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
+                                               &trans        &trans         &trans  &trans
             >;
         };
 
@@ -200,6 +200,7 @@
             tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&caps_word>;
         };
+
         nextprev: next_previous_song {
             compatible = "zmk,behavior-tap-dance";
             label = "NEXT-PREVIOUS";
@@ -207,6 +208,7 @@
             tapping-term-ms = <250>;
             bindings = <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
+
         expose: expose_and_show_desktop {
             compatible = "zmk,behavior-tap-dance";
             label = "EXPOSE_TAP_DANCE";
@@ -216,6 +218,7 @@
                 <&kp C_AC_DESKTOP_SHOW_ALL_WINDOWS>,
                 <&kp LG(C_AC_DESKTOP_SHOW_ALL_WINDOWS)>;
         };
+
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SWAPPER";
@@ -224,6 +227,7 @@
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+
         numword: numword {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
             label = "NUM_WORD_SMART_LAYER";
@@ -233,6 +237,7 @@
             ignore-numbers;
             ignore-modifiers;
         };
+
         hrml: hrml {
             compatible = "zmk,behavior-hold-tap";
             label = "HRML";
@@ -243,6 +248,7 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
         };
+
         hrmr: hrmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HRMR";
