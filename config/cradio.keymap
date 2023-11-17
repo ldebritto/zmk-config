@@ -5,16 +5,17 @@
 // Default Apple layers
 
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
+#define NHR 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
 
 // AOE2 Layers for in game shortcuts
 
-#define AOED 5
-#define AOEG 6
-#define AOEB 7
+#define AOED 6
+#define AOEG 7
+#define AOEB 8
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`
@@ -34,12 +35,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        default_layer_with_home_row_mods {
             bindings = <
 &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                     &kp U         &kp I          &kp O         &kp P
 &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RGUI))) H  &hrmr RGUI J  &hrmr RSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B                       &kp N                     &kp M         &kp COMMA      &kp DOT       &mt GLOBE SEMI
                                             &lc NAV       &shft_cw                    &kp SPACE                 &lc SYM
+            >;
+        };
+        
+        defaulf_without_home_row_mods {
+            bindings = <
+&kp Q          &kp W    &kp E   &kp R   &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A          &kp S    &kp D   &kp F   &kp G      &kp H      &kp J  &kp K      &kp L    &kp SQT
+&mt GLOBE Z    &kp X    &kp C   &kp V   &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &mt GLOBE SEMI
+                                &lc NAV &shft_cw   &kp SPACE  &lc SYM
             >;
         };
 
@@ -137,14 +147,14 @@
             bindings = <&expose>;
         };
 
-        combo_hyper {
-            key-positions = <27 28>;
-            layers = <DEF>;
-            bindings = <&sk LG(LS(LA(LCTRL)))>;
+        toggle_no_home_row_mods_default_layer {
+            key-positions = <10 19>;
+            layers = <FUN>;
+            bindings = <&tog NHR>;
         };
 
         combo_mute {
-            key-positions = <4 14>; // Vol up + down keys
+            key-positions = <4 14>; // Vol up
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
