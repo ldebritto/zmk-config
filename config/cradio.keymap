@@ -187,7 +187,7 @@
         
         combo_dollar {
             key-positions = <3 13>;
-            layers = <DEF>
+            layers = <DEF>;
             require-prior-idle-ms = <150>;
             bindings = <&kp DOLLAR>;
         };
