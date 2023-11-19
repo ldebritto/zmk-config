@@ -40,7 +40,7 @@
 &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                     &kp U         &kp I          &kp O         &kp P
 &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RGUI))) H  &hrmr RGUI J  &hrmr RSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B                       &kp N                     &kp M         &kp COMMA      &kp DOT       &mt GLOBE SEMI
-                                            &lc NAV       &shft_cw                    &kp SPACE                 &lc SYM
+                                            &lc NAV       &shft_cw                    &kp SPACE                 &lc_nw SYM 0
             >;
         };
 
@@ -137,7 +137,7 @@
 
         combo_numword {
             key-positions = <32 33>;
-            layers = <DEF NUM>;
+            layers = <DEF NHR NUM>;
             bindings = <&numword>;
         };
 
@@ -246,6 +246,14 @@
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
             ignore-numbers;
             ignore-modifiers;
+        };
+
+        lc_nw: numword_on_press_lc_sym_on_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NUM_WORD_LC_SYM";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&lc>, <&numword>;
         };
 
         hrml: hrml {
