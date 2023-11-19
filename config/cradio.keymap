@@ -129,6 +129,8 @@
     combos {
         compatible = "zmk,combos";
 
+        
+        // Layer combos
         combo_toggle_nav {
             key-positions = <30 31>;
             layers = <DEF NAV>;
@@ -137,7 +139,7 @@
 
         combo_numword {
             key-positions = <32 33>;
-            layers = <DEF NHR NUM>;
+            layers = <NHR NUM>;
             bindings = <&numword>;
         };
 
@@ -147,12 +149,14 @@
             bindings = <&tog NHR>;
         };
 
+        // Multimedia combos
         combo_mute {
             key-positions = <4 14>; // Vol up
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
 
+        // DEF combos
         combo_left_enter {
             key-positions = <2 3>;
             layers = <DEF>;
@@ -165,6 +169,118 @@
             layers = <DEF>;
             require-prior-idle-ms = <150>;
             bindings = <&kp ESC>;
+        };
+        
+        combo_at {
+            key-positions = <1 11>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp AT>;
+        };
+        
+        combo_hash {
+            key-positions = <2 12>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp HASH>;
+        };
+        
+        combo_dollar {
+            key-positions = <3 13>;
+            layers = <DEF>
+            require-prior-idle-ms = <150>;
+            bindings = <&kp DOLLAR>;
+        };
+        
+        combo_percent {
+            key-positions = <4 14>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp PERCENT>;
+        };
+
+        combo_circunflex {
+            key-positions = <5 15>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp CARET>;
+        };
+
+        combo_plus {
+            key-positions = <6 16>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp PLUS>;
+        };
+
+        combo_asterisk {
+            key-positions = <7 17>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp ASTERISK>;
+        };
+        
+        combo_anpersand {
+            key-positions = <8 18>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp AMPERSAND>;
+        };
+
+        combo_grave {
+            key-positions = <11 21>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp GRAVE>;
+        };
+        
+        combo_slash {
+            key-positions = <12 22>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp SLASH>;
+        };
+
+        combo_equal {
+            key-positions = <13 23>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp EQUAL>;
+        };
+        
+        combo_tilde {
+            key-positions = <14 24>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp TILDE>;
+        };
+
+        combo_underscore {
+            key-positions = <15 25>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp UNDER>;
+        };
+        
+        combo_minus {
+            key-positions = <16 26>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp MINUS>;
+        };
+        
+        combo_forward_slash {
+            key-positions = <17 27>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp FSLH>;
+        };
+
+        combo_pipe {
+            key-positions = <18 28>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp PIPE>;
         };
         
         combo_cut {
@@ -202,6 +318,20 @@
             bindings = <&kp DEL>;
         };
         
+        combo_open_parenthesis {
+            key-positions = <16 17>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp LPAR>;
+        };
+        
+        combo_close_parenthesis {
+            key-positions = <17 18>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp RPAR>;
+        };
+
         combo_open_bracket {
             key-positions = <26 27>;
             layers = <DEF>;
@@ -215,7 +345,8 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp RBKT>;
         };
-        
+    
+        // Bluetooth combos
         combo_trigger_bootloader {
             key-positions = <20 21>;
             layers = <FUN>;
