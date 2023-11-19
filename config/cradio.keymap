@@ -322,14 +322,14 @@
             key-positions = <16 17>;
             layers = <DEF>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp LPAR>;
+            bindings = <&hrmr RG(LSHFT) LPAR>; // workaround to allow chording mods and having the parenthesis combo described by urob in his repo
         };
         
         combo_close_parenthesis {
             key-positions = <17 18>;
             layers = <DEF>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp RPAR>;
+            bindings = <&hrmr RA(RSHFT) RPAR>; // workaround to allow chording mods and having the parenthesis combo described by urob in his repo
         };
 
         combo_open_bracket {
