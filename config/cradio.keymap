@@ -346,6 +346,20 @@
             bindings = <&kp RBKT>;
         };
     
+        combo_exclamation {
+            key-positions = <9 19>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp EXCLAMATION>;
+        };
+    
+        combo_question_mark {
+            key-positions = <19 29>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp QUESTION>;
+        };
+    
         // Bluetooth combos
         combo_trigger_bootloader {
             key-positions = <20 21>;
@@ -377,6 +391,7 @@
             bindings = <&bt BT_CLR>;
         };
 
+        // AOE combos
         combo_toggle_aoe_layer {
             bindings = <&tog AOED>;
             key-positions = <1 2 3>;
