@@ -177,7 +177,7 @@
             key-positions = <2 3>;
             layers = <DEF>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp ESC>;
+            bindings = <&kp TAB>;
         };
 
         combo_at {
