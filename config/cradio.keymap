@@ -38,7 +38,7 @@
         default_layer_with_home_row_mods {
             bindings = <
 &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                     &kp U         &kp I          &kp O         &kp P
-&hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RGUI))) H  &hrmr RGUI J  &hrmr RSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+&hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RGUI))) H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B                       &kp N                     &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
                                             &lc NAV       &shft_cw                    &kp SPACE                 &lc_nw SYM 0
             >;
@@ -450,9 +450,9 @@
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LSHFT RALT RCTRL>;
             ignore-numbers;
-            ignore-modifiers;
+            // ignore-modifiers;
         };
 
         lc_nw: numword_on_press_lc_sym_on_hold {
