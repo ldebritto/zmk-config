@@ -165,6 +165,13 @@
             require-prior-idle-ms = <150>;
             bindings = <&hrml LG(LSHFT) ENTER>;
         };
+        
+        combo_right_enter {
+            key-positions = <18 19>;
+            layers = <DEF>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp ENTER>;
+        };
 
         combo_left_esc {
             key-positions = <1 2>;
