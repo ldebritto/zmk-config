@@ -64,10 +64,10 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN        &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_PLAY_PAUSE    &nextprev  &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &mt GLOBE DEL
-                                             &trans       &trans              &trans     &trans
+&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP     &kp HOME      &kp UP        &kp END            &kp BSPC
+&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN        &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev       &kp LG(SPACE) &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &mt GLOBE DEL
+                                             &trans       &trans              &trans        &trans
             >;
         };
 
@@ -432,12 +432,12 @@
             bindings = <&kp RSHFT>, <&caps_word>;
         };
 
-        nextprev: next_previous_song {
+        playnextprev: next_previous_song {
             compatible = "zmk,behavior-tap-dance";
             label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp C_NEXT>, <&kp C_PREVIOUS>;
+            bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
         expose: expose_and_show_desktop {
