@@ -133,13 +133,13 @@
 
         combo_toggle_nav {
             key-positions = <30 31>;
-            layers = <DEF NAV>;
+            layers = <DEF HRM NAV>;
             bindings = <&tog NAV>;
         };
 
         combo_numword {
             key-positions = <32 33>;
-            layers = <HRM NUM>;
+            layers = <DEF NUM>;
             bindings = <&numword>;
         };
 
@@ -464,7 +464,7 @@
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LSHFT RALT RCTRL K_CANCEL>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI LSHFT RALT RCTRL K_CANCEL>; // RSHFT will cancel it
             ignore-numbers;
             // ignore-modifiers;
         };
