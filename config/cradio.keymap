@@ -64,19 +64,19 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP     &kp HOME      &kp UP            &kp END      &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN        &kp PG_DN     &kp LEFT      &kp DOWN          &kp RIGHT    &kp ENTER
+&kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP     &kp HOME      &kp UP            &kp END      &kp BSPC
+&sk LCTRL          &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN        &kp PG_DN     &kp LEFT      &kp DOWN          &kp RIGHT    &kp ENTER
 &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev       &kp LG(LBKT)  &kp LG(SPACE) &kp LS(LG(SPACE)) &kp LG(RBKT) &hrmr GLOBE DEL
-                                             &trans       &trans              &trans        &trans
+                                               &trans       &trans              &trans        &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &hrmr GLOBE EXCL
-                                      &trans     &trans       &trans      &trans
+&kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
+&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &numword    &kp BSLH  &kp AMPS   &kp QMARK  &hrmr GLOBE EXCL
+                                      &trans     &trans         &trans      &trans
             >;
         };
 
