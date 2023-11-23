@@ -91,10 +91,10 @@
 
         aoe_default_layer {
             bindings = <
-&kp Q        &kp W       &kp E        &kp R        &kp T             &to DEF  &to DEF  &to DEF  &to DEF  &to DEF
-&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G             &to DEF  &to DEF  &to DEF  &to DEF  &to DEF
-&kp Z        &kp X       &kp C        &kp V        &kp B             &to DEF  &to DEF  &to DEF  &to DEF  &to DEF
-                                      &lt AOEG H   &lt AOEB SPACE    &to DEF  &to DEF
+&kp Q        &kp W       &kp E        &kp R        &kp T             &trans  &trans  &trans  &trans  &trans
+&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G             &trans  &trans  &trans  &trans  &trans
+&kp Z        &kp X       &kp C        &kp V        &kp B             &trans  &trans  &trans  &trans  &trans
+                                      &lt AOEG H   &lt AOEB SPACE    &trans  &trans
             >;
         };
 
