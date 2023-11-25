@@ -31,16 +31,22 @@
     quick-release; // avoids "THe"
 };
 
+&lt {
+    flavor = "balanced";
+    quick-tap-ms = <100>;
+    hold-trigger-on-release;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
-&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &hrmr GLOBE SEMI
-                           &lc NAV  &shft_cw    &kp SPACE  &lc_nw SYM 0
+&kp Q          &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U         &kp I      &kp O    &kp P
+&kp A          &kp S  &kp D  &kp F    &kp G       &kp H      &kp J         &kp K      &kp L    &kp SQT
+&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M         &kp COMMA  &kp DOT  &hrmr GLOBE SEMI
+                             &lc NAV  &shft_cw    &kp SPACE  &lc_nw SYM 0
             >;
         };
 
@@ -49,7 +55,7 @@
 &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                     &kp U         &kp I          &kp O         &kp P
 &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RGUI))) H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B                       &kp N                     &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
-                                            &lc NAV       &shft_cw                    &kp SPACE                 &lc_nw SYM 0
+                                            &lc NAV       &mt RSHFT ENTER             &lt 4 SPACE               &lt 2 BSPC
             >;
         };
 
@@ -64,19 +70,19 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP        &kp PG_UP     &kp HOME      &kp UP            &kp END      &kp BSPC
-&sk LCTRL          &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN        &kp PG_DN     &kp LEFT      &kp DOWN          &kp RIGHT    &kp ENTER
-&hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev       &kp LG(LBKT)  &kp LG(SPACE) &kp LS(LG(SPACE)) &kp LG(RBKT) &hrmr GLOBE DEL
-                                               &trans       &trans              &trans        &trans
+&kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME       &kp UP             &kp END       &kp BSPC
+&sk LCTRL          &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN     &kp LEFT       &kp DOWN           &kp RIGHT     &kp ENTER
+&hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LG(LBKT)  &kp LG(SPACE)  &kp LS(LG(SPACE))  &kp LG(RBKT)  &hrmr GLOBE DEL
+                                               &trans       &trans           &trans        &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &numword    &kp BSLH  &kp AMPS   &kp QMARK  &hrmr GLOBE EXCL
-                                      &trans     &trans         &trans      &trans
+&kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET  &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
+&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &numword   &kp BSLH  &kp AMPS   &kp QMARK  &hrmr GLOBE EXCL
+                                        &trans     &trans       &trans     &trans
             >;
         };
 
@@ -124,6 +130,11 @@
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
+
+        hrm_tri_layer {
+            if-layers = <2 3>;
+            then-layer = <5>;
+        };
     };
 
     combos {
@@ -165,7 +176,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&hrml LG(LSHFT) ENTER>;
         };
-        
+
         combo_right_enter {
             key-positions = <18 19>;
             layers = <HRM>;
@@ -179,7 +190,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp ESC>;
         };
-        
+
         combo_tab {
             key-positions = <2 3>;
             layers = <HRM>;
@@ -466,6 +477,7 @@
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI RSHFT RALT RCTRL>;
             ignore-numbers;
+
             // ignore-modifiers;
         };
 
