@@ -43,9 +43,9 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q          &kp W  &kp E  &kp R    &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
-&kp A          &kp S  &kp D  &kp F    &kp G        &kp H    &kp J  &kp K      &kp L    &kp SQT
-&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &hrmr GLOBE SEMI
+&kp Q          &kp W  &kp E  &kp R    &kp T        &kp Y    &kp U  &kp I   &kp O        &kp P
+&kp A          &kp S  &kp D  &kp F    &kp G        &kp H    &kp J  &kp K   &kp L        &kp SQT
+&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N    &kp M  &comma  &dot_collon  &int_exc
                              &lc NAV  &kp RSHFT    &spc_cw  &lc 4
             >;
         };
@@ -516,6 +516,33 @@
             compatible = "zmk,behavior-mod-morph";
             label = "SPC_CW";
             bindings = <&kp SPACE>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        comma: comma {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA";
+            bindings = <&kp COMMA>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        dot_collon: dot_collon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_COLLON";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        int_exc: int_exc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "INT_EXC";
+            bindings = <&kp QMARK>, <&kp EXCL>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
