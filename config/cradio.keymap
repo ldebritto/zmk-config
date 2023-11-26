@@ -168,7 +168,7 @@
             bindings = <&kp C_MUTE>;
         };
 
-        // HRM combos
+/*         // HRM combos as in urob's config
 
         combo_left_enter {
             key-positions = <12 13>;
@@ -386,7 +386,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp QUESTION>;
         };
-
+ */
         // Bluetooth combos
 
         combo_trigger_bootloader {
