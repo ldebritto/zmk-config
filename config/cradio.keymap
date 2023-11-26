@@ -130,11 +130,6 @@
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
-
-        hrm_tri_layer {
-            if-layers = <2 3>;
-            then-layer = <5>;
-        };
     };
 
     combos {
@@ -150,7 +145,7 @@
 
         combo_numword {
             key-positions = <32 33>;
-            layers = <DEF NUM>;
+            layers = <0>;
             bindings = <&numword>;
         };
 
@@ -168,7 +163,7 @@
             bindings = <&kp C_MUTE>;
         };
 
-/*         // HRM combos as in urob's config
+        /*         // HRM combos as in urob's config
 
         combo_left_enter {
             key-positions = <12 13>;
