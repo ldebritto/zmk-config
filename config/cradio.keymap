@@ -81,7 +81,7 @@
             bindings = <
 &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET  &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
 &kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
-&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &numword   &kp BSLH  &kp AMPS   &kp QMARK  &hrmr GLOBE EXCL
+&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6) &kp BSLH  &kp AMPS   &kp TILDE  &hrmr GLOBE CARET
                                         &trans     &trans       &trans     &trans
             >;
         };
@@ -161,6 +161,52 @@
             key-positions = <4 14>; // Vol up
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
+        };
+
+        // Bluetooth combos
+
+        combo_trigger_bootloader {
+            key-positions = <20 21>;
+            layers = <FUN>;
+            bindings = <&bootloader>;
+        };
+
+        combo_toggle_bt0_connection {
+            key-positions = <3 4>;
+            layers = <FUN>;
+            bindings = <&bt BT_SEL 0>;
+        };
+
+        combo_toggle_bt1_connection {
+            key-positions = <13 14>;
+            layers = <FUN>;
+            bindings = <&bt BT_SEL 1>;
+        };
+
+        combo_toggle_bt2_connection {
+            key-positions = <23 24>;
+            layers = <FUN>;
+            bindings = <&bt BT_SEL 2>;
+        };
+
+        combo_clear_current_bluetooth_profile {
+            key-positions = <28 29>;
+            layers = <FUN>;
+            bindings = <&bt BT_CLR>;
+        };
+
+        // AOE combos
+
+        combo_toggle_aoe_layer {
+            bindings = <&tog AOED>;
+            key-positions = <1 2 3>;
+            layers = <DEF AOED>;
+        };
+
+        aoe_pause {
+            bindings = <&kp F3>;
+            key-positions = <21 22 23>;
+            layers = <AOED>;
         };
 
         /*         // HRM combos as in urob's config
@@ -382,51 +428,7 @@
             bindings = <&kp QUESTION>;
         };
  */
-        // Bluetooth combos
-
-        combo_trigger_bootloader {
-            key-positions = <20 21>;
-            layers = <FUN>;
-            bindings = <&bootloader>;
-        };
-
-        combo_toggle_bt0_connection {
-            key-positions = <3 4>;
-            layers = <FUN>;
-            bindings = <&bt BT_SEL 0>;
-        };
-
-        combo_toggle_bt1_connection {
-            key-positions = <13 14>;
-            layers = <FUN>;
-            bindings = <&bt BT_SEL 1>;
-        };
-
-        combo_toggle_bt2_connection {
-            key-positions = <23 24>;
-            layers = <FUN>;
-            bindings = <&bt BT_SEL 2>;
-        };
-
-        combo_clear_current_bluetooth_profile {
-            key-positions = <28 29>;
-            layers = <FUN>;
-            bindings = <&bt BT_CLR>;
-        };
-
-        // AOE combos
-
-        combo_toggle_aoe_layer {
-            bindings = <&tog AOED>;
-            key-positions = <1 2 3>;
-            layers = <DEF AOED>;
-        };
-
-        aoe_pause {
-            bindings = <&kp F3>;
-            key-positions = <21 22 23>;
-            layers = <AOED>;
-        };
+        
     };
 
     behaviors {
