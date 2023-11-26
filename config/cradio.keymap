@@ -81,7 +81,7 @@
             bindings = <
 &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp LT       &kp GT     &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
 &kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6) &kp BSLH  &kp AMPS   &kp TILDE  &hrmr GLOBE CARET
+&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6) &kp BSLH  &kp CARET  &kp TILDE  &hrmr GLOBE AMPS
                                         &trans     &trans       &trans     &trans
             >;
         };
