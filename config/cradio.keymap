@@ -43,10 +43,10 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q          &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U         &kp I      &kp O    &kp P
-&kp A          &kp S  &kp D  &kp F    &kp G       &kp H      &kp J         &kp K      &kp L    &kp SQT
-&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M         &kp COMMA  &kp DOT  &hrmr GLOBE SEMI
-                             &lc NAV  &shft_cw    &kp SPACE  &lc_nw SYM 0
+&kp Q          &kp W  &kp E  &kp R    &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P
+&kp A          &kp S  &kp D  &kp F    &kp G        &kp H    &kp J  &kp K      &kp L    &kp SQT
+&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &hrmr GLOBE SEMI
+                             &lc NAV  &kp RSHFT    &spc_cw  &lc 4
             >;
         };
 
@@ -510,6 +510,15 @@
             hold-trigger-on-release;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
+        };
+
+        spc_cw: spc_cw {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPC_CW";
+            bindings = <&kp SPACE>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
         };
     };
 
