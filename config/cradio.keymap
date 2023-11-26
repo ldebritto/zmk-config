@@ -43,9 +43,9 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q          &kp W  &kp E  &kp R    &kp T        &kp Y    &kp U  &kp I   &kp O        &kp P
-&kp A          &kp S  &kp D  &kp F    &kp G        &kp H    &kp J  &kp K   &kp L        &kp SQT
-&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N    &kp M  &comma  &dot_collon  &int_exc
+&kp Q          &kp W  &kp E  &kp R    &kp T        &kp Y    &kp U  &kp I        &kp O        &kp P
+&kp A          &kp S  &kp D  &kp F    &kp G        &kp H    &kp J  &kp K        &kp L        &kp SQT
+&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N    &kp M  &comma_semi  &dot_collon  &int_exc
                              &lc NAV  &kp RSHFT    &spc_cw  &lc 4
             >;
         };
@@ -521,9 +521,9 @@
             mods = <(MOD_RSFT)>;
         };
 
-        comma: comma {
+        comma_semi: comma_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "COMMA";
+            label = "COMMA_SEMI";
             bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
