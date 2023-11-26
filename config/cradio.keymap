@@ -43,10 +43,10 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q          &kp W  &kp E  &kp R    &kp T        &kp Y    &kp U  &kp I        &kp O        &kp P
-&kp A          &kp S  &kp D  &kp F    &kp G        &kp H    &kp J  &kp K        &kp L        &kp SQT
-&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N    &kp M  &comma_semi  &dot_collon  &int_exc
-                             &lc NAV  &kp RSHFT    &spc_cw  &lc 4
+&kp Q          &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I        &kp O        &kp P
+&kp A          &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K        &kp L        &kp SQT
+&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &comma_semi  &dot_collon  &int_exc
+                             &lc NAV  &shft_cw    &kp SPACE  &lc 4
             >;
         };
 
@@ -72,7 +72,7 @@
             bindings = <
 &kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP             &kp HOME              &kp UP        &kp END            &kp BSPC
 &sk LCTRL          &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN             &kp LEFT              &kp DOWN      &kp RIGHT          &kp ENTER
-&hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &sk LS(LA(LC(LGUI)))  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &hrmr GLOBE DEL
+&hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &caps_word  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &hrmr GLOBE DEL
                                                &trans       &trans           &trans                &trans
             >;
         };
@@ -80,7 +80,7 @@
         symbols_layer {
             bindings = <
 &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp LT       &kp GT     &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk RGUI  &sk RSHFT  &sk RALT   &sk RCTRL
+&kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
 &hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6) &kp BSLH  &kp AMPS   &kp TILDE  &hrmr GLOBE CARET
                                         &trans     &trans       &trans     &trans
             >;
@@ -89,7 +89,7 @@
         function_and_number_row {
             bindings = <
 &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk RSHFT  &sk RALT  &sk RCTRL
+&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                 &trans    &trans     &trans   &trans
             >;
