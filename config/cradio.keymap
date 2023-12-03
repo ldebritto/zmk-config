@@ -237,7 +237,7 @@
             key-positions = <2 3>;
             layers = <HRM>;
             require-prior-idle-ms = <150>;
-            bindings = <&hrml LG(LSHFT) REPEAT>;
+            bindings = <&hrml LG(LSHFT) ENTER>;
         };
 
         combo_right_enter {
