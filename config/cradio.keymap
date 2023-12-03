@@ -221,7 +221,7 @@
             layers = <0 3>;
         };
 
-        /*         // HRM combos as in urob's config
+        // HRM combos as in urob's config
 
         combo_left_enter {
             key-positions = <12 13>;
@@ -439,7 +439,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp QUESTION>;
         };
- */
+
     };
 
     behaviors {
