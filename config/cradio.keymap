@@ -210,7 +210,6 @@
             compatible = "zmk,behavior-tap-dance";
             label = "HOMEROW_TAP_AND_SEARCH";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
             bindings = <&kp LG(LS(SPACE))>, <&kp LG((LS(LA(LC(F)))))>;
         };
 
@@ -218,7 +217,6 @@
             compatible = "zmk,behavior-tap-dance";
             label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
