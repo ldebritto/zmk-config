@@ -48,7 +48,7 @@
 &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
 &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
 &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                           &lc NAV  &shft_cw    &kp SPACE  &lc SYM
+                           &lc NAV  &shft_cw    &kp SPACE  &lc_nw SYM 0
             >;
         };
 
@@ -63,9 +63,9 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP              &kp HOME              &kp UP        &kp END            &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN              &kp LEFT              &kp DOWN      &kp RIGHT          &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LG(LA(LS(LC(J))))  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &mt GLOBE DEL
+&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP              &kp HOME              &kp UP        &kp END    &kp BSPC
+&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN              &kp LEFT              &kp DOWN      &kp RIGHT  &kp ENTER
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LG(LA(LS(LC(J))))  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
                                              &trans       &trans           &trans                 &trans
             >;
         };
@@ -205,6 +205,14 @@
             tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&caps_word>;
         };
+        
+        homerow: homerow_app_tap_search { // for use with Homerow app
+            compatible = "zmk,behavior-tap-dance";
+            label = "HOMEROW_TAP_AND_SEARCH";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LG(LS(SPACE))>, <&kp LG((LS(LA(LC(F)))))>;
+        };
 
         playnextprev: next_previous_song {
             compatible = "zmk,behavior-tap-dance";
@@ -236,7 +244,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "NUM_WORD_LC_SYM";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>;
             bindings = <&lc>, <&numword>;
         };
     };
