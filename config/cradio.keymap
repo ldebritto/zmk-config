@@ -5,11 +5,10 @@
 // Default Apple layers
 
 #define DEF 0
-#define HRM 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
 
 // AOE2 Layers for in game shortcuts
 
@@ -17,27 +16,31 @@
 #define AOEG 7
 #define AOEB 8
 
-// Hyper
-#define HYPER LS(LA(LC(LGUI)))
+// Customized behaviors
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use diacriticals in PT-BR, even with ~, ` and ^ dedicated keys
 };
 
-&mt {
-    flavor = "tap-preferred";
-};
-
 &sk {
-    release-after-ms = <600000>; // set to a bonkers 10mins default is 1s 1000ms
+    release-after-ms = <600000>; // set to a bonkers 10mins default is 1s 1000ms to match Callum's config
     quick-release; // avoids "THe"
 };
 
 &lt {
     flavor = "balanced";
-    quick-tap-ms = <100>;
+    tapping-term-ms = <200>;
     hold-trigger-on-release;
+    quick-tap-ms = <175>;
+};
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    hold-trigger-on-release;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
 };
 
 / {
@@ -46,45 +49,36 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q          &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A          &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-&hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &hrmr GLOBE SEMI
-                             &lc NAV  &shft_cw    &kp SPACE  &lc SYM
-            >;
-        };
-
-        default_layer_with_home_row_mods {
-            bindings = <
-&kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
-&hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N          &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
-                                            &lc NAV       &shft_cw        &lt NUM SPACE  &lc_nw SYM 0
+&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &mt GLOBE SEMI
+                           &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
         numpad {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9            &trans    &trans  &trans            &trans  &trans  &trans
-&kp N0  &kp N4  &kp N5  &kp N6            &trans    &trans  &trans            &trans  &trans  &trans
-&trans  &kp N1  &kp N2  &kp N3            &trans    &trans  &trans            &trans  &trans  &trans
-                        &lt NAV K_CANCEL  &trans    &trans  &lt SYM K_CANCEL
+&trans  &kp N7  &kp N8  &kp N9   &trans    &trans  &trans  &trans  &trans  &trans
+&kp N0  &kp N4  &kp N5  &kp N6   &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &kp N1  &kp N2  &kp N3   &trans    &trans  &trans  &trans  &trans  &trans
+                        &lc NAV  &trans    &trans  &lc SYM
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP   &kp HOME              &kp UP        &kp END            &kp BSPC
-&sk LCTRL          &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN   &kp LEFT              &kp DOWN      &kp RIGHT          &kp ENTER
-&hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &caps_word  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &hrmr GLOBE DEL
+&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP   &kp HOME              &kp UP        &kp END            &kp BSPC
+&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN   &kp LEFT              &kp DOWN      &kp RIGHT          &kp ENTER
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &caps_word  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &mt GLOBE DEL
                                                &trans       &trans           &trans      &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC  &kp GRAVE
-&kp MINUS         &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-&hrml GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK &hrmr GLOBE EXCL
+&kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC  &kp GRAVE
+&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK &mt GLOBE EXCL
                                         &trans     &trans       &trans      &trans
             >;
         };
@@ -116,7 +110,7 @@
             >;
         };
 
-        aoe_all_buildings_selection {
+        aoe_select_all_buildings {
             bindings = <
 &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
 &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
@@ -142,20 +136,14 @@
 
         combo_toggle_nav {
             key-positions = <30 31>;
-            layers = <DEF HRM NAV>;
+            layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
 
         combo_numword {
             key-positions = <32 33>;
-            layers = <DEF HRM>;
+            layers = <DEF>;
             bindings = <&numword>;
-        };
-
-        toggle_home_row_mods_on_off_on_default_layer {
-            key-positions = <10 19>;
-            layers = <FUN>;
-            bindings = <&tog HRM>;
         };
 
         // Multimedia combos
@@ -224,236 +212,12 @@
             layers = <0 3>;
         };
 
-        // HRM combos as in urob's config
-
-        
-        combo_left_enter {
-            key-positions = <2 3>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&hrml LG(LSHFT) ENTER>;
-        };
-        
-        combo_left_homerow {
-            key-positions = <12 13>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp LG(LS(SPACE))>;
-        };
-
-        combo_right_enter {
-            key-positions = <18 19>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp ENTER>;
-        };
-
-        combo_left_esc {
-            key-positions = <1 2>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_tab {
-            key-positions = <11 12>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&hrml LA(LSHFT) TAB>;
-        };
-
-        combo_at {
-            key-positions = <1 11>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp AT>;
-        };
-
-        combo_hash {
-            key-positions = <2 12>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp HASH>;
-        };
-
-        combo_dollar {
-            key-positions = <3 13>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp DOLLAR>;
-        };
-
-        combo_percent {
-            key-positions = <4 14>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp PERCENT>;
-        };
-
-        combo_circunflex {
-            key-positions = <5 15>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp CARET>;
-        };
-
-        combo_plus {
-            key-positions = <6 16>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp PLUS>;
-        };
-
-        combo_asterisk {
-            key-positions = <7 17>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp ASTERISK>;
-        };
-
-        combo_anpersand {
-            key-positions = <8 18>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp AMPERSAND>;
-        };
-
-        combo_grave {
-            key-positions = <11 21>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp GRAVE>;
-        };
-
-        combo_slash {
-            key-positions = <12 22>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp SLASH>;
-        };
-
-        combo_equal {
-            key-positions = <13 23>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp EQUAL>;
-        };
-
-        combo_tilde {
-            key-positions = <14 24>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp TILDE>;
-        };
-
-        combo_underscore {
-            key-positions = <15 25>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp UNDER>;
-        };
-
-        combo_minus {
-            key-positions = <16 26>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp MINUS>;
-        };
-
-        combo_forward_slash {
-            key-positions = <17 27>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp FSLH>;
-        };
-
-        combo_pipe {
-            key-positions = <18 28>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp PIPE>;
-        };
-
-        combo_cut {
-            key-positions = <21 23>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp LG(X)>;
-        };
-
-        combo_copy {
-            key-positions = <21 22>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp LG(C)>;
-        };
-
-        combo_paste {
-            key-positions = <22 23>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp LG(V)>;
-        };
-
-        combo_backspace {
-            key-positions = <6 7>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp BSPC>;
-        };
-
-        combo_del {
-            key-positions = <7 8>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp DEL>;
-        };
-
-        combo_open_parenthesis {
-            key-positions = <16 17>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&hrmr RG(LSHFT) LPAR>; // workaround to allow chording mods and having the parenthesis combo described by urob in his repo
-        };
-
-        combo_close_parenthesis {
-            key-positions = <17 18>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&hrmr RA(RSHFT) RPAR>; // workaround to allow chording mods and having the parenthesis combo described by urob in his repo
-        };
-
-        combo_open_bracket {
-            key-positions = <26 27>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp LBKT>;
-        };
-
-        combo_close_bracket {
-            key-positions = <27 28>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp RBKT>;
-        };
-
-        combo_exclamation {
-            key-positions = <0 10>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp EXCLAMATION>;
-        };
-
-        combo_question_mark {
-            key-positions = <19 29>;
-            layers = <HRM>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp QUESTION>;
-        };
-
     };
 
     behaviors {
+
+        // Custom behaviors
+
         shft_cw: shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
@@ -470,16 +234,6 @@
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
-        expose: expose_and_show_desktop {
-            compatible = "zmk,behavior-tap-dance";
-            label = "EXPOSE_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings =
-                <&kp C_AC_DESKTOP_SHOW_ALL_WINDOWS>,
-                <&kp LG(C_AC_DESKTOP_SHOW_ALL_WINDOWS)>;
-        };
-
         swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SWAPPER";
@@ -494,10 +248,8 @@
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NUM>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL RGUI RSHFT RALT RCTRL>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
-
-            // ignore-modifiers;
         };
 
         lc_nw: numword_on_press_lc_sym_on_hold {
@@ -506,34 +258,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             bindings = <&lc>, <&numword>;
-        };
-
-        hrml: hrml {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRML";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-        };
-
-        hrmr: hrmr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRMR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
         };
     };
 
