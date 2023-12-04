@@ -145,6 +145,24 @@
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
+        
+        combo_left_enter_on_nav {
+            key-positions = <2 3>; // Vol up
+            layers = <NAV>;
+            bindings = <&kp ENTER>;
+        };
+        
+        combo_left_backspace_on_nav {
+            key-positions = <22 23>; // Vol up
+            layers = <NAV>;
+            bindings = <&kp BSPC>;
+        };
+        
+        combo_esc_on_nav {
+            key-positions = <0 1>; // Vol up
+            layers = <NAV>;
+            bindings = <&kp ESC>;
+        };
 
         // Bluetooth combos to replace a SYS layer for pairing and flashing the keyboard
 
