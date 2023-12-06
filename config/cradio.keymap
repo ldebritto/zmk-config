@@ -63,10 +63,10 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP              &kp HOME              &kp UP        &kp END    &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN              &kp LEFT              &kp DOWN      &kp RIGHT  &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp LG(SPACE)    &kp LG(LA(LS(LC(J))))  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
-                                             &trans       &trans           &trans                 &trans
+&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP      &kp HOME              &kp UP        &kp END    &kp BSPC
+&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN      &kp LEFT              &kp DOWN      &kp RIGHT  &kp ENTER
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LG(SPACE)  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
+                                             &trans       &trans           &trans         &trans
             >;
         };
 
@@ -146,10 +146,10 @@
             bindings = <&kp C_MUTE>;
         };
         
-        combo_play_next_previous {
-            key-positions = <13 14>;
-            layers = <NAV>;
-            bindings = <&playnextprev>;
+        combo_scrolla {
+            key-positions = <5 15>;
+            layers = <DEF>;
+            bindings = <&kp LG(LS(LA(LC(J))))>;
         };
         
         combo_left_enter_on_nav {
