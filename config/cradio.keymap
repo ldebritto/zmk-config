@@ -65,7 +65,7 @@
             bindings = <
 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &to NAV    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
                                              &trans       &trans           &trans     &trans
             >;
         };
@@ -127,6 +127,8 @@
 
     combos {
         compatible = "zmk,combos";
+
+        // DEF combos only use thumbs to avoid accidental presses when typing alphas
 
         combo_toggle_nav {
             key-positions = <30 31>;
@@ -232,7 +234,7 @@
             bindings = <&kp RSHFT>, <&caps_word>;
         };
         
-        homerow: homerow_app_tap_search { // for use with Homerow app
+        homerow: homerow_app_tap_search { // for use with Homerow app type-to-click and search functions
             compatible = "zmk,behavior-tap-dance";
             label = "HOMEROW_TAP_AND_SEARCH";
             #binding-cells = <0>;
@@ -263,22 +265,7 @@
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
         };
-
-        lc_nw: numword_on_press_lc_sym_on_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NUM_WORD_LC_SYM";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            bindings = <&lc>, <&numword>;
-        };
         
-        lc_kp: lc_on_hold_kp_on_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LC_ON_HOLD_KP_ON_TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            bindings = <&lc>, <&kp>;
-        };
     };
 
     macros {
