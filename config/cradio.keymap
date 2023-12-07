@@ -63,10 +63,10 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP      &kp HOME              &kp UP        &kp END    &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN      &kp LEFT              &kp DOWN      &kp RIGHT  &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp LG(SPACE)  &kp LG(LEFT_BRACKET)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
-                                             &trans       &trans           &trans         &trans
+&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
+&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &tog NAV   &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
+                                             &trans       &trans           &trans     &trans
             >;
         };
 
@@ -75,7 +75,7 @@
 &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC  &kp GRAVE
 &kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 &mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK &mt GLOBE EXCL
-                                        &trans     &trans       &trans      &trans
+                                      &trans     &numword     &trans      &trans
             >;
         };
 
@@ -140,16 +140,18 @@
             bindings = <&numword>;
         };
 
-        combo_mute {
-            key-positions = <4 14>;
-            layers = <NAV>;
-            bindings = <&kp C_MUTE>;
-        };
-        
         combo_scrolla {
             key-positions = <5 15>;
             layers = <DEF>;
             bindings = <&kp LG(LS(LA(LC(J))))>;
+        };
+        
+        // NAV combos
+
+        combo_mute {
+            key-positions = <4 14>;
+            layers = <NAV>;
+            bindings = <&kp C_MUTE>;
         };
         
         combo_left_enter_on_nav {
@@ -159,7 +161,7 @@
         };
         
         combo_left_backspace_on_nav {
-            key-positions = <22 23>;
+            key-positions = <1 2>;
             layers = <NAV>;
             bindings = <&kp BSPC>;
         };
