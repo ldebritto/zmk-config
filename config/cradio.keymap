@@ -54,10 +54,10 @@
 
         numpad {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9   &trans    &trans  &trans      &trans       &trans     &trans
-&kp N0  &kp N4  &kp N5  &kp N6   &trans    &trans  &mt RGUI J  &mt LSHFT K  &mt RALT L &mt RCTRL SQT
-&trans  &kp N1  &kp N2  &kp N3   &trans    &trans  &trans      &trans       &trans     &trans
-                        &lc NAV  &trans    &trans  &lc SYM
+&trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans      &trans       &trans     &trans
+&kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &mt RGUI J  &mt LSHFT K  &mt RALT L &mt RCTRL SQT
+&trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans      &trans       &trans     &trans
+                        &trans  &trans    &trans  &trans
             >;
         };
 
@@ -142,12 +142,6 @@
             bindings = <&numword>;
         };
  
-        combo_spotlight {
-            key-positions = <31 32>;
-            layers = <DEF>;
-            bindings = <&kp LG(SPACE)>;
-        };
-        
         // NAV combos allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
 
         combo_mute {
@@ -238,7 +232,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "HOMEROW_TAP_AND_SEARCH";
             #binding-cells = <0>;
-            bindings = <&kp LG(LS(SPACE))>, <&kp LG((LS(LA(LC(F)))))>;
+            bindings = <&kp LG(SPACE)>, <&kp LG(LS(SPACE))>, <&kp LG((LS(LA(LC(F)))))>;
         };
 
         playnextprev: next_previous_song {
