@@ -65,7 +65,7 @@
             bindings = <
 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &tog NAV   &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &to NAV    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
                                              &trans       &trans           &trans     &trans
             >;
         };
@@ -235,6 +235,14 @@
         la_nav: la_nav_toggle {
             compatible = "zmk,behavior-tap-dance";
             label = "LA_NAV_TOGGLE_ON_DOUBLE_TAP";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&lc NAV>, <&tog NAV>;
+        };
+        
+        la_sym: la_nav_toggle {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LA_SYM_ON_HOLD_TOGGLE_ON_DOUBLE_TAP";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&lc NAV>, <&tog NAV>;
