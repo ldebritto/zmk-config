@@ -10,13 +10,13 @@
 #define SYM 3
 #define FUN 4
 
-// AOE2 Layers for in game shortcuts
+// AOE2 Layers for in-game shortcuts
 
 #define AOED 6
 #define AOEG 7
 #define AOEB 8
 
-// Customized behaviors
+// Customized some default behaviors
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -28,12 +28,12 @@
     quick-release; // avoids "THe"
 };
 
-&lt {
+&lt { // using in AOE layers
     flavor = "balanced";
     hold-trigger-on-release;
 };
 
-&mt {
+&mt { // for GLOBE access from DEF
     flavor = "balanced";
     hold-trigger-on-release;
     require-prior-idle-ms = <175>;
@@ -128,7 +128,7 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_toggle_nav {
+        /* combo_toggle_nav {
             key-positions = <30 31>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
@@ -144,9 +144,9 @@
             key-positions = <5 15>;
             layers = <DEF>;
             bindings = <&kp LG(LS(LA(LC(J))))>;
-        };
+        }; */
         
-        // NAV combos
+        // NAV combos allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
 
         combo_mute {
             key-positions = <4 14>;
@@ -172,7 +172,7 @@
             bindings = <&kp ESC>;
         };
 
-        // Bluetooth combos to replace a SYS layer for pairing and flashing the keyboard
+        // SYS layer was replaced by combos from FUN, needed to pairing and flashing the keyboard
 
         combo_trigger_bootloader {
             key-positions = <20 21>;
@@ -204,7 +204,7 @@
             bindings = <&bt BT_CLR>;
         };
 
-        // AOE combos
+        // AOE layer combos
 
         combo_toggle_aoe_layer {
             bindings = <&tog AOED>;
@@ -270,6 +270,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             bindings = <&lc>, <&numword>;
+        };
+        
+        lc_kp: lc_on_hold_kp_on_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LC_ON_HOLD_KP_ON_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            bindings = <&lc>, <&kp>;
         };
     };
 
