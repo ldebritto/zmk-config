@@ -232,22 +232,6 @@
             bindings = <&kp RSHFT>, <&caps_word>;
         };
         
-        la_nav: la_nav_toggle {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LA_NAV_TOGGLE_ON_DOUBLE_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&lc NAV>, <&tog NAV>;
-        };
-        
-        la_sym: la_nav_toggle {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LA_SYM_ON_HOLD_TOGGLE_ON_DOUBLE_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&lc NAV>, <&tog NAV>;
-        };
-        
         homerow: homerow_app_tap_search { // for use with Homerow app
             compatible = "zmk,behavior-tap-dance";
             label = "HOMEROW_TAP_AND_SEARCH";
