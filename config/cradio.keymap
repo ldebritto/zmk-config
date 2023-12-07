@@ -128,23 +128,23 @@
     combos {
         compatible = "zmk,combos";
 
-        /* combo_toggle_nav {
+        combo_toggle_nav {
             key-positions = <30 31>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
-
+ 
         combo_numword {
             key-positions = <32 33>;
             layers = <DEF>;
             bindings = <&numword>;
         };
-
-        combo_scrolla {
-            key-positions = <5 15>;
+ 
+        combo_spotlight {
+            key-positions = <31 32>;
             layers = <DEF>;
-            bindings = <&kp LG(LS(LA(LC(J))))>;
-        }; */
+            bindings = <&kp LG(SPACE)>;
+        };
         
         // NAV combos allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
 
