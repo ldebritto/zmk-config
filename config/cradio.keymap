@@ -232,7 +232,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "HOMEROW_TAP_AND_SEARCH";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>, <&kp LG(LS(SPACE))>, <&kp LG((LS(LA(LC(F)))))>;
+            bindings = <&kp LG(LS(SPACE))>, <&kp LG((LS(LA(LC(F)))))>;
         };
 
         playnextprev: next_previous_song {
