@@ -132,8 +132,8 @@
         // DEF combos only use thumbs to avoid accidental presses when typing alphas
 
         combo_toggle_nav {
-            key-positions = <2 1 3>;
-            layers = <2>;
+            key-positions = <30 31>;
+            layers = <0 2>;
             bindings = <&tog 2>;
         };
 
