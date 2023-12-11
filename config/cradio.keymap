@@ -28,12 +28,12 @@
     quick-release; // avoids "THe"
 };
 
-&lt { // using in AOE layers
+&lt {
     flavor = "balanced";
     hold-trigger-on-release;
 };
 
-&mt { // for GLOBE access from DEF
+&mt {
     flavor = "balanced";
     hold-trigger-on-release;
     require-prior-idle-ms = <175>;
@@ -45,36 +45,36 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                           &lc NAV  &shft_cw    &kp SPACE  &lc SYM
+&kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+&mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &mt GLOBE SEMI
+                           &lc 2  &shft_cw    &kp SPACE  &lc 3
             >;
         };
 
         numpad {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans      &trans       &trans     &trans
-&kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &mt RGUI J  &mt LSHFT K  &mt RALT L &mt RCTRL SQT
-&trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans      &trans       &trans     &trans
+&trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans      &trans       &trans      &trans
+&kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &mt RGUI J  &mt LSHFT K  &mt RALT L  &mt RCTRL SQT
+&trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans      &trans       &trans      &trans
                         &trans  &trans    &trans  &trans
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))   &mt GLOBE DEL
+&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &to 6      &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &mt GLOBE DEL
                                              &trans       &trans           &trans     &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC  &kp GRAVE
-&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK &mt GLOBE EXCL
+&kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
                                       &trans     &numword     &trans      &trans
             >;
         };
@@ -90,10 +90,19 @@
 
         aoe_default_layer {
             bindings = <
-&kp Q        &kp W       &kp E        &kp R        &kp T             &trans  &trans  &trans  &trans  &trans
-&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G             &trans  &trans  &trans  &trans  &trans
-&kp Z        &kp X       &kp C        &kp V        &kp B             &trans  &trans  &trans  &trans  &trans
-                                      &lt AOEG H   &lt AOEB SPACE    &trans  &trans
+&kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
+&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
+&kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
+                                      &lt 8 H      &lt 6 SPACE    &trans  &trans
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+&trans            &mkp MB8  &mkp MB7   &mkp MB6   &mkp MB4     &mwh SCROLL_DOWN  &trans          &mmv MOVE_UP    &trans           &trans
+&kp LEFT_CONTROL  &kp LALT  &kp LSHFT  &kp LCMD   &mkp MCLK    &mwh SCROLL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
+&trans            &trans    &trans     &trans     &mkp MB5     &to 0             &trans          &trans          &trans           &trans
+                                       &mkp LCLK  &mkp RCLK    &mkp LCLK         &mkp RCLK
             >;
         };
 
@@ -120,8 +129,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <NAV SYM>;
-            then-layer = <FUN>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 
@@ -132,39 +141,39 @@
 
         combo_toggle_nav {
             key-positions = <30 31>;
-            layers = <DEF NAV>;
-            bindings = <&tog NAV>;
+            layers = <0 2>;
+            bindings = <&tog 2>;
         };
- 
+
         combo_numword {
             key-positions = <32 33>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&numword>;
         };
- 
+
         // NAV combos allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
 
         combo_mute {
             key-positions = <4 14>;
-            layers = <NAV>;
+            layers = <2>;
             bindings = <&kp C_MUTE>;
         };
-        
+
         combo_left_enter_on_nav {
             key-positions = <2 3>;
-            layers = <NAV>;
+            layers = <2>;
             bindings = <&kp ENTER>;
         };
-        
+
         combo_left_backspace_on_nav {
             key-positions = <1 2>;
-            layers = <NAV>;
+            layers = <2>;
             bindings = <&kp BSPC>;
         };
-        
+
         combo_esc_on_nav {
             key-positions = <0 1>;
-            layers = <NAV>;
+            layers = <2>;
             bindings = <&kp ESC>;
         };
 
@@ -172,52 +181,50 @@
 
         combo_trigger_bootloader {
             key-positions = <20 21>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bootloader>;
         };
 
         combo_toggle_bt0_connection {
             key-positions = <3 4>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_SEL 0>;
         };
 
         combo_toggle_bt1_connection {
             key-positions = <13 14>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_SEL 1>;
         };
 
         combo_toggle_bt2_connection {
             key-positions = <23 24>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_SEL 2>;
         };
 
         combo_clear_current_bluetooth_profile {
             key-positions = <28 29>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_CLR>;
         };
 
         // AOE layer combos
 
         combo_toggle_aoe_layer {
-            bindings = <&tog AOED>;
+            bindings = <&tog 7>;
             key-positions = <1 2 3>;
-            layers = <DEF AOED>;
+            layers = <0 7>;
         };
 
         aoe_pause {
             bindings = <&kp F3>;
             key-positions = <21 22 23>;
-            layers = <AOED>;
+            layers = <7>;
         };
-
     };
 
     behaviors {
-
         // Custom behaviors
 
         shft_cw: shift_and_caps_word {
@@ -227,8 +234,8 @@
             tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&caps_word>;
         };
-        
-        homerow: homerow_app_tap_search { // for use with Homerow app type-to-click and search functions
+
+        homerow: homerow_app_tap_search {
             compatible = "zmk,behavior-tap-dance";
             label = "HOMEROW_TAP_AND_SEARCH";
             #binding-cells = <0>;
@@ -259,7 +266,6 @@
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
         };
-        
     };
 
     macros {
