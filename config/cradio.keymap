@@ -9,8 +9,10 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4
+#define MOU 5
 
 // AOE2 Layers for in-game shortcuts
+
 
 #define AOED 6
 #define AOEG 7
@@ -65,7 +67,7 @@
             bindings = <
 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &to 6      &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &mt GLOBE DEL
+&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &to MOU    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &mt GLOBE DEL
                                              &trans       &trans           &trans     &trans
             >;
         };
@@ -88,21 +90,21 @@
             >;
         };
 
-        aoe_default_layer {
-            bindings = <
-&kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
-&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
-&kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
-                                      &lt 8 H      &lt 6 SPACE    &trans  &trans
-            >;
-        };
-
         mouse_layer {
             bindings = <
 &trans            &mkp MB8  &mkp MB7   &mkp MB6   &mkp MB4     &mwh SCROLL_DOWN  &trans          &mmv MOVE_UP    &trans           &trans
 &kp LEFT_CONTROL  &kp LALT  &kp LSHFT  &kp LCMD   &mkp MCLK    &mwh SCROLL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
 &trans            &trans    &trans     &trans     &mkp MB5     &to 0             &trans          &trans          &trans           &trans
                                        &mkp LCLK  &mkp RCLK    &mkp LCLK         &mkp RCLK
+            >;
+        };
+
+        aoe_default_layer {
+            bindings = <
+&kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
+&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
+&kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
+                                      &lt 8 H      &lt 6 SPACE    &trans  &trans
             >;
         };
 
