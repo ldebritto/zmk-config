@@ -228,12 +228,12 @@
 
         def_enter {
             bindings = <&kp ENTER>;
-            key-positions = <30 24>;
+            key-positions = <24 31>;
         };
 
         def_escape {
             bindings = <&kp ESC>;
-            key-positions = <24 31>;
+            key-positions = <24 30>;
         };
     };
 
