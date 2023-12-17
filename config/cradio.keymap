@@ -230,6 +230,11 @@
             bindings = <&kp ENTER>;
             key-positions = <30 24>;
         };
+
+        def_escape {
+            bindings = <&kp ESC>;
+            key-positions = <24 31>;
+        };
     };
 
     behaviors {
