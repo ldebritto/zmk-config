@@ -226,8 +226,8 @@
             key-positions = <24 30>;
         };
 
-        numword {
-            bindings = <&homerow>;
+        def_enter {
+            bindings = <&kp ENTER>;
             key-positions = <25 33>;
         };
     };
