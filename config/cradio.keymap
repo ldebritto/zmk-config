@@ -220,6 +220,16 @@
             key-positions = <6 7 8>;
             layers = <3>;
         };
+
+        homerow {
+            bindings = <&homerow>;
+            key-positions = <24 30>;
+        };
+
+        numword {
+            bindings = <&numword>;
+            key-positions = <25 33>;
+        };
     };
 
     behaviors {
