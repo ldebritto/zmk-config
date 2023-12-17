@@ -165,7 +165,7 @@
 
         combo_esc_on_nav {
             key-positions = <0 1>;
-            layers = <2>;
+            layers = <2 0>;
             bindings = <&kp ESC>;
         };
 
@@ -228,11 +228,6 @@
 
         def_enter {
             bindings = <&kp ENTER>;
-            key-positions = <24 31>;
-        };
-
-        def_escape {
-            bindings = <&kp ESC>;
             key-positions = <24 30>;
         };
     };
