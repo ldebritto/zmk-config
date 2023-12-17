@@ -223,12 +223,12 @@
 
         spotlight {
             bindings = <&kp LG(SPACE)>;
-            key-positions = <24 30>;
+            key-positions = <25 33>;
         };
 
         def_enter {
             bindings = <&kp ENTER>;
-            key-positions = <25 33>;
+            key-positions = <30 24>;
         };
     };
 
