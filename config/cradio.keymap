@@ -221,13 +221,13 @@
             layers = <3>;
         };
 
-        homerow {
-            bindings = <&homerow>;
+        spotlight {
+            bindings = <&kp LG(SPACE)>;
             key-positions = <24 30>;
         };
 
         numword {
-            bindings = <&numword>;
+            bindings = <&homerow>;
             key-positions = <25 33>;
         };
     };
