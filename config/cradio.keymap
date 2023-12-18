@@ -46,73 +46,82 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-&kp Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                     &lc 2  &shft_cw    &kp SPACE  &lc 3
+  &kp Q  &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A  &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &kp Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                       &lc 3  &shft_cw    &kp SPACE  &lc 4
+            >;
+        };
+
+        colemak_dh {
+            bindings = <
+  &kp Q  &kp W  &kp F  &kp P  &kp B       &kp J      &kp L  &kp U      &kp Y    &kp APOS
+  &kp A  &kp R  &kp S  &kp T  &kp G       &kp M      &kp N  &kp E      &kp I    &kp O
+  &kp X  &kp C  &kp D  &kp V  &kp Z       &kp K      &kp H  &kp COMMA  &kp DOT  &kp SEMI
+                       &lc 3  &shft_cw    &kp SPACE  &lc 4
             >;
         };
 
         numpad {
             bindings = <
-&kp TAB      &kp N7  &kp N8  &kp N9  &kp BACKSPACE    &trans  &trans    &trans     &trans    &trans
-&kp N0       &kp N4  &kp N5  &kp N6  &kp ENTER        &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-&kp LS(TAB)  &kp N1  &kp N2  &kp N3  &kp DELETE       &trans  &trans    &trans     &trans    &trans
-                             &trans  &trans           &trans  &trans
+  &kp TAB      &kp N7  &kp N8  &kp N9  &kp BACKSPACE    &trans  &trans    &trans     &trans    &trans
+  &kp N0       &kp N4  &kp N5  &kp N6  &kp ENTER        &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp LS(TAB)  &kp N1  &kp N2  &kp N3  &kp DELETE       &trans  &trans    &trans     &trans    &trans
+                               &trans  &trans           &trans  &trans
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-&sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-&sk GLOBE  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
-                                       &trans       &trans           &trans     &trans
+  &kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
+  &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+  &sk GLOBE  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
+                                         &trans       &trans           &trans     &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-&kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LG(SPACE)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                 &trans     &numword     &trans         &trans
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LG(SPACE)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                   &trans     &numword     &trans         &trans
             >;
         };
 
         function_and_number_row {
             bindings = <
-&kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-&kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
-                                &trans    &trans     &trans   &trans
+  &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
+  &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
+                                  &trans    &trans     &trans   &trans
             >;
         };
 
         aoe_default_layer {
             bindings = <
-&kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
-&mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
-&kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
-                                      &lt 7 H      &lt 6 SPACE    &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
+                                        &lt 8 H      &lt 7 SPACE    &trans  &trans
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
-&kp ESC       &kp N7       &kp N8              &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
-&mt LCTRL N2  &mt LALT N3  &mt LSHFT NUMBER_4  &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
-&kp SPACE     &kp COMMA    &kp LS(COMMA)       &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
-                                               &trans        &trans         &trans  &trans
+  &kp ESC       &kp N7       &kp N8              &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL N2  &mt LALT N3  &mt LSHFT NUMBER_4  &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
+  &kp SPACE     &kp COMMA    &kp LS(COMMA)       &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
+                                                 &trans        &trans         &trans  &trans
             >;
         };
 
         aoe_select_all_buildings {
             bindings = <
-&kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-&kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-&kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                             &trans         &trans           &trans  &trans
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                               &trans         &trans           &trans  &trans
             >;
         };
     };
@@ -121,8 +130,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <2 3>;
-            then-layer = <4>;
+            if-layers = <3 4>;
+            then-layer = <5>;
         };
     };
 
@@ -133,8 +142,8 @@
 
         combo_toggle_nav {
             key-positions = <30 31>;
-            layers = <0 2>;
-            bindings = <&tog 2>;
+            layers = <0 3>;
+            bindings = <&tog 3>;
         };
 
         combo_numword {
@@ -147,25 +156,25 @@
 
         combo_mute {
             key-positions = <4 14>;
-            layers = <2>;
+            layers = <3>;
             bindings = <&kp C_MUTE>;
         };
 
         combo_left_enter_on_nav {
             key-positions = <2 3>;
-            layers = <2>;
+            layers = <3>;
             bindings = <&kp ENTER>;
         };
 
         combo_left_backspace_on_nav {
             key-positions = <22 23>;
-            layers = <2>;
+            layers = <3>;
             bindings = <&kp BSPC>;
         };
 
         combo_esc_on_nav {
             key-positions = <0 1>;
-            layers = <2 0>;
+            layers = <3 0>;
             bindings = <&kp ESC>;
         };
 
@@ -173,57 +182,62 @@
 
         combo_trigger_bootloader {
             key-positions = <20 21>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bootloader>;
         };
 
         combo_toggle_bt0_connection {
             key-positions = <3 4>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_SEL 0>;
         };
 
         combo_toggle_bt1_connection {
             key-positions = <13 14>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_SEL 1>;
         };
 
         combo_toggle_bt2_connection {
             key-positions = <23 24>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_SEL 2>;
         };
 
         combo_clear_current_bluetooth_profile {
             key-positions = <28 29>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_CLR>;
         };
 
         // AOE layer combos
 
         combo_toggle_aoe_layer {
-            bindings = <&tog 6>;
+            bindings = <&tog 7>;
             key-positions = <1 2 3>;
-            layers = <0 6>;
+            layers = <0 7>;
         };
 
         aoe_pause {
             bindings = <&kp F3>;
             key-positions = <21 22 23>;
-            layers = <6>;
+            layers = <7>;
         };
 
         toggle_numpad {
-            bindings = <&tog 1>;
+            bindings = <&tog 2>;
             key-positions = <6 7 8>;
-            layers = <3>;
+            layers = <4>;
         };
 
         def_enter {
             bindings = <&kp ENTER>;
             key-positions = <24 30>;
+        };
+
+        try_colemak {
+            bindings = <&tog 1>;
+            key-positions = <10 13 16 19>;
         };
     };
 
