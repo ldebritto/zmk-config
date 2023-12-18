@@ -46,10 +46,10 @@
 
         defaulf_without_home_row_mods {
             bindings = <
-&kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-&mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                           &lc 2  &shft_cw    &kp SPACE  &lc 3
+&kp Q  &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+&kp Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                     &lc 2  &shft_cw    &kp SPACE  &lc 3
             >;
         };
 
@@ -64,19 +64,19 @@
 
         navigation_and_media_layer {
             bindings = <
-&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-&mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &mt GLOBE DEL
-                                             &trans       &trans           &trans     &trans
+&kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
+&sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+&sk GLOBE  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
+                                       &trans       &trans           &trans     &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-&kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-&kp MINUS       &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-&mt GLOBE PLUS  &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LG(SPACE)  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
-                                      &trans     &numword     &trans         &trans
+&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+&kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+&kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LG(SPACE)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                 &trans     &numword     &trans         &trans
             >;
         };
 
