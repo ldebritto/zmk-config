@@ -246,7 +246,6 @@
     };
 
     behaviors {
-        // Custom behaviors
 
         shft_cw: shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
@@ -290,6 +289,7 @@
     };
 
     macros {
+
         lc: mo_layer_with_embeded_cancel_for_clearing_queued_sticky_mods_on_key_press {
             label = "LAYER_CANCEL";
             compatible = "zmk,behavior-macro-one-param";
@@ -307,4 +307,5 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
     };
+    
 };
