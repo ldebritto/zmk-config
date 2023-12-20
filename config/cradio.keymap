@@ -244,6 +244,11 @@
             bindings = <&kp RG(SPACE)>;
             key-positions = <25 33>;
         };
+
+        capslock {
+            bindings = <&kp CAPS>;
+            key-positions = <24 31>;
+        };
     };
 
     behaviors {
