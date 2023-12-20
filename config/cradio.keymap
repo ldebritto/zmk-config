@@ -140,13 +140,13 @@
 
         // DEF combos only use thumbs to avoid accidental presses when typing alphas
 
-        combo_toggle_nav {
+        toggle_nav {
             key-positions = <30 31>;
             layers = <0 3>;
             bindings = <&tog 3>;
         };
 
-        combo_numword {
+        numword {
             key-positions = <32 33>;
             layers = <0>;
             bindings = <&numword>;
@@ -154,25 +154,19 @@
 
         // NAV combos allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
 
-        combo_mute {
+        mute {
             key-positions = <4 14>;
             layers = <3>;
             bindings = <&kp C_MUTE>;
         };
 
-        combo_left_enter_on_nav {
-            key-positions = <2 3>;
-            layers = <3>;
-            bindings = <&kp ENTER>;
-        };
-
-        combo_left_backspace_on_nav {
+        left_backspace_on_nav {
             key-positions = <22 23>;
             layers = <3>;
             bindings = <&kp BSPC>;
         };
 
-        combo_esc_on_nav {
+        esc_on_nav {
             key-positions = <0 1>;
             layers = <3 0>;
             bindings = <&kp ESC>;
@@ -180,31 +174,31 @@
 
         // SYS layer was replaced by combos from FUN, needed to pairing and flashing the keyboard
 
-        combo_trigger_bootloader {
+        bootloader {
             key-positions = <20 21>;
             layers = <5>;
             bindings = <&bootloader>;
         };
 
-        combo_toggle_bt0_connection {
+        toggle_bt0_connection {
             key-positions = <3 4>;
             layers = <5>;
             bindings = <&bt BT_SEL 0>;
         };
 
-        combo_toggle_bt1_connection {
+        toggle_bt1_connection {
             key-positions = <13 14>;
             layers = <5>;
             bindings = <&bt BT_SEL 1>;
         };
 
-        combo_toggle_bt2_connection {
+        toggle_bt2_connection {
             key-positions = <23 24>;
             layers = <5>;
             bindings = <&bt BT_SEL 2>;
         };
 
-        combo_clear_current_bluetooth_profile {
+        clear_current_bluetooth_profile {
             key-positions = <28 29>;
             layers = <5>;
             bindings = <&bt BT_CLR>;
@@ -212,7 +206,7 @@
 
         // AOE layer combos
 
-        combo_toggle_aoe_layer {
+        toggle_aoe_layers {
             bindings = <&tog 7>;
             key-positions = <1 2 3>;
             layers = <0 7>;
@@ -226,11 +220,10 @@
 
         toggle_numpad {
             bindings = <&tog 2>;
-            key-positions = <6 7 8>;
-            layers = <4>;
+            key-positions = <25 32>;
         };
 
-        def_enter {
+        left_enter {
             bindings = <&kp ENTER>;
             key-positions = <24 30>;
         };
