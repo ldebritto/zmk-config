@@ -140,33 +140,51 @@
 
         // DEF combos only use thumbs to avoid accidental presses when typing alphas
 
-        toggle_nav {
+        all_toggle_nav {
             key-positions = <30 31>;
-            layers = <0 3>;
             bindings = <&tog 3>;
         };
 
-        numword {
+        all_numword {
             key-positions = <32 33>;
-            layers = <0>;
             bindings = <&numword>;
+        };
+
+        all_left_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <24 30>;
+        };
+
+        all_spotlight {
+            bindings = <&kp RG(SPACE)>;
+            key-positions = <25 33>;
+        };
+
+        all_capslock {
+            bindings = <&kp CAPS>;
+            key-positions = <24 31>;
+        };
+
+        all_toggle_numpad {
+            bindings = <&tog 2>;
+            key-positions = <25 32>;
         };
 
         // NAV combos allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
 
-        mute {
+        nav_mute {
             key-positions = <4 14>;
             layers = <3>;
             bindings = <&kp C_MUTE>;
         };
 
-        left_backspace_on_nav {
+        nav_left_backspace {
             key-positions = <22 23>;
             layers = <3>;
             bindings = <&kp BSPC>;
         };
 
-        esc_on_nav {
+        nav_esc {
             key-positions = <0 1>;
             layers = <3 0>;
             bindings = <&kp ESC>;
@@ -174,39 +192,45 @@
 
         // SYS layer was replaced by combos from FUN, needed to pairing and flashing the keyboard
 
-        bootloader {
+        sys_bootloader {
             key-positions = <20 21>;
             layers = <5>;
             bindings = <&bootloader>;
         };
 
-        toggle_bt0_connection {
+        sys_toggle_bt0_connection {
             key-positions = <3 4>;
             layers = <5>;
             bindings = <&bt BT_SEL 0>;
         };
 
-        toggle_bt1_connection {
+        sys_toggle_bt1_connection {
             key-positions = <13 14>;
             layers = <5>;
             bindings = <&bt BT_SEL 1>;
         };
 
-        toggle_bt2_connection {
+        sys_toggle_bt2_connection {
             key-positions = <23 24>;
             layers = <5>;
             bindings = <&bt BT_SEL 2>;
         };
 
-        clear_current_bluetooth_profile {
+        sys_clear_current_bluetooth_profile {
             key-positions = <28 29>;
             layers = <5>;
             bindings = <&bt BT_CLR>;
         };
 
+        sys_toggle_colemak {
+            bindings = <&tog 1>;
+            layers = <5>;
+            key-positions = <10 13 16 19>;
+        };
+
         // AOE layer combos
 
-        toggle_aoe_layers {
+        aoe_toggle_aoe_layers {
             bindings = <&tog 7>;
             key-positions = <1 2 3>;
             layers = <0 7>;
@@ -218,30 +242,6 @@
             layers = <7>;
         };
 
-        toggle_numpad {
-            bindings = <&tog 2>;
-            key-positions = <25 32>;
-        };
-
-        left_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <24 30>;
-        };
-
-        try_colemak {
-            bindings = <&tog 1>;
-            key-positions = <10 13 16 19>;
-        };
-
-        spotlight {
-            bindings = <&kp RG(SPACE)>;
-            key-positions = <25 33>;
-        };
-
-        capslock {
-            bindings = <&kp CAPS>;
-            key-positions = <24 31>;
-        };
     };
 
     behaviors {
