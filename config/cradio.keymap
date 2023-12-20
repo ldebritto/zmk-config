@@ -2,8 +2,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include <./mouse.dtsi>
-
 // Default layers
 
 #define DEF 0
@@ -13,6 +11,7 @@
 #define SYM 4
 #define FUN 5
 #define MOU 6
+#include <mouse.dtsi>
 
 // AOE2 Layers for in-game shortcuts
 
