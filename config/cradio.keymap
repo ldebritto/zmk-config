@@ -5,17 +5,18 @@
 // Default layers
 
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5
+#define CMK 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define MOU 6
 
 // AOE2 Layers for in-game shortcuts
 
-#define AOED 6
-#define AOEG 7
-#define AOEB 8
+#define AOED 7
+#define AOEG 8
+#define AOEB 9
 
 // Customized some default behaviors
 
@@ -44,21 +45,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        defaulf_without_home_row_mods {
+        defaulf {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc 3  &shft_cw    &kp SPACE  &lc 4
+  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
         colemak_dh {
             bindings = <
-  &kp Q  &kp W  &kp F  &kp P  &kp B       &kp J      &kp L  &kp U      &kp Y    &kp APOS
-  &kp A  &kp R  &kp S  &kp T  &kp G       &kp M      &kp N  &kp E      &kp I    &kp O
-  &kp X  &kp C  &kp D  &kp V  &kp Z       &kp K      &kp H  &kp COMMA  &kp DOT  &kp SEMI
-                       &lc 3  &shft_cw    &kp SPACE  &lc 4
+  &kp Q        &kp W  &kp F  &kp P   &kp B      &kp J   &kp L  &kp U      &kp Y    &kp SQT
+  &kp A        &kp R  &kp S  &kp T   &kp G      &kp M   &kp N  &kp E      &kp I    &kp O
+  &mt GLOBE X  &kp C  &kp D  &kp V   &kp Z      &kp K   &kp H  &kp COMMA  &kp DOT  &kp SEMI
+                             &trans  &trans     &trans  &trans
             >;
         };
 
@@ -85,7 +86,7 @@
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp RA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &numword     &trans      &trans
+                                   &trans     &trans       &trans      &trans
             >;
         };
 
@@ -100,10 +101,10 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
-                                        &lt 8 H      &lt 7 SPACE    &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R        &kp T             &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G             &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V        &kp B             &trans  &trans  &trans  &trans  &trans
+                                        &lt AOEG H   &lt AOEB SPACE    &trans  &trans
             >;
         };
 
@@ -130,8 +131,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <3 4>;
-            then-layer = <5>;
+            if-layers = <SYM NAV>;
+            then-layer = <FUN>;
         };
     };
 
@@ -142,7 +143,7 @@
 
         all_toggle_nav {
             key-positions = <30 31>;
-            bindings = <&tog 3>;
+            bindings = <&tog NAV>;
         };
 
         all_numword {
@@ -166,7 +167,7 @@
         };
 
         all_toggle_numpad {
-            bindings = <&tog 2>;
+            bindings = <&tog NUM>;
             key-positions = <25 32>;
         };
 
@@ -223,7 +224,7 @@
         };
 
         sys_toggle_colemak {
-            bindings = <&tog 1>;
+            bindings = <&tog CMK>;
             layers = <5>;
             key-positions = <10 13 16 19>;
         };
