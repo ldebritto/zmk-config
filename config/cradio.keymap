@@ -82,10 +82,10 @@
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LG(SPACE)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &numword     &trans         &trans
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp RA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                   &trans     &numword     &trans      &trans
             >;
         };
 
@@ -238,6 +238,11 @@
         try_colemak {
             bindings = <&tog 1>;
             key-positions = <10 13 16 19>;
+        };
+
+        spotlight {
+            bindings = <&kp RG(SPACE)>;
+            key-positions = <25 33>;
         };
     };
 
