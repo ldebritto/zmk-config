@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include <mouse.dtsi>
+#include <./mouse.dtsi>
 
 // Default layers
 
