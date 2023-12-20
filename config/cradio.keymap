@@ -11,13 +11,14 @@
 #define SYM 4
 #define FUN 5
 #define MOU 6
-#include <mouse.dtsi>
 
 // AOE2 Layers for in-game shortcuts
 
 #define AOED 7
 #define AOEG 8
 #define AOEB 9
+
+#include <mouse.dtsi>
 
 // Customized some default behaviors
 
