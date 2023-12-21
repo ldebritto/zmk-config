@@ -307,7 +307,7 @@
             20 21 22 23
             1
             >;
-        }
+        };
 
         numword: numword {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
