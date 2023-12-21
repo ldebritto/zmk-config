@@ -77,7 +77,7 @@
         navigation_and_media_layer {
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP              &kp HOME      &kp UP        &kp END    &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN              &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN              &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp RA(RC(RG(LS(J))))  &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
                                                &trans       &trans           &trans                 &trans
             >;
@@ -103,10 +103,10 @@
 
         mouse {
             bindings = <
-  &kp ESCAPE                                  &trans     &trans     &trans     &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
-  &sk LCTRL                                   &sk LALT   &sk LSHFT  &sk LCMD   &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
-  &mt C_AC_NEXT_KEYBOARD_LAYOUT_SELECT LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans            &mkp MB3           &mkp MB4        &mkp MB5          &trans
-                                                                    &trans     &trans    &mkp MB1          &mkp MB2
+  &kp TAB                                     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &kp BSPC
+  &kp LCTRL                                   &kp LALT                           &kp LSHFT        &kp LCMD     &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp ENTER
+  &mt C_AC_NEXT_KEYBOARD_LAYOUT_SELECT LG(Z)  &kp LG(X)                          &kp LG(C)        &kp LG(V)    &trans    &kp SPACE         &mkp MB3           &mkp MB4        &mkp MB5          &kp ESCAPE
+                                                                                                  &trans       &trans    &mkp MB1          &mkp MB2
             >;
         };
 
