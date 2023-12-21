@@ -18,7 +18,7 @@
 #define AOEG 8
 #define AOEB 9
 
-#include <mouse.dtsi>
+#include "mouse.dtsi" // self dtsi are pointed with quotes "" instead of <> used to point files from remote
 
 // Customized some default behaviors
 
