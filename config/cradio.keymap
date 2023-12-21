@@ -277,7 +277,7 @@
             bindings = <&kp LG(LS(SPACE))>, <&kp LG(LS(LA(LC(F))))>;
         };
 
-        enter_playnextprev: next_previous_song {
+        playnextprev: next_previous_song {
             compatible = "zmk,behavior-tap-dance";
             label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
