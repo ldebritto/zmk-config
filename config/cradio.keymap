@@ -103,9 +103,9 @@
 
         mouse {
             bindings = <
-  &kp TAB                                     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &kp BSPC
-  &kp LCTRL                                   &kp LALT                           &kp LSHFT        &kp LCMD     &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp ENTER
-  &mt C_AC_NEXT_KEYBOARD_LAYOUT_SELECT LG(Z)  &kp LG(X)                          &kp LG(C)        &kp LG(V)    &trans    &kp SPACE         &mkp MB3           &mkp MB4        &mkp MB5          &kp ESCAPE
+  &kp TAB                                     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
+  &kp LCTRL                                   &kp LALT                           &kp LSHFT        &kp LCMD     &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
+  &mt C_AC_NEXT_KEYBOARD_LAYOUT_SELECT LG(Z)  &kp LG(X)                          &kp LG(C)        &kp LG(V)    &trans    &kp SPACE         &mkp MB3           &mkp MB4        &mkp MB5          &trans
                                                                                                   &trans       &trans    &mkp MB1          &mkp MB2
             >;
         };
@@ -178,7 +178,7 @@
         };
 
         all_toggle_numpad {
-            bindings = <&tog NUM>;
+            bindings = <&smart_mouse>;
             key-positions = <25 32>;
         };
 
@@ -204,7 +204,7 @@
 
         nav_mouse {
             key-positions = <6 7 8>;
-            layers = <3 6>;
+            layers = <3 4 5 6>;
             bindings = <&tog MOU>;
         };
 
@@ -292,6 +292,22 @@
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+
+        smart_mouse: smart_mouse {
+            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
+            label = "SMART_MOUSE";
+            #binding-cells = <0>;
+            bindings = <&tog MOU>, <&none>, <&tog MOU>;
+            ignored-layers = <MOU>;
+            ignored-key-positions = <
+            7 16 17 18
+            5 15 6 8
+            32 33 26 27 28
+            10 11 12 13
+            20 21 22 23
+            1
+            >
+        }
 
         numword: numword {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
