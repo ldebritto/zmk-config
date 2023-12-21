@@ -104,7 +104,7 @@
         mouse {
             bindings = <
   &kp ESCAPE                                  &trans     &trans     &trans     &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
-  &kp LCTRL                                   &kp LALT   &kp LSHFT  &kp LCMD   &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
+  &sk LCTRL                                   &sk LALT   &sk LSHFT  &sk LCMD   &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
   &mt C_AC_NEXT_KEYBOARD_LAYOUT_SELECT LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans            &mkp MB3           &mkp MB4        &mkp MB5          &trans
                                                                     &trans     &trans    &mkp MB1          &mkp MB2
             >;
