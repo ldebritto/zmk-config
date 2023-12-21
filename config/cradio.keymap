@@ -76,9 +76,9 @@
 
         navigation_and_media_layer { // 3
             bindings = <
-  &kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
-  &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-  &sk GLOBE  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END    &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
                                          &trans       &trans           &trans     &trans
             >;
         };
@@ -103,7 +103,7 @@
 
         mouse { // 6
             bindings = <
-&trans     &trans    &trans     &trans    &trans    &mwh SCROLL_UP  &mwh SCROLL_LEFT  &mmv MOVE_UP  &mwh SCROLL_RIGHT  &trans
+&trans     &trans    &trans     &trans    &trans    &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT &trans
 &kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    &mwh SCROLL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
 &trans     &trans    &trans     &trans    &trans    &trans  &mkp MB3  &trans  &trans  &trans
                                 &trans    &trans    &mkp MB1  &mkp MB2
