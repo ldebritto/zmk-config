@@ -103,10 +103,10 @@
 
         mouse {
             bindings = <
-  &kp TAB                                     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp LC(LS(TAB))  &kp LC(TAB)  &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
-  &kp LCTRL                                   &kp LALT                           &kp LSHFT        &kp LCMD     &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
-  &mt C_AC_NEXT_KEYBOARD_LAYOUT_SELECT LG(Z)  &kp LG(X)                          &kp LG(C)        &kp LG(V)    &trans    &kp SPACE         &mkp MB3           &mkp MB4        &mkp MB5          &trans
-                                                                                                  &trans       &trans    &mkp MB1          &mkp MB2
+  &trans     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans     &trans     &trans   &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
+  &kp LCTRL  &kp LALT                           &kp LSHFT  &kp LCMD   &trans   &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
+  &kp LG(Z)  &kp LG(X)                          &kp LG(C)  &kp LG(V)  &trans   &trans            &mkp MB3           &mkp MB4        &mkp MB5          &trans
+                                                           &trans     &trans   &mkp MB1          &mkp MB2
             >;
         };
 
@@ -205,7 +205,7 @@
         nav_mouse {
             key-positions = <6 7 8>;
             layers = <3 4 5 6>;
-            bindings = <&tog MOU>;
+            bindings = <&smart_mouse>;
         };
 
         // SYS layer was replaced by combos from FUN, needed to pairing and flashing the keyboard
