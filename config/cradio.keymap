@@ -103,10 +103,10 @@
 
         mouse { // 6
             bindings = <
-&trans     &trans    &trans     &trans    &trans    M_WH_U  M_WH_L  M_MS_U  M_WH_R  &trans
-&kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    M_WH_D  M_MS_L  M_MS_D  M_MS_R  &trans
-&trans     &trans    &trans     &trans    &trans    &trans  M_BTN3  &trans  &trans  &trans
-                                &trans    &trans    M_BTN1  M_BTN2
+&trans     &trans    &trans     &trans    &trans    &mwh SCROLL_UP  &mwh SCROLL_LEFT  &mmv MOVE_UP  &mwh SCROLL_RIGHT  &trans
+&kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    &mwh SCROLL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
+&trans     &trans    &trans     &trans    &trans    &trans  &mkp MB3  &trans  &trans  &trans
+                                &trans    &trans    &mkp MB1  &mkp MB2
             >;
         };
 
