@@ -320,38 +320,28 @@
             compatible = "zmk,behavior-tap-dance";
             label = "EN_PAR";
             #binding-cells = <0>;
-            bindings =
-                <&enclose LEFT_PARENTHESIS RIGHT_PARENTHESIS>,
-                <&kp LEFT_PARENTHESIS>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&enclose LPAR RPAR>;
         };
 
         en_brk: en_brk {
             compatible = "zmk,behavior-tap-dance";
             label = "EN_BRK";
             #binding-cells = <0>;
-            bindings =
-                <&enclose LEFT_BRACKET RIGHT_BRACKET>,
-                <&kp LEFT_BRACKET>;
-
-            tapping-term-ms = <100>;
+            bindings = <&kp LEFT_BRACKET>, <&enclose LBKT RBKT>;
         };
 
         en_cbr: en_cbr {
             compatible = "zmk,behavior-tap-dance";
             label = "EN_CBR";
             #binding-cells = <0>;
-            bindings = <&enclose LEFT_BRACE RIGHT_BRACE>, <&kp LEFT_BRACE>;
-
-            tapping-term-ms = <100>;
+            bindings = <&kp LEFT_BRACE>, <&enclose LBRC RBRC>;
         };
 
         grave_code: grave_code {
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-tap-dance";
             label = "GRAVE_CODE";
-            bindings = <&kp GRAVE>, <&code_block>;
-
             #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            bindings = <&kp GRAVE>, <&code_block>;
         };
     };
 
