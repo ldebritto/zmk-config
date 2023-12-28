@@ -85,7 +85,7 @@
 
         symbols_layer {
             bindings = <
-  &kp ESC    &en_brk    &en_brk    &en_par    &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp ESC    &en_cbr    &en_brk    &en_par    &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp RA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
                                    &trans     &trans       &trans      &trans
