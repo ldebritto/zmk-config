@@ -315,34 +315,6 @@
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
         };
-
-        en_par: en_par {
-            compatible = "zmk,behavior-tap-dance";
-            label = "EN_PAR";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&enclose LPAR RPAR>;
-        };
-
-        en_brk: en_brk {
-            compatible = "zmk,behavior-tap-dance";
-            label = "EN_BRK";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&enclose LBKT RBKT>;
-        };
-
-        en_cbr: en_cbr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "EN_CBR";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE>, <&enclose LBRC RBRC>;
-        };
-
-        grave_code: grave_code {
-            compatible = "zmk,behavior-tap-dance";
-            label = "GRAVE_CODE";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&code_block>;
-        };
     };
 
     macros {
