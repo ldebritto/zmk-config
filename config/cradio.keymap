@@ -256,6 +256,11 @@
             key-positions = <21 22 23>;
             layers = <7>;
         };
+
+        all_mb4_expose {
+            bindings = <&mkp MB4>;
+            key-positions = <20 21>;
+        };
     };
 
     behaviors {
