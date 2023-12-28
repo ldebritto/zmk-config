@@ -372,6 +372,8 @@
                 <&kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &kp LEFT_ARROW>;
 
             label = "ENCLOSE";
+            wait-ms = <(-1)>;
+            tap-ms = <(-1)>;
         };
 
         code_block: code_block {
@@ -379,6 +381,8 @@
             #binding-cells = <0>;
             bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP>;
             label = "CODE_BLOCK";
+            wait-ms = <(-1)>;
+            tap-ms = <(-1)>;
         };
     };
 };
