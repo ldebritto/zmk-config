@@ -261,6 +261,12 @@
             bindings = <&mkp MB4>;
             key-positions = <20 21>;
         };
+
+        sys_reset {
+            bindings = <&sys_reset>;
+            key-positions = <0 1 2>;
+            layers = <5>;
+        };
     };
 
     behaviors {
