@@ -48,10 +48,10 @@
 
         defaulf {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R       &kp T       &kp Y      &kp U             &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F       &kp G       &kp H      &kp J             &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V       &kp B       &kp N      &kp M             &kp COMMA  &kp DOT  &kp SEMI
-                             &lct 3 TAB  &shft_cw    &kp SPACE  &lct 4 BACKSPACE
+  &kp Q        &kp W  &kp E  &kp R       &kp T       &kp Y                           &kp U             &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F       &kp G       &kp H                           &kp J             &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V       &kp B       &kp N                           &kp M             &kp COMMA  &kp DOT  &kp SEMI
+                             &lct 3 TAB  &shft_cw    &mt LS(LA(LC(LGUI))) LG(SPACE)  &lct 4 BACKSPACE
             >;
         };
 
