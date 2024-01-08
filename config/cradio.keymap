@@ -66,10 +66,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP              &kp HOME      &kp UP        &kp END    &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN              &kp LEFT      &kp DOWN      &kp RIGHT  &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp RA(RC(RG(LS(J))))  &kp LG(LBKT)  &kp LG(RBKT)  &homerow   &kp DEL
-                                               &trans       &trans           &trans                 &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP     &kp HOME      &kp UP        &kp END            &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &smart_mouse  &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+                                               &trans       &trans           &trans        &trans
             >;
         };
 
@@ -156,7 +156,7 @@
         };
 
         all_mouse {
-            key-positions = <26 27 28>;
+            key-positions = <25 33>;
             bindings = <&smart_mouse>;
         };
 
@@ -168,11 +168,6 @@
         all_left_enter {
             bindings = <&kp ENTER>;
             key-positions = <24 30>;
-        };
-
-        all_spotlight {
-            bindings = <&kp RG(SPACE)>;
-            key-positions = <25 33>;
         };
 
         // Combos to allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
@@ -266,13 +261,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp RSHFT>, <&caps_word>;
-        };
-
-        homerow: homerow_app_tap_search {
-            compatible = "zmk,behavior-tap-dance";
-            label = "HOMEROW_TAP_AND_SEARCH";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LS(SPACE))>, <&kp LG(LS(LC(LA(SPACE))))>;
         };
 
         playnextprev: next_previous_song {
