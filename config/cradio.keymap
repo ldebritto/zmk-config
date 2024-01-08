@@ -94,7 +94,7 @@
         aoe_unit_and_group_selection {
             bindings = <
   &kp ESC       &kp N7       &kp N8              &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N2  &mt LALT N3  &mt LSHFT N_4  &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL N2  &mt LALT N3  &mt LSHFT N4  &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
   &kp SPACE     &kp COMMA    &kp LS(COMMA)       &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
                                                  &trans        &trans         &trans  &trans
             >;
