@@ -274,7 +274,7 @@
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RSHFT>, <&caps_word>;
+            bindings = <&hp_mt RSHFT LG(ENTER)>, <&caps_word>;
         };
 
         homerow: homerow_app_tap_search {
@@ -323,6 +323,15 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LCT";
             bindings = <&lc>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        hp_mt: hp_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HP_MT";
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
