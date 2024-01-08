@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
+#include "mouse.dtsi" // self dtsi are pointed with quotes "" instead of <> used to point files from remote
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "mouse.dtsi" // self dtsi are pointed with quotes "" instead of <> used to point files from remote
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -93,10 +93,10 @@
 
         aoe_unit_and_group_selection {
             bindings = <
-  &kp ESC       &kp N7       &kp N8              &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N2  &mt LALT N3  &mt LSHFT N4  &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
-  &kp SPACE     &kp COMMA    &kp LS(COMMA)       &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
-                                                 &trans        &trans         &trans  &trans
+  &kp ESC       &kp N7       &kp N8         &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL N2  &mt LALT N3  &mt LSHFT N4   &mt LCTRL N5  &kp N6         &trans  &trans  &trans  &trans  &trans
+  &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
+                                            &trans        &trans         &trans  &trans
             >;
         };
 
@@ -132,13 +132,8 @@
             bindings = <&numword>;
         };
 
-        all_toggle_numpad {
-            bindings = <&smart_mouse>;
-            key-positions = <25 32>;
-        };
-
         all_mouse {
-            key-positions = <25 33>;
+            key-positions = <25 32>;
             bindings = <&smart_mouse>;
         };
 
@@ -147,23 +142,7 @@
             key-positions = <24 31>;
         };
 
-        all_left_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <24 30>;
-        };
-
         // Combos to allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
-
-        all_left_backspace {
-            key-positions = <22 23>;
-            bindings = <&kp BSPC>;
-        };
-
-        all_esc {
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
         // NAV 
 
         nav_mute {
@@ -257,6 +236,7 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
+
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
@@ -265,6 +245,7 @@
             label = "SMART_MOUSE";
             #binding-cells = <0>;
             bindings = <&tog 5>, <&none>, <&tog 5>;
+
             ignored-layers = <5>;
             ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>;
         };
