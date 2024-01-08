@@ -48,19 +48,10 @@
 
         defaulf {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R       &kp T       &kp Y                           &kp U             &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F       &kp G       &kp H                           &kp J             &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V       &kp B       &kp N                           &kp M             &kp COMMA  &kp DOT  &kp SEMI
-                             &lct 3 TAB  &shft_cw    &mt LS(LA(LC(LGUI))) LG(SPACE)  &lct 4 BACKSPACE
-            >;
-        };
-
-        tarmak_1 {
-            bindings = <
-  &kp Q        &kp W  &kp J  &kp R   &kp T     &kp Y   &kp U   &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F   &kp G     &kp H   &kp N   &kp E      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V   &kp B     &kp K   &kp M   &kp COMMA  &kp DOT  &kp SEMI
-                             &trans  &trans    &trans  &trans
+  &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                             &lc 2  &shft_cw    &kp SPACE  &lc 3
             >;
         };
 
@@ -111,10 +102,10 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T             &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G             &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V        &kp B             &trans  &trans  &trans  &trans  &trans
-                                        &lt AOEG H   &lt AOEB SPACE    &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
+                                        &lt 7 H      &lt 8 SPACE    &trans  &trans
             >;
         };
 
@@ -141,8 +132,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <SYM NAV>;
-            then-layer = <FUN>;
+            if-layers = <3 2>;
+            then-layer = <4>;
         };
     };
 
@@ -151,7 +142,7 @@
 
         all_toggle_nav {
             key-positions = <30 31>;
-            bindings = <&tog NAV>;
+            bindings = <&tog 2>;
         };
 
         all_numword {
@@ -200,7 +191,7 @@
 
         nav_mute {
             key-positions = <4 14>;
-            layers = <3>;
+            layers = <2>;
             bindings = <&kp C_MUTE>;
         };
 
@@ -208,52 +199,52 @@
 
         sys_bootloader {
             key-positions = <20 21>;
-            layers = <5>;
+            layers = <4>;
             bindings = <&bootloader>;
         };
 
         sys_toggle_bt0_connection {
             key-positions = <3 4>;
-            layers = <5>;
+            layers = <4>;
             bindings = <&bt BT_SEL 0>;
         };
 
         sys_toggle_bt1_connection {
             key-positions = <13 14>;
-            layers = <5>;
+            layers = <4>;
             bindings = <&bt BT_SEL 1>;
         };
 
         sys_toggle_bt2_connection {
             key-positions = <23 24>;
-            layers = <5>;
+            layers = <4>;
             bindings = <&bt BT_SEL 2>;
         };
 
         sys_clear_current_bluetooth_profile {
             key-positions = <28 29>;
-            layers = <5>;
+            layers = <4>;
             bindings = <&bt BT_CLR>;
         };
 
         sys_toggle_colemak {
-            bindings = <&tog CMK>;
-            layers = <5>;
+            bindings = <&tog 0>;
+            layers = <4>;
             key-positions = <10 13 16 19>;
         };
 
         // AOE layer combos
 
         aoe_toggle_aoe_layers {
-            bindings = <&tog 7>;
+            bindings = <&tog 6>;
             key-positions = <1 2 3>;
-            layers = <0 7>;
+            layers = <0 6>;
         };
 
         aoe_pause {
             bindings = <&kp F3>;
             key-positions = <21 22 23>;
-            layers = <7>;
+            layers = <6>;
         };
 
         all_mb4_expose {
@@ -264,7 +255,7 @@
         sys_reset {
             bindings = <&sys_reset>;
             key-positions = <0 1 2>;
-            layers = <5>;
+            layers = <4>;
         };
     };
 
@@ -274,7 +265,7 @@
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&hp_mt RSHFT LG(ENTER)>, <&caps_word>;
+            bindings = <&kp RSHFT>, <&caps_word>;
         };
 
         homerow: homerow_app_tap_search {
@@ -317,24 +308,6 @@
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
-        };
-
-        lct: lct {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LCT";
-            bindings = <&lc>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        hp_mt: hp_mt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HP_MT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
         };
     };
 
