@@ -133,7 +133,7 @@
         };
 
         all_mouse {
-            key-positions = <25 32>;
+            key-positions = <26 27 28>;
             bindings = <&smart_mouse>;
         };
 
