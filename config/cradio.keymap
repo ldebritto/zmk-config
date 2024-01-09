@@ -132,14 +132,9 @@
             bindings = <&numword>;
         };
 
-        all_mouse {
+        all_smart_mouse {
             key-positions = <26 27 28>;
             bindings = <&smart_mouse>;
-        };
-
-        all_capslock {
-            bindings = <&kp CAPS>;
-            key-positions = <24 31>;
         };
 
         // Combos to allow for using right side keys with the left hand only, making easier to use a mouse on the right side for edits
@@ -201,17 +196,6 @@
             bindings = <&kp F3>;
             key-positions = <21 22 23>;
             layers = <6>;
-        };
-
-        all_mb4_expose {
-            bindings = <&mkp MB4>;
-            key-positions = <20 21>;
-        };
-
-        sys_reset {
-            bindings = <&sys_reset>;
-            key-positions = <0 1 2>;
-            layers = <4>;
         };
     };
 
