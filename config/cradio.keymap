@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
+#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -24,13 +24,12 @@
 };
 
 / {
-
     combos {
         compatible = "zmk,combos";
 
         all_toggle_nav {
             key-positions = <30 31>;
-            bindings = <&tog 2>;
+            bindings = <&to 2>;
         };
 
         all_numword {
@@ -259,5 +258,4 @@
             >;
         };
     };
-
 };
