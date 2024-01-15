@@ -80,12 +80,6 @@
             bindings = <&bt BT_CLR>;
         };
 
-        sys_toggle_colemak {
-            bindings = <&tog 0>;
-            layers = <4>;
-            key-positions = <10 13 16 19>;
-        };
-
         // AOE layer combos
 
         aoe_toggle_aoe_layers {
@@ -115,6 +109,8 @@
             label = "NEXT-PREVIOUS";
             #binding-cells = <0>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
+
+            tapping-term-ms = <300>;
         };
 
         swapper: swapper {
