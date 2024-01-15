@@ -27,17 +27,17 @@
     combos {
         compatible = "zmk,combos";
 
-        all_toggle_nav {
+        toggle_nav {
             key-positions = <30 31>;
             bindings = <&to 2>;
         };
 
-        all_numword {
+        numword {
             key-positions = <32 33>;
             bindings = <&numword>;
         };
 
-        all_smart_mouse {
+        smart_mouse {
             key-positions = <26 27 28>;
             bindings = <&smart_mouse>;
         };
@@ -48,7 +48,7 @@
             bindings = <&kp C_MUTE>;
         };
 
-        // SYS layer was replaced by combos from FUN, needed to pairing and flashing the keyboard
+        // SYS layer was replaced by some combos from FUN
 
         sys_bootloader {
             key-positions = <20 21>;
@@ -136,7 +136,7 @@
             compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
             label = "NUM_WORD_SMART_LAYER";
             #binding-cells = <0>;
-            layers = <2>;
+            layers = <1>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
         };
