@@ -191,7 +191,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <180>;
         };
 
         tpmt: tpmt {
@@ -210,7 +210,7 @@
             bindings = <&lc>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <180>;
         };
     };
 
