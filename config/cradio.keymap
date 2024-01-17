@@ -29,7 +29,7 @@
 
         toggle_nav {
             key-positions = <30 31>;
-            bindings = <&to 2>;
+            bindings = <&to 3>;
         };
 
         numword {
@@ -44,7 +44,7 @@
 
         nav_mute {
             key-positions = <4 14>;
-            layers = <2>;
+            layers = <3>;
             bindings = <&kp C_MUTE>;
         };
 
@@ -52,53 +52,53 @@
 
         sys_bootloader {
             key-positions = <20 21>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bootloader>;
         };
 
         sys_toggle_bt0_connection {
             key-positions = <3 4>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_SEL 0>;
         };
 
         sys_toggle_bt1_connection {
             key-positions = <13 14>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_SEL 1>;
         };
 
         sys_toggle_bt2_connection {
             key-positions = <23 24>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_SEL 2>;
         };
 
         sys_clear_current_bluetooth_profile {
             key-positions = <28 29>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&bt BT_CLR>;
         };
 
         // AOE layer combos
 
         aoe_toggle_aoe_layers {
-            bindings = <&tog 6>;
+            bindings = <&tog 7>;
             key-positions = <1 2 3>;
-            layers = <0 6>;
+            layers = <0 7>;
         };
 
         aoe_pause {
             bindings = <&kp F3>;
             key-positions = <21 22 23>;
-            layers = <6>;
+            layers = <7>;
         };
 
         // Experimienting, back again with homerow mods
 
-         toggle_home_row_mods_on_off_on_default_layer {
+        toggle_home_row_mods_on_off_on_default_layer {
             key-positions = <10 19>;
-            layers = <4>;
+            layers = <5>;
             bindings = <&tog 1>;
         };
     };
@@ -184,7 +184,6 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
         };
- 
     };
 
     macros {
@@ -210,8 +209,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <3 2>;
-            then-layer = <4>;
+            if-layers = <4 3>;
+            then-layer = <5>;
         };
     };
 
@@ -220,19 +219,28 @@
 
         defaulf {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                           &lc 2    &shft_cw    &kp SPACE  &lc_nw 3 0
+  &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U       &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J       &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M       &kp COMMA  &kp DOT  &kp SEMI
+                             &lc 3  &shft_cw    &kp SPACE  &lc_nw 4 0
             >;
         };
 
         urob_style_home_row_mods {
             bindings = <
-&kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U         &kp I          &kp O         &kp P
-&hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N      &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
-                                            &lc 2         &shft_cw    &kp SPACE  &lc_nw 3 0
+  &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U         &kp I          &kp O         &kp P
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N      &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
+                                              &lc 3         &shft_cw    &kp SPACE  &lc_nw 4 0
+            >;
+        };
+
+        numpad {
+            bindings = <
+  &kp TAB      &kp N7  &kp N8  &kp N9    &kp BACKSPACE    &trans  &trans    &trans     &trans    &trans
+  &kp N0       &kp N4  &kp N5  &kp N6    &kp ENTER        &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp LS(TAB)  &kp N1  &kp N2  &kp N3    &kp DELETE       &trans  &trans    &trans     &trans    &trans
+                               &lt 3 N0  &trans           &trans  &trans
             >;
         };
 
@@ -267,7 +275,7 @@
             bindings = <
   &trans     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &trans     &trans     &trans    &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
   &kp LCTRL  &kp LALT                           &kp LSHFT  &kp LCMD   &trans    &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
-  &kp LG(Z)  &kp LG(X)                          &kp LG(C)  &kp LG(V)  &trans    &tog 5            &mkp MB3           &mkp MB4        &mkp MB5          &trans
+  &kp LG(Z)  &kp LG(X)                          &kp LG(C)  &kp LG(V)  &trans    &tog 6            &mkp MB3           &mkp MB4        &mkp MB5          &trans
                                                            &trans     &trans    &mkp MB1          &mkp MB2
             >;
         };
@@ -277,7 +285,7 @@
   &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
   &kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
-                                        &lt 7 H      &lt 8 SPACE    &trans  &trans
+                                        &lt 8 H      &lt 9 SPACE    &trans  &trans
             >;
         };
 
@@ -298,15 +306,5 @@
                                                &trans         &trans           &trans  &trans
             >;
         };
-
-        numpad {
-            bindings = <
-  &kp TAB      &kp N7  &kp N8  &kp N9    &kp BACKSPACE    &trans  &trans    &trans     &trans    &trans
-  &kp N0       &kp N4  &kp N5  &kp N6    &kp ENTER        &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp LS(TAB)  &kp N1  &kp N2  &kp N3    &kp DELETE       &trans  &trans    &trans     &trans    &trans
-                               &lt 2 N0  &trans           &trans  &trans
-            >;
-        };
-
     };
 };
