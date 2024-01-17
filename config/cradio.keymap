@@ -229,10 +229,10 @@
 
         urob_style_home_row_mods {
             bindings = <
-&kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
-&hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N          &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
-                                            &lc 2         &shft_cw        &kp SPACE      &lc_nw 3 0
+&kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U         &kp I          &kp O         &kp P
+&hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H.     &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+&hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N      &kp M         &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
+                                            &lc 2         &shft_cw    &kp SPACE  &lc_nw 3 0
             >;
         };
 
