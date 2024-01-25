@@ -265,10 +265,10 @@
 
         numpad {
             bindings = <
-  &kp TAB      &kp N7  &kp N8  &kp N9    &kp BACKSPACE    &trans  &trans    &trans     &trans    &trans
-  &kp N0       &kp N4  &kp N5  &kp N6    &kp ENTER        &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp LS(TAB)  &kp N1  &kp N2  &kp N3    &kp DELETE       &trans  &trans    &trans     &trans    &trans
-                               &lt 3 N0  &trans           &trans  &trans
+  &kp TAB      &kp N7  &kp N8  &kp N9      &kp BACKSPACE    &trans  &trans    &trans     &trans    &trans
+  &kp N0       &kp N4  &kp N5  &kp N6      &kp ENTER        &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp LS(TAB)  &kp N1  &kp N2  &kp N3      &kp DELETE       &trans  &trans    &trans     &trans    &trans
+                               &hplc 3 N0  &trans           &trans  &trans
             >;
         };
 
@@ -277,16 +277,16 @@
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP   &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN   &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &caps_word  &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &lc 3        &mo 4            &trans      &lc 4
+                                               &lc 3        &trans           &trans      &lc 4
             >;
         };
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp RA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &lc 3      &trans       &mo 3       &lc 4
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET  &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &numword   &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                   &lc 3      &trans       &trans     &lc 4
             >;
         };
 
