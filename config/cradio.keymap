@@ -14,7 +14,7 @@
 };
 
 &lt {
-    flavor = "balanced";
+    flavor = "hold-preferred";
     hold-trigger-on-release;
 };
 
@@ -100,6 +100,28 @@
             key-positions = <10 19>;
             layers = <5>;
             bindings = <&tog 1>;
+        };
+
+        left_side_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <23 22>;
+        };
+
+        left_side_backspace {
+            bindings = <&kp BSPC>;
+            key-positions = <23 24>;
+            layers = <0 1 6>;
+        };
+
+        left_hand_esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        left_side_space {
+            bindings = <&kp SPACE>;
+            key-positions = <21 22 23>;
+            layers = <0 3 6 1>;
         };
     };
 
