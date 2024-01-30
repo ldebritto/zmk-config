@@ -48,7 +48,7 @@ Allows for `CMD+TAB` with just one key. It keeps the modal open until you releas
 
 This is *not native to ZMK's `main` repo* and requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366). See ZMK.dev [documentation](https://zmk.dev/docs/features/beta-testing) for instructions on how to use PRs not yet merged into ZMK's main repo.
 
-### 4. Numpad for `&numword``
+### 4. Numpad for `&numword`
 
 `&numword` is accessible through the `N` key in `SYM` layer or via a right thumbkeys combo. 
 
