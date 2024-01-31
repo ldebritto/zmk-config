@@ -15,7 +15,6 @@
 
 &lt {
     flavor = "hold-preferred";
-    hold-trigger-on-release;
 };
 
 &mt {
@@ -27,23 +26,44 @@
     combos {
         compatible = "zmk,combos";
 
-        toggle_nav {
-            key-positions = <30 31>;
-            bindings = <&to 1>;
+        left_hand_enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <23 22>;
+            layers = <0 2 4>;
         };
 
-        smart_mouse {
+        left_hand_backspace_combo {
+            bindings = <&kp BSPC>;
+            key-positions = <23 24>;
+            layers = <0 4>;
+        };
+
+        left_hand_esc_combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1 4>;
+        };
+
+        left_hand_space_combo {
+            bindings = <&kp SPACE>;
+            key-positions = <21 22 23>;
+            layers = <0 1 4>;
+        };
+
+        toggle_nav_combo {
+            key-positions = <30 31>;
+            bindings = <&tog 1>;
+        };
+
+        activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
             bindings = <&smart_mouse>;
         };
 
-        nav_mute {
+        nav_media_mute_combo {
             key-positions = <4 14>;
             layers = <1>;
             bindings = <&kp C_MUTE>;
         };
-
-        // SYS layer was replaced by some combos from FUN
 
         sys_bootloader {
             key-positions = <20 21>;
@@ -75,49 +95,12 @@
             bindings = <&bt BT_CLR>;
         };
 
-        // AOE layer combos
-
-        aoe_toggle_aoe_layers {
+        aoe_toggle_aoe_gaming_layers {
             bindings = <&tog 5>;
-            key-positions = <1 2 3>;
+            key-positions = <21 22 23>;
             layers = <0 5>;
         };
 
-        aoe_pause {
-            bindings = <&kp F3>;
-            key-positions = <21 22 23>;
-            layers = <5>;
-        };
-
-        // Experimienting, back again with homerow mods
-
-        toggle_home_row_mods_on_off_on_default_layer {
-            key-positions = <10 19>;
-            layers = <3>;
-            bindings = <&tog 0>;
-        };
-
-        left_side_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <23 22>;
-        };
-
-        left_side_backspace {
-            bindings = <&kp BSPC>;
-            key-positions = <23 24>;
-            layers = <0 4>;
-        };
-
-        left_hand_esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-        };
-
-        left_side_space {
-            bindings = <&kp SPACE>;
-            key-positions = <21 22 23>;
-            layers = <0 1 4>;
-        };
     };
 
     behaviors {
@@ -154,30 +137,13 @@
             bindings = <&tog 4>, <&none>, <&tog 4>;
 
             ignored-layers = <4>;
-            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>;
+            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>; // Every key set in mouse layer
         };
 
-        numword: numword {
-            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
-            label = "NUM_WORD_SMART_LAYER";
-            #binding-cells = <0>;
-            layers = <2>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL K_CANCEL RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel without entering any other character
-            ignore-numbers;
-        };
-
-        hplc: hplc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HPLC";
-            bindings = <&lc>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-        };
     };
 
     macros {
-        lc: mo_layer_with_embeded_cancel_for_clearing_queued_sticky_mods_on_key_press {
+        lc: mo_layer_switch_with_an_embeded_cancel_tap_for_clearing_queued_sticky_mods {
             label = "LAYER_CANCEL";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -198,7 +164,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        tri_layer {
+        tri_layer_for_function_and_number_keys {
             if-layers = <2 1>;
             then-layer = <3>;
         };
@@ -255,8 +221,8 @@
         aoe_default_layer {
             bindings = <
   &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &kp ENTER
+  &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &kp F3
                                         &lt 6 LC(LS(H))  &lt 7 DOT    &trans  &trans
             >;
         };
