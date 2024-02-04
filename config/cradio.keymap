@@ -1,8 +1,8 @@
+#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use some diacriticals in PT-BR  (~, ` and ^). This makes RSHFT a better candidate for my thumb key
@@ -25,7 +25,7 @@
             bindings = <&kp ENTER>;
             key-positions = <13 23>;
         };
-                
+
         left_hand_backspace_combo {
             bindings = <&kp BSPC>;
             key-positions = <14 24>;
@@ -87,7 +87,6 @@
             key-positions = <21 22 23>;
             layers = <0 5>;
         };
-
     };
 
     behaviors {
@@ -127,6 +126,12 @@
             ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>; // Every key set in mouse layer
         };
 
+        ordinal: ordinal {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ORDINAL";
+            #binding-cells = <0>;
+            bindings = <&kp LA(N9)>, <&kp LA(N0)>;
+        };
     };
 
     macros {
@@ -185,13 +190,13 @@
                                                &lc 1        &lt 2 SPACE      &trans     &lc 2
             >;
         };
-        
+
         symbols_layer {
             bindings = <
-  &kp LC(LG(SPACE))  &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS          &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS           &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                           &lc 1      &trans       &mo 1       &lc 2
+  &ordinal   &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                   &lc 1      &kp LC(LG(SPACE))    &mo 1       &lc 2
             >;
         };
 
