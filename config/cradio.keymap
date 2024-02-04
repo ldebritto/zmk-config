@@ -1,7 +1,7 @@
+#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -143,6 +143,15 @@
             ignored-layers = <4>;
             ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>; // Every key set in mouse layer
         };
+
+        tabswap: tabswap {
+            compatible = "zmk,behavior-tri-state";
+            label = "TABSWAP";
+            #binding-cells = <0>;
+            bindings = <&kt LCTL>, <&kp TAB>, <&kt LCTL>;
+
+            ignored-key-positions = <0 3 7 9 12 16 17 18 28 29>;
+        };
     };
 
     macros {
@@ -253,6 +262,15 @@
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
                                                &trans         &trans           &trans  &trans
+            >;
+        };
+
+        number_nav {
+            bindings = <
+  &kp N1     &kp N2    &kp N3             &kp N4        &kp N5          &kp N6      &kp N7     &kp N8         &kp N9   &kp N0
+  &sk LCTRL  &sk LALT  &sk LSHFT          &sk LCMD      &swapper        &kp TAB     &kp LEFT   &kp DOWN       &kp UP   &kp RIGHT
+  &swapper   &tabswap  &kp LG(LS(SPACE))  &kp LG(LBKT)  &kp LG(RBKT)    &kp ESCAPE  &kp ENTER  &kp BACKSPACE  &kp DEL  &playnextprev
+                                          &trans        &trans          &trans      &trans
             >;
         };
     };
