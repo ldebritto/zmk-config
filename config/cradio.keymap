@@ -28,7 +28,7 @@
 
         left_hand_backspace_combo {
             bindings = <&kp BSPC>;
-            key-positions = <14 24>;
+            key-positions = <3 13>;
         };
 
         left_hand_esc_combo {
