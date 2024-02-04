@@ -1,8 +1,8 @@
-#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use some diacriticals in PT-BR  (~, ` and ^). This makes RSHFT a better candidate for my thumb key
