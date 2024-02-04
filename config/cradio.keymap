@@ -211,7 +211,7 @@
   &kp N1        &kp N2        &kp N3             &kp N4     &kp N5          &kp N6   &kp N7    &kp N8     &kp N9     &kp N0
   &sk LCTRL     &sk LALT      &sk LSHFT          &sk LCMD   &tab_swapper    &kp ESC  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
   &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(RS(SPACE))  &kp ENTER  &kp BSPC        &kp DEL  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                                                 &trans     &trans          &trans   &trans
+                                                 &trans     &mo 2           &trans   &trans
             >;
         };
 
@@ -220,7 +220,7 @@
   &kp LC(LG(SPACE))  &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE    &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS          &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS           &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT    &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                           &lc 1      &trans       &trans      &lc 2
+                                           &lc 1      &trans       &mo 1       &lc 2
             >;
         };
 
