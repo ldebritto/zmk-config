@@ -1,3 +1,5 @@
+// This is a JSON for better visualization when editing the keymap on Nick Coutsos webapp
+
 {  "id": "ferris_sweep",
   "name": "Sweep",
   "layouts": {
