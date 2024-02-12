@@ -238,8 +238,8 @@
 
         mouse {
             bindings = <
-  &none      &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &none      &none      &none     &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &none 
-  &kp LCTRL  &kp LALT                           &kp LSHFT  &kp LCMD   &none     &mwh SCROLL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none 
+  &none      &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &none      &none      &none     &mwh SCROLL_UP    &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &none 
+  &kp LCTRL  &kp LALT                           &kp LSHFT  &kp LCMD   &none     &mwh SCROLL_DOWN  &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &none 
   &kp LG(Z)  &kp LG(X)                          &kp LG(C)  &kp LG(V)  &none     &none             &mkp MB3           &mkp MB4        &mkp MB5          &none 
                                                            &trans     &trans    &mkp MB1          &mkp MB2
             >;
