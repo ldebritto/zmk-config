@@ -214,7 +214,7 @@
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &lc 1        &lt 2 SPACE      &trans     &lc 2
+                                               &trans        &lt 2 SPACE      &trans     &trans
             >;
         };
 
@@ -223,7 +223,7 @@
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &lc 1      &kp LC(LG(SPACE))    &mo 1       &lc 2
+                                   &trans     &kp LC(LG(SPACE))    &mo NAV       &trans
             >;
         };
 
@@ -250,7 +250,7 @@
   &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &kp ENTER
   &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &kp F3
-                                        &lt 6 LC(LS(H))  &lt 7 DOT    &trans  &trans
+                                        &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
             >;
         };
 
