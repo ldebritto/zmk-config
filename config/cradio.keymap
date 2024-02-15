@@ -19,7 +19,7 @@
 };
 
 &sk {
-    release-after-ms = <600000>; // set to a bonkers 10mins default is 1s 1000ms to emulate Callum's QMK config
+    release-after-ms = <600000>; // set to a bonkers 10mins to emulate Callum's QMK config, default is 1s (1000ms)
     quick-release; // avoids "THe" problem
 };
 
@@ -33,7 +33,7 @@
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NAV>;
+            layers = <DEF NUM NAV AOE>;
             key-positions = <13 23>;
         };
 
@@ -45,7 +45,7 @@
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            layers = <DEF NUM NAV>;
+            layers = <DEF NUM NAV AOE>;
             key-positions = <0 10>;
         };
 
@@ -63,7 +63,7 @@
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <DEF NAV>;
+            layers = <DEF>;
             bindings = <&smart_mouse>;
         };
 
@@ -159,7 +159,7 @@
     };
 
     macros {
-        lc: mo_layer_switch_with_an_embeded_cancel_tap_for_clearing_queued_sticky_mods {
+        lc: mo_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_press {
             label = "LAYER_CANCEL";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -247,17 +247,17 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &kp ENTER
-  &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &kp F3
-                                        &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R            &kp T         &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G         &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V            &kp B         &trans  &trans  &trans  &trans  &kp F3
+                                        &lt ASG LC(LS(H))  &lt ASB DOT &trans  &trans
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
   &kp ESC       &kp N7       &kp N8         &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N2  &mt LALT N3  &mt LSHFT N4   &mt LCTRL N5  &kp N6         &to 1   &trans  &trans  &trans  &trans
+  &mt LCTRL N2  &mt LALT N3  &mt LSHFT N4   &mt LCTRL N5  &kp N6         &to DEF &trans  &trans  &trans  &trans
   &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
                                             &trans        &trans         &trans  &trans
             >;
@@ -266,7 +266,7 @@
         aoe_select_all_buildings {
             bindings = <
   &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &to 1   &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &to DEF &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
                                                &trans         &trans           &trans  &trans
             >;
