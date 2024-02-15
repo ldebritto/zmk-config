@@ -63,7 +63,7 @@
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <NAV>;
+            layers = <DEF NAV>;
             bindings = <&smart_mouse>;
         };
 
