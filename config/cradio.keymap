@@ -4,14 +4,15 @@
 #include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5
-#define AOE 6
-#define ASG 7
-#define ASB 8
+#define TMK 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define MOU 6
+#define AOE 7
+#define ASG 8
+#define ASB 9
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -71,6 +72,12 @@
             key-positions = <4 14>;
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
+        };
+
+        toggle_tarmak_as_default {
+            key-positions = <14 15>;
+            layers = <FUN>;
+            bindings = <&tog TMK>;
         };
 
         sys_bootloader {
@@ -192,9 +199,18 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+  &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw  &kp SPACE  &lc SYM
+            >;
+        };
+
+        tarmak_one {
+            bindings = <
+  &kp Q        &kp W  &kp E  &kp J    &kp T     &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H      &kp N  &kp E      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp K      &kp M  &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw  &kp SPACE  &lc SYM
             >;
         };
