@@ -34,37 +34,37 @@
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <DEF TMK NUM NAV AOE>;
             key-positions = <13 23>;
         };
 
         left_hand_backspace_combo {
             bindings = <&kp BSPC>;
-            layers = <DEF NUM NAV>;
+            layers = <DEF TMK NUM NAV>;
             key-positions = <3 13>;
         };
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <DEF TMK NUM NAV AOE>;
             key-positions = <0 10>;
         };
 
         toggle_nav_combo {
             key-positions = <30 31>;
-            layers = <DEF>;
+            layers = <DEF TMK>;
             bindings = <&tog NAV>;
         };
         
         numword_combo {
             key-positions = <32 33>;
-            layers = <DEF>;
+            layers = <DEF TMK>;
             bindings = <&numword>;
         };
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <DEF>;
+            layers = <DEF TMK>;
             bindings = <&smart_mouse>;
         };
 
@@ -137,7 +137,7 @@
         aoe_toggle_aoe_gaming_layers {
             bindings = <&tog AOE>;
             key-positions = <21 22 23>;
-                layers = <DEF AOE>;
+                layers = <DEF TMK AOE>;
         };
     };
 
