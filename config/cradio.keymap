@@ -244,7 +244,7 @@
   &kp N1     &kp N2     &kp N3     &kp N4    &kp N5      &kp N6  &kp N7    &kp N8     &kp N9     &kp N0
   &kp MINUS  &kp ASTRK  &kp EQUAL  &none     &kp DLLR    &none   &none     &none      &kp LA(N9) &kp LA(N0)
   &kp PLUS   &none      &none      &kp FSLH  &kp PRCNT   &none   &kp BSLH  &kp COMMA  &kp DOT    &kp EXCL
-                                   &lc NAV   &trans      &trans  &lc SYM
+                                   &trans   &trans      &trans  &trans
             >;
         };
 
@@ -263,7 +263,7 @@
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE                  &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR                   &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT                  &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &mt LSHFT LC(LG(SPACE))    &mo NAV       &trans
+                                   &trans     &mt RSHFT LC(LG(SPACE))    &mo NAV       &trans
             >;
         };
 
