@@ -74,6 +74,30 @@
             bindings = <&kp C_MUTE>;
         };
 
+        acento_til_mac_combo {
+            key-positions = <4 14>;
+            layers = <DEF TMK>;
+            bindings = <&kp LA(N)>;
+        };
+        
+        acento_circunflexo_mac_combo {
+            key-positions = <5 15>;
+            layers = <DEF TMK>;
+            bindings = <&kp LA(I)>;
+        };
+        
+        acento_grave_mac_combo {
+            key-positions = <9 19>;
+            layers = <DEF TMK>;
+            bindings = <&kp RA(GRAVE)>;
+        };
+        
+        acento_trema_mac_combo {
+            key-positions = <19 29>;
+            layers = <DEF TMK>;
+            bindings = <&kp RA(U)>;
+        };
+
         toggle_tarmak_as_default {
             key-positions = <14 15>;
             layers = <FUN>;
