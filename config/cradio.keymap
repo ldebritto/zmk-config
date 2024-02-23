@@ -32,18 +32,6 @@
     combos {
         compatible = "zmk,combos";
 
-        enter_combo {
-            bindings = <&kp ENTER>;
-            layers = <DEF TMK NUM NAV AOE>;
-            key-positions = <16 26>;
-        };
-
-        backspace_combo {
-            bindings = <&kp BACKSPACE>;
-            layers = <DEF TMK NUM NAV AOE>;
-            key-positions = <17 27>;
-        };
-
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             layers = <DEF TMK NUM NAV AOE>;
@@ -67,18 +55,6 @@
             layers = <DEF TMK>;
             bindings = <&tog NAV>;
         };
-        
-        spotlight_combo {
-            key-positions = <15 16>;
-            layers = <DEF TMK>;
-            bindings = <&kp LG(SPACE)>;
-        };
-        
-        thumb_spotlight_combo {
-            key-positions = <16 32>;
-            layers = <DEF TMK>;
-            bindings = <&kp LG(SPACE)>;
-        };
 
         numword_combo {
             key-positions = <32 33>;
@@ -91,41 +67,11 @@
             layers = <DEF TMK>;
             bindings = <&smart_mouse>;
         };
-
-        nav_media_play_combo {
-            key-positions = <4 14>;
-            layers = <NAV>;
-            bindings = <&playnextprev>;
-        };
         
         nav_media_mute_combo {
-            key-positions = <5 15>;
+            key-positions = <4 14>;
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
-        };
-
-        acento_til_mac_combo {
-            key-positions = <4 14>;
-            layers = <DEF TMK>;
-            bindings = <&kp LA(N)>;
-        };
-        
-        acento_circunflexo_mac_combo {
-            key-positions = <5 15>;
-            layers = <DEF TMK>;
-            bindings = <&kp LA(I)>;
-        };
-        
-        acento_grave_mac_combo {
-            key-positions = <9 19>;
-            layers = <DEF TMK>;
-            bindings = <&kp RA(GRAVE)>;
-        };
-        
-        acento_trema_mac_combo {
-            key-positions = <19 29>;
-            layers = <DEF TMK>;
-            bindings = <&kp RA(U)>;
         };
 
         toggle_tarmak_as_default {
