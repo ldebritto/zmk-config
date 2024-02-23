@@ -61,6 +61,12 @@
             layers = <DEF TMK>;
             bindings = <&kp LG(SPACE)>;
         };
+        
+        thumb_spotlight_combo {
+            key-positions = <16 32>;
+            layers = <DEF TMK>;
+            bindings = <&kp LG(SPACE)>;
+        };
 
         numword_combo {
             key-positions = <32 33>;
