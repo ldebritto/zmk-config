@@ -75,7 +75,7 @@
         };
         
         hyper_combo {
-            key-positions = <15 16>;
+            key-positions = <13 14>;
             layers = <DEF TMK NAV>;
             bindings = <&sk LC(LA(LS(LGUI)))>;
         };
