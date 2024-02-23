@@ -56,6 +56,12 @@
             bindings = <&tog NAV>;
         };
         
+        spotlight_combo {
+            key-positions = <15 16>;
+            layers = <DEF TMK>;
+            bindings = <&kp LG(SPACE)>;
+        };
+
         numword_combo {
             key-positions = <32 33>;
             layers = <DEF TMK>;
