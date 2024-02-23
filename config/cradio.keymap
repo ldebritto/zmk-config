@@ -74,6 +74,12 @@
             bindings = <&kp LG(SPACE)>;
         };
         
+        hyper_combo {
+            key-positions = <15 16>;
+            layers = <DEF TMK NAV>;
+            bindings = <&sk LC(LA(LS(LGUI)))>;
+        };
+        
         thumb_spotlight_combo {
             key-positions = <16 32>;
             layers = <DEF TMK>;
@@ -282,8 +288,8 @@
         navigation_and_media_layer {
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &sk LC(LA(LS(LGUI)))  &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp C_VOL_DN          &playnextprev  &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev         &kp F18        &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                &trans       &mo SYM               &trans         &trans
             >;
         };
