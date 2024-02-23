@@ -74,12 +74,6 @@
             bindings = <&kp LG(SPACE)>;
         };
         
-        hyper_combo {
-            key-positions = <13 14>;
-            layers = <DEF TMK NAV>;
-            bindings = <&sk LC(LA(LS(LGUI)))>;
-        };
-        
         thumb_spotlight_combo {
             key-positions = <16 32>;
             layers = <DEF TMK>;
