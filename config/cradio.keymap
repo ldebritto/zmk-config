@@ -32,6 +32,18 @@
     combos {
         compatible = "zmk,combos";
 
+        enter_combo {
+            bindings = <&kp ENTER>;
+            layers = <DEF TMK NUM NAV AOE>;
+            key-positions = <16 26>;
+        };
+
+        backspace_combo {
+            bindings = <&kp BACKSPACE>;
+            layers = <DEF TMK NUM NAV AOE>;
+            key-positions = <17 27>;
+        };
+
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             layers = <DEF TMK NUM NAV AOE>;
