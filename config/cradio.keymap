@@ -45,7 +45,7 @@
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <DEF AOE>;
             key-positions = <13 23>;
         };
 
@@ -73,30 +73,6 @@
             bindings = <&kp C_MUTE>;
         };
         
-        nav_undo {
-            key-positions = <10 20>;
-            layers = <DEF NAV>;
-            bindings = <&kp LG(Z)>;
-        };
-        
-        nav_cut {
-            key-positions = <11 21>;
-            layers = <DEF NAV>;
-            bindings = <&kp LG(X)>;
-        };
-        
-        nav_copy {
-            key-positions = <12 22>;
-            layers = <DEF NAV>;
-            bindings = <&kp LG(C)>;
-        };
-
-        nav_paste {
-            key-positions = <13 23>;
-            layers = <DEF NAV>;
-            bindings = <&kp LG(V)>;
-        };      
-
         sys_bootloader {
             key-positions = <20 21>;
             layers = <FUN>;
@@ -233,20 +209,12 @@
         };
 
 
-//         navigation_and_media_layer {
-//             bindings = <
-//   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
-//   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-//   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev         &kp F18        &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-//                                                &trans       &mo SYM               &trans         &trans
-//             >;
-//         };
         navigation_and_media_layer {
             bindings = <
-  &kp TAB       &swapper      &kp LS(LC(TAB))  &kp LC(TAB)   &kp C_VOL_UP          &kp PG_UP  &kp HOME     &kp UP         &kp END            &kp BSPC
-  &sk LCTRL     &sk LALT      &sk LSHFT        &sk LCMD      &kp C_VOL_DN          &kp PG_DN  &kp LEFT     &kp DOWN       &kp RIGHT          &kp ENTER
-  &kp LC(LEFT)  &kp LC(RIGHT) &kp LG(LBKT)     &kp LG(RBKT)  &playnextprev         &kp CAPS   &kp LA(LEFT) &kp LA(RIGHT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans        &trans                &trans     &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev         &kp F18        &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+                                               &trans       &trans                &trans         &trans
             >;
         };
 
