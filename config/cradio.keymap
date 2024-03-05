@@ -4,15 +4,14 @@
 #include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 
 #define DEF 0
-#define TMK 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
-#define AOE 7
-#define ASG 8
-#define ASB 9
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
+#define AOE 6
+#define ASG 7
+#define ASB 8
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -32,39 +31,39 @@
     combos {
         compatible = "zmk,combos";
 
-        left_hand_enter_combo {
-            bindings = <&kp ENTER>;
-            layers = <DEF TMK NUM NAV AOE>;
-            key-positions = <13 23>;
+        left_hand_esc_combo {
+            bindings = <&kp ESCAPE>;
+            layers = <DEF NUM NAV AOE>;
+            key-positions = <0 10>;
         };
 
         left_hand_backspace_combo {
             bindings = <&kp BSPC>;
-            layers = <DEF TMK NUM NAV>;
+            layers = <DEF NUM NAV>;
             key-positions = <3 13>;
         };
 
-        left_hand_esc_combo {
-            bindings = <&kp ESCAPE>;
-            layers = <DEF TMK NUM NAV AOE>;
-            key-positions = <0 10>;
+        left_hand_enter_combo {
+            bindings = <&kp ENTER>;
+            layers = <DEF NUM NAV AOE>;
+            key-positions = <13 23>;
         };
 
         toggle_nav_combo {
             key-positions = <30 31>;
-            layers = <DEF TMK>;
+            layers = <DEF>;
             bindings = <&tog NAV>;
         };
 
         numword_combo {
             key-positions = <32 33>;
-            layers = <DEF TMK>;
+            layers = <DEF>;
             bindings = <&numword>;
         };
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <DEF TMK>;
+            layers = <DEF>;
             bindings = <&smart_mouse>;
         };
         
@@ -72,12 +71,6 @@
             key-positions = <4 14>;
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
-        };
-
-        toggle_tarmak_as_default {
-            key-positions = <14 15>;
-            layers = <FUN>;
-            bindings = <&tog TMK>;
         };
 
         sys_bootloader {
@@ -113,7 +106,7 @@
         aoe_toggle_aoe_gaming_layers {
             bindings = <&tog AOE>;
             key-positions = <21 22 23>;
-                layers = <DEF TMK AOE>;
+                layers = <DEF AOE>;
         };
     };
 
@@ -206,15 +199,6 @@
             >;
         };
 
-        tarmak_one {
-            bindings = <
-  &kp Q        &kp W  &kp J  &kp R    &kp T     &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H      &kp N  &kp E      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp K      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw  &kp SPACE  &lc SYM
-            >;
-        };
-
         numword_layer {
             bindings = <
   &kp N1     &kp N2     &kp N3     &kp N4    &kp N5      &kp N6  &kp N7    &kp N8     &kp N9     &kp N0
@@ -225,12 +209,20 @@
         };
 
 
+//         navigation_and_media_layer {
+//             bindings = <
+//   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
+//   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+//   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev         &kp F18        &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+//                                                &trans       &mo SYM               &trans         &trans
+//             >;
+//         };
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev         &kp F18        &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &mo SYM               &trans         &trans
+  &kp TAB       &swapper      &kp LS(LC(TAB))  &kp LC(TAB)   &kp C_VOL_UP          &kp PG_UP  &kp HOME     &kp UP         &kp END            &kp BSPC
+  &sk LCTRL     &sk LALT      &sk LSHFT        &sk LCMD      &kp C_VOL_DN          &kp PG_DN  &kp LEFT     &kp DOWN       &kp RIGHT          &kp ENTER
+  &kp LC(LEFT)  &kp LC(RIGHT) &kp LG(LBKT)     &kp LG(RBKT)  &playnextprev         &kp CAPS   &kp LA(LEFT) &kp LA(RIGHT)  &kp LG(LS(SPACE))  &kp DEL
+                                               &trans        &trans                &trans     &trans
             >;
         };
 
