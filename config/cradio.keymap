@@ -73,6 +73,12 @@
             bindings = <&kp C_MUTE>;
         };
         
+        nav_undo {
+            key-positions = <10 20>;
+            layers = <DEF NAV>;
+            bindings = <&kp LG(Z)>;
+        };
+        
         nav_cut {
             key-positions = <11 21>;
             layers = <DEF NAV>;
@@ -80,13 +86,13 @@
         };
         
         nav_copy {
-            key-positions = <11 21>;
+            key-positions = <12 22>;
             layers = <DEF NAV>;
             bindings = <&kp LG(C)>;
         };
 
         nav_paste {
-            key-positions = <11 21>;
+            key-positions = <13 23>;
             layers = <DEF NAV>;
             bindings = <&kp LG(V)>;
         };      
