@@ -72,6 +72,24 @@
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
+        
+        nav_cut {
+            key-positions = <11 21>;
+            layers = <DEF NAV>;
+            bindings = <&kp LG(X)>;
+        };
+        
+        nav_copy {
+            key-positions = <11 21>;
+            layers = <DEF NAV>;
+            bindings = <&kp LG(C)>;
+        };
+
+        nav_paste {
+            key-positions = <11 21>;
+            layers = <DEF NAV>;
+            bindings = <&kp LG(V)>;
+        };      
 
         sys_bootloader {
             key-positions = <20 21>;
