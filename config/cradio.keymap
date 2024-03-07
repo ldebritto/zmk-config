@@ -36,73 +36,73 @@
 
         esc_combo {
             bindings = <&kp ESCAPE>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <1 2>;
         };
 
         enter_combo {
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <2 3>;
         };
 
         backspace_combo {
             bindings = <&kp BSPC>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <6 7>;
         };
 
         del_combo {
             bindings = <&kp DEL>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <7 8>;
         };
 
         tab_combo {
             bindings = <&hrml LA(LSHFT) DEL>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <11 12>;
         };
         
         left_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) LPAR>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <16 17>;
         };
         
         right_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) RPAR>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <17 18>;
         };
 
         cut_combo {
             bindings = <&kp LG(X)>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <21 23>;
         };
 
         copy_combo {
             bindings = <&kp LG(C)>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <21 22>;
         };
 
         paste_combo {
             bindings = <&kp LG(V)>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <22 23>;
         };
 
         left_bracket_combo {
             bindings = <&kp LBKT>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <26 27>;
         };
 
         right_bracket_combo {
             bindings = <&kp RBKT>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <27 28>;
         };
 
@@ -110,97 +110,97 @@
 
         at_combo {
             bindings = <&kp AT>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <1 11>;
         };
 
         hash_combo {
             bindings = <&kp HASH>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <2 12>;
         };
 
         dollar_combo {
             bindings = <&kp DLLR>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <3 13>;
         };
 
         percent_combo {
             bindings = <&kp PRCNT>;
-            layers = <DEF NUM AOE>;
+            layers = <URB NUM AOE>;
             key-positions = <4 14>;
         };
 
         circumflex_combo {
             bindings = <&kp CARET>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <5 15>;
         };
 
         plus_combo {
             bindings = <&kp PLUS>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <6 16>;
         };
 
         asterisk_combo {
             bindings = <&kp ASTRK>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <7 17>;
         };
 
         anpersand_combo {
             bindings = <&kp AMPS>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <8 18>;
         };
 
         grave_combo {
             bindings = <&kp GRAVE>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <11 21>;
         };
 
         forward_slash_combo {
             bindings = <&kp FSLH>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <12 22>;
         };
 
         equal_combo {
             bindings = <&kp EQUAL>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <13 23>;
         };
 
         tilde_combo {
             bindings = <&kp TILDE>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <14 24>;
         };
 
         underscore_combo {
             bindings = <&kp UNDER>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <15 25>;
         };
 
         hyphen_combo {
             bindings = <&kp MINUS>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <16 26>;
         };
 
         slash_combo {
             bindings = <&kp SLASH>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <17 27>;
         };
 
         pipe_combo {
             bindings = <&kp PIPE>;
-            layers = <DEF NUM NAV AOE>;
+            layers = <URB NUM NAV AOE>;
             key-positions = <18 28>;
         };
         
@@ -242,7 +242,6 @@
             layers = <FUN>;
             bindings = <&tog URB>;
         };
-
 
         // System combos
 
