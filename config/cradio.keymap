@@ -227,32 +227,32 @@
 
         toggle_nav_combo {
             key-positions = <30 31>;
-            layers = <DEF>;
+            layers = <DEF URB>;
             bindings = <&tog NAV>;
         };
 
         numword_combo {
             key-positions = <32 33>;
-            layers = <DEF>;
+            layers = <DEF URB>;
             bindings = <&numword>;
         };
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <DEF>;
+            layers = <DEF URB>;
             bindings = <&smart_mouse>;
         };
         
         aoe_toggle_aoe_gaming_layers {
             bindings = <&tog AOE>;
             key-positions = <21 22 23>;
-                layers = <DEF AOE>;
+                layers = <DEF URB AOE>;
         };
 
         toggle_home_row_mods_on_off_for_default_layer {
             key-positions = <10 19>;
             layers = <FUN>;
-            bindings = <&tog URB>;
+            bindings = <&tog DEF>;
         };
 
         // System combos
