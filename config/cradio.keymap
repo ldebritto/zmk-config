@@ -36,72 +36,84 @@
 
         esc_combo {
             bindings = <&kp ESCAPE>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <1 2>;
         };
 
         enter_combo {
             bindings = <&kp ENTER>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <2 3>;
         };
 
         backspace_combo {
             bindings = <&kp BSPC>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <6 7>;
         };
 
         del_combo {
             bindings = <&kp DEL>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <7 8>;
         };
 
         tab_combo {
             bindings = <&hrml LA(LSHFT) DEL>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <11 12>;
         };
         
         left_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) LPAR>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <16 17>;
         };
         
         right_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) RPAR>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <17 18>;
         };
 
         cut_combo {
             bindings = <&kp LG(X)>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <21 23>;
         };
 
         copy_combo {
             bindings = <&kp LG(C)>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <21 22>;
         };
 
         paste_combo {
             bindings = <&kp LG(V)>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <22 23>;
         };
 
         left_bracket_combo {
             bindings = <&kp LBKT>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <26 27>;
         };
 
         right_bracket_combo {
             bindings = <&kp RBKT>;
+            require-prior-idle-ms = <75>;
             layers = <URB NUM NAV AOE>;
             key-positions = <27 28>;
         };
