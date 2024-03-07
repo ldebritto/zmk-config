@@ -63,7 +63,7 @@
         };
 
         tab_combo {
-            bindings = <&hrml LA(LSHFT) DEL>;
+            bindings = <&hrml LA(LSHFT) TAB>;
             require-prior-idle-ms = <150>;
             layers = <URB NUM NAV AOE>;
             key-positions = <11 12>;
