@@ -127,6 +127,13 @@
 
         // Vertical symbols combo
 
+        exclamation_combo {
+            bindings = <&kp EXCL>;
+            timeout-ms = <30>;
+            layers = <URB NUM NAV AOE>;
+            key-positions = <0 10>;
+        };
+
         at_combo {
             bindings = <&kp AT>;
             timeout-ms = <30>;
@@ -181,6 +188,13 @@
             timeout-ms = <30>;
             layers = <URB NUM NAV AOE>;
             key-positions = <8 18>;
+        };
+
+        question_mark_combo {
+            bindings = <&kp QMARK>;
+            timeout-ms = <30>;
+            layers = <URB NUM NAV AOE>;
+            key-positions = <9 19>;
         };
 
         grave_combo {
