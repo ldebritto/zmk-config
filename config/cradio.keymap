@@ -9,6 +9,7 @@
 #define SYM 3
 #define FUN 4
 #define MOU 5
+
 #define AOE 6
 #define ASG 7
 #define ASB 8
@@ -84,7 +85,7 @@
 
         numword_combo {
             key-positions = <32 33>;
-            layers = <DEF>;
+            layers = <DEF AOE>;
             bindings = <&numword>;
         };
         
