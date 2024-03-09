@@ -16,12 +16,12 @@
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
-    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use some diacriticals in PT-BR  (~, ` and ^). This makes RSHFT a better candidate for my thumb key
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use some dead keys for diacriticals in PT-BR  (~, ` and ^). This makes RSHFT a better candidate for my thumb key
 };
 
 &sk {
-    release-after-ms = <600000>; // set to a bonkers 10mins to emulate Callum's QMK config, default is 1s (1000ms)
-    quick-release; // avoids "THe" problem
+    release-after-ms = <600000>; // set to a bonkers 10mins to emulate Callum's QMK config behavior, default is 1s (1000ms)
+    quick-release; // avoids "THis" problem
 };
 
 &lt { flavor = "hold-preferred"; };
