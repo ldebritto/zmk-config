@@ -280,10 +280,10 @@
 
         aoe_unit_and_group_selection {
             bindings = <
-  &kp N6        &kp N7       &kp N8         &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N1  &mt LALT N2  &mt LSHFT N3   &mt LCTRL N4  &kp N5         &trans  &trans  &trans  &trans  &trans
-  &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp DOT       &kp LS(DOT)    &trans  &trans  &trans  &trans  &trans
-                                            &trans        &trans         &trans  &trans
+  &kp N1        &kp N2       &kp N3         &kp N4        &kp N5     &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8   &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &trans
+  &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp ENTER     &kp SPACE  &trans  &trans  &trans  &trans  &trans
+                                            &trans        &trans     &trans  &trans
             >;
         }; 
 
