@@ -13,6 +13,9 @@
 #define AOE 7
 #define ASG 8
 #define ASB 9
+#define UNB 10
+#define UNV 11
+#define UFN 12
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -458,6 +461,11 @@
             then-layer = <FUN>;
         };
         
+        urob_tri_layer_for_function_and_number_keys {
+            if-layers = <UNB UNV>;
+            then-layer = <UFN>;
+        };
+        
     };
 
     keymap {
@@ -477,7 +485,7 @@
   &kp Q          &kp W         &kp E          &kp R           &kp T       &kp Y      &kp U           &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F    &kp G       &kp H      &hrmr RGUI J    &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V           &kp B       &kp N      &kp M           &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
-                                              &lc NAV         &shft_cw    &kp SPACE  &lc SYM
+                                              &lc UNV         &hpmt LSHFT ENTER    &kp SPACE  &lc UFN
             >;
         };
 
@@ -554,4 +562,33 @@
             >;
         };
     };
+
+    urob_numword_layer {
+            bindings = <
+  &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
+  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &trans  &trans  &trans  &trans
+  &kp PLUS   &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans  &trans  &trans  &trans
+                             &lt UNV N0  &kp DOT      &trans  &trans
+            >;
+        };
+
+    urob_navigation_and_media_layer {
+            bindings = <
+  &trans           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL            &trans
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT          &trans
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &trans          &kp F18    &kp TAB   &trans    &kp LG(LS(SPACE))  &trans
+                                               &trans       &trans          &trans  &trans
+            >;
+        };
+
+    urob_function_layer {
+            bindings = <
+  &kp F12   &kp F7  &kp F8  &kp F9  &trans   &kp C_VOL_UP  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_MUTE
+  &kp F11   &kp F4  &kp F5  &kp F6  &trans   &kp C_VOL_DN  &hrmr RGUI LC(LA(LEFT)) &hrmr LSHFT LC(LA(C))  &hrmr RALT LC(LA(RIGHT))  &hrmr RCTRL LC(LA(ENTER))
+  &kp F10   &kp F1  &kp F2  &kp F3  &trans   &trans  &trans  &trans  &kp LG(LS(SPACE))  &trans
+                            &trans  &trans   &trans  &trans
+            >;
+        };
+
+
 };
