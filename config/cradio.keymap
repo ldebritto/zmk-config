@@ -41,7 +41,7 @@
         };
 
         left_hand_tab_combo {
-            bindings = <&hrml LA(LSHFT) TAB>;
+            bindings = <&kp TAB>;
             require-prior-idle-ms = <150>;
             layers = <DEF AOE>;
             key-positions = <1 11>;
@@ -68,7 +68,7 @@
             key-positions = <4 14>;
         };
         
-        // Special layers
+        // Special layer toggles
 
         nav_media_mute_combo {
             key-positions = <4 14>;
@@ -100,7 +100,7 @@
                 layers = <DEF AOE>;
         };
 
-        // System combos
+        // Keyboard adjustments combos
 
         sys_bootloader {
             key-positions = <20 21>;
