@@ -4,15 +4,15 @@
 #include "mouse.dtsi" // mouse stuff adapted from urob's MOUSE layer. Note to self: self .dtsi files are pointed with quotes "" instead of <> used to point files from remote ZMK
 
 #define DEF 0
-#define URB 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
-#define AOE 7
-#define ASG 8
-#define ASB 9
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
+#define AOE 6
+#define ASG 7
+#define ASB 8
+#define URB 9
 #define UNB 10
 #define UNV 11
 #define UFN 12
@@ -40,35 +40,35 @@
         esc_combo {
             bindings = <&kp ESCAPE>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <1 2>;
         };
 
         enter_combo {
             bindings = <&kp ENTER>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <2 3>;
         };
 
         backspace_combo {
             bindings = <&kp BSPC>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <6 7>;
         };
 
         del_combo {
             bindings = <&kp DEL>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <7 8>;
         };
 
         tab_combo {
             bindings = <&hrml LA(LSHFT) TAB>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <11 12>;
         };
         
@@ -76,7 +76,7 @@
             bindings = <&hrml RG(LSHFT) LPAR>;
             require-prior-idle-ms = <150>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <16 17>;
         };
         
@@ -84,7 +84,7 @@
             bindings = <&hrml RG(LSHFT) RPAR>;
             timeout-ms = <30>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <17 18>;
         };
 
@@ -92,7 +92,7 @@
             bindings = <&kp LG(X)>;
             timeout-ms = <30>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <21 23>;
         };
 
@@ -100,7 +100,7 @@
             bindings = <&kp LG(C)>;
             timeout-ms = <30>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <21 22>;
         };
 
@@ -108,7 +108,7 @@
             bindings = <&kp LG(V)>;
             timeout-ms = <30>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <22 23>;
         };
 
@@ -116,7 +116,7 @@
             bindings = <&kp LBKT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <26 27>;
         };
 
@@ -124,7 +124,7 @@
             bindings = <&kp RBKT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <150>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <27 28>;
         };
 
@@ -133,126 +133,126 @@
         exclamation_combo {
             bindings = <&kp EXCL>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <0 10>;
         };
 
         at_combo {
             bindings = <&kp AT>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <1 11>;
         };
 
         hash_combo {
             bindings = <&kp HASH>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <2 12>;
         };
 
         dollar_combo {
             bindings = <&kp DLLR>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <3 13>;
         };
 
         percent_combo {
             bindings = <&kp PRCNT>;
             timeout-ms = <30>;
-            layers = <URB NUM AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <4 14>;
         };
 
         circumflex_combo {
             bindings = <&kp CARET>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <5 15>;
         };
 
         plus_combo {
             bindings = <&kp PLUS>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <6 16>;
         };
 
         asterisk_combo {
             bindings = <&kp ASTRK>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <7 17>;
         };
 
         anpersand_combo {
             bindings = <&kp AMPS>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <8 18>;
         };
 
         question_mark_combo {
             bindings = <&kp QMARK>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <9 19>;
         };
 
         grave_combo {
             bindings = <&kp GRAVE>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <11 21>;
         };
 
         forward_slash_combo {
             bindings = <&kp FSLH>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <12 22>;
         };
 
         equal_combo {
             bindings = <&kp EQUAL>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <13 23>;
         };
 
         tilde_combo {
             bindings = <&kp TILDE>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <14 24>;
         };
 
         underscore_combo {
             bindings = <&kp UNDER>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <15 25>;
         };
 
         hyphen_combo {
             bindings = <&kp MINUS>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <16 26>;
         };
 
         slash_combo {
             bindings = <&kp SLASH>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <17 27>;
         };
 
         pipe_combo {
             bindings = <&kp PIPE>;
             timeout-ms = <30>;
-            layers = <URB NUM NAV AOE>;
+            layers = <URB UNB UNV AOE>;
             key-positions = <18 28>;
         };
         
@@ -273,8 +273,14 @@
 
         numword_combo {
             key-positions = <32 33>;
-            layers = <DEF URB>;
+            layers = <DEF>;
             bindings = <&numword>;
+        };
+        
+        urob_numword_combo {
+            key-positions = <32 33>;
+            layers = <URB>;
+            bindings = <&unumword>;
         };
 
         activate_smart_mouse_layer_combo {
@@ -291,7 +297,7 @@
 
         toggle_home_row_mods_on_off_for_default_layer {
             key-positions = <10 19>;
-            layers = <FUN>;
+            layers = <FUN UFN>;
             bindings = <&tog URB>;
         };
 
@@ -344,6 +350,16 @@
             layers = <NUM>;
             continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
+        };
+        
+        unumword: unumword {
+            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
+            label = "UROB_NUM_WORD_SMART_LAYER";
+            #binding-cells = <0>;
+            layers = <UNB>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL>;
+            ignore-numbers;
+            ignore-modifiers;
         };
 
         playnextprev: next_previous_song {
@@ -471,7 +487,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default {
+        default { // 0
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y      &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H      &kp J  &kp K      &kp L    &kp SQT
@@ -480,16 +496,7 @@
             >;
         };
 
-        urob_homerow_mods {
-            bindings = <
-  &kp Q          &kp W         &kp E          &kp R           &kp T       &kp Y      &kp U           &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F    &kp G       &kp H      &hrmr RGUI J    &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &kp V           &kp B       &kp N      &kp M           &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
-                                              &lc UNV         &hpmt LSHFT ENTER    &kp SPACE  &lc UFN
-            >;
-        };
-
-        numword_layer {
+        numword_layer { // 1
             bindings = <
   &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
   &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &trans  &trans  &trans  &trans
@@ -499,7 +506,7 @@
         };
 
 
-        navigation_and_media_layer {
+        navigation_and_media_layer { // 2
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
@@ -508,7 +515,7 @@
             >;
         };
 
-        symbols_layer {
+        symbols_layer { // 3
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE                  &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR                   &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
@@ -517,7 +524,7 @@
             >;
         };
 
-        function_and_number_row {
+        function_and_number_row { // 4
             bindings = <
   &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
   &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
@@ -526,7 +533,7 @@
             >;
         };
 
-        mouse {
+        mouse { // 5
             bindings = <
   &trans     &trans    &trans     &trans     &trans    &mwh SCROLL_UP    &mwh SCROLL_RIGHT  &mmv MOVE_UP    &mwh SCROLL_LEFT  &trans
   &kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD   &trans    &mwh SCROLL_DOWN  &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &trans
@@ -535,7 +542,7 @@
             >;
         };
 
-        aoe_default_layer {
+        aoe_default_layer { // 6
             bindings = <
   &kp Q        &kp W       &kp E        &kp R              &kp T         &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G         &trans  &trans  &trans  &trans  &trans
@@ -544,7 +551,7 @@
             >;
         };
 
-        aoe_unit_and_group_selection {
+        aoe_unit_and_group_selection { // 7
             bindings = <
   &kp N6        &kp N7       &kp N8         &kp N9        &kp DEL        &trans  &trans  &trans  &trans  &trans
   &mt LCTRL N1  &mt LALT N2  &mt LSHFT N3   &mt LCTRL N4  &kp N5         &trans  &trans  &trans  &trans  &trans
@@ -553,7 +560,7 @@
             >;
         }; 
 
-        aoe_select_all_buildings {
+        aoe_select_all_buildings { // 8
             bindings = <
   &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
@@ -563,7 +570,16 @@
         };
     };
 
-    urob_numword_layer {
+        urob_homerow_mods { // 9
+            bindings = <
+  &kp Q          &kp W         &kp E          &kp R           &kp T                &kp Y      &kp U           &kp I          &kp O         &kp P
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F    &kp G                &kp H      &hrmr RGUI J    &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml GLOBE Z  &kp X         &kp C          &kp V           &kp B                &kp N      &kp M           &kp COMMA      &kp DOT       &hrmr GLOBE SEMI
+                                              &lc UNV         &hpmt LSHFT ENTER    &kp SPACE  &lc UNB
+            >;
+        };
+  
+    urob_numword_layer { // 10
             bindings = <
   &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
   &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &trans  &trans  &trans  &trans
@@ -572,7 +588,7 @@
             >;
         };
 
-    urob_navigation_and_media_layer {
+    urob_navigation_and_media_layer { // 11
             bindings = <
   &trans           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL            &trans
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT          &trans
@@ -581,7 +597,7 @@
             >;
         };
 
-    urob_function_layer {
+    urob_function_layer { // 12
             bindings = <
   &kp F12   &kp F7  &kp F8  &kp F9  &trans   &kp C_VOL_UP  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_MUTE
   &kp F11   &kp F4  &kp F5  &kp F6  &trans   &kp C_VOL_DN  &hrmr RGUI LC(LA(LEFT)) &hrmr LSHFT LC(LA(C))  &hrmr RALT LC(LA(RIGHT))  &hrmr RCTRL LC(LA(ENTER))
@@ -589,6 +605,5 @@
                             &trans  &trans   &trans  &trans
             >;
         };
-
 
 };
