@@ -70,7 +70,7 @@
         };
 
         left_hand_forward_button_combo {
-            bindings = <&kp LG(LBKT)>;
+            bindings = <&kp LG(RBKT)>;
             require-prior-idle-ms = <150>;
             layers = <DEF NAV>;
             key-positions = <13 23>;
