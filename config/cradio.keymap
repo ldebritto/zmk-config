@@ -16,7 +16,7 @@
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
-    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is required to use some dead keys for diacriticals in PT-BR  (~, ` and ^). This makes RSHFT a better candidate for my thumb key
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // adding LSHFT is required to use some dead keys for diacriticals in PT-BR  (such as ~, ` and ^). This makes RSHFT a better candidate for my thumb key, as it can cancel &capsword on activation
 };
 
 &sk {
@@ -252,7 +252,7 @@
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP          &kp PG_UP      &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN          &kp PG_DN      &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev         &kp F18        &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &trans                &trans         &trans
+                                               &trans       &kp CAPS              &trans         &trans
             >;
         };
 
@@ -287,7 +287,7 @@
             bindings = <
   &kp Q        &kp W       &kp E        &kp R              &kp T         &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G         &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V              &kp B         &trans  &trans  &trans  &trans  &kp F3
+  &kp Z        &kp X       &kp C        &kp V              &kp B         &trans  &trans  &trans  &trans  &trans
                                         &lt ASG LC(LS(H))  &lt ASB DOT   &trans  &trans
             >;
         };
@@ -297,16 +297,16 @@
   &kp N1        &kp N2       &kp N3         &kp N4        &kp N5     &trans  &trans  &trans  &trans  &trans
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8   &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &trans
   &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp ENTER     &kp SPACE  &trans  &trans  &trans  &trans  &trans
-                                            &trans        &trans     &trans  &trans
+                                            &trans        &kp F3     &trans  &trans
             >;
         }; 
 
         aoe_select_all_buildings {
             bindings = <
   &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &none            &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
-                                               &trans         &trans           &trans  &trans
+                                               &kp ESC        &trans           &trans  &trans
             >;
         };
     };
