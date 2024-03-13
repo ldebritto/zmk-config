@@ -212,6 +212,7 @@
         
         sks: sticky_shift_with_shorter_timeout {
             compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_SHIFT";
             #binding-cells = <1>;
             bindings = <&kp>;
             release-after-ms = <600>;
