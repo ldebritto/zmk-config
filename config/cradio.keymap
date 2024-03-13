@@ -24,7 +24,7 @@
     quick-release; // avoids "THis" problem
 };
 
-&lt { flavor = "hold-preferred"; }; // Using them in AOE layers
+&lt { flavor = "hold-preferred"; }; // Using them in NWD and AOE layers
 
 &mt { flavor = "balanced"; }; // Globe/fn and AOE layers
 
