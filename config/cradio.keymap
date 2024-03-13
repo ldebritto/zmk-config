@@ -203,6 +203,7 @@
 
         sllc: sticky_layer_on_tap_lc_on_hold {
             compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_LAYER_ON_PRESS_LAYER_CANCEL_ON_HOLD";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <175>;
