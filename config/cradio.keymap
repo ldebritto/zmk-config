@@ -36,7 +36,7 @@
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF AOE>;
             key-positions = <0 10>;
@@ -44,7 +44,7 @@
 
         left_hand_tab_combo {
             bindings = <&kp TAB>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF NAV AOE>;
             key-positions = <1 11>;
@@ -52,7 +52,7 @@
 
         left_hand_backspace_combo {
             bindings = <&kp BSPC>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF NAV AOE>;
             key-positions = <2 12>;
@@ -60,7 +60,7 @@
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF NAV AOE>;
             key-positions = <3 13>;
@@ -68,7 +68,7 @@
 
         left_hand_back_button_combo {
             bindings = <&kp LG(LBKT)>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF NAV>;
             key-positions = <12 22>;
@@ -76,7 +76,7 @@
 
         left_hand_forward_button_combo {
             bindings = <&kp LG(RBKT)>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF NAV>;
             key-positions = <13 23>;
@@ -84,7 +84,7 @@
 
         left_hand_del_combo {
             bindings = <&kp DEL>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
             layers = <DEF AOE>;
             key-positions = <4 14>;
