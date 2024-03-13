@@ -161,7 +161,7 @@
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&sks RSHFT>, <&caps_word>;
+            bindings = <&skshs RSHFT RSHFT>, <&caps_word>;
         };
         
         numword: numword {
@@ -210,13 +210,22 @@
             bindings = <&lc>, <&sl>;
         };
         
-        sks: sticky_shift_with_shorter_timeout {
+        ssk: shorter_sticky_key_timeout {
             compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_SHIFT";
+            label = "SHORTER_STICKY_KEY_TIMEOUT";
             #binding-cells = <1>;
             bindings = <&kp>;
             release-after-ms = <600>;
             quick-release;
+        };
+
+        skshs: sticky_shift_on_tap_shift_on_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_LAYER_ON_PRESS_LAYER_CANCEL_ON_HOLD";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <175>;
+            bindings = <&kp>, <&sks>;
         };
 
     };
