@@ -144,7 +144,7 @@
         
         right_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) RPAR>;
-            timeout-ms = 20>;
+            timeout-ms = <20>;
 
             require-prior-idle-ms = <150>;
             layers = <DEF NAV NWD MOU AOE>;
