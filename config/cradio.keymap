@@ -208,7 +208,7 @@
 
         exclamation_combo {
             bindings = <&kp EXCL>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <0 10>;
@@ -216,7 +216,7 @@
 
         at_combo {
             bindings = <&kp AT>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <1 11>;
@@ -224,7 +224,7 @@
 
         hash_combo {
             bindings = <&kp HASH>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <2 12>;
@@ -232,7 +232,7 @@
 
         dollar_combo {
             bindings = <&kp DLLR>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NWD MOU AOE>;
             key-positions = <3 13>;
@@ -240,7 +240,7 @@
 
         tilde_combo {
             bindings = <&kp TILDE>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <4 14>;
@@ -248,7 +248,7 @@
 
         circumflex_combo {
             bindings = <&kp CARET>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <5 15>;
@@ -256,7 +256,7 @@
 
         plus_combo {
             bindings = <&kp PLUS>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <6 16>;
@@ -264,7 +264,7 @@
 
         asterisk_combo {
             bindings = <&kp ASTRK>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <7 17>;
@@ -272,7 +272,7 @@
 
         anpersand_combo {
             bindings = <&kp AMPS>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <8 18>;
@@ -280,7 +280,7 @@
 
         question_mark_combo {
             bindings = <&kp QMARK>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <9 19>;
@@ -288,7 +288,7 @@
 
         grave_combo {
             bindings = <&kp GRAVE>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <11 21>;
@@ -296,7 +296,7 @@
 
         bachslash_combo {
             bindings = <&kp BSLH>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <12 22>;
@@ -304,7 +304,7 @@
 
         equal_combo {
             bindings = <&kp EQUAL>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <13 23>;
@@ -312,7 +312,7 @@
 
         percent_combo {
             bindings = <&kp PRCNT>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <14 24>;
@@ -320,7 +320,7 @@
 
         underscore_combo {
             bindings = <&kp UNDER>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <15 25>;
@@ -328,7 +328,7 @@
 
         hyphen_combo {
             bindings = <&kp MINUS>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <16 26>;
@@ -336,7 +336,7 @@
 
         slash_combo {
             bindings = <&kp SLASH>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <17 27>;
@@ -344,13 +344,11 @@
 
         pipe_combo {
             bindings = <&kp PIPE>;
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <18 28>;
         };
-        
-
 
         // Special layer toggles
 
