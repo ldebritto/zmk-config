@@ -32,6 +32,8 @@
     combos {
         compatible = "zmk,combos";
 
+        #include "symbols on combos.dtsi"
+
         // Left hand for usage while using the mouse on the right-hand mouse or from AOE layer
 
         left_hand_esc_combo {
