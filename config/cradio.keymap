@@ -32,8 +32,6 @@
     combos {
         compatible = "zmk,combos";
 
-        #include "symbols on combos.dtsi"
-
         // Left hand for usage while using the mouse on the right-hand mouse or from AOE layer
 
         left_hand_esc_combo {
@@ -200,6 +198,37 @@
             ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>; // Every key set in mouse layer
         };
 
+        // mod-taps fine tunned for home-row mods usage, inspired by urob's repo
+
+        hrml: hrml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
+        hrmr: hrmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
+
     };
 
     macros {
@@ -238,7 +267,8 @@
         default {
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H      &kp J  &kp K      &kp L    &kp SQT
+//   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F    &kp G                &kp H      &hrmr RGUI J    &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw  &kp SPACE  &lc SYM
             >;
