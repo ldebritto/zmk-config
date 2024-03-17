@@ -134,6 +134,14 @@
             key-positions = <11 12>;
         };
         
+        enter_combo {
+            bindings = <&hrml LS(LGUI) ENTER>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <12 13>;
+        };
+        
         left_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) LPAR>;
             require-prior-idle-ms = <150>;
