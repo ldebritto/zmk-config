@@ -222,12 +222,12 @@
             key-positions = <2 12>;
         };
 
-        dollar_combo {
-            bindings = <&kp DLLR>;
+        tilde_combo {
+            bindings = <&kp TILDE>;
             timeout-ms = <20>;
 
-            layers = <DEF NWD MOU AOE>;
-            key-positions = <3 13>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <4 14>;
         };
 
         percent_combo {
@@ -302,12 +302,12 @@
             key-positions = <13 23>;
         };
 
-        tilde_combo {
-            bindings = <&kp TILDE>;
+        dollar_combo {
+            bindings = <&kp DLLR>;
             timeout-ms = <20>;
 
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <14 24>;
+            layers = <DEF NWD MOU AOE>;
+            key-positions = <3 13>;
         };
 
         underscore_combo {
