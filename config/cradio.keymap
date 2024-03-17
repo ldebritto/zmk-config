@@ -222,16 +222,16 @@
             key-positions = <2 12>;
         };
 
-        tilde_combo {
-            bindings = <&kp TILDE>;
+        dollar_combo {
+            bindings = <&kp DLLR>;
             timeout-ms = <20>;
 
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <4 14>;
+            layers = <DEF NWD MOU AOE>;
+            key-positions = <3 13>;
         };
 
-        percent_combo {
-            bindings = <&kp PRCNT>;
+        tilde_combo {
+            bindings = <&kp TILDE>;
             timeout-ms = <20>;
 
             layers = <DEF NAV NWD MOU AOE>;
@@ -302,12 +302,12 @@
             key-positions = <13 23>;
         };
 
-        dollar_combo {
-            bindings = <&kp DLLR>;
+        percent_combo {
+            bindings = <&kp PRCNT>;
             timeout-ms = <20>;
 
-            layers = <DEF NWD MOU AOE>;
-            key-positions = <3 13>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <4 14>;
         };
 
         underscore_combo {
@@ -481,7 +481,6 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
         };
-
 
     };
 
