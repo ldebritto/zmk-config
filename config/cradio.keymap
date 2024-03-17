@@ -134,7 +134,7 @@
             key-positions = <11 12>;
         };
         
-        enter_combo {
+        home_row_enter_combo {
             bindings = <&hrml LS(LGUI) ENTER>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
@@ -294,8 +294,8 @@
             key-positions = <11 21>;
         };
 
-        forward_slash_combo {
-            bindings = <&kp FSLH>;
+        bachslash_combo {
+            bindings = <&kp BSLH>;
             timeout-ms = <20>;
 
             layers = <DEF NAV NWD MOU AOE>;
