@@ -1,5 +1,7 @@
 manifest:
   remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: ldebritto
       url-base: https://github.com/ldebritto
   projects:
