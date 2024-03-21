@@ -41,66 +41,6 @@
     combos {
         compatible = "zmk,combos";
 
-        /*         // Left hand for usage while using the mouse on the right-hand mouse or from AOE layer
-
-        left_hand_esc_combo {
-            bindings = <&kp ESCAPE>;
-            require-prior-idle-ms = <175>; // Followind urob's formula for my 60 relaxed WPM: 10500/60 = 175
-            timeout-ms = <30>;
-            layers = <DEF AOE>;
-            key-positions = <0 10>;
-        };
-
-        left_hand_tab_combo {
-            bindings = <&kp TAB>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV AOE>;
-            key-positions = <1 11>;
-        };
-
-        left_hand_backspace_combo {
-            bindings = <&kp BSPC>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV AOE>;
-            key-positions = <2 12>;
-        };
-
-        left_hand_enter_combo {
-            bindings = <&kp ENTER>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV AOE>;
-            key-positions = <3 13>;
-        };
-
-        left_hand_back_button_combo {
-            bindings = <&kp LG(LBKT)>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV>;
-            key-positions = <12 22>;
-        };
-
-        left_hand_forward_button_combo {
-            bindings = <&kp LG(RBKT)>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV>;
-            key-positions = <13 23>;
-        };
-
-        left_hand_del_combo {
-            bindings = <&kp DEL>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF AOE>;
-            key-positions = <4 14>;
-        };
-         */
-        // Horizontal combos
-
         esc_combo {
             bindings = <&kp ESCAPE>;
             timeout-ms = <30>;
@@ -497,7 +437,7 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_for_function_and_number_keys {
-            if-layers = <NAV SYM>;
+            if-layers = <NAV NWD>;
             then-layer = <FUN>;
         };
     };
@@ -510,7 +450,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B       &kp N      &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &shft_cw    &kp SPACE  &lc SYM
+                                              &lc NAV       &shft_cw    &kp SPACE  &lc NWD
             >;
         };
 
