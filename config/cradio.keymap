@@ -44,54 +44,46 @@
         esc_combo {
             bindings = <&kp ESCAPE>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <1 2>;
         };
 
         enter_combo {
             bindings = <&kp ENTER>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <2 3>;
         };
 
         backspace_combo {
             bindings = <&kp BSPC>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <6 7>;
         };
 
         del_combo {
             bindings = <&kp DEL>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <7 8>;
         };
 
         tab_combo {
             bindings = <&hrml LA(LSHFT) TAB>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <11 12>;
         };
 
-        home_row_enter_combo {
-            bindings = <&hrml LS(LGUI) ENTER>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <12 13>;
-        };
-
         left_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) LPAR>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             timeout-ms = <25>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <16 17>;
@@ -100,7 +92,7 @@
         right_parenthesis_combo {
             bindings = <&hrml RG(LSHFT) RPAR>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <17 18>;
         };
