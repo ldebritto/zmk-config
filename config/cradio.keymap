@@ -250,7 +250,7 @@
         
         stnh: sticky_on_tap_normal_on_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "HPMT";
+            label = "STICKY_TAP_NORMAL_HOLD";
             bindings = <&kp>, <&sk>;
             tapping-term-ms = <280>;
             #binding-cells = <2>;
