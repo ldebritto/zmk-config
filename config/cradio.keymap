@@ -41,232 +41,65 @@
     combos {
         compatible = "zmk,combos";
 
-        esc_combo {
+// Left hand for usage while using the mouse on the right-hand mouse or from AOE layer
+
+        left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
+            require-prior-idle-ms = <175>; // Followind urob's formula for my 60 relaxed WPM: 10500/60 = 175
             timeout-ms = <30>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <1 2>;
-        };
-
-        enter_combo {
-            bindings = <&kp ENTER>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <2 3>;
-        };
-
-        backspace_combo {
-            bindings = <&kp BSPC>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <6 7>;
-        };
-
-        del_combo {
-            bindings = <&kp DEL>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <7 8>;
-        };
-
-        tab_combo {
-            bindings = <&hrml LA(LSHFT) TAB>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <11 12>;
-        };
-
-        left_parenthesis_combo {
-            bindings = <&hrml RG(LSHFT) LPAR>;
-            require-prior-idle-ms = <200>;
-            timeout-ms = <25>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <16 17>;
-        };
-
-        right_parenthesis_combo {
-            bindings = <&hrml RG(LSHFT) RPAR>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <17 18>;
-        };
-
-        cut_combo {
-            bindings = <&kp LG(X)>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <21 23>;
-        };
-
-        copy_combo {
-            bindings = <&kp LG(C)>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <21 22>;
-        };
-
-        paste_combo {
-            bindings = <&kp LG(V)>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <22 23>;
-        };
-
-        left_bracket_combo {
-            bindings = <&kp LBKT>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <26 27>;
-        };
-
-        right_bracket_combo {
-            bindings = <&kp RBKT>;
-            timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <27 28>;
-        };
-
-        // Vertical symbols combo
-
-        exclamation_combo {
-            bindings = <&kp EXCL>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF AOE>;
             key-positions = <0 10>;
         };
 
-        at_combo {
-            bindings = <&kp AT>;
+        left_hand_tab_combo {
+            bindings = <&kp TAB>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV AOE>;
             key-positions = <1 11>;
         };
 
-        hash_combo {
-            bindings = <&kp HASH>;
+        left_hand_backspace_combo {
+            bindings = <&kp BSPC>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV AOE>;
             key-positions = <2 12>;
         };
 
-        dollar_combo {
-            bindings = <&kp DLLR>;
+        left_hand_enter_combo {
+            bindings = <&kp ENTER>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
-            layers = <DEF NWD MOU AOE>;
+            layers = <DEF NAV AOE>;
             key-positions = <3 13>;
         };
 
-        tilde_combo {
-            bindings = <&kp TILDE>;
+        left_hand_back_button_combo {
+            bindings = <&kp LG(LBKT)>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <4 14>;
-        };
-
-        circumflex_combo {
-            bindings = <&kp CARET>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <5 15>;
-        };
-
-        plus_combo {
-            bindings = <&kp PLUS>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <6 16>;
-        };
-
-        asterisk_combo {
-            bindings = <&kp ASTRK>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <7 17>;
-        };
-
-        anpersand_combo {
-            bindings = <&kp AMPS>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <8 18>;
-        };
-
-        question_mark_combo {
-            bindings = <&kp QMARK>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <9 19>;
-        };
-
-        grave_combo {
-            bindings = <&kp GRAVE>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <11 21>;
-        };
-
-        bachslash_combo {
-            bindings = <&kp BSLH>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV>;
             key-positions = <12 22>;
         };
 
-        equal_combo {
-            bindings = <&kp EQUAL>;
+        left_hand_forward_button_combo {
+            bindings = <&kp LG(RBKT)>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV>;
             key-positions = <13 23>;
         };
 
-        percent_combo {
-            bindings = <&kp PRCNT>;
+        left_hand_del_combo {
+            bindings = <&kp DEL>;
+            require-prior-idle-ms = <175>;
             timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <14 24>;
-        };
-
-        underscore_combo {
-            bindings = <&kp UNDER>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <15 25>;
-        };
-
-        hyphen_combo {
-            bindings = <&kp MINUS>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <16 26>;
-        };
-
-        slash_combo {
-            bindings = <&kp SLASH>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <17 27>;
-        };
-
-        pipe_combo {
-            bindings = <&kp PIPE>;
-            timeout-ms = <30>;
-            layers = <DEF NAV NWD MOU AOE>;
-            key-positions = <18 28>;
+            layers = <DEF AOE>;
+            key-positions = <4 14>;
         };
 
         // Special layer toggles
-
         nav_media_mute_combo {
             key-positions = <4 14>;
             layers = <NAV>;
@@ -283,12 +116,6 @@
             key-positions = <32 33>;
             layers = <DEF AOE>;
             bindings = <&numword>;
-        };
-        
-        capsword_combo {
-            key-positions = <12 17>;
-            layers = <DEF>;
-            bindings = <&caps_word>;
         };
 
         activate_smart_mouse_layer_combo {
@@ -420,6 +247,16 @@
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
+        
+        stnh: sticky_on_tap_normal_on_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HPMT";
+            bindings = <&kp>, <&sk>;
+            tapping-term-ms = <280>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <175>;
+        };
     };
 
     macros {
@@ -445,7 +282,7 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_for_function_and_number_keys {
-            if-layers = <NAV NWD>;
+            if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
     };
@@ -455,17 +292,17 @@
 
         default {
             bindings = <
-  &kp Q          &kp W         &kp E          &kp R         &kp T              &kp Y      &kp U         &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G              &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B              &kp N      &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &hpmt RSHFT ENTER    &kp SPACE  &lc NWD
+  &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U         &kp I          &kp O         &kp P
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+  &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B       &kp N      &kp M         &kp COMMA      &kp DOT       &kp SEMI
+                                              &lc NAV       &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
         numword_layer {
             bindings = <
   &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
-  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &stnh RGUI  &stnh LSHFT  &stnh RALT   &stnh RCTRL
   &kp PLUS   &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans  &trans  &trans  &trans
                              &lt NAV N0  &kp DOT      &trans  &trans
             >;
@@ -474,7 +311,7 @@
         navigation_and_media_layer {
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &stnh LCTRL        &stnh LALT   &stnh LSHFT        &stnh LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                &trans       &kp ESC          &trans     &trans
             >;
@@ -483,7 +320,7 @@
         symbols_layer {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &stnh RGUI  &stnh LSHFT  &stnh RALT   &stnh RCTRL
   &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
                                    &trans     &kp LC(LG(SPACE))    &kp CAPS    &trans
             >;
@@ -492,7 +329,7 @@
         function_and_number_row {
             bindings = <
   &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-  &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &stnh LCTRL  &stnh LALT  &stnh LSHFT  &stnh LGUI  &kp F11    &kp F12  &stnh RGUI  &stnh LSHFT  &stnh RALT  &stnh RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &trans     &trans   &trans
             >;
