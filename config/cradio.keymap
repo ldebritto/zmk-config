@@ -33,7 +33,11 @@
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // adding LSHFT is required to use some dead keys for diacriticals in PT-BR  (such as ~, ` and ^). This makes RSHFT a better candidate for my thumb key, as it can cancel &capsword on activation
 };
 
-&sk { quick-release; }; // avoids "THis" problem
+&sk { 
+    quick-release;
+    release-after-ms = <5000>; // 1000
+
+}; // avoids "THis" problem
 &lt { flavor = "hold-preferred"; }; // Using them in NWD and AOE layers
 &mt { flavor = "balanced"; }; // Globe/fn and AOE layers
 
@@ -207,56 +211,7 @@
             ignored-layers = <MOU>;
             ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>; // Every key set in mouse layer
         };
-
-        // mod-taps fine tunned for home-row mods usage, inspired by urob's repo
-
-        hrml: hrml {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRML";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
-        hrmr: hrmr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRMR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
         
-        hpmt: hold_preferred_mod_tap { // Great for SHFT/ENTER
-            compatible = "zmk,behavior-hold-tap";
-            label = "HPMT";
-            bindings = <&kp>, <&kp>;
-            tapping-term-ms = <280>;
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            quick-tap-ms = <175>;
-        };
-        
-        stnh: sticky_on_tap_normal_on_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_TAP_NORMAL_HOLD";
-            bindings = <&kp>, <&sk>;
-            tapping-term-ms = <280>;
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            quick-tap-ms = <175>;
-        };
     };
 
     macros {
@@ -302,7 +257,7 @@
         numword_layer {
             bindings = <
   &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
-  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &stnh RGUI  &stnh LSHFT  &stnh RALT   &stnh RCTRL
+  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans  &trans  &trans  &trans
                              &lt NAV N0  &kp DOT      &trans  &trans
             >;
@@ -311,7 +266,7 @@
         navigation_and_media_layer {
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &stnh LCTRL        &stnh LALT   &stnh LSHFT        &stnh LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                &trans       &kp ESC          &trans     &trans
             >;
@@ -320,7 +275,7 @@
         symbols_layer {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &stnh RGUI  &stnh LSHFT  &stnh RALT   &stnh RCTRL
+  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
                                    &trans     &kp LC(LG(SPACE))    &kp CAPS    &trans
             >;
@@ -329,7 +284,7 @@
         function_and_number_row {
             bindings = <
   &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-  &stnh LCTRL  &stnh LALT  &stnh LSHFT  &stnh LGUI  &kp F11    &kp F12  &stnh RGUI  &stnh LSHFT  &stnh RALT  &stnh RCTRL
+  &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &trans     &trans   &trans
             >;
