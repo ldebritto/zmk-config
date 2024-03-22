@@ -410,6 +410,15 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
         };
+        
+        hpmt: hold_preferred_mod_tap { // Great for SHFT/ENTER
+            compatible = "zmk,behavior-hold-tap";
+            label = "HPMT";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <175>;
+        };
     };
 
     macros {
@@ -448,7 +457,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T              &kp Y      &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G              &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B              &kp N      &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &mt RSHFT ENTER    &kp SPACE  &lc NWD
+                                              &lc NAV       &hpmt RSHFT ENTER    &kp SPACE  &lc NWD
             >;
         };
 
