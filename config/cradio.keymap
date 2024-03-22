@@ -415,6 +415,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HPMT";
             bindings = <&kp>, <&kp>;
+            tapping-term-ms = <280>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
