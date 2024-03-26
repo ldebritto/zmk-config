@@ -439,6 +439,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HPMT";
             bindings = <&kp>, <&kp>;
+            tapping-term-ms = <200>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
@@ -448,6 +449,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LC_NW";
             bindings = <&lc>, <&numword>;
+            tapping-term-ms = <200>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
