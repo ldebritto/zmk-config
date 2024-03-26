@@ -53,7 +53,7 @@
             bindings = <&kp ENTER>;
             timeout-ms = <20>;
             require-prior-idle-ms = <210>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <NAV NWD MOU AOE>;
             key-positions = <2 3>;
         };
 
@@ -465,7 +465,7 @@
         dotc: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp COLON>;
+            bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         
