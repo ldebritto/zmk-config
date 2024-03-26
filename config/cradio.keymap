@@ -4,14 +4,13 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
-#define NWD 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5
-#define AOE 6
-#define ASG 7
-#define ASB 8
+#define NAV 1
+#define SYM 2
+#define FUN 3
+#define MOU 4
+#define AOE 5
+#define ASG 6
+#define ASB 7
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -79,22 +78,6 @@
             key-positions = <3 13>;
         };
 
-        left_hand_back_button_combo {
-            bindings = <&kp LG(LBKT)>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV>;
-            key-positions = <12 22>;
-        };
-
-        left_hand_forward_button_combo {
-            bindings = <&kp LG(RBKT)>;
-            require-prior-idle-ms = <175>;
-            timeout-ms = <30>;
-            layers = <DEF NAV>;
-            key-positions = <13 23>;
-        };
-
         left_hand_del_combo {
             bindings = <&kp DEL>;
             require-prior-idle-ms = <175>;
@@ -114,12 +97,6 @@
             key-positions = <30 31>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
-        };
-
-        numword_combo {
-            key-positions = <32 33>;
-            layers = <DEF AOE>;
-            bindings = <&numword>;
         };
 
         activate_smart_mouse_layer_combo {
@@ -193,15 +170,6 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
-        numword: numword {
-            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
-            label = "NUMWORD_SMART_LAYER";
-            #binding-cells = <0>;
-            layers = <NWD>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL>; // RSHFT tap on left thumb will cancel without entering any other character
-            ignore-numbers;
-        };
-
         smart_mouse: smart_mouse {
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SMART_MOUSE";
@@ -251,15 +219,6 @@
   &kp A        &kp S  &kp D  &kp F  &kp G    &kp H      &kp J      &kp K      &kp L    &kp SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B    &kp N      &kp M      &kp COMMA  &kp DOT  &kp SEMI
                                     &lc NAV  &shft_cw   &kp SPACE  &lc SYM
-            >;
-        };
-
-        numword_layer {
-            bindings = <
-  &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
-  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans  &trans  &trans  &trans
-                             &lt NAV N0  &kp DOT      &trans  &trans
             >;
         };
 
