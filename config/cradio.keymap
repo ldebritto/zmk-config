@@ -50,7 +50,7 @@
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            require-prior-idle-ms = <175>; // Followind urob's formula for my 60 relaxed WPM: 10500/60 = 175 ms
+            require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
             timeout-ms = <30>;
             layers = <DEF AOE>;
             key-positions = <0 10>;
@@ -58,15 +58,15 @@
 
         left_hand_tab_combo {
             bindings = <&kp TAB>;
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NAV AOE>;
+            layers = <DEF AOE>;
             key-positions = <1 11>;
         };
 
         left_hand_backspace_combo {
             bindings = <&kp BSPC>;
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <200>;
             timeout-ms = <30>;
             layers = <DEF NAV AOE>;
             key-positions = <2 12>;
@@ -74,7 +74,7 @@
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <200>;
             timeout-ms = <30>;
             layers = <DEF NAV AOE>;
             key-positions = <3 13>;
@@ -82,7 +82,7 @@
 
         left_hand_del_combo {
             bindings = <&kp DEL>;
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <200>;
             timeout-ms = <30>;
             layers = <DEF AOE>;
             key-positions = <4 14>;
@@ -235,7 +235,7 @@
                 &kp Q        &kp W  &kp E  &kp R  &kp T    &kp Y      &kp U      &kp I      &kp O    &kp P
                 &kp A        &kp S  &kp D  &kp F  &kp G    &kp H      &kp J      &kp K      &kp L    &kp SQT
                 &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B    &kp N      &kp M      &kp COMMA  &kp DOT  &kp SEMI
-                                    &lc NAV  &shft_cw   &kp SPACE  &lc SYM
+                                                  &lc NAV  &shft_cw   &kp SPACE  &lc SYM
             >;
         };
 
@@ -244,7 +244,7 @@
                 &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
                 &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
                 &kp PLUS   &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans  &trans  &trans  &trans
-                             &lt NAV N0  &kp DOT      &trans  &trans
+                                           &lt NAV N0  &kp DOT      &trans  &trans
             >;
         };
 
@@ -253,7 +253,7 @@
                 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
                 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
                 &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &kp ESC          &trans     &trans
+                                                             &trans       &kp ESC          &trans     &trans
             >;
         };
 
@@ -262,7 +262,7 @@
                 &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
                 &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
                 &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &kp LC(LG(SPACE))    &kp CAPS    &trans
+                                                 &trans     &kp LC(LG(SPACE))    &kp CAPS    &trans
             >;
         };
 
@@ -271,7 +271,7 @@
                 &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
                 &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
                 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
-                                  &trans    &trans     &trans   &trans
+                                                &trans    &trans     &trans   &trans
             >;
         };
 
@@ -280,7 +280,7 @@
                 &trans     &trans    &trans     &trans    &trans    &msc SCRL_UP      &msc SCRL_RIGHT    &mmv MOVE_UP    &msc SCRL_LEFT   &trans
                 &kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    &msc SCRL_DOWN    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
                 &trans     &trans    &trans     &trans    &trans    &trans            &mkp MB3           &mkp MB4        &mkp MB5         &trans
-                                  &trans    &trans    &mkp MB1          &mkp MB2
+                                                &trans    &trans    &mkp MB1          &mkp MB2
             >;
         };
 
@@ -289,7 +289,7 @@
                 &kp Q        &kp W       &kp E        &kp R              &kp T          &trans  &trans  &trans  &trans  &trans
                 &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G          &trans  &trans  &trans  &trans  &trans
                 &kp Z        &kp X       &kp C        &kp V              &kp B          &trans  &trans  &trans  &trans  &trans
-                                        &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
+                                                      &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
             >;
         };
 
@@ -298,7 +298,7 @@
                 &kp N1        &kp N2       &kp N3         &kp N4        &kp N5       &trans  &trans  &trans  &trans  &trans
                 &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8   &mt LCTRL N9  &kp N0       &trans  &trans  &trans  &trans  &trans
                 &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp ENTER     &kp SPACE    &trans  &trans  &trans  &trans  &trans
-                                            &trans        &kp F3       &trans  &trans
+                                                          &trans        &kp F3       &trans  &trans
             >;
         };
 
@@ -307,7 +307,7 @@
                 &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
                 &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &none            &trans  &trans  &trans  &trans  &trans
                 &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
-                                               &kp ESC        &trans           &trans  &trans
+                                                             &kp ESC        &trans           &trans  &trans
             >;
         };
     };
