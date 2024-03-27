@@ -38,18 +38,19 @@
     release-after-ms = <5000>; // 1000
 
 }; 
-&lt { flavor = "hold-preferred"; }; // Using them in NWD and AOE layers
-&mt { flavor = "balanced"; }; // Globe/fn and AOE layers
+
+&lt { flavor = "hold-preferred"; }; // Using it in NWD and AOE layers
+&mt { flavor = "balanced"; }; // Globe/fn and AOE mod-taps for gaming
 
 / {
     combos {
         compatible = "zmk,combos";
 
-        // Left hand for usage while using the mouse on the right-hand mouse or from AOE layers
+        // Left hand combos for use with the mouse on the right-hand or from AOE layers
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            require-prior-idle-ms = <175>; // Followind urob's formula for my 60 relaxed WPM: 10500/60 = 175
+            require-prior-idle-ms = <175>; // Followind urob's formula for my 60 relaxed WPM: 10500/60 = 175 ms
             timeout-ms = <30>;
             layers = <DEF AOE>;
             key-positions = <0 10>;
