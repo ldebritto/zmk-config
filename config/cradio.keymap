@@ -187,7 +187,21 @@
 
     };
 
+
+    
+
     behaviors {
+
+        #define SK(mod) &sk_mod mod mod
+        sk_mod: sticky_mod_on_tap_mod_on_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_MOD_ON_TAP_MOD_ON_HOLD";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&sk>;
+        };
+
         shft_cw: shift_and_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
@@ -209,7 +223,7 @@
             label = "NUMWORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NWD>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL LGUI LALT LCTRL LSHFT>; // RSHFT tap on left thumb will cancel without entering any other character
+            continue-list = <BACKSPACE DELETE LPAR RPAR DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL LGUI LALT LCTRL LSHFT>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
         };
 
@@ -286,7 +300,8 @@
         navigation_and_media_layer {
             bindings = <
                 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+                SK(LCTRL)        SK(LALT)   SK(LSFT)        SK(LCMD)     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+                // &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
                 &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                              &trans       &kp ESC          &trans     &trans
             >;
