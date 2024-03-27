@@ -4,13 +4,14 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
-#define NAV 1
-#define SYM 2
-#define FUN 3
-#define MOU 4
-#define AOE 5
-#define ASG 6
-#define ASB 7
+#define NWD 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
+#define AOE 6
+#define ASG 7
+#define ASB 8
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -44,7 +45,7 @@
     combos {
         compatible = "zmk,combos";
 
-// Left hand for usage while using the mouse on the right-hand mouse or from AOE layer
+        // Left hand for usage while using the mouse on the right-hand mouse or from AOE layers
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
@@ -97,6 +98,12 @@
             key-positions = <30 31>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
+        };
+
+        numword_combo {
+            key-positions = <32 33>;
+            layers = <DEF AOE>;
+            bindings = <&numword>;
         };
 
         activate_smart_mouse_layer_combo {
@@ -170,6 +177,15 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
+        numword: numword {
+            compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
+            label = "NUMWORD_SMART_LAYER";
+            #binding-cells = <0>;
+            layers = <NWD>;
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL LGUI LALT LCTRL LSHFT>; // RSHFT tap on left thumb will cancel without entering any other character
+            ignore-numbers;
+        };
+        
         smart_mouse: smart_mouse {
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SMART_MOUSE";
@@ -215,72 +231,81 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R  &kp T    &kp Y      &kp U      &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F  &kp G    &kp H      &kp J      &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B    &kp N      &kp M      &kp COMMA  &kp DOT  &kp SEMI
+                &kp Q        &kp W  &kp E  &kp R  &kp T    &kp Y      &kp U      &kp I      &kp O    &kp P
+                &kp A        &kp S  &kp D  &kp F  &kp G    &kp H      &kp J      &kp K      &kp L    &kp SQT
+                &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B    &kp N      &kp M      &kp COMMA  &kp DOT  &kp SEMI
                                     &lc NAV  &shft_cw   &kp SPACE  &lc SYM
+            >;
+        };
+
+        numword_layer {
+            bindings = <
+                &kp TAB    &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans  &trans  &trans  &trans
+                &kp MINUS  &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+                &kp PLUS   &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans  &trans  &trans  &trans
+                             &lt NAV N0  &kp DOT      &trans  &trans
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                &trans       &kp ESC          &trans     &trans
             >;
         };
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+                &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+                &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
                                    &trans     &kp LC(LG(SPACE))    &kp CAPS    &trans
             >;
         };
 
         function_and_number_row {
             bindings = <
-  &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
-  &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
+                &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
+                &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+                &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &trans     &trans   &trans
             >;
         };
 
         mouse {
             bindings = <
-  &trans     &trans    &trans     &trans    &trans    &msc SCRL_UP      &msc SCRL_RIGHT    &mmv MOVE_UP    &msc SCRL_LEFT   &trans
-  &kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    &msc SCRL_DOWN    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
-  &trans     &trans    &trans     &trans    &trans    &trans            &mkp MB3           &mkp MB4        &mkp MB5         &trans
+                &trans     &trans    &trans     &trans    &trans    &msc SCRL_UP      &msc SCRL_RIGHT    &mmv MOVE_UP    &msc SCRL_LEFT   &trans
+                &kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    &msc SCRL_DOWN    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
+                &trans     &trans    &trans     &trans    &trans    &trans            &mkp MB3           &mkp MB4        &mkp MB5         &trans
                                   &trans    &trans    &mkp MB1          &mkp MB2
             >;
         };
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R              &kp T          &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G          &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V              &kp B          &trans  &trans  &trans  &trans  &trans
+                &kp Q        &kp W       &kp E        &kp R              &kp T          &trans  &trans  &trans  &trans  &trans
+                &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G          &trans  &trans  &trans  &trans  &trans
+                &kp Z        &kp X       &kp C        &kp V              &kp B          &trans  &trans  &trans  &trans  &trans
                                         &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
-  &kp N1        &kp N2       &kp N3         &kp N4        &kp N5       &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8   &mt LCTRL N9  &kp N0       &trans  &trans  &trans  &trans  &trans
-  &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp ENTER     &kp SPACE    &trans  &trans  &trans  &trans  &trans
+                &kp N1        &kp N2       &kp N3         &kp N4        &kp N5       &trans  &trans  &trans  &trans  &trans
+                &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8   &mt LCTRL N9  &kp N0       &trans  &trans  &trans  &trans  &trans
+                &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp ENTER     &kp SPACE    &trans  &trans  &trans  &trans  &trans
                                             &trans        &kp F3       &trans  &trans
             >;
         };
 
         aoe_select_all_buildings {
             bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &none            &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &none            &trans  &trans  &trans  &trans  &trans
+                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
                                                &kp ESC        &trans           &trans  &trans
             >;
         };
