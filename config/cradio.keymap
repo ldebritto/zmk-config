@@ -187,9 +187,6 @@
 
     };
 
-
-    
-
     behaviors {
 
         #define SK(mod) &sk_mod mod mod
@@ -218,7 +215,7 @@
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
-        numword-td: numword-td {
+        numword-td: numword_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "NUMWORD_TAP_DANCE";
             #binding-cells = <0>;
