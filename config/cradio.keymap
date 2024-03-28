@@ -111,7 +111,7 @@
             numword_combo {
                 key-positions = <32 33>;
                 layers = <DEF AOE>;
-                bindings = <&numword>;
+                bindings = <&numword-td>;
             };
 
             activate_smart_mouse_layer_combo {
@@ -218,6 +218,14 @@
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
+        numword-td: numword-td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUMWORD_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&numword>, <&tog NWD>;
+        };
+
         numword: numword {
             compatible = "zmk,behavior-caps-word"; // Custom caps-word (PR #1451)
             label = "NUMWORD_SMART_LAYER";
@@ -293,7 +301,7 @@
                 &kp MINUS  &kp N7  &kp N8  &kp N9      &kp SLASH    &trans  &trans    &trans     &trans     &trans
                 &kp PLUS   &kp N4  &kp N5  &kp N6      &kp ASTRK    &trans  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
                 &kp DOT    &kp N1  &kp N2  &kp N3      &kp COMMA    &trans  &trans    &trans     &trans     &trans
-                                           &lt NAV N0  &kp COLON    &trans  &trans
+                                           &lt NAV N0  &kp COLON    &trans  &lt SYM K_CANCEL
             >;
         };
 
