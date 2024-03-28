@@ -329,7 +329,7 @@
         mouse {
             bindings = <
                 &none       &swapper        &kp LS(LC(TAB))  &kp LC(TAB)  &none    &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &none
-                &kp LGCTRL  &kp LALT        &kp LSHFT        &kp LCMD     &none    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+                &kp LCTRL  &kp LALT        &kp LSHFT        &kp LCMD     &none    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
                 &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none    &none           &mkp MB3         &mkp MB4        &mkp MB5         &none
                                                              &none        &none    &mkp MB1        &mkp MB2
             >;
