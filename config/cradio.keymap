@@ -110,7 +110,7 @@
 
             numword_combo {
                 key-positions = <32 33>;
-                layers = <DEF AOE>;
+                layers = <DEF NWD AOE>;
                 bindings = <&numword_td>;
             };
 
@@ -189,7 +189,7 @@
 
     behaviors {
 
-        #define SK(mod) &sk_mod mod mod
+        #define SK(mod) &sk_mod mod mod // Convenience notation
         sk_mod: sticky_mod_on_tap_mod_on_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "STICKY_MOD_ON_TAP_MOD_ON_HOLD";
