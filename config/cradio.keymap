@@ -307,6 +307,15 @@
             >;
         };
 
+        /* symbols_layer {
+            bindings = <
+  &kp ESC    &kp AT   &kp HASH  &kp DLLR   &kp PRCNT      &kp CARET    &kp AMPS  &kp ASTRK  &kp SEMI   &kp COLON
+  &kp TILDE  &kp LBRC &kp LBKT  &kp LPAR   &kp FSLH       &kp MINUS    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp GRAVE  &kp RBRC &kp RBKT  &kp RPAR   &kp BSLH       &kp PLUS     &kp EQUAL &kp LA(N6) &kp QMARK  &kp EXCL
+                                &trans     &kp UNDER      &numword_td  &trans
+            >;
+        }; */
+
         symbols_layer {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
