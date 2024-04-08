@@ -58,7 +58,7 @@
             bindings = <&kp ESCAPE>;
             require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
             timeout-ms = <30>;
-            layers = <DEF AOE>;
+            layers = <DEF NWD AOE>;
             key-positions = <0 10>;
         };
 
@@ -66,7 +66,7 @@
             bindings = <&kp TAB>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF AOE>;
+            layers = <DEF NWD AOE>;
             key-positions = <1 11>;
         };
 
@@ -74,7 +74,7 @@
             bindings = <&kp BSPC>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NAV AOE>;
+            layers = <DEF NWD NAV AOE>;
             key-positions = <2 12>;
         };
 
@@ -82,7 +82,7 @@
             bindings = <&kp ENTER>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NAV AOE>;
+            layers = <DEF NWD NAV AOE>;
             key-positions = <3 13>;
         };
 
@@ -90,7 +90,7 @@
             bindings = <&kp DEL>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF AOE>;
+            layers = <DEF NWD AOE>;
             key-positions = <4 14>;
         };
 
