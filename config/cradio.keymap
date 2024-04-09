@@ -255,10 +255,9 @@
             #binding-cells = <2>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <200>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 22 21 23 24 30>;
-            hold-trigger-on-release;
+            hold-trigger-key-positions = <1 2 3 4 10 11 12 13 14 20 22 21 23 24 30 0>;
             bindings = <&mo>, <&kp>;
         };
     };
