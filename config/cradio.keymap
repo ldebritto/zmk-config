@@ -52,46 +52,248 @@
     combos {
         compatible = "zmk,combos";
 
-        // Left hand combos for use with the mouse on the right-hand or from AOE layers
-
-        left_hand_esc_combo {
+        // Experimenting with combos to replace SYM layer
+ 
+        esc_combo {
             bindings = <&kp ESCAPE>;
-            require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <1 2>;
+        };
+
+        enter_combo {
+            bindings = <&kp ENTER>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <210>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <2 3>;
+        };
+
+        backspace_combo {
+            bindings = <&kp BSPC>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <6 7>;
+        };
+
+        del_combo {
+            bindings = <&kp DEL>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <7 8>;
+        };
+
+        tab_combo {
+            bindings = <&hrml LA(LSHFT) TAB>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <11 12>;
+        };
+
+        left_parenthesis_combo {
+            bindings = <&hrml RG(LSHFT) LPAR>;
+            require-prior-idle-ms = <200>;
+            timeout-ms = <25>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <16 17>;
+        };
+
+        right_parenthesis_combo {
+            bindings = <&hrml RG(LSHFT) RPAR>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <17 18>;
+        };
+
+        cut_combo {
+            bindings = <&kp LG(X)>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <21 23>;
+        };
+
+        copy_combo {
+            bindings = <&kp LG(C)>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <21 22>;
+        };
+
+        paste_combo {
+            bindings = <&kp LG(V)>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <22 23>;
+        };
+
+        left_bracket_combo {
+            bindings = <&kp LBKT>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <26 27>;
+        };
+
+        right_bracket_combo {
+            bindings = <&kp RBKT>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <27 28>;
+        };
+
+        // Vertical symbols combo
+
+        exclamation_combo {
+            bindings = <&kp EXCL>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
             key-positions = <0 10>;
         };
 
-        left_hand_tab_combo {
-            bindings = <&kp TAB>;
-            require-prior-idle-ms = <200>;
+        at_combo {
+            bindings = <&kp AT>;
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
             key-positions = <1 11>;
         };
 
-        left_hand_backspace_combo {
-            bindings = <&kp BSPC>;
-            require-prior-idle-ms = <200>;
+        hash_combo {
+            bindings = <&kp HASH>;
             timeout-ms = <30>;
-            layers = <DEF NWD NAV AOE>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
             key-positions = <2 12>;
         };
 
-        left_hand_enter_combo {
-            bindings = <&kp ENTER>;
-            require-prior-idle-ms = <200>;
+        dollar_combo {
+            bindings = <&kp DLLR>;
             timeout-ms = <30>;
-            layers = <DEF NWD NAV AOE>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NWD MOU AOE>;
             key-positions = <3 13>;
         };
 
-        left_hand_del_combo {
-            bindings = <&kp DEL>;
-            require-prior-idle-ms = <200>;
+        tilde_combo {
+            bindings = <&kp TILDE>;
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
             key-positions = <4 14>;
+        };
+
+        circumflex_combo {
+            bindings = <&kp CARET>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <5 15>;
+        };
+
+        plus_combo {
+            bindings = <&kp PLUS>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <6 16>;
+        };
+
+        asterisk_combo {
+            bindings = <&kp ASTRK>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <7 17>;
+        };
+
+        anpersand_combo {
+            bindings = <&kp AMPS>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <8 18>;
+        };
+
+        question_mark_combo {
+            bindings = <&kp QMARK>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <9 19>;
+        };
+
+        grave_combo {
+            bindings = <&kp GRAVE>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <11 21>;
+        };
+
+        bachslash_combo {
+            bindings = <&kp BSLH>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <12 22>;
+        };
+
+        equal_combo {
+            bindings = <&kp EQUAL>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <13 23>;
+        };
+
+        percent_combo {
+            bindings = <&kp PRCNT>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <14 24>;
+        };
+
+        underscore_combo {
+            bindings = <&kp UNDER>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <15 25>;
+        };
+
+        hyphen_combo {
+            bindings = <&kp MINUS>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <16 26>;
+        };
+
+        slash_combo {
+            bindings = <&kp SLASH>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <17 27>;
+        };
+
+        pipe_combo {
+            bindings = <&kp PIPE>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV NWD MOU AOE>;
+            key-positions = <18 28>;
         };
 
         // Special layer toggles
@@ -192,7 +394,7 @@
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RSHFT>, <&caps_word>;
+            bindings = <&hpmt RSHFT ENTER>, <&caps_word>;
         };
 
         playnextprev: play_next_previous_media {
@@ -260,6 +462,56 @@
             hold-trigger-key-positions = <1 2 3 4 10 11 12 13 14 20 22 21 23 24 30 0>;
             bindings = <&mo>, <&kp>;
         };
+
+        // mod-taps fine tunned for home-row mods usage, inspired by urob's repo
+
+        hrml: hrml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
+        hrmr: hrmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+        
+        hpmt: hold_preferred_mod_tap { // Great for SHFT/ENTER
+            compatible = "zmk,behavior-hold-tap";
+            label = "HPMT";
+            bindings = <&kp>, <&kp>;
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <175>;
+        };
+        
+        lc_nw: numword_on_tap_num_on_hold { // Yet another urob trick
+            compatible = "zmk,behavior-hold-tap";
+            label = "LC_NW";
+            bindings = <&lc>, <&numword>;
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <175>;
+        };
     };
 
     macros {
@@ -296,7 +548,7 @@
         default {
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y             &kp U    &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H             &kp J    &kp K      &kp L    &kp SQT
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G              &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N             &kp M    &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw    &spc_num 1 SPACE  &lc SYM
             >;
