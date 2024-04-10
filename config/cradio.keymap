@@ -50,7 +50,7 @@
             bindings = <&kp ESCAPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <1 2>;
         };
 
@@ -58,7 +58,7 @@
             bindings = <&kp ENTER>;
             timeout-ms = <20>;
             require-prior-idle-ms = <210>;
-            layers = <NAV NWD AOE>;
+            layers = <2 1 4>;
             key-positions = <2 3>;
         };
 
@@ -66,7 +66,7 @@
             bindings = <&kp BSPC>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <6 7>;
         };
 
@@ -74,7 +74,7 @@
             bindings = <&kp DEL>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <7 8>;
         };
 
@@ -82,7 +82,7 @@
             bindings = <&hrml LA(LSHFT) TAB>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <11 12>;
         };
 
@@ -90,7 +90,7 @@
             bindings = <&hrml RG(LSHFT) LPAR>;
             require-prior-idle-ms = <200>;
             timeout-ms = <25>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <16 17>;
         };
 
@@ -98,7 +98,7 @@
             bindings = <&hrml RG(LSHFT) RPAR>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <17 18>;
         };
 
@@ -106,7 +106,7 @@
             bindings = <&kp LG(X)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <21 23>;
         };
 
@@ -114,7 +114,7 @@
             bindings = <&kp LG(C)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <21 22>;
         };
 
@@ -122,7 +122,7 @@
             bindings = <&kp LG(V)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <22 23>;
         };
 
@@ -130,7 +130,7 @@
             bindings = <&kp LBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <26 27>;
         };
 
@@ -138,7 +138,7 @@
             bindings = <&kp RBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <27 28>;
         };
 
@@ -148,7 +148,7 @@
             bindings = <&kp EXCL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <0 10>;
         };
 
@@ -156,7 +156,7 @@
             bindings = <&kp AT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <1 11>;
         };
 
@@ -164,7 +164,7 @@
             bindings = <&kp HASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <2 12>;
         };
 
@@ -172,7 +172,7 @@
             bindings = <&kp DLLR>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NWD AOE>;
+            layers = <0 1 4>;
             key-positions = <3 13>;
         };
 
@@ -180,7 +180,7 @@
             bindings = <&kp TILDE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <4 14>;
         };
 
@@ -188,7 +188,7 @@
             bindings = <&kp CARET>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <5 15>;
         };
 
@@ -196,7 +196,7 @@
             bindings = <&kp PLUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <6 16>;
         };
 
@@ -204,7 +204,7 @@
             bindings = <&kp ASTRK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <7 17>;
         };
 
@@ -212,7 +212,7 @@
             bindings = <&kp AMPS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <8 18>;
         };
 
@@ -220,7 +220,7 @@
             bindings = <&kp QMARK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <9 19>;
         };
 
@@ -228,7 +228,7 @@
             bindings = <&kp GRAVE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <11 21>;
         };
 
@@ -236,7 +236,7 @@
             bindings = <&kp BSLH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <12 22>;
         };
 
@@ -244,7 +244,7 @@
             bindings = <&kp EQUAL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <13 23>;
         };
 
@@ -252,7 +252,7 @@
             bindings = <&kp PRCNT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <14 24>;
         };
 
@@ -260,7 +260,7 @@
             bindings = <&kp UNDER>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <15 25>;
         };
 
@@ -268,7 +268,7 @@
             bindings = <&kp MINUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <16 26>;
         };
 
@@ -276,7 +276,7 @@
             bindings = <&kp SLASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <17 27>;
         };
 
@@ -284,7 +284,7 @@
             bindings = <&kp PIPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <0 2 1 4>;
             key-positions = <18 28>;
         };
 
@@ -293,28 +293,28 @@
         nav_media_mute_combo {
             key-positions = <4 14>;
             require-prior-idle-ms = <200>;
-            layers = <NAV>;
+            layers = <2>;
             bindings = <&kp C_MUTE>;
         };
 
         toggle_nav_combo {
             key-positions = <30 31>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV>;
-            bindings = <&tog NAV>;
+            layers = <0 2>;
+            bindings = <&tog 2>;
         };
 
         numword_combo {
             key-positions = <32 33>;
             require-prior-idle-ms = <200>;
-            layers = <DEF AOE>;
+            layers = <0 4>;
             bindings = <&numword>;
         };
 
         capsword_combo {
             key-positions = <12 17>;
             require-prior-idle-ms = <200>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&caps_word>;
         };
 
@@ -326,9 +326,9 @@
         }; */
 
         aoe_toggle_aoe_gaming_layers {
-            bindings = <&tog AOE>;
+            bindings = <&tog 4>;
             require-prior-idle-ms = <200>;
-            layers = <DEF AOE>;
+            layers = <0 4>;
             key-positions = <21 22 23>;
         };
 
@@ -336,31 +336,31 @@
 
         sys_bootloader {
             key-positions = <20 21>;
-            layers = <FUN>;
+            layers = <3>;
             bindings = <&bootloader>;
         };
 
         sys_toggle_bt0_connection {
             key-positions = <3 4>;
-            layers = <FUN>;
+            layers = <3>;
             bindings = <&bt BT_SEL 0>;
         };
 
         sys_toggle_bt1_connection {
             key-positions = <13 14>;
-            layers = <FUN>;
+            layers = <3>;
             bindings = <&bt BT_SEL 1>;
         };
 
         sys_toggle_bt2_connection {
             key-positions = <23 24>;
-            layers = <FUN>;
+            layers = <3>;
             bindings = <&bt BT_SEL 2>;
         };
 
         sys_clear_current_bluetooth_profile {
             key-positions = <28 29>;
-            layers = <FUN>;
+            layers = <3>;
             bindings = <&bt BT_CLR>;
         };
 
@@ -525,8 +525,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_for_function_and_number_keys {
-            if-layers = <NAV NWD>;
-            then-layer = <FUN>;
+            if-layers = <2 1>;
+            then-layer = <3>;
         };
     };
 
@@ -538,16 +538,16 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RIGHT_GUI))) H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B                       &kp N                          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &hpmt RSHFT ENTER           &kp SPACE                      &lc_nw NWD 0
+                                              &lc 2         &hpmt RSHFT ENTER           &kp SPACE                      &lc_nw 1 0
             >;
         };
 
         numword_layer {
             bindings = <
-  &kp DOT    &kp N7  &kp N8  &kp N9      &kp COMMA    &trans  &trans    &trans     &trans    &trans
-  &kp MINUS  &kp N4  &kp N5  &kp N6      &kp SLASH    &trans  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp PLUS   &kp N1  &kp N2  &kp N3      &kp ASTRK    &trans  &trans    &trans     &trans    &trans
-                             &lt NAV N0  &kp RSHFT    &trans  &trans
+  &kp DOT    &kp N7  &kp N8  &kp N9    &kp COMMA    &trans  &trans          &trans     &trans    &trans
+  &kp MINUS  &kp N4  &kp N5  &kp N6    &kp SLASH    &trans  &sk RGUI        &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp PLUS   &kp N1  &kp N2  &kp N3    &kp ASTRK    &trans  &trans          &trans     &trans    &trans
+                             &lt 2 N0  &kp RSHFT    &trans  &lt 3 K_CANCEL
             >;
         };
 
@@ -557,15 +557,6 @@
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                &trans       &kp ESC          &trans     &trans
-            >;
-        };
-
-        symbols_layer {
-            bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp PIPE   &kp AT     &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &kp LC(LG(SPACE))    &kp CAPS    &trans
             >;
         };
 
@@ -589,10 +580,10 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R              &kp T          &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G          &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V              &kp B          &trans  &trans  &trans  &trans  &trans
-                                        &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &trans
+                                        &lt 5 LC(LS(H))  &lt 6 DOT    &trans  &trans
             >;
         };
 
