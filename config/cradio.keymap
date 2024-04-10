@@ -363,6 +363,22 @@
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
         };
+
+        emoji_picker {
+            bindings = <&kp LC(LG(SPACE))>;
+            key-positions = <10 20>;
+            require-prior-idle-ms = <200>;
+            timeout-ms = <30>;
+            layers = <0>;
+        };
+
+        colon_combo {
+            bindings = <&kp COLON>;
+            key-positions = <19 29>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+            timeout-ms = <30>;
+        };
     };
 
     behaviors {
