@@ -52,8 +52,8 @@
         enter_combo {
             bindings = <&kp ENTER>;
             timeout-ms = <20>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            require-prior-idle-ms = <210>;
+            layers = <NAV NWD MOU AOE>;
             key-positions = <2 3>;
         };
 
@@ -100,7 +100,7 @@
         cut_combo {
             bindings = <&kp LG(X)>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <21 23>;
         };
@@ -108,7 +108,7 @@
         copy_combo {
             bindings = <&kp LG(C)>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <21 22>;
         };
@@ -116,7 +116,7 @@
         paste_combo {
             bindings = <&kp LG(V)>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <22 23>;
         };
@@ -124,7 +124,7 @@
         left_bracket_combo {
             bindings = <&kp LBKT>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <26 27>;
         };
@@ -132,7 +132,7 @@
         right_bracket_combo {
             bindings = <&kp RBKT>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <27 28>;
         };
@@ -142,6 +142,7 @@
         exclamation_combo {
             bindings = <&kp EXCL>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <0 10>;
         };
@@ -149,6 +150,7 @@
         at_combo {
             bindings = <&kp AT>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <1 11>;
         };
@@ -156,6 +158,7 @@
         hash_combo {
             bindings = <&kp HASH>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <2 12>;
         };
@@ -163,6 +166,7 @@
         dollar_combo {
             bindings = <&kp DLLR>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NWD MOU AOE>;
             key-positions = <3 13>;
         };
@@ -170,6 +174,7 @@
         tilde_combo {
             bindings = <&kp TILDE>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <4 14>;
         };
@@ -177,6 +182,7 @@
         circumflex_combo {
             bindings = <&kp CARET>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <5 15>;
         };
@@ -184,6 +190,7 @@
         plus_combo {
             bindings = <&kp PLUS>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <6 16>;
         };
@@ -191,6 +198,7 @@
         asterisk_combo {
             bindings = <&kp ASTRK>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <7 17>;
         };
@@ -198,6 +206,7 @@
         anpersand_combo {
             bindings = <&kp AMPS>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <8 18>;
         };
@@ -205,6 +214,7 @@
         question_mark_combo {
             bindings = <&kp QMARK>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <9 19>;
         };
@@ -212,6 +222,7 @@
         grave_combo {
             bindings = <&kp GRAVE>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <11 21>;
         };
@@ -219,6 +230,7 @@
         bachslash_combo {
             bindings = <&kp BSLH>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <12 22>;
         };
@@ -226,6 +238,7 @@
         equal_combo {
             bindings = <&kp EQUAL>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <13 23>;
         };
@@ -233,6 +246,7 @@
         percent_combo {
             bindings = <&kp PRCNT>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <14 24>;
         };
@@ -240,6 +254,7 @@
         underscore_combo {
             bindings = <&kp UNDER>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <15 25>;
         };
@@ -247,6 +262,7 @@
         hyphen_combo {
             bindings = <&kp MINUS>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <16 26>;
         };
@@ -254,6 +270,7 @@
         slash_combo {
             bindings = <&kp SLASH>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <17 27>;
         };
@@ -261,6 +278,7 @@
         pipe_combo {
             bindings = <&kp PIPE>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV NWD MOU AOE>;
             key-positions = <18 28>;
         };
@@ -269,36 +287,42 @@
 
         nav_media_mute_combo {
             key-positions = <4 14>;
+            require-prior-idle-ms = <200>;
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
 
         toggle_nav_combo {
             key-positions = <30 31>;
+            require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
             bindings = <&tog NAV>;
         };
 
         numword_combo {
             key-positions = <32 33>;
+            require-prior-idle-ms = <200>;
             layers = <DEF AOE>;
             bindings = <&numword>;
         };
         
         capsword_combo {
             key-positions = <12 17>;
+            require-prior-idle-ms = <200>;
             layers = <DEF>;
             bindings = <&caps_word>;
         };
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
+            require-prior-idle-ms = <200>;
             layers = <DEF>;
             bindings = <&smart_mouse>;
         };
 
         aoe_toggle_aoe_gaming_layers {
             bindings = <&tog AOE>;
+            require-prior-idle-ms = <200>;
             layers = <DEF AOE>;
             key-positions = <21 22 23>;
         };
@@ -415,11 +439,43 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HPMT";
             bindings = <&kp>, <&kp>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
+        
+        lc_nw: numword_on_tap_num_on_hold { // Yet another urob trick
+            compatible = "zmk,behavior-hold-tap";
+            label = "LC_NW";
+            bindings = <&lc>, <&numword>;
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <175>;
+        };
+
+        cmsc: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        dotc: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        intex: question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp QMARK>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
     macros {
@@ -457,8 +513,8 @@
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T              &kp Y      &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G              &kp H      &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B              &kp N      &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &hpmt RSHFT ENTER    &kp SPACE  &lc NWD
+  &mt GLOBE Z    &kp X         &kp C          &kp V         &kp B              &kp N      &kp M         &cmsc          &dotc         &intex
+                                              &lc NAV       &hpmt RSHFT ENTER  &kp SPACE  &lc_nw NWD 0
             >;
         };
 
