@@ -48,7 +48,7 @@
             bindings = <&kp ESCAPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <1 2>;
         };
 
@@ -56,7 +56,7 @@
             bindings = <&kp ENTER>;
             timeout-ms = <20>;
             require-prior-idle-ms = <210>;
-            layers = <NAV NWD MOU AOE>;
+            layers = <NAV NWD AOE>;
             key-positions = <2 3>;
         };
 
@@ -64,7 +64,7 @@
             bindings = <&kp BSPC>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <6 7>;
         };
 
@@ -72,7 +72,7 @@
             bindings = <&kp DEL>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <7 8>;
         };
 
@@ -80,7 +80,7 @@
             bindings = <&hrml LA(LSHFT) TAB>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <11 12>;
         };
 
@@ -88,7 +88,7 @@
             bindings = <&hrml RG(LSHFT) LPAR>;
             require-prior-idle-ms = <200>;
             timeout-ms = <25>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <16 17>;
         };
 
@@ -96,7 +96,7 @@
             bindings = <&hrml RG(LSHFT) RPAR>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <17 18>;
         };
 
@@ -104,7 +104,7 @@
             bindings = <&kp LG(X)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <21 23>;
         };
 
@@ -112,7 +112,7 @@
             bindings = <&kp LG(C)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <21 22>;
         };
 
@@ -120,7 +120,7 @@
             bindings = <&kp LG(V)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <22 23>;
         };
 
@@ -128,7 +128,7 @@
             bindings = <&kp LBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <26 27>;
         };
 
@@ -136,7 +136,7 @@
             bindings = <&kp RBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <27 28>;
         };
 
@@ -146,7 +146,7 @@
             bindings = <&kp EXCL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <0 10>;
         };
 
@@ -154,7 +154,7 @@
             bindings = <&kp AT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <1 11>;
         };
 
@@ -162,7 +162,7 @@
             bindings = <&kp HASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <2 12>;
         };
 
@@ -170,7 +170,7 @@
             bindings = <&kp DLLR>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NWD MOU AOE>;
+            layers = <DEF NWD AOE>;
             key-positions = <3 13>;
         };
 
@@ -178,7 +178,7 @@
             bindings = <&kp TILDE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <4 14>;
         };
 
@@ -186,7 +186,7 @@
             bindings = <&kp CARET>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <5 15>;
         };
 
@@ -194,7 +194,7 @@
             bindings = <&kp PLUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <6 16>;
         };
 
@@ -202,7 +202,7 @@
             bindings = <&kp ASTRK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <7 17>;
         };
 
@@ -210,7 +210,7 @@
             bindings = <&kp AMPS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <8 18>;
         };
 
@@ -218,7 +218,7 @@
             bindings = <&kp QMARK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <9 19>;
         };
 
@@ -226,7 +226,7 @@
             bindings = <&kp GRAVE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <11 21>;
         };
 
@@ -234,7 +234,7 @@
             bindings = <&kp BSLH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <12 22>;
         };
 
@@ -242,7 +242,7 @@
             bindings = <&kp EQUAL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <13 23>;
         };
 
@@ -250,7 +250,7 @@
             bindings = <&kp PRCNT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <14 24>;
         };
 
@@ -258,7 +258,7 @@
             bindings = <&kp UNDER>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <15 25>;
         };
 
@@ -266,7 +266,7 @@
             bindings = <&kp MINUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <16 26>;
         };
 
@@ -274,7 +274,7 @@
             bindings = <&kp SLASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <17 27>;
         };
 
@@ -282,7 +282,7 @@
             bindings = <&kp PIPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV NWD MOU AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <18 28>;
         };
 
