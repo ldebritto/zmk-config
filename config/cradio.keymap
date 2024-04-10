@@ -2,37 +2,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-// #include <dt-bindings/zmk/mouse.h>
-
 #define DEF 0
 #define NWD 1
 #define NAV 2
-#define SYM 3
-#define FUN 4
-
-/* #define MOU 5
-#define AOE 6
-#define ASG 7
-#define ASB 8 */
-
-#define AOE 5
-#define ASG 6
-#define ASB 7
-
-/* #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
-
-&mmv {
-    acceleration-exponent = <1>;      // 1
-    time-to-max-speed-ms = <500>;    // 40
-    delay-ms = <0>;                   // 0
-};
-
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <40>;      // 500
-    delay-ms = <0>;                   // 10
-}; */
+#define FUN 3
+#define AOE 4
+#define ASG 5
+#define ASB 6
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -318,13 +294,6 @@
             bindings = <&caps_word>;
         };
 
-        /* activate_smart_mouse_layer_combo {
-            key-positions = <26 27 28>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF>;
-            bindings = <&smart_mouse>;
-        }; */
-
         aoe_toggle_aoe_gaming_layers {
             bindings = <&tog 4>;
             require-prior-idle-ms = <200>;
@@ -412,19 +381,10 @@
             label = "NUMWORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NWD>;
-            continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL>; // RSHFT tap on left thumb will cancel without entering any other character
+            continue-list = <BACKSPACE DELETE DOT COMMA SEMI LSHFT COLON SLASH PLUS MINUS ASTRK EQUAL RCMD RCTRL RALT>; // RSHFT tap on left thumb will cancel without entering any other character
             ignore-numbers;
         };
 
-        /* smart_mouse: smart_mouse {
-            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
-            label = "SMART_MOUSE";
-            #binding-cells = <0>;
-            bindings = <&tog MOU>, <&none>, <&tog MOU>;
-
-            ignored-layers = <MOU>;
-            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 1>; // Every key set in mouse layer
-        }; */
         // mod-taps fine tunned for home-row mods usage, inspired by urob's repo
 
         hrml: hrml {
@@ -477,29 +437,6 @@
             quick-tap-ms = <175>;
         };
 
-        cmsc: comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dotc: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        intex: question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp QMARK>, <&kp EXCL>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
@@ -521,15 +458,6 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer_for_function_and_number_keys {
-            if-layers = <2 1>;
-            then-layer = <3>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -542,7 +470,7 @@
             >;
         };
 
-        numword_layer {
+        numpad_layer {
             bindings = <
   &kp DOT    &kp N7  &kp N8  &kp N9    &kp COMMA    &trans  &trans          &trans     &trans    &trans
   &kp MINUS  &kp N4  &kp N5  &kp N6    &kp SLASH    &trans  &sk RGUI        &sk LSHFT  &sk RALT  &sk RCTRL
@@ -556,7 +484,7 @@
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &kp ESC          &trans     &trans
+                                               &trans       &kp ESC          &trans     &lc 3
             >;
         };
 
@@ -568,15 +496,6 @@
                                   &trans    &trans     &trans   &trans
             >;
         };
-
-        /* mouse {
-            bindings = <
-  &trans     &trans    &trans     &trans    &trans    &msc SCRL_UP      &msc SCRL_RIGHT    &mmv MOVE_UP    &msc SCRL_LEFT   &trans
-  &kp LCTRL  &kp LALT  &kp LSHFT  &kp LCMD  &trans    &msc SCRL_DOWN    &mmv MOVE_LEFT     &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans
-  &trans     &trans    &trans     &trans    &trans    &trans            &mkp MB3           &mkp MB4        &mkp MB5         &trans
-                                  &trans    &trans    &mkp MB1          &mkp MB2
-            >;
-        }; */
 
         aoe_default_layer {
             bindings = <
