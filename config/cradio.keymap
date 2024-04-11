@@ -474,7 +474,7 @@
   &kp DOT    &kp N7  &kp N8  &kp N9    &kp COMMA    &trans  &trans  &trans  &trans  &trans
   &kp MINUS  &kp N4  &kp N5  &kp N6    &kp SLASH    &trans  &trans  &trans  &trans  &trans
   &kp PLUS   &kp N1  &kp N2  &kp N3    &kp ASTRK    &trans  &trans  &trans  &trans  &trans
-                             &lt 2 N0  &kp RSHFT    &trans  &lc 3
+                             &lt 2 N0  &kp RSHFT    &trans  &lc 1
             >;
         };
 
@@ -483,7 +483,7 @@
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &kp ESC          &trans     &lc 3
+                                               &trans       &kp ESC          &trans     &lc 1
             >;
         };
 
@@ -521,6 +521,15 @@
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
                                                &kp ESC        &trans           &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
