@@ -190,6 +190,36 @@
             layers = <DEF>;
             bindings = <&kp MINUS>;
         };
+
+        semicolon {
+            bindings = <&kp SEMI>;
+            key-positions = <27 17>;
+            timeout-ms = <0>;
+            layers = <0>;
+            require-prior-idle-ms = <180>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <18 28>;
+            timeout-ms = <0>;
+            layers = <0>;
+            require-prior-idle-ms = <180>;
+        };
+
+        exclamation {
+            bindings = <&kp EXCL>;
+            key-positions = <28 18>;
+            layers = <3>;
+            require-prior-idle-ms = <200>;
+        };
+
+        del_on_nav {
+            bindings = <&kp DELETE>;
+            key-positions = <9 19>;
+            require-prior-idle-ms = <200>;
+            layers = <2>;
+        };
     };
 
     behaviors {
