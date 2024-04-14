@@ -191,7 +191,7 @@
             bindings = <&kp MINUS>;
         };
 
-        semicolon {
+        semicolon_combo {
             bindings = <&kp SEMI>;
             key-positions = <27 17>;
             timeout-ms = <0>;
@@ -199,7 +199,7 @@
             require-prior-idle-ms = <180>;
         };
 
-        colon {
+        colon_combo {
             bindings = <&kp COLON>;
             key-positions = <18 28>;
             timeout-ms = <0>;
