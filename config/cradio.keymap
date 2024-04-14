@@ -159,7 +159,7 @@
         };
 
         sys_clear_current_bluetooth_profile {
-            key-positions = <28 29>;
+            key-positions = <28 27>;
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
         };
