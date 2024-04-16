@@ -317,10 +317,10 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y        &kp U    &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H        &kp J    &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N        &kp M    &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw    &lt 1 SPACE  &lc SYM
+  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
@@ -335,10 +335,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)     &kp PG_UP  &kp HOME           &kp UP        &kp END       &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)     &kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE       &kp F18    &kp LG(RS(SPACE))  &kp C_VOL_DN  &kp C_VOL_UP  &kp DEL
-                                               &trans       &playnextprev    &trans     &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP     &kp HOME       &kp UP        &kp END          &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN     &kp LEFT       &kp DOWN      &kp RIGHT        &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE      &kp C_VOL_DN  &playnextprev  &kp C_VOL_UP  &kp LS(LG(DOT))  &kp DEL
+                                               &trans       &kp F18         &trans        &trans
             >;
         };
 
