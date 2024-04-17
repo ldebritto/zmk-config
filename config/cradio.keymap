@@ -282,18 +282,6 @@
 
             // Every key set in mouse layer
         };
-
-        bmt: bmt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BMT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <200>;
-            quick-tap-ms = <200>;
-            tapping-term-ms = <200>;
-        };
     };
 
     macros {
@@ -329,10 +317,10 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y                            &kp U    &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H                            &kp J    &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N                            &kp M    &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw    &bmt LS(LA(LC(LGUI))) LG(SPACE)  &lc SYM
+  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
@@ -347,9 +335,9 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP     &kp HOME       &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN     &kp LEFT       &kp DOWN      &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE      &kp C_VOL_DN  &playnextprev  &kp C_VOL_UP  &kp LS(LG(SPACE))  &kp DEL
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP     &mt HOME LA(LEFT_ARROW)  &kp UP        &mt END LA(RIGHT)  &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN     &kp LEFT                 &kp DOWN      &kp RIGHT          &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE      &kp C_VOL_DN  &playnextprev            &kp C_VOL_UP  &kp LS(LG(SPACE))  &kp DEL
                                                &trans       &kp F18         &trans        &trans
             >;
         };
