@@ -218,6 +218,18 @@
             layers = <0 2>;
             require-prior-idle-ms = <180>;
         };
+
+        media_prev {
+            bindings = <&kp C_PREV>;
+            key-positions = <25 26>;
+            layers = <2>;
+        };
+
+        media_next {
+            bindings = <&kp C_NEXT>;
+            key-positions = <26 27>;
+            layers = <2>;
+        };
     };
 
     behaviors {
