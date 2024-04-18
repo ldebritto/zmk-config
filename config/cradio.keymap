@@ -26,7 +26,7 @@
             bindings = <&kp ESCAPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <1 2>;
         };
 
@@ -34,7 +34,7 @@
             bindings = <&kp ENTER>;
             timeout-ms = <20>;
             require-prior-idle-ms = <210>;
-            layers = <2 1 4>;
+            layers = <2 1>;
             key-positions = <2 3>;
         };
 
@@ -42,7 +42,7 @@
             bindings = <&kp BSPC>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <6 7>;
         };
 
@@ -50,7 +50,7 @@
             bindings = <&kp DEL>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <7 8>;
         };
 
@@ -58,7 +58,7 @@
             bindings = <&hrml LA(LSHFT) TAB>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <11 12>;
         };
 
@@ -66,7 +66,7 @@
             bindings = <&hrml RG(LSHFT) LPAR>;
             require-prior-idle-ms = <200>;
             timeout-ms = <25>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <16 17>;
         };
 
@@ -74,7 +74,7 @@
             bindings = <&hrml RG(LSHFT) RPAR>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <17 18>;
         };
 
@@ -82,7 +82,7 @@
             bindings = <&kp LG(X)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <21 23>;
         };
 
@@ -90,7 +90,7 @@
             bindings = <&kp LG(C)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <21 22>;
         };
 
@@ -98,7 +98,7 @@
             bindings = <&kp LG(V)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <22 23>;
         };
 
@@ -106,7 +106,7 @@
             bindings = <&kp LBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <26 27>;
         };
 
@@ -114,7 +114,7 @@
             bindings = <&kp RBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <27 28>;
         };
 
@@ -124,7 +124,7 @@
             bindings = <&kp EXCL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <0 10>;
         };
 
@@ -132,7 +132,7 @@
             bindings = <&kp AT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <1 11>;
         };
 
@@ -140,7 +140,7 @@
             bindings = <&kp HASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <2 12>;
         };
 
@@ -148,7 +148,7 @@
             bindings = <&kp DLLR>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 1 4>;
+            layers = <0 1>;
             key-positions = <3 13>;
         };
 
@@ -156,7 +156,7 @@
             bindings = <&kp TILDE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <4 14>;
         };
 
@@ -164,7 +164,7 @@
             bindings = <&kp CARET>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <5 15>;
         };
 
@@ -172,7 +172,7 @@
             bindings = <&kp PLUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <6 16>;
         };
 
@@ -180,7 +180,7 @@
             bindings = <&kp ASTRK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <7 17>;
         };
 
@@ -188,7 +188,7 @@
             bindings = <&kp AMPS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <8 18>;
         };
 
@@ -196,7 +196,7 @@
             bindings = <&kp QMARK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <9 19>;
         };
 
@@ -204,7 +204,7 @@
             bindings = <&kp GRAVE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <11 21>;
         };
 
@@ -212,7 +212,7 @@
             bindings = <&kp BSLH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <12 22>;
         };
 
@@ -220,7 +220,7 @@
             bindings = <&kp EQUAL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <13 23>;
         };
 
@@ -228,7 +228,7 @@
             bindings = <&kp PRCNT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <14 24>;
         };
 
@@ -236,7 +236,7 @@
             bindings = <&kp UNDER>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <15 25>;
         };
 
@@ -244,7 +244,7 @@
             bindings = <&kp MINUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <16 26>;
         };
 
@@ -252,7 +252,7 @@
             bindings = <&kp SLASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <17 27>;
         };
 
@@ -260,14 +260,14 @@
             bindings = <&kp PIPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1 4>;
+            layers = <0 2 1>;
             key-positions = <18 28>;
         };
 
         // Special layer toggles
 
         nav_media_mute_combo {
-            key-positions = <4 14>;
+            key-positions = <25 27>;
             require-prior-idle-ms = <200>;
             layers = <2>;
             bindings = <&kp C_MUTE>;
@@ -283,7 +283,7 @@
         numword_combo {
             key-positions = <32 33>;
             require-prior-idle-ms = <200>;
-            layers = <0 4>;
+            layers = <0>;
             bindings = <&numword>;
         };
 
@@ -292,13 +292,6 @@
             require-prior-idle-ms = <200>;
             layers = <0>;
             bindings = <&caps_word>;
-        };
-
-        aoe_toggle_aoe_gaming_layers {
-            bindings = <&tog 4>;
-            require-prior-idle-ms = <200>;
-            layers = <0 4>;
-            key-positions = <21 22 23>;
         };
 
         // Keyboard adjustments combos (replaces a dedicated SYS layer)
@@ -341,12 +334,17 @@
             layers = <0>;
         };
 
-        colon_combo {
-            bindings = <&kp COLON>;
-            key-positions = <19 29>;
+        media_forward {
+            bindings = <&kp C_AC_FORWARD>;
+            key-positions = <26 27>;
+            layers = <2>;
             require-prior-idle-ms = <200>;
-            layers = <0>;
-            timeout-ms = <30>;
+        };
+
+        media_prev {
+            bindings = <&kp C_PREV>;
+            key-positions = <25 26>;
+            layers = <2>;
         };
     };
 
@@ -436,7 +434,6 @@
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
-
     };
 
     macros {
@@ -481,10 +478,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &kp ESC          &trans     &lc 3
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP     &kp HOME       &kp UP            &kp END            &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LCMD     &kp LG(LBKT)    &kp PG_DN     &kp LEFT       &kp DOWN          &kp RIGHT          &kp ENTER
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESC         &kp C_VOL_DN  &playnextprev  &kp LG(C_VOL_UP)  &kp LG(LS(SPACE))  &kp DEL
+                                               &trans       &kp ESC         &trans        &lc 3
             >;
         };
 
@@ -494,33 +491,6 @@
   &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &trans     &trans   &trans
-            >;
-        };
-
-        aoe_default_layer {
-            bindings = <
-  &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &trans
-                                        &lt 5 LC(LS(H))  &lt 6 DOT    &trans  &trans
-            >;
-        };
-
-        aoe_unit_and_group_selection {
-            bindings = <
-  &kp N1        &kp N2       &kp N3         &kp N4        &kp N5       &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8   &mt LCTRL N9  &kp N0       &trans  &trans  &trans  &trans  &trans
-  &kp SPACE     &kp COMMA    &kp LS(COMMA)  &kp ENTER     &kp SPACE    &trans  &trans  &trans  &trans  &trans
-                                            &trans        &kp F3       &trans  &trans
-            >;
-        };
-
-        aoe_select_all_buildings {
-            bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &none            &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
-                                               &kp ESC        &trans           &trans  &trans
             >;
         };
     };
