@@ -9,9 +9,6 @@
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
-quick-tap-ms {
-    = <200>;};
-
 /
 
     behaviors {
