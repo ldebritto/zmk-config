@@ -88,14 +88,24 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        bootloader_combo {
+            bindings = <&bootloader>;
+            key-positions = <20 21>;
+            layers = <5>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-  &kp Q          &kp W          &kp E         &kp R              &kp T               &kp Y              &kp U          &kp I             &kp O            &kp P
-  &hrml LSHFT A  &kp S          &kp D         &hrll 4 F          &kp G               &kp H              &hrlr 3 J      &hrlr 1 K         &hrlr 2 L        &hrmr RSHFT SQT
-  &kp Z          &hrml LCTRL X  &hrml LALT C  &hrml LGUI V       &hrml GLOBE B       &hrmr GLOBE N      &hrmr RGUI M   &hrmr RALT COMMA  &hrmr RCTRL DOT  &kp SEMI
+  &kp Q          &kp W         &kp E          &kp R              &kp T               &kp Y              &kp U          &kp I              &kp O           &kp P
+  &hrml LSHFT A  &kp S         &kp D          &hrll 4 F          &kp G               &kp H              &hrlr 3 J      &hrlr 1 K          &hrlr 2 L       &hrmr RSHFT SQT
+  &hrml LCTRL Z  &hrml LALT X  &hrml LSHFT C  &hrml LGUI V       &hrml GLOBE B       &hrmr GLOBE N      &hrmr RGUI M   &hrmr RSHFT COMMA  &hrmr RALT DOT  &hrmr RCTRL SEMI
                                               &kp LS(LG(SPACE))  &hpmt LSHFT BSPC    &lt EXTRA_L SPACE  &kp LG(SPACE)
             >;
         };
