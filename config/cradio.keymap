@@ -52,6 +52,34 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
         };
+
+        hrlr: hrlr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRLR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
+        hrll: hrll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRLL";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
     };
 
     combos {
@@ -67,10 +95,10 @@
 
         default_layer {
             bindings = <
-  &kp Q          &kp W          &kp E         &kp R          &kp T               &kp Y              &kp U          &kp I             &kp O            &kp P
-  &hrml LSHFT A  &kp S          &kp D         &lt R_SYM_L F  &kp G               &kp H              &lt L_SYM_L J  &lt NAV_L K       &lt NUM_L L      &hrmr RSHFT SQT
-  &kp Z          &hrml LCTRL X  &hrml LALT C  &hrml LGUI V   &hrml GLOBE B       &hrmr GLOBE N      &hrmr RGUI M   &hrmr RALT COMMA  &hrmr RCTRL DOT  &kp SEMI
-                                              &kp LC(LEFT)   &hpmt LSHFT BSPC    &lt EXTRA_L SPACE  &kp LC(RIGHT)
+  &kp Q          &kp W          &kp E         &kp R         &kp T               &kp Y              &kp U          &kp I             &kp O            &kp P
+  &hrml LSHFT A  &kp S          &kp D         &hrll 4 F     &kp G               &kp H              &hrlr 3 J      &hrlr 1 K         &hrlr 2 L        &hrmr RSHFT SQT
+  &kp Z          &hrml LCTRL X  &hrml LALT C  &hrml LGUI V  &hrml GLOBE B       &hrmr GLOBE N      &hrmr RGUI M   &hrmr RALT COMMA  &hrmr RCTRL DOT  &kp SEMI
+                                              &kp LC(LEFT)  &hpmt LSHFT BSPC    &lt EXTRA_L SPACE  &kp LC(RIGHT)
             >;
         };
 
