@@ -416,7 +416,7 @@
         numword_layer {
             bindings = <
   &trans  &kp N7  &kp N8  &kp N9    &kp COLON         &trans  &trans          &trans     &trans    &trans
-  &trans  &kp N4  &kp N5  &kp N6    &kp DOT           &trans  &sk RGUI        &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp N0  &kp N4  &kp N5  &kp N6    &kp DOT           &trans  &sk RGUI        &sk LSHFT  &sk RALT  &sk RCTRL
   &trans  &kp N1  &kp N2  &kp N3    &kp COMMA         &trans  &trans          &trans     &trans    &trans
                           &lt 2 N0  &lt 3 K_CANCEL    &trans  &lt 3 K_CANCEL
             >;
