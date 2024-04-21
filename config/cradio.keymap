@@ -64,7 +64,7 @@
             bindings = <&kp ESCAPE>;
             require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            layers = <0 1 9>;
             key-positions = <0 10>;
         };
 
@@ -72,7 +72,7 @@
             bindings = <&kp TAB>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            layers = <0 1 9>;
             key-positions = <1 11>;
         };
 
@@ -80,7 +80,7 @@
             bindings = <&kp BSPC>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NWD NAV AOE>;
+            layers = <0 1 2 9>;
             key-positions = <2 12>;
         };
 
@@ -88,7 +88,7 @@
             bindings = <&kp ENTER>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NWD NAV AOE>;
+            layers = <0 1 2 9>;
             key-positions = <3 13>;
         };
 
@@ -96,7 +96,7 @@
             bindings = <&kp DEL>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            layers = <0 1 9>;
             key-positions = <4 14>;
         };
 
@@ -104,31 +104,31 @@
 
         nav_media_mute_combo {
             key-positions = <27 25>;
-            layers = <NAV>;
+            layers = <2>;
             bindings = <&kp C_MUTE>;
         };
 
         toggle_nav_combo {
             key-positions = <30 31>;
-            layers = <DEF NAV>;
-            bindings = <&tog NAV>;
+            layers = <0 2>;
+            bindings = <&tog 2>;
         };
 
         numword_combo {
             key-positions = <32 33>;
-            layers = <DEF NWD AOE>;
+            layers = <0 1 9>;
             bindings = <&numword_td>;
         };
 
         activate_smart_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&smart_mouse>;
         };
 
         aoe_toggle_aoe_gaming_layers {
-            bindings = <&tog AOE>;
-            layers = <DEF AOE>;
+            bindings = <&tog 9>;
+            layers = <0 9>;
             key-positions = <21 22 23>;
         };
 
@@ -136,31 +136,31 @@
 
         sys_bootloader {
             key-positions = <20 21>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bootloader>;
         };
 
         sys_toggle_bt0_connection {
             key-positions = <3 4>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_SEL 0>;
         };
 
         sys_toggle_bt1_connection {
             key-positions = <13 14>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_SEL 1>;
         };
 
         sys_toggle_bt2_connection {
             key-positions = <23 24>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_SEL 2>;
         };
 
         sys_clear_current_bluetooth_profile {
             key-positions = <28 27>;
-            layers = <FUN>;
+            layers = <4>;
             bindings = <&bt BT_CLR>;
         };
 
@@ -169,25 +169,25 @@
 
         anachronic_tilde {
             key-positions = <4 33>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&kp TILDE>;
         };
 
         anachronic_circumflex {
             key-positions = <5 33>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&kp CARET>;
         };
 
         anachronic_grave {
             key-positions = <9 33>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&kp GRAVE>;
         };
 
         anachronic_hyphen {
             key-positions = <10 33>;
-            layers = <DEF>;
+            layers = <0>;
             bindings = <&kp MINUS>;
         };
 
@@ -254,7 +254,7 @@
             label = "NUMWORD_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&numword>, <&tog NWD>;
+            bindings = <&numword>, <&tog 1>;
         };
 
         numword: numword {
@@ -294,6 +294,27 @@
 
             // Every key set in mouse layer
         };
+
+        hpmt: hpmt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HPMT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
+
+        tplt: tplt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TPLT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -319,8 +340,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_for_function_and_number_keys {
-            if-layers = <NAV SYM>;
-            then-layer = <FUN>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 
@@ -329,19 +350,19 @@
 
         default {
             bindings = <
-  &kp Q  &kp W  &kp E  &kp R    &kp T          &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F    &mt GLOBE G    &kp H      &kp J    &kp K      &kp L    &kp SQT
-  &kp Z  &kp X  &kp C  &kp V    &kp B          &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
-                       &lc NAV  &shft_cw       &kp SPACE  &lc SYM
+  &kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y          &kp U  &kp I      &kp O    &kp P
+  &kp A  &kp S  &kp D  &kp F  &mt GLOBE G         &kp H          &kp J  &kp K      &kp L    &kp SQT
+  &kp Z  &kp X  &kp C  &kp V  &kp B               &kp N          &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                       &lc 2  &hpmt RSHFT BSPC    &tplt 6 SPACE  &lc 3
             >;
         };
 
         numword_layer {
             bindings = <
-  &trans  &kp N7  &kp N8  &kp N9      &kp COLON         &trans  &trans            &trans     &trans    &trans
-  &trans  &kp N4  &kp N5  &kp N6      &kp DOT           &trans  &sk RGUI          &sk LSHFT  &sk RALT  &sk RCTRL
-  &trans  &kp N1  &kp N2  &kp N3      &kp COMMA         &trans  &trans            &trans     &trans    &trans
-                          &lt NAV N0  &lt 3 K_CANCEL    &trans  &lt SYM K_CANCEL
+  &trans  &kp N7  &kp N8  &kp N9    &kp COLON         &trans  &trans          &trans     &trans    &trans
+  &trans  &kp N4  &kp N5  &kp N6    &kp DOT           &trans  &sk RGUI        &sk LSHFT  &sk RALT  &sk RCTRL
+  &trans  &kp N1  &kp N2  &kp N3    &kp COMMA         &trans  &trans          &trans     &trans    &trans
+                          &lt 2 N0  &lt 3 K_CANCEL    &trans  &lt 3 K_CANCEL
             >;
         };
 
@@ -356,9 +377,9 @@
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp TILDE            &kp CARET    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp ASTRK  &kp EQUAL  &kp UNDER  &kp DLLR             &kp HASH     &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp AT     &kp PIPE   &kp FSLH   &kp PRCNT            &kp LA(N6)   &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE             &kp EQUAL    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp CARET  &kp AT     &kp MINUS  &kp TILDE  &kp DLLR             &kp HASH     &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp ASTRK  &kp UNDER  &kp FSLH   &kp PRCNT            &kp LA(N6)   &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
                                    &trans     &kp LC(LG(SPACE))    &numword_td  &trans
             >;
         };
@@ -381,12 +402,12 @@
             >;
         };
 
-        aoe_default_layer {
+        action_keys {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R              &kp T          &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F        &kp G          &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V              &kp B          &trans  &trans  &trans  &trans  &trans
-                                        &lt ASG LC(LS(H))  &lt ASB DOT    &trans  &trans
+  &trans  &kp ESC  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DEL
+  &trans  &trans   &trans  &kp ENTER  &trans     &trans  &trans  &trans  &trans  &trans
+  &trans  &trans   &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans
+                           &trans     &kp TAB    &none   &trans
             >;
         };
 
@@ -405,6 +426,15 @@
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
                                                &kp ESC        &trans           &trans  &trans
+            >;
+        };
+
+        aoe_default_layer {
+            bindings = <
+  &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &trans
+                                        &lt 7 LC(LS(H))  &lt 9 DOT    &trans  &trans
             >;
         };
     };
