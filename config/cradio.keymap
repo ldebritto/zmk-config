@@ -9,7 +9,8 @@
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
-/
+/ {
+
 
     behaviors {
         // mod-taps fine tunned for home-row mods usage, inspired by urob's repo
