@@ -407,7 +407,7 @@
         default {
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T               &kp Y          &kp U         &kp I              &kp O           &kp P
-  &kp A          &kp S         &kp D          &kp F         &mt GLOBE G         &kp H          &kp J         &kp K              &kp L           &kp SQT
+  &kp A          &kp S         &kp D          &hrll 2 F     &mt GLOBE G         &kp H          &hrlr 3 J     &kp K              &hrlr 1 L       &kp SQT
   &hrml LCTRL Z  &hrml LALT X  &hrml LSHFT C  &hrml LCMD V  &kp B               &kp N          &hrmr RGUI M  &hrmr LSHFT COMMA  &hrmr RALT DOT  &hrmr RCTRL SEMI
                                               &lc 2         &hpmt RSHFT BSPC    &tplt 6 SPACE  &lc 3
             >;
