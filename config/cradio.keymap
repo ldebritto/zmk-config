@@ -44,6 +44,14 @@
         };
     };
 
+    combos {
+        sys_bootloader {
+            key-positions = <20 21>;
+            layers = <5>;
+            bindings = <&bootloader>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
