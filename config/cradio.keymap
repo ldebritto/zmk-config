@@ -64,7 +64,7 @@
             bindings = <&kp ESCAPE>;
             require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
             timeout-ms = <30>;
-            layers = <0 1 9>;
+            layers = <0 1 8>;
             key-positions = <0 10>;
         };
 
@@ -72,7 +72,7 @@
             bindings = <&kp TAB>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <0 1 9>;
+            layers = <0 1 8>;
             key-positions = <1 11>;
         };
 
@@ -80,7 +80,7 @@
             bindings = <&kp BSPC>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <0 1 2 9>;
+            layers = <0 1 2 8>;
             key-positions = <2 12>;
         };
 
@@ -88,7 +88,7 @@
             bindings = <&kp ENTER>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <0 1 2 9>;
+            layers = <0 1 2 8>;
             key-positions = <3 13>;
         };
 
@@ -96,7 +96,7 @@
             bindings = <&kp DEL>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <0 1 9>;
+            layers = <0 1 8>;
             key-positions = <4 14>;
         };
 
@@ -116,7 +116,7 @@
 
         numword_combo {
             key-positions = <32 33>;
-            layers = <0 1 9>;
+            layers = <0 1 8>;
             bindings = <&numword_td>;
         };
 
@@ -127,8 +127,8 @@
         };
 
         aoe_toggle_aoe_gaming_layers {
-            bindings = <&tog 9>;
-            layers = <0 9>;
+            bindings = <&tog 8>;
+            layers = <0 8>;
             key-positions = <21 22 23>;
         };
 
@@ -230,93 +230,6 @@
 
             // Every key set in mouse layer
         };
-
-        hpmt: hpmt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HPMT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-        };
-
-        tplt: tplt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TPLT";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        hrml: hrml {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRML";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
-        hrmr: hrmr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRMR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
-        hrlr: hrlr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRLR";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 16 17 18 19>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
-        hrll: hrll {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRLL";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33 10 11 12 13>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
-        tlc: tlc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TLC";
-            bindings = <&lc>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <185>;
-            quick-tap-ms = <200>;
-        };
     };
 
     macros {
@@ -370,10 +283,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(C_VOL_UP)    &kp PG_UP     &kp HOME  &kp UP        &kp END            &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN     &kp LEFT  &kp DOWN      &kp RIGHT          &kp RET
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev       &kp LG(LBKT)  &kp BSPC  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
-                                               &trans       &kp ESC             &trans        &trans
+  &kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(C_VOL_UP)    &kp PG_UP     &kp HOME  &kp UP        &kp END            &kp BSPC
+  &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN     &kp LEFT  &kp DOWN      &kp RIGHT          &kp RET
+  &kp LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev       &kp LG(LBKT)  &kp BSPC  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
+                                         &trans       &kp ESC             &trans        &trans
             >;
         };
 
@@ -404,15 +317,6 @@
             >;
         };
 
-        action_keys {
-            bindings = <
-  &trans  &kp ESC  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DEL
-  &trans  &trans   &trans  &kp ENTER  &trans     &trans  &trans  &trans  &trans  &trans
-  &trans  &trans   &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans
-                           &trans     &kp TAB    &none   &trans
-            >;
-        };
-
         aoe_unit_and_group_selection {
             bindings = <
   &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &trans  &trans  &trans  &trans  &trans
@@ -436,7 +340,7 @@
   &kp Q        &kp W       &kp E        &kp R            &kp T        &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F      &kp G        &trans  &trans  &trans  &trans  &trans
   &kp Z        &kp X       &kp C        &kp V            &kp B        &trans  &trans  &trans  &trans  &trans
-                                        &lt 7 LC(LS(H))  &lt 9 DOT    &trans  &trans
+                                        &lt 6 LC(LS(H))  &lt 8 DOT    &trans  &trans
             >;
         };
     };
