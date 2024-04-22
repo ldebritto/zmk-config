@@ -79,7 +79,7 @@
             require-prior-idle-ms = <175>;
         };
 
-         swapper: swapper {
+        swapper: swapper {
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SWAPPER";
             #binding-cells = <0>;
@@ -113,9 +113,9 @@
 
         nav_layer {
             bindings = <
-  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans    &trans  &trans     &trans  &trans    &trans
-  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &kp LGUI   &none   &kp LALT  &kp LSHFT
-  &trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans    &trans
+  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans    &trans  &trans    &trans  &trans    &trans
+  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &kp LGUI  &none   &kp LALT  &kp LSHFT
+  &trans     &trans    &trans    &trans     &trans    &trans  &trans    &trans  &trans    &trans
                                  &swapper   &trans    &trans  &trans
             >;
         };
@@ -131,10 +131,10 @@
 
         left_sym_layer {
             bindings = <
-  &trans    &kp COLON  &kp LT    &kp GT        &kp SEMI     &trans  &trans        &trans     &trans    &trans
-  &kp LBRC  &kp RBRC   &kp LPAR  &kp RPAR      &kp PLUS     &trans  &none         &kp EQUAL  &kp PLUS  &kp PERCENT
-  &trans    &kp EXCL   &kp LBKT  &kp RBKT      &kp QMARK    &trans  &trans        &trans     &trans    &trans
-                                 &kp C_VOL_DN  &trans       &trans  &kp C_VOL_UP
+  &trans    &kp AT    &kp LT    &kp GT        &kp SEMI     &trans  &trans        &trans     &trans    &trans
+  &kp LBRC  &kp RBRC  &kp LPAR  &kp RPAR      &kp PLUS     &trans  &none         &kp EQUAL  &kp PLUS  &kp PERCENT
+  &trans    &kp EXCL  &kp LBKT  &kp RBKT      &kp QMARK    &trans  &trans        &trans     &trans    &trans
+                                &kp C_VOL_DN  &trans       &trans  &kp C_VOL_UP
             >;
         };
 
