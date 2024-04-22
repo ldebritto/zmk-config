@@ -166,30 +166,6 @@
 
         // Anachronic inspired combos to avoid problems SYM keys in quick succession when the corresponding key is pressed quickly before the layer key (https://github.com/theol0403/anachron-zmk-config)
         // I guess this is more of a problem when using mod-taps on thumbs, which is not my case
-
-        anachronic_tilde {
-            key-positions = <4 33>;
-            layers = <0>;
-            bindings = <&kp TILDE>;
-        };
-
-        anachronic_circumflex {
-            key-positions = <5 33>;
-            layers = <0>;
-            bindings = <&kp CARET>;
-        };
-
-        anachronic_grave {
-            key-positions = <9 33>;
-            layers = <0>;
-            bindings = <&kp GRAVE>;
-        };
-
-        anachronic_hyphen {
-            key-positions = <10 33>;
-            layers = <0>;
-            bindings = <&kp MINUS>;
-        };
     };
 
     behaviors {
@@ -385,10 +361,10 @@
 
         numword_layer {
             bindings = <
-  &trans  &kp N7  &kp N8  &kp N9    &kp COLON         &trans  &trans          &trans     &trans    &trans
-  &kp N0  &kp N4  &kp N5  &kp N6    &kp DOT           &trans  &sk RGUI        &sk LSHFT  &sk RALT  &sk RCTRL
-  &trans  &kp N1  &kp N2  &kp N3    &kp COMMA         &trans  &trans          &trans     &trans    &trans
-                          &lt 2 N0  &lt 3 K_CANCEL    &trans  &lt 3 K_CANCEL
+  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans  &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans  &trans  &trans  &trans
+                          &trans  &trans    &trans  &trans
             >;
         };
 
