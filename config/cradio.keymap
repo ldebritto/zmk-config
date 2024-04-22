@@ -434,10 +434,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP     &mt HOME LA(LEFT_ARROW)  &kp UP        &mt END LA(RIGHT)  &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN     &kp LEFT                 &kp DOWN      &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE      &kp C_VOL_DN  &playnextprev            &kp C_VOL_UP  &kp LS(LG(SPACE))  &kp DEL
-                                               &trans       &kp F18         &trans        &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP   &kp BSPC  &kp UP    &kp DEL            &kp C_VOL_UP
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &caps_word  &kp LEFT  &kp DOWN  &kp RIGHT          &playnextprev
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE      &kp PG_DN   &kp RET   &none     &kp LS(LG(SPACE))  &kp C_VOL_DN
+                                               &trans       &kp F18         &trans      &trans
             >;
         };
 
