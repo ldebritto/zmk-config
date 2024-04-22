@@ -103,7 +103,7 @@
         // Special layer toggles
 
         nav_media_mute_combo {
-            key-positions = <27 25>;
+            key-positions = <4 14>;
             layers = <2>;
             bindings = <&kp C_MUTE>;
         };
@@ -189,46 +189,6 @@
             key-positions = <10 33>;
             layers = <0>;
             bindings = <&kp MINUS>;
-        };
-
-        semicolon_combo {
-            bindings = <&kp SEMI>;
-            key-positions = <27 17>;
-            layers = <0>;
-            require-prior-idle-ms = <180>;
-        };
-
-        colon_combo {
-            bindings = <&kp COLON>;
-            key-positions = <18 28>;
-            layers = <0>;
-            require-prior-idle-ms = <180>;
-        };
-
-        exclamation_combo {
-            bindings = <&kp EXCL>;
-            key-positions = <28 18>;
-            layers = <3>;
-            require-prior-idle-ms = <200>;
-        };
-
-        left_hand_numword {
-            bindings = <&numword>;
-            key-positions = <1 2 3>;
-            layers = <0 2>;
-            require-prior-idle-ms = <180>;
-        };
-
-        media_prev {
-            bindings = <&kp C_PREV>;
-            key-positions = <25 26>;
-            layers = <2>;
-        };
-
-        media_next {
-            bindings = <&kp C_NEXT>;
-            key-positions = <26 27>;
-            layers = <2>;
         };
     };
 
@@ -416,10 +376,10 @@
 
         default {
             bindings = <
-  &kp Q          &kp W         &kp E          &kp R            &kp T          &kp Y          &kp U             &kp I              &kp O           &kp P
-  &kp A          &kp S         &kp D          &hrll 2 F        &mt GLOBE G    &kp H          &hrlr 3 J         &kp K              &hrlr 1 L       &kp SQT
-  &hrml LCTRL Z  &hrml LALT X  &hrml LSHFT C  &hrml LCMD V     &kp B          &kp N          &hrmr RGUI M      &hrmr LSHFT COMMA  &hrmr RALT DOT  &hrmr RCTRL SEMI
-                                              &tlc 2 LA(BSPC)  &shft_cw       &tplt 3 SPACE  &tlc 3 LG(SPACE)
+  &kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A  &kp S  &kp D  &kp F  &mt GLOBE G    &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &kp Z  &kp X  &kp C  &kp V  &kp B          &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                       &lc 2  &shft_cw       &kp SPACE  &lc 3
             >;
         };
 
@@ -434,10 +394,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP   &kp BSPC  &kp UP    &kp DEL            &kp C_VOL_UP
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &caps_word  &kp LEFT  &kp DOWN  &kp RIGHT          &playnextprev
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESCAPE      &kp PG_DN   &kp RET   &none     &kp LS(LG(SPACE))  &kp C_VOL_DN
-                                               &trans       &kp F18         &trans      &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(C_VOL_UP)    &kp PG_UP     &kp HOME  &kp UP        &kp END            &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN     &kp LEFT  &kp DOWN      &kp RIGHT          &kp RET
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev       &kp LG(LBKT)  &kp BSPC  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
+                                               &trans       &kp ESC             &trans        &trans
             >;
         };
 
