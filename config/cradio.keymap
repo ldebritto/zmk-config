@@ -97,6 +97,11 @@
             key-positions = <20 21>;
             layers = <5>;
         };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <10 19>;
+        };
     };
 
     keymap {
