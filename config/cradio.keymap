@@ -113,10 +113,10 @@
 
         nav_layer {
             bindings = <
-  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans    &trans  &trans    &trans  &trans    &trans
-  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &kp LGUI  &none   &kp LALT  &kp LSHFT
-  &trans     &trans    &trans    &trans     &trans    &trans  &trans    &trans  &trans    &trans
-                                 &swapper   &trans    &trans  &trans
+  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans    &trans  &trans       &trans  &trans    &trans
+  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans  &kp LGUI     &none   &kp LALT  &kp LSHFT
+  &trans     &trans    &trans    &trans     &trans    &trans  &trans       &trans  &trans    &trans
+                                 &swapper   &trans    &trans  &kp LC(TAB)
             >;
         };
 
