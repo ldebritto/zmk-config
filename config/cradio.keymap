@@ -76,14 +76,6 @@
             key-positions = <1 11>;
         };
 
-        left_hand_backspace_combo {
-            bindings = <&kp BSPC>;
-            require-prior-idle-ms = <200>;
-            timeout-ms = <30>;
-            layers = <0 1 2 8>;
-            key-positions = <2 12>;
-        };
-
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             require-prior-idle-ms = <200>;
@@ -117,7 +109,7 @@
         numword_combo {
             key-positions = <32 33>;
             layers = <0 1 8>;
-            bindings = <&numword_td>;
+            bindings = <&numword>;
         };
 
         activate_smart_mouse_layer_combo {
@@ -164,6 +156,14 @@
             bindings = <&bt BT_CLR>;
         };
 
+        left_hand_bspc {
+            bindings = <&kp BSPC>;
+            key-positions = <2 12>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <0 1 2 8>;
+        };
+
         // Anachronic inspired combos to avoid problems SYM keys in quick succession when the corresponding key is pressed quickly before the layer key (https://github.com/theol0403/anachron-zmk-config)
         // I guess this is more of a problem when using mod-taps on thumbs, which is not my case
     };
@@ -183,14 +183,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
-        };
-
-        numword_td: numword_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUMWORD_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&numword>, <&tog 1>;
         };
 
         numword: numword {
@@ -292,10 +284,10 @@
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE             &kp EQUAL    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp CARET  &kp AT     &kp MINUS  &kp TILDE  &kp DLLR             &kp HASH     &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp ASTRK  &kp UNDER  &kp FSLH   &kp PRCNT            &kp LA(N6)   &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &kp LC(LG(SPACE))    &numword_td  &trans
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE             &kp EQUAL   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp CARET  &kp AT     &kp MINUS  &kp TILDE  &kp DLLR             &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp ASTRK  &kp UNDER  &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+                                   &trans     &kp LC(LG(SPACE))    &numword    &trans
             >;
         };
 
