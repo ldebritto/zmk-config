@@ -219,8 +219,6 @@
             20 21 22 23 
             1 2 3 
             >;
-
-            // Every key set in mouse layer
         };
     };
 
