@@ -282,9 +282,9 @@
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp EQUAL            &kp PIPE    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp AT     &kp UNDER  &kp TILDE  &kp CARET            &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp ASTRK  &kp DLLR   &kp FSLH   &kp PRCNT            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT            &kp PIPE    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp MINUS  &kp AT     &kp QMARK  &kp TILDE  &kp CARET            &kp ASTRK   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp HASH   &kp EXCL   &kp FSLH   &kp EQUAL            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp UNDER  &kp DLLR
                                    &trans     &kp LC(LG(SPACE))    &numword    &trans
             >;
         };
