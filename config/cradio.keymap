@@ -85,7 +85,16 @@
             #binding-cells = <0>;
             bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
 
-            ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
+            ignored-key-positions = <2 11 12 13 4 31>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
+        };
+        
+        tab_swapper: swapper {
+            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
+
+            ignored-key-positions = <31>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
     };
 
@@ -118,10 +127,10 @@
 
         nav_layer {
             bindings = <
-  &kp PG_UP  &kp HOME  &kp UP    &kp END      &trans    &trans  &trans       &trans  &trans    &trans
-  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT    &trans    &trans  &kp LGUI     &none   &kp LALT  &kp LSHFT
-  &trans     &trans    &trans    &trans       &trans    &trans  &trans       &trans  &trans    &trans
-                                 &kp LG(TAB)  &trans    &trans  &kp LC(TAB)
+  &kp PG_UP  &kp HOME  &kp UP    &kp END   &kp DEL   &trans  &trans       &trans  &trans    &trans
+  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans  &kp LGUI     &none   &kp LALT  &kp LSHFT
+  &trans     &trans    &trans    &trans    &trans    &trans  &trans       &trans  &trans    &trans
+                                 &swapper  &trans    &trans  &tab_swapper
             >;
         };
 
