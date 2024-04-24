@@ -220,22 +220,6 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
-        // Home-row layer toggles
-
-        hrl: hrl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOME-ROW_LAYERS";
-            bindings = <&lc>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            // hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 16 17 18 19>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
     };
 
     macros {
@@ -271,10 +255,10 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E       &kp R       &kp T       &kp Y      &kp U       &kp I       &kp O       &kp P
-  &kp A        &kp S  &hrl NAV D  &hrl SYM F  &kp G       &kp H      &hrl SYM J  &hrl NAV K  &hrl NWD L  &kp SQT
-  &mt GLOBE Z  &kp X  &kp C       &kp V       &kp B       &kp N      &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                  &lc NAV     &shft_cw    &kp SPACE  &lc SYM
+  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J  &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
