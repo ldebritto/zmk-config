@@ -226,7 +226,7 @@
             #binding-cells = <0>;
             bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
 
-            ignored-key-positions = <31>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
+            ignored-key-positions = <2 31>; // Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
         back_tab: back_tab {
