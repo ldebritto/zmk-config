@@ -205,7 +205,7 @@
             bindings = <&tog MOU>, <&none>, <&tog MOU>;
 
             ignored-layers = <MOU>;
-            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 2DEF NAV1 22 23 2 3 >;
+            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 2 3 >;
         };
 
         // Window switching
@@ -330,7 +330,7 @@
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp H            &trans  &trans  &trans  &trans  &trans
                                                &kp ESC        &trans           &trans  &trans
-            >;
+           >;
         };
     };
 };
