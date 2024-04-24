@@ -152,12 +152,12 @@
             >;
         };
 
-        extra_layer {
+        action_layer {
             bindings = <
-  &trans  &kp ESC      &kp COLON  &trans   &trans      &trans  &trans    &trans  &trans  &kp DEL
-  &trans  &kp PERCENT  &kp FSLH   &kp RET  &kp EXCL    &trans  &kp LGUI  &trans  &trans  &trans
-  &trans  &trans       &trans     &trans   &trans      &trans  &trans    &trans  &trans  &trans
-                                  &trans   &kp TAB     &none   &trans
+  &trans  &kp ESC  &trans    &trans   &trans      &trans  &trans         &trans           &trans  &trans
+  &trans  &kp ESC  &kp FSLH  &kp RET  &kp DEL     &trans  &kp LG(SPACE)  &kp (LS(SPACE))  &trans  &trans
+  &trans  &trans   &trans    &trans   &trans      &trans  &trans         &trans           &trans  &trans
+                             &trans   &kp TAB     &none   &trans
             >;
         };
     };
