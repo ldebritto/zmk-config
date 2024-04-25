@@ -50,10 +50,10 @@
     release-after-ms = <600000>; // 1000 ms is default. I've set mine to a bonkers 10 minutes timer in order to emulate Callum's OSM, which is timeless, as close as possible
 };
 
-// Hold-taps
+// Hold-taps for AOE layers
+&lt { flavor = "hold-preferred"; }; 
+&mt { flavor = "balanced"; };
 
-&lt { flavor = "balanced"; }; // Using it in NWD and AOE layers
-&mt { flavor = "balanced"; }; // Globe/fn and AOE mod-taps for gaming
 / {
     combos {
         compatible = "zmk,combos";
@@ -256,7 +256,7 @@
         default {
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y    &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H    &kp J  &kp K      &kp L    &lt ACC SQT
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H    &kp J  &kp K      &kp L    &kp SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N    &kp M  &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw    &kp SPC  &lc SYM
             >;
