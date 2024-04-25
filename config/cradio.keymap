@@ -52,7 +52,7 @@
 
 // Hold-taps
 
-&lt { flavor = "hold-preferred"; }; // Using it in NWD and AOE layers
+&lt { flavor = "balanced"; }; // Using it in NWD and AOE layers
 &mt { flavor = "balanced"; }; // Globe/fn and AOE mod-taps for gaming
 / {
     combos {
@@ -256,7 +256,7 @@
         default {
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y    &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H    &kp J  &kp K      &kp L    &kp SQT
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H    &kp J  &kp K      &kp L    &lt ACC SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N    &kp M  &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw    &kp SPC  &lc SYM
             >;
@@ -283,8 +283,8 @@
         symbols_layer {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT            &kp PIPE    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp AT     &kp QMARK  &kp TILDE  &kp CARET            &kp ASTRK   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp HASH   &kp EXCL   &kp FSLH   &kp EQUAL            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp UNDER  &kp DLLR
+  &kp MINUS  &kp HASH   &kp QMARK  &kp TILDE  &kp CARET            &kp EQUAL   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &kp PLUS   &kp AT     &kp EXCL   &kp FSLH   &kp ASTRK            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp UNDER  &kp DLLR
                                    &trans     &kp LC(LG(SPACE))    &numword    &trans
             >;
         };
