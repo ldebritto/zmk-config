@@ -284,7 +284,7 @@
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT            &kp PIPE    &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp HASH   &kp QMARK  &kp TILDE  &kp CARET            &kp EQUAL   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp AT     &kp EXCL   &kp FSLH   &kp ASTRK            &kp LA(N6)  &kp BSLH  &kp AMPS   &kp UNDER  &kp DLLR
+  &kp PLUS   &kp ASTRK  &kp EXCL   &kp FSLH   &kp DLLR             &kp LA(N6)  &kp BSLH  &kp AMPS   &kp UNDER  &kp AT
                                    &trans     &kp LC(LG(SPACE))    &numword    &trans
             >;
         };
