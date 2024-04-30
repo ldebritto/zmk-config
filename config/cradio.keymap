@@ -100,6 +100,14 @@
             key-positions = <4 14>;
         };
 
+        fj_spotlight {
+            bindings = <&kp LG(SPACE)>;
+            require-prior-idle-ms = <200>;
+            timeout-ms = <30>;
+            layers = <DEF>;
+            key-positions = <13 16>;
+        };
+
         // Layer toggles
 
         toggle_nav_combo {
