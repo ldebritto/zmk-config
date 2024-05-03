@@ -117,8 +117,8 @@
 
         // Vertical symbols combo
 
-        exclamation_combo {
-            bindings = <&kp EXCL>;
+        ord_a_combo {
+            bindings = <&kp LA(N9)>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
             layers = <DEF NWD NAV>;
@@ -189,8 +189,8 @@
             key-positions = <8 18>;
         };
 
-        question_mark_combo {
-            bindings = <&kp QMARK>;
+        ord_o_combo {
+            bindings = <&kp LA(N0)>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
             layers = <DEF NWD NAV>;
