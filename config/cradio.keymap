@@ -6,9 +6,6 @@
 #define NWD 1
 #define NAV 2
 #define FUN 3
-#define AOE 4
-#define ASG 5
-#define ASB 6
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -17,7 +14,7 @@
 
 &sk { quick-release; }; // avoids "THis" problem
 &lt { flavor = "hold-preferred"; }; // Using them in NWD and AOE layers
-&mt { flavor = "balanced"; }; // Globe/fn and AOE layers
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -26,7 +23,7 @@
             bindings = <&kp ESCAPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <1 2>;
         };
 
@@ -42,7 +39,7 @@
             bindings = <&kp BSPC>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <6 7>;
         };
 
@@ -50,7 +47,7 @@
             bindings = <&kp DEL>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <7 8>;
         };
 
@@ -58,7 +55,7 @@
             bindings = <&hrml LA(LSHFT) TAB>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <11 12>;
         };
 
@@ -66,7 +63,7 @@
             bindings = <&hrml RG(LSHFT) LPAR>;
             require-prior-idle-ms = <200>;
             timeout-ms = <25>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <16 17>;
         };
 
@@ -74,7 +71,7 @@
             bindings = <&hrml RG(LSHFT) RPAR>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <17 18>;
         };
 
@@ -82,7 +79,7 @@
             bindings = <&kp LG(X)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <21 23>;
         };
 
@@ -90,7 +87,7 @@
             bindings = <&kp LG(C)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <21 22>;
         };
 
@@ -98,7 +95,7 @@
             bindings = <&kp LG(V)>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <22 23>;
         };
 
@@ -106,7 +103,7 @@
             bindings = <&kp LBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <26 27>;
         };
 
@@ -114,7 +111,7 @@
             bindings = <&kp RBKT>;
             timeout-ms = <25>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <27 28>;
         };
 
@@ -124,7 +121,7 @@
             bindings = <&kp EXCL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <0 10>;
         };
 
@@ -132,7 +129,7 @@
             bindings = <&kp AT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <1 11>;
         };
 
@@ -140,7 +137,7 @@
             bindings = <&kp HASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <2 12>;
         };
 
@@ -153,26 +150,26 @@
         };
 
         tilde_combo {
-            bindings = <&kp TILDE>;
+            bindings = <&hrml LS(LGUI) TILDE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
-            key-positions = <4 14>;
+            layers = <DEF NWD NAV>;
+            key-positions = <12 13>;
         };
 
         circumflex_combo {
             bindings = <&kp CARET>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
-            key-positions = <5 15>;
+            layers = <DEF NWD NAV>;
+            key-positions = <13 14>;
         };
 
         plus_combo {
             bindings = <&kp PLUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <6 16>;
         };
 
@@ -180,7 +177,7 @@
             bindings = <&kp ASTRK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <7 17>;
         };
 
@@ -188,7 +185,7 @@
             bindings = <&kp AMPS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <8 18>;
         };
 
@@ -196,7 +193,7 @@
             bindings = <&kp QMARK>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <9 19>;
         };
 
@@ -204,7 +201,7 @@
             bindings = <&kp GRAVE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <11 21>;
         };
 
@@ -212,7 +209,7 @@
             bindings = <&kp BSLH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <12 22>;
         };
 
@@ -220,7 +217,7 @@
             bindings = <&kp EQUAL>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <13 23>;
         };
 
@@ -228,7 +225,7 @@
             bindings = <&kp PRCNT>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <14 24>;
         };
 
@@ -236,7 +233,7 @@
             bindings = <&kp UNDER>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <15 25>;
         };
 
@@ -244,7 +241,7 @@
             bindings = <&kp MINUS>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <16 26>;
         };
 
@@ -252,7 +249,7 @@
             bindings = <&kp SLASH>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <17 27>;
         };
 
@@ -260,14 +257,14 @@
             bindings = <&kp PIPE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <0 2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <18 28>;
         };
 
         // Special layer toggles
 
         nav_media_mute_combo {
-            key-positions = <25 27>;
+            key-positions = <4 14>;
             require-prior-idle-ms = <200>;
             layers = <2>;
             bindings = <&kp C_MUTE>;
@@ -434,6 +431,44 @@
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
+
+        // Mod-morphing on base layer for better pontuation keys
+
+        intexc: exclamation_interrogation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp QMARK>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dotcol: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        commasem: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lpar_lt: open_parenthesis_less_than {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rpar_gt: close_parenthesis_greater_than {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
     macros {
@@ -462,8 +497,8 @@
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RIGHT_GUI))) H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B                       &kp N                          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc 2         &hpmt RSHFT ENTER           &kp SPACE                      &lc_nw 1 0
+  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B                       &kp N                          &kp M         &commasem      &dotcol       &intexc
+                                              &lc NAV       &hpmt RSHFT ENTER           &kp SPACE                      &lc_nw NWD 0
             >;
         };
 
@@ -472,16 +507,16 @@
   &kp DOT    &kp N7  &kp N8  &kp N9    &kp COMMA    &trans  &trans          &trans  &trans  &trans
   &kp MINUS  &kp N4  &kp N5  &kp N6    &kp SLASH    &trans  &trans          &trans  &trans  &trans
   &kp PLUS   &kp N1  &kp N2  &kp N3    &kp ASTRK    &trans  &trans          &trans  &trans  &trans
-                             &lt 2 N0  &kp RSHFT    &trans  &lt 3 K_CANCEL
+                             &lt NAV N0  &kp RSHFT    &trans  &lt FUN K_CANCEL
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP     &kp HOME       &kp UP            &kp END            &kp BSPC
-  &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &kp LG(LBKT)    &kp PG_DN     &kp LEFT       &kp DOWN          &kp RIGHT          &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp ESC         &kp C_VOL_DN  &playnextprev  &kp LG(C_VOL_UP)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &kp ESC         &trans        &lc 3
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+  &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev   &kp F18    &kp LG(RBKT)  &kp LG(LBKT)  &kp LG(LS(SPACE))  &kp DEL
+                                               &trans       &kp ESC         &trans     &lc FUN
             >;
         };
 
