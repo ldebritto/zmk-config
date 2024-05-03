@@ -442,6 +442,17 @@
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
+        
+        tplc: tap-preferred-layer-cancel {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LC_HT";
+            bindings = <&lc>, <&kp>;
+
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <175>;
+        };
 
         // Mod-morphing on base layer for better pontuation keys
 
@@ -509,7 +520,7 @@
   &kp Q          &kp W         &kp E          &kp R           &kp T                       &kp Y                          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F    &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RIGHT_GUI))) H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V           &kp B                       &kp N                          &kp M         &commasem      &dotcol       &intexc
-                                              &lct NAV ENTER  &hpmt RSHFT BSPC            &kp SPACE                      &lc_nw NWD 0
+                                              &lct NAV ENTER  &hpmt RSHFT BSPC            &tplc NAV SPACE                &lc_nw NWD 0
             >;
         };
 
@@ -518,16 +529,16 @@
   &trans   &kp N7  &kp N8  &kp N9       &trans    &trans  &trans          &trans  &trans  &trans
   &kp N0   &kp N4  &kp N5  &kp N6       &trans    &trans  &trans          &trans  &trans  &trans
   &trans   &kp N1  &kp N2  &kp N3       &trans    &trans  &trans          &trans  &trans  &trans
-                           &lct NAV N0  &trans    &trans  &lct FUN K_CANCEL
+                           &lct NAV N0  &trans    &trans  &trans
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-  &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)      &kp LG(V)    &playnextprev   &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                               &trans       &kp ESC         &trans     &lc FUN
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP      &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+  &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN      &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)      &kp LG(V)    &playnextprev     &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+                                               &trans       &tplc FUN ENTER   &trans     &trans
             >;
         };
 
