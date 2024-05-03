@@ -227,6 +227,30 @@
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
+
+        // Mod-morphing on base layer for better pontuation keys
+
+        excint: exclamation_interrogation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dotcol: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        commasem: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
     macros {
@@ -264,7 +288,7 @@
             bindings = <
   &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y    &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F  &kp G       &kp H    &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N    &kp M  &kp COMMA  &kp DOT  &kp SEMI
+  &mt GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N    &kp M  &commasem  &dotcol  &excint
                              &lc NAV  &shft_cw  &kp SPC  &lc SYM
             >;
         };
