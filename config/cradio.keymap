@@ -230,10 +230,10 @@
 
         // Mod-morphing on base layer for better pontuation keys
 
-        excint: exclamation_interrogation {
+        intexc: exclamation_interrogation {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp QMARK>;
+            bindings = <&kp QMARK>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -288,7 +288,7 @@
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y    &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H    &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N    &kp M  &commasem  &dotcol  &excint
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N    &kp M  &commasem  &dotcol  &intexc
                              &lc NAV  &shft_cw  &kp SPC  &lc SYM
             >;
         };
