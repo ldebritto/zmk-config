@@ -266,28 +266,28 @@
         nav_media_mute_combo {
             key-positions = <4 14>;
             require-prior-idle-ms = <200>;
-            layers = <2>;
+            layers = <DEF NWD NAV>;
             bindings = <&kp C_MUTE>;
         };
 
         toggle_nav_combo {
             key-positions = <30 31>;
             require-prior-idle-ms = <200>;
-            layers = <0 2>;
+            layers = <DEF NWD NAV>;
             bindings = <&tog 2>;
         };
 
         numword_combo {
             key-positions = <32 33>;
             require-prior-idle-ms = <200>;
-            layers = <0>;
+            layers = <DEF NWD NAV>;
             bindings = <&numword>;
         };
 
         capsword_combo {
             key-positions = <12 17>;
             require-prior-idle-ms = <200>;
-            layers = <0>;
+            layers = <DEF NWD NAV>;
             bindings = <&caps_word>;
         };
 
@@ -498,7 +498,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T                       &kp Y                          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml LS(LA(LC(LGUI))) G    &hrmr RS(RA(RC(RIGHT_GUI))) H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B                       &kp N                          &kp M         &commasem      &dotcol       &intexc
-                                              &lc NAV       &hpmt RSHFT ENTER           &kp SPACE                      &lc_nw NWD 0
+                                              &lc NAV       &hpmt RSHFT BSPC            &kp SPACE                      &lc_nw NWD 0
             >;
         };
 
