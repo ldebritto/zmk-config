@@ -31,7 +31,7 @@
             bindings = <&kp ENTER>;
             timeout-ms = <20>;
             require-prior-idle-ms = <210>;
-            layers = <2 1>;
+            layers = <DEF NWD NAV>;
             key-positions = <2 3>;
         };
 
@@ -538,7 +538,7 @@
   &kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP      &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
   &kp LCTRL          &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN      &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev     &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                                 &kp ESC      &kp TAB     &trans     &trans
+                                                 &kp ESC      &kp ENTER         &trans     &trans
             >;
         };
 
