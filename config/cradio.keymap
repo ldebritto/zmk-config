@@ -223,7 +223,7 @@
             compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
             label = "SWAPPER";
             #binding-cells = <0>;
-            bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
+            bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // changed to RGUI keycode to avoid conflicts with the &sk LGUI key on NAV
 
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
