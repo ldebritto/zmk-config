@@ -234,29 +234,6 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
-        // Mod-morphing on base layer for better pontuation keys
-
-        intexc: exclamation_interrogation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp QMARK>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dotcol: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        
-        commasem: comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
     };
 
     macros {
@@ -294,7 +271,7 @@
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y    &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H    &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N    &kp M  &commasem  &dotcol  &intexc
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N    &kp M  &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw  &kp SPC  &lc SYM
             >;
         };
@@ -319,9 +296,9 @@
 
         symbols_layer {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp LT               &kp GT     &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT            &kp PIPE   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp UNDER  &kp AT     &kp TILDE  &kp CARET            &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp DLLR             &kp PRCNT  &kp BSLH  &kp AMPS   &kp PIPE   &kp LA(N6)
+  &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp DLLR             &kp LA(N6) &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
                                    &trans     &kp LC(LG(SPACE))    &numword   &trans
             >; 
         };
