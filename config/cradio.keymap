@@ -99,6 +99,14 @@
             layers = <DEF NWD AOE>;
             key-positions = <4 14>;
         };
+        
+        left_hand_f18_combo {
+            bindings = <&kp F18>;
+            require-prior-idle-ms = <200>;
+            timeout-ms = <30>;
+            layers = <DEF>;
+            key-positions = <13 23>;
+        };
 
         fj_spotlight {
             bindings = <&kp LG(SPACE)>;
