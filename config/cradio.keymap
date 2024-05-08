@@ -104,7 +104,7 @@
             bindings = <&kp F18>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF>;
+            layers = <DEF NAV>;
             key-positions = <13 23>;
         };
 
