@@ -179,6 +179,26 @@
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
         };
+        
+        // Numword punctuation
+        
+        numword_colon {
+            key-positions = <14 24>;
+            layers = <NWD>;
+            bindings = <&kp COLON>;
+        };
+        
+        numword_comma {
+            key-positions = <13 23>;
+            layers = <NWD>;
+            bindings = <&kp COMMA>;
+        };
+        
+        numword_dot {
+            key-positions = <12 22>;
+            layers = <NWD>;
+            bindings = <&kp DOT>;
+        };
 
     };
 
@@ -278,10 +298,10 @@
 
         numword_layer {
             bindings = <
-  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans  &trans  &trans  &trans
-  &kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans  &trans  &trans  &trans
-                          &mo NAV &trans    &trans  &mo SYM
+  &trans  &kp N7  &kp N8  &kp N9  &trans              &trans  &trans  &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6  &trans              &trans  &trans  &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3  &trans              &trans  &trans  &trans  &trans  &trans
+                          &mo NAV &lt SYM K_CANCEL    &trans  &mo SYM
             >; // Using &mo instead of &lc to keep the numword behavior while pressed
         };
 
@@ -291,7 +311,7 @@
   &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
   &kp LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)    &playnextprev       &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
                                         &trans       &trans              &trans     &trans
-            >;
+            >; //F18 is the ideal trigger for app-specific-macros in Keyboard Maestro and can be modded
         };
 
         symbols_layer {
