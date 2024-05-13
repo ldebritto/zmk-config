@@ -64,8 +64,16 @@
             bindings = <&kp ESCAPE>;
             require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
+            layers = <DEF NAV NWD AOE>;
             key-positions = <0 10>;
+        };
+        
+        left_hand_ring_esc_combo {
+            bindings = <&kp ESCAPE>;
+            require-prior-idle-ms = <200>; // Followind urob's formula for my 52 relaxed WPM: 10500/52 wpm ≅ 200 ms
+            timeout-ms = <30>;
+            layers = <DEF NAV NWD AOE>;
+            key-positions = <1 11>;
         };
 
         left_hand_tab_combo {
@@ -73,15 +81,15 @@
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
             layers = <DEF NWD AOE>;
-            key-positions = <1 11>;
+            key-positions = <2 12>;
         };
 
         left_hand_bspc {
             bindings = <&kp BSPC>;
-            key-positions = <2 12>;
+            key-positions = <4 14>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NWD NAV AOE>;
+            layers = <DEF NWD AOE>;
         };
 
         left_hand_enter_combo {
@@ -96,15 +104,15 @@
             bindings = <&kp DEL>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NWD AOE>;
-            key-positions = <4 14>;
+            layers = <DEF NWD NAV AOE>;
+            key-positions = <14 24>;
         };
         
         left_hand_f18_combo {
             bindings = <&kp F18>;
             require-prior-idle-ms = <200>;
             timeout-ms = <30>;
-            layers = <DEF NAV>;
+            layers = <DEF NAV NWD>;
             key-positions = <13 23>;
         };
 
