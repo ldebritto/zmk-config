@@ -256,7 +256,7 @@
             bindings = <&tog MOU>, <&none>, <&tog MOU>;
 
             ignored-layers = <MOU>;
-            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 2 3 >;
+            ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 2 3 9 19 29>;
         };
 
         // Window switching
@@ -350,9 +350,9 @@
 
         mouse {
             bindings = <
-  &none            &none      &kp LS(LC(TAB))  &kp LC(TAB)  &none    &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &none
+  &none            &none      &kp LS(LC(TAB))  &kp LC(TAB)  &none    &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
   &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &none    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none    &none           &mkp MB3         &mkp MB4        &mkp MB5         &none
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none    &none           &mkp MB3         &mkp MB4        &mkp MB5         &kp DEL
                                                &none        &none    &mkp MB1        &mkp MB2
             >;
         };
