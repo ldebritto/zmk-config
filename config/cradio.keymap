@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// Core functionality layers
+// Core layers
 
 #define DEF 0
 #define NWD 1
@@ -270,6 +270,32 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
+        // mod-taps to try to use hold-taps and use only one thumb key
+
+        mosk: mosk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOSK";
+            bindings = <&mo>, <&sk>;
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
+        mokp: mokp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRMR";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
     };
 
     macros {
@@ -308,7 +334,7 @@
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y    &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H    &kp J  &kp K      &kp L    &kp SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N    &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw  &kp SPC  &lc SYM
+                             &lc NAV  &mosk NAV RSHFT  &mokp SYM SPC  &lc SYM
             >;
         };
 
