@@ -275,7 +275,7 @@
         mosk: mosk {
             compatible = "zmk,behavior-hold-tap";
             label = "MOSK";
-            bindings = <&mo>, <&sk>;
+            bindings = <&lc>, <&sk>;
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
@@ -287,7 +287,7 @@
         mokp: mokp {
             compatible = "zmk,behavior-hold-tap";
             label = "HRMR";
-            bindings = <&mo>, <&kp>;
+            bindings = <&lc>, <&kp>;
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <280>;
