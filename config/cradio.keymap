@@ -269,7 +269,6 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
         tri_layer_for_function_and_number_keys {
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
