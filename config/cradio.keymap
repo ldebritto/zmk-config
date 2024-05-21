@@ -26,14 +26,14 @@
 
 &mmv {
     acceleration-exponent = <1>;      // 1
-    time-to-max-speed-ms = <500>;    // 40
-    delay-ms = <DEF>;                   // 0
+    time-to-max-speed-ms = <500>;     // 40
+    delay-ms = <0>;                   // 0
 };
 
-&msc {
+&mwh {
     acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <40>;      // 500
-    delay-ms = <DEF>;                   // 10
+    delay-ms = <0>;                   // 10
 };
 
 // Customized caps word to allow for easier canceling and accented characters
@@ -325,8 +325,8 @@
 
         mouse {
             bindings = <
-  &none            &none      &kp LS(LC(TAB))  &kp LC(TAB)  &none    &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
-  &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &none    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
+  &none            &none      &kp LS(LC(TAB))  &kp LC(TAB)  &none    &mwh SCRL_DOWN  &mwh SCRL_RIGHT  &mmv MOVE_UP    &mwh SCRL_LEFT   &kp BSPC
+  &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &none    &mwh SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none    &none           &mkp MB3         &mkp MB4        &mkp MB5         &kp DEL
                                                &none        &none    &mkp MB1        &mkp MB2
             >;
