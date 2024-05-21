@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// Core layers
+// My core layers
 
 #define DEF 0
 #define NWD 1
@@ -13,7 +13,7 @@
 #define FUN 4
 #define MOU 5
 
-// AOE2 layers
+// Special AOE2 layers for keeping right hand on my mouse while playing
 
 #define AOE 6
 #define ASG 7
@@ -47,10 +47,11 @@
 
 &sk {
     quick-release; // avoids "THis" problem
-    release-after-ms = <600000>; // 1000 ms is default. I've set mine to a bonkers 10 minutes timer in order to emulate Callum's OSM, which is timeless, as close as possible
+    release-after-ms = <60000000>; // 1000 ms is default. I've set mine to a bonkers 1000 minutes timer in order to emulate Callum's OSM, which is timeless, as close as possible
 };
 
 // Hold-taps for AOE layers
+
 &lt { flavor = "hold-preferred"; }; 
 &mt { flavor = "balanced"; };
 
@@ -149,7 +150,7 @@
         };
 
         aoe_toggle_aoe_gaming_layers {
-            bindings = <&tog 6>;
+            bindings = <&tog AOE>;
             layers = <DEF AOE>;
             key-positions = <21 22 23>;
         };
