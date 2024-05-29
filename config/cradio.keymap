@@ -153,7 +153,7 @@
             bindings = <&hrml LS(LGUI) TILDE>;
             timeout-ms = <30>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NWD NAV>;
+            layers = <DEF NWD>;
             key-positions = <12 13>;
         };
 
@@ -266,7 +266,7 @@
         nav_media_mute_combo {
             key-positions = <4 14>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NWD NAV>;
+            layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
 
