@@ -260,6 +260,14 @@
             layers = <DEF NWD NAV>;
             key-positions = <18 28>;
         };
+        
+        elipsis_combo {
+            bindings = <&kp LA(SEMI)>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NWD NAV>;
+            key-positions = <19 29>;
+        };
 
         // Special layer toggles
 
