@@ -100,22 +100,16 @@
       
         // Numword punctuation for left handed input of , . : between numbers
         numword_comma {
-            key-positions = <11 21>;
+            key-positions = <12 22>;
             layers = <NWD>;
             bindings = <&kp COMMA>;
         };
         
         numword_dot {
-            key-positions = <12 22>;
+            key-positions = <13 23>;
             layers = <NWD>;
             bindings = <&kp DOT>;
         };
-
-        numword_slash {
-            key-positions = <13 23>;
-            layers = <NWD>;
-            bindings = <&kp SLASH>;
-        };        
 
         numword_colon {
             key-positions = <14 24>;
