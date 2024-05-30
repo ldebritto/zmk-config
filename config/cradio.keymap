@@ -334,8 +334,8 @@
             bindings = <
   &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &trans  &trans  &trans  &trans  &trans
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &trans  &trans  &trans  &trans  &trans
-  &kp BACKSPACE &kp SPACE    &kp COMMA     &kp DOT       &kp DEL             &trans  &trans  &trans  &trans  &trans
-                                           &trans        &kp HOME            &trans  &trans
+  &kp BACKSPACE &kp SPACE    &kp COMMA     &kp DOT       &kp HOME            &trans  &trans  &trans  &trans  &trans
+                                           &trans        &kp DEL             &trans  &trans
             >;
         };
 
