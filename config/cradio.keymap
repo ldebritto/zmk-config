@@ -98,15 +98,9 @@
             key-positions = <13 23>;
         };
       
-        // Numword punctuation
-        numword_colon {
-            key-positions = <14 24>;
-            layers = <NWD>;
-            bindings = <&kp COLON>;
-        };
-        
+        // Numword punctuation for left handed input of , . : between numbers
         numword_comma {
-            key-positions = <13 23>;
+            key-positions = <11 21>;
             layers = <NWD>;
             bindings = <&kp COMMA>;
         };
@@ -117,6 +111,18 @@
             bindings = <&kp DOT>;
         };
 
+        numword_slash {
+            key-positions = <13 23>;
+            layers = <NWD>;
+            bindings = <&kp SLASH>;
+        };        
+
+        numword_colon {
+            key-positions = <14 24>;
+            layers = <NWD>;
+            bindings = <&kp COLON>;
+        };
+        
         // Layer toggles
         toggle_nav_combo {
             key-positions = <30 31>;
