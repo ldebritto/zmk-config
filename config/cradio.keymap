@@ -121,7 +121,7 @@
         toggle_nav_combo {
             key-positions = <30 31>;
             layers = <DEF NAV>;
-            bindings = <&tog 2>;
+            bindings = <&tog NAV>;
         };
 
         thumb_numword_combo {
@@ -231,7 +231,7 @@
             label = "SMART_AOE";
             #binding-cells = <0>;
             bindings = <&tog AOE>, <&none>, <&tog AOE>;
-            ignored-layers = <AOE>;
+            ignored-layers = <AOE ASB ASG>;
             ignored-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>; // left side keys
         };
 
