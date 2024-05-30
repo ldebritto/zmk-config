@@ -143,7 +143,7 @@
         };
 
         aoe_smart_toggle_gaming_layers {
-            bindings = <&smart_aoe>;
+            bindings = <&smart_aoe_toggle>;
             layers = <DEF>;
             key-positions = <21 22 23>;
         };
