@@ -4,18 +4,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// My core layers mainly adapted from Callum keymap
+// My core layers
 #define DEF 0
-#define NAV 1
-#define SYM 2
-#define FUN 3
+#define NAV 2 // skipped 1 to make it avaliable for &numword
+#define SYM 3
+#define FUN 4
 
-// ZMK additional features
-#define NWD 4 // &numword for numpad that deactivates automatically when another key is pressed
+// ZMK gimmicking (these features require PR #1366)
+#define NWD 1 // &numword (must be placed bellow NAV and SYM to be able to toggle them from this layer)
 #define MOU 5 // &smart_mouse
 
 // Special AOE2 layers for keeping right hand on my mouse while playing
-#define AOE 6 // Base layer with special thumbs for in game layer triggering
+#define AOE 6 // Base layer for gaming that will deactivate when any key on the right half is pressed
 #define ASG 7 // Group selection layer
 #define ASB 8 // Select buildings layer
 
@@ -231,7 +231,7 @@
             label = "SMART_AOE";
             #binding-cells = <0>;
             bindings = <&tog AOE>, <&none>, <&tog AOE>;
-            ignored-layers = <AOE ASB ASG>;
+            ignored-layers = <AOE ASB ASG>; // If any of these layers is activated it will not untoggle AOE
             ignored-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>; // left side keys
         };
 
@@ -285,12 +285,21 @@
             >;
         };
 
+        numword_layer {
+            bindings = <
+  &trans  &kp N7  &kp N8  &kp N9  &trans              &trans  &trans  &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6  &trans              &trans  &trans  &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3  &trans              &trans  &trans  &trans  &trans  &trans
+                          &mo NAV &lt SYM K_CANCEL    &trans  &mo SYM
+            >; // Using &mo instead of my &lc to keep the numword behavior while pressed
+        };
+
         navigation_and_media_layer {
             bindings = <
   &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB)  &kp LG(C_VOL_UP)    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
   &sk GLOBE  &kp LG(X)  &kp LG(C)       &kp LG(V)    &playnextprev       &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
-                                        &trans       &trans              &trans     &trans
+                                        &trans       &kp LG(Z)           &trans     &trans
             >; //F18 is the ideal trigger for app-specific-macros in Keyboard Maestro
         };
 
@@ -312,15 +321,6 @@
             >;
         };
 
-        numword_layer {
-            bindings = <
-  &trans  &kp N7  &kp N8  &kp N9  &trans              &trans  &trans  &trans  &trans  &trans
-  &kp N0  &kp N4  &kp N5  &kp N6  &trans              &trans  &trans  &trans  &trans  &trans
-  &trans  &kp N1  &kp N2  &kp N3  &trans              &trans  &trans  &trans  &trans  &trans
-                          &mo NAV &lt SYM K_CANCEL    &trans  &mo SYM
-            >; // Using &mo instead of my &lc to keep the numword behavior while pressed
-        };
-
         mouse {
             bindings = <
   &none            &none      &kp LS(LC(TAB))  &kp LC(TAB)  &none    &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
@@ -332,28 +332,28 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &kp ESC
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &kp ENTER
-  &kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &kp F3
-                                        &lt ASG H    &lt ASB DOT    &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R        &kp T          &none  &none  &none  &none  &kp ESC
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &none  &none  &none  &none  &kp ENTER
+  &kp Z        &kp X       &kp C        &kp V        &kp B          &none  &none  &none  &none  &kp F3
+                                        &lt ASG H    &lt ASB DOT    &none  &none
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
-  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &trans  &trans  &trans  &trans  &trans
-  &kp BACKSPACE &kp SPACE    &kp COMMA     &kp HOME      &kp LA(F)           &trans  &trans  &trans  &trans  &trans
-                                           &trans        &kp DEL             &trans  &trans
+  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &none  &none  &none  &none  &none
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &none  &none  &none  &none  &none
+  &kp BACKSPACE &kp SPACE    &kp COMMA     &kp HOME      &kp LA(F)           &none  &none  &none  &none  &none
+                                           &trans        &kp DEL             &none  &none
             >;
         };
 
         aoe_select_all_buildings {
             bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                               &kp F3         &trans           &trans  &trans
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &none  &none  &none  &none  &none
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &none  &none  &none  &none  &none
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &none  &none  &none  &none  &none
+                                               &kp F3         &trans           &none  &none
            >;
         };
     };
