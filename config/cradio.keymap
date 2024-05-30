@@ -278,10 +278,10 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw  &kp SPACE &lc SYM
+  &kp Q  &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
+  &kp A  &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
+  &kp Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                       &lc NAV  &shft_cw  &kp SPACE &lc SYM
             >;
         };
 
@@ -289,7 +289,7 @@
             bindings = <
   &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB)  &kp LG(C_VOL_UP)    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
   &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
-  &kp LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)    &playnextprev       &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
+  &sk GLOBE  &kp LG(X)  &kp LG(C)       &kp LG(V)    &playnextprev       &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
                                         &trans       &trans              &trans     &trans
             >; //F18 is the ideal trigger for app-specific-macros in Keyboard Maestro
         };
