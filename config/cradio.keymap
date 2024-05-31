@@ -6,7 +6,7 @@
 
 // My core layers
 #define DEF 0
-#define NAV 2 // skipped 1 to make it avaliable for &numword
+#define NAV 2 // skipped 1 to make it avaliable for &numword so it can toggle NAV and SYM as they'll remain above such layer
 #define SYM 3
 #define FUN 4
 
@@ -278,9 +278,9 @@
 
         default {
             bindings = <
-  &kp Q  &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
-  &kp Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
+  &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
                        &lc NAV  &shft_cw  &kp SPACE &lc SYM
             >;
         };
