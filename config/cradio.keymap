@@ -343,7 +343,7 @@
             bindings = <
   &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &none  &none  &none  &none  &none
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &none  &none  &none  &none  &none
-  &kp BACKSPACE &kp SPACE    &kp COMMA     &kp HOME      &kp LA(F)           &none  &none  &none  &none  &none
+  &none         &none        &none         &none         &none               &none  &none  &none  &none  &none
                                            &trans        &kp DEL             &none  &none
             >;
         };
