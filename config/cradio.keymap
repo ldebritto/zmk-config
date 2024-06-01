@@ -142,8 +142,8 @@
             bindings = <&smart_mouse>;
         };
 
-        aoe_smart_toggle_gaming_layers {
-            bindings = <&smart_aoe_toggle>;
+        aoe_toggle_gaming_layers {
+            bindings = <&tog AOE>;
             layers = <DEF>;
             key-positions = <21 22 23>;
         };
@@ -224,15 +224,6 @@
             bindings = <&tog MOU>, <&none>, <&tog MOU>;
             ignored-layers = <MOU>;
             ignored-key-positions = <7 16 17 18 5 15 6 8 32 33 26 27 28 10 11 12 13 20 21 22 23 2 3 9 19 29>;
-        };
-
-        smart_aoe_toggle: smart_aoe { // will deactivate the layer if any key on the right side is pressed
-            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
-            label = "SMART_AOE";
-            #binding-cells = <0>;
-            bindings = <&tog AOE>, <&none>, <&tog AOE>;
-            ignored-layers = <AOE ASB ASG>; // If any of these layers is activated it will not untoggle AOE
-            ignored-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>; // left side keys
         };
 
         // Window switching
