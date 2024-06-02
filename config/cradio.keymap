@@ -14,11 +14,6 @@
 #define NWD 1 // &numword (must be placed bellow NAV and SYM to be able to toggle them from this layer)
 #define MOU 5 // &smart_mouse
 
-// Special AOE2 layers for keeping right hand on my mouse while playing
-#define AOE 6 // Base layer for gaming that will deactivate when any key on the right half is pressed
-#define ASG 7 // Group selection layer
-#define ASB 8 // Select buildings layer
-
 // Mouse config copied from urob's config
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -47,7 +42,7 @@
     release-after-ms = <60000000>; // 1000 ms is default. I've set mine to a bonkers 1000 minutes timer in order to emulate Callum's OSM, which is timeless, as close as possible
 };
 
-// Hold-taps for AOE layers
+// Hold-taps for Z/GLOBE key and NWD layer
 &lt { flavor = "hold-preferred"; }; 
 &mt { flavor = "balanced"; };
 
@@ -58,37 +53,37 @@
         // Left-hand combos for use with the mouse on the right-hand
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <DEF NAV NWD>;
             key-positions = <0 10>;
         };
         
         left_hand_ring_esc_combo {
             bindings = <&kp ESCAPE>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <DEF NAV NWD>;
             key-positions = <1 11>;
         };
 
         left_hand_tab_combo {
             bindings = <&kp TAB>;
-            layers = <DEF NWD AOE>;
+            layers = <DEF NWD>;
             key-positions = <2 12>;
         };
 
         left_hand_bspc {
             bindings = <&kp BSPC>;
             key-positions = <4 14>;
-            layers = <DEF NWD AOE>;
+            layers = <DEF NWD>;
         };
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            layers = <DEF NWD NAV AOE>;
+            layers = <DEF NWD NAV>;
             key-positions = <3 13>;
         };
 
         left_hand_del_combo {
             bindings = <&kp DEL>;
-            layers = <DEF NAV AOE>; // On NWD will output :
+            layers = <DEF NAV>; // On NWD will output :
             key-positions = <14 24>;
         };
         
@@ -126,13 +121,13 @@
 
         thumb_hyper_combo {
             key-positions = <32 33>;
-            layers = <DEF NWD AOE>;
+            layers = <DEF NWD>;
             bindings = <&sk LG(LS(LA(LCTRL)))>;
         };
 
         left_half_numword_combo {
             key-positions = <11 13>;
-            layers = <DEF NWD AOE>;
+            layers = <DEF NWD>;
             bindings = <&numword>;
         };
 
@@ -140,12 +135,6 @@
             key-positions = <26 27 28>;
             layers = <DEF>;
             bindings = <&smart_mouse>;
-        };
-
-        aoe_toggle_gaming_layers {
-            bindings = <&tog AOE>;
-            layers = <DEF AOE>;
-            key-positions = <21 22 23>;
         };
 
         // Media
@@ -319,33 +308,6 @@
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none    &kp F18         &mkp MB3         &mkp MB4        &mkp MB5         &kp DEL
                                                &none        &none    &mkp MB1        &mkp MB2
             >; // F18 is here as well
-        };
-
-        aoe_default_layer {
-            bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T          &none  &none  &none  &none  &kp ESC
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &none  &none  &none  &none  &kp ENTER
-  &kp Z        &kp X       &kp C        &kp V        &kp B          &none  &none  &none  &none  &kp F3
-                                        &lt ASG H    &lt ASB DOT    &none  &none
-            >;
-        };
-
-        aoe_unit_and_group_selection {
-            bindings = <
-  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &none  &none  &none  &none  &none
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &none  &none  &none  &none  &none
-  &none         &none        &none         &none         &none               &none  &none  &none  &none  &none
-                                           &trans        &kp DEL             &none  &none
-            >;
-        };
-
-        aoe_select_all_buildings {
-            bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &none  &none  &none  &none  &none
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &none  &none  &none  &none  &none
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &none  &none  &none  &none  &none
-                                               &kp F3         &trans           &none  &none
-           >;
         };
     };
 };
