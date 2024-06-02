@@ -144,7 +144,7 @@
 
         aoe_toggle_gaming_layers {
             bindings = <&tog AOE>;
-            layers = <DEF>;
+            layers = <DEF AOE>;
             key-positions = <21 22 23>;
         };
 
