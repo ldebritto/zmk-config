@@ -57,12 +57,6 @@
             key-positions = <0 10>;
         };
         
-        left_hand_ring_esc_combo {
-            bindings = <&kp ESCAPE>;
-            layers = <DEF NAV NWD>;
-            key-positions = <1 11>;
-        };
-
         left_hand_tab_combo {
             bindings = <&kp TAB>;
             layers = <DEF NWD>;
@@ -119,12 +113,6 @@
             bindings = <&tog NAV>;
         };
 
-        thumb_hyper_combo {
-            key-positions = <32 33>;
-            layers = <DEF NWD>;
-            bindings = <&sk LG(LS(LA(LCTRL)))>;
-        };
-
         left_half_numword_combo {
             key-positions = <11 13>;
             layers = <DEF NWD>;
@@ -163,7 +151,7 @@
             bindings = <&bt BT_SEL 1>;
         };
 
-        sys_toggle_bt2_connection {
+        sys_toggle_bt2_connection { // I've never needed more than three devices, bur this firmware supports up to 5
             key-positions = <23 24>;
             layers = <FUN>;
             bindings = <&bt BT_SEL 2>;
