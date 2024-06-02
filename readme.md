@@ -19,7 +19,7 @@ This keymap was heavily inspired by [Callum's layout for QMK](https://github.com
 
 # My use case and layer design choices
 
-Its main uses are writing prose in both English and Portuguese as well as some light coding.
+Its main uses are writing prose in both English and Portuguese as well as some very light coding.
 
 ## 1. QWERTY with changes on `'` `;` and `/` keys positions
 
@@ -40,25 +40,25 @@ This emulates in ZMK the `LA_NAV` and `LA_SYM` custom behaviors found in [Callum
 
 It's built with the [parametrized macros](https://zmk.dev/docs/behaviors/macros#parameterized-macros) as `&lc` to allow for easier reading of the keymap and user modification.
 
-### 3. `&swapper` for swapping between apps/windows
+## 3. `&swapper` for swapping between apps/windows
 
 Allows for `CMD+TAB` with just one key. It keeps the modal open until you release the layer toggle, just as you would hold `CMD` between `TAB` keypresses.
 
 This is *not native to ZMK's `main` repo* and requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366). See ZMK.dev [documentation](https://zmk.dev/docs/features/beta-testing) for instructions on how to use PRs not yet merged into ZMK's main repo.
 
-### 4. Numpad for `&numword`
+## 4. Numpad for `&numword`
 
 `&numword` is accessible via `S` and `D` key combo. 
 
 This behavior allows for quick entering numbers and will disable the numpad layer upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. I believe this behavior was introduced to the custom mech community in QMK by [Jonas Hietala](https://www.jonashietala.se/blog/2022/09/06/the_current_t-34_keyboard_layout/#numword). This ZMK implemenation was made by [urob](https://github.com/urob/zmk-config#numword) and I've copied with a few modifications here.
 
-### 5. Apple's `Globe` key on mod-tap `Z` and `;` keys
+## 5. Apple's `Globe` key on mod-tap `Z` and `;` keys
 
 Recently ZMK implementted a [keycode](https://zmk.dev/docs/codes#application-controls) for emulating `GLOBE`/`fn` key on Apple's keyboards. 
 
 It's not 100% the same behavior made by Apple's keyboards (see limitations [here](https://github.com/zmkfirmware/zmk/pull/1938#issuecomment-1744579039)), but it gets the job done for my uses – wich is mainly window manipulation on both macOS and iPadOS. So I've made it into a `&mt` replicated in `DEF`, `NAV` and `SYM` on the keys used by lower pinkies.
 
-### 6. `&smart_mouse` copied from urob's repo
+## 6. `&smart_mouse` copied from urob's repo
 
 Yet another feature copied from [urob's repo](https://github.com/urob/zmk-config?tab=readme-ov-file#smart-mouse).
 
@@ -66,7 +66,7 @@ It is activated from the `M,.` key combo, from `DEF` layer.
 
 Also requires [PR #1366](https://github.com/zmkfirmware/zmk/pull/1366) used in `&swapper` behavior.
 
-### 7. Left hand combos for one handed use of common action keys in combination with the mouse on the right hand
+## 7. Left hand combos for one handed use of common action keys in combination with the mouse on the right hand
 
 Some combos where added to make it possible to use the keyboard one handed. They're mainly for use with the left hand (so a mouse can be used on the righ hand).
 
@@ -74,5 +74,4 @@ Some combos where added to make it possible to use the keyboard one handed. They
 - `WS` for `TAB`
 - `RF` for `ENTER`
 - `TG` for `BACKSPACE`
-- `GB` for `DELETE`
 - `FV` for `F18` (which I use to trigger some app-specific macros on Keyboarad Maestro)
