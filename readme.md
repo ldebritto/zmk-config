@@ -70,8 +70,8 @@ Also requires [PR #1366](https://github.com/zmkfirmware/zmk/pull/1366) used in `
 
 Some combos where added to make it possible to use the keyboard one handed. They're mainly for use with the left hand (so a mouse can be used on the righ hand).
 
-- `QA` for `ESC`z
-- `ED` for `TAB`
+- `QA` for `ESC`
+- `WS` for `TAB`
 - `RF` for `ENTER`
 - `TG` for `BACKSPACE`
 - `GB` for `DELETE`

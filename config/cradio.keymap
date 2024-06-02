@@ -58,19 +58,19 @@
         left_hand_tab_combo {
             bindings = <&kp TAB>;
             layers = <DEF NWD>;
-            key-positions = <2 12>;
-        };
-
-        left_hand_bspc {
-            bindings = <&kp BSPC>;
-            key-positions = <4 14>;
-            layers = <DEF NWD>;
+            key-positions = <1 11>;
         };
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             layers = <DEF NWD NAV>;
             key-positions = <3 13>;
+        };
+
+        left_hand_bspc {
+            bindings = <&kp BSPC>;
+            key-positions = <4 14>;
+            layers = <DEF NWD>;
         };
 
         left_hand_del_combo {
