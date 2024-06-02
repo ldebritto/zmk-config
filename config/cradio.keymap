@@ -268,7 +268,7 @@
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT            &kp PIPE   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
   &kp MINUS  &kp UNDER  &kp AT     &kp TILDE  &kp CARET            &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp DLLR             &kp LA(N6) &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &kp LC(LG(SPACE))    &numword   &trans
+                                   &trans     &kp LC(LG(SPACE))    &trans     &trans
             >; 
         };
 
