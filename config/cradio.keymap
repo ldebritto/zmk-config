@@ -124,10 +124,10 @@
             bindings = <&tog NAV>;
         };
 
-        thumb_numword_combo {
+        thumb_hyper_combo {
             key-positions = <32 33>;
             layers = <DEF NWD AOE>;
-            bindings = <&numword>;
+            bindings = <&sk LG(LS(LA(LCTRL)))>;
         };
 
         left_half_numword_combo {
