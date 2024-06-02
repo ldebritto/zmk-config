@@ -10,9 +10,9 @@
 #define SYM 3
 #define FUN 4
 
-// ZMK gimmicking (these features require PR #1366)
+// ZMK gimmicking (these features require PR #1366 and #1451)
 #define NWD 1 // &numword (must be placed bellow NAV and SYM to be able to toggle them from this layer)
-#define MOU 5 // &smart_mouse
+#define MOU 5 // &smart_mouse (for the rare occasion when I don't have a mouse with me)
 
 // Mouse config copied from urob's config
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
@@ -30,13 +30,11 @@
     delay-ms = <0>;                   // 10
 };
 
-// Customized caps word to allow for easier canceling and accented characters
-&caps_word {
+&caps_word { // Requires PR #1451.
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // adding LSHFT is required to use some dead keys for diacriticals in PT-BR  (such as ~, ` and ^). This makes RSHFT a better candidate for my thumb key, as it can cancel &capsword on activation
 };
 
-// Emulating Callum's timerless OSM behaviour as close as possible
 &sk {
     quick-release; // avoids "THis" problem
     release-after-ms = <60000000>; // 1000 ms is default. I've set mine to a bonkers 1000 minutes timer in order to emulate Callum's OSM, which is timeless, as close as possible
@@ -83,7 +81,7 @@
         
         left_hand_f18_combo {
             bindings = <&kp F18>;
-            layers = <DEF NAV>; // On NWD will output ,
+            layers = <DEF NAV>; // On NWD will output .
             key-positions = <13 23>;
         };
       
@@ -249,7 +247,7 @@
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                       &lc NAV  &shft_cw  &kp SPACE &lc SYM
+                             &lc NAV  &shft_cw  &kp SPACE &lc SYM
             >;
         };
 
@@ -258,7 +256,7 @@
   &trans  &kp N7  &kp N8  &kp N9  &trans              &trans  &trans  &trans  &trans  &trans
   &kp N0  &kp N4  &kp N5  &kp N6  &trans              &trans  &trans  &trans  &trans  &trans
   &trans  &kp N1  &kp N2  &kp N3  &trans              &trans  &trans  &trans  &trans  &trans
-                          &mo NAV &lt SYM K_CANCEL    &trans  &mo SYM
+                          &mo NAV &lt SYM K_CANCEL    &trans  &trans
             >; // Using &mo instead of my &lc to keep the numword behavior while pressed
         };
 
