@@ -204,6 +204,20 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
+        vb_up: vol_bri_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+            mods = <MOD_LSFT>;
+        };
+        
+        vb_dn: vol_bri_down {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
+            mods = <MOD_LSFT>;
+        };
+
     };
 
     macros {
@@ -256,10 +270,10 @@
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB)  &kp LG(C_VOL_UP)    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI     &kp LG(C_VOL_DN)    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
-  &kp LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)    &playnextprev       &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
-                                        &trans       &kp ESC             &trans     &trans
+  &kp TAB    &swapper   &kp LS(LC(TAB)) &kp LC(TAB)  &vb_up           &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+  &sk LCTRL  &sk LALT   &sk LSHFT       &sk LGUI     &vb_dn           &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
+  &kp LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
+                                        &trans       &kp ESC          &trans     &trans
             >; //F18 is the ideal trigger for app-specific-macros in Keyboard Maestro
         };
 
