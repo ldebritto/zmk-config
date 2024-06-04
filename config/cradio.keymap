@@ -218,6 +218,13 @@
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
             mods = <MOD_LSFT>;
         };
+        
+        spc_al: space_alfred {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPC>, <&kp LG(SPC)>;
+            mods = <MOD_RSFT>;
+        };
 
     };
 
@@ -253,10 +260,10 @@
 
         default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw  &kp SPACE &lc SYM
+  &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y    &kp U  &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G     &kp H    &kp J  &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N    &kp M  &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw  &spc_al  &lc SYM
             >;
         };
 
