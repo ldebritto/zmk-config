@@ -204,6 +204,7 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab
         };
 
+        // Mod-morphs to allow for brightness changes with shift + vol up/down
         vb_up: vol_bri_up {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -255,7 +256,7 @@
   &kp Q        &kp W  &kp E  &kp R    &kp T     &kp Y     &kp U  &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G     &kp H     &kp J  &kp K      &kp L    &kp SQT
   &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N     &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc NAV  &shft_cw  &kp SPACE &lc SYM
+                             &lc NAV  &shft_cw  &mt LG(LA(LS(LCTRL))) SPACE &lc SYM
             >;
         };
 
