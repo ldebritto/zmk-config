@@ -153,7 +153,7 @@
             label = "TAP_DANCE_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp RSHFT>, <&caps_word>;
+            bindings = <&kp RSHFT>, <&caps_word>; // RSHFT will cancel &caps_word while LSHFT will not
         };
 
         playnextprev: play_next_previous_media {
@@ -169,8 +169,9 @@
             label = "NUMWORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NWD>;
-            continue-list = <BACKSPACE DELETE LPAR RPAR DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL LGUI LALT LCTRL LSHFT RGUI RALT RCTRL>; // RSHFT tap on left thumb will cancel any special layer
+            continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
             ignore-numbers;
+            ignore-modifiers;
         };
 
         smart_mouse: smart_mouse {
