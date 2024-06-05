@@ -269,7 +269,7 @@
   &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp LT       &kp GT     &kp RPAR  &kp RBKT   &kp RBRC   &kp AMPS
   &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE  &kp DLLR     &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &mt GLOBE PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT    &kp PIPE   &kp BSLH  &kp AT     &kp QMARK  &kp EXCL
-                                        &trans     &kp UNDER    &trans     &trans
+                                        &trans     &mt RSHFT UNDER    &trans     &trans
             >; 
         };
 
