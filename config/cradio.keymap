@@ -266,10 +266,10 @@
 
         symbols {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT          &kp PIPE   &kp RPAR  &kp RBKT   &kp RBRC   &kp GRAVE
-  &kp MINUS  &kp UNDER  &kp AT     &kp TILDE  &kp CARET          &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp DLLR           &kp LA(N6) &kp BSLH  &kp AMPS   &kp QMARK  &kp EXCL
-                                   &trans     &kp LC(LG(SPC))    &trans     &trans
+  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp LT        &kp GT      &kp RPAR  &kp RBKT   &kp RBRC  &kp PIPE
+  &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DLLR      &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp AMPS    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                   &trans     &kp AT        &kp UNDER   &trans
             >; 
         };
 
