@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
-#define NWD 1 // &num_word (must be placed bellow NAV and SYM to be able to toggle them from this layer)
+#define NWD 1 // &numword (must be placed bellow NAV and SYM to be able to toggle them from this layer)
 #define NAV 2 
 #define SYM 3
 #define FUN 4
@@ -72,25 +72,25 @@
             key-positions = <13 23>;
         };
       
-        left_hand_num_word_combo {
+        left_hand_numword_combo {
             key-positions = <11 13>;
             layers = <DEF NWD>;
-            bindings = <&num_word>;
+            bindings = <&numword>;
         };
 
-        num_word_comma {
+        numword_comma {
             key-positions = <12 22>;
             layers = <NWD>;
             bindings = <&kp COMMA>;
         };
         
-        num_word_dot {
+        numword_dot {
             key-positions = <13 23>;
             layers = <NWD>;
             bindings = <&kp DOT>;
         };
 
-        num_word_colon {
+        numword_colon {
             key-positions = <14 24>;
             layers = <NWD>;
             bindings = <&kp COLON>;
@@ -164,7 +164,7 @@
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
-        num_word: num_word {
+        numword: numword {
             compatible = "zmk,behavior-caps-word"; // requires moded caps-word implementation from (PR #1451) will not work with vanilla &caps_word parameters
             label = "NUMWORD_SMART_LAYER";
             #binding-cells = <0>;
