@@ -278,7 +278,7 @@
   &kp N1        &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
   &sk LCTRL     &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE F1  &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &mt GLOBE F10
-                                  &trans    &kp LC(LG(Q))    &kp CAPS  &trans
+                                     &trans    &kp LC(LG(Q))    &kp CAPS  &trans
             >;
         };
 
