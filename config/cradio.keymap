@@ -169,7 +169,7 @@
             label = "NUMWORD_SMART_LAYER";
             #binding-cells = <0>;
             layers = <NWD>;
-            continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
+            continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC TAB DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
             ignore-numbers;
             ignore-modifiers;
         };
