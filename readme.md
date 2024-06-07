@@ -72,6 +72,6 @@ Some combos where added to make it possible to use the keyboard one handed. They
 
 - `QA` for `ESC`
 - `WS` for `TAB`
+- `ED` for `F18` (which I use to trigger some app-specific macros on Keyboarad Maestro)
 - `RF` for `ENTER`
 - `TG` for `BACKSPACE`
-- `FV` for `F18` (which I use to trigger some app-specific macros on Keyboarad Maestro)

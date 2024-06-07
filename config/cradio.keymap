@@ -69,7 +69,7 @@
         left_hand_f18_combo {
             bindings = <&kp F18>;
             layers = <DEF NAV>; // On NWD this combo is mapped to .
-            key-positions = <13 23>;
+            key-positions = <2 12>;
         };
       
         left_hand_numword_combo {
