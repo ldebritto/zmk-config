@@ -11,6 +11,11 @@
 #define FUN 4
 #define MOU 5 // &smart_mouse (for the rare occasion when I don't have a mouse with me)
 
+// Special AOE2 layers for keeping right hand on my mouse while playing
+#define AOE 6 // Base layer for gaming that will deactivate when any key on the right half is pressed
+#define ASG 7 // Group selection layer
+#define ASB 8 // Select buildings layer
+
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
@@ -142,6 +147,12 @@
             key-positions = <28 29>;
             layers = <FUN>;
             bindings = <&bt BT_CLR>;
+        };
+
+        aoe_toggle_gaming_layers {
+            bindings = <&tog AOE>;
+            layers = <DEF AOE>;
+            key-positions = <21 22 23>;
         };
 
     };
@@ -289,6 +300,32 @@
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none    &kp F18         &mkp MB3         &mkp MB4        &mkp MB5         &kp DEL
                                                &none        &none    &mkp MB1        &mkp MB2
             >;
+        };
+        aoe_default_layer {
+            bindings = <
+  &kp Q        &kp W       &kp E        &kp R        &kp T          &none  &none  &none  &none  &kp ESC
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &none  &none  &none  &none  &kp ENTER
+  &kp Z        &kp X       &kp C        &kp V        &kp B          &none  &none  &none  &none  &kp F3
+                                        &lt ASG H    &lt ASB DOT    &none  &none
+            >;
+        };
+
+        aoe_unit_and_group_selection {
+            bindings = <
+  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &none  &none  &none  &none  &none
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &none  &none  &none  &none  &none
+  &none         &none        &none         &none         &none               &none  &none  &none  &none  &none
+                                           &trans        &kp DEL             &none  &none
+            >;
+        };
+
+        aoe_select_all_buildings {
+            bindings = <
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &none  &none  &none  &none  &none
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &none  &none  &none  &none  &none
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &none  &none  &none  &none  &none
+                                               &kp F3         &trans           &none  &none
+           >;
         };
     };
 };
