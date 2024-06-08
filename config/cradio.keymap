@@ -84,7 +84,7 @@
         };
         
         capsword_combo {
-            key-positions = <12 27>;
+            key-positions = <12 17>;
             layers = <DEF>;
             bindings = <&caps_word>;
         };
