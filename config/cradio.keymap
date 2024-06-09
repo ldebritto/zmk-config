@@ -28,7 +28,7 @@
 
 &caps_word { // Requires PR #1451.
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
-    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // adding LSHFT is required to use some dead keys for diacriticals in PT-BR  (such as ~, ` and ^). This makes RSHFT a better candidate for my thumb key, as it can cancel &capsword on activation
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // after disabling continue on mods, needed to add LSHFT to use some dead keys for diacriticals in PT-BR  (such as ~, ` and ^). This makes RSHFT a better candidate for my thumb key, as it can cancel &caps_word on activation
 };
 
 &sk {
@@ -78,12 +78,6 @@
             bindings = <&numword>;
         };
         
-        capsword_combo {
-            key-positions = <12 17>;
-            layers = <DEF>;
-            bindings = <&caps_word>;
-        };
-
         numword_comma {
             key-positions = <12 22>;
             layers = <NWD>;
@@ -112,6 +106,12 @@
             key-positions = <26 27 28>;
             layers = <DEF>;
             bindings = <&smart_mouse>;
+        };
+
+        capsword_combo {
+            key-positions = <12 17>;
+            layers = <DEF>;
+            bindings = <&caps_word>;
         };
 
         media_mute_combo {
