@@ -68,7 +68,7 @@
         left_hand_bspc {
             bindings = <&kp BSPC>;
             key-positions = <4 14>;
-            layers = <DEF NWD>; // On NAV this combo is mapped to MUTE
+            layers = <DEF NWD AOE>; // On NAV this combo is mapped to MUTE
         };
         
         left_hand_f18_combo {
@@ -302,28 +302,28 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T          &none  &none  &none  &none  &kp ESC
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &none  &none  &none  &none  &kp ENTER
-  &kp Z        &kp X       &kp C        &kp V        &kp B          &none  &none  &none  &none  &kp F3
-                                        &lt ASG H    &lt ASB DOT    &none  &none
+  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
+  &kp Z        &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &kp BSPC
+                                        &lt ASG H    &lt ASB DOT    &trans  &trans
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
-  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &none  &none  &none  &none  &none
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &none  &none  &none  &none  &none
-  &none         &none        &none         &none         &none               &none  &none  &none  &none  &none
-                                           &trans        &kp DEL             &none  &none
+  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &trans  &trans  &trans  &trans  &trans
+  &trans        &trans       &trans        &trans        &trans              &trans  &trans  &trans  &trans  &trans
+                                           &trans        &kp DEL             &trans  &trans
             >;
         };
 
         aoe_select_all_buildings {
             bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &none  &none  &none  &none  &none
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &none  &none  &none  &none  &none
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &none  &none  &none  &none  &none
-                                               &kp F3         &trans           &none  &none
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LC(LS(D))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                               &kp F3         &trans           &trans  &trans
            >;
         };
 
