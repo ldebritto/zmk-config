@@ -46,7 +46,10 @@
     release-after-ms = <60000000>;    // 1000. Set to 10 mins.
 };
 
-&mt { flavor = "balanced"; };         // "hold-preferred"
+&mt {
+    flavor = "balanced";
+    quick-tap-ms = <150>;
+};         // "hold-preferred"
 / {
     combos {
         compatible = "zmk,combos";
