@@ -280,7 +280,7 @@
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END          &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT        &kp RET
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPC))  &mt EXCL GLOBE
-                                               &trans       &kp ESC    &trans     &trans
+                                               &trans       &trans     &trans     &trans
             >;
         };
 
