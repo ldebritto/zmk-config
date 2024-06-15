@@ -261,7 +261,7 @@
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &mt SEMI GLOBE
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
                              &lc NAV  &kp RSHFT    &kp SPACE  &lc SYM
             >;
         };
@@ -279,7 +279,7 @@
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END          &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT        &kp RET
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPC))  &mt EXCL GLOBE
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPC))  &mt GLOBE DEL
                                                &trans       &trans     &trans     &trans
             >;
         };
@@ -288,7 +288,7 @@
             bindings = <
   &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp LT             &kp GT    &kp RPAR  &kp RBKT   &kp RBRC   &kp AT
   &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE  &kp DLLR           &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &mt GLOBE PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT          &kp PIPE  &kp BSLH  &kp AMPS   &kp QMARK  &mt EXCL GLOBE
+  &mt GLOBE PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT          &kp PIPE  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
                                         &trans     &mt RSHFT UNDER    &trans    &trans
             >;
         };
