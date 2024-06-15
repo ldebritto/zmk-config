@@ -16,6 +16,9 @@
 #define AOE 6 // Base layer for gaming that will deactivate when any key on the right half is pressed
 #define ASG 7 // Group selection layer
 #define ASB 8 // Select buildings layer
+
+// Mouse movement parameters
+
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
@@ -31,17 +34,19 @@
     delay-ms = <0>;                   // 10
 };
 
+// Default overrides
+
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
-    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // after disabling continue on mods, needed to add LSHFT to use some dead keys for diacriticals in PT-BR  (such as ~, ` and ^). This makes RSHFT a better candidate for my thumb key, as it can cancel &caps_word on activation
+    continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is needed diacriticals. This makes RSHFT a better thumb key that cancels &caps_word
 };
 
 &sk {
-    quick-release; // avoids "THis" problem
-    release-after-ms = <60000000>; // 1000 ms is default. I've set mine to a bonkers 1000 minutes timer in order to emulate Callum's OSM, which is timeless, as close as possible
+    quick-release;                    // Default releases on key up. This release the mod on key down and avoids "THis" problem
+    release-after-ms = <60000000>;    // 1000. Set to 10 mins.
 };
 
-&mt { flavor = "balanced"; };
+&mt { flavor = "balanced"; };         // "hold-preferred"
 
 / {
     combos {
@@ -161,11 +166,6 @@
             key-positions = <21 22 23>;
         };
 
-        toggle_macropad {
-            bindings = <&tog 9>;
-            key-positions = <0 10 20>;
-            layers = <0 9>;
-        };
     };
 
     behaviors {
@@ -335,13 +335,5 @@
             >;
         };
 
-        macropad {
-            bindings = <
-  &kp F13          &kp F14     &kp F15     &kp F16  &kp F17    &trans     &trans    &trans     &trans    &trans
-  &kp F18          &kp F19     &kp F20     &kp F21  &kp F22    &sk GLOBE  &sk RCMD  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp PRINTSCREEN  &kp SYSREQ  &kp INSERT  &kp F23  &kp F24    &trans     &trans    &trans     &trans    &trans
-                                           &trans   &trans     &trans     &trans
-            >;
-        };
     };
 };
