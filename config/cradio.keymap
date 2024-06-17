@@ -314,7 +314,7 @@
   &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans   &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans   &trans  &trans  &trans
   &lt NAV Z    &kp X       &kp C        &kp V        &kp B          &trans  &trans   &trans  &trans  &trans
-                                        &lt ASG H    &lt ASB DOT    &trans  &mo SYM
+                                        &lt ASG H    &lt ASB DOT    &trans  &trans
             >;
         };
 
@@ -332,7 +332,7 @@
   &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                               &mt F3 ESC     &trans           &trans  &trans
+                                               &trans         &trans           &trans  &trans
             >;
         };
     };
