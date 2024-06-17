@@ -43,15 +43,9 @@
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is needed diacriticals. This makes RSHFT a better thumb key that cancels &caps_word
 };
 
-&sk {
-    quick-release;                    // Default releases on key up. This release the mod on key down and avoids "THis" problem
-    // release-after-ms = <60000000>;    // 1000. Set to 10 mins.
-};
+&sk { quick-release; };         // Default releases on key up. This release the mod on key down and avoids "THis" problem
 
-&mt {
-    flavor = "balanced";
-    quick-tap-ms = <150>;
-};
+&mt { flavor = "balanced"; };   // hold-preferred
 
 / {
     combos {
