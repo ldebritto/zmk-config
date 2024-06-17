@@ -45,7 +45,7 @@
 
 &sk {
     quick-release;                    // Default releases on key up. This release the mod on key down and avoids "THis" problem
-    release-after-ms = <60000000>;    // 1000. Set to 10 mins.
+    // release-after-ms = <60000000>;    // 1000. Set to 10 mins.
 };
 
 &mt {
