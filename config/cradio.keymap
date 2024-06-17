@@ -36,16 +36,15 @@
     delay-ms = <0>;
 };
 
-// Other overrides
+// Overrides
+
+&sk { quick-release; };         // Default releases on key up. This release the mod on key down and avoids "THis" problem
+&mt { flavor = "balanced"; };   // hold-preferred
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
     continue-list = <UNDERSCORE MINUS SQT CARET TILDE GRAVE K_CANCEL BACKSPACE DELETE LSHFT>; // LSHFT is needed diacriticals. This makes RSHFT a better thumb key that cancels &caps_word
 };
-
-&sk { quick-release; };         // Default releases on key up. This release the mod on key down and avoids "THis" problem
-
-&mt { flavor = "balanced"; };   // hold-preferred
 
 / {
     combos {
@@ -57,12 +56,12 @@
             key-positions = <0 10>;
         };
 
-        left_hand_tab_combo {
-            bindings = <&kp TAB>;
-            layers = <DEF NWD>;
-            key-positions = <1 11>;
+        left_hand_f18_combo {
+            bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
+            layers = <DEF NAV>;     // On NWD this combo is mapped to .
+            key-positions = <2 12>;
         };
-
+      
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             layers = <DEF NWD NAV AOE>;
@@ -75,12 +74,6 @@
             layers = <DEF NWD AOE>; // On NAV this combo is mapped to MUTE
         };
 
-        left_hand_f18_combo {
-            bindings = <&kp F18>;
-            layers = <DEF NAV>;     // On NWD this combo is mapped to .
-            key-positions = <2 12>;
-        };
-      
         // Layer combos
         
         aoe_toggle_gaming_layers {
@@ -100,7 +93,7 @@
             bindings = <&smart_mouse>;
         };
 
-        // numword combos
+        // &numword combos
 
         numword_toggle {
             key-positions = <11 13>;
@@ -125,7 +118,6 @@
             layers = <NWD>;
             bindings = <&kp COLON>;
         };
- 
 
         // sys combos replace a dedicated system layer
 
@@ -215,7 +207,7 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab app
         };
 
-        vb_up: vol_bri_up {
+        vb_up: volume_brightness_up {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
@@ -223,7 +215,7 @@
             mods = <MOD_LSFT>;
         };
 
-        vb_dn: vol_bri_down {
+        vb_dn: volume_brightness_down {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
@@ -243,11 +235,11 @@
                 <&macro_tap>,
                 <&kp K_CANCEL &macro_param_1to1>,
                 <&macro_press>,
-                <&mo MACRO_PLACEHOLDER>,
+                <&mo LAYER>,
                 <&macro_pause_for_release>,
                 <&macro_param_1to1>,
                 <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>;
+                <&mo LAYER>;
         };
     };
 
