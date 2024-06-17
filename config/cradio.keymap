@@ -5,7 +5,8 @@
 #define DEF 0
 #define NWD 1
 #define NAV 2
-#define FUN 3
+#define SYM 3
+#define FUN 4
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -528,7 +529,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T        &kp Y            &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G        &kp H            &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B        &kp N            &kp M         &commasem      &dotcol       &intexc
-                                              &lc NAV       &shft_cw     &tplc NAV SPACE  &lc_nw FUN 0
+                                              &lc NAV       &shft_cw     &tplc SYM SPACE  &lc_nw FUN 0
             >;
         };
 
@@ -547,6 +548,15 @@
   &kp LCTRL          &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN      &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
   &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev     &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
                                                  &kp ESC      &kp ENTER         &trans     &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+  &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp LT             &kp GT    &kp RPAR  &kp RBKT   &kp RBRC   &kp AT
+  &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE  &kp DLLR           &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &mt GLOBE PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT          &kp PIPE  &kp BSLH  &kp AMPS   &kp QMARK  &mt GLOBE EXCL
+                                        &trans     &mt RSHFT UNDER    &trans    &trans
             >;
         };
 
