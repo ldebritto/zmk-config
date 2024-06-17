@@ -235,11 +235,11 @@
                 <&macro_tap>,
                 <&kp K_CANCEL &macro_param_1to1>,
                 <&macro_press>,
-                <&mo THE_LAYER>,
+                <&mo MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_param_1to1>,
                 <&macro_release>,
-                <&mo THE_LAYER>;
+                <&mo MACRO_PLACEHOLDER>;
         };
     };
 
