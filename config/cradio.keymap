@@ -2,7 +2,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+
 
 // Core layers
 
@@ -15,7 +15,7 @@
 
 // AOE2 layers
 
-#define AOE 6   // Base layer is QWERT with home row mods on left hand and special &lt on thumbs
+#define AOE 6   // Base layer is QWERT with home row mods on left hand and &lt on thumbs
 #define ASG 7   // Group selection layer
 #define ASB 8   // Select buildings layer
 
@@ -38,8 +38,11 @@
 
 // Overrides
 
-&sk { quick-release; };         // Default releases on key up. This release the mod on key down and avoids "THis" problem
-&mt { flavor = "balanced"; };   // hold-preferred
+&mt { flavor = "balanced"; };
+&sk { 
+        quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
+        release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
+    };
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -321,8 +324,8 @@
         aoe_unit_and_group_selection {
             bindings = <
   &kp N1        &kp N2       &kp N3        &kp N4        &kp N5              &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &mt LS(COMMA) N0    &trans  &trans  &trans  &trans  &trans
-  &trans        &trans       &trans        &trans        &trans              &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0              &trans  &trans  &trans  &trans  &trans
+  &kp H         &kp BSPC     &kp SPACE     &kp DOT       &kp COMMA           &trans  &trans  &trans  &trans  &trans
                                            &trans        &kp DEL             &trans  &trans
             >;
         };
