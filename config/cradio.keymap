@@ -55,26 +55,26 @@
         
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
-            layers = <DEF NAV NWD AOE>;
+            layers = <DEF NAV NWD MOU AOE>;
             key-positions = <0 10>;
         };
 
         left_hand_f18_combo {
             bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
-            layers = <DEF NAV>;     // On NWD this combo is mapped to .
+            layers = <DEF NAV MOU>;     // On NWD this combo is mapped to .
             key-positions = <2 12>;
         };
       
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
-            layers = <DEF NWD NAV AOE>;
+            layers = <DEF NWD NAV MOU AOE>;
             key-positions = <3 13>;
         };
 
         left_hand_bspc {
             bindings = <&kp BSPC>;
             key-positions = <4 14>;
-            layers = <DEF NWD AOE>; // On NAV this combo is mapped to MUTE
+            layers = <DEF NWD AOE MOU>; // On NAV this combo is mapped to MUTE
         };
 
         // Layer combos
