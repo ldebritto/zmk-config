@@ -235,7 +235,7 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
 
-        m_hr {
+        m_hr: from_mouse_layer_to_def_with_homerow_app_activation {
             label = "MOUSE_TO_HOMEROW";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
