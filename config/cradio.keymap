@@ -237,7 +237,7 @@
 
         m_hr: from_mouse_layer_to_def_with_homerow_app_activation {
             label = "MOUSE_TO_HOMEROW";
-            compatible = "zmk,behavior-macro-one-param";
+            compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
