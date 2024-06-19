@@ -245,7 +245,7 @@
                 <&macro_tap>,
                 <&to DEF>,
                 <&mo LG(LS(SPC))>;
-        }
+        };
     };
 
     conditional_layers {
