@@ -242,7 +242,7 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &to DEF> &kp LG(LS(SPC));
+                <&macro_tap &to DEF &kp LG(LS(SPC))>;
         };
     };
 
