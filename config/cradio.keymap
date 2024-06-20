@@ -158,7 +158,6 @@
 
         caps_word_combo {
             key-positions = <12 17>;
-            layers = <DEF>;
             bindings = <&caps_word>;
         };
 
