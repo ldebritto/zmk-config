@@ -39,10 +39,11 @@
 // Overrides
 
 &mt { flavor = "balanced"; };
-&sk { 
-        quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
-        release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
-    };
+
+&sk {
+    quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
+    release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
+};
 
 &caps_word {
     /delete-property/ ignore-modifiers; // Canceling &caps_word with mods avoids `CMD-SHIFT-S` when I was just trying to type `CMD-S`, since CMD will cancel &caps_word
@@ -52,7 +53,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        
+
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <0 10>;
@@ -62,7 +63,7 @@
             bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
             key-positions = <2 12>;
         };
-      
+
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
@@ -75,7 +76,7 @@
         };
 
         // Layer combos
-        
+
         aoe_toggle_gaming_layers {
             bindings = <&tog AOE>;
             layers = <DEF AOE>;
@@ -164,7 +165,6 @@
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
-
     };
 
     behaviors {
@@ -212,6 +212,18 @@
 
             mods = <MOD_LSFT>;
         };
+
+        shft_rpt: shft_rpt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHFT_RPT";
+            bindings = <&kp>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            hold-trigger-key-positions = <2 1 0 4 3 11 10 12 13 14 20 21 22 24 23 5 6 7 8 15 16 17 18 19 9 25 26 27 28 29>;
+            hold-while-undecided;
+            hold-while-undecided-linger;
+        };
     };
 
     macros {
@@ -238,8 +250,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap &to DEF &kp LG(LS(SPC))>;
+            bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPC))>;
         };
     };
 
@@ -257,18 +268,18 @@
 
         alphas {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
-  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
-                             &lc NAV  &kp RSHFT    &kp SPACE  &lc SYM
+  &kp Q        &kp W  &kp E  &kp R    &kp T                &kp Y      &kp U    &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G                &kp H      &kp J    &kp K      &kp L    &kp SQT
+  &mt GLOBE Z  &kp X  &kp C  &kp V    &kp B                &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
+                             &lc NAV  &shft_rpt RSHFT 0    &kp SPACE  &lc SYM
             >;
         };
 
         numpad {
             bindings = <
-  &trans  &kp N7  &kp N8  &kp N9   &trans              &trans  &trans  &trans  &trans  &trans
-  &kp N0  &kp N4  &kp N5  &kp N6   &trans              &trans  &trans  &trans  &trans  &trans
-  &trans  &kp N1  &kp N2  &kp N3   &trans              &trans  &trans  &trans  &trans  &trans
+  &trans  &kp N7  &kp N8  &kp N9   &trans              &trans  &trans            &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6   &trans              &trans  &trans            &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3   &trans              &trans  &trans            &trans  &trans  &trans
                           &mo NAV  &lt SYM K_CANCEL    &trans  &lt SYM K_CANCEL
             >;
         };
@@ -311,9 +322,9 @@
 
         aoe_default_layer {
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans   &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans   &trans  &trans  &trans
-  &lt NAV Z    &kp X       &kp C        &kp V        &kp B          &trans  &trans   &trans  &trans  &trans
+  &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
+  &lt NAV Z    &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
                                         &lt ASG H    &lt ASB DOT    &trans  &trans
             >;
         };
