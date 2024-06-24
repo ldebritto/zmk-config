@@ -286,7 +286,7 @@
         };
 
         numword_combo {
-            key-positions = <32 33>;
+            key-positions = <11 13>;
             require-prior-idle-ms = <200>;
             layers = <DEF NWD NAV>;
             bindings = <&numword>;
