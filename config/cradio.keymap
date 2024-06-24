@@ -15,7 +15,6 @@
 
 &sk { quick-release; }; // avoids "THis" problem
 &lt { flavor = "hold-preferred"; }; // Using them in NWD and AOE layers
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -261,7 +260,7 @@
             layers = <DEF NWD NAV>;
             key-positions = <18 28>;
         };
-        
+
         elipsis_combo {
             bindings = <&kp LA(SEMI)>;
             timeout-ms = <30>;
@@ -440,7 +439,7 @@
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
-        
+
         lct: lc_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LC_HT";
@@ -451,10 +450,10 @@
             flavor = "hold-preferred";
             quick-tap-ms = <175>;
         };
-        
+
         tplc: tap-preferred-layer-cancel {
             compatible = "zmk,behavior-hold-tap";
-            label = "LC_HT";
+            label = "LC_TP";
             bindings = <&lc>, <&kp>;
 
             tapping-term-ms = <200>;
@@ -469,6 +468,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp QMARK>, <&kp EXCL>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -476,13 +476,15 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        
+
         commasem: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -490,6 +492,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LPAR>, <&kp LT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -497,9 +500,9 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RPAR>, <&kp GT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
     };
 
     macros {
@@ -526,28 +529,28 @@
 
         default {
             bindings = <
-  &kp Q          &kp W         &kp E          &kp R         &kp T        &kp Y            &kp U         &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G        &kp H            &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B        &kp N            &kp M         &commasem      &dotcol       &intexc
-                                              &lc NAV       &shft_cw     &tplc SYM SPACE  &lc_nw FUN 0
+  &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y            &kp U         &kp I          &kp O         &kp P
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H            &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N            &kp M         &commasem      &dotcol       &intexc
+                                              &lc NAV       &shft_cw    &tplc SYM SPACE  &lc_nw FUN 0
             >;
         };
 
         numpad_layer {
             bindings = <
-  &trans   &kp N7  &kp N8  &kp N9   &trans    &trans  &trans  &trans  &trans  &trans
-  &kp N0   &kp N4  &kp N5  &kp N6   &trans    &trans  &trans  &trans  &trans  &trans
-  &trans   &kp N1  &kp N2  &kp N3   &trans    &trans  &trans  &trans  &trans  &trans
-                           &lc NAV  &trans    &trans  &trans
+  &trans  &kp N7  &kp N8  &kp N9   &trans    &trans  &trans  &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6   &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3   &trans    &trans  &trans  &trans  &trans  &trans
+                          &lc NAV  &trans    &trans  &trans
             >;
         };
 
         navigation_and_media_layer {
             bindings = <
-  &kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP      &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &kp LCTRL          &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN      &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
-  &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev     &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
-                                                 &kp ESC      &kp ENTER         &trans     &trans
+  &kp TAB            &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+  &kp LCTRL          &kp LALT   &kp LSHFT        &kp LCMD     &kp C_VOL_DN     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp ENTER
+  &hrml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnextprev    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(LS(SPACE))  &kp DEL
+                                                 &kp ESC      &kp ENTER        &trans     &trans
             >;
         };
 
