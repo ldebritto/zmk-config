@@ -298,7 +298,7 @@
             bindings = <
   &kp Q        &kp W       &kp E        &kp R       &kp T        &kp Y      &kp U       &kp I        &kp O       &kp P
   &ml LCTRL A  &ml LALT S  &ml LSHFT D  &ml LGUI F  &kp G        &kp H      &mr RGUI J  &mr RSHFT K  &mr RALT L  &mr RCTRL SQT
-  &ml GLOBE Z  &kp X       &kp C        &kp V       &kp B        &kp N      &kp M       &kp COMMA    &kp DOT     &mr GLOBE SEMI
+  &ml CAPS Z   &kp X       &kp C        &kp V       &kp B        &kp N      &kp M       &kp COMMA    &kp DOT     &mr CAPS SEMI
                                         &lc NAV     &kp RSHFT    &kp SPACE  &lc SYM
             >;
         };
@@ -314,28 +314,28 @@
 
         navigation_and_media {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END          &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT        &kp RET
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPC))  &mt GLOBE DEL
-                                               &trans       &trans     &trans     &trans
+  &kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END          &kp BSPC
+  &sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT        &kp RET
+  &ml CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPC))  &mr CAPS DEL
+                                              &trans       &trans     &trans     &trans
             >;
         };
 
         symbols {
             bindings = <
-  &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp LT             &kp GT    &kp RPAR  &kp RBKT   &kp RBRC   &kp AMPS
-  &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE  &kp DLLR           &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &mt GLOBE PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT          &kp PIPE  &kp BSLH  &kp AT     &kp QMARK  &mt GLOBE EXCL
-                                        &trans     &mt RSHFT UNDER    &trans    &trans
+  &kp ESC        &kp LBRC   &kp LBKT   &kp LPAR   &kp LT             &kp GT    &kp RPAR  &kp RBKT   &kp RBRC   &kp AMPS
+  &kp MINUS      &kp CARET  &kp GRAVE  &kp TILDE  &kp DLLR           &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &ml CAPS PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT          &kp PIPE  &kp BSLH  &kp AT     &kp QMARK  &mr CAPS EXCL
+                                       &trans     &mt RSHFT UNDER    &trans    &trans
             >;
         };
 
         function_and_number_row {
             bindings = <
-  &kp N1        &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-  &sk LCTRL     &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE F1  &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &mt GLOBE F10
-                                     &trans    &kp LC(LG(Q))    &kp CAPS  &trans
+  &kp N1       &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
+  &sk LCTRL    &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &ml CAPS F1  &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &mr CAPS F10
+                                    &trans    &kp LC(LG(Q))    &kp CAPS  &trans
             >;
         };
 
