@@ -304,7 +304,7 @@
         alphas {
             bindings = <
   &kp Q       &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A       &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp LG(SQT)
+  &kp A       &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
   &ml CAPS Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &mr CAPS SEMI
                             &lc NAV  &kp RSHFT    &kp SPACE  &lc SYM
             >;
