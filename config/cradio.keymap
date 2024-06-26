@@ -57,16 +57,19 @@
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <0 10>;
+            require-prior-idle-ms = <180>;
         };
 
         left_hand_f18_combo {
             bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
             key-positions = <2 12>;
+            require-prior-idle-ms = <180>;
         };
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
+            require-prior-idle-ms = <180>;
         };
 
         left_hand_bspc {
@@ -101,24 +104,28 @@
             key-positions = <11 13>;
             layers = <DEF NWD>;
             bindings = <&numword>;
+            require-prior-idle-ms = <180>;
         };
 
         numword_comma {
             key-positions = <12 22>;
             layers = <NWD>;
             bindings = <&kp COMMA>;
+            require-prior-idle-ms = <180>;
         };
 
         numword_dot {
             key-positions = <13 23>;
             layers = <NWD>;
             bindings = <&kp DOT>;
+            require-prior-idle-ms = <180>;
         };
 
         numword_colon {
             key-positions = <14 24>;
             layers = <NWD>;
             bindings = <&kp COLON>;
+            require-prior-idle-ms = <180>;
         };
 
         // sys combos replace a dedicated system layer
