@@ -260,6 +260,13 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
             hold-trigger-on-release;
         };
+
+        ord_oa: ord_oa {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ORD_OA";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N0)>, <&kp RA(N9)>;
+        };
     };
 
     macros {
@@ -331,10 +338,10 @@
 
         symbols {
             bindings = <
-  &kp ESC        &kp LBRC   &kp LBKT   &kp LPAR   &kp LA(N9)    &kp LA(N0)  &kp RPAR  &kp RBKT   &kp RBRC   &kp AMPS
-  &kp MINUS      &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
-  &ml CAPS PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp LA(N6)  &kp BSLH  &kp AT     &kp QMARK  &mr CAPS EXCL
-                                       &trans     &kp UNDER     &kp PIPE    &trans
+  &kp ESC        &kp LBRC   &kp LBKT   &kp LPAR   &kp LA(PRCNT)    &kp LA(N6)  &kp RPAR  &kp RBKT   &kp RBRC   &ord_oa
+  &kp MINUS      &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR       &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
+  &ml CAPS PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp UNDER        &kp PIPE    &kp BSLH  &kp AT     &kp QMARK  &mr CAPS EXCL
+                                       &trans     &trans           &trans      &trans
             >;
         };
 
