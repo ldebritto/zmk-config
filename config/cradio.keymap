@@ -267,6 +267,18 @@
             #binding-cells = <0>;
             bindings = <&kp RA(N0)>, <&kp RA(N9)>;
         };
+
+        skh: skh {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SKH";
+            bindings = <&kp>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            hold-while-undecided-linger;
+            hold-while-undecided;
+        };
     };
 
     macros {
@@ -329,16 +341,16 @@
 
         navigation_and_media {
             bindings = <
-  &kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
-  &ml CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &mr CAPS DEL
-                                              &trans       &trans     &trans     &trans
+  &kp TAB           &swapper        &kp LS(LC(TAB))   &kp LC(TAB)     &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+  &skh LCTRL LCTRL  &skh LALT LALT  &skh LSHFT LSHFT  &skh LGUI LGUI  &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
+  &ml CAPS LG(Z)    &kp LG(X)       &kp LG(C)         &kp LG(V)       &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &mr CAPS DEL
+                                                      &trans          &trans     &trans     &trans
             >;
         };
 
         symbols {
             bindings = <
-  &kp ESC        &kp LBRC   &kp LBKT   &kp LPAR   &kp UNDER     &kp PIPE    &kp RPAR  &kp RBKT   &kp RBRC   &ord_oa
+  &kp ESC        &kp LBRC   &kp LBKT   &kp LPAR   &kp UNDER     &kp PIPE    &kp RPAR  &kp RBKT   &kp RBRC   &kp AMPS
   &kp MINUS      &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
   &ml CAPS PLUS  &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp LA(N6)  &kp BSLH  &kp AT     &kp QMARK  &mr CAPS EXCL
                                        &trans     &trans        &trans      &trans
