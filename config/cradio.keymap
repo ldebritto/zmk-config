@@ -13,12 +13,6 @@
 #define FUN 4
 #define MOU 5   // for the rare occasion when I don't have a mouse with me
 
-// AOE2 layers
-
-#define AOE 6   // Base layer is QWERT with home row mods on left hand and &lt on thumbs
-#define ASG 7   // Group selection layer
-#define ASB 8   // Select buildings layer
-
 // Mouse movement parameters
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500
@@ -38,12 +32,9 @@
 
 // Overrides
 
-&mt { flavor = "balanced"; };
-
 &sk {
     quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
-    lazy;
 };
 
 &caps_word {
@@ -81,12 +72,6 @@
 
         // Layer combos
 
-        aoe_toggle_gaming_layers {
-            bindings = <&tog AOE>;
-            layers = <DEF AOE>;
-            key-positions = <21 22 23>;
-        };
-
         toggle_nav_layer_combo {
             key-positions = <30 31>;
             layers = <DEF NAV>;
@@ -99,7 +84,7 @@
             bindings = <&tog MOU>;
         };
 
-        // &numword combos
+        // &numword combos allows punctuation with only the left hand
 
         numword_toggle {
             key-positions = <11 13>;
@@ -352,7 +337,7 @@
             bindings = <
   &tog MOU         &mkp MB4   &kp LS(LC(TAB))  &kp LC(TAB)  &none       &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
   &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &none       &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none       &kp F18         &mkp MB3         &mkp MB4        &m_hr            &mkp MB5
+  &ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &none       &kp F18         &mkp MB3         &mkp MB4        &m_hr            &mkp MB5
                                                &tog MOU     &tog MOU    &mkp MB1        &mkp MB2
             >;
         };
