@@ -173,6 +173,11 @@
             layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
+
+        alfred {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <16 18>;
+        };
     };
 
     behaviors {
@@ -221,18 +226,6 @@
             mods = <MOD_LSFT>;
         };
 
-        shft_rpt: shft_rpt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SHFT_RPT";
-            bindings = <&kp>, <&key_repeat>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            hold-trigger-key-positions = <2 1 0 4 3 11 10 12 13 14 20 21 22 24 23 5 6 7 8 15 16 17 18 19 9 25 26 27 28 29>;
-            hold-while-undecided;
-            hold-while-undecided-linger;
-        };
-
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
             label = "ML";
@@ -261,13 +254,6 @@
             hold-trigger-on-release;
         };
 
-        ord_oa: ord_oa {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ORD_OA";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N0)>, <&kp RA(N9)>;
-        };
-
         skh: skh {
             compatible = "zmk,behavior-hold-tap";
             label = "SKH";
@@ -278,6 +264,13 @@
             flavor = "balanced";
             hold-while-undecided-linger;
             hold-while-undecided;
+        };
+
+        shft_cw: shft_cw {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHFT_CW";
+            #binding-cells = <0>;
+            bindings = <&kp RSHFT>, <&caps_word>;
         };
     };
 
