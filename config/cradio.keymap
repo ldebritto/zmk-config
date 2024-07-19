@@ -182,6 +182,7 @@
         spot_alf {
             bindings = <&kp LG(SPACE)>;
             key-positions = <13 23>;
+            layers = <0 2>;
         };
     };
 
@@ -359,10 +360,10 @@
 
         function_and_number_row {
             bindings = <
-  &kp N1       &kp N2    &kp N3     &kp N4    &kp N5           &kp N6             &kp N7    &kp N8     &kp N9    &kp N0
-  &sk LCTRL    &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12            &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &ml CAPS F1  &kp F2    &kp F3     &kp F4    &kp F5           &kp F6             &kp F7    &kp F8     &kp F9    &mr CAPS F10
-                                    &trans    &kp LC(LG(Q))    &kp K_APPLICATION  &trans
+  &kp N1       &kp N2    &kp N3     &kp N4    &kp N5           &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
+  &sk LCTRL    &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &ml CAPS F1  &kp F2    &kp F3     &kp F4    &kp F5           &kp F6   &kp F7    &kp F8     &kp F9    &mr CAPS F10
+                                    &trans    &kp LC(LG(Q))    &tog 9   &trans
             >;
         };
 
@@ -399,6 +400,15 @@
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
                                                &trans         &trans           &trans  &trans
+            >;
+        };
+
+        layer_lock {
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                          &trans  &to 0     &trans  &trans
             >;
         };
     };
