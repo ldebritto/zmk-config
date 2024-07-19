@@ -178,6 +178,11 @@
             bindings = <&kp LG(SPACE)>;
             key-positions = <16 18>;
         };
+
+        spot_alf {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <13 23>;
+        };
     };
 
     behaviors {
