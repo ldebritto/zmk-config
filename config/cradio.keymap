@@ -43,7 +43,6 @@
 &sk {
     quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
-    lazy;
 };
 
 &caps_word {
