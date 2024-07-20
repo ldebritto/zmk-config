@@ -103,7 +103,7 @@
         numword_toggle {
             key-positions = <11 13>;
             layers = <0>;
-            bindings = <&numword>;
+            bindings = <&numword_altcmd_workaround LA(LGUI) 0>;
             require-prior-idle-ms = <180>;
         };
 
@@ -174,7 +174,7 @@
         };
 
         alfred {
-            bindings = <&kp LG(SPACE)>;
+            bindings = <&mr RG(RALT) LG(SPACE)>;
             key-positions = <16 18>;
         };
 
@@ -278,6 +278,20 @@
             bindings = <&kp RSHFT>, <&caps_word>;
 
             tapping-term-ms = <300>;
+        };
+
+        numword_altcmd_workaround: numword_altcmd_workaround {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NUMWORD_ALTCMD_WORKAROUND";
+            bindings = <&kp>, <&numword>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 32 30 31>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
         };
     };
 
