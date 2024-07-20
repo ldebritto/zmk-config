@@ -184,14 +184,19 @@
             layers = <0 2>;
         };
 
-        click {
-            bindings = <&mkp MB1>;
+        enter {
+            bindings = <&kp ENTER>;
             key-positions = <25 33>;
         };
 
-        tab {
+        tab_thumb {
             bindings = <&kp TAB>;
             key-positions = <24 30>;
+        };
+
+        mouse_click {
+            bindings = <&mkp MB1>;
+            key-positions = <9 19 29>;
         };
     };
 
