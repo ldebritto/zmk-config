@@ -188,6 +188,11 @@
             bindings = <&mkp MB1>;
             key-positions = <25 33>;
         };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <24 30>;
+        };
     };
 
     behaviors {
