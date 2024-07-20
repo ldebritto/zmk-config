@@ -186,7 +186,7 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <25 33>;
+            key-positions = <33 32>;
         };
 
         tab_thumb {
@@ -197,6 +197,11 @@
         mouse_click {
             bindings = <&mkp MB1>;
             key-positions = <9 19 29>;
+        };
+
+        thumb_bakcspace {
+            bindings = <&kp BSPC>;
+            key-positions = <25 33>;
         };
     };
 
