@@ -183,6 +183,11 @@
             key-positions = <13 23>;
             layers = <0 2>;
         };
+
+        click {
+            bindings = <&mkp MB1>;
+            key-positions = <25 33>;
+        };
     };
 
     behaviors {
