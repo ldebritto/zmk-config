@@ -82,7 +82,7 @@
         // Layer combos
 
         aoe_toggle_gaming_layers {
-            bindings = <&tog 0>;
+            bindings = <&tog 6>;
             layers = <0>;
             key-positions = <21 22 23>;
         };
@@ -96,7 +96,7 @@
         toggle_mouse_layer_combo {
             key-positions = <26 27 28>;
             layers = <0>;
-            bindings = <&tog 0>;
+            bindings = <&tog 5>;
         };
 
         // &numword combos
@@ -112,18 +112,21 @@
             key-positions = <12 22>;
             bindings = <&kp COMMA>;
             require-prior-idle-ms = <180>;
+            layers = <1>;
         };
 
         numword_dot {
             key-positions = <13 23>;
             bindings = <&kp DOT>;
             require-prior-idle-ms = <180>;
+            layers = <1>;
         };
 
         numword_colon {
             key-positions = <14 24>;
             bindings = <&kp COLON>;
             require-prior-idle-ms = <180>;
+            layers = <1>;
         };
 
         // sys combos replace a dedicated system layer
