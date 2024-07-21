@@ -82,7 +82,7 @@
 
         aoe_toggle_gaming_layers {
             bindings = <&tog 6>;
-            layers = <0>;
+            layers = <0 6>;
             key-positions = <21 22 23>;
         };
 
@@ -409,7 +409,7 @@
   &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
   &lt 2 Z      &kp X       &kp C        &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
-                                        &lt 0 H      &lt 0 DOT    &trans  &trans
+                                        &lt 7 H      &lt 8 DOT    &trans  &trans
             >;
         };
 
