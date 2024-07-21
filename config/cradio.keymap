@@ -162,11 +162,6 @@
 
         // Other combos
 
-        caps_word_combo {
-            key-positions = <12 17>;
-            bindings = <&caps_word>;
-        };
-
         media_mute_combo {
             key-positions = <4 14>;
             layers = <2>;
@@ -184,14 +179,14 @@
             layers = <0 2>;
         };
 
-        enter {
+        thumb_enter {
             bindings = <&kp ENTER>;
-            key-positions = <33 32>;
+            key-positions = <33 25>;
         };
 
-        tab_thumb {
+        def_tab {
             bindings = <&kp TAB>;
-            key-positions = <24 30>;
+            key-positions = <1 11>;
         };
 
         mouse_click {
@@ -201,7 +196,7 @@
 
         thumb_bakcspace {
             bindings = <&kp BSPC>;
-            key-positions = <25 33>;
+            key-positions = <30 24>;
         };
     };
 
