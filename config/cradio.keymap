@@ -83,7 +83,7 @@
             bindings = <&tog 5>;
         };
 
-        numword_toggle {
+        toggle_numword {
             key-positions = <11 13>;
             layers = <0>;
             bindings = <&numword>;
@@ -111,7 +111,7 @@
             layers = <1>;
         };
 
-        media_mute_combo {
+        nav_media_mute_combo {
             key-positions = <4 14>;
             layers = <2>;
             bindings = <&kp C_MUTE>;
@@ -162,6 +162,7 @@
             label = "SHFT_CW";
             #binding-cells = <0>;
             bindings = <&kp RSHFT>, <&caps_word>;
+
             tapping-term-ms = <300>;
         };
 
@@ -170,6 +171,7 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
+
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>;
         };
 
@@ -183,7 +185,7 @@
             ignore-modifiers;
         };
 
-        ml: ml { // urob's settings for home-row mods on left
+        ml: ml {
             compatible = "zmk,behavior-hold-tap";
             label = "ML";
             bindings = <&kp>, <&kp>;
@@ -197,7 +199,7 @@
             hold-trigger-on-release;
         };
 
-        mr: mr { // urob's settings for home-row mods on the right
+        mr: mr {
             compatible = "zmk,behavior-hold-tap";
             label = "MR";
             bindings = <&kp>, <&kp>;
