@@ -13,12 +13,6 @@
 #define FUN 4
 #define MOU 5   // for the rare occasion when I don't have a mouse with me
 
-// AOE2 layers
-
-#define AOE 6   // Base layer is QWERT with home row mods on left hand and &lt on thumbs
-#define ASG 7   // Group selection layer
-#define ASB 8   // Select buildings layer
-
 // Mouse movement parameters
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500
@@ -37,8 +31,6 @@
 };
 
 // Overrides
-
-&mt { flavor = "balanced"; };
 
 &sk {
     quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
@@ -75,7 +67,22 @@
             layers = <2 5 1>;
         };
 
-        // Layer combos
+        sticky_sym {
+            bindings = <&sl 3>;
+            key-positions = <1 11>;
+            require-prior-idle-ms = <180>;
+            layers = <2 1 5>;
+        };
+
+        thumb_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <33 25>;
+        };
+
+        thumb_bakcspace {
+            bindings = <&kp BSPC>;
+            key-positions = <30 24>;
+        };
 
         toggle_nav_layer_combo {
             key-positions = <30 31>;
@@ -88,8 +95,6 @@
             layers = <0>;
             bindings = <&tog 5>;
         };
-
-        // &numword combos
 
         numword_toggle {
             key-positions = <11 13>;
@@ -119,12 +124,16 @@
             layers = <1>;
         };
 
-        // sys combos replace a dedicated system layer
-
         sys_bootloader {
             key-positions = <20 21>;
             layers = <4>;
             bindings = <&bootloader>;
+        };
+
+        media_mute_combo {
+            key-positions = <4 14>;
+            layers = <2>;
+            bindings = <&kp C_MUTE>;
         };
 
         sys_connect_to_bt0 {
@@ -151,36 +160,6 @@
             bindings = <&bt BT_CLR>;
         };
 
-        // Other combos
-
-        media_mute_combo {
-            key-positions = <4 14>;
-            layers = <2>;
-            bindings = <&kp C_MUTE>;
-        };
-
-        spotlight_alfred {
-            bindings = <&mr RG(RALT) LG(SPACE)>;
-            key-positions = <16 18>;
-            layers = <0>;
-        };
-
-        thumb_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <33 25>;
-        };
-
-        thumb_bakcspace {
-            bindings = <&kp BSPC>;
-            key-positions = <30 24>;
-        };
-
-        sticky_sym {
-            bindings = <&sl 3>;
-            key-positions = <1 11>;
-            require-prior-idle-ms = <180>;
-            layers = <2 1 5>;
-        };
     };
 
     behaviors {
@@ -248,20 +227,6 @@
             bindings = <&kp RSHFT>, <&caps_word>;
 
             tapping-term-ms = <300>;
-        };
-
-        numword_altcmd_workaround: numword_altcmd_workaround {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NUMWORD_ALTCMD_WORKAROUND";
-            bindings = <&kp>, <&numword>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 32 30 31>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            hold-trigger-on-release;
         };
     };
 
