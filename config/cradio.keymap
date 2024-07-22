@@ -4,17 +4,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-// Core layers
-
-#define DEF 0
-#define NWD 1   // &numword (must be placed bellow NAV and SYM to be able to toggle them from this layer)
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5   // for the rare occasion when I don't have a mouse with me
-
-// Mouse movement parameters
-
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 
@@ -30,8 +19,6 @@
     delay-ms = <0>;
 };
 
-// Overrides
-
 &sk {
     quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -46,11 +33,21 @@
     combos {
         compatible = "zmk,combos";
 
+        thumb_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <33 25>;
+        };
+
+        thumb_bakcspace {
+            bindings = <&kp BSPC>;
+            key-positions = <30 24>;
+        };
+
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <0 10>;
             require-prior-idle-ms = <180>;
-            layers = <2 1 5>;
+            layers = <1 2 5>;
         };
 
         left_hand_f18_combo {
@@ -64,24 +61,14 @@
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
             require-prior-idle-ms = <180>;
-            layers = <2 5 1>;
+            layers = <1 2 5>;
         };
 
-        sticky_sym {
+        left_hand_sticky_sym {
             bindings = <&sl 3>;
             key-positions = <1 11>;
             require-prior-idle-ms = <180>;
-            layers = <2 1 5>;
-        };
-
-        thumb_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <33 25>;
-        };
-
-        thumb_bakcspace {
-            bindings = <&kp BSPC>;
-            key-positions = <30 24>;
+            layers = <1 2 5>;
         };
 
         toggle_nav_layer_combo {
@@ -92,14 +79,14 @@
 
         toggle_mouse_layer_combo {
             key-positions = <26 27 28>;
-            layers = <0>;
+            layers = <0 5>;
             bindings = <&tog 5>;
         };
 
         numword_toggle {
             key-positions = <11 13>;
             layers = <0>;
-            bindings = <&numword_altcmd_workaround LA(LGUI) 0>;
+            bindings = <&numword>;
             require-prior-idle-ms = <180>;
         };
 
@@ -124,16 +111,16 @@
             layers = <1>;
         };
 
-        sys_bootloader {
-            key-positions = <20 21>;
-            layers = <4>;
-            bindings = <&bootloader>;
-        };
-
         media_mute_combo {
             key-positions = <4 14>;
             layers = <2>;
             bindings = <&kp C_MUTE>;
+        };
+
+        sys_bootloader {
+            key-positions = <20 21>;
+            layers = <4>;
+            bindings = <&bootloader>;
         };
 
         sys_connect_to_bt0 {
@@ -159,7 +146,6 @@
             layers = <4>;
             bindings = <&bt BT_CLR>;
         };
-
     };
 
     behaviors {
@@ -171,14 +157,12 @@
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
-        numword: numword {
-            compatible = "zmk,behavior-caps-word"; // requires moded caps-word implementation from (PR #1451) will not work with vanilla &caps_word parameters
-            label = "NUMWORD_SMART_LAYER";
+        shft_cw: shft_cw {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHFT_CW";
             #binding-cells = <0>;
-            layers = <NWD>;
-            continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC TAB DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
-            ignore-numbers;
-            ignore-modifiers;
+            bindings = <&kp RSHFT>, <&caps_word>;
+            tapping-term-ms = <300>;
         };
 
         swapper: swapper {
@@ -186,13 +170,20 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
-
-            // changed to RGUI keycode to avoid conflicts with the &sk LGUI key on NAV
-
-            ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab app
+            ignored-key-positions = <0 3 7 9 16 17 18 28 29>;
         };
 
-        ml: ml {
+        numword: numword {
+            compatible = "zmk,behavior-caps-word"; // requires moded caps-word implementation from (PR #1451) will not work with vanilla &caps_word parameters
+            label = "NUMWORD_SMART_LAYER";
+            #binding-cells = <0>;
+            layers = <1>;
+            continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC TAB DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
+            ignore-numbers;
+            ignore-modifiers;
+        };
+
+        ml: ml { // urob's settings for home-row mods on left
             compatible = "zmk,behavior-hold-tap";
             label = "ML";
             bindings = <&kp>, <&kp>;
@@ -206,7 +197,7 @@
             hold-trigger-on-release;
         };
 
-        mr: mr {
+        mr: mr { // urob's settings for home-row mods on the right
             compatible = "zmk,behavior-hold-tap";
             label = "MR";
             bindings = <&kp>, <&kp>;
@@ -218,15 +209,6 @@
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
             hold-trigger-on-release;
-        };
-
-        shft_cw: shft_cw {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHFT_CW";
-            #binding-cells = <0>;
-            bindings = <&kp RSHFT>, <&caps_word>;
-
-            tapping-term-ms = <300>;
         };
     };
 
@@ -270,7 +252,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        alphas {
+        default_alphas_qwerty {
             bindings = <
   &kp Q       &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
   &kp A       &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp APOS
