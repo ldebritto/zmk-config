@@ -308,6 +308,19 @@
             require-prior-idle-ms = <150>;
             hold-trigger-on-release;
         };
+
+        hl: hl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HL";
+            bindings = <&lc>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
     };
 
     macros {
@@ -355,7 +368,7 @@
   &kp Q        &kp W       &kp E        &kp R       &kp T                     &kp Y                   &kp U       &kp I        &kp O       &kp P
   &ml LCTRL A  &ml LALT S  &ml LSHFT D  &ml LGUI F  &ml LC(LG(LS(LALT))) G    &mr RC(RG(LS(RALT))) H  &mr RGUI J  &mr RSHFT K  &mr RALT L  &mr RCTRL APOS
   &ml CAPS Z   &kp X       &kp C        &kp V       &kp B                     &kp N                   &kp M       &kp COMMA    &kp DOT     &mr CAPS SEMI
-                                        &lc 2       &shft_cw                  &kp SPACE               &lc 3
+                                        &lc 2       &hl 2 RSHFT               &hl 3 SPACE             &lc 3
             >;
         };
 
