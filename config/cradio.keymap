@@ -58,18 +58,21 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 10>;
             require-prior-idle-ms = <180>;
+            layers = <2 1 5>;
         };
 
         left_hand_f18_combo {
             bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
             key-positions = <2 12>;
             require-prior-idle-ms = <180>;
+            layers = <1 2 5>;
         };
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
             require-prior-idle-ms = <180>;
+            layers = <2 5 1>;
         };
 
         // Layer combos
@@ -170,6 +173,13 @@
         thumb_bakcspace {
             bindings = <&kp BSPC>;
             key-positions = <30 24>;
+        };
+
+        sticky_sym {
+            bindings = <&sl 3>;
+            key-positions = <1 11>;
+            require-prior-idle-ms = <180>;
+            layers = <2 1 5>;
         };
     };
 
@@ -306,10 +316,10 @@
 
         numpad {
             bindings = <
-  &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &trans          &trans  &trans  &trans
-  &kp N0  &kp N4  &kp N5  &kp N6  &trans            &trans  &trans          &trans  &trans  &trans
-  &trans  &kp N1  &kp N2  &kp N3  &trans            &trans  &trans          &trans  &trans  &trans
-                          &mo 2   &lt 3 K_CANCEL    &trans  &lt 3 K_CANCEL
+  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans          &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans          &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans          &trans  &trans  &trans
+                          &mo 2   &trans    &trans  &lt 3 K_CANCEL
             >;
         };
 
