@@ -75,16 +75,10 @@
         left_hand_bspc {
             bindings = <&kp BSPC>;
             key-positions = <4 14>;
-            layers = <0>; // On NAV this combo is mapped to MUTE
+            layers = <0 2 1 4 5>; // On NAV this combo is mapped to MUTE
         };
 
         // Layer combos
-
-        aoe_toggle_gaming_layers {
-            bindings = <&tog 6>;
-            layers = <0 6>;
-            key-positions = <21 22 23>;
-        };
 
         toggle_nav_layer_combo {
             key-positions = <30 31>;
@@ -173,25 +167,9 @@
             key-positions = <16 18>;
         };
 
-        spot_alf {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <13 23>;
-            layers = <0 2>;
-        };
-
         thumb_enter {
             bindings = <&kp ENTER>;
             key-positions = <33 25>;
-        };
-
-        def_tab {
-            bindings = <&kp TAB>;
-            key-positions = <1 11>;
-        };
-
-        mouse_click {
-            bindings = <&mkp MB1>;
-            key-positions = <9 19 29>;
         };
 
         thumb_bakcspace {
@@ -230,22 +208,6 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>; // Tab, Shift, Arrow key positions and DEL/BSPC to quit app/close window from altTab app
         };
 
-        vb_up: volume_brightness_up {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
-
-            mods = <MOD_LSFT>;
-        };
-
-        vb_dn: volume_brightness_down {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
-
-            mods = <MOD_LSFT>;
-        };
-
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
             label = "ML";
@@ -274,18 +236,6 @@
             hold-trigger-on-release;
         };
 
-        skh: skh {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SKH";
-            bindings = <&kp>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-while-undecided-linger;
-            hold-while-undecided;
-        };
-
         shft_cw: shft_cw {
             compatible = "zmk,behavior-tap-dance";
             label = "SHFT_CW";
@@ -306,19 +256,6 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            hold-trigger-on-release;
-        };
-
-        hl: hl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HL";
-            bindings = <&lc>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "balanced";
             hold-trigger-on-release;
         };
     };
@@ -383,10 +320,10 @@
 
         navigation_and_media {
             bindings = <
-  &kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up     &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-  &sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn     &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
-  &ml CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp    &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &mr CAPS DEL
-                                              &trans       &trans     &trans     &trans
+  &kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+  &sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
+  &ml CAPS LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &mr CAPS DEL
+                                              &trans       &trans          &trans     &trans
             >;
         };
 
@@ -414,33 +351,6 @@
   &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &kp ENTER        &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp LG(LS(Z))    &kp F18         &mkp MB3         &mkp MB4        &m_hr            &mkp MB5
                                                &to 0        &to 0            &mkp MB1        &mkp MB2
-            >;
-        };
-
-        aoe_default_layer {
-            bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-  &lt 2 Z      &kp X       &kp C        &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
-                                        &lt 7 H      &lt 8 DOT    &trans  &trans
-            >;
-        };
-
-        aoe_unit_and_group_selection {
-            bindings = <
-  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5     &trans  &trans  &trans  &trans  &kp BSPC
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &kp ENTER
-  &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H      &trans  &trans  &trans  &trans  &trans
-                                           &trans        &kp DEL    &trans  &trans
-            >;
-        };
-
-        aoe_select_all_buildings {
-            bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                               &trans         &trans           &trans  &trans
             >;
         };
     };
