@@ -72,12 +72,6 @@
             require-prior-idle-ms = <180>;
         };
 
-        left_hand_bspc {
-            bindings = <&kp BSPC>;
-            key-positions = <4 14>;
-            layers = <0 2 1 4 5>; // On NAV this combo is mapped to MUTE
-        };
-
         // Layer combos
 
         toggle_nav_layer_combo {
@@ -162,9 +156,10 @@
             bindings = <&kp C_MUTE>;
         };
 
-        alfred {
+        spotlight_alfred {
             bindings = <&mr RG(RALT) LG(SPACE)>;
             key-positions = <16 18>;
+            layers = <0>;
         };
 
         thumb_enter {
@@ -284,7 +279,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&to 0 &kp LG(LS(SPC))>;
+            bindings = <&macro_tap>, <&to 0 &kp LG(LS(SPACE))>;
         };
     };
 
