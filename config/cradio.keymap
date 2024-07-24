@@ -78,7 +78,7 @@
         };
 
         toggle_mouse_layer_combo {
-            key-positions = <26 27 28>;
+            key-positions = <21 22 23>;
             layers = <0 5>;
             bindings = <&tog 5>;
         };
@@ -287,10 +287,10 @@
 
         mouse {
             bindings = <
-  &to 0            &mkp MB4   &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC         &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
+  &kp ESCAPE       &mkp MB4   &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC         &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
   &kp LCTRL        &kp LALT   &kp LSHFT        &kp LCMD     &kp ENTER        &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp LG(LS(Z))    &kp F18         &mkp MB3         &mkp MB4        &m_hr            &mkp MB5
-                                               &to 0        &to 0            &mkp MB1        &mkp MB2
+                                               &to 0        &kp SPACE        &mkp MB1        &mkp MB2
             >;
         };
     };
