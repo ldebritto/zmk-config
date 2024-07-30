@@ -146,6 +146,18 @@
             layers = <4>;
             bindings = <&bt BT_CLR>;
         };
+
+        nav_back {
+            bindings = <&kp LG(LEFT_BRACKET)>;
+            key-positions = <12 22>;
+            layers = <2 5>;
+        };
+
+        nav_forward {
+            bindings = <&kp LG(RBKT)>;
+            key-positions = <13 23>;
+            layers = <2 5>;
+        };
     };
 
     behaviors {
