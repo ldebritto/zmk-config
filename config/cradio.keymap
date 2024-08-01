@@ -193,15 +193,15 @@
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>;
         };
 
-        numword: numword {
-            compatible = "zmk,behavior-caps-word"; // requires moded caps-word implementation from (PR #1451) will not work with vanilla &caps_word parameters
-            label = "NUMWORD_SMART_LAYER";
-            #binding-cells = <0>;
-            layers = <1>;
-            continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC TAB DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
-            ignore-numbers;
-            ignore-modifiers;
-        };
+        // numword: numword {
+        //     compatible = "zmk,behavior-caps-word"; // requires moded caps-word implementation from (PR #1451) will not work with vanilla &caps_word parameters
+        //     label = "NUMWORD_SMART_LAYER";
+        //     #binding-cells = <0>;
+        //     layers = <1>;
+        //     continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC TAB DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DELETE>;
+        //     ignore-numbers;
+        //     ignore-modifiers;
+        // };
 
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
