@@ -315,9 +315,9 @@
         aoe_default_layer {
             bindings = <
   &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &kp ENTER
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
   &lt 2 Z      &kp X       &kp C        &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
-                                        &lt 7 H      &lt 8 DOT    &trans  &kp BSPC
+                                        &lt 7 H      &lt 8 DOT    &trans  &trans
             >;
         };
 
