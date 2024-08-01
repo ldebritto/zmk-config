@@ -77,6 +77,12 @@
             bindings = <&tog 2>;
         };
 
+        aoe_toggle_gaming_layers {
+            key-positions = <26 27 28>;
+            layers = <0 6>;
+            bindings = <&tog 6>;
+        };
+
         toggle_mouse_layer_combo {
             key-positions = <21 22 23>;
             layers = <0 5>;
@@ -303,6 +309,33 @@
   &kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER        &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp LG(LS(Z))    &kp F18         &mkp MB4         &mkp MB5        &m_hr            &mkp MB3
                                                 &to 0        &kp SPACE        &mkp MB1        &mkp MB2
+            >;
+        };
+
+        aoe_default_layer {
+            bindings = <
+  &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &kp ENTER
+  &lt 2 Z      &kp X       &kp C        &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
+                                        &lt 7 H      &lt 8 DOT    &trans  &kp BSPC
+            >;
+        };
+
+        aoe_unit_and_group_selection {
+            bindings = <
+  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5     &trans  &trans  &trans  &trans  &kp BSPC
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &kp ENTER
+  &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H      &trans  &trans  &trans  &trans  &trans
+                                           &trans        &kp DEL    &trans  &trans
+            >;
+        };
+
+        aoe_select_all_buildings {
+            bindings = <
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                               &trans         &trans           &trans  &trans
             >;
         };
     };
