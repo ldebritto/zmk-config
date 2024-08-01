@@ -89,33 +89,33 @@
             bindings = <&tog 5>;
         };
 
-        toggle_numword {
-            key-positions = <11 13>;
-            layers = <0>;
-            bindings = <&numword>;
-            require-prior-idle-ms = <180>;
-        };
+        // toggle_numword {
+        //     key-positions = <11 13>;
+        //     layers = <0>;
+        //     bindings = <&numword>;
+        //     require-prior-idle-ms = <180>;
+        // };
 
-        numword_comma {
-            key-positions = <12 22>;
-            bindings = <&kp COMMA>;
-            require-prior-idle-ms = <180>;
-            layers = <1>;
-        };
+        // numword_comma {
+        //     key-positions = <12 22>;
+        //     bindings = <&kp COMMA>;
+        //     require-prior-idle-ms = <180>;
+        //     layers = <1>;
+        // };
 
-        numword_dot {
-            key-positions = <13 23>;
-            bindings = <&kp DOT>;
-            require-prior-idle-ms = <180>;
-            layers = <1>;
-        };
+        // numword_dot {
+        //     key-positions = <13 23>;
+        //     bindings = <&kp DOT>;
+        //     require-prior-idle-ms = <180>;
+        //     layers = <1>;
+        // };
 
-        numword_colon {
-            key-positions = <14 24>;
-            bindings = <&kp COLON>;
-            require-prior-idle-ms = <180>;
-            layers = <1>;
-        };
+        // numword_colon {
+        //     key-positions = <14 24>;
+        //     bindings = <&kp COLON>;
+        //     require-prior-idle-ms = <180>;
+        //     layers = <1>;
+        // };
 
         nav_media_mute_combo {
             key-positions = <4 14>;
