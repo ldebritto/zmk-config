@@ -77,7 +77,7 @@
             bindings = <&tog 2>;
         };
 
-        aoe_toggle_gaming_layers {
+        toggle_aoe_gaming_layers {
             key-positions = <26 27 28>;
             layers = <0 6>;
             bindings = <&tog 6>;
