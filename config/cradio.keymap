@@ -299,7 +299,7 @@
 
         mouse {
             bindings = <
-  &kp ESCAPE       &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC         &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
+  &kp ESC          &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC         &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
   &kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER        &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp LG(LS(Z))    &kp F18         &mkp MB4         &mkp MB5        &m_hr            &mkp MB3
                                                 &to 0        &kp SPACE        &mkp MB1        &mkp MB2
