@@ -178,7 +178,7 @@
             ignored-key-positions = <7 9 16 17 18 19 29>; // Arrows and BSPC, ENTER and DEL
         };
 
-        ml: ml {
+        ml: home-row-mods-left {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
@@ -190,7 +190,7 @@
             hold-trigger-on-release;
         };
         
-        mr: ml {
+        mr: home-row-mods-right {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
