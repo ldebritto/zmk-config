@@ -20,6 +20,7 @@
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals. This makes RSHFT a better thumb key that will &caps_word.
+    /delete-property/ ignore-modifiers;
 };
 
 &num_word { // Requires urob's auto-layer module https://github.com/urob/zmk-auto-layer
@@ -64,19 +65,27 @@
             bindings = <&kp LG(LEFT_BRACKET)>;
             key-positions = <12 22>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV MOU>; // these colide with numword punctuation combos, hence this limit
+            layers = <DEF NAV MOU>;     // these colide with numword punctuation combos, hence this limit
         };
 
         left_hand_nav_forward {
             bindings = <&kp LG(RBKT)>;
             key-positions = <13 23>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV MOU>; // these colide with numword punctuation combos, hence this limit
+            layers = <DEF NAV MOU>;     // these colide with numword punctuation combos, hence this limit
+        };
+
+        left_hand_sticky_sym_layer {
+            bindings = <&sl 3>;
+            key-positions = <4 14>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF SYM MOU>;     // these colide with mute on NAV, hence this limit
         };
 
         left_hand_media_mute_combo {
             key-positions = <4 14>;
             bindings = <&kp C_MUTE>;
+            layers = <NAV>;             // just for NAV
         };
 
         toggle_nav_layer_combo {
@@ -260,7 +269,7 @@
                                         &lc NAV     &shft_cw                    &kp SPACE   &lc SYM
             >;
         };
-        
+
         numpad {
             bindings = <
   &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans  &trans  &trans  &trans
