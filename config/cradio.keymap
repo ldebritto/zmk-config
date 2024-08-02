@@ -177,7 +177,6 @@
 
         shft_cw: shft_cw {
             compatible = "zmk,behavior-tap-dance";
-            label = "SHFT_CW";
             #binding-cells = <0>;
             bindings = <&kp RSHFT>, <&caps_word>;
             tapping-term-ms = <300>;
