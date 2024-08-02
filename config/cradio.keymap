@@ -75,7 +75,7 @@
             layers = <DEF NAV MOU>; // these colide with numword punctuation combos, hence this limit
         };
 
-        media_mute_combo {
+        left_hand_media_mute_combo {
             key-positions = <4 14>;
             bindings = <&kp C_MUTE>;
         };
