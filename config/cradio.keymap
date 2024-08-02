@@ -29,8 +29,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        // left handed alternatives for mouse usage
         
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
@@ -80,8 +78,6 @@
             bindings = <&kp C_MUTE>;
         };
 
-        // Layer toggles
-
         toggle_nav_layer_combo {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
@@ -94,37 +90,33 @@
             layers = <DEF MOU>;
         };
 
-        toggle_numword {
+        toggle_numword_auto_layer {
             key-positions = <11 13>;
             bindings = <&num_word NWD>;
             layers = <DEF NWD>;
             require-prior-idle-ms = <200>;
         };
 
-        // Numword left punctuation on left hand
-
-        numword_comma {
+        numword_punctuation_comma {
             key-positions = <12 22>;
             bindings = <&kp COMMA>;
             layers = <NWD>;
             require-prior-idle-ms = <180>;
         };
 
-        numword_dot {
+        numword_punctuation_dot {
             key-positions = <13 23>;
             bindings = <&kp DOT>;
             layers = <NWD>;
             require-prior-idle-ms = <180>;
         };
 
-        numword_colon {
+        numword_punctuation_colon {
             key-positions = <14 24>;
             bindings = <&kp COLON>;
             layers = <NWD>;
             require-prior-idle-ms = <180>;
         };
-
-        // keyboard system settings
 
         sys_bootloader {
             key-positions = <20 21>;
@@ -243,10 +235,10 @@
 
         numpad {
             bindings = <
-  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans          &trans  &trans  &trans
-  &kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans          &trans  &trans  &trans
-  &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans          &trans  &trans  &trans
-                          &mo 2   &trans    &trans  &lt 3 K_CANCEL
+  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans  &trans  &trans  &trans
+  &kp N0  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans  &trans  &trans  &trans
+                          &mo NAV &trans    &trans  &lt SYM K_CANCEL
             >;
         };
 
