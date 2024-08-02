@@ -167,11 +167,9 @@
         };
 
         swapper: swapper {
-            compatible = "zmk,behavior-tri-state"; // requires tri-state (PR #1366)
-            label = "SWAPPER";
+            compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
-
             ignored-key-positions = <0 3 7 9 16 17 18 28 29>;
         };
 
