@@ -13,7 +13,7 @@
 #define MOU 5
 
 &sk {
-    quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
+    quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
@@ -29,6 +29,8 @@
     combos {
         compatible = "zmk,combos";
 
+        // thumb combos for single handed typing
+        
         thumb_enter {
             bindings = <&kp ENTER>;
             key-positions = <33 25>;
@@ -38,6 +40,8 @@
             bindings = <&kp BSPC>;
             key-positions = <30 24>;
         };
+
+        // left handed alternatives for mouse usage
 
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
@@ -67,6 +71,26 @@
             layers = <NWD NAV MOU>;
         };
 
+        left_hand_nav_back {
+            bindings = <&kp LG(LEFT_BRACKET)>;
+            key-positions = <12 22>;
+            layers = <NAV MOU>;
+        };
+
+        left_hand_nav_forward {
+            bindings = <&kp LG(RBKT)>;
+            key-positions = <13 23>;
+            layers = <NAV MOU>;
+        };
+
+        nav_media_mute_combo {
+            key-positions = <4 14>;
+            layers = <NAV>;
+            bindings = <&kp C_MUTE>;
+        };
+
+        // Layer toggles
+
         toggle_nav_layer_combo {
             key-positions = <30 31>;
             layers = <DEF NAV>;
@@ -81,10 +105,12 @@
 
         toggle_numword {
             key-positions = <11 13>;
-            layers = <DEF>;
-            bindings = <&num_word 1>;
+            layers = <DEF NWD>;
+            bindings = <&num_word NWD>;
             require-prior-idle-ms = <180>;
         };
+
+        // Numword left punctuation on left hand
 
         numword_comma {
             key-positions = <12 22>;
@@ -107,11 +133,7 @@
             layers = <NWD>;
         };
 
-        nav_media_mute_combo {
-            key-positions = <4 14>;
-            layers = <NAV>;
-            bindings = <&kp C_MUTE>;
-        };
+        // keyboard system settings
 
         sys_bootloader {
             key-positions = <20 21>;
@@ -142,18 +164,6 @@
             layers = <NFN>;
             bindings = <&bt BT_CLR>;
         };
-
-        nav_back {
-            bindings = <&kp LG(LEFT_BRACKET)>;
-            key-positions = <12 22>;
-            layers = <NAV MOU>;
-        };
-
-        nav_forward {
-            bindings = <&kp LG(RBKT)>;
-            key-positions = <13 23>;
-            layers = <NAV MOU>;
-        };
     };
 
     behaviors {
@@ -177,7 +187,7 @@
             compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
-            ignored-key-positions = <0 3 7 9 16 17 18 28 29>;
+            ignored-key-positions = <7 9 16 17 18 19 29>; // Arrows and BSPC, ENTER and DEL
         };
 
         nav_word: nav_word {
@@ -189,9 +199,8 @@
 
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
-            label = "ML";
+            label = "home-row mods on lef hand";
             bindings = <&kp>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -204,7 +213,7 @@
 
     macros {
         lc: mo_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_press {
-            label = "LAYER_CANCEL";
+            label = "MO_LAYER_CANCEL";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -234,20 +243,20 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_for_function_and_number_keys {
-            if-layers = <2 3>;
-            then-layer = <4>;
+            if-layers = <NAV SYM>;
+            then-layer = <NFN>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_alphas_qwerty {
+        default {
             bindings = <
-  &kp Q        &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K      &kp L    &kp APOS
-  &ml GLOBE Z  &kp X  &kp C  &kp V  &kp B       &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                             &lc 2  &shft_cw    &kp SPACE  &lc 3
+  &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+  &ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+                             &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
 
