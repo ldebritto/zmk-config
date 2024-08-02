@@ -5,6 +5,13 @@
 
 #include "mouse.dtsi"
 
+#define DEF 0
+#define NWD 1
+#define NAV 2
+#define SYM 3
+#define NFN 4
+#define MOU 5
+
 &sk {
     quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -36,45 +43,45 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 10>;
             require-prior-idle-ms = <180>;
-            layers = <1 2 5>;
+            layers = <NWD NAV MOU>;
         };
 
         left_hand_f18_combo {
             bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
             key-positions = <2 12>;
             require-prior-idle-ms = <180>;
-            layers = <1 2 5>;
+            layers = <NWD NAV MOU>;
         };
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
             require-prior-idle-ms = <180>;
-            layers = <1 2 5>;
+            layers = <NWD NAV MOU>;
         };
 
         left_hand_sticky_sym {
             bindings = <&sl 3>;
             key-positions = <1 11>;
             require-prior-idle-ms = <180>;
-            layers = <1 2 5>;
+            layers = <NWD NAV MOU>;
         };
 
         toggle_nav_layer_combo {
             key-positions = <30 31>;
-            layers = <0 2>;
-            bindings = <&tog 2>;
+            layers = <DEF NAV>;
+            bindings = <&tog NAV>;
         };
 
         toggle_mouse_layer_combo {
             key-positions = <21 22 23>;
-            layers = <0 5>;
-            bindings = <&tog 5>;
+            layers = <DEF MOU>;
+            bindings = <&tog MOU>;
         };
 
         toggle_numword {
             key-positions = <11 13>;
-            layers = <0>;
+            layers = <DEF>;
             bindings = <&num_word 1>;
             require-prior-idle-ms = <180>;
         };
@@ -83,69 +90,69 @@
             key-positions = <12 22>;
             bindings = <&kp COMMA>;
             require-prior-idle-ms = <180>;
-            layers = <1>;
+            layers = <NWD>;
         };
 
         numword_dot {
             key-positions = <13 23>;
             bindings = <&kp DOT>;
             require-prior-idle-ms = <180>;
-            layers = <1>;
+            layers = <NWD>;
         };
 
         numword_colon {
             key-positions = <14 24>;
             bindings = <&kp COLON>;
             require-prior-idle-ms = <180>;
-            layers = <1>;
+            layers = <NWD>;
         };
 
         nav_media_mute_combo {
             key-positions = <4 14>;
-            layers = <2>;
+            layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
 
         sys_bootloader {
             key-positions = <20 21>;
-            layers = <4>;
+            layers = <NFN>;
             bindings = <&bootloader>;
         };
 
         sys_connect_to_bt0 {
             key-positions = <3 4>;
-            layers = <4>;
+            layers = <NFN>;
             bindings = <&bt BT_SEL 0>;
         };
 
         sys_connect_to_bt1 {
             key-positions = <13 14>;
-            layers = <4>;
+            layers = <NFN>;
             bindings = <&bt BT_SEL 1>;
         };
 
         sys_connect_to_bt2 {
             key-positions = <23 24>;
-            layers = <4>;
+            layers = <NFN>;
             bindings = <&bt BT_SEL 2>;
         };
 
         sys_clear_current_bluetooth_profile {
             key-positions = <28 29>;
-            layers = <4>;
+            layers = <NFN>;
             bindings = <&bt BT_CLR>;
         };
 
         nav_back {
             bindings = <&kp LG(LEFT_BRACKET)>;
             key-positions = <12 22>;
-            layers = <2 5>;
+            layers = <NAV MOU>;
         };
 
         nav_forward {
             bindings = <&kp LG(RBKT)>;
             key-positions = <13 23>;
-            layers = <2 5>;
+            layers = <NAV MOU>;
         };
     };
 
@@ -219,7 +226,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&to 0 &kp LG(LS(SPACE))>;
+            bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>;
         };
     };
 
@@ -285,7 +292,7 @@
   &kp ESC          &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC         &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
   &kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER        &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
   &mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp LG(LS(Z))    &kp F18         &mkp MB4         &mkp MB5        &m_hr            &mkp MB3
-                                                &to 0        &kp SPACE        &mkp MB1        &mkp MB2
+                                                &to DEF      &kp SPACE        &mkp MB1        &mkp MB2
             >;
         };
     };
