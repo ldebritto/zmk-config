@@ -38,8 +38,8 @@
             require-prior-idle-ms = <200>;
         };
 
-        left_hand_sticky_sym_layer {
-            bindings = <&sl 3>;
+        left_hand_tab {
+            bindings = <&kp TAB>;
             key-positions = <1 11>;
             require-prior-idle-ms = <200>;
         };
