@@ -6,11 +6,12 @@
 #include "mouse.dtsi"
 
 #define DEF 0
-#define NWD 1
-#define NAV 2
-#define SYM 3
-#define NFN 4
-#define MOU 5
+#define HRM 1
+#define NWD 2
+#define NAV 3
+#define SYM 4
+#define NFN 5
+#define MOU 6
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -89,7 +90,7 @@
             bindings = <&tog MOU>;
             layers = <DEF MOU>;
         };
-
+        
         toggle_numword_auto_layer {
             key-positions = <11 13>;
             bindings = <&num_word NWD>;
@@ -146,6 +147,12 @@
             key-positions = <28 29>;
             layers = <NFN>;
             bindings = <&bt BT_CLR>;
+        };
+
+        sys_home_row_mods {
+            key-positions = <14 15>;
+            bindings = <&tog HRM>;
+            layers = <DEF NFN>;
         };
     };
 
@@ -239,11 +246,21 @@
         default {
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+  &kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT - no home-row mods
   &ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
                              &lc NAV  &shft_cw    &kp SPACE  &lc SYM
             >;
         };
+        default_with_home_row_mods {
+            bindings = <
+  &kp Q        &kp W       &kp E        &kp R       &kp T                       &kp Y                   &kp U       &kp I       &kp O       &kp P
+  &ml LCTRL A  &ml LALT S  &ml LSHFT D  &ml LGUI F  &ml LG(LA(LS(LCTRL))) G     &mr LG(LA(LS(LCTRL))) H &mr RGUI J  &mr RSHFT K &mr RALT L  &mr RCTRL SQT
+  &ml GLOBE Z  &kp X       &kp C        &kp V       &kp B                       &kp N                   &kp M       &kp COMMA   &kp DOT     &kp SEMI
+                                        &lc NAV     &shft_cw                    &kp SPACE   &lc SYM
+            >;
+        };
+
+&ml LCTRL A  &ml LALT S  &ml LSHFT D  &ml LGUI F  &ml LG(LA(LS(LCTRL))) G    &mr LG(LA(LS(LCTRL))) H &mr RGUI J &mr RSHFT K      &mr RALT L    &mr RCTRL SQT
 
         numpad {
             bindings = <
