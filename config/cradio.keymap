@@ -30,63 +30,53 @@
     combos {
         compatible = "zmk,combos";
 
-        // thumb combos for single handed typing
-        
-        thumb_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <33 25>;
-        };
-
-        thumb_bakcspace {
-            bindings = <&kp BSPC>;
-            key-positions = <30 24>;
-        };
-
         // left handed alternatives for mouse usage
-
+        
         left_hand_esc_combo {
             bindings = <&kp ESCAPE>;
             key-positions = <0 10>;
-            require-prior-idle-ms = <180>;
-            layers = <NWD NAV MOU>;
+            require-prior-idle-ms = <200>;
+        };
+
+        left_hand_sticky_sym_layer {
+            bindings = <&sl 3>;
+            key-positions = <1 11>;
+            require-prior-idle-ms = <200>;
         };
 
         left_hand_f18_combo {
-            bindings = <&kp F18>;   // Handy for using as trigger in Keyboard Maestro for App-Specific macros
+            bindings = <&kp F18>;   // F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
             key-positions = <2 12>;
-            require-prior-idle-ms = <180>;
-            layers = <NWD NAV MOU>;
+            require-prior-idle-ms = <200>;
         };
 
         left_hand_enter_combo {
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
-            require-prior-idle-ms = <180>;
-            layers = <NWD NAV MOU>;
+            require-prior-idle-ms = <200>;
         };
 
-        left_hand_sticky_sym {
-            bindings = <&sl 3>;
-            key-positions = <1 11>;
-            require-prior-idle-ms = <180>;
-            layers = <NWD NAV MOU>;
+        left_hand_backspace {
+            bindings = <&kp BSPC>;
+            key-positions = <30 24>;
         };
 
         left_hand_nav_back {
             bindings = <&kp LG(LEFT_BRACKET)>;
             key-positions = <12 22>;
-            layers = <NAV MOU>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV MOU>; // these colide with numword punctuation combos, hence this limit
         };
 
         left_hand_nav_forward {
             bindings = <&kp LG(RBKT)>;
             key-positions = <13 23>;
-            layers = <NAV MOU>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF NAV MOU>; // these colide with numword punctuation combos, hence this limit
         };
 
-        nav_media_mute_combo {
+        media_mute_combo {
             key-positions = <4 14>;
-            layers = <NAV>;
             bindings = <&kp C_MUTE>;
         };
 
