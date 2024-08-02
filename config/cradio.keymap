@@ -1,23 +1,9 @@
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <behaviors/num_word.dtsi>
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
-
-&mmv {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <500>;
-    delay-ms = <0>;
-};
-
-&msc {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <40>;
-    delay-ms = <0>;
-};
+#include "mouse.dtsi"
 
 &sk {
     quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
