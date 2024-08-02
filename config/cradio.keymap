@@ -190,13 +190,6 @@
             ignored-key-positions = <7 9 16 17 18 19 29>; // Arrows and BSPC, ENTER and DEL
         };
 
-        nav_word: nav_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <1>;
-            continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP>;
-            ignore-modifiers;
-        };
-
         ml: ml {
             compatible = "zmk,behavior-hold-tap";
             label = "home-row mods on lef hand";
