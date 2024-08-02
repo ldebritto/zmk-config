@@ -65,21 +65,21 @@
             bindings = <&kp LG(LEFT_BRACKET)>;
             key-positions = <12 22>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV MOU>;     // these colide with numword punctuation combos, hence this limit
+            layers = <DEF HRM NAV MOU>;     // these colide with numword punctuation combos, hence this limit
         };
 
         left_hand_nav_forward {
             bindings = <&kp LG(RBKT)>;
             key-positions = <13 23>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV MOU>;     // these colide with numword punctuation combos, hence this limit
+            layers = <DEF HRM NAV MOU>;     // these colide with numword punctuation combos, hence this limit
         };
 
         left_hand_sticky_sym_layer {
             bindings = <&sl 3>;
             key-positions = <4 14>;
             require-prior-idle-ms = <200>;
-            layers = <DEF SYM MOU>;     // these colide with mute on NAV, hence this limit
+            layers = <DEF HRM NWD SYM MOU>;     // these colide with mute on NAV, hence this limit
         };
 
         left_hand_media_mute_combo {
@@ -91,19 +91,19 @@
         toggle_nav_layer_combo {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
-            layers = <DEF NAV>;
+            layers = <DEF HRM NAV>;
         };
 
         toggle_mouse_layer_combo {
             key-positions = <21 22 23>;
             bindings = <&tog MOU>;
-            layers = <DEF MOU>;
+            layers = <DEF HRM MOU>;
         };
         
         toggle_numword_auto_layer {
             key-positions = <11 13>;
             bindings = <&num_word NWD>;
-            layers = <DEF NWD>;
+            layers = <DEF HRM NWD>;
             require-prior-idle-ms = <200>;
         };
 
@@ -161,7 +161,7 @@
         sys_home_row_mods {
             key-positions = <14 15>;
             bindings = <&tog HRM>;
-            layers = <DEF NFN>;
+            layers = <NFN>;
         };
     };
 
