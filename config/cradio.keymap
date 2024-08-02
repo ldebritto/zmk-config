@@ -23,6 +23,7 @@
 
 &num_word { // Requires urob's auto-layer module https://github.com/urob/zmk-auto-layer
     continue-list = <LPAR RPAR LBKT RBKT LBRC RBRC TAB DOT COMMA SEMI COLON SLASH PLUS MINUS ASTRK EQUAL BACKSPACE DEL>;
+    ignore-modifiers;
 };
 
 / {
@@ -177,6 +178,7 @@
 
         shft_cw: shft_cw {
             compatible = "zmk,behavior-tap-dance";
+            label = "SHFT_CW";
             #binding-cells = <0>;
             bindings = <&kp RSHFT>, <&caps_word>;
             tapping-term-ms = <300>;
