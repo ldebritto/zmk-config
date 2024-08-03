@@ -22,6 +22,8 @@
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
+&mt { flavor = "balanced"; };
+
 &caps_word {
 	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;// separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals. This makes RSHFT a better thumb key that will &caps_word.
 	/delete-property/ ignore-modifiers;
