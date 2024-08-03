@@ -107,7 +107,7 @@
 		};
         
         toggle_aoe_layers {
-            key-positions = <21 22 23>;
+            key-positions = <26 27 28>;
             bindings = <&tog AOE>;
             layers = <DEF HRM AOE>;
         };
