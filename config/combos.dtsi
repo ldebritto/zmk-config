@@ -1,0 +1,141 @@
+combos {
+    compatible = "zmk,combos";
+    
+    left_hand_esc_combo {
+        bindings = <&kp ESCAPE>;
+        key-positions = <0 10>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    left_hand_tab {
+        bindings = <&kp TAB>;
+        key-positions = <1 11>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    left_hand_f18_combo {
+        bindings = <&kp F18>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
+        key-positions = <2 12>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    left_hand_enter_combo {
+        bindings = <&kp ENTER>;
+        key-positions = <3 13>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    left_hand_backspace {
+        bindings = <&kp BSPC>;
+        key-positions = <30 24>;
+    };
+    
+    left_hand_nav_back {
+        bindings = <&kp LG(LEFT_BRACKET)>;
+        key-positions = <12 22>;
+        require-prior-idle-ms = <200>;
+        layers = <DEF HRM NAV MOU>;// these colide with numword punctuation combos, hence this limit
+    };
+    
+    left_hand_nav_forward {
+        bindings = <&kp LG(RBKT)>;
+        key-positions = <13 23>;
+        require-prior-idle-ms = <200>;
+        layers = <DEF HRM NAV MOU>;// these colide with numword punctuation combos, hence this limit
+    };
+    
+    left_hand_sticky_sym_layer {
+        bindings = <&sl 3>;
+        key-positions = <4 14>;
+        require-prior-idle-ms = <200>;
+        layers = <DEF HRM NUM SYM MOU>;// these colide with mute on NAV, hence this limit
+    };
+    
+    left_hand_media_mute_combo {
+        key-positions = <4 14>;
+        bindings = <&kp C_MUTE>;
+        layers = <NAV>;// just for NAV
+    };
+    
+    toggle_nav_layer_combo {
+        key-positions = <30 31>;
+        bindings = <&tog NAV>;
+        layers = <DEF HRM NAV>;
+    };
+    
+    toggle_mouse_layer_combo {
+        key-positions = <21 22 23>;
+        bindings = <&tog MOU>;
+        layers = <DEF HRM MOU>;
+    };
+    
+    toggle_aoe_layers {
+        key-positions = <21 22 23>;
+        bindings = <&tog AOE>;
+        layers = <DEF HRM AOE>;
+    };
+    
+    toggle_numword_auto_layer {
+        key-positions = <11 13>;
+        bindings = <&num_word NUM>;
+        layers = <DEF HRM NUM>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    numword_punctuation_comma {
+        key-positions = <12 22>;
+        bindings = <&kp COMMA>;
+        layers = <NUM>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    numword_punctuation_dot {
+        key-positions = <13 23>;
+        bindings = <&kp DOT>;
+        layers = <NUM>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    numword_punctuation_colon {
+        key-positions = <14 24>;
+        bindings = <&kp COLON>;
+        layers = <NUM>;
+        require-prior-idle-ms = <200>;
+    };
+    
+    sys_bootloader {
+        key-positions = <20 21>;
+        layers = <FUN>;
+        bindings = <&bootloader>;
+    };
+    
+    sys_connect_to_bt0 {
+        key-positions = <3 4>;
+        layers = <FUN>;
+        bindings = <&bt BT_SEL 0>;
+    };
+    
+    sys_connect_to_bt1 {
+        key-positions = <13 14>;
+        layers = <FUN>;
+        bindings = <&bt BT_SEL 1>;
+    };
+    
+    sys_connect_to_bt2 {
+        key-positions = <23 24>;
+        layers = <FUN>;
+        bindings = <&bt BT_SEL 2>;
+    };
+    
+    sys_clear_current_bluetooth_profile {
+        key-positions = <28 29>;
+        layers = <FUN>;
+        bindings = <&bt BT_CLR>;
+    };
+    
+    sys_home_row_mods {
+        key-positions = <14 15>;
+        bindings = <&tog HRM>;
+        layers = <FUN>;
+    };
+};
