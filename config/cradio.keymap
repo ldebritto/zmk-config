@@ -40,25 +40,25 @@
 		
 		left_hand_esc_combo {
 			bindings = <&kp ESCAPE>;
-			key-positions = <0 10>;
+			key-positions = <1 2>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_tab {
 			bindings = <&kp TAB>;
-			key-positions = <1 11>;
+			key-positions = <21 22>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_f18_combo {
 			bindings = <&kp F18>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
-			key-positions = <2 12>;
+			key-positions = <2 3>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
-			key-positions = <3 13>;
+			key-positions = <22 23>;
 			require-prior-idle-ms = <200>;
 		};
 		
