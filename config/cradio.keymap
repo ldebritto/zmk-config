@@ -64,21 +64,13 @@
 		
 		left_hand_backspace {
 			bindings = <&kp BSPC>;
+			key-positions = <26 27>;
+		};
+		
+		right_hand_backspace_on_default_layers {
+			bindings = <&kp BSPC>;
 			key-positions = <30 24>;
-		};
-		
-		left_hand_nav_back {
-			bindings = <&kp LG(LEFT_BRACKET)>;
-			key-positions = <12 22>;
-			require-prior-idle-ms = <200>;
-			layers = <DEF HRM NAV MOU>;// these colide with numword punctuation combos, hence this limit
-		};
-		
-		left_hand_nav_forward {
-			bindings = <&kp LG(RBKT)>;
-			key-positions = <13 23>;
-			require-prior-idle-ms = <200>;
-			layers = <DEF HRM NAV MOU>;// these colide with numword punctuation combos, hence this limit
+			layers = <DEF HRM>;// these colide with mute on NAV, hence this limit
 		};
 		
 		left_hand_sticky_sym_layer {
