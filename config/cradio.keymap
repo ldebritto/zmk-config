@@ -73,8 +73,8 @@
 			layers = <DEF HRM>;// these colide with mute on NAV, hence this limit
 		};
 
-		right_hand_forward_delete_on_default_layers {
-			bindings = <&kp DEL>;
+		right_hand_forward_option_backspace_on_default_layers {
+			bindings = <&kp LA(BSPC)>;
 			key-positions = <27 28>;
 			layers = <DEF HRM>;// these colide with mute on NAV, hence this limit
 		};
