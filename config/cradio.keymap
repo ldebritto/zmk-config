@@ -64,12 +64,18 @@
 		
 		left_hand_backspace {
 			bindings = <&kp BSPC>;
-			key-positions = <26 27>;
+			key-positions = <30 24>;
 		};
 		
 		right_hand_backspace_on_default_layers {
 			bindings = <&kp BSPC>;
-			key-positions = <30 24>;
+			key-positions = <26 27>;
+			layers = <DEF HRM>;// these colide with mute on NAV, hence this limit
+		};
+
+		right_hand_forward_delete_on_default_layers {
+			bindings = <&kp DEL>;
+			key-positions = <27 28>;
 			layers = <DEF HRM>;// these colide with mute on NAV, hence this limit
 		};
 		
