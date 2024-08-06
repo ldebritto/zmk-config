@@ -65,13 +65,12 @@
 		left_hand_backspace {
 			bindings = <&kp BSPC>;
 			key-positions = <4 14>;
-			layers = <DEF HRM>;// this colides with mute on NAV, hence this limit
+			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_media_mute_combo {
-			key-positions = <4 14>;
+			key-positions = <5 15>;
 			bindings = <&kp C_MUTE>;
-			layers = <NAV>;// just for NAV
 		};
 		
 		toggle_sticky_sym_layer {
@@ -108,52 +107,52 @@
 		numword_punctuation_colon {
 			key-positions = <11 21>;
 			bindings = <&kp COLON>;
-			layers = <NUM>;
 			require-prior-idle-ms = <200>;
+			layers = <NUM>;
 		};
 		
 		numword_punctuation_comma {
 			key-positions = <12 22>;
 			bindings = <&kp COMMA>;
-			layers = <NUM>;
 			require-prior-idle-ms = <200>;
+			layers = <NUM>;
 		};
 		
 		numword_punctuation_dot {
 			key-positions = <13 23>;
 			bindings = <&kp DOT>;
-			layers = <NUM>;
 			require-prior-idle-ms = <200>;
+			layers = <NUM>;
 		};
 		
 		sys_bootloader {
 			key-positions = <20 21>;
-			layers = <FUN>;
 			bindings = <&bootloader>;
+			layers = <FUN>;
 		};
 		
 		sys_connect_to_bt0 {
 			key-positions = <3 4>;
-			layers = <FUN>;
 			bindings = <&bt BT_SEL 0>;
+			layers = <FUN>;
 		};
 		
 		sys_connect_to_bt1 {
 			key-positions = <13 14>;
-			layers = <FUN>;
 			bindings = <&bt BT_SEL 1>;
+			layers = <FUN>;
 		};
 		
 		sys_connect_to_bt2 {
 			key-positions = <23 24>;
-			layers = <FUN>;
 			bindings = <&bt BT_SEL 2>;
+			layers = <FUN>;
 		};
 		
 		sys_clear_current_bluetooth_profile {
 			key-positions = <28 29>;
-			layers = <FUN>;
 			bindings = <&bt BT_CLR>;
+			layers = <FUN>;
 		};
 		
 		sys_home_row_mods {
