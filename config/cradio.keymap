@@ -69,7 +69,7 @@
 		};
 		
 		left_hand_media_mute_combo {
-			key-positions = <5 15>;
+			key-positions = <14 24>;
 			bindings = <&kp C_MUTE>;
 		};
 		
