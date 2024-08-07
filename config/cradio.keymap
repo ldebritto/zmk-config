@@ -183,14 +183,6 @@
 			hold-trigger-on-release;
 		};
 		
-		skh: sticky_mod_on_tap_normal_mod_on_hold {
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&sk>, <&kp>;
-			#binding-cells = <2>;
-			tapping-term-ms = <175>;
-			flavor = "balanced";
-		};
-		
 		playnp: play_next_previous_media {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
@@ -283,7 +275,7 @@
 		navigation_and_media {
 			bindings = <
 			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-			&skh LCTRL        &skh LALT   &skh LSHFT        &skh LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
+			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
 			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
 			                                             &trans       &trans          &trans     &trans
 			>;
@@ -292,7 +284,7 @@
 		symbols {
 			bindings = <
 			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE      &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC   &kp DQT
-			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  &skh RGUI  &skh LSHFT  &skh RALT   &skh RCTRL
+			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT   &sk RCTRL
 			&kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp AT    &kp BSLH  &kp EXCL   &kp QMARK  &kp COLON
 			                                 &trans     &kp UNDER     &trans    &trans
 			>;
@@ -301,7 +293,7 @@
 		function_and_number_row {
 			bindings = <
 			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-			&skh LCTRL  &skh LALT  &skh LSHFT  &skh LGUI  &kp F11          &kp F12   &skh RGUI  &skh LSHFT  &skh RALT  &skh RCTRL
+			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
 			                                &trans    &kp LC(LG(Q))    &kp CAPS  &trans
 			>;
