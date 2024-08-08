@@ -202,7 +202,14 @@
 			#binding-cells = <0>;
 			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 			ignored-key-positions = <7 9 16 17 18 19 29>;// Arrows and BSPC, ENTER and DEL
-		};		
+		};
+
+		mb_left: macbook_left_arrow {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp HOME>;
+            mods = <(GLOBE)>;
+        };		
 	};
 	
 	macros {
