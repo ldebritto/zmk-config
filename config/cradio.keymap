@@ -203,34 +203,7 @@
 			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 			ignored-key-positions = <7 9 16 17 18 19 29>;// Arrows and BSPC, ENTER and DEL
 		};
-
-		mb_left: macbook_left_arrow {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp HOME>;
-            mods = <(GLOBE)>;
-        };		
 		
-		mb_right: macbook_right_arrow {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp END>;
-            mods = <(GLOBE)>;
-        };		
-		
-		mb_up: macbook_up_arrow {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp UP>, <&kp PG_UP>;
-            mods = <(GLOBE)>;
-        };		
-		
-		mb_down: macbook_down_arrow {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOWN>, <&kp PG_DN>;
-            mods = <(GLOBE)>;
-        };		
 	};
 	
 	macros {
@@ -302,8 +275,8 @@
 		
 		navigation_and_media {
 			bindings = <
-			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &mb_up        &kp END            &kp BSPC
-			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &mb_left      &mb_down      &mb_right          &kp RET
+			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
+			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
 			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
 			                                             &trans       &trans          &trans     &trans
 			>;
