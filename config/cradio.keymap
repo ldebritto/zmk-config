@@ -80,7 +80,7 @@
 		};
 		
 		toggle_nav_layer_combo {
-			key-positions = <1 2 3>;
+			key-positions = <30 31>;
 			bindings = <&tog NAV>;
 		};
 		
