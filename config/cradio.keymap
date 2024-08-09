@@ -183,7 +183,7 @@
 			hold-trigger-on-release;
 		};
 		
-		blt: mo_tog {
+		blt: balanced_layer_tap {
 			compatible = "zmk,behavior-hold-tap";
 			bindings = <&lc>, <&kp>;
 			#binding-cells = <2>;
