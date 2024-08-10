@@ -1,10 +1,8 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: ecstatic-morse
+    - name: em
       url-base: https://github.com/ecstatic-morse
   projects:
     - name: zmk
@@ -21,7 +19,7 @@ manifest:
       remote: urob
       revision: main
     - name: zmk
-      remote: ecstatic-morse
+      remote: em
       revision: molock
-  self:
+  selfs:
     path: config
