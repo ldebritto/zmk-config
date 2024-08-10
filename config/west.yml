@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: ecstatic-morse
+      url-base: https://github.com/ecstatic-morse
   projects:
     - name: zmk
       remote: urob
@@ -18,5 +20,8 @@ manifest:
     - name: zmk-tri-state
       remote: urob
       revision: main
+    - name: zmk
+      remote: ecstatic-morse
+      revision: molock
   self:
     path: config
