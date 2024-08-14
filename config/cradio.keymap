@@ -294,9 +294,9 @@
 		
 		navigation_and_media {
 			bindings = <
-			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      &kp UP        &kp END            &kp BSPC
-			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT      &kp DOWN      &kp RIGHT          &kp RET
-			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LG(LBKT)  &kp LG(RBKT)  &kp LS(LG(SPACE))  &kp DEL
+			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      		&kp UP        &kp END       &kp BSPC
+			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp RET
+			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LS(LG(SPACE))  &kp LG(LBKT)  &kp LG(RBKT)  &kp DEL
 			                                             &trans       &trans          &trans     &trans
 			>;
 		};
@@ -323,7 +323,7 @@
 			bindings = <
 			&kp ESC          &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC     &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
 			&kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
-			&mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp SPACE    &kp F18         &kp LC(LEFT)     &mkp MB3        &m_hr            &kp LC(RIGHT)
+			&mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp SPACE    &kp F18         &m_hr			 &kp LC(LEFT)    &kp LC(RIGHT)    &mkp MB3
 			                                              &tog MOU     &tog MOU     &mkp MB1        &mkp MB2
 			>;
 		};
