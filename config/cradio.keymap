@@ -71,6 +71,7 @@
 		left_hand_media_mute_combo {
 			key-positions = <14 24>;
 			bindings = <&kp C_MUTE>;
+			layers = <NAV>;
 		};
 		
 		toggle_sticky_sym_layer {
@@ -98,13 +99,6 @@
 			key-positions = <26 33>;
 			bindings = <&num_word NUM>;
 			require-prior-idle-ms = <200>;
-		};
-
-		numword_punctuation_hypen {
-			key-positions = <10 20>;
-			bindings = <&kp MINUS>;
-			require-prior-idle-ms = <200>;
-			layers = <NUM>;
 		};
 		
 		numword_punctuation_colon {
@@ -286,7 +280,7 @@
 		numpad {
 			bindings = <
 			&trans  &kp N7  &kp N8  &kp N9  &trans     		&trans  &trans  &trans     &trans   &trans
-			&kp N0  &kp N4  &kp N5  &kp N6  &trans     		&trans  &trans  &trans     &trans   &trans
+			&kp N0  &kp N4  &kp N5  &kp N6  &sk SYM     		&trans  &trans  &trans     &trans   &trans
 			&trans  &kp N1  &kp N2  &kp N3  &trans     		&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
 		                        	&mo NAV &kp K_CANCEL    &trans  &lt SYM K_CANCEL
 			>;
