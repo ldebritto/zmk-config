@@ -191,7 +191,6 @@
 			quick-tap-ms = <200>;
 			require-prior-idle-ms = <175>;
 			flavor = "tap-preferred";
-			hold-trigger-on-release;
 		};
 		#define SKH(keycode) &skh keycode keycode // &skh macro
 		
