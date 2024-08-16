@@ -15,8 +15,6 @@
 #define AGS 8
 #define ABS 9
 
-#define HYPER LG(LA(LS(LCTRL))) 
-
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -183,6 +181,7 @@
 			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
 			hold-trigger-on-release;
 		};
+		#define HYPER LG(LA(LS(LCTRL))) 
 
 		skh: sticky_on_tap_regular_mod_on_hold {
 			compatible = "zmk,behavior-hold-tap";
@@ -191,7 +190,7 @@
 			tapping-term-ms = <280>;
 			quick-tap-ms = <200>;
 			require-prior-idle-ms = <175>;
-			flavor = "balanced";
+			flavor = "tap-preferred";
 			hold-trigger-on-release;
 		};
 		#define SKH(keycode) &skh keycode keycode // &skh macro
