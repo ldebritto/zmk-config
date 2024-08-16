@@ -183,6 +183,18 @@
 			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
 			hold-trigger-on-release;
 		};
+
+		skh: sticky_on_tap_regular_mod_on_hold {
+			compatible = "zmk,behavior-hold-tap";
+			bindings = <&kp>, <&sk>;
+			#binding-cells = <2>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <200>;
+			require-prior-idle-ms = <175>;
+			flavor = "balanced";
+			hold-trigger-on-release;
+		};
+		#define SKH(keycode) &skh keycode keycode // &skh macro
 		
 		blt: balanced_layer_tap {
 			compatible = "zmk,behavior-hold-tap";
@@ -279,17 +291,17 @@
 		
 		numpad {
 			bindings = <
-			&trans  &kp N7  &kp N8  &kp N9  &trans     		&trans  &trans  &trans     &trans   &trans
-			&kp N0  &kp N4  &kp N5  &kp N6  &sk SYM     		&trans  &trans  &trans     &trans   &trans
-			&trans  &kp N1  &kp N2  &kp N3  &trans     		&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
-		                        	&mo NAV &kp K_CANCEL    &trans  &lt SYM K_CANCEL
+			&trans  &kp N7  &kp N8  &kp N9  &trans     			&trans  &trans  &trans     &trans   &trans
+			&kp N0  &kp N4  &kp N5  &kp N6  &trans     			&trans  &trans  &trans     &trans   &trans
+			&trans  &kp N1  &kp N2  &kp N3  &trans     			&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
+		                        	&mo NAV &lt SYM K_CANCEL    &trans  &lt SYM K_CANCEL
 			>;
 		};
 		
 		navigation_and_media {
 			bindings = <
 			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      		&kp UP        &kp END       &kp BSPC
-			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp RET
+			SKH(LCTRL)       SKH(LALT)  SKH(LSHFT)       SKH(LGUI)    &kp C_VOL_DN    &kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp RET
 			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LS(LG(SPACE))  &kp LG(LBKT)  &kp LG(RBKT)  &kp DEL
 			                                             &trans       &trans          &trans     &trans
 			>;
@@ -298,7 +310,7 @@
 		symbols {
 			bindings = <
 			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE      &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  SKH(RGUI) SKH(LSHFT) SKH(RALT) SKH(RCTRL)
 			&kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp AT    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
 			                                 &trans     &kp UNDER     &trans    &trans
 			>;
@@ -307,7 +319,7 @@
 		function_and_number_row {
 			bindings = <
 			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+			SKH(LCTRL) SKH(LALT) SKH(LSHFT) SKH(LGUI)  &kp F11         &kp F12   SKH(RGUI) SKH(LSHFT) SKH(RALT) SKH(RCTRL)
 			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
 			                                &trans    &kp LC(LG(Q))    &kp CAPS  &trans
 			>;
