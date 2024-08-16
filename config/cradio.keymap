@@ -182,17 +182,6 @@
 			hold-trigger-on-release;
 		};
 		#define HYPER LG(LA(LS(LCTRL))) 
-
-		skh: sticky_on_tap_regular_mod_on_hold {
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&kp>, <&sk>;
-			#binding-cells = <2>;
-			tapping-term-ms = <280>;
-			quick-tap-ms = <200>;
-			require-prior-idle-ms = <175>;
-			flavor = "tap-preferred";
-		};
-		#define SKH(keycode) &skh keycode keycode // &skh macro
 		
 		blt: balanced_layer_tap {
 			compatible = "zmk,behavior-hold-tap";
@@ -299,7 +288,7 @@
 		navigation_and_media {
 			bindings = <
 			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp C_VOL_UP    &kp PG_UP  &kp HOME      		&kp UP        &kp END       &kp BSPC
-			SKH(LCTRL)       SKH(LALT)  SKH(LSHFT)       SKH(LGUI)    &kp C_VOL_DN    &kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp RET
+			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp C_VOL_DN    &kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp RET
 			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp         &kp F18    &kp LS(LG(SPACE))  &kp LG(LBKT)  &kp LG(RBKT)  &kp DEL
 			                                             &trans       &trans          &trans     &trans
 			>;
@@ -308,7 +297,7 @@
 		symbols {
 			bindings = <
 			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE      &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  SKH(RGUI) SKH(LSHFT) SKH(RALT) SKH(RCTRL)
+			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 			&kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp AT    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
 			                                 &trans     &kp UNDER     &trans    &trans
 			>;
@@ -317,7 +306,7 @@
 		function_and_number_row {
 			bindings = <
 			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-			SKH(LCTRL) SKH(LALT) SKH(LSHFT) SKH(LGUI)  &kp F11         &kp F12   SKH(RGUI) SKH(LSHFT) SKH(RALT) SKH(RCTRL)
+			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL 
 			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
 			                                &trans    &kp LC(LG(Q))    &kp CAPS  &trans
 			>;
