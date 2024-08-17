@@ -169,8 +169,6 @@
 			hold-trigger-key-positions = <30 31 32 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
 			hold-trigger-on-release;
 		};
-		#define HRL(k1, k2, k3, k4, k5) &ml LCTRL k1 &ml LALT k2 &ml LSHFT k3 &ml LGUI k4 &ml HYPER k5
-
 		
 		mr: home-row-mods-right {
 			compatible = "zmk,behavior-hold-tap";
@@ -184,7 +182,6 @@
 			hold-trigger-on-release;
 		};
 		#define HYPER LG(LA(LS(LCTRL))) 
-		#define HRL(k1, k2, k3, k4, k5) &ml LCTRL k1 &ml LALT k2 &ml LSHFT k3 &ml LGUI k4 &ml HYPER k5
 		
 		blt: balanced_layer_tap {
 			compatible = "zmk,behavior-hold-tap";
@@ -197,7 +194,6 @@
 			// hold-trigger-key-positions = <30 31 32 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>; // thumbs + right keys
 			hold-trigger-on-release;
 		};
-		#define HRR(k1, k2, k3, k4, k5) &mr HYPER k1  &mr RGUI k2  &mr RSHFT k3 &mr RALT k4  &mr RCTRL k5
 		
 		playnp: play_next_previous_media {
 			compatible = "zmk,behavior-tap-dance";
@@ -264,28 +260,28 @@
 		
 		default_with_home_row_mods {
 			bindings = <
-			&kp Q 		 &kp W  &kp E   &kp R       &kp T       &kp Y      	&kp U       &kp I		&kp O	&kp P
-			HRL( A, 	 S, 	D, 		F, 			G)     		HRR( H,		J,			K,			L, 		STQ)
-			&ml GLOBE Z  &kp X  &kp C   &blt MOU V  &kp B       &kp N      	&blt NUM M	&kp COMMA	&kp DOT	&kp SEMI
-			                            &lc NAV     &shft_cw	&kp SPACE  &lc SYM
+			&kp Q 		 &kp W       &kp E        &kp R       &kp T           &kp Y        &kp U       &kp I       &kp O       &kp P
+			&ml LCTRL A  &ml LALT S  &ml LSHFT D  &ml LGUI F  &ml HYPER G     &mr HYPER H  &mr RGUI J  &mr RSHFT K &mr RALT L  &mr RCTRL SQT
+			&ml GLOBE Z  &kp X       &kp C        &blt MOU V  &kp B           &kp N        &blt NUM M  &kp COMMA   &kp DOT     &kp SEMI
+			                                      &lc NAV     &shft_cw        &kp SPACE    &lc SYM
 			>;
 		};
 		
 		default_without_home_row_mods {
 			bindings = <
-			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y   &kp U   &kp I      &kp O    &kp P
-			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H   &kp J   &kp K      &kp L    &kp SQT
-			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N   &kp M	&kp COMMA  &kp DOT  &kp SEMI
-                                       &trans	&trans		&trans	&trans
+			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
+			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+                                       &lc NAV  &shft_cw    &kp SPACE  &lc SYM
 			>;
 		};
 		
 		numpad {
 			bindings = <
-			&trans  &kp N7  &kp N8  &kp N9  &trans     			&trans  &trans  &trans     &trans   &trans
-			&kp N0  &kp N4  &kp N5  &kp N6  &sl SYM   			&trans  &trans  &trans     &trans   &trans
-			&trans  &kp N1  &kp N2  &kp N3  &trans     			&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
-		                        	&mo NAV &lt SYM K_CANCEL    &trans  &lt SYM K_CANCEL
+			&trans  &kp N7  &kp N8  &kp N9  &trans     		&trans  &trans  &trans     &trans   &trans
+			&kp N0  &kp N4  &kp N5  &kp N6  &sl SYM			&trans  &trans  &trans     &trans   &trans
+			&trans  &kp N1  &kp N2  &kp N3  &trans			&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
+		                        	&mo NAV &kp K_CANCEL	&trans  &lt SYM K_CANCEL
 			>;
 		};
 		
@@ -309,46 +305,46 @@
 		
 		function_and_number_row {
 			bindings = <
-			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL 
-			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
-			                                &trans    &kp LC(LG(Q))    &kp CAPS  &trans
+			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
+			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL 
+			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
+			                                &trans    &kp LC(LG(Q))	&kp CAPS  &trans
 			>;
 		};
 		
 		mouse {
 			bindings = <
-			&kp ESC          &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC     &msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
-			&kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
-			&mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp SPACE    &kp F18         &m_hr			 &kp LC(LEFT)    &kp LC(RIGHT)    &mkp MB3
-			                                              &tog MOU     &tog MOU     &mkp MB1        &mkp MB2
+			&kp ESC          &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC		&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
+			&kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
+			&mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp SPACE	&kp F18         &m_hr			 &kp LC(LEFT)    &kp LC(RIGHT)    &mkp MB3
+			                                              &tog MOU     &tog MOU		&mkp MB1        &mkp MB2
 			>;
 		};
 
         aoe_default_layer {
             bindings = <
-            &kp Q        &kp W       &kp E        &kp R        &kp T          &trans  &trans  &trans  &trans  &trans
-            &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G          &trans  &trans  &trans  &trans  &trans
-            &lt NAV Z    &kp X       &kp C        &kp V        &kp B          &trans  &trans  &trans  &trans  &trans
-                                                  &lt AGS H    &lt ABS DOT    &trans  &trans
+            &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
+            &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
+            &lt NAV Z    &kp X       &kp C        &kp V        &kp B		&trans  &trans  &trans  &trans  &trans
+                                                  &lt AGS H    &lt ABS DOT	&trans  &trans
             >;
         };
 
         aoe_unit_and_group_selection {
             bindings = <
-            &kp N1        &kp N2       &kp N3        &kp N4        &kp N5     &trans  &trans  &trans  &trans  &kp BSPC
-            &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &kp ENTER
-            &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H      &trans  &trans  &trans  &trans  &trans
-                                                     &trans        &kp DEL    &trans  &trans
+            &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
+            &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
+            &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H	&trans  &trans  &trans  &trans  &trans
+                                                     &trans        &kp DEL	&trans  &trans
             >;
         };
 
         aoe_select_all_buildings {
             bindings = <
-            &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-            &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-            &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                                         &trans         &trans           &trans  &trans
+            &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)	&trans  &trans  &trans  &trans  &trans
+            &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))	&trans  &trans  &trans  &trans  &trans
+            &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))	&trans  &trans  &trans  &trans  &trans
+                                                         &trans         &trans			&trans  &trans
             >;
         };
 	};
