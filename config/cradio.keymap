@@ -38,36 +38,42 @@
 		
 		left_hand_esc_combo {
 			bindings = <&kp ESCAPE>;
+			timeout-ms = <35>;
 			key-positions = <0 10>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_tab {
 			bindings = <&kp TAB>;
+			timeout-ms = <35>;
 			key-positions = <1 11>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_f18_combo {
 			bindings = <&kp F18>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
+			timeout-ms = <35>;
 			key-positions = <2 12>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
+			timeout-ms = <35>;
 			key-positions = <3 13>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_backspace {
 			bindings = <&kp BSPC>;
+			timeout-ms = <35>;
 			key-positions = <4 14>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_media_mute_combo {
 			key-positions = <14 24>;
+			timeout-ms = <35>;
 			bindings = <&kp C_MUTE>;
 			layers = <NAV>;
 		};
@@ -101,6 +107,7 @@
 		
 		numword_punctuation_colon {
 			key-positions = <11 21>;
+			timeout-ms = <35>;
 			bindings = <&kp COLON>;
 			require-prior-idle-ms = <200>;
 			layers = <NUM>;
@@ -108,6 +115,7 @@
 		
 		numword_punctuation_comma {
 			key-positions = <12 22>;
+			timeout-ms = <35>;
 			bindings = <&kp COMMA>;
 			require-prior-idle-ms = <200>;
 			layers = <NUM>;
