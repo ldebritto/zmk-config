@@ -50,8 +50,15 @@
 			require-prior-idle-ms = <200>;
 		};
 		
-		left_hand_f18_combo {
-			bindings = <&kp F18>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
+		// left_hand_f18_combo {
+		// 	bindings = <&kp F18>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
+		// 	timeout-ms = <35>;
+		// 	key-positions = <2 12>;
+		// 	require-prior-idle-ms = <200>;
+		// };
+		
+		left_hand_repeat_combo {
+			bindings = <&key_repeat>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
 			timeout-ms = <35>;
 			key-positions = <2 12>;
 			require-prior-idle-ms = <200>;
@@ -203,21 +210,21 @@
 			hold-trigger-on-release;
 		};
 		
-		playnp: play_next_previous_media {
+		playnp: play_next_previous_media_key {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			tapping-term-ms = <300>;
 			bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
 		};
 		
-		shft_cw: shft_cw {
+		shft_cw: shft_caps_word {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			bindings = <&kp RSHFT>, <&caps_word>;
 			tapping-term-ms = <300>;
 		};
 		
-		swapper: swapper {
+		swapper: swapper_for_cmd_tab {
 			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
 			#binding-cells = <0>;
 			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
@@ -347,7 +354,7 @@
             >;
         };
 
-        aoe_select_all_buildings {
+        aoe_building_selection {
             bindings = <
             &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)	&trans  &trans  &trans  &trans  &trans
             &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))	&trans  &trans  &trans  &trans  &trans
