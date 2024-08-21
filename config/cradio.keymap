@@ -15,6 +15,18 @@
 #define AGS 8
 #define ABS 9
 
+#define HYPER LG(LA(LS(LCTRL)))
+#define LOGOUT LG(LC(Q))
+#define P_TAB LS(LC(TAB))
+#define N_TAB LC(TAB)
+#define HOMEROW LS(LG(SPACE))
+#define B_BACK LG(LBKT)
+#define B_FWRD LG(RBKT)
+#define CUT LG(X)
+#define COPY LG(C)
+#define PASTE LG(V)
+#define UNDO LG(Z)
+
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -202,7 +214,6 @@
 			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
 			hold-trigger-on-release;
 		};
-		#define HYPER LG(LA(LS(LCTRL))) 
 		
 		blt: balanced_layer_tap {
 			compatible = "zmk,behavior-hold-tap";
@@ -234,7 +245,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
-
             mods = <(MOD_LCTL)>;
         };
 
@@ -242,7 +252,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
-
             mods = <(MOD_LCTL)>;
         };
 		
@@ -333,10 +342,10 @@
 		
 		navigation_and_media {
 			bindings = <
-			&kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &vb_up    &kp PG_UP  &kp HOME      		&kp UP        &kp END       &kp BSPC
-			&sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &vb_dn	&kp PG_DN  &kp LEFT           &kp DOWN      &kp RIGHT     &kp RET
-			&ml GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &playnp   &kp F18    &kp LS(LG(SPACE))  &kp LG(LBKT)  &kp LG(RBKT)  &kp DEL
-			                                             &trans       &trans    &trans     &trans
+			&kp TAB			&swapper	&kp P_TAB	&kp N_TAB	&vb_up		&kp PG_UP  &kp HOME		&kp UP		&kp END		&kp BSPC
+			&sk LCTRL		&sk LALT	&sk LSHFT	&sk LGUI	&vb_dn		&kp PG_DN  &kp LEFT		&kp DOWN	&kp RIGHT	&kp RET
+			&ml GLOBE UNDO	&kp CUT		&kp COPY	&kp PASTE	&playnp		&kp F18    &kp HOMEROW	&kp B_BACK	&kp B_FWRD  &kp DEL
+													&trans		&trans		&trans     &trans
 			>;
 		};
 		
@@ -344,7 +353,7 @@
 			bindings = <
 			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE      &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
 			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR    &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-			&kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp AT    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+			&kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT     &kp AT    &kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
 			                                 &trans     &kp UNDER     &trans    &trans
 			>;
 		};
@@ -354,7 +363,7 @@
 			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
 			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL 
 			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
-			                                &trans    &kp LC(LG(Q))	&kp CAPS  &trans
+			                                &trans    &kp LOGOUT	&kp CAPS  &trans
 			>;
 		};
 		
