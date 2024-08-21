@@ -15,10 +15,14 @@
 #define AGS 8
 #define ABS 9
 
+// Shortcuts for shorthanding keymap
 #define HYPER LG(LA(LS(LCTRL)))
 #define LOGOUT LG(LC(Q))
 #define P_TAB LS(LC(TAB))
 #define N_TAB LC(TAB)
+#define P_DESKTOP LC(LEFT)
+#define N_DESKTOP LC(RIGHT)
+#define EXPOSE LC(UP)
 #define HOMEROW LS(LG(SPACE))
 #define B_BACK LG(LBKT)
 #define B_FWRD LG(RBKT)
@@ -68,13 +72,6 @@
 			key-positions = <2 12>;
 			require-prior-idle-ms = <200>;
 		};
-		
-		// left_hand_repeat_combo {
-		// 	bindings = <&key_repeat>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
-		// 	timeout-ms = <35>;
-		// 	key-positions = <2 12>;
-		// 	require-prior-idle-ms = <200>;
-		// };
 		
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
@@ -369,10 +366,10 @@
 		
 		mouse {
 			bindings = <
-			&kp ESC          &kp LC(UP)  &kp LS(LC(TAB))  &kp LC(TAB)  &kp BSPC		&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &kp BSPC
-			&kp LCTRL        &kp LALT    &kp LSHFT        &kp LCMD     &kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ENTER
-			&mt GLOBE LG(Z)  &kp LG(X)   &kp LG(C)        &kp LG(V)    &kp SPACE	&kp F18         &m2hr			 &kp LC(LEFT)    &kp LC(RIGHT)    &mkp MB3
-			                                              &tog MOU     &tog MOU		&mkp MB1        &mkp MB2
+			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N__TAB	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
+			&kp LCTRL		&kp LALT	&kp LSHFT	&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
+			&mt GLOBE UNDO	&kp CUT		&kp COPY	&kp PASTE	&kp SPACE	&kp F18         &m2hr			 &kp P_DESKTOP	&kp N_DESKTOP	&mkp MB3
+													&tog MOU	&tog MOU	&mkp MB1        &mkp MB2
 			>;
 		};
 
