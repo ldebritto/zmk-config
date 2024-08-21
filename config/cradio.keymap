@@ -57,13 +57,6 @@
 			require-prior-idle-ms = <200>;
 		};
 		
-		// left_hand_repeat_combo {
-		// 	bindings = <&key_repeat>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
-		// 	timeout-ms = <35>;
-		// 	key-positions = <2 12>;
-		// 	require-prior-idle-ms = <200>;
-		// };
-		
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
 			timeout-ms = <35>;
