@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include "mouse.dtsi"
 
+// Layer defines for main layers
 #define DEF 0
 #define HRM 1
 #define NUM 2
@@ -11,6 +12,8 @@
 #define SYM 4
 #define FUN 5
 #define MOU 6
+
+// Layer defines for gaming layers
 #define AOE 7
 #define AGS 8
 #define ABS 9
@@ -31,6 +34,7 @@
 #define PASTE LG(V)
 #define UNDO LG(Z)
 
+// Behavior tweaks
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -220,7 +224,6 @@
 			quick-tap-ms = <200>;
 			require-prior-idle-ms = <175>;
 			flavor = "balanced";
-			// hold-trigger-key-positions = <30 31 32 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>; // thumbs + right keys
 			hold-trigger-on-release;
 		};
 		
@@ -337,7 +340,7 @@
 			>;
 		};
 		
-		navigation_and_media {
+		navigation_editing_and_media_controls {
 			bindings = <
 			&kp TAB			&swapper	&kp P_TAB	&kp N_TAB	&vb_up		&kp PG_UP  &kp HOME		&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk LSHFT	&sk LGUI	&vb_dn		&kp PG_DN  &kp LEFT		&kp DOWN	&kp RIGHT	&kp RET
@@ -364,7 +367,7 @@
 			>;
 		};
 		
-		mouse {
+		mouse_and_editing {
 			bindings = <
 			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N__TAB	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT	&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
