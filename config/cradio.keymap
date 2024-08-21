@@ -57,6 +57,13 @@
 			require-prior-idle-ms = <200>;
 		};
 		
+		// left_hand_repeat_combo {
+		// 	bindings = <&key_repeat>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
+		// 	timeout-ms = <35>;
+		// 	key-positions = <2 12>;
+		// 	require-prior-idle-ms = <200>;
+		// };
+		
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
 			timeout-ms = <35>;
@@ -228,7 +235,7 @@
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
 
-            mods = <(MOD_LCTRL)>;
+            mods = <(MOD_LCTL)>;
         };
 
         vb_dn: volume_brightness_down {
@@ -236,7 +243,7 @@
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
 
-            mods = <(MOD_LCTRL)>;
+            mods = <(MOD_LCTL)>;
         };
 		
 		swapper: swapper_for_cmd_tab {
