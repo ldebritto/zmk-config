@@ -18,21 +18,21 @@
 #define AGS 8
 #define ABS 9
 
-// Shortcuts for shorthanding keymap
+// Shortcuts for shorthand keymap definitions
 #define HYPER LG(LA(LS(LCTRL)))
-#define LOGOUT LG(LC(Q))
 #define P_TAB LS(LC(TAB))
 #define N_TAB LC(TAB)
-#define P_DESKTOP LC(LEFT)
-#define N_DESKTOP LC(RIGHT)
-#define EXPOSE LC(UP)
-#define HOMEROW LS(LG(SPACE))
-#define B_BACK LG(LBKT)
-#define B_FWRD LG(RBKT)
+#define UNDO LG(Z)
 #define CUT LG(X)
 #define COPY LG(C)
 #define PASTE LG(V)
-#define UNDO LG(Z)
+#define HOMEROW LS(LG(SPACE))
+#define B_BACK LG(LBKT)
+#define B_FWRD LG(RBKT)
+#define LOGOUT LG(LC(Q))
+#define P_DESKTOP LC(LEFT)
+#define N_DESKTOP LC(RIGHT)
+#define EXPOSE LC(UP)
 
 // Behavior tweaks
 &sk {
@@ -369,7 +369,7 @@
 		
 		mouse_and_editing {
 			bindings = <
-			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N__TAB	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
+			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N_TAB	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT	&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
 			&mt GLOBE UNDO	&kp CUT		&kp COPY	&kp PASTE	&kp SPACE	&kp F18         &m2hr			 &kp P_DESKTOP	&kp N_DESKTOP	&mkp MB3
 													&tog MOU	&tog MOU	&mkp MB1        &mkp MB2
