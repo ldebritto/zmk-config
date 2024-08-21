@@ -87,9 +87,12 @@
 
 		finish_sentence_combo {
 			key-positions = <32 33>;
-			biwithgs = <&endststart_a_new_one_with_c>;finish};
-	 with period	
-And start a new one			bindings = <&sl SYM>;
+			bindings = <&endstc>;
+			layers = <DEF HRM>;
+		};
+			 
+		toggle_sticky_sym_layer_combo {
+			bindings = <&sl SYM>;
 			key-positions = <24 30>;
 			require-prior-idle-ms = <200>;
 		};
