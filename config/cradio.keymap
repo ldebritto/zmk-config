@@ -369,10 +369,10 @@
 		
 		mouse_and_editing {
 			bindings = <
-			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N_TAB		&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
-			&kp LCTRL		&kp LALT	&kp LSHFT	&kp LCMD		&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&mt GLOBE UNDO	&kp CUT		&kp COPY	&blt MOU PASTE	&kp SPACE	&kp F18         &m2hr			 &kp P_DESKTOP	&kp N_DESKTOP	&mkp MB3
-													&tog MOU		&tog MOU	&mkp MB1        &mkp MB2
+			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N_TAB	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
+			&kp LCTRL		&kp LALT	&kp LSHFT	&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
+			&mt GLOBE UNDO	&kp CUT		&kp COPY	&kp PASTE	&kp SPACE	&kp F18         &m2hr			 &kp P_DESKTOP	&kp N_DESKTOP	&mkp MB3
+													&tog MOU	&tog MOU	&mkp MB1        &mkp MB2
 			>;
 		};
 
