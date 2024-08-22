@@ -98,6 +98,12 @@
 			layers = <NAV>;
 		};
 
+		left_hand_toggle_numword_auto_layer {
+			key-positions = <13 30>;
+			bindings = <&num_word NUM>;
+			require-prior-idle-ms = <200>;
+		};
+
 		finish_sentence_combo {
 			key-positions = <32 33>;
 			bindings = <&endstc>;
