@@ -99,7 +99,7 @@
 		};
 
 		left_hand_toggle_numword_auto_layer {
-			key-positions = <13 30>;
+			key-positions = <12 30>;
 			bindings = <&num_word NUM>;
 			require-prior-idle-ms = <200>;
 		};
