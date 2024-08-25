@@ -60,7 +60,7 @@
 		};
 		
 		left_hand_media_mute_combo {
-			key-positions = <15 25>;
+			key-positions = <5 15>;
 			timeout-ms = <35>;
 			bindings = <&kp C_MUTE>;
 			layers = <NAV>;
