@@ -6,7 +6,7 @@
 
 // Layer defines for main layers
 #define DEF 0
-#define HRM 1
+#define HRM 1 // Ever undecided if I should use them or not, so I've left it as an alternative defalult layer
 #define NUM 2
 #define NAV 3
 #define SYM 4
@@ -22,11 +22,11 @@
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&mt { flavor = "balanced"; };
+&mt { flavor = "balanced"; }; // Default is "hold-preffered"
 
-&caps_word { // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals. This makes RSHFT a better thumb key that will &caps_word.
+&caps_word { // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
 	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
-	/delete-property/ ignore-modifiers;
+	/delete-property/ ignore-modifiers; // Requires PR#1451 (https://github.com/zmkfirmware/zmk/pull/1451) - currently unmantained but still working
 };
 
 &num_word {// Requires urob's auto-layer module https://github.com/urob/zmk-auto-layer
@@ -44,21 +44,7 @@
 			key-positions = <0 10>;
 			require-prior-idle-ms = <200>;
 		};
-		
-		left_hand_tab {
-			bindings = <&kp TAB>;
-			timeout-ms = <35>;
-			key-positions = <1 11>;
-			require-prior-idle-ms = <200>;
-		};
-		
-		left_hand_f18_combo {
-			bindings = <&kp F18>;// F18 is handy for using as trigger in Keyboard Maestro for App-Specific macros
-			timeout-ms = <35>;
-			key-positions = <2 12>;
-			require-prior-idle-ms = <200>;
-		};
-		
+				
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
 			timeout-ms = <35>;
@@ -74,7 +60,7 @@
 		};
 		
 		left_hand_media_mute_combo {
-			key-positions = <14 24>;
+			key-positions = <15 25>;
 			timeout-ms = <35>;
 			bindings = <&kp C_MUTE>;
 			layers = <NAV>;
@@ -166,7 +152,7 @@
 	};
 	
 	behaviors {
-		ml: home-row-mods-left {
+		ml: home-row-mods-left { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
 			compatible = "zmk,behavior-hold-tap";
 			bindings = <&kp>, <&kp>;
 			#binding-cells = <2>;
@@ -305,10 +291,10 @@
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&vb_up		&kp PG_UP  &kp HOME				&kp UP			&kp END		&kp BSPC
-			&sk LCTRL		&sk LALT	&sk LSHFT		&sk LGUI	&vb_dn		&kp PG_DN  &kp LEFT				&kp DOWN		&kp RIGHT	&kp RET
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&playnp		&kp F18    &kp LS(LG(SPACE))	&kp LG(LBKT)	&kp LG(RBKT)  &kp DEL
-														&trans		&trans		&trans     &trans
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp PG_UP	&vb_up		&kp HOME			&kp UP			&kp END		&kp BSPC
+			&sk LCTRL		&sk LALT	&sk LSHFT		&sk LGUI	&kp PG_DN	&vb_dn		&kp LEFT			&kp DOWN		&kp RIGHT	&kp RET
+			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&playnp		&kp LS(LG(SPACE))	&kp LG(LBKT)	&kp LG(RBKT)  &kp DEL
+														&trans		&trans		&trans		&trans
 			>;
 		};
 		
@@ -330,12 +316,12 @@
 			>;
 		};
 		
-		mouse_and_editing {
+		mouse_movement_and_editing_with_mouse {
 			bindings = <
 			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp SPACE	&kp F18         &m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&mkp MB3
-														&tog MOU	&tog MOU	&mkp MB1        &mkp MB2
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&mkp MB3		&m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&kp DEL
+														&tog MOU	&kp SPACE	&mkp MB1        &mkp MB2
 			>;
 		};
 
