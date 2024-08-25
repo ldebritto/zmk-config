@@ -12,29 +12,11 @@
 #define SYM 4
 #define FUN 5
 #define MOU 6
-
 // Layer defines for gaming layers
 #define AOE 7
 #define AGS 8
 #define ABS 9
 
-// Shortcuts for shorthand keymap definitions
-#define HYPER LG(LA(LS(LCTRL)))
-#define P_TAB LS(LC(TAB))
-#define N_TAB LC(TAB)
-#define UNDO LG(Z)
-#define CUT LG(X)
-#define COPY LG(C)
-#define PASTE LG(V)
-#define HOMEROW LS(LG(SPACE))
-#define B_BACK LG(LBKT)
-#define B_FWRD LG(RBKT)
-#define LOGOUT LG(LC(Q))
-#define P_DESKTOP LC(LEFT)
-#define N_DESKTOP LC(RIGHT)
-#define EXPOSE LC(UP)
-
-// Behavior tweaks
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -42,8 +24,8 @@
 
 &mt { flavor = "balanced"; };
 
-&caps_word {
-	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;// separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals. This makes RSHFT a better thumb key that will &caps_word.
+&caps_word { // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals. This makes RSHFT a better thumb key that will &caps_word.
+	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
 	/delete-property/ ignore-modifiers;
 };
 
@@ -269,7 +251,7 @@
 			wait-ms = <0>;
 			tap-ms = <0>;
 			#binding-cells = <0>;
-			bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>; // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
+			bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>; // default shortLG(X) 	or homerow hints (https://www.homerow.app) for faster clicking without a mouse
 		};
 		
 		endstc: finish_sentence_with_period_and_start_a_new_one_with_sticky_shift {
@@ -294,21 +276,21 @@
 	keymap {
 		compatible = "zmk,keymap";
 		
-		default_with_home_row_mods {
-			bindings = <
-			&kp Q 		 &kp W       &kp E        &kp R       &kp T           &kp Y        &kp U       	&kp I       &kp O       &kp P
-			&ml LCTRL A  &ml LALT S  &ml LSHFT D  &ml LGUI F  &ml HYPER G     &mr HYPER H  &mr RGUI J	&mr RSHFT K &mr RALT L  &mr RCTRL SQT
-			&ml GLOBE Z  &kp X       &kp C        &kp V		  &kp B           &kp N        &kp M	  	&kp COMMA   &kp DOT     &blt NUM SEMI
-												&lc NAV     &shft_cw        &kp SPACE    &lc SYM
-			>;
-		};
-		
 		default_without_home_row_mods {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
 			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
                                        &lc NAV  &shft_cw    &kp SPACE  &lc SYM
+			>;
+		};
+		
+		default_with_home_row_mods {
+			bindings = <
+			&kp Q 		 &kp W       &kp E			&kp R       &kp T           			&kp Y        			&kp U       &kp I       &kp O       &kp P
+			&ml LCTRL A  &ml LALT S  &ml LSHFT D	&ml LGUI F  &ml LG(LA(LS(LCTRL))) G	&mr LG(LA(LS(LCTRL))) H	&mr RGUI J	&mr RSHFT K &mr RALT L  &mr RCTRL SQT
+			&ml GLOBE Z  &kp X       &kp C			&kp V		&kp B						&kp N        			&kp M		&kp COMMA	&kp DOT     &blt NUM SEMI
+													&lc NAV     &shft_cw					&kp SPACE    			&lc SYM
 			>;
 		};
 		
@@ -323,10 +305,10 @@
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp P_TAB	&kp N_TAB		&vb_up		&kp PG_UP  &kp HOME		&kp UP		&kp END		&kp BSPC
-			&sk LCTRL		&sk LALT	&sk LSHFT	&sk LGUI		&vb_dn		&kp PG_DN  &kp LEFT		&kp DOWN	&kp RIGHT	&kp RET
-			&ml GLOBE UNDO	&kp CUT		&kp COPY	&blt MOU PASTE	&playnp		&kp F18    &kp HOMEROW	&kp B_BACK	&kp B_FWRD  &kp DEL
-													&trans			&trans		&trans     &trans
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&vb_up		&kp PG_UP  &kp HOME				&kp UP			&kp END		&kp BSPC
+			&sk LCTRL		&sk LALT	&sk LSHFT		&sk LGUI	&vb_dn		&kp PG_DN  &kp LEFT				&kp DOWN		&kp RIGHT	&kp RET
+			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&playnp		&kp F18    &kp LS(LG(SPACE))	&kp LG(LBKT)	&kp LG(RBKT)  &kp DEL
+														&trans		&trans		&trans     &trans
 			>;
 		};
 		
@@ -344,16 +326,16 @@
 			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
 			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL 
 			&kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
-			                                &trans    &kp LOGOUT	&kp CAPS  &trans
+			                                &trans    &kp LG(LC(Q))	&kp CAPS  &trans
 			>;
 		};
 		
 		mouse_and_editing {
 			bindings = <
-			&kp ESC			&kp EXPOSE	&kp P_TAB	&kp N_TAB	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
-			&kp LCTRL		&kp LALT	&kp LSHFT	&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&mt GLOBE UNDO	&kp CUT		&kp COPY	&kp PASTE	&kp SPACE	&kp F18         &m2hr			 &kp P_DESKTOP	&kp N_DESKTOP	&mkp MB3
-													&tog MOU	&tog MOU	&mkp MB1        &mkp MB2
+			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
+			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp SPACE	&kp F18         &m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&mkp MB3
+														&tog MOU	&tog MOU	&mkp MB1        &mkp MB2
 			>;
 		};
 
