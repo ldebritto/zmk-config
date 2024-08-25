@@ -144,7 +144,7 @@
 			layers = <FUN>;
 		};
 		
-		sys_home_row_mods {
+		sys_toggle_home_row_mods {
 			key-positions = <14 15>;
 			bindings = <&tog HRM>;
 			layers = <FUN>;
@@ -237,7 +237,7 @@
 			wait-ms = <0>;
 			tap-ms = <0>;
 			#binding-cells = <0>;
-			bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>; // default shortLG(X) 	or homerow hints (https://www.homerow.app) for faster clicking without a mouse
+			bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>; // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
 		};
 		
 		endstc: finish_sentence_with_period_and_start_a_new_one_with_sticky_shift {
