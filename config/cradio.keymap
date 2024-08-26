@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include "mouse.dtsi"
 
-// Layer defines for main layers
 #define DEF 0
 #define HRM 1 // Ever undecided if I should use them or not, so I've left it as an alternative defalult layer
 #define NUM 2
@@ -12,18 +11,10 @@
 #define SYM 4
 #define FUN 5
 #define MOU 6
-// Layer defines for gaming layers
-#define AOE 7
-#define AGS 8
-#define ABS 9
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
-};
-
-&sl {
-	quick-release; // Avoids "THis" problem (double capitalization)
 };
 
 &mt { flavor = "balanced"; }; // Default is "hold-preffered"
@@ -64,19 +55,12 @@
 		};
 		
 		left_hand_media_mute_combo {
-			key-positions = <5 15>;
+			key-positions = <27 28>;
 			timeout-ms = <35>;
 			bindings = <&kp C_MUTE>;
 			layers = <NAV>;
 		};
 
-		left_hand_toggle_numword_auto_layer {
-			key-positions = <12 30>;
-			bindings = <&num_word NUM>;
-			require-prior-idle-ms = <200>;
-			layers = <DEF HRM NUM>;
-		};
-			 		
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
@@ -88,13 +72,14 @@
 			bindings = <&tog MOU>;
 			layers = <DEF HRM NAV NUM>;
 		};
-        
-        toggle_aoe_layers {
-            key-positions = <20 21 22>;
-            bindings = <&tog AOE>;
-			layers = <DEF HRM AOE>;
-        };
 		
+		toggle_numword_auto_layer {
+			key-positions = <12 30>;
+			bindings = <&num_word NUM>;
+			require-prior-idle-ms = <200>;
+			layers = <DEF HRM NUM>;
+		};
+			 		
 		numword_punctuation_colon {
 			key-positions = <11 21>;
 			timeout-ms = <35>;
@@ -295,10 +280,10 @@
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp PG_UP	&vb_up		&kp HOME			&kp UP			&kp END		&kp BSPC
-			&sk LCTRL		&sk LALT	&sk LSHFT		&sk LGUI	&kp PG_DN	&vb_dn		&kp LEFT			&kp DOWN		&kp RIGHT	&kp RET
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&playnp		&kp LS(LG(SPACE))	&kp LG(LBKT)	&kp LG(RBKT)  &kp DEL
-														&trans		&trans		&trans		&trans
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP			&kp HOME	&kp UP		&kp END		&kp BSPC
+			&sk LCTRL		&sk LALT	&sk LSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN			&kp LEFT	&kp DOWN	&kp RIGHT	&kp RET
+			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&kp LS(LG(SPACE))	&playnp		&vb_dn  	&vb_up		&kp DEL
+														&trans		&trans			&trans				&trans
 			>;
 		};
 		
@@ -328,32 +313,5 @@
 														&tog MOU	&kp SPACE	&mkp MB1        &mkp MB2
 			>;
 		};
-
-        aoe_default_layer {
-            bindings = <
-            &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
-            &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
-            &lt NAV Z    &kp X       &kp C        &kp V        &kp B		&trans  &trans  &trans  &trans  &trans
-                                                  &lt AGS H    &lt ABS DOT	&trans  &trans
-            >;
-        };
-
-        aoe_unit_and_group_selection {
-            bindings = <
-            &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
-            &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
-            &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H	&trans  &trans  &trans  &trans  &trans
-                                                     &trans        &kp DEL	&trans  &trans
-            >;
-        };
-
-        aoe_building_selection {
-            bindings = <
-            &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)	&trans  &trans  &trans  &trans  &trans
-            &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))	&trans  &trans  &trans  &trans  &trans
-            &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))	&trans  &trans  &trans  &trans  &trans
-                                                         &trans         &trans			&trans  &trans
-            >;
-        };
 	};
 };
