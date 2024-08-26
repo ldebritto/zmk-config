@@ -180,7 +180,7 @@
 			hold-trigger-on-release;
 		};
 		
-		skhshift: home-row-mods-right {
+		skhshift: sticky_shift_caps_word {
 			compatible = "zmk,behavior-hold-tap";
 			bindings = <&kp>, <&shft_cw>;
 			#binding-cells = <2>;
