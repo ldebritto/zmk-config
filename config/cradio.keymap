@@ -84,13 +84,13 @@
 		};
 		
 		toggle_mouse_layer_combo {
-			key-positions = <26 27 28>;
+			key-positions = <21 22 23>;
 			bindings = <&tog MOU>;
 			layers = <DEF HRM NAV NUM>;
 		};
         
         toggle_aoe_layers {
-            key-positions = <21 22 23>;
+            key-positions = <20 21 22>;
             bindings = <&tog AOE>;
 			layers = <DEF HRM AOE>;
         };
