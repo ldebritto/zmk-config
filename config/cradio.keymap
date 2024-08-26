@@ -180,22 +180,12 @@
 			hold-trigger-on-release;
 		};
 		
-		skhshift: sticky_shift_caps_word {
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&kp>, <&shft_cw>;
-			#binding-cells = <2>;
-			tapping-term-ms = <200>;
-			flavor = "tap-preferred";
-		};
-
 		shft_cw: shft_caps_word {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			bindings = <&sk RSHFT>, <&caps_word>;
 			tapping-term-ms = <300>;
 		};
-
-		#define SHIFTY &skhshift RSHFT 0
 		
 		playnp: play_next_previous_media_key {
 			compatible = "zmk,behavior-tap-dance";
@@ -281,7 +271,7 @@
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
 			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
-                                       &lc NAV  SHIFTY    &kp SPACE  &lc SYM
+                                       &lc NAV  &shft_cw    &kp SPACE  &lc SYM
 			>;
 		};
 		
