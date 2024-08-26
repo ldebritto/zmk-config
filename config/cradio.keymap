@@ -68,7 +68,7 @@
 		toggle_mouse_layer_combo {
 			key-positions = <21 22 23>;
 			bindings = <&smart_mouse>;
-			layers = <DEF HRM NAV NUM>;
+			layers = <DEF HRM NAV NUM MOU>;
 		};
 		
 		toggle_numword_auto_layer {
