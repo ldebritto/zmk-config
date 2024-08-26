@@ -79,7 +79,7 @@
 		};
 			 		
 		numword_left_hand_punctuation_colon {
-			key-positions = <11 21>;
+			key-positions = <14 24>;
 			timeout-ms = <35>;
 			bindings = <&kp COLON>;
 			require-prior-idle-ms = <200>;
