@@ -104,15 +104,15 @@
 		window_management_move_desk_left {
 			bindings = <&globe LC(LEFT)>;
 			timeout-ms = <35>;
-			key-positions = <20 26>;
+			key-positions = <20 15>;
 			require-prior-idle-ms = <200>;
 			layers = <DEF HRM>;
 		};
 		
 		window_management_move_desk_right {
-			bindings = <&globe LC(LEFT)>;
+			bindings = <&globe LC(RIGHT)>;
 			timeout-ms = <35>;
-			key-positions = <20 26>;
+			key-positions = <20 19>;
 			require-prior-idle-ms = <200>;
 			layers = <DEF HRM>;
 		};
