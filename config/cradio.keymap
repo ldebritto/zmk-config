@@ -22,6 +22,10 @@
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
+&sl {
+	quick-release; // Avoids "THis" problem (double capitalization)
+};
+
 &mt { flavor = "balanced"; }; // Default is "hold-preffered"
 
 &caps_word { // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
@@ -234,11 +238,11 @@
 			<&macro_tap>,
 			<&kp K_CANCEL &macro_param_1to1>,
 			<&macro_press>,
-			<&mo MACRO_PLACEHOLDER>,
+			<&sl MACRO_PLACEHOLDER>,
 			<&macro_pause_for_release>,
 			<&macro_param_1to1>,
 			<&macro_release>,
-			<&mo MACRO_PLACEHOLDER>;
+			<&sl MACRO_PLACEHOLDER>;
 		};
 		
 		m2hr: from_mouse_layer_to_def_with_homerow_app_activation {
