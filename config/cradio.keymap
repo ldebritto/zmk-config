@@ -191,7 +191,7 @@
             mods = <(MOD_LCTL)>;
         };
 
-        desk_left: volume_brightness_down_on_control {
+        desk_left: move_desktop_window_left {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RC(LEFT)>, <&globe LC(LEFT)>;
