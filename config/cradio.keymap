@@ -6,11 +6,12 @@
 
 #define DEF 0
 #define HRM 1 // Ever undecided if I should use them or not, so I've left it as an alternative defalult layer
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
+#define BRM 2 // BR-NATIVO (https://pt.wikipedia.org/wiki/BR-Nativo)
+#define NUM 3
+#define NAV 4
+#define SYM 5
+#define FUN 6
+#define MOU 7
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
@@ -266,7 +267,16 @@
 													&lc NAV     &shft_cw					&kp SPACE    			&lc SYM
 			>;
 		};
-		
+
+		br_nativo {
+			bindings = <
+			&kp SQT		&kp COMMA	&kp DOT	&kp H    &kp X       &kp W      &kp L    &kp T	&kp C	&kp P
+			&kp I		&kp E		&kp A	&kp O    &kp U       &kp M      &kp D    &kp S	&kp R	&kp N
+			&ml GLOBE Y	&kp RA(C)	&kp J	&kp B    &kp K       &kp Q      &kp V    &kp G  &kp F	&kp Z
+											&lc NAV  &shft_cw    &kp SPACE  &lc SYM
+			>;
+		};
+
 		numpad {
 			bindings = <
 			&trans  &kp N7  &kp N8  &kp N9  &trans  	   		&trans  &trans  &trans     &trans   &trans
@@ -287,7 +297,7 @@
 		
 		symbols {
 			bindings = <
-			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE		&kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE		&kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp SEMI
 			&kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR		&kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 			&kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT		&kp AT    &kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
 			                                 &trans     &lt RSHFT UNDER	&trans    &trans
