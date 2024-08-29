@@ -3,13 +3,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include "mouse.dtsi"
 
-#define HRM 0 // Ever undecided if I should use home row mods or not, so I've have two default layers
-#define DEF 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
+#define DEF 0
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
@@ -27,21 +26,18 @@
 		
 		left_hand_esc_combo {
 			bindings = <&kp ESCAPE>;
-			timeout-ms = <35>;
 			key-positions = <0 10>;
 			require-prior-idle-ms = <200>;
 		};
 				
 		left_hand_enter_combo {
 			bindings = <&kp ENTER>;
-			timeout-ms = <35>;
 			key-positions = <3 13>;
 			require-prior-idle-ms = <200>;
 		};
 		
 		left_hand_backspace {
 			bindings = <&kp BSPC>;
-			timeout-ms = <35>;
 			key-positions = <4 14>;
 			require-prior-idle-ms = <200>;
 		};
@@ -61,13 +57,11 @@
 		toggle_numpad_layer {
 			key-positions = <1 2 3>;
 			bindings = <&tog NUM>;
-			require-prior-idle-ms = <200>;
 			layers = <DEF HRM NUM>;
 		};
 
 		media_mute_combo {
 			key-positions = <27 28>;
-			timeout-ms = <35>;
 			bindings = <&kp C_MUTE>;
 			layers = <NAV>;
 		};
@@ -110,29 +104,6 @@
 	};
 	
 	behaviors {
-		ml: home-row-mods-left { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&kp>, <&kp>;
-			#binding-cells = <2>;
-			tapping-term-ms = <280>;
-			quick-tap-ms = <200>;
-			require-prior-idle-ms = <175>;
-			flavor = "balanced";
-			hold-trigger-key-positions = <30 31 32 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
-			hold-trigger-on-release;
-		};
-		
-		mr: home-row-mods-right { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&kp>, <&kp>;
-			#binding-cells = <2>;
-			tapping-term-ms = <280>;
-			quick-tap-ms = <200>;
-			require-prior-idle-ms = <175>;
-			flavor = "balanced";
-			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
-			hold-trigger-on-release;
-		};
 		
 		shft_cw: shft_caps_word {
 			compatible = "zmk,behavior-tap-dance";
@@ -212,20 +183,11 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_with_home_row_mods {
-			bindings = <
-			&kp Q 		 &kp W       &kp E			&kp R       &kp T           			&kp Y        			&kp U       &kp I       &kp O       &kp P
-			&ml LCTRL A  &ml LALT S  &ml RSHFT D	&ml LGUI F  &ml LG(LA(LS(LCTRL))) G	&mr LG(LA(LS(LCTRL))) H		&mr RGUI J	&mr RSHFT K &mr RALT L  &mr RCTRL SQT
-			&ml GLOBE Z  &kp X       &kp C			&kp V		&kp B						&kp N        			&kp M		&kp COMMA	&kp DOT     &lt NUM SEMI
-													&lc NAV     &shft_cw					&kp SPACE    			&lc SYM
-			>;
-		};
-
 		default_without_home_row_mods {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
-			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+			&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
                                        &lc NAV  &shft_cw    &kp SPACE  &lc SYM
 			>;
 		};
@@ -243,16 +205,16 @@
 			bindings = <
 			&kp TAB			&aswapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
 														&trans		&tog NAV		&trans		&trans
 			>;
 		};
 		
 		symbols {
 			bindings = <
-			&kp ESC    &mt RBRC LBRC	&mt RBKT LBKT	&mt RPAR LPAR   &kp PIPE		&kp LA(N6)	&kp AMPS	&kp DQT		&kp LA(9)	&kp  LA(0)
-			&kp AT	   &kp CARET		&kp GRAVE  		&kp TILDE  		&kp DOLLAR		&kp HASH  	&sk RGUI	&sk LSHFT	&sk RALT	&sk RCTRL
-			&kp PLUS   &kp MINUS		&kp ASTRK  		&kp FSLH   		&kp EQUAL		&kp PRCNT	&kp BSLH	&kp QMARK	&kp EXCL	&mr GLOBE COLON
+			&kp ESC		&mt RBRC LBRC	&mt RBKT LBKT	&mt RPAR LPAR   &kp PIPE		&kp LA(N6)	&kp AMPS	&kp DQT		&kp LA(9)	&kp LA(0)
+			&kp MINUS	&kp CARET		&kp TILDE  		&kp ASTRK  		&kp DOLLAR		&kp HASH  	&sk RGUI	&sk LSHFT	&sk RALT	&sk RCTRL
+			&kp PLUS	&kp EQUAL		&kp GRAVE  		&kp FSLH   		&kp PRCNT		&kp AT		&kp BSLH	&kp QMARK	&kp EXCL	&kp COLON
 			                            	     		&trans 		    &lt RSHFT UNDER	&trans    	&trans
 			>;
 		};
@@ -270,7 +232,7 @@
 			bindings = <
 			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&mkp MB3		&m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&kp DEL
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&mkp MB3		&m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&kp DEL
 														&kp SPACE	&tog MOU	&mkp MB1        &mkp MB2
 			>;
 		};
