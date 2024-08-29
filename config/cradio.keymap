@@ -235,7 +235,7 @@
 			&kp TAB		&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans     &trans   &trans
 			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans     &trans   &trans
 			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&kp COMMA  &kp DOT  &kp COLON
-										&lc NAV	&tog NUM	&trans	&lc SYM
+										&trans	&tog NUM	&trans	&trans
 			>;
 		};
 		
@@ -244,16 +244,16 @@
 			&kp TAB			&aswapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
 			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
-														&trans		&trans			&trans		&trans
+														&trans		&tog NAV		&trans		&trans
 			>;
 		};
 		
 		symbols {
 			bindings = <
-			&kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE		&kp LA(N6)	&kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
-			&kp AT	   &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR		&kp HASH  	&sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-			&kp PLUS   &kp ASTRK  &kp MINUS  &kp FSLH   &kp EQUAL		&kp PRCNT	&kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
-			                                 &trans     &lt RSHFT UNDER	&trans    	&trans
+			&kp ESC    &mt LBRC RBRC	&mt LBKT RBKT	&mt LPAR RPAR   &kp PIPE		&kp LA(N6)	&kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
+			&kp AT	   &kp CARET		&kp GRAVE  		&kp TILDE  		&kp DOLLAR		&kp HASH  	&sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+			&kp PLUS   &kp ASTRK		&kp MINUS  		&kp FSLH   		&kp EQUAL		&kp PRCNT	&kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
+			                            	     		&trans 		    &lt RSHFT UNDER	&trans    	&trans
 			>;
 		};
 		
@@ -271,7 +271,7 @@
 			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
 			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&mkp MB3		&m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&kp DEL
-														&tog MOU	&kp SPACE	&mkp MB1        &mkp MB2
+														&kp SPACE	&tog MOU	&mkp MB1        &mkp MB2
 			>;
 		};
 	};
