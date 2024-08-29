@@ -250,7 +250,7 @@
 		
 		symbols {
 			bindings = <
-			&kp ESC    &mt LBRC RBRC	&mt LBKT RBKT	&mt LPAR RPAR   &kp PIPE		&kp LA(N6)	&kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
+			&kp ESC    &mt RBRC LBRC	&mt RBKT LBKT	&mt RPAR LPAR   &kp PIPE		&kp LA(N6)	&kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
 			&kp AT	   &kp CARET		&kp GRAVE  		&kp TILDE  		&kp DOLLAR		&kp HASH  	&sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 			&kp PLUS   &kp ASTRK		&kp MINUS  		&kp FSLH   		&kp EQUAL		&kp PRCNT	&kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
 			                            	     		&trans 		    &lt RSHFT UNDER	&trans    	&trans
