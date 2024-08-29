@@ -46,13 +46,6 @@
 			require-prior-idle-ms = <200>;
 		};
 		
-		left_hand_media_mute_combo {
-			key-positions = <27 28>;
-			timeout-ms = <35>;
-			bindings = <&kp C_MUTE>;
-			layers = <NAV>;
-		};
-
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
@@ -65,14 +58,14 @@
 			layers = <DEF HRM NAV NUM MOU>;
 		};
 		
-		toggle_numword_auto_layer {
+		toggle_numpad {
 			key-positions = <12 30>;
 			bindings = <&tog NUM>;
 			require-prior-idle-ms = <200>;
 			layers = <DEF HRM NUM>;
 		};
 			 		
-		numword_left_hand_punctuation_colon {
+		numpad_left_hand_punctuation_colon {
 			key-positions = <14 24>;
 			timeout-ms = <35>;
 			bindings = <&kp COLON>;
@@ -80,7 +73,7 @@
 			layers = <NUM>;
 		};
 		
-		numword_left_hand_punctuation_comma {
+		numpad_left_hand_punctuation_comma {
 			key-positions = <12 22>;
 			timeout-ms = <35>;
 			bindings = <&kp COMMA>;
@@ -88,13 +81,20 @@
 			layers = <NUM>;
 		};
 		
-		numword_left_hand_punctuation_dot {
+		numpad_left_hand_punctuation_dot {
 			key-positions = <13 23>;
 			bindings = <&kp DOT>;
 			require-prior-idle-ms = <200>;
 			layers = <NUM>;
 		};
 		
+		media_mute_combo {
+			key-positions = <27 28>;
+			timeout-ms = <35>;
+			bindings = <&kp C_MUTE>;
+			layers = <NAV>;
+		};
+
 		sys_bootloader {
 			key-positions = <20 21>;
 			bindings = <&bootloader>;
@@ -226,7 +226,7 @@
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 
-		tri_layer_for_function_and_number_keys {
+		tri_layer_for_function_and_number_row_keys {
 			if-layers = <NAV SYM>;
 			then-layer = <FUN>;
 		};
@@ -255,10 +255,10 @@
 
 		numpad {
 			bindings = <
-			&trans  &kp N7  &kp N8  &kp N9  &trans  	   		&trans  &trans  &trans     &trans   &trans
-			&kp N0  &kp N4  &kp N5  &kp N6  &sl SYM				&trans  &trans  &trans     &trans   &trans
-			&trans  &kp N1  &kp N2  &kp N3  &trans				&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
-		                        	&mo NAV &lt SYM K_CANCEL	&trans  &lt SYM K_CANCEL
+			&kp TAB		&kp N7  &kp N8  &kp N9	&kp COLON  	   		&trans  &trans  &trans     &trans   &trans
+			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM				&trans  &trans  &trans     &trans   &trans
+			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT				&trans  &trans  &kp COMMA  &kp DOT  &kp COLON
+		                        	&lt NAV N0	&lt SYM K_CANCEL	&trans  &lt SYM K_CANCEL
 			>;
 		};
 		
