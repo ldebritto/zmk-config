@@ -102,7 +102,7 @@
 			layers = <FUN>;
 		};
 		
-		sys_toggle_home_row_mods_on_off {
+		sys_toggle_home_row_mods {
 			key-positions = <14 15>;
 			bindings = <&tog 1>;
 			layers = <FUN>;
@@ -250,9 +250,9 @@
 		
 		symbols {
 			bindings = <
-			&kp ESC    &mt RBRC LBRC	&mt RBKT LBKT	&mt RPAR LPAR   &kp PIPE		&kp LA(N6)	&kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
-			&kp AT	   &kp CARET		&kp GRAVE  		&kp TILDE  		&kp DOLLAR		&kp HASH  	&sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-			&kp PLUS   &kp ASTRK		&kp MINUS  		&kp FSLH   		&kp EQUAL		&kp PRCNT	&kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
+			&kp ESC    &mt RBRC LBRC	&mt RBKT LBKT	&mt RPAR LPAR   &kp PIPE		&kp LA(N6)	&kp AMPS	&kp DQT		&kp LA(9)	&kp  LA(0)
+			&kp AT	   &kp CARET		&kp GRAVE  		&kp TILDE  		&kp DOLLAR		&kp HASH  	&sk RGUI	&sk LSHFT	&sk RALT	&sk RCTRL
+			&kp PLUS   &kp MINUS		&kp ASTRK  		&kp FSLH   		&kp EQUAL		&kp PRCNT	&kp BSLH	&kp QMARK	&kp EXCL	&mr GLOBE COLON
 			                            	     		&trans 		    &lt RSHFT UNDER	&trans    	&trans
 			>;
 		};
