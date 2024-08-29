@@ -172,7 +172,9 @@
             compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
- // For Windows alt-tab, need to switch to &kt LALT
+
+            // For Windows alt-tab, need to switch to &kt LALT
+
             ignored-key-positions = <7 9 16 17 18 19 29>;// Arrows and BSPC, ENTER and DEL
         };
     };
@@ -202,7 +204,8 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&tog MOU &kp LG(LS(SPACE))>;
- // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
+
+            // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
         };
     };
 
@@ -256,10 +259,10 @@
 
         symbols {
             bindings = <
-  &kp ESC   &mt RBRC LBRC  &mt RBKT LBKT  &mt LEFT_PARENTHESIS LPAR  &kp PIPE           &kp LA(N6)  &kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
-  &kp AT    &kp CARET      &kp GRAVE      &kp TILDE                  &kp DOLLAR         &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp PLUS  &kp ASTRK      &kp MINUS      &kp FSLH                   &kp EQUAL          &kp PRCNT   &kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
-                                          &trans                     &lt RSHFT UNDER    &trans      &trans
+  &kp ESC   &mt RBRC LBRC  &mt RBKT LBKT  &mt RPAR LPAR  &kp PIPE           &kp LA(N6)  &kp RPAR  &kp RBKT   &kp RBRC  &kp AMPS
+  &kp AT    &kp CARET      &kp GRAVE      &kp TILDE      &kp DOLLAR         &kp HASH    &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp PLUS  &kp ASTRK      &kp MINUS      &kp FSLH       &kp EQUAL          &kp PRCNT   &kp BSLH  &kp QMARK  &kp EXCL  &mr GLOBE COLON
+                                          &trans         &lt RSHFT UNDER    &trans      &trans
             >;
         };
 
