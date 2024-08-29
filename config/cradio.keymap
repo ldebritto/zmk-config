@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include "mouse.dtsi"
 
-#define DEF 0
-#define HRM 1 // Ever undecided if I should use them or not, so I've left it as an alternative defalult layer
+#define HRM 0 // Ever undecided if I should use home row mods or not, so I've have two default layers
+#define DEF 1
 #define NUM 2
 #define NAV 3
 #define SYM 4
@@ -64,30 +64,7 @@
 			require-prior-idle-ms = <200>;
 			layers = <DEF HRM NUM>;
 		};
-			 		
-		numpad_left_hand_punctuation_colon {
-			key-positions = <14 24>;
-			timeout-ms = <35>;
-			bindings = <&kp COLON>;
-			require-prior-idle-ms = <200>;
-			layers = <NUM>;
-		};
-		
-		numpad_left_hand_punctuation_comma {
-			key-positions = <12 22>;
-			timeout-ms = <35>;
-			bindings = <&kp COMMA>;
-			require-prior-idle-ms = <200>;
-			layers = <NUM>;
-		};
-		
-		numpad_left_hand_punctuation_dot {
-			key-positions = <13 23>;
-			bindings = <&kp DOT>;
-			require-prior-idle-ms = <200>;
-			layers = <NUM>;
-		};
-		
+
 		media_mute_combo {
 			key-positions = <27 28>;
 			timeout-ms = <35>;
@@ -125,9 +102,9 @@
 			layers = <FUN>;
 		};
 		
-		sys_toggle_home_row_mods {
+		sys_toggle_home_row_mods_on_off {
 			key-positions = <14 15>;
-			bindings = <&tog HRM>;
+			bindings = <&tog 1>;
 			layers = <FUN>;
 		};
 	};
@@ -145,7 +122,7 @@
 			hold-trigger-on-release;
 		};
 		
-		mr: home-row-mods-right {
+		mr: home-row-mods-right { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
 			compatible = "zmk,behavior-hold-tap";
 			bindings = <&kp>, <&kp>;
 			#binding-cells = <2>;
@@ -185,10 +162,10 @@
             mods = <(MOD_LCTL)>;
         };
 
-		swapper: swapper_for_cmd_tab {
+		aswapper: swapper_for_apple_cmd_tab {
 			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
 			#binding-cells = <0>;
-			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
+			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // For Windows alt-tab, need to switch to &kt LALT
 			ignored-key-positions = <7 9 16 17 18 19 29>;// Arrows and BSPC, ENTER and DEL
 		};
 		
@@ -234,16 +211,7 @@
 	
 	keymap {
 		compatible = "zmk,keymap";
-		
-		default_without_home_row_mods {
-			bindings = <
-			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
-			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
-			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
-                                       &lc NAV  &shft_cw    &kp SPACE  &lc SYM
-			>;
-		};
-		
+
 		default_with_home_row_mods {
 			bindings = <
 			&kp Q 		 &kp W       &kp E			&kp R       &kp T           			&kp Y        			&kp U       &kp I       &kp O       &kp P
@@ -253,6 +221,15 @@
 			>;
 		};
 
+		default_without_home_row_mods {
+			bindings = <
+			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
+			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
+			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &kp SEMI
+                                       &lc NAV  &shft_cw    &kp SPACE  &lc SYM
+			>;
+		};
+		
 		numpad {
 			bindings = <
 			&kp TAB		&kp N7  &kp N8  &kp N9	&kp COLON  	   		&trans  &trans  &trans     &trans   &trans
@@ -264,7 +241,7 @@
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
+			&kp TAB			&aswapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
 			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
 														&trans		&trans			&trans		&trans
