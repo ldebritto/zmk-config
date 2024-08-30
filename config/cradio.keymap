@@ -36,12 +36,6 @@
 			key-positions = <4 14>;
 			require-prior-idle-ms = <200>;
 		};
-		
-		spotlight {
-			key-positions = <31 32>;
-			bindings = <&kp LG(SPACE)>;
-			layers = <DEF>;
-		};
 
 		toggle_nav_layer {
 			key-positions = <30 31>;
@@ -134,7 +128,7 @@
             mods = <(MOD_LCTL)>;
         };
 
-		aswapper: swapper_for_apple_cmd_tab {
+		swapper: swapper_for_apple_cmd_tab {
 			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
 			#binding-cells = <0>;
 			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // For Windows alt-tab, need to switch to &kt LALT
@@ -184,7 +178,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_without_home_row_mods {
+		default {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
@@ -195,16 +189,16 @@
 		
 		numpad {
 			bindings = <
-			&kp TAB		&kp N7  &kp N8  &kp N9		&kp COLON	&trans  &trans	&trans     &trans   &trans
-			&kp N0		&kp N4  &kp N5  &kp N6		&sl SYM		&trans  &trans	&trans     &trans   &trans
-			&kp COMMA	&kp N1  &kp N2  &kp N3		&kp DOT		&trans  &trans	&kp COMMA  &kp DOT  &kp COLON
-										&lt NAV N0	&tog NUM	&trans	&trans
+			&tog NUM	&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans     &trans   &trans
+			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans     &trans   &trans
+			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&kp COMMA  &kp DOT  &kp COLON
+										&trans	&tog NUM	&trans	&trans
 			>;
 		};
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&aswapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
 			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
 														&trans		&tog NAV		&trans		&trans
