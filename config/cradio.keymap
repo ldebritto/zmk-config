@@ -45,25 +45,25 @@
 		spotlight {
 			key-positions = <31 32>;
 			bindings = <&kp LG(SPACE)>;
-			layers = <DEF HRM>;
+			layers = <DEF>;
 		};
 
 		toggle_nav_layer {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
-			layers = <DEF HRM NAV NUM>;
+			layers = <DEF NAV NUM>;
 		};
 		
 		toggle_mouse_layer {
 			key-positions = <21 22 23>;
 			bindings = <&tog MOU>;
-			layers = <DEF HRM NAV NUM MOU>;
+			layers = <DEF NAV NUM MOU>;
 		};
 		
 		toggle_numpad_layer {
 			key-positions = <1 2 3>;
 			bindings = <&tog NUM>;
-			layers = <DEF HRM NUM>;
+			layers = <DEF NUM>;
 		};
 
 		media_mute_combo {
