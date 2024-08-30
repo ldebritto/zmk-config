@@ -109,7 +109,7 @@
 		shft_cw: shft_caps_word {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			bindings = <&sk RSHFT>, <&caps_word>;
+			bindings = <&kp RSHFT>, <&caps_word>;
 			tapping-term-ms = <300>;
 		};
 		
