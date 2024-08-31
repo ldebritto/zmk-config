@@ -21,6 +21,8 @@
 	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
 };
 
+&mt { flavor = "tap-preferred"; };
+
 / {
 	combos {
 		compatible = "zmk,combos";
