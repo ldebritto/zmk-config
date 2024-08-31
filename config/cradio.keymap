@@ -3,13 +3,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include "mouse.dtsi"
 
-#define HRM 0 // Ever undecided if I should use home row mods or not, so I've have two default layers
-#define DEF 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
+#define DEF 0
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
