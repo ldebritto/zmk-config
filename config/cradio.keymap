@@ -1,19 +1,25 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "mouse.dtsi" // based on urob's settings for mouse movements/acceleration
+#include "mouse.dtsi"
 
-#define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5
+#define HRM 0 // Ever undecided if I should use home row mods or not, so I've have two default layers
+#define DEF 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define MOU 6
 
-// Overrides
-&sk { quick-release; };
-&mt { flavor = "balanced"; };
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; };
+&sk {
+	quick-release;// Avoids "THis" problem (double capitalization)
+	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
+};
+
+&caps_word { // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
+	/delete-property/ ignore-modifiers; // Requires PR#1451 (https://github.com/zmkfirmware/zmk/pull/1451) - currently unmantained but still working
+	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
+};
 
 / {
 	combos {
@@ -36,8 +42,8 @@
 			key-positions = <4 14>;
 			require-prior-idle-ms = <200>;
 		};
-
-		toggle_nav_layer {
+		
+		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
 			layers = <DEF NAV NUM>;
