@@ -68,7 +68,7 @@
 		};
 
 		numword {
-			key-positions = <22 30>;
+			key-positions = <12 30>;
 			bindings = <&num_word NUM>;
 			layers = <DEF NUM>;
 		};
