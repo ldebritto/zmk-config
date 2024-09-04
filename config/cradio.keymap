@@ -1,15 +1,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors/num_word.dtsi>
 #include "mouse.dtsi"
 
-#define HRM 0
-#define DEF 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
+#define DEF 0
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
@@ -60,6 +60,12 @@
 		toggle_numpad_layer {
 			key-positions = <1 2 3>;
 			bindings = <&tog NUM>;
+			layers = <DEF NUM>;
+		};
+
+		numword {
+			key-positions = <22 30>;
+			bindings = <&num_word>;
 			layers = <DEF NUM>;
 		};
 
@@ -210,16 +216,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_with_home_row_mods {
-			bindings = <
-			&kp Q 		 &kp W       &kp E			&kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
-			&ml LCTRL A  &ml LALT S  &ml RSHFT D	&ml LGUI F  &kp G		&mr H		&mr RGUI J	&mr RSHFT K &mr RALT L  &mr RCTRL SQT
-			&ml GLOBE Z  &kp X       &kp C			&kp V		&kp B		&kp N       &kp M		&kp COMMA	&kp DOT     &kp SEMI
-													&lc NAV     &shft_cw	&kp SPACE   &lc SYM
-			>;
-		};
-
-		default_without_home_row_mods {
+		default {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
