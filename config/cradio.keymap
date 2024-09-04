@@ -250,9 +250,9 @@
 		
 		numpad {
 			bindings = <
-			&tog NUM	&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans     &trans   &trans
-			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans     &trans   &trans
-			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&kp COMMA  &kp DOT  &kp COLON
+			&kp FSLH	&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans	&trans	&trans
+			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans	&trans	&trans
+			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&trans	&trans	&trans
 										&trans	&tog NUM	&trans	&trans
 			>;
 		};
@@ -262,7 +262,7 @@
 			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
 			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
-														&trans		&tog NAV		&trans		&trans
+														&trans		&trans			&trans		&trans
 			>;
 		};
 		
@@ -288,8 +288,8 @@
 			bindings = <
 			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&mkp MB3		&m2hr			 &kp LC(LEFT)	&kp LC(RIGHT)	&kp DEL
-														&kp SPACE	&tog MOU	&mkp MB1        &mkp MB2
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&kp LC(LEFT)	&m2hr			 &mkp MB3		&kp LC(RIGHT)	&kp DEL
+														&tog MOU	&kp SPACE	&mkp MB1        &mkp MB2
 			>;
 		};
 
