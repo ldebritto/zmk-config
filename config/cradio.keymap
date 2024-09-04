@@ -23,7 +23,7 @@
 };
 
 &num_word {
-  continue-list = <BSPC DEL DOT COMMA FSLH COLON MINUS PLUS ASTRK>;  // do not continue on PLUS, MINUS, STAR, FSLH, EQUAL
+  continue-list = <BSPC DEL DOT COMMA FSLH COLON MINUS PLUS ASTRK>;
 };
 
 &mt { flavor = "tap-preferred"; };
