@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include "mouse.dtsi"
 
-#define DEF 0
-#define HRM 1
+#define HRM 0
+#define DEF 1
 #define NUM 2
 #define NAV 3
 #define SYM 4
