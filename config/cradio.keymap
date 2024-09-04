@@ -232,8 +232,8 @@
 
 		default_with_home_row_mods {
 			bindings = <
-			&kp A        &kp S  	&kp D  		&kp F    	&kp G       &kp H      &kp J    	&kp K      	&kp L    	&kp SQT
-			&ml LCTRL Q  &ml LALT W	&ml LSHFT E	&ml LGUI R	&kp T       &kp Y      &mr RGUI U	&mr RSHFT I	&mr RALT O	&mr RCTRL P
+			&kp Q        &kp W  	&kp E  		&kp R    	&kp T       &kp Y      &kp U    	&kp I      	&kp O    	&kp P
+			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	&kp G       &kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
 			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	&kp B       &kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
                                     	   		&lc NAV  	&shft_cw    &kp SPACE  &lc SYM
 			>;
