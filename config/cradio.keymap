@@ -193,7 +193,7 @@
 			#binding-cells = <0>;
 			bindings = <&tog MOU>, <&none>, <&tog MOU>;
 			ignored-key-positions = <1 7 9 16 17 18 19 29 32 33>;// Arrows and BSPC, ENTER, DEL, right thumbs and expose key
-			ignored-layers = <MOUSE>;
+			ignored-layers = <MOU>;
 		};
 
 		ml: home-row-mods-left { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
