@@ -11,6 +11,9 @@
 #define SYM 4
 #define FUN 5
 #define MOU 6
+#define AOE 7
+#define AGS 8
+#define ABS 9
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
@@ -73,6 +76,12 @@
 			bindings = <&num_word NUM>;
 			layers = <DEF HRM NUM>;
 		};
+
+		toggle_aoe_layers {
+            key-positions = <20 21 22>;
+            bindings = <&tog AOE>;
+			layers = <DEF HRM AOE>;
+        };
 
 		media_mute_combo {
 			key-positions = <27 28>;
@@ -283,5 +292,32 @@
 														&kp SPACE	&tog MOU	&mkp MB1        &mkp MB2
 			>;
 		};
+
+        aoe_default_layer {
+            bindings = <
+            &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
+            &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
+            &lt NAV Z    &kp X       &kp C        &kp V        &kp B		&trans  &trans  &trans  &trans  &trans
+                                                  &lt AGS H    &lt ABS DOT	&trans  &trans
+            >;
+        };
+
+        aoe_unit_and_group_selection {
+            bindings = <
+            &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
+            &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
+            &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H	&trans  &trans  &trans  &trans  &trans
+                                                     &trans        &kp DEL	&trans  &trans
+            >;
+        };
+
+        aoe_building_selection {
+            bindings = <
+            &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)	&trans  &trans  &trans  &trans  &trans
+            &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))	&trans  &trans  &trans  &trans  &trans
+            &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))	&trans  &trans  &trans  &trans  &trans
+                                                         &trans         &trans			&trans  &trans
+            >;
+        };
 	};
 };
