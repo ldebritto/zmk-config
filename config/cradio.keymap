@@ -5,11 +5,12 @@
 #include "mouse.dtsi"
 
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5
+#define HRM 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define MOU 6
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
@@ -52,25 +53,25 @@
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
-			layers = <DEF NAV NUM>;
+			layers = <DEF HRM NAV NUM>;
 		};
 		
 		toggle_mouse_layer {
 			key-positions = <21 22 23>;
 			bindings = <&tog MOU>;
-			layers = <DEF NAV NUM MOU>;
+			layers = <DEF HRM NAV NUM MOU>;
 		};
 		
 		toggle_numpad_layer {
 			key-positions = <1 2 3>;
 			bindings = <&tog NUM>;
-			layers = <DEF NUM>;
+			layers = <DEF HRM NUM>;
 		};
 
-		numword {
+		toggle_num_word {
 			key-positions = <22 30>;
-			bindings = <&num_word>;
-			layers = <DEF NUM>;
+			bindings = <&num_word NUM>;
+			layers = <DEF HRM NUM>;
 		};
 
 		media_mute_combo {
@@ -220,12 +221,21 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default {
+		default_callum_style mods {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
 			&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
                                        &lc NAV  &shft_cw    &kp SPACE  &lc SYM
+			>;
+		};
+
+		default_with_home_row_mods {
+			bindings = <
+			&kp A        &kp S  	&kp D  		&kp F    	&kp G       &kp H      &kp J    	&kp K      	&kp L    	&kp SQT
+			&ml LCTRL Q  &ml LALT W	&ml LSHFT E	&ml LGUI R	&kp T       &kp Y      &mr RGUI U	&mr RSHFT I	&mr RALT O	&mr RCTRL P
+			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	&kp B       &kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
+                                    	   		&lc NAV  	&shft_cw    &kp SPACE  &lc SYM
 			>;
 		};
 		
