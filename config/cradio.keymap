@@ -21,6 +21,10 @@
 	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
 };
 
+&num_word {
+  continue-list = <BSPC DEL DOT COMMA FSLH COLON MINUS PLUS ASTRK>;  // do not continue on PLUS, MINUS, STAR, FSLH, EQUAL
+};
+
 &mt { flavor = "tap-preferred"; };
 
 / {
