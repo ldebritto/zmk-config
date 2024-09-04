@@ -87,13 +87,6 @@
 			require-prior-idle-ms = <200>;
 		};
 
-		smart_mouse_toggle {
-			key-positions = <1 3>;
-			bindings = <&smart_mouse>;
-			layers = <DEF HRM NAV NUM MOU>;
-			require-prior-idle-ms = <200>;
-		};
-		
 		toggle_numpad_layer {
 			key-positions = <0 1 2>;
 			bindings = <&tog NUM>;
@@ -186,14 +179,6 @@
 			#binding-cells = <0>;
 			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // For Windows alt-tab, need to switch to &kt LALT
 			ignored-key-positions = <7 9 16 17 18 19 29>;// Arrows and BSPC, ENTER and DEL
-		};
-
-		smart_mouse: smart_mouse_auto_layer {
-			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
-			#binding-cells = <0>;
-			bindings = <&tog MOU>, <&none>, <&tog MOU>;
-			ignored-key-positions = <1 7 9 16 17 18 19 29 32 33>;// Arrows and BSPC, ENTER, DEL, right thumbs and expose key
-			ignored-layers = <MOU>;
 		};
 
 		ml: home-row-mods-left { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
