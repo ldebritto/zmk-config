@@ -258,10 +258,10 @@
 
 		default_with_home_row_mods {
 			bindings = <
-			&kp Q        &kp W  	&kp E  		&kp R    	&kp T       &kp Y      &kp U    	&kp I      	&kp O    	&kp P
-			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	&kp G       &kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
-			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	&kp B       &kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
-                                    	   		&lc NNV  	&shft_cw    &kp SPACE  &lc SYM
+			&kp Q        &kp W  	&kp E  		&kp R    		&kp T       &kp Y      &kp U    	&kp I      	&kp O    	&kp P
+			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F		&kp G       &kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
+			&ml GLOBE Z  &kp X  	&kp C  		&kp V    		&kp B       &kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
+                                    	   		&lt NNV ESC  	&shft_cw    &kp SPACE  &lt SYM BSPC
 			>;
 		};
 
@@ -349,7 +349,7 @@
 		num_nav_mod_tapping {
 			bindings = <
 			&kp FSLH	&kp N7  &kp N8  &kp N9	&kp COLON	&kp PG_UP	&kp HOME	&kp UP	&kp END	&kp BSPC
-			HRML (kp N0	kp N4,	kp N5,	&kp N6)	&sl SYM		&kp PG_DN	HRMR(LEFT,	DOWN,	RIGHT,	RET)
+			HRML (N0,	N4,		N5,		N6)		&sl SYM		&kp PG_DN	HRMR(LEFT,	DOWN,	RIGHT,	RET)
 			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&kp ESC		&playnp		&vb_dn	&vb_up	&kp DEL
 										&trans	&trans		&trans		&trans
 			>;
@@ -358,7 +358,7 @@
 		full_sym_mod_tapping {
 			bindings = <
 			&kp ESC		&kp AT		&kp LA(N9)	&kp LA(N0)	&kp PIPE		&kp AMPS	&kp RPAR	&kp RBKT	&kp RBRC 	&kp DQT
-			&kp MINUS	&kp CARET	&kp GRAVE	&kp TILDE	&kp DOLLAR		&kp HASH   	HRMR(LPAR, 	LBKT,		LBRC,		LA(N6))
+			HRML(MINUS,	CARET,		GRAVE,		TILDE)		&kp DOLLAR		&kp HASH   	HRMR(LPAR, 	LBKT,		LBRC,		LA(N6))
 			&kp PLUS	&kp EQUAL	&kp ASTRK	&kp FSLH   	&kp PRCNT		&kp UNDER	&kp BSLH	&kp QMARK	&kp EXCL	&kp COLON
 			                            	 	&trans		&lt RSHFT UNDER	&trans	 	&trans
 			>;
