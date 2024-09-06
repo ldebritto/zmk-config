@@ -29,7 +29,7 @@
   continue-list = <BSPC DEL DOT COMMA FSLH COLON MINUS PLUS ASTRK>;  // do not continue on PLUS, MINUS, STAR, FSLH, EQUAL
 };
 
-&mt { flavor = "tap-preferred"; };
+&mt { flavor = "hold-preferred"; };
 
 / {
 	combos {
@@ -247,10 +247,10 @@
 
 		default_with_home_row_mods {
 			bindings = <
-			&kp Q        &kp W  	&kp E  		&kp R    	&kp T       &kp Y      &kp U    	&kp I      	&kp O    	&kp P
-			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	&kp G       &kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
-			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	&kp B       &kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
-                                    	   		&lc NAV  	&shft_cw    &kp SPACE  &lc SYM
+			&kp Q        &kp W  	&kp E  		&kp R    	&kp T       	&kp Y      &kp U    	&kp I      	&kp O    	&kp P
+			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	&kp G       	&kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
+			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	&kp B       	&kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
+                                    	   		&lc NAV  	&mt RSHFT ENTER	&kp SPACE  &lc SYM
 			>;
 		};
 
@@ -258,7 +258,7 @@
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
-			&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
+			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mr GLOBE SEMI
                                        &lc NAV  &shft_cw    &kp SPACE  &lc SYM
 			>;
 		};
@@ -276,7 +276,7 @@
 			bindings = <
 			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
+			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
 														&trans		&trans			&trans		&trans
 			>;
 		};
@@ -303,7 +303,7 @@
 			bindings = <
 			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
 			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&kp LC(LEFT)	&m2hr			 &mkp MB3		&kp LC(RIGHT)	&kp DEL
+			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&kp LC(LEFT)	&m2hr			 &mkp MB3		&kp LC(RIGHT)	&kp DEL
 														&tog MOU	&kp SPACE	&mkp MB1        &mkp MB2
 			>;
 		};
@@ -311,7 +311,7 @@
         aoe_default_layer {
             bindings = <
             &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
-            &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
+            &mr LCTRL A  &mr LALT S  &mr LSHFT D  &mr LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
             &lt NAV Z    &kp X       &kp C        &kp V        &kp B		&trans  &trans  &trans  &trans  &trans
                                                   &lt AGS H    &lt ABS DOT	&trans  &trans
             >;
@@ -320,7 +320,7 @@
         aoe_unit_and_group_selection {
             bindings = <
             &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
-            &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
+            &mr LCTRL N6  &mr LALT N7  &mr LSHFT N8  &mr LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
             &kp COMMA     &kp BSPC     &kp SPACE     &kp ENTER     &kp H	&trans  &trans  &trans  &trans  &trans
                                                      &trans        &kp DEL	&trans  &trans
             >;
