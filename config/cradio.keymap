@@ -228,7 +228,7 @@
 			wait-ms = <35>;
 			tap-ms = <20>;
 			#binding-cells = <0>;
-			bindings = <&macro_tap>, <&kp ENTER &kp g &kp o &kp o &kp d &kp SPACE &kp l &kp u &kp c &kp k &kp COMMA &kp SPACE &kp h &kp a &kp v &kp e fun &kp ENTER >;
+			bindings = <&macro_tap>, <&kp ENTER &kp G &kp O &kp O &kp D &kp SPACE &kp L &kp U &kp C &kp K &kp COMMA &kp SPACE &kp H &kp A &kp V &kp E &kp SPACE &kp F &kp U &kp N &kp EXCL &kp ENTER>;
 		};
 		
 	};
