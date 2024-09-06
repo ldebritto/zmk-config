@@ -192,6 +192,14 @@
 			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
 			hold-trigger-on-release;
 		};
+
+		ltc: layer_tap_with_lc { 
+			compatible = "zmk,behavior-hold-tap";
+			bindings = <&lc>, <&kp>;
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;
+			flavor = "hold-preferred";
+		};
 		
 	};
 	
@@ -247,10 +255,10 @@
 
 		default_with_home_row_mods {
 			bindings = <
-			&kp Q        &kp W  	&kp E  		&kp R    	&kp T       	&kp Y      &kp U    	&kp I      	&kp O    	&kp P
-			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	&kp G       	&kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
-			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	&kp B       	&kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
-                                    	   		&lc NAV  	&mt RSHFT ENTER	&kp SPACE  &lc SYM
+			&kp Q        &kp W  	&kp E  		&kp R    	    &kp T       	&kp Y      &kp U    	&kp I      	&kp O    	&kp P
+			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	    &kp G       	&kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
+			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	    &kp B       	&kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
+                                    	   		&ltc NAV BSPC  	&mt RSHFT ENTER	&kp SPACE  &lct SYM TAB
 			>;
 		};
 
