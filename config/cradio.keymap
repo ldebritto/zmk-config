@@ -57,14 +57,14 @@
 			bindings = <&kp LG(SPACE)>;
 			key-positions = <16 17>;
 			require-prior-idle-ms = <200>;
-			layers = <DEF HRM>;
+			layers = <DEF>;
 		};
 
 		homerow_app {
 			bindings = <&m2hr>;
 			key-positions = <16 17 18>;
 			require-prior-idle-ms = <200>;
-			layers = <DEF HRM NAV MOU>;
+			layers = <DEF NAV MOU>;
 		};
 		
 		toggle_nav_layer_combo {
