@@ -59,6 +59,13 @@
 			require-prior-idle-ms = <200>;
 			layers = <DEF HRM>;
 		};
+
+		homerow_app {
+			bindings = <&m2hr>;
+			key-positions = <16 17 18>;
+			require-prior-idle-ms = <200>;
+			layers = <DEF HRM NAV MOU>;
+		};
 		
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
@@ -234,7 +241,7 @@
 			wait-ms = <0>;
 			tap-ms = <0>;
 			#binding-cells = <0>;
-			bindings = <&macro_tap>, <&tog MOU &kp LG(LS(SPACE))>; // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
+			bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>; // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
 		};
 		
 		glhf: good_luck_have_fun {
