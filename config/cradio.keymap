@@ -4,8 +4,8 @@
 #include <behaviors/num_word.dtsi>
 #include "mouse.dtsi"
 
-#define HRM 0
-#define DEF 1
+#define DEF 0
+#define HRM 1
 #define NUM 2
 #define NAV 3
 #define SYM 4
@@ -161,6 +161,13 @@
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
             mods = <(MOD_LCTL)>;
         };
+        
+		tabber: tab_with_swapper_mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&swapper>;
+            mods = <(MOD_LGUI)>;
+        };
 
 		swapper: swapper_for_apple_cmd_tab {
 			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
@@ -283,7 +290,7 @@
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&kp HOME	&kp UP		&kp END		&kp LS(LG(SPACE))
+			&tabber			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&kp HOME	&kp UP		&kp END		&kp LS(LG(SPACE))
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN		&kp LEFT	&kp DOWN	&kp RIGHT	&kp DEL 
 			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&kp LA(BSPC)	&kp BSPC	&vb_dn  	&vb_up		&playnp
 														&trans		&trans			&kp RET			&trans
