@@ -107,7 +107,7 @@
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			tapping-term-ms = <300>;
-			bindings = <&mt MUTE C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
+			bindings = <&mt C_MUTE C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
 		};
 		
 		vb_up: volume_brightness_up_on_control {
