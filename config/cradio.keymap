@@ -53,6 +53,13 @@
 			require-prior-idle-ms = <200>;
 		};
 		
+		spotlight {
+			bindings = <&kp LG(SPACE)>;
+			key-positions = <16 17>;
+			require-prior-idle-ms = <200>;
+			layers = <DEF HRM>;
+		};
+		
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
