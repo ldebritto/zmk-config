@@ -47,13 +47,13 @@
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
-			layers = <DEF HRM NAV NUM>;
+			layers = <DEF NAV>;
 		};
 	
 		toggle_aoe_layers {
             key-positions = <20 21 22>;
             bindings = <&tog AOE>;
-			layers = <DEF HRM AOE>;
+			layers = <DEF AOE>;
         };
 
 		media_mute_combo {
