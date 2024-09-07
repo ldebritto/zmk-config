@@ -253,16 +253,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_with_home_row_mods {
-			bindings = <
-			&kp Q        &kp W  	&kp E  		&kp R    	    &kp T       	&kp Y      &kp U    	&kp I      	&kp O    	&kp P
-			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	    &kp G       	&kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
-			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	    &kp B       	&kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
-                                    	   		&ltc NAV BSPC  	&mt RSHFT ENTER	&kp SPACE  &ltc SYM TAB
-			>;
-		};
-
-		default_callum_style_mods {
+		default_callum_style_sticky_home_row_mods {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
@@ -271,6 +262,16 @@
 			>;
 		};
 		
+		default_with_traditional_home_row_mods {
+			bindings = <
+			&kp Q        &kp W  	&kp E  		&kp R    	    &kp T       	&kp Y      &kp U    	&kp I      	&kp O    	&kp P
+			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	    &kp G       	&kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
+			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	    &kp B       	&kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
+												&lc NAV			&shft_cw    	&kp SPACE  &lc SYM
+
+			>;
+		};
+
 		numpad {
 			bindings = <
 			&kp FSLH	&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans	&trans	&trans
@@ -282,10 +283,10 @@
 		
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME			&kp UP		&kp END		&kp BSPC
-			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT			&kp DOWN	&kp RIGHT	&kp RET
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LS(LG(SPACE))	&vb_dn  	&vb_up		&kp DEL
-														&trans		&trans			&trans		&trans
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&kp HOME	&kp UP		&kp END		&kp LS(LG(SPACE))
+			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN		&kp LEFT	&kp DOWN	&kp RIGHT	&kp DEL 
+			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&kp LA(BSPC)	&kp BSPC	&vb_dn  	&vb_up		&playnp
+														&trans		&trans			&kp RET			&trans
 			>;
 		};
 		
