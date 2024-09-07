@@ -1,19 +1,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <behaviors/num_word.dtsi>
-#include "mouse.dtsi"
 
 #define DEF 0
-#define HRM 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
-#define AOE 7
-#define AGS 8
-#define ABS 9
+#define NAV 1
+#define SYM 2
+#define FUN 3
+#define AOE 4 // layers for playing Age of Empires II Definitive Edition
+#define AGS 5
+#define ABS 6
 
 &sk {
 	quick-release;// Avoids "THis" problem (double capitalization)
@@ -25,11 +20,7 @@
 	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
 };
 
-&num_word {
-  continue-list = <BSPC DEL DOT COMMA FSLH COLON MINUS PLUS ASTRK>;  // do not continue on PLUS, MINUS, STAR, FSLH, EQUAL
-};
-
-&mt { flavor = "hold-preferred"; };
+&mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
 
 / {
 	combos {
@@ -53,44 +44,12 @@
 			require-prior-idle-ms = <200>;
 		};
 		
-		spotlight {
-			bindings = <&kp LG(SPACE)>;
-			key-positions = <16 17>;
-			require-prior-idle-ms = <200>;
-			layers = <DEF>;
-		};
-
-		homerow_app {
-			bindings = <&m2hr>;
-			key-positions = <16 17 18>;
-			require-prior-idle-ms = <200>;
-			layers = <DEF NAV MOU>;
-		};
-		
 		toggle_nav_layer_combo {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
 			layers = <DEF HRM NAV NUM>;
 		};
-		
-		toggle_mouse_layer {
-			key-positions = <21 22 23>;
-			bindings = <&tog MOU>;
-			layers = <DEF HRM NAV NUM MOU>;
-		};
-		
-		toggle_numpad_layer {
-			key-positions = <1 2 3>;
-			bindings = <&tog NUM>;
-			layers = <DEF HRM NUM>;
-		};
-
-		toggle_num_word {
-			key-positions = <12 30>;
-			bindings = <&num_word NUM>;
-			layers = <DEF HRM NUM>;
-		};
-
+	
 		toggle_aoe_layers {
             key-positions = <20 21 22>;
             bindings = <&tog AOE>;
@@ -133,17 +92,6 @@
 			layers = <FUN>;
 		};
 		
-		sys_toggle_home_row_mods {
-			key-positions = <14 15>;
-			bindings = <&tog 1>;
-			layers = <FUN>;
-		};
-		
-		aoe_glhf {
-			key-positions = <1 2 3>;
-			bindings = <&glhf>;
-			layers = <AOE>;
-		};
 	};
 	
 	behaviors {
@@ -159,7 +107,7 @@
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			tapping-term-ms = <300>;
-			bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
+			bindings = <&mt MUTE C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
 		};
 		
 		vb_up: volume_brightness_up_on_control {
@@ -179,42 +127,10 @@
 		swapper: swapper_for_apple_cmd_tab {
 			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
 			#binding-cells = <0>;
-			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // For Windows alt-tab, need to switch to &kt LALT
-			ignored-key-positions = <7 9 16 17 18 19 26 29 32>;// Arrows and BSPC, ENTER and DEL
+			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // For Windows alt-tab, need to replace RGUI for LALT
+			ignored-key-positions = <7 16 17 18 9 19 29>;// Arrows and BSPC, ENTER and DEL
 		};
 
-		ml: home-row-mods-left { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&kp>, <&kp>;
-			#binding-cells = <2>;
-			tapping-term-ms = <280>;
-			quick-tap-ms = <200>;
-			require-prior-idle-ms = <175>;
-			flavor = "balanced";
-			hold-trigger-key-positions = <30 31 32 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
-			hold-trigger-on-release;
-		};
-		
-		mr: home-row-mods-right { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&kp>, <&kp>;
-			#binding-cells = <2>;
-			tapping-term-ms = <280>;
-			quick-tap-ms = <200>;
-			require-prior-idle-ms = <175>;
-			flavor = "balanced";
-			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
-			hold-trigger-on-release;
-		};
-
-		ltc: layer_tap_with_lc { 
-			compatible = "zmk,behavior-hold-tap";
-			bindings = <&lc>, <&kp>;
-			#binding-cells = <2>;
-			tapping-term-ms = <200>;
-			flavor = "hold-preferred";
-		};
-		
 	};
 	
 	macros {
@@ -234,25 +150,7 @@
 			<&macro_release>,
 			<&mo MACRO_PLACEHOLDER>;
 		};
-
-		m2hr: from_mouse_layer_to_def_with_homerow_app_activation {
-			compatible = "zmk,behavior-macro";
-			label = "from mouse to homerow";
-			wait-ms = <0>;
-			tap-ms = <0>;
-			#binding-cells = <0>;
-			bindings = <&macro_tap>, <&to DEF &kp LG(LS(SPACE))>; // default shortcut for homerow hints (https://www.homerow.app) for faster clicking without a mouse
-		};
-		
-		glhf: good_luck_have_fun {
-			compatible = "zmk,behavior-macro";
-			label = "Comraderie in AOE";
-			wait-ms = <35>;
-			tap-ms = <20>;
-			#binding-cells = <0>;
-			bindings = <&macro_tap>, <&kp ENTER &kp G &kp O &kp O &kp D &kp SPACE &kp L &kp U &kp C &kp K &kp COMMA &kp SPACE &kp H &kp A &kp V &kp E &kp SPACE &kp F &kp U &kp N &kp EXCL &kp ENTER>;
-		};
-		
+	
 	};
 	
 	conditional_layers {
@@ -267,40 +165,21 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_callum_style_sticky_home_row_mods {
+		default {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
-			&ml GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mr GLOBE SEMI
+			&mt GLOBE Z  &kp X  &kp C  &kp V    &kp B       &kp N      &kp M    &kp COMMA  &kp DOT  &mt GLOBE SEMI
                                        &lc NAV  &shft_cw    &kp SPACE  &lc SYM
 			>;
 		};
-		
-		default_with_traditional_home_row_mods {
-			bindings = <
-			&kp Q        &kp W  	&kp E  		&kp R    	    &kp T       	&kp Y      &kp U    	&kp I      	&kp O    	&kp P
-			&ml LCTRL A  &ml LALT S	&ml LSHFT D	&ml LGUI F	    &kp G       	&kp H      &mr RGUI J	&mr RSHFT K	&mr RALT L	&mr RCTRL SQT
-			&ml GLOBE Z  &kp X  	&kp C  		&kp V    	    &kp B       	&kp N      &kp M    	&kp COMMA  	&kp DOT  	&mr GLOBE SEMI
-												&lc NAV			&shft_cw    	&kp SPACE  &lc SYM
 
-			>;
-		};
-
-		numpad {
-			bindings = <
-			&kp FSLH	&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans	&trans	&trans
-			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans	&trans	&trans
-			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&trans	&trans	&trans
-										&trans	&tog NUM	&trans	&trans
-			>;
-		};
-		
 		navigation_editing_and_media_controls {
 			bindings = <
 			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME	&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT	&kp DOWN	&kp RIGHT	&kp RET
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp BSPC	&vb_dn  	&vb_up		&kp DEL
-														&trans		&trans			&kp RET		&trans
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&kp ESC 	&vb_dn		&playnp	  	&vb_up		&kp DEL
+														&trans		&trans			&trans		&trans
 			>;
 		};
 		
@@ -321,20 +200,11 @@
 			                                &trans    &kp LG(LC(Q))	&kp CAPS  &trans
 			>;
 		};
-		
-		mouse_movement_and_editing_with_mouse {
-			bindings = <
-			&kp ESC			&kp LC(UP)	&kp LS(LC(TAB))	&kp LC(TAB)	&kp BSPC	&msc SCRL_DOWN  &msc SCRL_RIGHT  &mmv MOVE_UP	&msc SCRL_LEFT	&kp BSPC
-			&kp LCTRL		&kp LALT	&kp LSHFT		&kp LCMD	&kp ENTER	&msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN	&mmv MOVE_RIGHT	&kp ENTER
-			&ml GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18		&kp MB4			&kp LC(LEFT)	 &mkp MB3		&kp LC(RIGHT)	&kp DEL
-														&tog MOU	&kp SPACE	&mkp MB1        &mkp MB2
-			>;
-		};
 
         aoe_default_layer {
             bindings = <
             &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
-            &mr LCTRL A  &mr LALT S  &mr LSHFT D  &mr LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
+            &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
             &lt NAV Z    &kp X       &kp C        &kp V        &kp B		&trans  &trans  &trans  &trans  &trans
                                                   &lt AGS H    &lt ABS DOT	&trans  &trans
             >;
@@ -343,8 +213,8 @@
         aoe_unit_and_group_selection {
             bindings = <
             &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
-            &mr LCTRL N6  &mr LALT N7  &mr LSHFT N8  &mr LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
-            &kp COMMA     &kp BSPC     &kp SPACE     &kp ENTER     &kp H	&trans  &trans  &trans  &trans  &trans
+            &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
+            &kp COMMA     &kp BSPC     &kp SPACE     &kp ENTER     &kp H	&trans  &trans  &trans  &trans  &kp F3
                                                      &trans        &kp DEL	&trans  &trans
             >;
         };
