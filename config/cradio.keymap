@@ -180,7 +180,7 @@
 			compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
 			#binding-cells = <0>;
 			bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>; // For Windows alt-tab, need to switch to &kt LALT
-			ignored-key-positions = <7 16 17 18 19 26 32>;// Arrows and BSPC, ENTER and DEL
+			ignored-key-positions = <7 9 16 17 18 19 26 29 32>;// Arrows and BSPC, ENTER and DEL
 		};
 
 		ml: home-row-mods-left { // Using urob's settings which _almost_ eliminates false positives (SA being the most problematic to me).
