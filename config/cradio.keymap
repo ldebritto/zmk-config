@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors/num_word.dtsi>
 
 #define DEF 0
 #define NAV 1
@@ -15,7 +16,7 @@
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE LSHFT SQT CARET TILDE GRAVE>; }; // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
 
@@ -57,6 +58,12 @@
 			key-positions = <32 33>;
 			bindings = <&sl SYM>;
 			layers = <DEF>;
+		};
+
+		toggle_num_word {
+			key-positions = <12 30>;
+			bindings = <&num_word NUM>;
+			layers = <DEF HRM NUM>;
 		};
 	
 		toggle_aoe_layers {
@@ -168,6 +175,16 @@
                                        &lc NAV  &kp RSHFT	&kp SPACE  &lc SYM
 			>;
 		};
+
+		numpad {
+			bindings = <
+			&trans		&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans	&trans	&trans
+			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans	&trans	&trans
+			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&trans	&trans	&trans
+										&trans	&tog NUM	&trans	&trans
+			>;
+		};
+
 
 		navigation_editing_and_media_controls {
 			bindings = <
