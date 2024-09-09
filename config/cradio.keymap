@@ -4,12 +4,13 @@
 #include <behaviors/num_word.dtsi>
 
 #define DEF 0
-#define NAV 1
-#define SYM 2
-#define FUN 3
-#define AOE 4 // layers for playing Age of Empires II Definitive Edition
-#define AGS 5
-#define ABS 6
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define AOE 5 // layers for playing Age of Empires II Definitive Edition
+#define AGS 6
+#define ABS 7
 
 &sk {
 	quick-release; // Avoids "THis" problem (double capitalization)
