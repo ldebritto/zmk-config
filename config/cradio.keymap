@@ -41,6 +41,12 @@
 			require-prior-idle-ms = <200>;
 		};
 		
+		left_hand_delete {
+			bindings = <&kp DEL>;
+			key-positions = <14 24>;
+			require-prior-idle-ms = <200>;
+		};
+		
 		toggle_nav_layer {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
