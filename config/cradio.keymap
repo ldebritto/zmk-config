@@ -46,6 +46,12 @@
 			bindings = <&tog NAV>;
 			layers = <DEF NAV>;
 		};
+
+		sticky_sym_layer {
+			key-positions = <32 33>;
+			bindings = <&sl SYM>;
+			layers = <DEF>;
+		};
 	
 		toggle_aoe_layers {
             key-positions = <20 21 22>;
