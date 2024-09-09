@@ -56,12 +56,6 @@
 			layers = <DEF AOE>;
         };
 
-		media_mute_combo {
-			key-positions = <27 28>;
-			bindings = <&kp C_MUTE>;
-			layers = <NAV>;
-		};
-
 		sys_bootloader {
 			key-positions = <20 21>;
 			bindings = <&bootloader>;
@@ -176,9 +170,9 @@
 
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME	&kp UP		&kp END		&kp BSPC
-			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT	&kp DOWN	&kp RIGHT	&kp RET
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&kp ESC 	&vb_dn		&playnp	  	&vb_up		&kp DEL
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP	&kp HOME		&kp UP		&kp END		&kp BSPC
+			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN	&kp LEFT		&kp DOWN	&kp RIGHT	&kp RET
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp		&kp LG(SPACE)	&vb_dn	  	&vb_up		&kp DEL
 														&trans		&trans			&trans		&trans
 			>;
 		};
