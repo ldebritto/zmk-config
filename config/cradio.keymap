@@ -64,7 +64,7 @@
 		toggle_num_word {
 			key-positions = <12 30>;
 			bindings = <&num_word NUM>;
-			layers = <DEF HRM NUM>;
+			layers = <DEF NUM>;
 		};
 	
 		toggle_aoe_layers {
