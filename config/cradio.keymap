@@ -11,14 +11,11 @@
 #define ABS 6
 
 &sk {
-	quick-release;// Avoids "THis" problem (double capitalization)
+	quick-release; // Avoids "THis" problem (double capitalization)
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
-	/delete-property/ ignore-modifiers; // Requires PR#1451 (https://github.com/zmkfirmware/zmk/pull/1451) - currently unmantained but still working
-	continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>;
-};
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // separators + K_CANCEL for &lc macro + LSHFT for PT-BR diacriticals dead keys. This makes RSHFT a thumb key that will &caps_word.
 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
 
@@ -26,13 +23,13 @@
 	combos {
 		compatible = "zmk,combos";
 		
-		left_hand_esc_combo {
+		left_hand_esc {
 			bindings = <&kp ESCAPE>;
 			key-positions = <0 10>;
 			require-prior-idle-ms = <200>;
 		};
 				
-		left_hand_enter_combo {
+		left_hand_enter {
 			bindings = <&kp ENTER>;
 			key-positions = <3 13>;
 			require-prior-idle-ms = <200>;
@@ -44,7 +41,7 @@
 			require-prior-idle-ms = <200>;
 		};
 		
-		toggle_nav_layer_combo {
+		toggle_nav_layer {
 			key-positions = <30 31>;
 			bindings = <&tog NAV>;
 			layers = <DEF NAV>;
@@ -149,7 +146,6 @@
 	
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
-
 		tri_layer_for_function_and_number_row_keys {
 			if-layers = <NAV SYM>;
 			then-layer = <FUN>;
