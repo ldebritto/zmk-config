@@ -66,6 +66,12 @@
 			bindings = <&num_word NUM>;
 			layers = <DEF NUM>;
 		};
+		
+		toggle_caps_word {
+			key-positions = <31 32>;
+			bindings = <&caps_word>;
+			layers = <DEF>;
+		};
 	
 		toggle_aoe_layers {
             key-positions = <20 21 22>;
@@ -191,7 +197,7 @@
 			bindings = <
 			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&mt	HOME LA(LEFT) 	&kp UP		&mt END LA(RIGHT)	&kp BSPC
 			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN		&kp LEFT			&kp DOWN	&kp RIGHT			&kp RET
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&caps_word		&playnp				&vb_dn	  	&vb_up				&kp DEL
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp			&kp LG(SPACE)		&vb_dn	  	&vb_up				&kp DEL
 														&trans		&mt RSHFT SPACE	&mt RSHFT SPACE	&trans
 			>;
 		};
