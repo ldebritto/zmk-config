@@ -68,7 +68,7 @@
 		};
 		
 		toggle_caps_word {
-			key-positions = <31 32>;
+			key-positions = <12 17>; //DK
 			bindings = <&caps_word>;
 			layers = <DEF>;
 		};
@@ -191,7 +191,6 @@
 										&trans	&tog NUM	&trans	&trans
 			>;
 		};
-
 
 		navigation_editing_and_media_controls {
 			bindings = <
