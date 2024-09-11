@@ -184,7 +184,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default {
+		default_base_layer {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
@@ -229,7 +229,7 @@
 			>;
 		};
 
-        aoe_default_layer {
+        aoe_base_layer { // regular game controls with modifiers for clicking
             bindings = <
             &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
             &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
@@ -238,7 +238,7 @@
             >;
         };
 
-        aoe_unit_and_group_selection {
+        aoe_unit_and_group_selection { // numbers+mods for group selection and designation. Editing keys on the right for in game
             bindings = <
             &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
             &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
@@ -247,7 +247,7 @@
             >;
         };
 
-        aoe_building_selection {
+        aoe_building_selection { // select all buildings hotkeys to make it easier to queue up vills and tech research whitout moving screen to the corresponding building
             bindings = <
             &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)	&trans  &trans  &trans  &trans  &trans
             &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))	&trans  &trans  &trans  &trans  &trans

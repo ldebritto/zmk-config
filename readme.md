@@ -77,7 +77,7 @@ This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD
 
 ## 7. Gaming layers
 
-I play Age of Empires II Definitive Edition and made a series of 3 layers that go well with mouse usage on the right hand. They're certainly not needed, but really tucked away by a `ZXC` combo that only can be activated from within a leftmost thumb layer from either gaming (`AGS`) or regular (`NAV`) modes.
+I play Age of Empires II Definitive Edition and made a series of 3 layers (`AOE`, `AGS` and `ABS`) that go well with mouse usage on the right hand. They're certainly not needed, but really tucked away by a `ZXC` combo that only can be activated from within a leftmost thumb layer from either gaming (`AGS`) or default (`NAV`) modes.
 
 # Non-upstream ZMK implementation
 
