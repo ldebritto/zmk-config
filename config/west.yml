@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
   projects:
     - name: zmk
-      remote: upstream
-      revision: main
+      remote: urob
+      revision: going-modular
       import: app/west.yml
     - name: zmk-tri-state
       remote: urob
