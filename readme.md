@@ -1,10 +1,10 @@
 # Design principles
 
-This keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and was conceived with these principles in mind:
+This 34 key keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and was conceived with these principles in mind:
 
 01. **Every key should have one way to type it**
 02. **Avoid hold-taps for regular typing** to discourage holding keys and eliminate the chance of misfiring. 
-		- An *excecption* was made to accomodate `GLOBE` at the `Z` key position. This allows me to trigger my window manager of choice ([Swish](https://highlyopinionated.co/swish/)) on macOS and iPadOS shortcuts that require this key.
+	- An *excecption* was made to accomodate `GLOBE` at the `Z` key position. This allows me to trigger my window manager of choice on macOS ([Swish](https://highlyopinionated.co/swish/)) and to use iPadOS shortcuts that require this key.
     
 03. **Thumbs do all the regular layer changes**. `&numword`, toggling `NAV` for extended edits/mouse usage, and toggle of gaming layers are all made by combos.
 
@@ -13,10 +13,10 @@ This keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk
 05. **Combos** should be *convenience only* and always preceded by `require-prior-idle` to avoid misfiring.
 
 # My use case and layer design choices
+ 
+Its main use is writing prose in both English and Portuguese in both macOS and iPadOS. I use in on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano/). I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Amnbienz twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
 
-Its main use is writing prose in both English and Portuguese.
-
-## 1. QWERTY with changes on `'` `;` and `/` keys positions
+## 1. QWERTY with `'`, `;` and `/` keys positions swapped
 
 QWERTY was kept to retain muscle memory, with a few changes:
 
@@ -47,7 +47,7 @@ It was built with the [parametrized macros](https://zmk.dev/docs/behaviors/macro
 
 ## 4. Numpad for `&num_word`
 
-* Requires [auto-layer module](https://github.com/urob/zmk-auto-layer). 
+* Requires [auto-layer module](https://github.com/urob/zmk-auto-layer).
 
 `&numword` is accessible as a combo through `D` and `&lc NAV` (leftmost thumb).
 
@@ -75,8 +75,6 @@ Combos where added to make it possible to use the keyboard one handed.
 
 This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD` between `TAB` keypresses for as long as you keep the `&lc NAV` key held.
 
-## 7. Apple's `Globe` key on mod-tap `Z` and `;` keys
+# Non-upstream ZMK implementation
 
-ZMK implemented a [keycode](https://zmk.dev/docs/codes#application-controls) for emulating `GLOBE`/`fn` key on Apple's keyboards.
-
-It's not 100% the same behavior made by Apple's keyboards (see [limitations](https://github.com/zmkfirmware/zmk/pull/1938#issuecomment-1744579039)), but it gets the job done for me – which is mainly for window manipulation on both macOS and iPadOS.
+Some of the features used in this keymap require the implementation of non-vanilla ZMK, such as [tri-state](https://github.com/urob/zmk-tri-state) [auto-layer](https://github.com/urob/zmk-auto-layer) modules. For that, I've pointed my `west.yml` to urob's repo that already has these features merged.
