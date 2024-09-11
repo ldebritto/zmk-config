@@ -19,7 +19,7 @@
 
 &caps_word { 
 			/delete-property/ ignore-modifiers; // From PR #1410
-			continue-list = <UNDERSCORE MINUS BACKSPACE DELETE LSHFT SQT CARET TILDE GRAVE>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
+			continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
 			}; 
 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
@@ -191,7 +191,7 @@
 			&trans		&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans	&trans	&trans
 			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans	&trans	&trans
 			&kp COMMA	&kp N1  &kp N2  &kp N3	&kp DOT		&trans  &trans	&trans	&trans	&trans
-										&trans	&tog NUM	&trans	&trans
+										&trans	&trans		&trans	&trans
 			>;
 		};
 
