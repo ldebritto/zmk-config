@@ -1,77 +1,82 @@
 # Design principles
 
-This keymap was heavily inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
+This keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
 
-01. **Every key should have just one way to type it**, the only exception is the `SHIFT` key that is both available as a HR mod behind a layer and a thumb key.
-
-02. **Avoid hold-taps** as they are finnicky to tweak, could misfire or require long pauses. Same reasons pointed by Callum at [his readme](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) apply here. An *excecption* was made to accomodate `GLOBE` in both `DEF` and `NAV` layers, at the `Z` key position. This allows me to trigger my window manager of choice ([Swish](https://highlyopinionated.co/swish/)) on macOS as well as use iPadOS shorcuts. There's also a &lt hidden in the `NWD` layer to allow for triggering `SYM` form there on hold and cancelling `&numword` when tapped.
+01. **Every key should have one way to type it**
+02. **Avoid hold-taps for regular typing** to discourage holding keys and eliminate the chance of misfiring. 
+		- An *excecption* was made to accomodate `GLOBE` at the `Z` key position. This allows me to trigger my window manager of choice ([Swish](https://highlyopinionated.co/swish/)) on macOS and iPadOS shortcuts that require this key.
     
-03. **Thumbs do all the regular layer changes**. Except for `&smart_mouse` and `&numword`, that are toggled by combos.
+03. **Thumbs do all the regular layer changes**. `&numword`, toggling `NAV` for extended edits/mouse usage, and toggle of gaming layers are all made by combos.
 
-04. **Keyboard functionality** (such as `&bootloader` and bluetooth toggles) is **hidden behind combos** available only in the `FUN` layer. This makes them *purposelly difficult* to trigger by accident, while still being still being accessible when needed;
+04. **Keyboard functionality** (such as `&bootloader` and bluetooth toggles) is **hidden behind combos** available from `FUN` layer. This makes them *purposelly difficult* to trigger by accident, while still being still being accessible when needed;
 
-05. **Combos** should be *convenience only*, such as:
-    - NAV layer toggle for extended edits (`left thumb keys`);
-    - mute (`vol up and down` on `NAV`); and
-    - left hand activation of some special keys (`ENTER`, `BACKSPACE`, `SPACE` and `ESCAPE`).
-
-06. **Tap dance** is used to make double press on thumb `shift` trigger `&caps_word` behavior and to combine `next song` and `previous song` into the same key on `NAV`.
+05. **Combos** should be *convenience only* and always preceded by `require-prior-idle` to avoid misfiring.
 
 # My use case and layer design choices
 
-Its main uses are writing prose in both English and Portuguese as well as some very light coding.
+Its main use is writing prose in both English and Portuguese.
 
 ## 1. QWERTY with changes on `'` `;` and `/` keys positions
 
-Base layout is QWERTY with a few changes to optimize for my use case.
+QWERTY was kept to retain muscle memory, with a few changes:
 
-- On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents and quotes in my use cases. 
-- `/` exists in the `SYM` layer.
+- On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents (as dead key) and quotations
+- `/` exists in the `SYM`
 
-## 2. Longe `&sk` timeouts and `&lc` for cancelling queued mods when triggering other layers
-
-A crazy long timeout (1000m) was assigned to `&sk` behavior in this keymap. So there's no rush to combine mods with keycodes with keys from `DEF` or whatever the currently active layer.
-
-Layer keys (usually `&mo`) were replaced by a custom layer-cancel macro (`&lc`) that taps a `&kp K_CANCEL` command alongside the `&mo` command. This workaround cancels any previoulsy `&sk` queued mods on the layer key press.
-
-This design allows for _canceling_ mods only when invoking `SYM`, `NAV`, of `FUN`, while still _keep them triggered_ when you move back to `DEF`.
+## 2. Long `&sk` timeouts and `&lc` macro for cancelling queued mods when triggering layers
 
 This emulates in ZMK the `LA_NAV` and `LA_SYM` custom behaviors found in [Callum's QMK keymap](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md).
 
-It's built with the [parametrized macros](https://zmk.dev/docs/behaviors/macros#parameterized-macros) as `&lc` to allow for easier reading of the keymap and user modification.
+A crazy long timeout (1 day) was assigned to `&sk` behavior in this keymap. So there's no rush to combine mods with either keycodes from `DEF` or the active layer.
 
-## 3. `&swapper` for swapping between apps/windows
+`&mo` keys were replaced by a custom layer-cancel macro (`&lc`) that sends a `&kp K_CANCEL` tap alongside the `&mo` command within a 0ms interval. This design allows for _canceling_ mods when invoking `SYM`, `NAV`, of `FUN`, while _keeping them triggered_ for typing keys that exists only on `DEF` layer.
 
-Allows for `CMD+TAB` with just one key. It keeps the modal open until you release the layer toggle, just as you would hold `CMD` between `TAB` keypresses.
+It was built with the [parametrized macros](https://zmk.dev/docs/behaviors/macros#parameterized-macros) behavior to make the `.keymap` file easier to read and change.
 
-This is *not native to ZMK's `main` repo* and requires [PR# 1366](https://github.com/zmkfirmware/zmk/pull/1366). See ZMK.dev [documentation](https://zmk.dev/docs/features/beta-testing) for instructions on how to use PRs not yet merged into ZMK's main repo.
+## 3. `SYM` layer optimized for BR-PT prose
 
-## 4. Numpad for `&numword`
+* I recommend pgetreuer’s post on [how to set up a symbols layer that works for you](https://getreuer.info/posts/keyboards/symbol-layer/index.html).
 
-`&numword` is accessible via `S` and `D` key combo. 
+- ^`~ dead keys are on home row making them trivial to type accented vowels which are common in Portuguese prose
+- Basic math operations and other symbols that usually follow numbers can be typed with the left hand (very useful from within `num_word`’s `&sl SYM` on the G key position);
+- Parenthesis and braces are mirrored on both hands, left opens, right closes them. Slashes are also mirrored.
+- Shifted punctuation symbols that exist in `DEF` and are much used in prose (`”` and `:`) from `DEF` were assigned to SYM to 
+	a. make possible to trigger them single handed via `&lc SYM` 
+	b. make them more convenient to type punctuated numbers from `FUN` such as when typing hours or dates or measurements (e.g. 00:00 will not require one to move the left thumb to thumb `RSHFT` and then back to the `&lc NAV` to trigger the tri-layer, same thing happens when typing 0’00”)
+- Common markdown symbols (# and *) are close to home row.
 
-This behavior allows for quick entering numbers and will disable the numpad layer upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. I believe this behavior was introduced to the custom mech community in QMK by [Jonas Hietala](https://www.jonashietala.se/blog/2022/09/06/the_current_t-34_keyboard_layout/#numword). This ZMK implemenation was made by [urob](https://github.com/urob/zmk-config#numword) and I've copied with a few modifications here.
+## 4. Numpad for `&num_word`
 
-## 5. Apple's `Globe` key on mod-tap `Z` and `;` keys
+* Requires [auto-layer module](https://github.com/urob/zmk-auto-layer). 
 
-Recently ZMK implementted a [keycode](https://zmk.dev/docs/codes#application-controls) for emulating `GLOBE`/`fn` key on Apple's keyboards. 
+`&numword` is accessible as a combo through `D` and `&lc NAV` (leftmost thumb).
 
-It's not 100% the same behavior made by Apple's keyboards (see limitations [here](https://github.com/zmkfirmware/zmk/pull/1938#issuecomment-1744579039)), but it gets the job done for my uses – wich is mainly window manipulation on both macOS and iPadOS. So I've made it into a `&mt` replicated in `DEF`, `NAV` and `SYM` on the keys used by lower pinkies.
+Numpad layer sits at the left half of the keyboard to make it usable while holding the mouse on the right.
 
-## 6. `&smart_mouse` copied from urob's repo
+This behavior allows for quick entering numbers in a numpad layout and will disable it upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. 
 
-Yet another feature copied from [urob's repo](https://github.com/urob/zmk-config?tab=readme-ov-file#smart-mouse).
+This behavior was first introduced by [Jonas Hietala](https://www.jonashietala.se/blog/2022/09/06/the_current_t-34_keyboard_layout/#numword) and this ZMK implementation was made by [urob](https://github.com/urob/zmk-config#numword).
 
-It is activated from the `M,.` key combo, from `DEF` layer.
+## 5. Combos for one handed use of common action keys and in combination with the mouse on the right hand
 
-Also requires [PR #1366](https://github.com/zmkfirmware/zmk/pull/1366) used in `&swapper` behavior.
+Combos where added to make it possible to use the keyboard one handed.
 
-## 7. Left hand combos for one handed use of common action keys in combination with the mouse on the right hand
+- There’s `&sl SYM` on a combo with both right thumbs to make it possible to enter symbols.
+- One handed number entering can be done via `&num_word` combo (see #4).
+- This goes well with toggling the `NAV` layer (combo with both left thumbs) for extended mouse edits while keeping these keys available with the left hand:
+	- `QA` for `ESC`
+	- `RF` for `ENTER`
+	- `TG` for `BACKSPACE`
+	- `GB` for `DELETE`
 
-Some combos where added to make it possible to use the keyboard one handed. They're mainly for use with the left hand (so a mouse can be used on the righ hand).
+## 6. `&swapper` for swapping between apps/windows
 
-- `QA` for `ESC`
-- `WS` for `TAB`
-- `ED` for `F18` (which I use to trigger some app-specific macros on Keyboarad Maestro)
-- `RF` for `ENTER`
-- `TG` for `BACKSPACE`
+* Requires [tri-state module](https://github.com/urob/zmk-tri-state).
+
+This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD` between `TAB` keypresses for as long as you keep the `&lc NAV` key held.
+
+## 7. Apple's `Globe` key on mod-tap `Z` and `;` keys
+
+ZMK implemented a [keycode](https://zmk.dev/docs/codes#application-controls) for emulating `GLOBE`/`fn` key on Apple's keyboards.
+
+It's not 100% the same behavior made by Apple's keyboards (see [limitations](https://github.com/zmkfirmware/zmk/pull/1938#issuecomment-1744579039)), but it gets the job done for me – which is mainly for window manipulation on both macOS and iPadOS.
