@@ -75,6 +75,10 @@ Combos where added to make it possible to use the keyboard one handed.
 
 This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD` between `TAB` keypresses for as long as you keep the `&lc NAV` key held.
 
+## 7. Gaming layers
+
+I play Age of Empires II Definitive Edition and made a series of 3 layers that go well with mouse usage on the right hand. They're certainly not needed, but really tucked away by a `ZXC` combo that only can be activated from within a leftmost thumb layer from either gaming (`AGS`) or regular (`NAV`) modes.
+
 # Non-upstream ZMK implementation
 
 Some of the features used in this keymap require the implementation of non-vanilla ZMK, such as [tri-state](https://github.com/urob/zmk-tri-state) [auto-layer](https://github.com/urob/zmk-auto-layer) modules. For that, I've pointed my `west.yml` to urob's repo that already has these features merged.
