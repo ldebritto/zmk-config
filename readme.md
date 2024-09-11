@@ -1,6 +1,6 @@
 # Design principles
 
-This keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and is guided by the following principles:
+This keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and was conceived with these principles in mind:
 
 01. **Every key should have one way to type it**
 02. **Avoid hold-taps for regular typing** to discourage holding keys and eliminate the chance of misfiring. 
