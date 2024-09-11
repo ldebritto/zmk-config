@@ -7,7 +7,7 @@ manifest:
       remote: urob
       revision: going-modular
       import: app/west.yml
-    - name: zmk
+    - name: improved-caps-word
       remote: urob
       revision: improve-caps-word
       import: app/west.yml
