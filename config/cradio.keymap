@@ -17,10 +17,8 @@
 	release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { 
-			/delete-property/ ignore-modifiers; // From PR #1410
-			continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
-			}; 
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
+ 
 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
 
