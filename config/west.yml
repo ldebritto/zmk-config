@@ -7,6 +7,10 @@ manifest:
       remote: urob
       revision: going-modular
       import: app/west.yml
+    - name: zmk
+      remote: urob
+      revision: improve-caps-word
+      import: app/west.yml
     - name: zmk-tri-state
       remote: urob
       revision: main
