@@ -48,6 +48,12 @@
 			key-positions = <14 24>;
 			require-prior-idle-ms = <200>;
 		};
+
+		sticky_sym_layer {
+			key-positions = <32 33>;
+			bindings = <&sl SYM>;
+			layers = <DEF>;
+		};
 		
 		toggle_nav_layer {
 			key-positions = <30 31>;
@@ -55,11 +61,11 @@
 			layers = <DEF NAV>;
 		};
 
-		sticky_sym_layer {
-			key-positions = <32 33>;
-			bindings = <&sl SYM>;
-			layers = <DEF>;
-		};
+		toggle_aoe_layers {
+            key-positions = <20 21 22>;
+            bindings = <&tog AOE>;
+			layers = <DEF AOE>;
+        };
 
 		toggle_num_word {
 			key-positions = <12 30>;
@@ -68,17 +74,11 @@
 		};
 		
 		toggle_caps_word {
-			key-positions = <12 17>; //DK
+			key-positions = <12 17>; // DK
 			bindings = <&caps_word>;
 			layers = <DEF>;
 		};
 	
-		toggle_aoe_layers {
-            key-positions = <20 21 22>;
-            bindings = <&tog AOE>;
-			layers = <DEF AOE>;
-        };
-
 		sys_bootloader {
 			key-positions = <20 21>;
 			bindings = <&bootloader>;
@@ -194,9 +194,9 @@
 
 		navigation_editing_and_media_controls {
 			bindings = <
-			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&mt	HOME LA(LEFT) 	&kp UP		&mt END LA(RIGHT)	&kp BSPC
-			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN		&kp LEFT			&kp DOWN	&kp RIGHT			&kp RET
-			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp			&kp LG(SPACE)		&vb_dn	  	&vb_up				&kp DEL
+			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&kp	HOME	 	&kp UP		&mt END		&kp BSPC
+			&sk LCTRL		&sk LALT	&sk RSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN		&kp LEFT		&kp DOWN	&kp RIGHT	&kp RET
+			&mt GLOBE LG(Z)	&kp LG(X)	&kp LG(C)		&kp LG(V)	&kp F18			&playnp			&kp LG(SPACE)	&vb_dn	  	&vb_up		&kp DEL
 														&trans		&mt RSHFT SPACE	&mt RSHFT SPACE	&trans
 			>;
 		};
