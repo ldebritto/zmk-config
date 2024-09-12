@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: upstream
-      revision: mains
+      revision: main
       import: app/west.yml
     - name: zmk-tri-state
       remote: urob

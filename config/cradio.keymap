@@ -18,7 +18,6 @@
 };
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
- 
 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
 

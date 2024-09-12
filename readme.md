@@ -1,3 +1,5 @@
+![]("keymap-drawer/main layers.svg")
+
 # Design principles
 
 This 34 key keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and was conceived with these principles in mind:
