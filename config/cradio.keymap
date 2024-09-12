@@ -181,7 +181,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_base_layer {
+		DEF_ {
 			bindings = <
 			&kp Q        &kp W  &kp E  &kp R    &kp T       &kp Y      &kp U    &kp I      &kp O    &kp P
 			&kp A        &kp S  &kp D  &kp F    &kp G       &kp H      &kp J    &kp K      &kp L    &kp SQT
@@ -190,7 +190,7 @@
 			>;
 		};
 
-		numpad {
+		NUM_ {
 			bindings = <
 			&trans		&kp N7  &kp N8  &kp N9	&kp COLON	&trans  &trans	&trans	&trans	&trans
 			&kp N0		&kp N4  &kp N5  &kp N6	&sl SYM		&trans  &trans	&trans	&trans	&trans
@@ -199,7 +199,7 @@
 			>;
 		};
 
-		navigation_editing_and_media_controls {
+		NAV_ {
 			bindings = <
 			&kp TAB			&swapper	&kp LS(LC(TAB))	&kp LC(TAB)	&kp LG(RBKT)	&kp PG_UP		&kp	HOME	 	&kp UP		&kp END		&kp BSPC
 			&sk LCTRL		&sk LALT	&sk LSHFT		&sk LGUI	&kp LG(LBKT)	&kp PG_DN		&kp LEFT		&kp DOWN	&kp RIGHT	&kp RET
@@ -208,7 +208,7 @@
 			>;
 		};
 		
-		symbols {
+		SYM_ {
 			bindings = <
 			&kp ESC		&kp LBRC	&kp LBKT	&kp LPAR   	&kp PIPE		&kp AMPS	&kp RPAR	&kp RBKT	&kp RBRC 	&kp DQT
 			&kp MINUS	&kp CARET	&kp GRAVE	&kp TILDE	&kp DOLLAR		&kp HASH   	&sk RGUI	&sk LSHFT	&sk RALT	&sk RCTRL
@@ -217,7 +217,7 @@
 			>;
 		};
 		
-		function_and_number_row {
+		FUN_ {
 			bindings = <
 			&kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
 			&sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL 
@@ -226,7 +226,7 @@
 			>;
 		};
 
-        aoe_base_layer { // regular game controls with modifiers for clicking
+        AOE_ { // regular game controls with modifiers for clicking
             bindings = <
             &kp Q        &kp W       &kp E        &kp R        &kp T		&trans  &trans  &trans  &trans  &trans
             &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G		&trans  &trans  &trans  &trans  &trans
@@ -235,7 +235,7 @@
             >;
         };
 
-        aoe_unit_and_group_selection { // numbers+mods for group selection and designation. Editing keys on the right for in game
+        AGS_ { // numbers+mods for group selection and designation. Editing keys on the right for in game
             bindings = <
             &kp N1        &kp N2       &kp N3        &kp N4        &kp N5	&trans  &trans  &trans  &trans  &kp BSPC
             &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0	&trans  &trans  &trans  &trans  &kp ENTER
@@ -244,7 +244,7 @@
             >;
         };
 
-        aoe_building_selection { // select all buildings hotkeys to make it easier to queue up vills and tech research whitout moving screen to the corresponding building
+        ABS_ { // select all buildings hotkeys to make it easier to queue up vills and tech research whitout moving screen to the corresponding building
             bindings = <
             &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)	&trans  &trans  &trans  &trans  &trans
             &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))	&trans  &trans  &trans  &trans  &trans

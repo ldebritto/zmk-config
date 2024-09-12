@@ -1,4 +1,4 @@
-![]("keymap-drawer/main layers.svg")
+![](draw/main.svg)
 
 # Design principles
 
