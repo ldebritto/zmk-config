@@ -1,0 +1,325 @@
+layout: {qmk_keyboard: ferris_rotated}
+layers:
+  DEF_:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ''''
+  - {t: Z, h: GLOBE}
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - {t: ;, h: GLOBE}
+  - '&lc NAV'
+  - RSHFT
+  - SPACE
+  - '&lc SYM'
+  NUM_:
+  - {t: ▽, type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - ':'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - {t: SYM_, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ','
+  - '1'
+  - '2'
+  - '3'
+  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NAV_:
+  - TAB
+  - SWAP WIN
+  - PREV TAB
+  - NEXT TAB
+  - FWD
+  - PG UP
+  - HOME
+  - ⬆
+  - END
+  - ⌫
+  - {t: ⌃, h: sticky}
+  - {t: ⌥, h: sticky}
+  - {t: ⇧, h: sticky}
+  - {t: ⌘, h: sticky}
+  - BACK
+  - PG DN
+  - ⬅
+  - ⬇
+  - ➡
+  - ⏎
+  - {t: UNDO, h: GLOBE}
+  - CUT
+  - COPY
+  - PASTE
+  - F18
+  - ⏯ ⏮⏭
+  - ALFRED
+  - {t: VOL -, s: BRI -}
+  - {t: VOL +, s: BRI +}
+  - ⌦
+  - {type: held}
+  - {t: SPACE, h: RSHFT}
+  - {t: SPACE, h: RSHFT}
+  - {t: ▽, type: trans}
+  SYM_:
+  - ESC
+  - '{'
+  - '['
+  - (
+  - '|'
+  - '&'
+  - )
+  - ']'
+  - '}'
+  - '"'
+  - '-'
+  - ^
+  - '`'
+  - '~'
+  - '$'
+  - '#'
+  - {t: RGUI, h: sticky}
+  - {t: ⇧, h: sticky}
+  - {t: RALT, h: sticky}
+  - {t: RCTRL, h: sticky}
+  - +
+  - '='
+  - '*'
+  - /
+  - '%'
+  - '@'
+  - \
+  - '?'
+  - '!'
+  - ':'
+  - {t: ▽, type: trans}
+  - {t: _, h: RSHFT}
+  - {t: ▽, type: trans}
+  - {type: held}
+  FUN_:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ⌃, h: sticky}
+  - {t: ⌥, h: sticky}
+  - {t: ⇧, h: sticky}
+  - {t: ⌘, h: sticky}
+  - F11
+  - F12
+  - {t: RGUI, h: sticky}
+  - {t: ⇧, h: sticky}
+  - {t: RALT, h: sticky}
+  - {t: RCTRL, h: sticky}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - {type: held}
+  - Gui+Ctl+ Q
+  - CAPS
+  - {type: held}
+  AOE_:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: A, h: ⌃}
+  - {t: S, h: ⌥}
+  - {t: D, h: ⇧}
+  - {t: F, h: ⌃}
+  - G
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Z, h: NAV_}
+  - X
+  - C
+  - V
+  - B
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: H, h: AGS_}
+  - {t: ., h: ABS_}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  AGS_:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: '6', h: ⌃}
+  - {t: '7', h: ⌥}
+  - {t: '8', h: ⇧}
+  - {t: '9', h: ⌃}
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ENTER
+  - ','
+  - BSPC
+  - SPACE
+  - ENTER
+  - H
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F3
+  - {type: held}
+  - DEL
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  ABS_:
+  - Ctl+Sft+ M
+  - Ctl+Sft+ S
+  - Ctl+Sft+ U
+  - Ctl+Sft+ Y
+  - Sft+ ,
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Sft+ A
+  - Ctl+Sft+ L
+  - Ctl+Sft+ B
+  - Ctl+Sft+ K
+  - Sft+Ctl+ D
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Sft+ Z
+  - Ctl+Sft+ I
+  - Ctl+Sft+ G
+  - Ctl+Sft+ V
+  - Ctl+Sft+ H
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [0, 10]
+  k: ESCAPE
+  l: [DEF_, NAV_]
+- p: [3, 13]
+  k: ENTER
+  l: [DEF_, NAV_]
+- p: [4, 14]
+  k: BSPC
+  l: [DEF_, NAV_]
+- p: [14, 24]
+  k: DEL
+  l: [DEF_, NAV_]
+- p: [32, 33]
+  k: {t: SYM_, h: sticky}
+  l: [DEF_]
+- p: [30, 31]
+  k: {t: NAV, h: toggle}
+  l: [DEF_, NAV_]
+- p: [20, 21, 22]
+  k: {t: AOE_, h: toggle}
+  l: [NAV_, AGS_]
+- p: [12, 30]
+  k: '&num_word 1'
+  l: [DEF_, NUM_]
+- p: [12, 17]
+  k: '&caps_word'
+  l: [DEF_]
+- p: [20, 21]
+  k: '&bootloader'
+  l: [FUN_]
+- p: [3, 4]
+  k: {t: BT, h: '0'}
+  l: [FUN_]
+- p: [13, 14]
+  k: {t: BT, h: '1'}
+  l: [FUN_]
+- p: [23, 24]
+  k: {t: BT, h: '2'}
+  l: [FUN_]
+- p: [28, 29]
+  k: BT CLR
+  l: [FUN_]
