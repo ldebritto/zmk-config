@@ -146,7 +146,9 @@
             compatible = "zmk,behavior-tri-state";// requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
- // For Windows alt-tab, need to replace RGUI for LALT
+
+            // For Windows alt-tab, need to replace RGUI for LALT
+
             ignored-key-positions = <7 16 17 18 9 19 29>;// Arrows and BSPC, ENTER and DEL
         };
     };
@@ -202,10 +204,10 @@
 
         NAV_ {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)       &kp PG_UP        &kp HOME  &kp UP    &kp END    &kp BSPC
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)       &kp PG_DN        &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18            &playnp          &kp BSPC  &vb_dn    &vb_up     &kp DEL
-                                               &trans       &mt RSHFT SPACE    &mt RSHFT SPACE  &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)       &kp PG_UP      &kp HOME  &kp UP    &kp END    &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)       &kp PG_DN      &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18            &playnp        &kp BSPC  &vb_dn    &vb_up     &kp DEL
+                                               &trans       &mt RSHFT SPACE    &mt RSHFT RET  &trans
             >;
         };
 
