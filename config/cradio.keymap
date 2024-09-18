@@ -204,10 +204,10 @@
 
         NAV_ {
             bindings = <
-  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)       &kp PG_UP      &kp HOME  &kp UP    &kp END    &kp CAPS
-  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)       &kp PG_DN      &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18            &kp RET        &kp BSPC  &vb_dn    &vb_up     &playnp
-                                               &trans       &mt RSHFT SPACE    &mt RSHFT RET  &trans
+  &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)       &kp PG_UP        &kp HOME  &kp UP    &kp END    &kp BSPC
+  &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)       &kp PG_DN        &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18            &kp F18          &playnp   &vb_dn    &vb_up     &kp DEL
+                                               &trans       &mt RSHFT SPACE    &mt RSHFT SPACE  &trans
             >;
         };
 
