@@ -1,5 +1,3 @@
-![](draw/main.svg)
-
 # Design principles
 
 This 34 key keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and was conceived with these principles in mind:
@@ -18,12 +16,15 @@ This 34 key keymap was inspired by [Callum's layout for QMK](https://github.com/
  
 Its main use is writing prose in both English and Portuguese in both macOS and iPadOS. I use in on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano/). I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Amnbienz twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
 
-## 1. QWERTY with `'`, `;` and `/` keys positions swapped
+Here's the render made with [caksoylar's Keymap Drawer](https://github.com/caksoylar/keymap-drawer):
+![](draw/main.svg)
+
+## 1. QWERTY with my two cents (`'`, `;` keys positions swapped with `/`)
 
 QWERTY was kept to retain muscle memory, with a few changes:
 
 - On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents (as dead key) and quotations
-- `/` exists in the `SYM`
+- `/` was moved to `SYM`
 
 ## 2. Long `&sk` timeouts and `&lc` macro for cancelling queued mods when triggering layers
 
