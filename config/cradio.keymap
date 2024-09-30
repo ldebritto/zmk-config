@@ -227,7 +227,7 @@
   &kp Q        &kp W       &kp E        &kp R        &kp T                  &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G                  &trans  &trans  &trans  &trans  &trans
   &lt NAV Z    &kp X       &kp C        &kp V        &kp B                  &trans  &trans  &trans  &trans  &trans
-                                        &lt AGS H    &mt LC(LSHFT) DOT      &trans  &trans
+                                        &lt AGS H    &mt LS(LCTRL) DOT      &trans  &trans
             >;
         };
 
