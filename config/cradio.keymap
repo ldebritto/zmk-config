@@ -29,12 +29,6 @@
             require-prior-idle-ms = <200>;
         };
 
-        left_hand_f18 {
-            bindings = <&kp ENTER>;
-            key-positions = <2 12>;
-            require-prior-idle-ms = <200>;
-        };
-
         left_hand_enter {
             bindings = <&kp ENTER>;
             key-positions = <3 13>;
@@ -44,12 +38,6 @@
         left_hand_backspace {
             bindings = <&kp BSPC>;
             key-positions = <4 14>;
-            require-prior-idle-ms = <200>;
-        };
-
-        left_hand_delete {
-            bindings = <&kp DEL>;
-            key-positions = <14 24>;
             require-prior-idle-ms = <200>;
         };
 
@@ -201,10 +189,10 @@
 
         NUM_ {
             bindings = <
-  &trans     &kp N7  &kp N8  &kp N9             &kp COLON          &trans  &trans  &trans  &trans  &trans
-  &kp N0     &kp N4  &kp N5  &kp N6             &sl SYM            &trans  &trans  &trans  &trans  &trans
-  &kp COMMA  &kp N1  &kp N2  &kp N3             &kp DOT            &trans  &trans  &trans  &trans  &trans
-                             &lt NAV K_CANCEL   &lt SYM K_CANCEL   &trans  &trans
+  &sl SYM    &kp N7  &kp N8  &kp N9   &kp COLON &trans  &trans  &trans  &trans  &trans
+  &kp N0     &kp N4  &kp N5  &kp N6   &sl SYM   &trans  &trans  &trans  &trans  &trans
+  &kp COMMA  &kp N1  &kp N2  &kp N3   &kp DOT   &trans  &trans  &trans  &trans  &trans
+                             &trans   &trans    &trans  &trans
             >;
         };
 
