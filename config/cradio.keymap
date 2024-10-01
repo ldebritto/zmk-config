@@ -40,14 +40,14 @@
             require-prior-idle-ms = <200>;
         };
 
-        sticky_sym_layer {
+        sticky_sym_layer_for_one_handed_typing {
             key-positions = <32 33>;
             bindings = <&sl SYM>;
             layers = <DEF>;
             require-prior-idle-ms = <200>;
         };
 
-        toggle_nav_layer {
+        toggle_nav_layer_for_extended_edits_or_mouse_usage {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
             layers = <DEF NAV>;
