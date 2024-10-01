@@ -1,4 +1,4 @@
-#include <behaviors/num_word.dtsi>
+// #include <behaviors/num_word.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -63,14 +63,14 @@
 
         toggle_num_word {
             key-positions = <12 30>;
-            bindings = <&num_word NUM>;
+            bindings = <&tog NUM>;
             layers = <DEF NUM>;
             require-prior-idle-ms = <200>;
         };
 
         toggle_caps_word {
             key-positions = <12 17>; // DK
-            bindings = <&caps_word>;
+            bindings = <&kp CAPS>;
             layers = <DEF>;
             require-prior-idle-ms = <200>;
         };
