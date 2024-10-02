@@ -71,7 +71,7 @@
             require-prior-idle-ms = <200>;
 
         toggle_caps_word {
-            key-positions = <12 17>; // DK
+            key-positions = <12 17>;
             bindings = <&caps_word>;
             layers = <DEF>;
             require-prior-idle-ms = <200>;
@@ -177,7 +177,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        DEF_ {
+        DEF {
             bindings = <
   &kp Q        &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
   &kp A        &kp S  &kp D  &kp F    &kp G        &kp H      &kp J    &kp K      &kp L    &kp SQT
@@ -186,7 +186,7 @@
             >;
         };
 
-        NUM_ {
+        NUM {
             bindings = <
   &sl SYM    &kp N7  &kp N8  &kp N9   &kp COLON &trans  &trans  &trans  &trans  &trans
   &kp N0     &kp N4  &kp N5  &kp N6   &sl SYM   &trans  &trans  &trans  &trans  &trans
@@ -195,7 +195,7 @@
             >;
         };
 
-        NAV_ {
+        NAV {
             bindings = <
   &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP               &kp HOME  &kp UP    &kp END    &kp BSPC
   &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN               &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
@@ -204,7 +204,7 @@
             >;
         };
 
-        SYM_ {
+        SYM {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE           &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
@@ -213,7 +213,7 @@
             >;
         };
 
-        FUN_ {
+        FUN {
             bindings = <
   &kp N1     &kp N2    &kp N3     &kp N4    &kp N5           &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
   &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
@@ -222,7 +222,7 @@
             >;
         };
 
-        AOE_ {
+        AOE {
             bindings = <
   &kp Q        &kp W       &kp E        &kp R        &kp T                  &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G                  &trans  &trans  &trans  &trans  &trans
@@ -231,7 +231,7 @@
             >;
         };
 
-        AGS_ {
+        AGS {
             bindings = <
   &kp N1        &kp N2       &kp N3        &kp N4        &kp N5     &trans  &trans  &trans  &trans  &kp BSPC
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &kp ENTER
@@ -240,7 +240,7 @@
             >;
         };
 
-        ABS_ {
+        ABS {
             bindings = <
   &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
