@@ -10,13 +10,14 @@
 #define FUN 4
 #define AOE 5 // layers for playing Age of Empires II Definitive Edition
 #define AGS 6
+#define ABS 7
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
+// &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
 / {
     combos {
@@ -140,8 +141,6 @@
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 
-            // For Windows alt-tab, need to replace RGUI for LALT
-
             ignored-key-positions = <7 16 17 18 9 19 29>;// Arrows and BSPC, ENTER and DEL
         };
     };
@@ -227,7 +226,7 @@
   &kp Q        &kp W       &kp E        &kp R        &kp T                  &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G                  &trans  &trans  &trans  &trans  &trans
   &lt NAV Z    &kp X       &kp C        &kp V        &kp B                  &trans  &trans  &trans  &trans  &trans
-                                        &lt AGS H    &mt LS(LCTRL) DOT      &trans  &trans
+                                        &lt AGS H    &lt ABS DOT      &trans  &trans
             >;
         };
 
@@ -239,5 +238,15 @@
                                            &trans        &kp DEL    &trans  &trans
             >;
         };
+
+        ABS_ {
+            bindings = <
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                               &trans         &trans           &trans  &trans
+            >;
+        };
+
     };
 };
