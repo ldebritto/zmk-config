@@ -1,4 +1,4 @@
-#include <behaviors/num_word.dtsi>
+#include <behaviors/num_word.dtsi> // reqquires auto-layer module (https://github.com/urob/zmk-auto-layer)
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -9,8 +9,8 @@
 #define SYM 3
 #define FUN 4
 #define AOE 5 // layers for playing Age of Empires II Definitive Edition
-#define AGS 6
-#define ABS 7
+#define AGS 6 // layers for playing Age of Empires II Definitive Edition
+#define ABS 7 // layers for playing Age of Empires II Definitive Edition
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -19,6 +19,7 @@
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
 &mt { flavor = "balanced"; }; // Using these for GLOBE keys and faster window management with Swish app as well as AOE layers
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -64,14 +65,14 @@
 
         toggle_num_word {
             key-positions = <12 30>;
-            bindings = <&num_word>;
+            bindings = <&num_word>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF NUM>;
-            require-prior-idle-ms = <200>;
         };
+            require-prior-idle-ms = <200>;
 
         toggle_caps_word {
             key-positions = <12 17>; // DK
-            bindings = <&kp CAPS>;
+            bindings = <&caps_word>;
             layers = <DEF>;
             require-prior-idle-ms = <200>;
         };
