@@ -65,7 +65,7 @@
 
         toggle_num_word {
             key-positions = <12 30>;
-            bindings = <&num_word>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF NUM>;
         };
             require-prior-idle-ms = <200>;
