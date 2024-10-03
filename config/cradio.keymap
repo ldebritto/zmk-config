@@ -500,6 +500,15 @@
         };
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <2 3>;
+            then-layer = <4>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -546,15 +555,6 @@
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5     &kp F6   &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &trans     &trans   &trans
             >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <2 3>;
-            then-layer = <4>;
         };
     };
 };
