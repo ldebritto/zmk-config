@@ -8,9 +8,6 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4
-#define AOE 5 // layers for playing Age of Empires II Definitive Edition
-#define AGS 6 // layers for playing Age of Empires II Definitive Edition
-#define ABS 7 // layers for playing Age of Empires II Definitive Edition
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -52,14 +49,6 @@
         toggle_nav_layer_for_extended_edits_or_mouse_usage {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
-            layers = <DEF NAV>;
-            require-prior-idle-ms = <200>;
-        };
-
-        toggle_aoe_layers {
-            key-positions = <20 21 22>;
-            bindings = <&tog AOE>;
-            layers = <NAV AGS>;
             require-prior-idle-ms = <200>;
         };
 
@@ -125,7 +114,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
-
             mods = <(MOD_LCTL)>;
         };
 
@@ -133,7 +121,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
-
             mods = <(MOD_LCTL)>;
         };
 
@@ -141,7 +128,6 @@
             compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
-
             ignored-key-positions = <7 16 17 18 9 19 29>;// Arrows and BSPC, ENTER and DEL
         };
     };
@@ -219,33 +205,6 @@
                 &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
                 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                                 &trans    &kp LG(LC(Q))    &kp CAPS  &trans
-            >;
-        };
-
-        AOE {
-            bindings = <
-                &kp Q        &kp W       &kp E        &kp R        &kp T                  &trans  &trans  &trans  &trans  &trans
-                &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G                  &trans  &trans  &trans  &trans  &trans
-                &lt NAV Z    &kp X       &kp C        &kp V        &kp B                  &trans  &trans  &trans  &trans  &trans
-                                                        &lt AGS H    &lt ABS DOT      &trans  &trans
-            >;
-        };
-
-        AGS {
-            bindings = <
-                &kp N1        &kp N2       &kp N3        &kp N4        &kp N5     &trans  &trans  &trans  &trans  &kp BSPC
-                &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &kp ENTER
-                &kp COMMA     &kp BSPC     &kp SPACE     &kp ENTER     &kp H      &trans  &trans  &trans  &trans  &kp F3
-                                                        &trans        &kp DEL    &trans  &trans
-            >;
-        };
-
-        ABS {
-            bindings = <
-                &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-                &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                                            &trans         &trans           &trans  &trans
             >;
         };
 
