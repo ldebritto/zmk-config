@@ -39,6 +39,13 @@
             require-prior-idle-ms = <200>;
         };
 
+        homerow_app_trigger {
+            key-positions = <31 32>;
+            bindings = <&kp LS(LC(SPACE))>;
+            layers = <DEF>;
+            require-prior-idle-ms = <200>;
+        };
+
         sticky_sym_layer_for_one_handed_typing {
             key-positions = <32 33>;
             bindings = <&sl SYM>;
