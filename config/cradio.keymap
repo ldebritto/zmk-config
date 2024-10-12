@@ -268,7 +268,7 @@
                 &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP               &kp HOME  &kp UP    &kp END    &kp BSPC
                 &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN               &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
                 &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18         &sk LG(LS(LA(LCTRL)))   &playnp   &vb_dn    &vb_up     &kp DEL
-                                                            &trans       &mt RSHFT SPACE &mt RSHFT SPACE         &trans
+                                                            &trans       &mt RSHFT SPACE &mt RSHFT SPACE         &lc SYM
             >;
         };
 
@@ -277,7 +277,7 @@
                 &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PIPE           &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
                 &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
                 &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp PRCNT          &kp AT    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                                &trans     &mt RSHFT UNDER    &trans    &trans
+                                                 &lc NAV    &mt RSHFT UNDER    &trans    &trans
             >;
         };
 
