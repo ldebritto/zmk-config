@@ -72,6 +72,13 @@
             layers = <DEF>;
             require-prior-idle-ms = <200>;
         };
+        
+        spotlight {
+            key-positions = <13 16>;
+            bindings = <&kp LG(SPACE)>;
+            layers = <DEF>;
+            require-prior-idle-ms = <200>;
+        };
 
         sys_bootloader {
             key-positions = <20 21>;
