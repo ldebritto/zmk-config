@@ -41,7 +41,7 @@
 
         homerow_app_trigger {
             key-positions = <31 32>;
-            bindings = <&kp LS(LC(SPACE))>;
+            bindings = <&kp LS(LG(SPACE))>;
             layers = <DEF>;
             require-prior-idle-ms = <200>;
         };
@@ -209,7 +209,6 @@
             // hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
             // hold-trigger-on-release;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
         };
 
     };
