@@ -147,20 +147,6 @@
             require-prior-idle-ms = <175>;
         };
 
-        ltl: ltl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LC_TAP_L";
-            bindings = <&lc>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-        };
-
         hrmr: hrmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HRMR";
@@ -170,6 +156,22 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+            hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+
+        // Layer-tap variants for urob's hrm
+
+        ltl: ltl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LC_TAP_L";
+            bindings = <&lc>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
             hold-trigger-on-release;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
@@ -185,6 +187,20 @@
             tapping-term-ms = <280>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
             hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+        };
+        
+        ltt: ltt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LC_TAP_THUMBS";
+            bindings = <&lc>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <280>;
+            // hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+            // hold-trigger-on-release;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
         };
@@ -226,8 +242,8 @@
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U        &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &ltl NAV V    &kp B       &kp N      &ltr SYM M   &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &kp RSHFT   &kp SPACE  &lc SYM
+  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N      &kp M        &kp COMMA      &kp DOT       &kp SEMI
+                                              &ltt NAV BSPC &kp RSHFT   &kp SPACE  &ltt SYM RET
             >;
         };
 
