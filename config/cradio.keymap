@@ -9,6 +9,8 @@
 #define SYM 3
 #define FUN 4
 
+#define HYPER LG(LC(LA(LSHFT)))
+
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -253,7 +255,7 @@
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U        &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N      &kp M        &kp COMMA      &kp DOT       &kp SEMI
+  &hrml GLOBE Z  &kp X         &kp C          &hrml HYPER V &kp B       &kp N      &hrmr HYPER M &kp COMMA     &kp DOT       &kp SEMI
                                               &ltt NAV BSPC &kp RSHFT   &kp SPACE  &ltt SYM RET
             >;
         };
