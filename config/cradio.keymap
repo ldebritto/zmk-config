@@ -4,10 +4,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
+#define NMT 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
 
 #define HYPER LG(LC(LA(LSHFT)))
 
@@ -44,14 +45,20 @@
         homerow_app_trigger {
             key-positions = <31 32>;
             bindings = <&kp LS(LG(SPACE))>;
-            layers = <DEF>;
+            layers = <DEF NMT>;
             require-prior-idle-ms = <200>;
         };
 
         sticky_sym_layer_for_one_handed_typing {
             key-positions = <32 33>;
             bindings = <&sl SYM>;
-            layers = <DEF>;
+            layers = <DEF NMT>;
+            require-prior-idle-ms = <200>;
+        };
+
+        toggle_mod_taps {
+            key-positions = <14 15>;
+            bindings = <&tog NMT>;
             require-prior-idle-ms = <200>;
         };
 
@@ -64,21 +71,21 @@
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF NUM>;
+            layers = <DEF NMT NUM>;
         };
             require-prior-idle-ms = <200>;
 
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF>;
+            layers = <DEF NMT>;
             require-prior-idle-ms = <200>;
         };
         
         spotlight {
             key-positions = <13 16>;
             bindings = <&kp LG(SPACE)>;
-            layers = <DEF>;
+            layers = <DEF NMT>;
             require-prior-idle-ms = <200>;
         };
 
@@ -253,10 +260,19 @@
 
         DEF {
             bindings = <
-  &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U        &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &hrml HYPER V &kp B       &kp N      &hrmr HYPER M &kp COMMA     &kp DOT       &kp SEMI
-                                              &ltt NAV BSPC &kp RSHFT   &kp SPACE  &ltt SYM RET
+                &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U        &kp I          &kp O         &kp P
+                &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+                &hrml GLOBE Z  &kp X         &kp C          &hrml HYPER V &kp B       &kp N      &hrmr HYPER M &kp COMMA     &kp DOT       &kp SEMI
+                                                            &ltt NAV BSPC &kp RSHFT   &kp SPACE  &ltt SYM RET
+            >;
+        };
+
+        NMT {
+            bindings = <
+                &kp Q &kp W   &kp E   &kp R   &kp T   &kp Y      &kp U        &kp I       &kp O   &kp P
+                &kp A &kp S   &kp D   &kp F   &kp G   &kp H      &kp J        &kp K       &kp L   &kp SQT
+                &kp Z &kp X   &kp C   &kp V   &kp B   &kp N      &kp M        &kp COMMA   &kp DOT &kp SEMI
+                                              &lc NAV &kp RSHFT  &kp SPACE    &lc SYM
             >;
         };
 
